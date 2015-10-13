@@ -100,39 +100,3 @@ function test_td () {
     }
 
 }
-
-
-/**
- * td_style_customizer.js is required
- */
-if (TD_DEBUG_LIVE_THEME_STYLE) {
-    add_action('wp_footer', 'td_theme_style_footer');
-    function td_theme_style_footer() {
-        ?>
-        <div id="td-theme-settings" class="td-theme-settings-small">
-            <div class="td-skin-header">One click demos</div>
-            <div class="td-skin-content">
-                <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper/" class="td-set-theme-style-link">DEFAULT</a></div>
-                <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_fashion/" class="td-set-theme-style-link">FASHION</a></div>
-                <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_tech/" class="td-set-theme-style-link" data-value="">TECH</a></div>
-                <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_video/" class="td-set-theme-style-link">VIDEO</a></div>
-                <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_sport/" class="td-set-theme-style-link">SPORT</a></div>
-                <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_classic_blog/" class="td-set-theme-style-link">CLASSIC BLOG</a></div>
-	            <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_travel/" class="td-set-theme-style-link">TRAVEL<span>New</span></a></div>
-	            <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_health/" class="td-set-theme-style-link">HEALTH<span>New</span></a></div>
-	            <div class="td-set-theme-style"><a href="http://demo.tagdiv.com/newspaper_cars/" class="td-set-theme-style-link">CARS<span>New</span></a></div>
-            </div>
-            <div class="clearfix"></div>
-            <div class="td-set-hide-show"><a href="#" id="td-theme-set-hide">HIDE</a></div>
-        </div>
-    <?php
-    }
-}
-
-//td_util::update_option('tdx_remote_http', '');
-//die;
-//if (!is_admin()) {
-//	$result = tdx_remote_http::get_page('http://reddit.com');
-//	echo $result;
-//	die;
-//}

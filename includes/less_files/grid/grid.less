@@ -1,0 +1,75 @@
+/*  ----------------------------------------------------------------------------
+    container
+*/
+.td-container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1500px;
+  overflow-x: hidden;
+}
+
+/*  ----------------------------------------------------------------------------
+    rows
+*/
+.td-pb-row {
+  .mx-row();
+  margin-right: -18px;
+  margin-left: -18px;
+}
+
+/*  ----------------------------------------------------------------------------
+    all spans
+*/
+
+.td-pb-row [class*="td-pb-span"] {
+  display: block;
+  min-height: 1px;
+  float: left;
+  position: relative;
+  padding-right: 18px;
+  padding-left: 18px;
+}
+
+/*  ----------------------------------------------------------------------------
+    smart sidebar - fix
+*/
+.td-ss-main-sidebar,
+.td-ss-row .td-pb-span4 .wpb_wrapper
+{
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+/*  ----------------------------------------------------------------------------
+    main grid
+*/
+.td-pb-span1  {  width: 8.33333333%;   }
+.td-pb-span2  {  width: 16.66666667%;  }
+.td-pb-span3  {  width: 25%;           }
+.td-pb-span4  {  width: 33.33333333%;  }
+.td-pb-span5  {  width: 41.66666667%;  }
+.td-pb-span6  {  width: 50%;           }
+.td-pb-span7  {  width: 58.33333333%;  }
+.td-pb-span8  {  width: 66.66666667%;  }
+.td-pb-span9  {  width: 75%;           }
+.td-pb-span10 {  width: 83.33333333%;  }
+.td-pb-span11 {  width: 91.66666667%;  }
+.td-pb-span12 {  width: 100%;          }
+
+/*  ----------------------------------------------------------------------------
+    Frontend editor fix to work for this grid
+*/
+.vc_editor {
+  .wpb_column {
+    width: 100%;
+  }
+  .td-container {
+    overflow-x: visible;
+  }
+  .vc_element {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 0;
+  }
+}
