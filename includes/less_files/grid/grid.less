@@ -95,3 +95,16 @@
 .view-mode .vc_element.vc_vc_row > .vc_row > .vc_vc_column > .wpb_column > .vc_element-container > .vc_vc_row_inner .vc_vc_column_inner {
   margin-bottom: 0;
 }
+
+
+// test fixed sidebar 150px right
+.td-sidebar-right-fixed {
+  .wpb_column:first-child {
+    width: 100%;
+    padding-right: 168px !important;
+    margin-right: -150px;
+  }
+  .wpb_column:last-child {
+    width: 150px;
+  }
+}
