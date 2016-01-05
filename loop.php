@@ -16,7 +16,7 @@ if (empty($loop_module_id)) {  //not sure if we need a default here
     $loop_module_id = 1;
 }
 
-$td_module_class = td_util::get_module_class_from_loop_id($loop_module_id);
+$td_module_class = td_api_module::_helper_get_module_class_from_loop_id($loop_module_id);
 
 
 //disable the grid for some of the modules
