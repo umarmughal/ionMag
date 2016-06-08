@@ -8,11 +8,18 @@
 /**
  * Load the speed booster framework + theme specific files
  */
-if (!defined('TD_THEME_WP_BOOSTER')) {
-    require_once('td_deploy_mode.php');
-    require_once('includes/td_config.php');
-    require_once('includes/wp_booster/td_wp_booster_functions.php');
-}
+
+// load the deploy mode
+require_once('td_deploy_mode.php');
+
+// load the config
+require_once('includes/td_config.php');
+add_action('td_global_after', array('td_config', 'on_td_global_after_config'), 9); //we run on 9 priority to allow plugins to updage_key our apis while using the default priority of 10
+
+
+// load the wp booster
+require_once('includes/wp_booster/td_wp_booster_functions.php');
+
 
 require_once('includes/td_css_generator.php');
 //require_once('includes/shortcodes/td_misc_shortcodes.php');
@@ -98,5 +105,13 @@ function test_td () {
     if (!is_admin()){
         td_api_base::_debug_get_used_on_page_components();
     }
+}
 
+
+/* ----------------------------------------------------------------------------
+ * css for wp-admin / backend
+ */
+add_action('admin_enqueue_scripts', 'load_wp_admin_css2');
+function load_wp_admin_css2() {
+	wp_enqueue_style('td-wp-admin-td-panel-3', td_global::$get_template_directory_uri . '/wp-admin-theme.css', false, TD_THEME_VERSION, 'all' );
 }

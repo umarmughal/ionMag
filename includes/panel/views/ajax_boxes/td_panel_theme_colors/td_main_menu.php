@@ -44,7 +44,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_menu_text_color',
-            'default_color' => '#000000'
+            'default_color' => ''
         ));
         ?>
     </div>

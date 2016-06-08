@@ -1,4 +1,13 @@
 <?php
+/**
+ * The Template for displaying all single products.
+ *
+ * Override this template by copying it to yourtheme/woocommerce/single-product.php
+ *
+ * @author 		WooThemes
+ * @package 	WooCommerce/Templates
+ * @version     1.6.4
+ */
 
 td_global::$current_template = 'woo_single';
 
@@ -34,7 +43,7 @@ if($loop_sidebar_position == 'sidebar_left') {
                 switch ($loop_sidebar_position) {
                     case 'sidebar_left':
                         ?>
-                        <div class="td-pb-span8 td-main-content <?php echo $td_sidebar_position; ?>-content" role="main" itemscope="itemscope" itemprop="mainContentOfPage" itemtype="<?php echo td_global::$http_or_https?>://schema.org/CreativeWork">
+                        <div class="td-pb-span8 td-main-content <?php echo $td_sidebar_position; ?>-content">
                             <div class="td-ss-main-content">
                                 <?php
                                     woocommerce_breadcrumb();
@@ -42,7 +51,7 @@ if($loop_sidebar_position == 'sidebar_left') {
                                 ?>
                             </div>
                         </div>
-                        <div class="td-pb-span4 td-main-sidebar" role="complementary">
+                        <div class="td-pb-span4 td-main-sidebar">
                             <div class="td-ss-main-sidebar">
                                 <?php get_sidebar(); ?>
                             </div>
@@ -52,7 +61,7 @@ if($loop_sidebar_position == 'sidebar_left') {
 
                     case 'no_sidebar':
                         ?>
-                        <div class="td-pb-span12 td-main-content" role="main" itemscope="itemscope" itemprop="mainContentOfPage" itemtype="<?php echo td_global::$http_or_https?>://schema.org/CreativeWork">
+                        <div class="td-pb-span12 td-main-content">
                             <div class="td-ss-main-content">
                                 <?php
                                     woocommerce_breadcrumb();
@@ -66,7 +75,7 @@ if($loop_sidebar_position == 'sidebar_left') {
 
                     default:
                         ?>
-                        <div class="td-pb-span8 td-main-content" role="main" itemscope="itemscope" itemprop="mainContentOfPage" itemtype="<?php echo td_global::$http_or_https?>://schema.org/CreativeWork">
+                        <div class="td-pb-span8 td-main-content">
                             <div class="td-ss-main-content">
                                 <?php
                                     woocommerce_breadcrumb();
@@ -74,7 +83,7 @@ if($loop_sidebar_position == 'sidebar_left') {
                                 ?>
                             </div>
                         </div>
-                        <div class="td-pb-span4 td-main-sidebar" role="complementary">
+                        <div class="td-pb-span4 td-main-sidebar">
                             <div class="td-ss-main-sidebar">
                                 <?php get_sidebar(); ?>
                             </div>

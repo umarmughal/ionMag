@@ -21,6 +21,10 @@ $td_less_files = array (
 		'source' => 'includes/less_files/editor-style.less',
 		'destination' => 'editor-style.css'
 	),
+	'wp-admin.css' => array (
+		'source' => 'includes/wp_booster/wp-admin/css/wp-admin.less',
+		'destination' => 'includes/wp_booster/wp-admin/css/wp-admin.css'
+	),
 	'woocommerce' => array (
 		'source' => 'includes/less_files/woocommerce/main.less',
 		'destination' => 'style-woocommerce.css'

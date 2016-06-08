@@ -1,0 +1,4 @@
+/* Theme panel*/
+.td-theme-panel-body #wpcontent {
+    background: url('images/panel/panel-bg.jpg');
+}

@@ -37,7 +37,7 @@ echo td_panel_generator::ajax_box('Main menu', array(
 
 <!-- MOBILE MENU -->
 <?php
-echo td_panel_generator::ajax_box('Mobile menu', array(
+echo td_panel_generator::ajax_box('Mobile menu / Mobile search', array(
         'td_ajax_calling_file' => basename(__FILE__),
         'td_ajax_box_id' => 'td_mobile_menu'
     )
@@ -61,6 +61,40 @@ echo td_panel_generator::ajax_box('Mobile menu', array(
             'ds' => 'td_option',
             'option_id' => 'tds_header_wrap_color',
             'default_color' => ''
+        ));
+        ?>
+    </div>
+</div>
+
+<!-- Text logo color -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">TEXT LOGO COLOR</span>
+        <p>Select text logo color</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_text_logo_color',
+            'default_color' => '#222222'
+        ));
+        ?>
+    </div>
+</div>
+
+<!-- Text logo tagline color -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">TEXT LOGO TAGLINE COLOR</span>
+        <p>Select text logo tagline color</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_text_logo_tagline_color',
+            'default_color' => '#777777'
         ));
         ?>
     </div>
@@ -110,6 +144,25 @@ echo td_panel_generator::ajax_box('Mobile menu', array(
     </div>
 </div>
 
+
+<!-- FOOTER WIDGETS HEADER TEXT COLOR -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">WIDGETS HEADER TEXT COLOR</span>
+        <p>Select widgets header text color</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_footer_widget_text_color',
+            'default_color' => '#ffffff'
+        ));
+        ?>
+    </div>
+</div>
+
+
 <?php echo td_panel_generator::box_end();?>
 
 
@@ -151,6 +204,25 @@ echo td_panel_generator::ajax_box('Mobile menu', array(
         ?>
     </div>
 </div>
+
+
+<!-- FOOTER bottom text hover color -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">FOOTER MENU HOVER COLOR</span>
+        <p>Select sub footer menu items hover/active color</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_footer_bottom_hover_color',
+            'default_color' => '#cccccc'
+        ));
+        ?>
+    </div>
+</div>
+
 
 <?php echo td_panel_generator::box_end();?>
 

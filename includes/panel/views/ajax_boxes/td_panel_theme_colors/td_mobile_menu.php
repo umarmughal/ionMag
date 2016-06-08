@@ -1,7 +1,7 @@
 <!-- Background color -->
 <div class="td-box-row">
     <div class="td-box-description">
-        <span class="td-box-title">MOBILE MENU - BACKGROUND COLOR</span>
+        <span class="td-box-title">MENU BAR - BACKGROUND COLOR</span>
         <p>Select menu background color</p>
     </div>
     <div class="td-box-control-full">
@@ -18,7 +18,7 @@
 <!-- Icons color -->
 <div class="td-box-row">
     <div class="td-box-description">
-        <span class="td-box-title">MOBILE MENU - ICONS COLOR</span>
+        <span class="td-box-title">MENU BAR - ICONS COLOR</span>
         <p>Select the icons color for the menu</p>
     </div>
     <div class="td-box-control-full">
@@ -32,52 +32,40 @@
     </div>
 </div>
 
-<!-- Open menu background color -->
+<!-- Menu gradient color -->
 <div class="td-box-row">
     <div class="td-box-description">
-        <span class="td-box-title">OPENED MENU - BACKGROUND COLOR</span>
-        <p>Select a background color for the opened menu</p>
+        <span class="td-box-title">BACKGROUND GRADIENT COLOR</span>
+        <p>Select menu/search panel background gradient</p>
     </div>
     <div class="td-box-control-full">
         <?php
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
-            'option_id' => 'tds_open_background_color',
-            'default_color' => '#F5F5F5'
+            'option_id' => 'tds_mobile_gradient_one_mob',
+            'default_color' => '#333145'
+        ));
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_mobile_gradient_two_mob',
+            'default_color' => '#b8333e'
         ));
         ?>
     </div>
 </div>
 
-<!-- Open menu borders color -->
+<!-- Menu text color -->
 <div class="td-box-row">
     <div class="td-box-description">
-        <span class="td-box-title">OPENED MENU - BORDERS COLOR</span>
-        <p>Select a border color for the opened menu</p>
+        <span class="td-box-title">TEXT/ICONS COLOR</span>
+        <p>Select a text/icons color for the opened menu/search</p>
     </div>
     <div class="td-box-control-full">
         <?php
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
-            'option_id' => 'tds_open_border_color',
-            'default_color' => '#E8E8E8'
-        ));
-        ?>
-    </div>
-</div>
-
-<!-- Open menu text color -->
-<div class="td-box-row">
-    <div class="td-box-description">
-        <span class="td-box-title">OPENED MENU - TEXT COLOR</span>
-        <p>Select a text color for the opened menu</p>
-    </div>
-    <div class="td-box-control-full">
-        <?php
-        echo td_panel_generator::color_picker(array(
-            'ds' => 'td_option',
-            'option_id' => 'tds_open_text_color',
-            'default_color' => '#1E1E1E'
+            'option_id' => 'tds_mobile_text_color',
+            'default_color' => '#ffffff'
         ));
         ?>
     </div>
@@ -86,15 +74,37 @@
 <!-- Open menu text active and hover color -->
 <div class="td-box-row">
     <div class="td-box-description">
-        <span class="td-box-title">OPENED MENU - ACTIVE/HOVER TEXT COLOR</span>
-        <p>Select a text hover/active color for the opened menu</p>
+        <span class="td-box-title">ACTIVE/HOVER TEXT COLOR</span>
+        <p>Select a text active/hover color for the opened menu</p>
     </div>
     <div class="td-box-control-full">
         <?php
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
-            'option_id' => 'tds_open_text_hover_color',
-            'default_color' => ''
+            'option_id' => 'tds_mobile_text_active_color',
+            'default_color' => '#73C7E3'
+        ));
+        ?>
+    </div>
+</div>
+
+<!-- Buttons color -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">BUTTONS BACKGROUND/TEXT COLOR</span>
+        <p>Select background and text color</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_mobile_button_background_mob',
+            'default_color' => '#ffffff'
+        ));
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_mobile_button_color_mob',
+            'default_color' => '#000000'
         ));
         ?>
     </div>

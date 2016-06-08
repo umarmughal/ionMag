@@ -1,11 +1,19 @@
-"use strict";
+/* global jQuery:{} */
+/* global tdSmartSidebar:{} */
+/* global tdUtil:{} */
+/* global tdDetect:{} */
+/* global tdPullDown:{} */
+/* global tdAnimationScroll:{} */
+/* global tdAnimationStack:{} */
+/* global tdEvents:{} */
+/* global tdAffix:{} */
 
-
+'use strict';
 
 /**
  * affix menu
  */
-td_affix.init({
+tdAffix.init({
     menu_selector: '.td-header-menu-wrap',
     menu_wrap_selector: '.td-header-menu-wrap-full',
     tds_snap_menu: tdUtil.getBackendVar('tds_snap_menu'),
@@ -14,17 +22,6 @@ td_affix.init({
     menu_affix_height_on_mobile: 54
 });
 
-
-/**
- * smooth scroll init
- */
-/*
-jQuery().ready(function () {
-    if (tdDetect.isChrome === true && tdDetect.isOsx === false) {
-        td_smooth_scroll();
-    }
-});
-*/
 
 
 /**
@@ -35,23 +32,23 @@ if (tdUtil.getBackendVar('tds_smart_sidebar') == 'enabled' && tdDetect.isIos ===
         // find the rows and the sidebars objects and add them to the magic sidebar object array
         jQuery('.td-ss-row').each(function () {
             //@todo check to see if the sidebar + content is pressent
-            var td_smart_sidebar_item = new td_smart_sidebar.item();
+            var td_smart_sidebar_item = new tdSmartSidebar.item();
             td_smart_sidebar_item.sidebar_jquery_obj = jQuery(this).children('.td-pb-span4').children('.wpb_wrapper');
             td_smart_sidebar_item.content_jquery_obj = jQuery(this).children('.td-pb-span8').children('.wpb_wrapper');
-            td_smart_sidebar.add_item(td_smart_sidebar_item);
+            tdSmartSidebar.add_item(td_smart_sidebar_item);
         });
 
 
 
         // check the page to see if we have smart sidebar classes (.td-ss-main-content and .td-ss-main-sidebar)
         if (jQuery('.td-ss-main-content').length > 0 && jQuery('.td-ss-main-sidebar').length > 0) {
-            var td_smart_sidebar_item = new td_smart_sidebar.item();
+            var td_smart_sidebar_item = new tdSmartSidebar.item();
             td_smart_sidebar_item.sidebar_jquery_obj = jQuery('.td-ss-main-sidebar');
             td_smart_sidebar_item.content_jquery_obj = jQuery('.td-ss-main-content');
-            td_smart_sidebar.add_item(td_smart_sidebar_item);
+            tdSmartSidebar.add_item(td_smart_sidebar_item);
         }
 
-        td_smart_sidebar.td_events_resize();
+        tdSmartSidebar.td_events_resize();
     });
 }
 
@@ -61,41 +58,34 @@ if (tdUtil.getBackendVar('tds_smart_sidebar') == 'enabled' && tdDetect.isIos ===
  *
  */
 
+// block subcategory ajax filters!
 jQuery('.td-subcat-filter').each(function(index, element) {
     var jquery_object_container = jQuery(element);
     var horizontal_jquery_obj = jquery_object_container.find('.td-subcat-list:first');
-    var vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
 
-    if (horizontal_jquery_obj.length == 1 && vertical_jquery_obj.length == 1) {
-
-        var pulldown_item_obj = new td_pulldown.item();
-
-        pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
-        pulldown_item_obj.vertical_jquery_obj = vertical_jquery_obj;
-        pulldown_item_obj.horizontal_element_css_class = 'td-subcat-item';
-        pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td_block_wrap:first');
-        pulldown_item_obj.excluded_jquery_elements = [horizontal_jquery_obj.parent().siblings('.block-title:first')];
-
-        td_pulldown.add_item(pulldown_item_obj);
-    }
+    var pulldown_item_obj = new tdPullDown.item();
+    pulldown_item_obj.blockUid = jquery_object_container.parent().data('td-block-uid'); // get the block UID
+    pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
+    pulldown_item_obj.vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
+    pulldown_item_obj.horizontal_element_css_class = 'td-subcat-item';
+    pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td_block_wrap:first');
+    pulldown_item_obj.excluded_jquery_elements = [horizontal_jquery_obj.parent().siblings('.block-title:first')];
+    tdPullDown.add_item(pulldown_item_obj);
 });
 
+
+// on category pages
 jQuery('.td-category-siblings').each(function(index, element) {
     var jquery_object_container = jQuery(element);
     var horizontal_jquery_obj = jquery_object_container.find('.td-category:first');
-    var vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
 
-    if (horizontal_jquery_obj.length == 1 && vertical_jquery_obj.length == 1) {
+    var pulldown_item_obj = new tdPullDown.item();
+    pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
+    pulldown_item_obj.vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
+    pulldown_item_obj.horizontal_element_css_class = 'entry-category';
+    pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td-category-siblings:first');
+    tdPullDown.add_item(pulldown_item_obj);
 
-        var pulldown_item_obj = new td_pulldown.item();
-
-        pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
-        pulldown_item_obj.vertical_jquery_obj = vertical_jquery_obj;
-        pulldown_item_obj.horizontal_element_css_class = 'entry-category';
-        pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td-category-siblings:first');
-
-        td_pulldown.add_item(pulldown_item_obj);
-    }
 });
 
 
@@ -106,7 +96,7 @@ jQuery('.td-category-siblings').each(function(index, element) {
  * parallax effect
  */
 
-// array keeping the td_animation_scroll.item items used for backstretch
+// array keeping the tdAnimationScroll.item items used for backstretch
 var td_backstretch_items = [];
 
 
@@ -116,7 +106,7 @@ jQuery(window).ready(function() {
 
         if (!jQuery(element).hasClass('not-parallax')) {
 
-            var item = new td_animation_scroll.item();
+            var item = new tdAnimationScroll.item();
             item.jqueryObj = jQuery(element);
             item.wrapper_jquery_obj = item.jqueryObj.parent();
 
@@ -124,9 +114,9 @@ jQuery(window).ready(function() {
             // is also already translated at the top of the view port
             // - the start_value should be item.wrapper_jquery_obj.offset().top + how much the jqueryObj was translated
 
-            td_animation_scroll.add_item(item);
+            tdAnimationScroll.add_item(item);
 
-            // we keep the td_animation_scroll.item to change operation settings when the viewport is changing
+            // we keep the tdAnimationScroll.item to change operation settings when the viewport is changing
             td_backstretch_items.push(item);
 
             td_compute_backstretch_item(item);
@@ -136,7 +126,7 @@ jQuery(window).ready(function() {
 
     jQuery('.td-parallax-header').each(function (index, element) {
 
-        var item = new td_animation_scroll.item();
+        var item = new tdAnimationScroll.item();
         item.jqueryObj = jQuery(element);
 
         item.add_item_property('move_y', 50, 100, 0, 100, '');
@@ -159,17 +149,17 @@ jQuery(window).ready(function() {
             item.redraw = false;
         }
 
-        td_animation_scroll.add_item(item);
+        tdAnimationScroll.add_item(item);
     });
 
 
-    td_animation_scroll.compute_all_items();
+    tdAnimationScroll.compute_all_items();
 
 
 
 
     // load animation stack
-    td_animation_stack.ready_init();
+    tdAnimationStack.ready_init();
 });
 
 
@@ -180,7 +170,7 @@ jQuery(window).ready(function() {
  * It scales the object image and translate it. At first it is translated so its bottom is at the bottom of the viewport,
  * but considering the backstretch css classes applied
  *
- * @param item td_animation_scroll.item
+ * @param item tdAnimationScroll.item
  */
 function td_compute_backstretch_item(item) {
 
@@ -188,10 +178,10 @@ function td_compute_backstretch_item(item) {
 
         // percent when the object is in initial position
         // Important! It doesn't matter if the document is scrolled
-        var initial_percent = (td_events.window_innerHeight - item.offset_top) * 100 / (td_events.window_innerHeight + item.full_height);
+        var initial_percent = (tdEvents.window_innerHeight - item.offset_top) * 100 / (tdEvents.window_innerHeight + item.full_height);
 
         // percent when the object has its top at the top of the window
-        var intermediary_top_percent =  (td_events.window_innerHeight) * 100 / (td_events.window_innerHeight + item.full_height);
+        var intermediary_top_percent =  (tdEvents.window_innerHeight) * 100 / (tdEvents.window_innerHeight + item.full_height);
 
 
         // IMPORTANT! We suppose the item.offset_top is positive
@@ -250,5 +240,5 @@ function td_compute_backstretch_item(item) {
             });
 
             item.redraw = false;
-        }
+        };
 }

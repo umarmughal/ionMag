@@ -3,7 +3,7 @@
 }
 
 
-.td-visibility-hidden { //used to hide date from tc
+.td-visibility-hidden { // used to hide date from tc
   visibility: hidden;
 }
 
@@ -15,16 +15,12 @@
 */
 
 // Clearfix
-// --------
-// For clearing floats like a boss h5bp.com/q
 .clearfix {
   *zoom: 1;
   &:before,
   &:after {
     display: table;
-    content: "";
-    // Fixes Opera/contenteditable bug:
-    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    content: '';
     line-height: 0;
   }
   &:after {
@@ -73,24 +69,14 @@
 
 .scale (@factor) {
   -webkit-transform: scale(@factor);
-  -moz-transform: 	 scale(@factor);
-  -ms-transform: 		 scale(@factor);
-  -o-transform: 		 scale(@factor);
+  -moz-transform: scale(@factor);
+  -ms-transform: scale(@factor);
+  -o-transform: scale(@factor);
 }
 
 
 .toRGBA( @color, @alpha) {
   color: rgba(red(@color), green(@color), blue(@color), @alpha)
-}
-
-
-
-.td-dispaly-none {
-  display: none;
-}
-
-.td-dispaly-block{
-  display: block;
 }
 
 
@@ -110,14 +96,12 @@ usage:
   }
 }
 
-//make a single row
+// make a single row
 .mx-row() {
-  //width: 100%;
   *zoom: 1;
 
   &:before,
-  &:after
-  {
+  &:after {
     display: table;
     content: "";
   }
@@ -127,48 +111,26 @@ usage:
   }
 }
 
-//make all the spans put it in [class*="span_prefix"] selector
+// make all the spans put it in [class*="span_prefix"] selector
 .mx-span() {
   display: block;
   min-height: 1px;
   float: left;
-
-  //padding-right: 18px;
-  //padding-left: 18px;
-
-  // scoate asta de multe ori not ok...
-  ///* responsive landscape tablet */
-  //@media (min-width: @responsive_l_tablet_min) and (max-width: @responsive_l_tablet_max) {
-  //  padding-right: 14px;
-  //  padding-left: 14px;
-  //}
-  //
-  ///* responsive portrait tablet */
-  //@media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-  //  padding-right: 10px;
-  //  padding-left: 10px;
-  //}
-  //
-  ///* responsive portrait phone */
-  //@media (max-width: @responsive_p_phone_max) {
-  //  padding-right: 0;
-  //  padding-left: 0;
-  //}
 }
 
 
 .transform(@string){
   transform: @string;
   -webkit-transform: @string;
-  -moz-transform: 	 @string;
-  -ms-transform: 		 @string;
-  -o-transform: 		 @string;
+  -moz-transform: @string;
+  -ms-transform: @string;
+  -o-transform: @string;
 }
 
 .transform_important(@string){
   transform: @string !important;
   -webkit-transform: @string !important;
-  -moz-transform: 	 @string !important;
-  -ms-transform: 		 @string !important;
-  -o-transform: 		 @string !important;
+  -moz-transform: @string !important;
+  -ms-transform: @string !important;
+  -o-transform: @string !important;
 }
