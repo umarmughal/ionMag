@@ -2,11 +2,33 @@
     container
 */
 .td-container {
-  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1068px;
+  width: 980px;
   overflow-x: hidden;
+  background-color: #fff;
+
+  /* responsive portrait tablet */
+  @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+    width: 732px;
+  }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 100%;
+  }
+}
+
+// user for boxed version to constraint the content
+.td-container-wrapper {
+  background-color: #fff;
+  width: 1060px;
+  margin: auto;
+
+  /* responsive */
+  @media (max-width: @responsive_l_tablet_max) {
+      width: 100%;
+  }
 }
 
 /*  ----------------------------------------------------------------------------
@@ -14,8 +36,8 @@
 */
 .td-pb-row {
   .mx-row();
-  margin-right: -18px;
-  margin-left: -18px;
+  margin-right: -20px;
+  margin-left: -20px;
 }
 
 /*  ----------------------------------------------------------------------------
@@ -27,8 +49,8 @@
   min-height: 1px;
   float: left;
   position: relative;
-  padding-right: 18px;
-  padding-left: 18px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 
 /*  ----------------------------------------------------------------------------

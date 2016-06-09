@@ -28,6 +28,7 @@ body {
 /*  ----------------------------------------------------------------------------
     responsive settings
 */
+/* responsive landscape tablet */
 /* responsive portrait tablet */
 /* responsive portrait phone */
 .mx_image_background {
@@ -45,17 +46,11 @@ body {
 .clearfix:before,
 .clearfix:after {
   display: table;
-  content: "";
+  content: '';
   line-height: 0;
 }
 .clearfix:after {
   clear: both;
-}
-.td-dispaly-none {
-  display: none;
-}
-.td-dispaly-block {
-  display: block;
 }
 /*
 usage:
@@ -446,19 +441,42 @@ img {
     container
 */
 .td-container {
-  width: 100%;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1068px;
+  width: 980px;
   overflow-x: hidden;
+  background-color: #fff;
+  /* responsive portrait tablet */
+  /* responsive portrait phone */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-container {
+    width: 732px;
+  }
+}
+@media (max-width: 767px) {
+  .td-container {
+    width: 100%;
+  }
+}
+.td-container-wrapper {
+  background-color: #fff;
+  width: 1060px;
+  margin: auto;
+  /* responsive */
+}
+@media (max-width: 1140px) {
+  .td-container-wrapper {
+    width: 100%;
+  }
 }
 /*  ----------------------------------------------------------------------------
     rows
 */
 .td-pb-row {
   *zoom: 1;
-  margin-right: -18px;
-  margin-left: -18px;
+  margin-right: -20px;
+  margin-left: -20px;
 }
 .td-pb-row:before,
 .td-pb-row:after {
@@ -476,8 +494,8 @@ img {
   min-height: 1px;
   float: left;
   position: relative;
-  padding-right: 18px;
-  padding-left: 18px;
+  padding-right: 20px;
+  padding-left: 20px;
 }
 /*  ----------------------------------------------------------------------------
     smart sidebar - fix
@@ -610,16 +628,13 @@ img {
   /*  ----------------------------------------------------------------------------
       container
   */
-  .td-container {
-    max-width: none;
-  }
   /*  ----------------------------------------------------------------------------
     rows
   */
   .td-pb-row {
     *zoom: 1;
-    margin-right: -10px;
-    margin-left: -10px;
+    margin-right: -12px;
+    margin-left: -12px;
   }
   .td-pb-row:before,
   .td-pb-row:after {
@@ -636,8 +651,8 @@ img {
     display: block;
     min-height: 1px;
     float: left;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-right: 12px;
+    padding-left: 12px;
   }
   /*  ----------------------------------------------------------------------------
        blocks grid
@@ -645,8 +660,8 @@ img {
   /* block row + global block spans */
   .td-block-row {
     *zoom: 1;
-    margin-left: -10px;
-    margin-right: -10px;
+    margin-left: -12px;
+    margin-right: -12px;
   }
   .td-block-row:before,
   .td-block-row:after {
@@ -666,7 +681,6 @@ img {
 @media (max-width: 767px) {
   /* container */
   .td-container {
-    max-width: none;
     padding-left: 10px;
     padding-right: 10px;
   }
