@@ -544,40 +544,6 @@ img {
 .td-pb-span12 {
   width: 100%;
 }
-/*  ----------------------------------------------------------------------------
-    Frontend editor fix to work and look like live preview
-*/
-.vc_editor .wpb_column {
-  width: 100%;
-}
-.vc_editor .td-container {
-  overflow-x: visible;
-  margin-bottom: 60px;
-}
-.vc_editor .vc_element {
-  padding-left: 0;
-  padding-right: 0;
-}
-.vc_editor .wpb_column > .wpb_wrapper > :last-child {
-  padding-top: 0;
-}
-.vc_editor .vc_controls > .vc_controls-out-tl {
-  top: 0;
-}
-.vc_editor .vc_vc_row_inner,
-.vc_editor .vc_vc_row > .vc_parallax {
-  padding-top: 0;
-}
-.compose-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_content_element,
-.view-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_content_element,
-.compose-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_row,
-.view-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_row {
-  margin-bottom: 0;
-}
-.compose-mode .vc_element.vc_vc_row > .vc_row > .vc_vc_column > .wpb_column > .vc_element-container > .vc_vc_row_inner .vc_vc_column_inner,
-.view-mode .vc_element.vc_vc_row > .vc_row > .vc_vc_column > .wpb_column > .vc_element-container > .vc_vc_row_inner .vc_vc_column_inner {
-  margin-bottom: 0;
-}
 .td-sidebar-right-fixed .wpb_column:first-child {
   width: 100%;
   padding-right: 168px !important;
