@@ -21,11 +21,9 @@ Header style 1
         </div>
     </div>
 
-    <div class="td-header-menu-wrap-full">
-        <div class="td-header-menu-wrap td-header-gradient">
-            <div class="td-container td-header-row td-header-main-menu">
-                <?php locate_template('parts/header/header-menu.php', true);?>
-            </div>
+    <div class="td-header-menu-wrap">
+        <div class="td-container td-header-row td-header-main-menu">
+            <?php locate_template('parts/header/header-menu.php', true);?>
         </div>
     </div>
 
