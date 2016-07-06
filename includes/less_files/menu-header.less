@@ -1,5 +1,4 @@
 .td-header-menu-wrap {
-  //position: relative;
   border: 1px solid #ebebeb;
   border-left: 0;
   border-right: 0;
@@ -8,12 +7,16 @@
 .td-header-main-menu {
   position: relative;
   z-index: 999;
-  padding-right: 55px;
+  padding-right: 35px;
 
   @media (max-width: @responsive_p_phone_max) {
     padding-right: 64px;
     padding-left: 2px;
   }
+}
+
+.td-logo-in-header {
+  display: none;
 }
 
 /*  ----------------------------------------------------------------------------
@@ -171,6 +174,7 @@ ul.sf-menu li li.sfHover li ul {
 
 
 #td-header-menu {
+  display: inline-block;
   min-height: 55px;
 }
 
@@ -609,6 +613,25 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   color: @td_theme_color;
 }
 
+/* toggle button - burger button */
+#td-top-mobile-toggle {
+  display: none;
+
+  a {
+    display: inline-block;
+  }
+
+  i {
+    font-size: 18px;
+    width: 20px;
+    line-height: 55px;
+    height: 55px;
+    display: inline-block;
+    padding-top: 1px;
+    color: #000;
+  }
+}
+
 
 /*  ----------------------------------------------------------------------------
     Search
@@ -629,7 +652,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 
   .td-icon-search {
     font-size: 14px;
-    width: 55px;
+    width: 35px;
     height: 55px;
     line-height: 55px;
     color: #000;

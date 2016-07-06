@@ -1,8 +1,8 @@
 <!--
-Header style 1
+Header style 2
 -->
 
-<div class="td-header-wrap td-header-style-1">
+<div class="td-header-wrap td-header-style-2">
     
     <div class="td-header-top-menu">
         <div class="td-container">
@@ -15,9 +15,9 @@ Header style 1
             <div class="td-header-sp-logo">
                 <?php locate_template('parts/header/logo-h1.php', true);?>
             </div>
-            <div class="td-header-sp-recs">
-                <?php locate_template('parts/header/ads.php', true); ?>
-            </div>
+<!--            <div class="td-header-sp-recs">-->
+<!--                --><?php //locate_template('parts/header/ads.php', true); ?>
+<!--            </div>-->
         </div>
     </div>
 

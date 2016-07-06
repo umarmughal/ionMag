@@ -280,6 +280,13 @@ class td_config {
             )
         );
 
+        td_api_header_style::add('2',
+            array(
+                'text' => '<strong>Style 2</strong>',
+                'file' => td_global::$get_template_directory . '/parts/header/header-style-2.php'
+            )
+        );
+
 
         /**
          * the styles for big grids. This styles will show up in the panel @see td_panel_categories.php and on each big grid block

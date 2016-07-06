@@ -2,7 +2,35 @@
     Style 1
 */
 .td-header-style-1 {
-  .td-logo-in-header {
-    display: none;
+
+}
+
+/*  ----------------------------------------------------------------------------
+    Style 2
+*/
+.td-header-style-2 {
+  .td-header-sp-logo {
+    width: 100%;
+    height: 108px;
+  }
+
+  .td-header-main-menu {
+    padding-right: 0;
+    text-align: center;
+
+    @media (max-width: @responsive_p_phone_max) {
+      padding-right: 2px;
+    }
+
+    .td-search-btns-wrap {
+      position: relative;
+      vertical-align: top;
+      top: 0;
+      margin-top: 0;
+    }
+  }
+
+  .td-header-menu {
+    vertical-align: top;
   }
 }

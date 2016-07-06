@@ -25,7 +25,7 @@
     }
     ?>
 
-<!--    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>-->
+    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
 </div>
 
 <div class="td-search-btns-wrap">
