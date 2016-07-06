@@ -544,6 +544,9 @@ img {
 .td-pb-span12 {
   width: 100%;
 }
+/*  ----------------------------------------------------------------------------
+    Frontend editor fix to work and look like live preview
+*/
 .td-sidebar-right-fixed .wpb_column:first-child {
   width: 100%;
   padding-right: 168px !important;
@@ -591,9 +594,6 @@ img {
 }
 /* responsive portrait tablet */
 @media (min-width: 768px) and (max-width: 1018px) {
-  /*  ----------------------------------------------------------------------------
-      container
-  */
   /*  ----------------------------------------------------------------------------
     rows
   */
