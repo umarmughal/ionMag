@@ -454,6 +454,27 @@ class td_config {
             )
         );
 
+        td_api_top_bar_template::add('td_top_bar_template_2',
+            array(
+                'img' => td_global::$get_template_directory_uri . '/images/panel/top_bar_templates/icon-top-bar-2.png',
+                'file' => td_global::$get_template_directory . '/parts/header/td_top_bar_template_2.php'
+            )
+        );
+
+        td_api_top_bar_template::add('td_top_bar_template_3',
+            array(
+                'img' => td_global::$get_template_directory_uri . '/images/panel/top_bar_templates/icon-top-bar-3.png',
+                'file' => td_global::$get_template_directory . '/parts/header/td_top_bar_template_3.php'
+            )
+        );
+
+        td_api_top_bar_template::add('td_top_bar_template_4',
+            array(
+                'img' => td_global::$get_template_directory_uri . '/images/panel/top_bar_templates/icon-top-bar-4.png',
+                'file' => td_global::$get_template_directory . '/parts/header/td_top_bar_template_4.php'
+            )
+        );
+
 
 
         /**

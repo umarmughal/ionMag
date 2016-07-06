@@ -1044,6 +1044,9 @@ img {
 .top-header-menu li a:hover {
   color: #42bdcd;
 }
+.top-header-menu li:last-of-type a {
+  margin-right: 0;
+}
 .top-header-menu .avatar {
   display: inline-block;
   vertical-align: middle;
@@ -1115,6 +1118,37 @@ img {
   height: 35px;
   line-height: 35px;
   border-right: 1px solid #282d37;
+}
+/*  ----------------------------------------------------------------------------
+    Style 2
+*/
+.top-bar-style-2 .td-header-sp-top-menu {
+  float: right;
+}
+.top-bar-style-2 .td-header-sp-top-widget {
+  float: left;
+}
+.top-bar-style-2 .td-search-box-wrap {
+  right: auto;
+  left: 0;
+}
+/*  ----------------------------------------------------------------------------
+    Style 3
+*/
+.top-bar-style-3 .td-header-sp-top-widget {
+  float: left;
+  margin-left: 40px;
+}
+.top-bar-style-3 .td-search-box-wrap {
+  right: auto;
+  left: 0;
+}
+/*  ----------------------------------------------------------------------------
+    Style 4
+*/
+.top-bar-style-4 .td-header-sp-top-menu {
+  float: right;
+  margin-right: 40px;
 }
 .td-header-menu-wrap {
   border: 1px solid #ebebeb;
