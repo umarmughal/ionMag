@@ -750,17 +750,14 @@ img {
   padding: 0;
   position: absolute;
 }
-.td-header-sp-recs {
-  width: 74.28571428571429%;
-}
 /*  ----------------------------------------------------------------------------
     ad
 */
 .td-header-sp-recs {
   position: relative;
   float: right;
+  width: 74.28571428571429%;
   height: 90px;
-  font-size: 0;
 }
 .td-header-rec-wrap img {
   margin: auto;
