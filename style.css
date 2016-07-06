@@ -791,6 +791,7 @@ img {
   vertical-align: top;
   top: 0;
   margin-top: 0;
+  margin-left: -3px;
 }
 .td-header-style-2 .td-header-main-menu .td-search-btns-wrap .td-icon-search {
   padding-top: 1px;
@@ -1722,7 +1723,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   right: 0;
   top: 50%;
   margin-top: -27px;
-  margin-left: -4px;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
