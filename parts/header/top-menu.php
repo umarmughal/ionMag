@@ -3,13 +3,13 @@
 
 
 	<?php
-	// show the weather if needed
+	/*// show the weather if needed
 	if (td_util::get_option('tds_weather_top_menu') == 'show') {
 		$atts['w_location'] = td_util::get_option('tds_weather_location_top_menu');
 		$atts['w_units'] = td_util::get_option('tds_weather_units_top_menu');
 		// render the weather
 		echo td_weather::render_generic($atts, 'td_top_weather_uid', 'top_bar_template');
-	}
+	}*/
 
 
 
@@ -32,7 +32,7 @@
 
             </div>
         </div>
-    <?php
+        <?php
     }
 
 
