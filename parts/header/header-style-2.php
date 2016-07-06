@@ -10,7 +10,7 @@ Header style 2
         </div>
     </div>
 
-    <div class="td-banner-wrap">
+    <div class="td-header-logo">
         <div class="td-container td-header-row">
             <div class="td-header-sp-logo">
                 <?php locate_template('parts/header/logo-h1.php', true);?>
