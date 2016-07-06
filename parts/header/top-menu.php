@@ -48,7 +48,7 @@
             //<span class="td-sp-ico-logout"></span>
             echo '<ul class="top-header-menu td_ul_logout">
                         <li class="menu-item">' .
-                            get_avatar($current_user->ID, 20) . '<a href="' . get_author_posts_url($current_user->ID) . '" class="td_user_logd_in">' . $current_user->display_name . '</a>' .
+                            get_avatar($current_user->ID, 19) . '<a href="' . get_author_posts_url($current_user->ID) . '" class="td_user_logd_in">' . $current_user->display_name . '</a>' .
                         '</li>
                         <li class="menu-item">
                             <a href="' . wp_logout_url(home_url( '/' )) . '"><i class="td-icon-logout"></i>' . __td('Logout', TD_THEME_NAME) . '</a>
