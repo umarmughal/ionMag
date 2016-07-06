@@ -3,13 +3,13 @@
 
 
 	<?php
-	// show the weather if needed
+	/*// show the weather if needed
 	if (td_util::get_option('tds_weather_top_menu') == 'show') {
 		$atts['w_location'] = td_util::get_option('tds_weather_location_top_menu');
 		$atts['w_units'] = td_util::get_option('tds_weather_units_top_menu');
 		// render the weather
 		echo td_weather::render_generic($atts, 'td_top_weather_uid', 'top_bar_template');
-	}
+	}*/
 
 
 
@@ -32,7 +32,7 @@
 
             </div>
         </div>
-    <?php
+        <?php
     }
 
 
@@ -48,7 +48,7 @@
             //<span class="td-sp-ico-logout"></span>
             echo '<ul class="top-header-menu td_ul_logout">
                         <li class="menu-item">' .
-                            get_avatar($current_user->ID, 20) . '<a href="' . get_author_posts_url($current_user->ID) . '" class="td_user_logd_in">' . $current_user->display_name . '</a>' .
+                            get_avatar($current_user->ID, 19) . '<a href="' . get_author_posts_url($current_user->ID) . '" class="td_user_logd_in">' . $current_user->display_name . '</a>' .
                         '</li>
                         <li class="menu-item">
                             <a href="' . wp_logout_url(home_url( '/' )) . '"><i class="td-icon-logout"></i>' . __td('Logout', TD_THEME_NAME) . '</a>

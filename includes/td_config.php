@@ -542,12 +542,12 @@ class td_config {
          */
         td_global::$default_google_fonts_list = array (
             '438' => array(
-                'css_style_id' => 'google_font_open_sans',
-                'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,600,700'
+                'css_style_id' => 'google_font_work_sans',
+                'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700'
             ),
             '521' => array(
-                'css_style_id' => 'google_font_roboto',
-                'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Roboto:500,400italic,700,500italic,400,300'
+                'css_style_id' => 'google_font_source_sans_pro',
+                'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700'
             ),
         );
 

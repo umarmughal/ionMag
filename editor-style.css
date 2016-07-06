@@ -15,9 +15,9 @@
 */
 body,
 p {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 14px;
-  line-height: 21px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
 }
 p {
   margin-top: 0;
@@ -29,7 +29,7 @@ a:focus {
   outline: none;
 }
 a {
-  color: #4db2ec;
+  color: #42bdcd;
   text-decoration: none;
 }
 ins {
@@ -51,7 +51,7 @@ pre {
   margin-top: 24px;
 }
 cite {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 13px;
   /* ovveride bootstrap */
   font-style: italic;
@@ -63,7 +63,7 @@ cite a {
   color: #000;
 }
 cite a:hover {
-  color: #4db2ec;
+  color: #42bdcd;
 }
 q {
   font-style: italic;
@@ -129,8 +129,8 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
-  color: #111111;
+  font-family: 'Work Sans', sans-serif;
+  color: #111;
   font-weight: 400;
   margin: 6px 0 6px 0;
 }
@@ -140,7 +140,7 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  color: #111111;
+  color: #111;
 }
 h1 {
   font-size: 32px;
@@ -221,21 +221,17 @@ input[type]:focus {
 }
 /* Input buttons */
 input[type=submit] {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 13px;
-  background-color: #222222;
+  background-color: #000;
   border-radius: 0;
   color: #fff;
   border: none;
   padding: 8px 15px;
   font-weight: 500;
-  -webkit-transition: background-color 0.4s;
-  -moz-transition: background-color 0.4s;
-  -o-transition: background-color 0.4s;
-  transition: background-color 0.4s;
 }
 input[type=submit]:hover {
-  background-color: #4db2ec;
+  background-color: #42bdcd;
 }
 input[type=text],
 input[type=url],
@@ -380,16 +376,9 @@ figure.aligncenter {
   margin-bottom: 6px !important;
   /* hack for tinyMCE / post content diffs*/
   margin-left: 0;
-  /* responsive landscape tablet */
   /* responsive portrait tablet */
   /* responsive portrait phone - just a bit, after 500px we make it non float */
   /* responsive phone CUSTOM - align the image on center */
-}
-@media (min-width: 1019px) and (max-width: 1100px) {
-  .alignleft {
-    max-width: 312px !important;
-    margin-right: 21px;
-  }
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .alignleft {
@@ -426,14 +415,7 @@ figure.aligncenter {
 }
 .td-pb-span12 .alignleft,
 .mceContentBody-max-width-big .alignleft {
-  /* responsive landscape tablet */
   /* responsive portrait tablet */
-}
-@media (min-width: 1019px) and (max-width: 1100px) {
-  .td-pb-span12 .alignleft,
-  .mceContentBody-max-width-big .alignleft {
-    max-width: 550px !important;
-  }
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .td-pb-span12 .alignleft,
@@ -466,16 +448,9 @@ figure.aligncenter {
   margin-bottom: 6px !important;
   /* hack for tinyMCE / post content diffs*/
   margin-left: 24px;
-  /* responsive landscape tablet */
   /* responsive portrait tablet */
   /* responsive portrait phone - just a bit, after 500px we make it non float */
   /* responsive phone CUSTOM  - align the image on center */
-}
-@media (min-width: 1019px) and (max-width: 1100px) {
-  .alignright {
-    max-width: 312px !important;
-    margin-left: 21px;
-  }
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .alignright {
@@ -512,14 +487,7 @@ figure.aligncenter {
 }
 .td-pb-span12 .alignright,
 .mceContentBody-max-width-big .alignright {
-  /* responsive landscape tablet */
   /* responsive portrait tablet */
-}
-@media (min-width: 1019px) and (max-width: 1100px) {
-  .td-pb-span12 .alignright,
-  .mceContentBody-max-width-big .alignright {
-    max-width: 550px !important;
-  }
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .td-pb-span12 .alignright,
@@ -649,14 +617,14 @@ figure.aligncenter {
 .woocommerce #tab-description blockquote p,
 .mce-content-body blockquote p,
 .comment-content blockquote p {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Work Sans', sans-serif;
   font-size: 32px;
   line-height: 40px;
   font-weight: 400;
   font-style: italic;
   text-align: center;
   text-transform: uppercase;
-  color: #4db2ec;
+  color: #42bdcd;
   word-wrap: break-word;
   /* responsive portrait tablet */
   /* responsive portrait phone */
@@ -793,7 +761,7 @@ figure.aligncenter {
 .comment-content .td_quote_box {
   margin: 0;
   background-color: #FCFCFC;
-  border-left: 2px solid #4db2ec;
+  border-left: 2px solid #42bdcd;
   padding: 15px 23px 0 23px;
   position: relative;
   top: 6px;
@@ -807,7 +775,7 @@ figure.aligncenter {
 .woocommerce #tab-description .td_quote_box p,
 .mce-content-body .td_quote_box p,
 .comment-content .td_quote_box p {
-  font-family: 'Open Sans', arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   color: #777777;
   font-size: 13px;
   line-height: 21px;
@@ -932,7 +900,7 @@ figure.aligncenter {
 .woocommerce #tab-description .td_pull_quote p,
 .mce-content-body .td_pull_quote p,
 .comment-content .td_pull_quote p {
-  font-family: 'Open Sans', arial, sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: 26px;
   font-weight: 600;
@@ -1089,7 +1057,7 @@ blockquote.pull-right:after {
   display: block;
   font-size: 50px;
   line-height: 56px;
-  background-color: #4db2ec;
+  background-color: #42bdcd;
   color: white;
   text-align: center;
   margin: 9px 13px 0 0;
@@ -1794,17 +1762,11 @@ blockquote.pull-right:after {
 .clearfix:before,
 .clearfix:after {
   display: table;
-  content: "";
+  content: '';
   line-height: 0;
 }
 .clearfix:after {
   clear: both;
-}
-.td-dispaly-none {
-  display: none;
-}
-.td-dispaly-block {
-  display: block;
 }
 /*
 usage:

@@ -1,0 +1,203 @@
+/* the search button */
+.td-search-btns-wrap {
+  display: inline-block;
+
+  #td-header-search-button,
+  #td-header-search-button-mob {
+    display: block;
+    position: relative;
+  }
+
+  #td-header-search-button {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: none;
+    }
+  }
+
+  #td-header-search-button-mob {
+    display: none;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: block;
+    }
+  }
+
+  .td-icon-search {
+    display: inline-block;
+    text-align: center;
+    color: @td_theme_color;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      height: 54px;
+      width: 54px;
+      line-height: 54px;
+      font-size: 22px;
+      margin-right: 2px;
+    }
+  }
+}
+
+/* the search drop down */
+.td-search-box-wrap {
+  position: absolute;
+  top: 100%;
+  z-index: 999; //99999; menu over the search
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ebebeb;
+  border-top: 0;
+}
+
+.td-drop-down-search {
+  display: none;
+  border-radius: 0;
+  border: none;
+  width: 340px;
+  background: #fff;
+  font-family: @font1;
+  color: #000;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 100%;
+  }
+
+  /* search form */
+  #td-header-search {
+    width: 247px;
+    height: 31px;
+    margin: 0;
+    padding: 0 11px;
+    line-height: 17px;
+    font-size: 13px;
+    color: #666;
+    border: 0;
+    border-bottom: 1px solid #ebebeb;
+    outline: none;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 91%;
+      font-size: 16px;
+    }
+  }
+
+  .btn {
+    outline: none;
+    position: absolute;
+    background-color: #fff;
+    height: 31px;
+    min-width: 50px;
+    line-height: 17px;
+    padding: 7px 15px 8px;
+    text-shadow: none;
+    vertical-align: top;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    color: #000;
+    right: 20px;
+    margin: 0 !important;
+    border: 1px solid #ebebeb;
+    border-top: 0;
+    border-right: 0;
+    .transition(background-color @td_transition_time); // @todo check transition
+
+
+    &:hover {
+      background-color: @td_theme_color;
+      color: #fff;
+    }
+  }
+
+  /* hack to show the link on all the module */
+  .td_module_mx2 .entry-title {
+    a:after {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 0;
+      bottom: 0;
+      content: '';
+      z-index: 1; // is needed
+    }
+  }
+
+  .td-post-category {
+    z-index: 2;
+    position: relative;
+  }
+
+  /* this class is added by the js to open the menu - will be used for animation */
+  .td-drop-down-search-open {
+    display: block;
+  }
+
+  .td-search-form {
+    margin: 20px;
+  }
+
+  .result-msg {
+    text-align: center;
+    padding: 4px 0 6px 0;
+    font-family: @font3;
+    font-size: 12px;
+    color: #222;
+    font-style: italic;
+
+    a {
+      color: #222;
+      display: block;
+      &:hover {
+        color: @td_theme_color;
+      }
+    }
+  }
+
+  .td-aj-search-results {
+    background-color: #fdfdfd;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    padding: 10px 0;
+
+    .item-details {
+      margin: 10px 20px 10px 115px;
+    }
+
+    .td-module-thumb {
+      top: 10px;
+      margin-left: 20px;
+    }
+  }
+
+  .td_module_mx2 {
+    padding-bottom: 0;
+  }
+
+  .no-result {
+    background-color: #fdfdfd;
+    border-top: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+  }
+
+  .meta-info {
+    line-height: 14px;
+  }
+
+  .td-aj-cur-element {
+    background-color: #f0f0f0;
+  }
+
+  &:after {
+    position: absolute;
+    top: -4px;
+    display: block;
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+  }
+}
