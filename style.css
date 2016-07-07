@@ -1121,7 +1121,7 @@ img {
 .td-header-sp-top-widget i {
   line-height: 35px;
   font-size: 13px;
-  width: 40px;
+  min-width: 41px;
 }
 .td-header-sp-top-widget .td-search-btns-wrap:before,
 .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
@@ -1159,7 +1159,7 @@ img {
   display: inline-block;
 }
 .td-header-sp-top-widget .td-social-icon-wrap:first-of-type {
-  width: 41px;
+  width: 42px;
 }
 /*  ----------------------------------------------------------------------------
     Style 2
@@ -3974,7 +3974,7 @@ img.mfp-img {
   padding: 36px 0 13px 0;
 }
 .td-subfooter-menu li {
-  position: relative;
+  position: relative !important;
   display: inline-block;
   margin-left: 0;
   padding: 0 32px 0 27px;
