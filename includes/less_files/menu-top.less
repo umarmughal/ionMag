@@ -154,8 +154,8 @@
     width: 40px;
   }
 
-  .td-search-btns-wrap:after,
   .td-search-btns-wrap:before,
+  .td-social-icon-wrap:first-of-type:before,
   .td-social-icon-wrap:after {
     content: '';
     position: absolute;
@@ -167,7 +167,8 @@
     .opacity(0.07);
   }
 
-  .td-search-btns-wrap:before {
+  .td-search-btns-wrap:before,
+  .td-social-icon-wrap:first-of-type:before {
     right: auto;
     left: 0;
   }
@@ -181,16 +182,16 @@
     }
   }
 
-  .td-icon-search {
-    width: 41px;
-  }
-
   .td-social-icon-wrap {
     float: left;
     position: relative;
 
     & > a {
       display: inline-block;
+    }
+
+    &:first-of-type {
+      width: 41px;
     }
   }
 }

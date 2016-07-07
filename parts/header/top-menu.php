@@ -1,7 +1,4 @@
-
 <div class="td-header-sp-top-menu">
-
-
 	<?php
 	/*// show the weather if needed
 	if (td_util::get_option('tds_weather_top_menu') == 'show') {

@@ -31,7 +31,6 @@ if(td_util::get_option('td_social_networks_show') == 'show') { ?>
     </div>
 
     <?php
-
         //get the socials that are set by user
         $td_get_social_network = td_util::get_option('td_social_networks');
 
