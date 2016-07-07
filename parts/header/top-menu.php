@@ -11,8 +11,6 @@
 		echo td_weather::render_generic($atts, 'td_top_weather_uid', 'top_bar_template');
 	}*/
 
-
-
 	// show the date and time if needed
     if (td_util::get_option('tds_data_top_menu') == 'show') {
         $tds_data_time = td_util::get_option('tds_data_time_format');
@@ -34,9 +32,6 @@
         </div>
         <?php
     }
-
-
-
 
     //show login widget
     if (td_util::get_option('tds_login_sign_in_widget') == 'show') {

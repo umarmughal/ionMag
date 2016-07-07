@@ -28,7 +28,6 @@
   }
 }
 
-
 // Border Radius
 .border-radius(@radius) {
   -webkit-border-radius: @radius;
@@ -51,6 +50,13 @@
   transition: @transition1, @transition2;
 }
 
+// Opacity
+.opacity(@value) {
+  @ieval: @value*100;
+  opacity: @value;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="@ieval")";
+  filter: alpha(opacity=@ieval);
+}
 
 // Drop shadows
 .box-shadow(@shadow) {
@@ -75,7 +81,7 @@
 }
 
 
-.toRGBA( @color, @alpha) {
+.toRGBA(@color, @alpha) {
   color: rgba(red(@color), green(@color), blue(@color), @alpha)
 }
 
