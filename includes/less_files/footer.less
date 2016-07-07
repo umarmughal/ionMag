@@ -5,48 +5,45 @@
   color: #fff;
 }
 
-.footer-social-wrap:after,
-.td-subfooter-menu:after {
-  content: '';
-  position: absolute;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  margin: 0 auto;
-  width: 100%;
-  height: 1px;
-  background-color: #fff;
-  .opacity(0.11);
+.footer-social-wrap,
+.td-subfooter-menu {
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: -1px;
+    margin: 0 auto;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    .opacity(0.11);
+  }
 }
 
 /* Social media */
 .footer-social-wrap {
   position: relative;
-  padding: 27px 0 26px 0;
+  padding: 24px 0;
 
   .td-social-icon-wrap {
-    margin-right: 53px;
+    margin: 0 26px;
+  }
 
-    &:last-of-type {
-      margin-right: 0;
-    }
-
-    & > a {
-      display: inline-block;
-      color: #fff;
-    }
+  a {
+    color: #fff;
   }
 
   .td-icon-font  {
     margin-right: 6px;
+    vertical-align: middle;
   }
 
   .td-social-name {
-    vertical-align: top;
-    margin-top: -3px;
     font-family: @font2;
     font-size: 12px;
     text-transform: uppercase;
+    vertical-align: middle;
   }
 }
 
@@ -63,13 +60,13 @@
 .td-subfooter-menu {
   position: relative;
   margin: 0;
-  padding: 36px 0 13px 0;
+  padding: 36px 0 12px 0;
 
   li {
     position: relative !important;
     display: inline-block;
     margin-left: 0;
-    padding: 0 32px 0 27px;
+    padding: 0 28px;
     line-height: 18px;
 
     a {
@@ -86,22 +83,11 @@
     &.sfHover > a,
     &.current-menu-ancestor > a,
     &.current-category-ancestor > a,
-    &.current-menu-item > a
-    {
+    &.current-menu-item > a {
       color: @td_theme_color;
     }
 
-    &:first-of-type {
-      padding-left: 0;
-    }
-
     &:last-of-type {
-      padding-right: 0;
-
-      a {
-        margin-right: 0;
-      }
-
       &:after {
         display: none;
       }
@@ -110,7 +96,7 @@
     &:after {
       content: '';
       position: absolute;
-      right: 0;
+      right: -3px;
       bottom: 4px;
       width: 2px;
       height: 2px;
@@ -129,8 +115,7 @@
 }
 
 .td-sub-footer-copy {
-  padding-top: 14px;
-  padding-bottom: 16px;
+  padding: 15px 0 16px;
   font-size: 13px;
   color: #ccc;
 
