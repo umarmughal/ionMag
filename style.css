@@ -1761,6 +1761,9 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td-header-main-menu .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;
 }
+#td-mobile-nav {
+  display: none;
+}
 /*
 ----------------------------------------------------------------------------
   Site wide > typography style
@@ -3925,6 +3928,12 @@ img.mfp-img {
   padding-bottom: 16px;
   font-size: 13px;
   color: #ccc;
+}
+.td-sub-footer-copy i {
+  color: #42bdcd;
+  margin: 0 5px;
+  position: relative;
+  top: 1px;
 }
 .td-lb-box {
   position: absolute;

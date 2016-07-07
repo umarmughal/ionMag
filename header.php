@@ -17,7 +17,7 @@
 <?php /* scroll to top */?>
 <div class="td-scroll-up"><i class="td-icon-menu-up"></i></div>
 
-<?php //locate_template('parts/menu-mobile.php', true);?>
+<?php locate_template('parts/menu-mobile.php', true);?>
 <?php //locate_template('parts/search.php', true);?>
 
 
