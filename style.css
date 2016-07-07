@@ -768,9 +768,6 @@ img {
   right: 0;
 }
 /*  ----------------------------------------------------------------------------
-    Style 1
-*/
-/*  ----------------------------------------------------------------------------
     Style 2
 */
 .td-header-style-2 .td-header-sp-logo {
@@ -997,9 +994,9 @@ img {
   position: relative;
   background-color: #1a1f2b;
   font: 12px 'Work Sans', sans-serif;
+  color: #fff;
 }
-.td-header-top-menu a,
-.td-header-top-menu {
+.td-header-top-menu a {
   color: #fff;
 }
 /* left menu side */
@@ -1031,7 +1028,7 @@ img {
   margin-right: 36px;
 }
 /*  ----------------------------------------------------------------------------
-    top-menu - login & menu
+    login & menu
 */
 .menu-top-container {
   display: inline-block;
@@ -1046,9 +1043,7 @@ img {
   display: inline-block;
   position: relative;
   margin-left: 0;
-}
-.top-header-menu li li {
-  width: 100%;
+  line-height: 35px;
 }
 .top-header-menu li a {
   margin-right: 16px;
@@ -1070,10 +1065,10 @@ img {
   border-radius: 100%;
 }
 .top-header-menu .td-icon-menu-down {
-  padding-left: 6px;
-  font-size: 8px;
+  padding-left: 8px;
+  font-size: 6px;
   position: relative;
-  top: -1px;
+  top: -2px;
 }
 .top-header-menu .td-icon-logout {
   font-size: 10px;
@@ -1084,15 +1079,25 @@ img {
 .top-header-menu .sub-menu {
   display: none;
   position: absolute;
-  top: 26px;
-  left: -10px;
+  top: 100%;
+  left: -20px;
+  padding: 6px 0;
+  min-width: 130px;
+  background-color: #fff;
+  -webkit-box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25);
   z-index: 1000;
+}
+.top-header-menu .sub-menu li {
+  width: 100%;
 }
 .top-header-menu .sub-menu a {
   display: block;
-  margin: 0 10px;
+  padding: 2px 20px;
   white-space: nowrap;
   line-height: 28px;
+  color: #000;
 }
 .top-header-menu .current-menu-item > a,
 .top-header-menu .current-menu-ancestor > a,
@@ -1108,7 +1113,7 @@ img {
   display: none !important;
 }
 /*  ----------------------------------------------------------------------------
-    top-menu - search & social
+    search & social
 */
 .td-header-sp-top-widget {
   position: relative;
@@ -1142,6 +1147,8 @@ img {
 }
 .td-header-sp-top-widget .td-search-btns-wrap:hover .td-icon-search {
   opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
+  filter: alpha(opacity=80);
 }
 .td-header-sp-top-widget .td-icon-search {
   width: 41px;
@@ -3904,18 +3911,31 @@ img.mfp-img {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
 }
+/* General */
 .td-footer-outer-wrapper {
   background-color: #000;
   text-align: center;
   color: #fff;
 }
-.footer-social-wrap,
-.td-sub-footer-menu {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+.footer-social-wrap:after,
+.td-subfooter-menu:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100%;
+  height: 1px;
+  background-color: #fff;
+  opacity: 0.11;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 11 ")";
+  filter: alpha(opacity=11);
 }
 /* Social media */
 .footer-social-wrap {
-  padding: 26px 0 24px 0;
+  position: relative;
+  padding: 27px 0 26px 0;
 }
 .footer-social-wrap .td-social-icon-wrap {
   margin-right: 53px;
@@ -3944,11 +3964,10 @@ img.mfp-img {
 /*  ----------------------------------------------------------------------------
     Sub Footer
 */
-.td-sub-footer-menu {
-  padding: 18px 0;
-}
 .td-subfooter-menu {
+  position: relative;
   margin: 0;
+  padding: 36px 0 13px 0;
 }
 .td-subfooter-menu li {
   position: relative;
@@ -4008,6 +4027,17 @@ img.mfp-img {
   padding-bottom: 16px;
   font-size: 13px;
   color: #ccc;
+}
+/*  ----------------------------------------------------------------------------
+    Style 2
+*/
+.td-footer-template-2 .footer-social-wrap:after {
+  width: 46.93877551020408%;
+}
+.td-footer-template-2 .td-social-icon-wrap {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 50 ")";
+  filter: alpha(opacity=50);
 }
 .td-lb-box {
   position: absolute;

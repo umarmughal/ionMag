@@ -488,6 +488,15 @@ class td_config {
 
             )
         );
+        
+        td_api_footer_template::add('td_footer_template_2',
+            array(
+                'img' => td_global::$get_template_directory_uri . '/images/panel/footer_templates/icon-footer-1.png',
+                'file' => td_global::$get_template_directory . '/parts/footer/td_footer_template_2.php',
+                'text' => 'Style 2'
+
+            )
+        );
 
 
 
