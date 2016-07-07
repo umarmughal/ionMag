@@ -244,7 +244,24 @@ class td_config {
                 'enabled_on_loops' => false,
                 'uses_columns' => false,                      // if the module uses columns on the page template + loop
                 'category_label' => false,
-                'class' => ''
+                'class' => '',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+        td_api_module::add('td_module_mega_menu',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_mega_menu.php',
+                'text' => 'Mega menu module',
+                'img' => '',
+                'used_on_blocks' => array('td_block_mega_menu'),
+                'excerpt_title' => '12',
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,                      // if the module uses columns on the page template + loop
+                'category_label' => true,
+                'class' => '',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
 
@@ -255,15 +272,15 @@ class td_config {
          * Thumb id => array parameters. Wp booster only cuts if the option is set from theme panel
          */
 
-        td_api_thumb::add('td_324x160',
+        td_api_thumb::add('td_260x195',
             array(
-                'name' => 'td_324x160',
-                'width' => 324,
-                'height' => 160,
+                'name' => 'td_260x195',
+                'width' => 260,
+                'height' => 195,
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module 1, 2', 'Block 2, 3, 4, Big grid 2'
+                    'Mega menu'
                 )
             )
         );
@@ -439,6 +456,17 @@ class td_config {
                 'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-1.png',
                 'text' => 'Grid 1',
                 'td_block_name' => 'td_block_big_grid_1'
+            )
+        );
+
+        td_api_category_top_posts_style::add('td_category_top_posts_style_disable',
+            array (
+                'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_disable.php',
+                'posts_shown_in_the_loop' => 0,
+                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-disable.png',
+                'text' => 'Disable',
+                'td_block_name' => '',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
 
