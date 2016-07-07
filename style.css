@@ -1121,7 +1121,7 @@ img {
 .td-header-sp-top-widget i {
   line-height: 35px;
   font-size: 13px;
-  min-width: 41px;
+  min-width: 38px;
 }
 .td-header-sp-top-widget .td-search-btns-wrap:before,
 .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
@@ -1157,9 +1157,6 @@ img {
 }
 .td-header-sp-top-widget .td-social-icon-wrap > a {
   display: inline-block;
-}
-.td-header-sp-top-widget .td-social-icon-wrap:first-of-type {
-  width: 42px;
 }
 /*  ----------------------------------------------------------------------------
     Style 2
@@ -1776,9 +1773,8 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   }
 }
 .td-header-main-menu .td-icon-search {
-  font-size: 13px;
+  font-size: 15px;
   width: 35px;
-  height: 55px;
   line-height: 55px;
   color: #000;
 }
