@@ -1067,6 +1067,7 @@ img {
   margin-right: 6px;
   position: relative;
   top: -1px;
+  border-radius: 100%;
 }
 .top-header-menu .td-icon-menu-down {
   padding-left: 6px;
@@ -1140,7 +1141,7 @@ img {
   position: relative;
 }
 .td-header-sp-top-widget .td-search-btns-wrap:hover .td-icon-search {
-  color: #fff;
+  opacity: 0.8;
 }
 .td-header-sp-top-widget .td-icon-search {
   width: 41px;
