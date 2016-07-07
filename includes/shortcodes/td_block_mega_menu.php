@@ -16,7 +16,7 @@ class td_block_mega_menu extends td_block {
 
 	    extract(shortcode_atts(
 		    array(
-			    'limit' => 5,
+			    'limit' => 4,
 			    'sort' => '',
 			    'category_id' => '',
 			    'category_ids' => '',
@@ -36,7 +36,7 @@ class td_block_mega_menu extends td_block {
             ));
 
 		    if (!empty($td_subcats)) {
-			    $atts['limit'] = 4; //alter the loop because we don't have space now with the categories
+			    $atts['limit'] = 3; //alter the loop because we don't have space now with the categories
 		    }
 	    }
 
