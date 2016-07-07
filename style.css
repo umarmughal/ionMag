@@ -802,6 +802,9 @@ img {
   left: 50%;
   transform: translateX(-50%);
 }
+.td-header-style-2 .sf-menu ul {
+  text-align: left;
+}
 /* the search button */
 .td-search-btns-wrap {
   display: inline-block;
@@ -1118,6 +1121,9 @@ img {
   border-right-width: 1px;
   border-left-width: 1px;
 }
+.td-header-sp-top-widget .td-search-btns-wrap:hover .td-icon-search {
+  color: #fff;
+}
 .td-social-icon-wrap > a {
   display: inline-block;
 }
@@ -1170,6 +1176,7 @@ img {
   position: relative;
   z-index: 999;
   padding-right: 35px;
+  font-family: 'Work Sans', sans-serif;
 }
 @media (max-width: 767px) {
   .td-header-main-menu {
@@ -1195,15 +1202,6 @@ img {
     display: none;
   }
 }
-.sf-menu ul {
-  position: absolute;
-  top: -999em;
-  width: 10em;
-  /* left offset of submenus need to match (see below) */
-}
-.sf-menu ul li {
-  width: 100%;
-}
 .sf-menu li:hover {
   visibility: inherit;
   /* fixes IE7 'sticky bug' */
@@ -1222,7 +1220,7 @@ img {
 .sf-menu li .td-only-icon {
   margin-right: 0;
 }
-.sf-menu .td-menu-item > a {
+.sf-menu .menu-item > a {
   display: block;
   position: relative;
 }
@@ -1260,7 +1258,6 @@ ul.sf-menu li li.sfHover li ul {
 }
 .sf-menu > li > a {
   padding-right: 30px;
-  font-family: 'Work Sans', sans-serif;
   font-weight: 500;
   line-height: 55px;
   font-size: 13px;
@@ -1314,18 +1311,34 @@ ul.sf-menu li li.sfHover li ul {
 /*  ----------------------------------------------------------------------------
     submenu
 */
-.td-normal-menu ul {
-  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
-}
 .sf-menu ul {
+  position: absolute;
+  top: -999em;
+  min-width: 173px;
+  padding: 19px 0;
   background-color: #fff;
+  border: 1px solid #f2f2f2;
+  border-top-width: 0;
 }
-.sf-menu ul .td-menu-item > a {
-  padding: 7px 14px 8px 14px;
-  font-size: 13px;
-  color: #111;
+.sf-menu ul li {
+  width: 100%;
 }
-.sf-menu ul .td-menu-item > a .fa {
+.sf-menu ul:after {
+  position: absolute;
+  top: -4px;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 4px;
+  background-color: #000;
+}
+.sf-menu ul .menu-item > a {
+  display: block;
+  padding: 3px 30px 3px 30px;
+  font-size: 12px;
+  color: #000;
+}
+.sf-menu ul .menu-item > a .fa {
   font-size: 1em;
   position: relative;
   top: -1px;
@@ -1333,24 +1346,26 @@ ul.sf-menu li li.sfHover li ul {
   margin-right: 5px;
   text-align: center;
 }
-@media (min-width: 768px) and (max-width: 1018px) {
-  .sf-menu ul .td-menu-item > a {
-    padding: 5px 12px 6px 12px;
-    font-size: 11px;
-  }
+.sf-menu ul .menu-item > a:hover {
+  color: #42bdcd;
+}
+.sf-menu ul ul {
+  border-top-width: 1px;
+}
+.sf-menu ul ul:after {
+  display: none;
 }
 .sf-menu ul .td-icon-menu-down {
   float: right;
   top: 0;
-  font-size: 9px;
+  font-size: 6px;
 }
-.sf-menu ul .td-menu-item > a:hover,
+.sf-menu ul .menu-item > a:hover,
 .sf-menu ul .sfHover > a,
 .sf-menu ul .current-menu-ancestor > a,
 .sf-menu ul .current-category-ancestor > a,
 .sf-menu ul .current-menu-item > a {
-  color: #fff;
-  background-color: #42bdcd;
+  color: #42bdcd;
 }
 .sf-menu li:hover,
 .sf-menu li.sfHover,
@@ -1363,11 +1378,10 @@ ul.sf-menu li li.sfHover li ul {
     arrows
 */
 .sf-menu .td-icon-menu-down {
-  position: absolute;
-  top: 50%;
-  margin-top: -5px;
-  padding-left: 7px;
-  font-size: 9px;
+  vertical-align: top;
+  padding-left: 10px;
+  font-size: 7px;
+  line-height: 55px;
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .sf-menu .td-icon-menu-down {
@@ -1737,6 +1751,9 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   height: 55px;
   line-height: 55px;
   color: #000;
+}
+.td-header-main-menu .td-search-btns-wrap:hover .td-icon-search {
+  color: #42bdcd;
 }
 /*
 ----------------------------------------------------------------------------
