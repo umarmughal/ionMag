@@ -1,4 +1,3 @@
-
     <div class="td-footer-outer-wrapper">
         <!-- Footer -->
         <?php
