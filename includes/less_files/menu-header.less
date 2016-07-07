@@ -175,10 +175,10 @@ ul.sf-menu li li.sfHover li ul {
   position: absolute;
   top: -999em; // @todo am comentat astea nu mergea meniul pe 3 lvl in jos asa merge cauta dupa 999em mai jos
   min-width: 173px;
-  padding: 19px 0;
+  margin-left: -30px;
+  padding: 16px 0 20px 0;
   background-color: #fff;
-  border: 1px solid #f2f2f2;
-  border-top-width: 0;
+  .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25));
 
   li {
     width: 100%;
@@ -186,7 +186,7 @@ ul.sf-menu li li.sfHover li ul {
 
   &:after {
     position: absolute;
-    top: -4px;
+    top: -3px;
     display: block;
     content: '';
     width: 100%;
@@ -217,6 +217,7 @@ ul.sf-menu li li.sfHover li ul {
   }
 
   ul {
+    margin: -16px 0 0 -1px;
     border-top-width: 1px;
 
     &:after {
