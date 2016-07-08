@@ -10,7 +10,7 @@ Header style 1
     </div>
 
     <div class="td-header-logo td-container-wrap">
-        <div class="td-container td-header-row">
+        <div class="td-container">
             <div class="td-header-sp-logo">
                 <?php locate_template('parts/header/logo-h1.php', true);?>
             </div>
@@ -21,7 +21,7 @@ Header style 1
     </div>
 
     <div class="td-header-menu-wrap td-container-wrap">
-        <div class="td-container td-header-row td-header-main-menu">
+        <div class="td-container td-header-main-menu">
             <?php locate_template('parts/header/header-menu.php', true);?>
         </div> 
     </div>
