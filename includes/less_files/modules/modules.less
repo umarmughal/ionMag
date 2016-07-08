@@ -1,0 +1,41 @@
+/*  ----------------------------------------------------------------------------
+    Modules
+*/
+.td_module_wrap {
+  position: relative;
+  padding-bottom: 35px;
+
+  .entry-title {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 500;
+    margin: 0 0 6px 0;
+  }
+
+  &:hover .entry-title a {
+    color: @td_theme_color;
+  }
+}
+
+/*  ----------------------------------------------------------------------------
+    thumbnail
+*/
+
+.td-module-thumb {
+  position: relative;
+  margin-bottom: 13px;
+
+  .entry-thumb {
+    display: block; //this fixes the white line issue that we had
+  }
+}
+
+.td-video-play-ico > img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+}
