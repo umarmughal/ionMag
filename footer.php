@@ -9,7 +9,7 @@
 
         <!-- Sub Footer -->
         <?php if (td_util::get_option('tds_sub_footer') != 'no') { ?>
-            <div class="td-sub-footer-container">
+            <div class="td-sub-footer-container td-container-wrap">
                 <div class="td-container">
                     <div class="td-pb-row">
                         <div class="td-pb-span12 td-sub-footer-menu">

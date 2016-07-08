@@ -164,7 +164,6 @@ ul.sf-menu li li.sfHover li ul {
 #td-header-menu {
   display: inline-block;
   vertical-align: top;
-  min-height: 55px;
 }
 
 
@@ -255,7 +254,7 @@ ul.sf-menu li li.sfHover li ul {
     vertical-align: top;
     padding-left: 10px;
     font-size: 7px;
-    line-height: 55px;
+    line-height: inherit;
 
     @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
       padding-left: 6px;
@@ -635,7 +634,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     font-size: 18px;
     width: 20px;
     line-height: 55px;
-    height: 55px;
     display: inline-block;
     padding-top: 1px;
     color: #000;
@@ -651,7 +649,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     position: absolute;
     right: 0;
     top: 50%;
-    margin-top: -27px;
+    transform: translateY(-50%);
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
@@ -663,8 +661,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   .td-icon-search {
     font-size: 15px;
     width: 35px;
-    height: 55px;
-    line-height: 55px;
+    //line-height: 55px;
     color: #000;
   }
 
