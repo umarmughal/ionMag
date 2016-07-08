@@ -5,15 +5,11 @@
   margin-right: auto;
   margin-left: auto;
   width: 980px;
-  //overflow-x: hidden;
-  //background-color: #fff;
 
   &:before,
   &:after {
     display: table;
-    content: "";
-    // Fixes Opera/contenteditable bug:
-    // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+    content: '';
     line-height: 0;
   }
   &:after {
@@ -29,22 +25,6 @@
   @media (max-width: @responsive_p_phone_max) {
     width: 100%;
   }
-
-  //& > .vc_row {
-  //  width: 980px;
-  //  margin-right: auto;
-  //  margin-left: auto;
-  //
-  //  /* responsive portrait tablet */
-  //  @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-  //    width: 732px;
-  //  }
-  //
-  //  /* responsive portrait phone */
-  //  @media (max-width: @responsive_p_phone_max) {
-  //    width: 100%;
-  //  }
-  //}
 }
 
 // user for boxed version to constraint the content
@@ -73,12 +53,11 @@
 */
 
 .td-pb-row [class*="td-pb-span"] {
-  display: block;
-  min-height: 1px;
-  float: left;
-  position: relative;
+  .mx-span();
+
   padding-right: 20px;
   padding-left: 20px;
+  position: relative;
 }
 
 /*  ----------------------------------------------------------------------------
@@ -106,45 +85,6 @@
 .td-pb-span10 {  width: 83.33333333%;  }
 .td-pb-span11 {  width: 91.66666667%;  }
 .td-pb-span12 {  width: 100%;          }
-
-/*  ----------------------------------------------------------------------------
-    Frontend editor fix to work and look like live preview
-*/
-//.vc_editor {
-//  .wpb_column {
-//    width: 100%;
-//  }
-//  .td-container {
-//    overflow-x: visible;
-//    margin-bottom: 60px;
-//  }
-//  .vc_element {
-//    padding-left: 0;
-//    padding-right: 0;
-//  }
-//  .wpb_column > .wpb_wrapper > :last-child {
-//    padding-top: 0;
-//  }
-//
-//  .vc_controls > .vc_controls-out-tl {
-//    top: 0;
-//  }
-//
-//  .vc_vc_row_inner,
-//  .vc_vc_row > .vc_parallax {
-//    padding-top: 0;
-//  }
-//}
-//.compose-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_content_element,
-//.view-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_content_element,
-//.compose-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_row,
-//.view-mode .wpb_column > .wpb_wrapper > .vc_element:last-child > .wpb_row {
-//  margin-bottom: 0;
-//}
-//.compose-mode .vc_element.vc_vc_row > .vc_row > .vc_vc_column > .wpb_column > .vc_element-container > .vc_vc_row_inner .vc_vc_column_inner,
-//.view-mode .vc_element.vc_vc_row > .vc_row > .vc_vc_column > .wpb_column > .vc_element-container > .vc_vc_row_inner .vc_vc_column_inner {
-//  margin-bottom: 0;
-//}
 
 
 // test fixed sidebar 150px right

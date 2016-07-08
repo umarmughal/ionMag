@@ -204,14 +204,15 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_1.php',
                 'text' => 'Module 1',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_3'),
+                'used_on_blocks' => array('td_block_1'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
                 'enabled_on_loops' => true,
                 'uses_columns' => true,
                 'category_label' => true,
-                'class' => 'td_module_wrap td-animation-stack'
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
 
@@ -227,7 +228,8 @@ class td_config {
                 'enabled_on_loops' => false,
                 'uses_columns' => false,
                 'category_label' => false,
-                'class' => 'td-animation-stack'
+                'class' => 'td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
 
@@ -298,6 +300,19 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Mega menu'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_300x220',
+            array(
+                'name' => 'td_300x220',
+                'width' => 300,
+                'height' => 220,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Module 1'
                 )
             )
         );
