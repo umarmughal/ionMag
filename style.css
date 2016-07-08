@@ -4027,16 +4027,6 @@ img.mfp-img {
 .td-footer-template-2 .footer-social-wrap:after {
   width: 50%;
 }
-.td-footer-template-2 .td-social-icon-wrap {
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 50 ")";
-  filter: alpha(opacity=50);
-}
-.td-footer-template-2 .td-social-icon-wrap:hover {
-  opacity: 1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
-  filter: alpha(opacity=100);
-}
 .td-lb-box {
   position: absolute;
   width: 19px;
