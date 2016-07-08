@@ -511,7 +511,22 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   }
 
   .td-admin-edit {
+    position: absolute;
     display: none;
+    top: 0;
+    left: 0;
+    padding: 3px 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 13px;
+
+    &:hover {
+      background-color: #000;
+    }
+  }
+
+  &:hover .td-admin-edit {
+    display: block;
   }
 
   .entry-thumb {

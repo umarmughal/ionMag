@@ -1605,7 +1605,20 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   position: relative;
 }
 .td-mega-span .td-admin-edit {
+  position: absolute;
   display: none;
+  top: 0;
+  left: 0;
+  padding: 3px 10px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 13px;
+}
+.td-mega-span .td-admin-edit:hover {
+  background-color: #000;
+}
+.td-mega-span:hover .td-admin-edit {
+  display: block;
 }
 .td-mega-span .entry-thumb {
   min-height: 195px;
