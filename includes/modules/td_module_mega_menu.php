@@ -19,6 +19,7 @@ class td_module_mega_menu extends td_module {
 
             <div class="item-details">
                 <?php echo $this->get_title();?>
+                <?php echo $this->get_date();?>
             </div>
         </div>
         <?php return ob_get_clean();

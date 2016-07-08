@@ -82,7 +82,7 @@ class td_block_mega_menu extends td_block {
         $buffy .= '</div>';
 
 
-        $buffy .= $this->get_block_pagination();
+        //$buffy .= $this->get_block_pagination();
         //get the ajax pagination for this block
 
         $buffy .= '<div class="clearfix"></div>';
@@ -143,11 +143,6 @@ class td_block_mega_menu extends td_block {
 
                 $buffy .= '<div class="block-mega-child-cats">';
 
-                //show all categories only on ajax
-                if (empty($sub_cat_ajax)) {
-                    $buffy .= '<a class="cur-sub-cat mega-menu-sub-cat-' . $this->block_uid . '" id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="" href="' . get_category_link($category_id) . '">' . __td('All', TD_THEME_NAME) . '</a>';
-                }
-
                 foreach ($td_subcategories as $td_category) {
                     $this->td_block_template_data['td_pull_down_items'][] = array(
                         'name' => $td_category->name,
@@ -156,6 +151,10 @@ class td_block_mega_menu extends td_block {
                     $buffy .= '<a class="mega-menu-sub-cat-' . $this->block_uid . '"  id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="' . $td_category->cat_ID . '" href="' . get_category_link($td_category->cat_ID) . '">' . $td_category->name . '</a>';
                 }
 
+                //show all categories only on ajax
+                if (empty($sub_cat_ajax)) {
+                    $buffy .= '<a class="cur-sub-cat mega-menu-sub-cat-' . $this->block_uid . ' mega-menu-cat-all" id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="" href="' . get_category_link($category_id) . '">' . __td('All ' . $td_category->name, TD_THEME_NAME) . '</a>';
+                }
 
                 $buffy .= '</div>';
             } else {
