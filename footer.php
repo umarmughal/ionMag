@@ -37,6 +37,13 @@
 
     <?php } ?>
 
+    <div class="td-footer-rec-wrap td-container-wrap">
+        <div class="td-container">
+            <div class="td-footer-rec-title">Advertisement</div>
+
+            <?php echo td_global_blocks::get_instance('td_block_ad_box')->render(array('spot_id' => 'footer_top')); ?>
+        </div>
+    </div>
 
     <div class="td-footer-outer-wrapper">
         <!-- Footer -->
@@ -45,7 +52,6 @@
             td_api_footer_template::_helper_show_footer();
         }
         ?>
-
 
         <!-- Sub Footer -->
         <?php if (td_util::get_option('tds_sub_footer') != 'no') { ?>
