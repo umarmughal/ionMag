@@ -29,12 +29,8 @@
 </div>
 
 <div class="td-search-btns-wrap">
-    <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown">
-        <i class="td-icon-search"></i>
-    </a>
-    <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown">
-        <i class="td-icon-search"></i>
-    </a>
+    <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+    <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
 </div>
 
 <div class="td-search-box-wrap">

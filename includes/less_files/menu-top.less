@@ -24,17 +24,6 @@
   }
 }
 
-/* right widget side */
-.td-header-sp-top-widget {
-  float: right;
-
-  /* responsive portrait phone */
-  /*@media (max-width: @responsive_p_phone_max) {
-    width: 100%;
-    text-align: center;
-  }*/
-}
-
 /*  ----------------------------------------------------------------------------
     top-menu data time
 */
@@ -146,6 +135,7 @@
     search & social
 */
 .td-header-sp-top-widget {
+  float: right;
   position: relative;
 
   i {
@@ -175,7 +165,6 @@
 
   .td-search-btns-wrap {
     float: left;
-    position: relative;
 
     &:hover .td-icon-search {
       .opacity(0.8);
@@ -189,5 +178,9 @@
     & > a {
       display: inline-block;
     }
+  }
+
+  .td-drop-down-search:after {
+    display: none;
   }
 }
