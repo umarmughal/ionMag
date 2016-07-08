@@ -1110,9 +1110,6 @@ img {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 80 ")";
   filter: alpha(opacity=80);
 }
-.td-header-sp-top-widget .td-search-box-wrap {
-  margin-top: -1px;
-}
 .td-header-sp-top-widget .td-social-icon-wrap {
   float: left;
   position: relative;

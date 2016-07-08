@@ -265,6 +265,23 @@ class td_config {
             )
         );
 
+        td_api_module::add('td_module_mx2',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx2.php',
+                'text' => 'Module MX2',
+                'img' => '',
+                'used_on_blocks' => array('Search live'),
+                'excerpt_title' => 25,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,                      // if the module uses columns on the page template + loop
+                'category_label' => true,
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
 
 
         /**
@@ -281,6 +298,19 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Mega menu'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_80x60',
+            array(
+                'name' => 'td_80x60',
+                'width' => 80,
+                'height' => 60,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'small',
+                'used_on' => array(
+                    'Live search'
                 )
             )
         );
