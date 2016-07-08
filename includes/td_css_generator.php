@@ -14,6 +14,31 @@ function td_css_generator() {
     body {
         background-color: @theme_color;
     }
+    
+    /* @footer_background_image */
+    .td-footer-outer-wrapper:before {
+        background-image: url('@footer_background_image');
+    }
+
+    /* @footer_background_repeat */
+    .td-footer-outer-wrapper:before {
+        background-repeat: @footer_background_repeat;
+    }
+
+    /* @footer_background_size */
+    .td-footer-outer-wrapper:before {
+        background-size: @footer_background_size;
+    }
+
+    /* @footer_background_position */
+    .td-footer-outer-wrapper:before {
+        background-position: @footer_background_position;
+    }
+
+    /* @footer_background_opacity */
+    .td-footer-outer-wrapper:before {
+        opacity: @footer_background_opacity;
+    }
 
     </style>
     ";
@@ -39,6 +64,13 @@ function td_css_generator() {
 
     // general
     $td_css_compiler->load_setting('theme_color');
+
+    // footer background
+    $td_css_compiler->load_setting('footer_background_image');
+    $td_css_compiler->load_setting('footer_background_repeat');
+    $td_css_compiler->load_setting('footer_background_size');
+    $td_css_compiler->load_setting('footer_background_position');
+    $td_css_compiler->load_setting('footer_background_opacity');
 
     //output the style
     return $td_css_compiler->compile_css();
