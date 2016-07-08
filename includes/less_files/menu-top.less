@@ -45,7 +45,7 @@
   padding: 0;
   display: inline-block;
 
-  li {
+  & > li {
     display: inline-block;
     position: relative;
     margin-left: 0;
@@ -94,7 +94,7 @@
     position: absolute;
     top: 100%;
     left: -20px;
-    padding: 6px 0;
+    padding: 10px 0;
     min-width: 130px;
     background-color: #fff;
     .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25));
@@ -102,14 +102,18 @@
 
     li {
       width: 100%;
+      line-height: 1;
+      margin: 0;
     }
 
     a {
       display: block;
       padding: 2px 20px;
+      margin: 0;
       white-space: nowrap;
-      line-height: 28px;
+      line-height: 20px;
       color: #000;
+      font-weight: 500;
     }
   }
 
