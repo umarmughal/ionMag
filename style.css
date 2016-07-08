@@ -3805,6 +3805,249 @@ img.mfp-img {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
 }
+/*
+    general
+*/
+.td_block_instagram {
+  padding-bottom: 48px;
+}
+.td-instagram-image {
+  display: block;
+}
+.td-instagram-element {
+  position: relative;
+  float: left;
+}
+.td-instagram-element a {
+  position: relative;
+  display: block;
+}
+.td-instagram-element a:before {
+  content: '';
+  width: 94%;
+  height: 94%;
+  border: 1px solid #fff;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -moz-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.td-instagram-element a:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -moz-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.td-instagram-element:hover a:before {
+  opacity: 0.4;
+}
+.td-instagram-element:hover a:after {
+  opacity: 0.1;
+}
+.td-images-on-row-1 .td-instagram-element {
+  width: 100%;
+}
+.td-images-on-row-2 .td-instagram-element {
+  width: 50%;
+}
+.td-images-on-row-3 .td-instagram-element {
+  width: 33.33333333%;
+}
+.td-images-on-row-4 .td-instagram-element {
+  width: 25%;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-images-on-row-4 .td-instagram-element {
+    width: 50%;
+  }
+}
+.td-images-on-row-5 .td-instagram-element {
+  width: 20%;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-images-on-row-5 .td-instagram-element {
+    width: 50%;
+  }
+}
+.td-images-on-row-6 .td-instagram-element {
+  width: 16.66666667%;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-images-on-row-6 .td-instagram-element {
+    width: 33.33333333%;
+  }
+}
+.td-images-on-row-7 .td-instagram-element {
+  width: 14.28571428571429%;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-images-on-row-7 .td-instagram-element {
+    width: 50%;
+  }
+}
+.td-images-on-row-8 .td-instagram-element {
+  width: 12.5%;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-images-on-row-8 .td-instagram-element {
+    width: 50%;
+  }
+}
+.td-image-gap-2 {
+  margin: 0 -2px;
+}
+.td-image-gap-2 .td-instagram-element {
+  padding: 0 2px 4px;
+}
+.td-image-gap-5 {
+  margin: 0 -5px;
+}
+.td-image-gap-5 .td-instagram-element {
+  padding: 0 5px 10px;
+}
+.td_block_instagram .td-video-play-ico {
+  pointer-events: none;
+}
+.td_block_instagram .td-instagram-element {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_block_instagram .td-instagram-element .td-video-play-ico img {
+    width: 24px;
+  }
+}
+.td-instagram-header {
+  position: relative;
+  margin-bottom: 16px;
+}
+.td-instagram-profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  overflow: hidden;
+}
+.td-instagram-profile-image {
+  margin-right: 12px;
+  float: left;
+}
+.td-instagram-meta {
+  padding-top: 4px;
+  font-size: 13px;
+  color: #000;
+}
+.td-instagram-button {
+  position: absolute;
+  top: 14px;
+  right: 0;
+  padding: 8px 14px 9px;
+  border: 1px solid #ededed;
+  line-height: 1;
+  font-size: 13px;
+  color: #444;
+  -webkit-transition: all 0.2s ease 0s;
+  -moz-transition: all 0.2s ease 0s;
+  -o-transition: all 0.2s ease 0s;
+  transition: all 0.2s ease 0s;
+}
+.td-instagram-button:hover {
+  border-color: #ccc;
+  text-decoration: none !important;
+}
+.td-instagram-user {
+  font-size: 15px;
+  font-weight: 600;
+}
+.td-instagram-user a {
+  line-height: 26px;
+  color: #42bdcd;
+}
+.td-instagram-user a:hover {
+  text-decoration: none !important;
+}
+.td-instagram-followers span {
+  font-weight: 600;
+}
+.td_block_instagram .td-column-1 .td-images-on-row-3 .td-video-play-ico img,
+.td_block_instagram .td-column-1 .td-images-on-row-4 .td-video-play-ico img,
+.td_block_instagram .td-column-1 .td-images-on-row-5 .td-video-play-ico img,
+.td_block_instagram .td-column-1 .td-images-on-row-6 .td-video-play-ico img,
+.td_block_instagram .td-column-1 .td-images-on-row-7 .td-video-play-ico img,
+.td_block_instagram .td-column-1 .td-images-on-row-8 .td-video-play-ico img {
+  width: 24px;
+}
+.td_block_instagram .td-column-1 .td-instagram-button {
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_block_instagram .td-column-1 .td-instagram-button {
+    display: none;
+  }
+}
+.td_block_instagram .td-column-2 .td-images-on-row-5 .td-video-play-ico img,
+.td_block_instagram .td-column-2 .td-images-on-row-6 .td-video-play-ico img,
+.td_block_instagram .td-column-2 .td-images-on-row-7 .td-video-play-ico img,
+.td_block_instagram .td-column-2 .td-images-on-row-8 .td-video-play-ico img {
+  width: 24px;
+}
+.td_block_instagram .td-column-3 .td-images-on-row-7 .td-video-play-ico img,
+.td_block_instagram .td-column-3 .td-images-on-row-8 .td-video-play-ico img {
+  width: 24px;
+}
+.td_block_instagram .td-instagram-user a {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+  display: block;
+  margin-right: 80px;
+}
+/*  ----------------------------------------------------------------------------
+    Footer Instagram
+----------------------------------------------------------------------------  */
+.td-footer-instagram-container {
+  padding-bottom: 0;
+}
+.td-footer-instagram-container .td_block_instagram {
+  padding-bottom: 0;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-footer-instagram-container .td_block_instagram {
+    overflow: hidden;
+  }
+}
+.td-footer-instagram-container .td-footer-instagram-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0;
+  padding-bottom: 10px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+}
+.td-footer-instagram-container .td-footer-instagram-title a {
+  color: #849dc6;
+}
 /* General */
 .td-footer-outer-wrapper {
   position: relative;

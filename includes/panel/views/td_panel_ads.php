@@ -520,6 +520,14 @@ echo td_panel_generator::box_start('Header ad', false);?>
 
 <?php echo td_panel_generator::box_end();?>
 
+<?php
+echo td_panel_generator::ajax_box('Footer top ', array(
+        'td_ajax_calling_file' => basename(__FILE__),
+        'td_ajax_box_id' => 'td_get_ad_spot_by_id',
+        'ad_spot_id' => 'footer_top'
+    )
+);
+?>
 
 <!-- custom ads -->
 <?php

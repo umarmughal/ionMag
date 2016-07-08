@@ -400,6 +400,138 @@ class td_config {
         );
 
 
+        td_api_block::add('td_block_instagram',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Instagram',
+                "base" => "td_block_instagram",
+                "class" => "",
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td-instagram',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_instagram.php',
+                "params" => array(
+
+                    array(
+                        "param_name" => "instagram_id",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Instagram ID",
+                        "description" => 'Enter the ID as it appears after the instagram url (ex. http://www.instagram.com/myID)',
+                        "holder" => "div",
+                        "class" => "",
+                        'group' => 'Instagram'
+                    ),
+
+                    array(
+                        "param_name" => "instagram_header",
+                        "type" => "dropdown",
+                        "value" => array (
+                            'On' => '',
+                            'Off' => 'off'
+                        ),
+                        "heading" => "Instagram Header",
+                        "description" => 'Display or hide the Instagram header section (default: On)',
+                        "holder" => "div",
+                        "class" => "",
+                        'group' => 'Instagram'
+                    ),
+
+                    array(
+                        "param_name" => "instagram_images_per_row",
+                        "type" => "dropdown",
+                        "value" => array (
+                            '- Default -' => '',
+                            '1' => 1,
+                            '2' => 2,
+                            '3' => 3,
+                            '4' => 4,
+                            '5' => 5,
+                            '6' => 6,
+                            '7' => 7,
+                            '8' => 8
+                        ),
+                        "heading" => 'Number of images per row:',
+                        "description" => 'Set the number of images displayed on each row (default is 3).',
+                        "holder" => "div",
+                        "class" => "",
+                        'group' => 'Instagram'
+                    ),
+
+                    array(
+                        "param_name" => "instagram_number_of_rows",
+                        "type" => "dropdown",
+                        "value" => array (
+                            '- Default -' => '',
+                            '1' => 1,
+                            '2' => 2,
+                            '3' => 3,
+                            '4' => 4,
+                            '5' => 5
+                        ),
+                        "heading" => 'Number of rows:',
+                        "description" => 'Set on how many rows to display the images (default is 1)',
+                        "holder" => "div",
+                        "class" => "",
+                        'group' => 'Instagram'
+                    ),
+
+                    array(
+                        "param_name" => "instagram_margin",
+                        "type" => "dropdown",
+                        "value" => array (
+                            'No gap' => '',
+                            '2 px' => 2,
+                            '5 px' => 5
+                        ),
+                        "heading" => "Image gap",
+                        "description" => 'Set a gap between images (default: No gap)',
+                        "holder" => "div",
+                        "class" => "",
+                        'group' => 'Instagram'
+                    ),
+
+                    array(
+                        "param_name" => "custom_title",
+                        "type" => "textfield",
+                        "value" => 'Block title',
+                        "heading" => "Custom title for this block:",
+                        "description" => "Optional - a title for this block, if you leave it blank the block will not have a title",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title text color',
+                        "param_name" => "header_text_color",
+                        "value" => '',
+                        "description" => 'Optional - Choose a custom title text color for this block'
+                    ),
+
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title background color',
+                        "param_name" => "header_color",
+                        "value" => '',
+                        "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array (
+                        'param_name' => 'css',
+                        'value' => '',
+                        'type' => 'css_editor',
+                        'heading' => 'Css',
+                        'group' => 'Design options',
+                    )
+                )
+            )
+        );
+
+
 	    td_api_block::add('td_block_related_posts',
             array(
                 'map_in_visual_composer' => false,
