@@ -221,7 +221,7 @@ input[type]:focus {
 }
 /* Input buttons */
 input[type=submit] {
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-size: 13px;
   background-color: #000;
   border-radius: 0;

@@ -3003,10 +3003,24 @@ blockquote.pull-right:after {
   padding-bottom: 35px;
 }
 .td_module_wrap .entry-title {
+  position: relative;
+  padding-bottom: 11px;
   font-size: 15px;
   line-height: 20px;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0 0 6px 0;
+}
+.td_module_wrap .entry-title:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #ee774f;
+  opacity: 0.2;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 20 ")";
+  filter: alpha(opacity=20);
 }
 .td_module_wrap:hover .entry-title a {
   color: #42bdcd;
@@ -3078,6 +3092,50 @@ blockquote.pull-right:after {
 }
 .td-post-category:hover {
   background-color: #42bdcd;
+}
+/*  ----------------------------------------------------------------------------
+    metainfo
+*/
+.td-module-meta-info {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+}
+.td-module-meta-info .td-post-date,
+.td-module-meta-info .td-module-comments {
+  display: inline-block;
+}
+.td-module-meta-info .td-post-date {
+  position: relative;
+  margin-right: 8px;
+  padding-right: 11px;
+  color: #b2b2b2;
+}
+.td-module-meta-info .td-post-date:after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  width: 1px;
+  height: 1px;
+  background-color: #bebebe;
+}
+.td-module-meta-info .td-module-comments {
+  color: #666;
+}
+.td-module-meta-info .td-module-comments a {
+  color: inherit;
+}
+.td-module-meta-info .td-module-comments:hover {
+  color: #42bdcd;
+}
+.td-module-meta-info .td-icon-comments {
+  margin-right: 6px;
+}
+/*  ----------------------------------------------------------------------------
+    Module 1
+*/
+.td_module_1 .td-post-category {
+  background-color: rgba(238, 119, 79, 0.8);
 }
 #td_css_split_separator {
   visibility: visible;
@@ -3579,6 +3637,7 @@ button::-moz-focus-inner {
   text-decoration: none;
   text-align: center;
   opacity: 0.65;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 65 ")";
   filter: alpha(opacity=65);
   padding: 0 0 18px 10px;
   color: white;
@@ -3901,6 +3960,244 @@ img.mfp-img {
 }
 .mfp-wrap {
   z-index: 10000;
+}
+/*  ----------------------------------------------------------------------------
+  Login window
+*/
+.white-popup-block {
+  background: -moz-linear-gradient(top, #42bdcd 0%, #2a81cb 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, #42bdcd), color-stop(100%, #2a81cb));
+  background: -webkit-linear-gradient(top, #42bdcd 0%, #2a81cb 100%);
+  background: -o-linear-gradient(top, #42bdcd 0%, #2a81cb 100%);
+  background: -ms-linear-gradient(top, #42bdcd 0%, #2a81cb 100%);
+  background: linear-gradient(to bottom, #42bdcd 0%, #2a81cb 100%);
+  margin: 0 auto;
+  max-width: 500px;
+  position: relative;
+  font-family: 'Work Sans', sans-serif;
+  text-align: center;
+  color: #fff;
+  vertical-align: top;
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.6);
+}
+.td_sp_login_ico_style {
+  position: absolute;
+  top: 3px;
+  right: -9px;
+}
+.td_sp_logout_ico_style {
+  position: relative;
+  top: 3px;
+  left: 17px;
+}
+/* wrapper */
+.mfp-content .td-login-wrap {
+  padding: 14px 21px 17px 21px;
+}
+.mfp-content .td-login-wrap .td-login-inputs {
+  width: auto;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+}
+.mfp-content .td-login-wrap .td-login-input {
+  position: relative;
+  background-color: transparent !important;
+  height: 40px;
+  margin: 0 !important;
+  padding: 0;
+  box-shadow: none !important;
+  font-size: 15px;
+  color: #fff;
+  outline: none;
+  width: 300px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.mfp-content .td-login-wrap .td-login-input:focus ~ label,
+.mfp-content .td-login-wrap .td-login-input:valid ~ label {
+  top: -6px;
+  font-size: 11px;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 60 ")";
+  filter: alpha(opacity=60);
+}
+.mfp-content .td-login-wrap .td-login-input:invalid {
+  font-style: italic;
+}
+.mfp-content .td-login-wrap .td-login-input:invalid:focus {
+  color: #555;
+}
+.mfp-content .td-login-wrap label {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  text-transform: uppercase;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  pointer-events: none;
+}
+.mfp-content .td-login-wrap .td-login-button {
+  width: 300px;
+  height: 50px;
+  background-color: #fff !important;
+  margin-top: 20px !important;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000 !important;
+  -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
+}
+.mfp-content .td-login-wrap .td-login-button:hover {
+  background-color: #d4e328 !important;
+}
+.mfp-content .td-login-wrap .td-login-info-text {
+  display: block;
+  position: relative;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #fff;
+}
+.mfp-content .td-login-wrap .td-login-info-text a {
+  color: inherit;
+}
+.mfp-content .td-login-wrap .td-login-info-text a:hover {
+  color: #000;
+}
+.mfp-content .td-login-wrap .btn {
+  padding: 5px 12px 6px;
+  background-color: #42bdcd;
+  color: #fff;
+  border: 0;
+  text-shadow: none;
+  margin-top: 4px;
+  border-radius: 0;
+}
+.mfp-content #login-form .mfp-close {
+  top: 25px;
+  right: 27px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 38px;
+  color: #fff;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
+  filter: alpha(opacity=100);
+}
+/* login tabs */
+.mfp-content .td-login-tabs {
+  margin: 0;
+  padding: 25px 0 4px 0;
+  list-style-type: none;
+}
+.mfp-content .td-login-tabs li {
+  position: relative;
+  display: block;
+  line-height: 20px;
+}
+.mfp-content .td-login-tabs li a {
+  display: block;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+.mfp-content .td-login-tabs li a:hover {
+  text-decoration: none !important;
+}
+/* the panel title */
+.mfp-content .td-login-panel-title {
+  margin-bottom: 50px;
+  font-size: 13px;
+}
+/* error message */
+.mfp-content .td_display_err {
+  background-color: #42bdcd;
+  font-style: italic;
+  color: #fff;
+  padding: 9px 10px;
+  display: none;
+  margin-bottom: 13px;
+  margin-top: 7px;
+}
+.mfp-content .td_display_msg_ok {
+  display: block;
+  font-size: 13px;
+  background-color: #42bdcd;
+}
+.mfp-content #td-forgot-pass-div {
+  margin-bottom: 42px;
+}
+.top-header-menu .td_user_logd_in {
+  font-weight: bold;
+}
+.top-header-menu .td_user_logd_in:hover {
+  text-decoration: none !important;
+}
+/**
+tagdiv animations
+-
+- mfp-with-anim - has to be on the wrapper
+*/
+.mpf-td-login-effect {
+  /* start state */
+  /* animate in */
+  /* animate out */
+}
+.mpf-td-login-effect .mfp-with-anim {
+  opacity: 0;
+  -webkit-transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  -moz-transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  -o-transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
+  /* custom */
+  transform: perspective( 600px ) scale(0.4);
+  -webkit-transform: perspective( 600px ) scale(0.4);
+  -moz-transform: perspective( 600px ) scale(0.4);
+  -ms-transform: perspective( 600px ) scale(0.4);
+  -o-transform: perspective( 600px ) scale(0.4);
+}
+.mpf-td-login-effect.mfp-bg {
+  opacity: 0;
+  transition: all 0.3s ease-out;
+}
+.mpf-td-login-effect.mfp-ready .mfp-with-anim {
+  opacity: 1;
+  transform: perspective( 600px ) scale(1);
+  -webkit-transform: perspective( 600px ) scale(1);
+  -moz-transform: perspective( 600px ) scale(1);
+  -ms-transform: perspective( 600px ) scale(1);
+  -o-transform: perspective( 600px ) scale(1);
+}
+.mpf-td-login-effect.mfp-ready.mfp-bg {
+  opacity: 0.8;
+}
+.mpf-td-login-effect.mfp-removing .mfp-with-anim {
+  transform: perspective( 600px ) scale(0.4);
+  -webkit-transform: perspective( 600px ) scale(0.4);
+  -moz-transform: perspective( 600px ) scale(0.4);
+  -ms-transform: perspective( 600px ) scale(0.4);
+  -o-transform: perspective( 600px ) scale(0.4);
+  opacity: 0;
+}
+.mpf-td-login-effect.mfp-removing.mfp-bg {
+  opacity: 0;
 }
 .td-scroll-up {
   cursor: pointer;
