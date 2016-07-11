@@ -854,6 +854,10 @@ img {
   right: auto;
   left: 50%;
   transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
 }
 .td-header-style-2 .sf-menu ul {
   text-align: left;
@@ -1731,6 +1735,10 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   padding-top: 1px;
 }
 .td-header-main-menu .td-search-btns-wrap:hover .td-icon-search {
@@ -3128,13 +3136,10 @@ blockquote.pull-right:after {
   height: 1px;
   background-color: #bebebe;
 }
-.td-module-comments {
+.td-module-comments a {
   color: #666;
 }
-.td-module-comments a {
-  color: inherit;
-}
-.td-module-comments:hover {
+.td-module-comments a:hover {
   color: #42bdcd;
 }
 .td-module-comments .td-icon-comments {
@@ -3916,8 +3921,11 @@ img.mfp-img {
 }
 @media all and (max-width: 900px) {
   .mfp-arrow {
-    -webkit-transform: scale(0.75);
     transform: scale(0.75);
+    -webkit-transform: scale(0.75);
+    -moz-transform: scale(0.75);
+    -ms-transform: scale(0.75);
+    -o-transform: scale(0.75);
   }
   .mfp-arrow-left {
     -webkit-transform-origin: 0;
@@ -4109,22 +4117,45 @@ img.mfp-img {
   margin-top: 4px;
   border-radius: 0;
 }
+.mfp-content .td-login-wrap #register-link {
+  display: block;
+  margin-top: 55px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
 .mfp-content #login-form .mfp-close {
-  top: 25px;
+  top: 26px;
   right: 27px;
   width: 20px;
   height: 20px;
-  line-height: 20px;
-  font-size: 38px;
+  line-height: 0;
+  font-size: 0;
   color: #fff;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
   filter: alpha(opacity=100);
 }
+.mfp-content #login-form .mfp-close:before {
+  content: '\e905';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  -webkit-transform: translate(-50%, 50%);
+  -moz-transform: translate(-50%, 50%);
+  -ms-transform: translate(-50%, 50%);
+  -o-transform: translate(-50%, 50%);
+  font-family: 'wpion', sans-serif;
+  font-size: 16px;
+  vertical-align: bottom;
+  color: #fff;
+}
 /* login tabs */
 .mfp-content .td-login-tabs {
   margin: 0;
-  padding: 25px 0 4px 0;
+  padding: 26px 0 4px 0;
   list-style-type: none;
 }
 .mfp-content .td-login-tabs li {
@@ -4224,8 +4255,8 @@ tagdiv animations
 .td-scroll-up {
   cursor: pointer;
   position: fixed;
-  bottom: 4px;
-  right: 5px;
+  bottom: 19px;
+  right: 19px;
   width: 44px;
   height: 44px;
   background-color: rgba(0, 0, 0, 0.5);
@@ -4239,11 +4270,10 @@ tagdiv animations
   -moz-transform: translate3d(0, 70px, 0);
   -ms-transform: translate3d(0, 70px, 0);
   -o-transform: translate3d(0, 70px, 0);
-  -webkit-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-  -moz-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-  -o-transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-  transition: transform 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
-  /* responsive phone */
+  -webkit-transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+  -moz-transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+  -o-transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
+  transition: all 0.4s cubic-bezier(0.55, 0, 0.1, 1) 0s;
 }
 .td-scroll-up .td-icon-menu-up {
   position: relative;
@@ -4254,10 +4284,9 @@ tagdiv animations
   width: 40px;
   line-height: 40px;
 }
-@media (max-width: 767px) {
-  .td-scroll-up {
-    display: none;
-  }
+.td-scroll-up:hover {
+  background-color: #000000;
+  border-color: #ffffff;
 }
 .td-scroll-up-visible {
   transform: translate3d(0, 0, 0);
@@ -4839,6 +4868,10 @@ body.td-animation-stack-type1 .post img[class*="wp-image-"],
 body.td-animation-stack-type1 .post a.td-sml-link-to-image > img {
   opacity: 0;
   transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
 }
 .td-animation-stack-type1-2 {
   opacity: 1 !important;

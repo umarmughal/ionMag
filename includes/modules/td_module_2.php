@@ -16,12 +16,16 @@ class td_module_1 extends td_module {
                 <?php echo $this->get_image('td_300x220');?>
                 <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_1') == 'yes') { echo $this->get_category(); }?></div>
             </div>
-            
+
             <?php echo $this->get_title();?>
 
             <div class="td-module-meta-info">
                 <?php echo $this->get_date();?>
                 <?php echo $this->get_comments();?>
+            </div>
+
+            <div class="td-excerpt">
+                <?php echo $this->get_excerpt();?>
             </div>
 
             <?php echo $this->get_quotes_on_blocks();?>

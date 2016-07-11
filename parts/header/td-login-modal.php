@@ -10,7 +10,7 @@ $users_can_register_form = '';
 if($users_can_register == 1){
 
     //add the Register tab to the modal window if `Anyone can register` chec
-    $users_can_register_tab = '<li><a id="register-link">' . __td('REGISTER', TD_THEME_NAME) . '</a></li>';
+    //$users_can_register_tab = '<li><a id="register-link">' . __td('REGISTER', TD_THEME_NAME) . '</a></li>';
 
     $users_can_register_form = '
                 <div id="td-register-div" class="td-display-none">
@@ -18,7 +18,7 @@ if($users_can_register == 1){
                     <div class="td-login-inputs"><input class="td-login-input" type="text" name="register_email" id="register_email" value="" required><label>' . __td('your email', TD_THEME_NAME) .'</label></div>
                     <div class="td-login-inputs"><input class="td-login-input" type="text" name="register_user" id="register_user" value="" required><label>' . __td('your username', TD_THEME_NAME) .'</label></div>
                     <input type="button" name="register_button" id="register_button" class="wpb_button btn td-login-button" value="' . __td('Register', TD_THEME_NAME) . '">
-                     <div class="td-login-info-text">' . __td('A password will be e-mailed to you.', TD_THEME_NAME) . '</div>
+                    <div class="td-login-info-text">' . __td('A password will be e-mailed to you.', TD_THEME_NAME) . '</div>
                 </div>';
 }
 
@@ -27,7 +27,6 @@ echo '
                     <ul class="td-login-tabs">
                         <li><a id="login-link" class="td_login_tab_focus">' . __td('Sign in', TD_THEME_NAME) . '</a></li>' . $users_can_register_tab . '
                     </ul>
-
 
                     <div class="td-login-wrap">
                         <div class="td_display_err"></div>
@@ -40,8 +39,8 @@ echo '
 
 
                             <div class="td-login-info-text"><a href="#" id="forgot-pass-link">' . __td('Forgot your password? Get help', TD_THEME_NAME) . '</a></div>
-
-
+                            
+                            <a id="register-link">' . __td('Create an account', TD_THEME_NAME) . '</a>
                         </div>
 
                         ' . $users_can_register_form . '

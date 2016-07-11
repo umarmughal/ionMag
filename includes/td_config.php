@@ -216,6 +216,23 @@ class td_config {
             )
         );
 
+        td_api_module::add('td_module_2',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_2.php',
+                'text' => 'Module 2',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'used_on_blocks' => array('td_block_1'),
+                'excerpt_title' => 12,
+                'excerpt_content' => '25',
+                'enabled_on_more_articles_box' => true,
+                'enabled_on_loops' => true,
+                'uses_columns' => true,
+                'category_label' => true,
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
         td_api_module::add('td_module_mx_empty',
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx_empty.php',
