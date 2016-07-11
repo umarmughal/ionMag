@@ -509,6 +509,14 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     bottom: -4px;
   }
 
+  .td-post-category {
+    background-color: rgba(0, 0, 0, 0.8);
+
+    &:hover {
+      background-color: @td_theme_color;
+    }
+  }
+
   .td-module-title {
     font-weight: 500;
     font-size: 14px;
@@ -526,10 +534,14 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   }
 
   .td-post-date {
-    display: block;
-    margin-bottom: 23px;
     font-size: 12px;
-    color: #b2b2b2;
+    display: block;
+    margin: 0 0 23px 0;
+    padding: 0;
+
+    &:after {
+      display: none;
+    }
   }
 }
 

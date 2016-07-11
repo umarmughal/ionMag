@@ -21,11 +21,11 @@ if($loop_sidebar_position == 'sidebar_left') {
 ?>
 
 <div class="td-main-content-wrap">
-
     <div class="td-container td-blog-index <?php echo $td_sidebar_position; ?>">
         <div class="td-crumb-container">
             <?php echo td_page_generator::get_home_breadcrumbs(); ?>
         </div>
+        
         <div class="td-pb-row">
             <?php
             switch ($loop_sidebar_position) {

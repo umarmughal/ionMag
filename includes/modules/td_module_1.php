@@ -23,6 +23,10 @@ class td_module_1 extends td_module {
                 <?php echo $this->get_comments();?>
             </div>
 
+            <div class="td-excerpt">
+                <?php echo $this->get_excerpt();?>
+            </div>
+
             <?php echo $this->get_quotes_on_blocks();?>
         </div>
 

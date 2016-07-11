@@ -3,7 +3,7 @@
 */
 .td_module_wrap {
   position: relative;
-  padding-bottom: 35px;
+  padding-bottom: 46px;
 
   .entry-title {
     position: relative;
@@ -93,14 +93,14 @@
 .td-post-category {
   font-family: @font2;
   padding: 4px 6px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(238, 119, 79, 0.8);
   font-size: 10px;
   font-weight: 500;
   line-height: 1;
   color: #fff;
 
   &:hover {
-    background-color: @td_theme_color;
+    background-color: #000;
   }
 }
 
@@ -110,42 +110,53 @@
 .td-module-meta-info {
   font-family: @font2;
   font-size: 12px;
+}
 
-  .td-post-date,
-  .td-module-comments {
-    display: inline-block;
+.td-post-date,
+.td-module-comments {
+  display: inline-block;
+}
+
+.td-post-date {
+  position: relative;
+  margin-right: 8px;
+  padding-right: 11px;
+  color: #b2b2b2;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 8px;
+    right: 0;
+    width: 1px;
+    height: 1px;
+    background-color: #bebebe;
+  }
+}
+
+.td-module-comments {
+  color: #666;
+
+  a {
+    color: inherit;
   }
 
-  .td-post-date {
-    position: relative;
-    margin-right: 8px;
-    padding-right: 11px;
-    color: #b2b2b2;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 8px;
-      right: 0;
-      width: 1px;
-      height: 1px;
-      background-color: #bebebe;
-    }
-  }
-
-  .td-module-comments {
-    color: #666;
-
-    a {
-      color: inherit;
-    }
-
-    &:hover {
-      color: @td_theme_color;
-    }
+  &:hover {
+    color: @td_theme_color;
   }
 
   .td-icon-comments {
     margin-right: 6px;
   }
+}
+
+/*  ----------------------------------------------------------------------------
+    excerpt
+*/
+.td-excerpt {
+  padding-top: 14px;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 19px;
+  color: #808080;
 }
