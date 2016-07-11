@@ -14,7 +14,7 @@ class td_module_2 extends td_module {
         <div class="<?php echo $this->get_module_classes();?>" <?php echo $this->get_item_scope();?>>
             <div class="td-module-image">
                 <?php echo $this->get_image('td_300x220');?>
-                <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_1') == 'yes') { echo $this->get_category(); }?></div>
+                <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_2') == 'yes') { echo $this->get_category(); }?></div>
             </div>
 
             <?php echo $this->get_title();?>

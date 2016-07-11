@@ -233,6 +233,23 @@ class td_config {
             )
         );
 
+        td_api_module::add('td_module_3',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_3.php',
+                'text' => 'Module 2',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'used_on_blocks' => array('td_block_1'),
+                'excerpt_title' => 12,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => true,
+                'enabled_on_loops' => true,
+                'uses_columns' => true,
+                'category_label' => true,
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
         td_api_module::add('td_module_mx_empty',
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx_empty.php',
@@ -329,7 +346,20 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module 1'
+                    'Module 1', 'Module 2'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_100x70',
+            array(
+                'name' => 'td_100x70',
+                'width' => 100,
+                'height' => 70,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Module 3'
                 )
             )
         );

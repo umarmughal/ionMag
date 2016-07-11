@@ -14,6 +14,7 @@ if($users_can_register == 1){
     $users_can_register_form = '
                 <div id="td-register-div" class="td-login-form-div td-display-none">
                     <a id="login-link" class="td_login_tab_focus">' . __td('', TD_THEME_NAME) . '</a>
+                    
                     <div class="td-login-panel-title">Create an account</div>
                     <div class="td-login-panel-descr">' . __td('Welcome! Register for an account', TD_THEME_NAME) .'</div>
                     <div class="td-login-inputs"><input class="td-login-input" type="text" name="register_email" id="register_email" value="" required><label>' . __td('your email', TD_THEME_NAME) .'</label></div>
@@ -42,6 +43,7 @@ echo '
 
                          <div id="td-forgot-pass-div" class="td-login-form-div td-display-none">
                             <a id="login-link" class="td_login_tab_focus">' . __td('', TD_THEME_NAME) . '</a>
+                            
                             <div class="td-login-panel-title">Password recovery</div>
                             <div class="td-login-panel-descr">' . __td('Recover your password', TD_THEME_NAME) .'</div>
                             <div class="td-login-inputs"><input class="td-login-input" type="text" name="forgot_email" id="forgot_email" value="" required><label>' . __td('your email', TD_THEME_NAME) .'</label></div>
