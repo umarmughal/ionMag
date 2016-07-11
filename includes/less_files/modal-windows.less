@@ -1,10 +1,8 @@
 /*  ----------------------------------------------------------------------------
   Login window
 */
-
-@color_gray: #bababa;
-
 .white-popup-block {
+  position: relative;
   background: -moz-linear-gradient(top, rgba(66,189,205,1) 0%, rgba(42,129,203,1) 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(66,189,205,1)), color-stop(100%, rgba(42,129,203,1)));
   background: -webkit-linear-gradient(top, rgba(66,189,205,1) 0%, rgba(42,129,203,1) 100%);
@@ -13,7 +11,7 @@
   background: linear-gradient(to bottom, rgba(66,189,205,1) 0%, rgba(42,129,203,1) 100%);
   margin: 0 auto;
   max-width: 500px;
-  position: relative;
+  min-height: 520px;
   font-family: @font2;
   text-align: center;
   color: #fff;
@@ -28,56 +26,24 @@
 }
 
 .td_sp_logout_ico_style {
-  position: relative;
   top: 3px;
   left: 17px;
 }
 
 /* wrapper */
-.mfp-content .td-login-wrap {
-  padding: 14px 21px 17px 21px;
+.td-login-wrap {
+  position: relative;
+  padding: 0 21px;
+}
 
-  .td-login-inputs {
-    width: auto;
-    display: inline-block;
-    position: relative;
-    margin-bottom: 30px;
-    font-size: 15px;
-    font-weight: 500;
-    color: #fff;
-  }
-
-  .td-login-input {
-    position: relative;
-    background-color: transparent !important;
-    height: 40px;
-    margin: 0 !important;
-    padding: 0;
-    box-shadow: none !important;
-    font-size: 15px;
-    color: #fff;
-    outline: none;
-    width: 300px;
-    border: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-
-    &:focus,
-    &:valid {
-      ~ label {
-        top: -6px;
-        font-size: 11px;
-        .opacity(0.6);
-      }
-    }
-
-    &:invalid {
-      font-style: italic;
-    }
-
-    &:invalid:focus {
-      color: #555;
-    }
-  }
+.td-login-inputs {
+  width: auto;
+  display: inline-block;
+  position: relative;
+  margin-bottom: 30px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
 
   label {
     position: absolute;
@@ -88,72 +54,106 @@
     .transition(all 0.2s ease);
     pointer-events: none;
   }
+}
 
-  .td-login-button {
-    width: 300px;
-    height: 50px;
-    background-color: #fff !important;
-    margin-top: 20px !important;
-    text-transform: uppercase;
-    font-size: 13px;
-    font-weight: 500;
-    color: #000 !important;
-    .box-shadow(1px 1px 4px 0px rgba(0, 0, 0, 0.2));
+.td-login-wrap .td-login-input {
+  position: relative;
+  background-color: transparent !important;
+  height: 40px;
+  margin: 0 !important;
+  padding: 0;
+  box-shadow: none !important;
+  font-size: 15px;
+  color: #fff;
+  outline: none;
+  width: 300px;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
-    &:hover {
-      background-color: #d4e328 !important;
+  &:focus,
+  &:valid {
+    ~ label {
+      top: -6px;
+      font-size: 11px;
+      .opacity(0.6);
     }
   }
 
-  .td-login-info-text {
-    display: block;
-    position: relative;
-    margin-top: 5px;
-    font-size: 11px;
-    color: #fff;
-
-    a {
-      color: inherit;
-
-      &:hover {
-        color: #000;
-      }
-    }
+  &:invalid {
+    font-style: italic;
   }
 
-  .btn {
-    padding: 5px 12px 6px;
-    background-color: @td_theme_color;
-    color: #fff;
-    border: 0;
-    text-shadow: none;
-    margin-top: 4px;
-    border-radius: 0;
-  }
-
-  #register-link {
-    display: block;
-    margin-top: 55px;
-    font-size: 13px;
-    text-transform: uppercase;
-    color: #fff;
-    cursor: pointer;
+  &:invalid:focus {
+    color: #555;
   }
 }
 
-.mfp-content #login-form {
+.td-login-button {
+  width: 300px;
+  height: 50px;
+  background-color: #fff;
+  padding: 5px 12px 6px;
+  margin-top: 20px=;
+  text-transform: uppercase;
+  text-shadow: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000;
+  .box-shadow(1px 1px 4px 0px rgba(0, 0, 0, 0.2));
+  border: 0;
+  border-radius: 0;
+
+  &:hover {
+    background-color: #d4e328 !important;
+  }
+}
+
+.td-login-info-text {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+  color: #fff;
+
+  a {
+    color: inherit;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+#register-link {
+  display: block;
+  margin-top: 55px;
+  font-size: 13px;
+  text-transform: uppercase;
+  color: #fff;
+  cursor: pointer;
+}
+
+.td-login-form-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &.td-display-none {
+    display: none;
+  }
+}
+
+#login-form {
+  #login-link,
   .mfp-close {
+    position: absolute;
     top: 26px;
-    right: 27px;
     width: 20px;
     height: 20px;
     line-height: 0;
     font-size: 0;
     color: #fff;
-    .opacity(1);
 
     &:before {
-      content: '\e905';
       position: absolute;
       top: 50%;
       left: 50%;
@@ -164,37 +164,65 @@
       color: #fff;
     }
   }
-}
 
+  #login-link {
+    right: auto;
+    left: 27px;
+    cursor: pointer;
 
-/* login tabs */
-.mfp-content .td-login-tabs {
-  margin: 0;
-  padding: 26px 0 4px 0;
-  list-style-type: none;
+    &:before {
+      content: '\e904';
+    }
+  }
 
-  li {
-    position: relative;
-    display: block;
-    line-height: 20px;
+  .mfp-close {
+    right: 27px;
+    left: auto;
+    .opacity(1);
 
-    a {
-      display: block;
-      font-size: 17px;
-      text-transform: uppercase;
-      color: #fff;
-      cursor: pointer;
-      position: relative;
-
-      &:hover {
-        text-decoration: none !important;
-      }
+    &:before {
+      content: '\e905';
     }
   }
 }
 
+
+///* login tabs */
+//.mfp-content .td-login-tabs {
+//  margin: 0;
+//  padding: 26px 0 4px 0;
+//  list-style-type: none;
+//
+//  li {
+//    position: relative;
+//    display: block;
+//    line-height: 20px;
+//
+//    a {
+//      display: block;
+//      font-size: 17px;
+//      text-transform: uppercase;
+//      color: #fff;
+//      cursor: pointer;
+//      position: relative;
+//
+//      &:hover {
+//        text-decoration: none !important;
+//      }
+//    }
+//  }
+//}
+
 /* the panel title */
-.mfp-content .td-login-panel-title {
+.td-login-panel-title {
+  padding: 26px 0 17px 0;
+  line-height: 20px;
+  font-size: 17px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.td-login-panel-descr {
   margin-bottom: 50px;
   font-size: 13px;
 }
@@ -214,10 +242,6 @@
   font-size: 13px;
   background-color: @td_theme_color;
 
-}
-
-.mfp-content #td-forgot-pass-div {
-  margin-bottom: 42px;
 }
 
 .top-header-menu .td_user_logd_in {

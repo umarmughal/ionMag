@@ -20,7 +20,7 @@
       left: 0;
       width: 40px;
       height: 1px;
-      background-color: #ee774f;
+      background-color: @td_theme_color;
       .opacity(0.2);
     }
   }
@@ -93,14 +93,14 @@
 .td-post-category {
   font-family: @font2;
   padding: 4px 6px;
-  background-color: rgba(238, 119, 79, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   font-size: 10px;
   font-weight: 500;
   line-height: 1;
   color: #fff;
 
   &:hover {
-    background-color: #000;
+    background-color: @td_theme_color;
   }
 }
 
@@ -137,6 +137,10 @@
 .td-module-comments {
   a {
     color: #666;
+
+    i {
+      font-size: 14px;
+    }
 
     &:hover {
       color: @td_theme_color;

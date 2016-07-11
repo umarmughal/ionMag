@@ -1,6 +1,6 @@
 <?php
 
-class td_module_1 extends td_module {
+class td_module_2 extends td_module {
 
     function __construct($post) {
         //run the parrent constructor
