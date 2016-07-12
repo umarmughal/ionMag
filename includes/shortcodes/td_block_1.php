@@ -38,13 +38,12 @@ class td_block_1 extends td_block {
             $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
         }
 
-
         $td_post_count = 0; // the number of posts rendered
 
         if (!empty($posts)) {
             foreach ($posts as $post) {
                 $td_module_4 = new td_module_4($post);
-                $td_module_6 = new td_module_6($post);
+                $td_module_2 = new td_module_2($post);
 
                 switch ($td_column_number) {
 
@@ -53,7 +52,7 @@ class td_block_1 extends td_block {
                         if ($td_post_count == 0) { //first post
                             $buffy .= $td_module_4->render();
                         } else {
-                            $buffy .= $td_module_6->render();
+                            $buffy .= $td_module_2->render();
                         }
                         $buffy .= $td_block_layout->close12();
                         break;
@@ -66,7 +65,7 @@ class td_block_1 extends td_block {
                             $buffy .= $td_block_layout->close6();
                         } else { //the rest
                             $buffy .= $td_block_layout->open6();
-                            $buffy .= $td_module_6->render();
+                            $buffy .= $td_module_2->render();
                         }
                         break;
 
@@ -78,7 +77,7 @@ class td_block_1 extends td_block {
                             $buffy .= $td_block_layout->close4();
                         } else { //2-3 cols
                             $buffy .= $td_block_layout->open4();
-                            $buffy .= $td_module_6->render();
+                            $buffy .= $td_module_2->render();
 
                             if ($td_post_count == 4) { //make new column
                                 $buffy .= $td_block_layout->close4();
