@@ -82,7 +82,7 @@
 
 
 /*  ----------------------------------------------------------------------------
-    Sharing Top
+    Sharing
 */
 .td-post-sharing {
   font-family: @font1;
@@ -94,17 +94,25 @@
   }
 }
 
+.td-post-share-title {
+  font-family: @font2;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  margin-right: 26px;
+  vertical-align: middle;
+}
+
 .td-default-sharing {
   display: inline-block;
   vertical-align: middle;
 }
 
-// buttons a
 .td-social-sharing-buttons {
   background-color: #fff;
   font-size: 12px;
   color: #666;
-  margin-right: 10px;
+  margin-right: 7px;
   padding: 0 16px;
   min-width: 29px;
   height: 29px;
@@ -122,7 +130,7 @@
   display: inline-block;
   position: relative;
   line-height: 29px;
-  margin-left: 12px;
+  margin: -2px 0 0 12px;
 }
 
 // facebook
@@ -136,6 +144,12 @@
 .td-social-twitter .td-icon-twitter {
   font-size: 11px;
   color: #29c5f6;
+}
+
+.td-social-google,
+.td-social-pinterest {
+  padding: 0;
+  line-height: 29px;
 }
 
 // google
@@ -155,24 +169,6 @@
     position: relative;
     top: 1px;
     color: #ca212a;
-  }
-}
-
-// whatsapp
-.td-social-whatsapp {
-  display: none !important;
-  background-color: #7bbf6a;
-  margin-right: 0;
-
-  /* responsive portrait phone */
-  @media (max-width: @responsive_p_phone_max) {
-    display: inline-block !important;
-  }
-
-  i {
-    font-size: 20px;
-    bottom: 2px;
-    right: 2px;
   }
 }
 
@@ -206,56 +202,108 @@
 
 
 /*  ----------------------------------------------------------------------------
-    Sharing Bottom
+    Source and Via
 */
+// source/via + tag group
+.td-post-source-tags {
+  font-size: 11px;
 
-.td-post-sharing-bottom {
-  //border: 1px solid @td_grid_border_color;
-  padding: 10px 26px;
-  margin-bottom: 40px;
+  a {
+    font-size: 11px;
+  }
+}
 
-  .td-social-sharing-buttons {
-    .border-radius(0);
-    height: 32px;
-    min-width: 32px;
-    padding: 6px 9px 4px 9px;
+.td-post-source-tags .td-no-tags {
+  margin-bottom: 34px;
+}
+
+.td-post-source-via {
+  font-family: @font2;
+  font-style: italic;
+}
+
+.td-post-small-box {
+  display: inline-block;
+  margin-right: 29px;
+
+  span {
+    text-transform: uppercase;
+    font-weight: 500;
+    float: left;
   }
 
-  .td-social-but-text {
-    margin-left: 8px;
-    padding-left: 9px;
-  }
+  a {
+    color: #666;
 
-  .td-social-google {
-    width: 32px;
-
-    i {
-      top: 0;
-      left: -2px;
+    &:hover {
+      color: @td_theme_color;
     }
   }
+}
 
-  /* responsive portrait phone */
-  @media (max-width: 480px) {
-    .td-social-but-text {
+
+/*  ----------------------------------------------------------------------------
+    Tags
+*/
+.td-tags {
+  margin: 0 0 30px 0;
+  font-family: @font2;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px 0 0;
+
+    &:first-of-type {
       display: none;
     }
   }
-}
-// firefox fix
-@-moz-document url-prefix() {
-  .td-post-sharing-bottom .td-social-sharing-buttons {
-    padding: 7px 9px 4px;
-  }
-  .td-social-google .td-icon-googleplus {
+
+  a {
+    display: block;
+    padding: 0 10px;
+    font-size: 10px;
     line-height: 20px;
+    border: 1px solid #ebebeb;
+    .border-radius(10px);
   }
 }
 
-.td-post-share-title {
-  font-weight: 700;
-  font-size: 14px;
-  position: relative;
-  margin-right: 20px;
-  vertical-align: middle;
+
+/*  ----------------------------------------------------------------------------
+    Next / Prev article
+*/
+.td-post-next-prev-content {
+  display: inline-block;
+  font-family: @font2;
+
+  span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: @td_theme_color;
+  }
+
+  a {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #000;
+
+    &:hover {
+      color: @td_theme_color;
+    }
+  }
+}
+
+.td-post-next-post {
+  text-align: right;
+}
+
+.td-next-prev-separator {  //this is from wp_010 - it is not used here but the core is still generating it
+  display: none;
 }

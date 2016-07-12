@@ -53,16 +53,14 @@ class td_block_1 extends td_block {
                 switch ($td_column_number) {
 
                     case '1': //one column layout
-                        $buffy .= $td_block_layout->open12(); //added in 010 theme - span 12 doesn't use rows
-                        $buffy .= $td_module_1->render($post);
-                        $buffy .= $td_block_layout->close12();
+                        $buffy .= $td_module_1->render();
                         break;
 
                     case '2': //two column layout
                         $buffy .= $td_block_layout->open_row();
 
                         $buffy .= $td_block_layout->open6();
-                        $buffy .= $td_module_1->render($post);
+                        $buffy .= $td_module_1->render();
                         $buffy .= $td_block_layout->close6();
 
                         if ($td_current_column == 2) {
@@ -76,7 +74,7 @@ class td_block_1 extends td_block {
                         $buffy .= $td_block_layout->open_row();
 
                         $buffy .= $td_block_layout->open4();
-                        $buffy .= $td_module_1->render($post);
+                        $buffy .= $td_module_1->render();
                         $buffy .= $td_block_layout->close4();
 
                         if ($td_current_column == 3) {

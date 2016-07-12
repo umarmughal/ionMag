@@ -3366,7 +3366,7 @@ blockquote.pull-right:after {
   float: right;
 }
 /*  ----------------------------------------------------------------------------
-    Sharing Top
+    Sharing
 */
 .td-post-sharing {
   font-family: 'Source Sans Pro', sans-serif;
@@ -3374,6 +3374,14 @@ blockquote.pull-right:after {
 }
 .td-post-sharing a {
   display: inline-block;
+  vertical-align: middle;
+}
+.td-post-share-title {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  margin-right: 26px;
   vertical-align: middle;
 }
 .td-default-sharing {
@@ -3384,7 +3392,7 @@ blockquote.pull-right:after {
   background-color: #fff;
   font-size: 12px;
   color: #666;
-  margin-right: 10px;
+  margin-right: 7px;
   padding: 0 16px;
   min-width: 29px;
   height: 29px;
@@ -3402,7 +3410,7 @@ blockquote.pull-right:after {
   display: inline-block;
   position: relative;
   line-height: 29px;
-  margin-left: 12px;
+  margin: -2px 0 0 12px;
 }
 .td-social-facebook .td-icon-facebook {
   font-size: 14px;
@@ -3412,6 +3420,11 @@ blockquote.pull-right:after {
 .td-social-twitter .td-icon-twitter {
   font-size: 11px;
   color: #29c5f6;
+}
+.td-social-google,
+.td-social-pinterest {
+  padding: 0;
+  line-height: 29px;
 }
 .td-social-google .td-icon-googleplus {
   font-size: 13px;
@@ -3427,22 +3440,6 @@ blockquote.pull-right:after {
   position: relative;
   top: 1px;
   color: #ca212a;
-}
-.td-social-whatsapp {
-  display: none !important;
-  background-color: #7bbf6a;
-  margin-right: 0;
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  .td-social-whatsapp {
-    display: inline-block !important;
-  }
-}
-.td-social-whatsapp i {
-  font-size: 20px;
-  bottom: 2px;
-  right: 2px;
 }
 .td-classic-sharing {
   display: inline-block;
@@ -3466,51 +3463,92 @@ blockquote.pull-right:after {
   margin: 0 !important;
 }
 /*  ----------------------------------------------------------------------------
-    Sharing Bottom
+    Source and Via
 */
-.td-post-sharing-bottom {
-  padding: 10px 26px;
-  margin-bottom: 40px;
-  /* responsive portrait phone */
+.td-post-source-tags {
+  font-size: 11px;
 }
-.td-post-sharing-bottom .td-social-sharing-buttons {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  border-radius: 0;
-  height: 32px;
-  min-width: 32px;
-  padding: 6px 9px 4px 9px;
+.td-post-source-tags a {
+  font-size: 11px;
 }
-.td-post-sharing-bottom .td-social-but-text {
-  margin-left: 8px;
-  padding-left: 9px;
+.td-post-source-tags .td-no-tags {
+  margin-bottom: 34px;
 }
-.td-post-sharing-bottom .td-social-google {
-  width: 32px;
+.td-post-source-via {
+  font-family: 'Work Sans', sans-serif;
+  font-style: italic;
 }
-.td-post-sharing-bottom .td-social-google i {
-  top: 0;
-  left: -2px;
+.td-post-small-box {
+  display: inline-block;
+  margin-right: 29px;
 }
-@media (max-width: 480px) {
-  .td-post-sharing-bottom .td-social-but-text {
-    display: none;
-  }
+.td-post-small-box span {
+  text-transform: uppercase;
+  font-weight: 500;
+  float: left;
 }
-@-moz-document url-prefix() {
-  .td-post-sharing-bottom .td-social-sharing-buttons {
-    padding: 7px 9px 4px;
-  }
-  .td-social-google .td-icon-googleplus {
-    line-height: 20px;
-  }
+.td-post-small-box a {
+  color: #666;
 }
-.td-post-share-title {
-  font-weight: 700;
-  font-size: 14px;
-  position: relative;
-  margin-right: 20px;
-  vertical-align: middle;
+.td-post-small-box a:hover {
+  color: #42bdcd;
+}
+/*  ----------------------------------------------------------------------------
+    Tags
+*/
+.td-tags {
+  margin: 0 0 30px 0;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.td-tags li {
+  list-style: none;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
+.td-tags li:first-of-type {
+  display: none;
+}
+.td-tags a {
+  display: block;
+  padding: 0 10px;
+  font-size: 10px;
+  line-height: 20px;
+  border: 1px solid #ebebeb;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+/*  ----------------------------------------------------------------------------
+    Next / Prev article
+*/
+.td-post-next-prev-content {
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+}
+.td-post-next-prev-content span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #42bdcd;
+}
+.td-post-next-prev-content a {
+  display: block;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  color: #000;
+}
+.td-post-next-prev-content a:hover {
+  color: #42bdcd;
+}
+.td-post-next-post {
+  text-align: right;
+}
+.td-next-prev-separator {
+  display: none;
 }
 /*  ----------------------------------------------------------------------------
     Pagination
