@@ -1,9 +1,6 @@
 <?php
 
 class td_block_1 extends td_block {
-
-
-
     function render($atts, $content = null) {
         parent::render($atts); // sets the live atts, $this->atts, $this->block_uid, $this->td_query (it runs the query)
 

@@ -864,24 +864,24 @@ img {
   text-align: left;
 }
 /* the search button */
-.td-search-btns-wrap #td-header-search-button {
+#td-header-search-button {
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td-search-btns-wrap #td-header-search-button {
+  #td-header-search-button {
     display: none;
   }
 }
-.td-search-btns-wrap #td-header-search-button-mob {
+#td-header-search-button-mob {
   display: none;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td-search-btns-wrap #td-header-search-button-mob {
+  #td-header-search-button-mob {
     display: block;
   }
 }
-.td-search-btns-wrap .td-icon-search {
+.td-icon-search {
   color: #42bdcd;
 }
 /* the search drop down */
@@ -903,7 +903,6 @@ img {
   color: #000;
   /* responsive portrait phone */
   /* search form */
-  /* hack to show the link on all the module */
   /* this class is added by the js to open the menu - will be used for animation */
 }
 @media (max-width: 767px) {
@@ -986,6 +985,22 @@ img {
 .td-drop-down-search .td-aj-search-results .item-details {
   display: inline-block;
 }
+.td-drop-down-search .td-aj-search-results .td-module-title {
+  margin-bottom: 6px;
+  padding-bottom: 0;
+  line-height: 16px;
+}
+.td-drop-down-search .td-aj-search-results .td-module-title a {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000;
+}
+.td-drop-down-search .td-aj-search-results .td-module-title a:hover {
+  color: #42bdcd;
+}
+.td-drop-down-search .td-aj-search-results .td-module-title:after {
+  display: none;
+}
 .td-drop-down-search .td-aj-search-results .td-module-thumb {
   position: relative;
   margin-bottom: 0;
@@ -1007,18 +1022,6 @@ img {
   vertical-align: top;
   margin-left: 18px;
   color: #000;
-}
-.td-drop-down-search .td-aj-search-results h3 {
-  margin: -1px 0 6px 0;
-  line-height: 16px;
-}
-.td-drop-down-search .td-aj-search-results h3 a {
-  font-size: 12px;
-  font-weight: 500;
-  color: #000;
-}
-.td-drop-down-search .td-aj-search-results h3 a:hover {
-  color: #42bdcd;
 }
 .td-drop-down-search .td_module_mx2 {
   width: 100%;
