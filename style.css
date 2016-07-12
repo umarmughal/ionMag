@@ -3151,6 +3151,8 @@ blockquote.pull-right:after {
   color: #666;
 }
 .td-module-comments a i {
+  vertical-align: middle;
+  margin-top: -2px;
   font-size: 14px;
 }
 .td-module-comments a:hover {

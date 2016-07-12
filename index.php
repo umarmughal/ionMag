@@ -10,7 +10,7 @@ $template_id = 'home';
 
 //prepare the loop variables
 global $loop_module_id, $loop_sidebar_position;
-$loop_module_id = td_util::get_option('tds_' . $template_id . '_page_layout', 6); //module 1 is default
+$loop_module_id = td_util::get_option('tds_' . $template_id . '_page_layout', 5); //module 1 is default
 $loop_sidebar_position = td_util::get_option('tds_' . $template_id . '_sidebar_pos'); //sidebar right is default (empty)
 
 // sidebar position used to align the breadcrumb on sidebar left + sidebar first on mobile issue
