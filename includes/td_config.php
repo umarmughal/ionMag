@@ -236,7 +236,58 @@ class td_config {
         td_api_module::add('td_module_3',
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_3.php',
-                'text' => 'Module 2',
+                'text' => 'Module 3',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'used_on_blocks' => array('td_block_1'),
+                'excerpt_title' => 12,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => true,
+                'enabled_on_loops' => true,
+                'uses_columns' => true,
+                'category_label' => true,
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
+        td_api_module::add('td_module_4',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_4.php',
+                'text' => 'Module 4',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'used_on_blocks' => array('td_block_1'),
+                'excerpt_title' => 12,
+                'excerpt_content' => '0',
+                'enabled_on_more_articles_box' => true,
+                'enabled_on_loops' => true,
+                'uses_columns' => false,
+                'category_label' => true,
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
+        td_api_module::add('td_module_5',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_5.php',
+                'text' => 'Module 5',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'used_on_blocks' => array('td_block_1'),
+                'excerpt_title' => 12,
+                'excerpt_content' => '25',
+                'enabled_on_more_articles_box' => true,
+                'enabled_on_loops' => true,
+                'uses_columns' => false,
+                'category_label' => true,
+                'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
+        td_api_module::add('td_module_6',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_6.php',
+                'text' => 'Module 6',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
                 'used_on_blocks' => array('td_block_1'),
                 'excerpt_title' => 12,
@@ -325,19 +376,6 @@ class td_config {
          * Thumb id => array parameters. Wp booster only cuts if the option is set from theme panel
          */
 
-        td_api_thumb::add('td_260x195',
-            array(
-                'name' => 'td_260x195',
-                'width' => 260,
-                'height' => 195,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Mega menu'
-                )
-            )
-        );
-
         td_api_thumb::add('td_300x220',
             array(
                 'name' => 'td_300x220',
@@ -360,6 +398,45 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Module 3'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_640x400',
+            array(
+                'name' => 'td_640x400',
+                'width' => 640,
+                'height' => 400,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Module 4'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_250x184',
+            array(
+                'name' => 'td_250x184',
+                'width' => 250,
+                'height' => 184,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Module 5'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_260x195',
+            array(
+                'name' => 'td_260x195',
+                'width' => 260,
+                'height' => 195,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Mega menu'
                 )
             )
         );

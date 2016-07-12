@@ -7,11 +7,11 @@
 
   .td-module-title {
     position: relative;
+    margin: 0 0 6px 0;
     padding-bottom: 11px;
     font-size: 15px;
     line-height: 20px;
     font-weight: 600;
-    margin: 0 0 6px 0;
 
     &:after {
       content: '';
@@ -56,6 +56,13 @@
   bottom: 0;
   left: 0;
   z-index: 1;
+}
+
+.td-module-image-abs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-bottom: 0;
 }
 
 /*  ----------------------------------------------------------------------------
@@ -112,6 +119,17 @@
 .td-module-meta-info {
   font-family: @font2;
   font-size: 12px;
+}
+
+.td-module-meta-info-no-comm {
+  .td-post-date {
+    margin-right: 0;
+    padding-right: 0;
+
+    &:after {
+      display: none;
+    }
+  }
 }
 
 .td-post-date,
