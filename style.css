@@ -3104,7 +3104,7 @@ blockquote.pull-right:after {
 }
 .td-post-category {
   font-family: 'Work Sans', sans-serif;
-  padding: 4px 6px;
+  padding: 4px 8px;
   background-color: rgba(0, 0, 0, 0.8);
   font-size: 10px;
   font-weight: 500;
@@ -3136,19 +3136,22 @@ blockquote.pull-right:after {
   position: relative;
   margin-right: 8px;
   padding-right: 11px;
-  color: #b2b2b2;
+  opacity: 0.5;
 }
 .td-post-date:after {
   content: '';
   position: absolute;
   bottom: 8px;
   right: 0;
-  width: 1px;
-  height: 1px;
-  background-color: #bebebe;
+  width: 2px;
+  height: 2px;
+  background-color: #000;
+  opacity: 0.2;
 }
 .td-module-comments a {
-  color: #666;
+  position: relative;
+  color: #000;
+  opacity: 0.7;
 }
 .td-module-comments a i {
   vertical-align: middle;
@@ -3157,6 +3160,17 @@ blockquote.pull-right:after {
 }
 .td-module-comments a:hover {
   color: #42bdcd;
+}
+.td-module-comments a:before {
+  font-family: 'wpion', sans-serif;
+  line-height: 1;
+  content: '\f27a';
+  width: 10px;
+  height: 10px;
+  position: relative;
+  top: -1px;
+  vertical-align: middle;
+  margin-right: 5px;
 }
 .td-module-comments .td-icon-comments {
   margin-right: 6px;
