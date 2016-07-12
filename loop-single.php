@@ -29,7 +29,6 @@ if (have_posts()) {
                     <?php echo $td_mod_single->get_comments();?>
                     <?php echo $td_mod_single->get_views();?>
                 </div>
-
             </header>
 
         </div>

@@ -59,17 +59,11 @@ class td_block_related_posts extends td_block {
     }
 
     function inner($posts, $td_column_number = '') {
-
-
         $td_block_layout = new td_block_layout();
         $td_block_layout->row_class = 'td-related-row';
         $td_block_layout->span4_class = 'td-related-span4';
 
-
         $buffy = '';
-
-
-
 
         $td_current_column = 1; //the current column
 
@@ -77,8 +71,6 @@ class td_block_related_posts extends td_block {
             foreach ($posts as $td_post_count => $post) {
 
                 $td_module_related_posts = new td_module_related_posts($post);
-
-
 
                 switch ($td_column_number) {
                     case '3': //the layout when we are on content + sidebar

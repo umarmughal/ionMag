@@ -700,11 +700,20 @@ class td_config {
             )
         );
 
-
-	    td_api_block::add('td_block_related_posts',
+        td_api_module::add('td_module_related_posts',
             array(
-                'map_in_visual_composer' => false,
-                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_related_posts.php',
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_related_posts.php',
+                'text' => 'Related posts module',
+                'img' => '',
+                'used_on_blocks' => array('td_block_related_posts'),
+                'excerpt_title' => 25,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,
+                'category_label' => true,
+                'class' => 'td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
 
