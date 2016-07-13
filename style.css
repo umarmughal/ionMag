@@ -3420,6 +3420,7 @@ blockquote.pull-right:after {
   margin-bottom: 20px;
 }
 .td-post-sharing-bottom {
+  margin-bottom: 21px;
   padding-bottom: 30px;
 }
 .td-post-share-title {
@@ -3458,6 +3459,15 @@ blockquote.pull-right:after {
   line-height: 29px;
   margin: -2px 0 0 12px;
 }
+.td-social-facebook .td-icon-facebook,
+.td-social-twitter .td-icon-twitter {
+  vertical-align: middle;
+}
+.td-social-google,
+.td-social-pinterest {
+  padding: 0;
+  line-height: 29px;
+}
 .td-social-facebook .td-icon-facebook {
   font-size: 14px;
   position: relative;
@@ -3466,11 +3476,6 @@ blockquote.pull-right:after {
 .td-social-twitter .td-icon-twitter {
   font-size: 11px;
   color: #29c5f6;
-}
-.td-social-google,
-.td-social-pinterest {
-  padding: 0;
-  line-height: 29px;
 }
 .td-social-google .td-icon-googleplus {
   font-size: 13px;
@@ -3503,7 +3508,6 @@ blockquote.pull-right:after {
 .td-classic-twitter {
   position: relative;
   top: -1px;
-  left: 2px;
 }
 .td-classic-twitter .twitter-share-button {
   margin: 0 !important;
@@ -3739,10 +3743,35 @@ blockquote.pull-right:after {
 }
 .comments {
   font-family: 'Work Sans', sans-serif;
+  clear: both;
+}
+.comments h4,
+.comments h3 {
+  position: relative;
+  margin: 0;
+  padding-bottom: 1px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.comments h4:after,
+.comments h3:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 1px;
+  background-color: #42bdcd;
+  opacity: 0.3;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 30 ")";
+  filter: alpha(opacity=30);
 }
 /*  ----------------------------------------------------------------------------
     Comment section
 */
+.comment-list {
+  margin: 0 0 20px 0;
+}
 .comment {
   position: relative;
   list-style: none;
@@ -3761,6 +3790,9 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 4 ")";
   filter: alpha(opacity=4);
 }
+.comment article {
+  padding: 20px 0 11px 0;
+}
 .comment:first-child:before {
   display: none;
 }
@@ -3777,6 +3809,8 @@ blockquote.pull-right:after {
   border-radius: 50%;
 }
 .comment cite {
+  display: inline-block;
+  padding-top: 3px;
   font-weight: 500;
   font-size: 15px;
   font-style: normal;
@@ -3788,6 +3822,7 @@ blockquote.pull-right:after {
   margin-left: 80px;
 }
 .comment .comment-content {
+  margin-top: 6px;
   color: #666;
 }
 .comment .comment-content p {
@@ -3827,6 +3862,7 @@ blockquote.pull-right:after {
 }
 .comment-link {
   float: right;
+  padding-top: 11px;
   font-size: 11px;
   font-style: italic;
   line-height: 1;
@@ -3834,9 +3870,6 @@ blockquote.pull-right:after {
 }
 .comment-meta {
   margin-top: 3px;
-}
-.comment-respond {
-  margin-bottom: 21px;
 }
 .comment-reply-link {
   font-size: 11px;
@@ -3853,11 +3886,36 @@ blockquote.pull-right:after {
 /*  ----------------------------------------------------------------------------
     Comment form
 */
-#reply-title {
-  font-size: 16px;
-  font-weight: 700;
-  margin-bottom: 7px;
-  margin-top: 10px;
+.comment-respond .comment-reply-title {
+  margin-bottom: 20px;
+}
+.comment-respond textarea,
+.comment-respond input {
+  padding: 14px;
+  border-color: #ebebeb;
+}
+.comment-respond textarea:focus,
+.comment-respond input:focus {
+  border-color: #d6d6d6;
+}
+.comment-respond textarea {
+  height: 200px;
+}
+.comment-respond input {
+  height: 36px;
+}
+.comment-respond input[type=submit] {
+  width: 100%;
+  height: 52px;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 0px 0px rgba(166, 166, 166, 0.75);
+  -moz-box-shadow: 0px 2px 0px 0px rgba(166, 166, 166, 0.75);
+  box-shadow: 0px 2px 0px 0px rgba(166, 166, 166, 0.75);
 }
 .logged-in-as {
   margin-top: 0;
@@ -3870,6 +3928,17 @@ blockquote.pull-right:after {
 .logged-in-as a:hover {
   color: #42bdcd;
 }
+.comment-form-input-wrap {
+  float: left;
+  width: 33.3333%;
+  margin-bottom: 23px;
+  font-family: 'Work Sans', sans-serif;
+  color: #666;
+}
+.comment-form-input-wrap:first-of-type {
+  margin-bottom: 16px;
+  width: 100%;
+}
 #cancel-comment-reply-link {
   font-size: 12px;
   font-weight: 400;
@@ -3880,7 +3949,6 @@ blockquote.pull-right:after {
 }
 .comment .comment-form-input-wrap {
   margin-top: 0;
-  margin-bottom: 21px;
 }
 .comment-subscription-form {
   margin-bottom: 3px;
@@ -3890,9 +3958,6 @@ blockquote.pull-right:after {
   margin-left: 3px;
   position: relative;
   top: -1px;
-}
-.comments {
-  clear: both;
 }
 @font-face {
   font-family: 'wpion';
