@@ -3135,7 +3135,6 @@ blockquote.pull-right:after {
 .td-post-comments a i {
   vertical-align: middle;
   margin: -1px 6px 0 0;
-  font-size: 14px;
 }
 .td-module-comments a:hover,
 .td-post-comments a:hover {
@@ -3150,7 +3149,6 @@ blockquote.pull-right:after {
   height: 10px;
   position: relative;
   top: -1px;
-  font-size: 14px;
   vertical-align: middle;
   margin-right: 5px;
 }
