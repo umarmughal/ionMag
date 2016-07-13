@@ -7,7 +7,7 @@
 
   .td-module-title {
     position: relative;
-    margin: 0 0 6px 0;
+    margin: 0 0 13px 0;
     padding-bottom: 11px;
     font-size: 15px;
     line-height: 20px;
@@ -29,6 +29,7 @@
     color: @td_theme_color;
   }
 }
+
 
 /*  ----------------------------------------------------------------------------
     thumbnail
@@ -112,6 +113,15 @@
     background-color: @td_theme_color;
   }
 }
+// small category - add this on td-item-details
+.td-category-small {
+  .td-post-category {
+    margin-right: 4px;
+    padding: 3px 6px;
+    position: relative;
+    top: -1px;
+  }
+}
 
 /*  ----------------------------------------------------------------------------
     metainfo
@@ -119,9 +129,10 @@
 .td-module-meta-info {
   font-family: @font2;
   font-size: 12px;
+  line-height: 1;
 }
 
-.td-module-meta-info-no-comm {
+.td-no-comment {
   .td-post-date {
     margin-right: 0;
     padding-right: 0;
@@ -146,8 +157,8 @@
   &:after {
     content: '';
     position: absolute;
-    bottom: 8px;
-    right: 0;
+    bottom: 2px;
+    right: -1px;
     width: 2px;
     height: 2px;
     background-color: #000;
@@ -193,7 +204,7 @@
     excerpt
 */
 .td-excerpt {
-  padding-top: 14px;
+  padding-top: 19px;
   font-size: 15px;
   font-style: italic;
   line-height: 19px;

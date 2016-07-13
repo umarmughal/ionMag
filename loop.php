@@ -25,23 +25,27 @@ if ($td_module['uses_columns'] === false) {
     $td_template_layout->disable_output();
 }
 
+?>
+<div class="td-modules-container td-module-number<?php echo $loop_module_id; ?>">
+    <?php
+    if (have_posts()) {
+        while ( have_posts() ) : the_post();
+            echo $td_template_layout->layout_open_element();
 
-if (have_posts()) {
-    while ( have_posts() ) : the_post();
-        echo $td_template_layout->layout_open_element();
+            if (class_exists($td_module_class)) {
+                $td_mod = new $td_module_class($post);
+                echo $td_mod->render();
+            } else {
+                td_util::error(__FILE__, 'Missing module: ' . $td_module_class);
+            }
 
-        if (class_exists($td_module_class)) {
-            $td_mod = new $td_module_class($post);
-            echo $td_mod->render();
-        } else {
-            td_util::error(__FILE__, 'Missing module: ' . $td_module_class);
-        }
-
-        echo $td_template_layout->layout_close_element();
-        $td_template_layout->layout_next();
-    endwhile; //end loop
-    echo $td_template_layout->close_all_tags();
-
+            echo $td_template_layout->layout_close_element();
+            $td_template_layout->layout_next();
+        endwhile; //end loop
+        echo $td_template_layout->close_all_tags();
+    ?>
+</div>
+<?php
 
 } else {
     /**

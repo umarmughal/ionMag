@@ -17,7 +17,7 @@ class td_module_mega_menu extends td_module {
                 <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_mega_menu') == 'yes') { echo $this->get_category(); }?></div>
             </div>
 
-            <div class="item-details">
+            <div class="td-item-details">
                 <?php echo $this->get_title();?>
                 <?php echo $this->get_date();?>
             </div>

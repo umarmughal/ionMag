@@ -15,7 +15,7 @@ class td_module_mx2 extends td_module {
 
             <?php echo $this->get_image('td_80x60');?>
 
-            <div class="item-details">
+            <div class="td-item-details td-no-comment td-category-small">
                 <?php echo $this->get_title();?>
                 <div class="td-module-meta-info">
                     <?php if (td_util::get_option('tds_category_module_mx2') == 'yes') { echo $this->get_category(); }?>

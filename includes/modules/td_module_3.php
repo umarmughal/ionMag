@@ -16,7 +16,7 @@ class td_module_3 extends td_module {
                 <?php echo $this->get_image('td_100x70');?>
             </div>
 
-            <div class="td-module-info-panel td-module-meta-info-no-comm">
+            <div class="td-item-details td-no-comment td-category-small">
                 <?php echo $this->get_title();?>
 
                 <div class="td-module-meta-info">

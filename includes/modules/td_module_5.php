@@ -16,7 +16,7 @@ class td_module_5 extends td_module {
                 <?php echo $this->get_image('td_250x184');?>
             </div>
 
-            <div class="td-module-info-panel">
+            <div class="td-item-details td-category-small">
                 <?php if (td_util::get_option('tds_category_module_5') == 'yes') { echo $this->get_category(); }?>
                 
                 <?php echo $this->get_title();?>

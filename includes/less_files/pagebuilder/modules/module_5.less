@@ -4,13 +4,19 @@
 .td_module_5 {
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #f2f2f2;
 
-  &:nth-last-child(2) {
-    border: 0;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.06;
   }
 
-  .td-module-info-panel {
+  .td-item-details {
     margin-left: 280px;
     min-height: 184px;
   }
@@ -19,12 +25,19 @@
     display: inline-block;
     vertical-align: top;
     margin-bottom: 7px;
+    top: 0;
   }
 
   .td-module-title {
-    margin-bottom: 7px;
+    margin-bottom: 13px;
     padding-bottom: 10px;
     font-size: 19px;
     line-height: 24px;
+  }
+}
+// hide bottom border on latest modules
+.td-module-number5 {
+  .td_module_wrap:last-child:before {
+    display: none;
   }
 }
