@@ -53,7 +53,7 @@ class td_block_related_posts extends td_block {
         $buffy .= '</div>';
 
         //get the ajax pagination for this block
-        $buffy .= $this->get_block_pagination();
+        //$buffy .= $this->get_block_pagination();
         $buffy .= '</div> <!-- ./block -->';
         return $buffy;
     }
