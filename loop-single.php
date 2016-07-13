@@ -37,8 +37,7 @@ if (have_posts()) {
         </div>
 
         <?php echo $td_mod_single->get_social_sharing_top();?>
-
-
+        
         <div class="td-post-content">
 
         <?php
@@ -67,7 +66,6 @@ if (have_posts()) {
             <?php echo $td_mod_single->get_social_sharing_bottom();?>
 	        <?php echo $td_mod_single->get_item_scope_meta();?>
         </footer>
-
     </article> <!-- /.post -->
 
     <?php echo $td_mod_single->related_posts();?>

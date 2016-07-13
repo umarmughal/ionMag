@@ -509,10 +509,11 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     bottom: -4px;
   }
 
-  .td-module-title {
+  .entry-title {
     font-weight: 500;
     font-size: 14px;
     margin: 7px 6px 0;
+    padding-bottom: 0;
     line-height: 18px;
 
     a {
@@ -522,6 +523,10 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
       &:hover {
         color: @td_theme_color;
       }
+    }
+
+    &:after {
+      display: none;
     }
   }
 

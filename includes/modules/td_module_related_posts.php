@@ -13,8 +13,8 @@ class td_module_related_posts extends td_module {
 
         <div class="<?php echo $this->get_module_classes(array("td_mod_related_posts")); ?>">
             <div class="td-module-image">
-                <?php echo $this->get_image('td_218x150');?>
-                <?php if (td_util::get_option('tds_category_module_related_posts') == 'yes') { echo $this->get_category(); }?>
+                <?php echo $this->get_image('td_198x145');?>
+                <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_related_posts') == 'yes') { echo $this->get_category(); }?></div>
             </div>
             <div class="item-details">
                 <?php echo $this->get_title();?>
