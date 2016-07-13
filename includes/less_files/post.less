@@ -1,3 +1,21 @@
+.td-post-source-tags,
+.author-box-wrap,
+.td-post-sharing-bottom {
+  position: relative;
+
+  &:after {
+    content: '';
+    position: absolute;;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    .opacity(0.04);
+  }
+}
+
+
 /*  ----------------------------------------------------------------------------
     Breadcrumbs
 */
@@ -35,7 +53,7 @@
   font-family: @font2;
   font-size: 10px;
   margin-top: 0;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
   line-height: 1;
 
   li {
@@ -63,8 +81,10 @@
     Post title
 */
 .td-post-header {
+  margin-bottom: 17px;
+
   .entry-title {
-    margin: 0;
+    margin-bottom: 8px;
     word-wrap: break-word;
     font-size: 31px;
     font-weight: 400;
@@ -75,8 +95,13 @@
     display: none;
   }
 
-  .td-post-views {
+  .td-post-views-wrap {
     float: right;
+  }
+
+  .td-post-views-text {
+    margin-left: 3px;
+    color: #666;
   }
 }
 
@@ -86,12 +111,19 @@
 */
 .td-post-sharing {
   font-family: @font1;
-  margin-bottom: 21px;
 
   a {
     display: inline-block;
     vertical-align: middle;
   }
+}
+
+.td-post-sharing-top {
+  margin-bottom: 20px;
+}
+
+.td-post-sharing-bottom {
+  padding-bottom: 30px;
 }
 
 .td-post-share-title {
@@ -172,7 +204,6 @@
   }
 }
 
-
 // classic share buttons
 .td-classic-sharing {
   display: inline-block;
@@ -206,10 +237,23 @@
 */
 // source/via + tag group
 .td-post-source-tags {
+  margin-bottom: 21px;
+  padding: 4px 0 30px 0;
   font-size: 11px;
 
   a {
     font-size: 11px;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: @td_theme_color;
+    .opacity(0.3);
   }
 }
 
@@ -218,6 +262,7 @@
 }
 
 .td-post-source-via {
+  margin-bottom: 9px;
   font-family: @font2;
   font-style: italic;
 }
@@ -241,12 +286,9 @@
   }
 }
 
-
-/*  ----------------------------------------------------------------------------
-    Tags
-*/
+// Tags
 .td-tags {
-  margin: 0 0 30px 0;
+  margin: 0;
   font-family: @font2;
   font-weight: 600;
   text-transform: uppercase;
@@ -276,6 +318,7 @@
     Next / Prev article
 */
 .td-post-next-prev-content {
+  margin-bottom: 24px;
   display: inline-block;
   font-family: @font2;
 
@@ -306,4 +349,103 @@
 
 .td-next-prev-separator {  //this is from wp_010 - it is not used here but the core is still generating it
   display: none;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Author box
+*/
+.author-box-wrap {
+  margin-bottom: 30px;
+  padding: 22px 0 29px 0;
+
+  .avatar {
+    float: left;
+    width: 60px;
+    .border-radius(50%);
+  }
+
+  .desc {
+    font-family: @font2;
+    margin-left: 80px;
+    font-size: 13px;
+  }
+
+  .td-social-icon-wrap .td-icon-font {
+    color: #222;
+  }
+
+  .td-author-social {
+    margin-bottom: -5px;
+
+    a {
+      color: #444;
+      margin-top: 11px;
+
+      &:hover {
+        color: @td_theme_color;
+      }
+    }
+
+    .td-icon-font {
+      font-size: 13px;
+      width: auto;
+      min-width: 18px;
+      height: auto;
+    }
+  }
+
+  &:before {
+    content: '';
+    position: absolute;;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #000;
+    .opacity(0.04);
+  }
+}
+
+.td-author-name,
+.td-author-url {
+  a {
+    color: #000;
+
+    &:hover {
+      color: @td_theme_color;
+    }
+  }
+}
+
+.td-author-name {
+  position: relative;
+  margin-bottom: 4px;
+  padding-bottom: 4px;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 500;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: @td_theme_color;
+    .opacity(0.3);
+  }
+}
+
+.td-author-url {
+  margin-bottom: 9px;
+  font-size: 11px;
+  font-style: italic;
+}
+
+.td-author-description {
+  font-style: italic;
+  line-height: 21px;
+  color: #666;
 }

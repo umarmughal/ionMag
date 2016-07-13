@@ -27,7 +27,10 @@ if (have_posts()) {
                     <?php echo $td_mod_single->get_author();?>
                     <?php echo $td_mod_single->get_date(false);?>
                     <?php echo $td_mod_single->get_comments();?>
-                    <?php echo $td_mod_single->get_views();?>
+                    <div class="td-post-views-wrap">
+                        <?php echo $td_mod_single->get_views();?>
+                        <span class="td-post-views-text">views</span>
+                    </div>
                 </div>
             </header>
 

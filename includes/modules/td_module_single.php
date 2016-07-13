@@ -121,22 +121,22 @@ class td_module_single extends td_module_single_base {
 	    }
 
 
-//        if (td_util::get_option('tds_bottom_like_tweet_show') != 'hide') {
-//            //classic share buttons
-//            $buffy .= '<div class="td-classic-sharing">';
-//	            $buffy .= '<ul>';
-//
-//	            $buffy .= '<li class="td-classic-facebook">';
-//	            $buffy .= '<iframe frameBorder="0" src="' . td_global::$http_or_https . '://www.facebook.com/plugins/like.php?href=' . $this->href . '&amp;layout=button_count&amp;show_faces=false&amp;width=105&amp;action=like&amp;colorscheme=light&amp;height=21" style="border:none; overflow:hidden; width:105px; height:21px; background-color:transparent;"></iframe>';
-//	            $buffy .= '</li>';
-//
-//	            $buffy .= '<li class="td-classic-twitter">';
-//	            $buffy .= '<a href="https://twitter.com/share" class="twitter-share-button" data-url="' . esc_attr($this->href) . '" data-text="' . $this->title . '" data-via="' . td_util::get_option('tds_' . 'social_twitter') . '" data-lang="en">tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
-//	            $buffy .= '</li>';
-//
-//	            $buffy .= '</ul>';
-//            $buffy .= '</div>';
-//        }
+        if (td_util::get_option('tds_bottom_like_tweet_show') != 'hide') {
+            //classic share buttons
+            $buffy .= '<div class="td-classic-sharing">';
+	            $buffy .= '<ul>';
+
+	            $buffy .= '<li class="td-classic-facebook">';
+	            $buffy .= '<iframe frameBorder="0" src="' . td_global::$http_or_https . '://www.facebook.com/plugins/like.php?href=' . $this->href . '&amp;layout=button_count&amp;show_faces=false&amp;width=105&amp;action=like&amp;colorscheme=light&amp;height=21" style="border:none; overflow:hidden; width:105px; height:21px; background-color:transparent;"></iframe>';
+	            $buffy .= '</li>';
+
+	            $buffy .= '<li class="td-classic-twitter">';
+	            $buffy .= '<a href="https://twitter.com/share" class="twitter-share-button" data-url="' . esc_attr($this->href) . '" data-text="' . $this->title . '" data-via="' . td_util::get_option('tds_' . 'social_twitter') . '" data-lang="en">tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>';
+	            $buffy .= '</li>';
+
+	            $buffy .= '</ul>';
+            $buffy .= '</div>';
+        }
 
         $buffy .= '</div>';
 
