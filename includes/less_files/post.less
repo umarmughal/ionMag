@@ -26,3 +26,284 @@
     margin: 0 6px;
   }
 }
+
+/*  ----------------------------------------------------------------------------
+    Category
+*/
+.td-category {
+  list-style: none;
+  font-family: @font2;
+  font-size: 10px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  line-height: 1;
+
+  li {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    line-height: 1;
+  }
+
+  a {
+    color: #fff;
+    background-color: #000;
+    padding: 4px 8px;
+    white-space: nowrap;
+    display: inline-block;
+
+    &:hover {
+      background-color: @td_theme_color;
+      color: #fff;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Post title
+*/
+.td-post-header {
+  .entry-title {
+    margin: 0;
+    word-wrap: break-word;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 37px;
+  }
+
+  .td-post-comments a:before {
+    display: none;
+  }
+
+  .td-post-views {
+    float: right;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Sharing
+*/
+.td-post-sharing {
+  font-family: @font1;
+  margin-bottom: 21px;
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.td-post-share-title {
+  font-family: @font2;
+  font-weight: 600;
+  font-size: 15px;
+  position: relative;
+  margin-right: 26px;
+  vertical-align: middle;
+}
+
+.td-default-sharing {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.td-social-sharing-buttons {
+  background-color: #fff;
+  font-size: 12px;
+  color: #666;
+  margin-right: 7px;
+  padding: 0 16px;
+  min-width: 29px;
+  height: 29px;
+  text-align: center;
+  border: 1px solid #ebebeb;
+  .border-radius(14.5px);
+
+  .td-sp {
+    width: 14px;
+    height: 20px;
+  }
+}
+
+.td-social-but-text {
+  display: inline-block;
+  position: relative;
+  line-height: 29px;
+  margin: -2px 0 0 12px;
+}
+
+// facebook
+.td-social-facebook .td-icon-facebook {
+  font-size: 14px;
+  position: relative;
+  color: #3d76c3;
+}
+
+// twitter
+.td-social-twitter .td-icon-twitter {
+  font-size: 11px;
+  color: #29c5f6;
+}
+
+.td-social-google,
+.td-social-pinterest {
+  padding: 0;
+  line-height: 29px;
+}
+
+// google
+.td-social-google .td-icon-googleplus {
+  font-size: 13px;
+  position: relative;
+  top: 0;
+  color: #eb4026;
+}
+
+// pinterest
+.td-social-pinterest {
+  margin-right: 0;
+
+  .td-icon-pinterest {
+    font-size: 13px;
+    position: relative;
+    top: 1px;
+    color: #ca212a;
+  }
+}
+
+
+// classic share buttons
+.td-classic-sharing {
+  display: inline-block;
+  vertical-align: middle;
+
+  ul {
+    margin: 0 0 0 30px;
+    height: 20px;
+  }
+
+  li {
+    display: inline-block;
+    height: 20px;
+    margin-left: 0;
+  }
+}
+
+.td-classic-twitter {
+  position: relative;
+  top: -1px;
+  left: 2px;
+
+  .twitter-share-button {
+    margin: 0 !important;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Source and Via
+*/
+// source/via + tag group
+.td-post-source-tags {
+  font-size: 11px;
+
+  a {
+    font-size: 11px;
+  }
+}
+
+.td-post-source-tags .td-no-tags {
+  margin-bottom: 34px;
+}
+
+.td-post-source-via {
+  font-family: @font2;
+  font-style: italic;
+}
+
+.td-post-small-box {
+  display: inline-block;
+  margin-right: 29px;
+
+  span {
+    text-transform: uppercase;
+    font-weight: 500;
+    float: left;
+  }
+
+  a {
+    color: #666;
+
+    &:hover {
+      color: @td_theme_color;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Tags
+*/
+.td-tags {
+  margin: 0 0 30px 0;
+  font-family: @font2;
+  font-weight: 600;
+  text-transform: uppercase;
+
+  li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 5px 0 0;
+
+    &:first-of-type {
+      display: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 0 10px;
+    font-size: 10px;
+    line-height: 20px;
+    border: 1px solid #ebebeb;
+    .border-radius(10px);
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Next / Prev article
+*/
+.td-post-next-prev-content {
+  display: inline-block;
+  font-family: @font2;
+
+  span {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: @td_theme_color;
+  }
+
+  a {
+    display: block;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+    color: #000;
+
+    &:hover {
+      color: @td_theme_color;
+    }
+  }
+}
+
+.td-post-next-post {
+  text-align: right;
+}
+
+.td-next-prev-separator {  //this is from wp_010 - it is not used here but the core is still generating it
+  display: none;
+}
