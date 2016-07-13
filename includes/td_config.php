@@ -538,6 +538,101 @@ class td_config {
             )
         );
 
+        td_api_block::add('td_block_2',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 2',
+                "base" => 'td_block_2',
+                "class" => 'td_block_2',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_2.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_3',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 3',
+                "base" => 'td_block_3',
+                "class" => 'td_block_3',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_3.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_4',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 4',
+                "base" => 'td_block_4',
+                "class" => 'td_block_4',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_4.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_5',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 5',
+                "base" => 'td_block_5',
+                "class" => 'td_block_5',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_5.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_6',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 6',
+                "base" => 'td_block_6',
+                "class" => 'td_block_6',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_6.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
         td_api_block::add('td_block_big_grid_1',
             array(
                 'map_in_visual_composer' => true,

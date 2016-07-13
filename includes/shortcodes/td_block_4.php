@@ -1,10 +1,10 @@
 <?php
-class td_block_1 extends td_block {
+class td_block_4 extends td_block {
     function render($atts, $content = null) {
         parent::render($atts); // sets the live atts, $this->atts, $this->block_uid, $this->td_query (it runs the query)
 
         $buffy = ''; //output buffer
-        
+
         $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
@@ -42,36 +42,26 @@ class td_block_1 extends td_block {
 
         if (!empty($posts)) {
             foreach ($posts as $post) {
-                $td_module_1 = new td_module_1($post);
+                $td_module_4 = new td_module_4($post);
 
                 switch ($td_column_number) {
 
                     case '1': //one column layout
-                        $buffy .= $td_module_1->render();
+                        $buffy .= $td_module_4->render();
                         break;
 
                     case '2': //two column layout
-                        $buffy .= $td_block_layout->open_row();
-
-                        $buffy .= $td_block_layout->open6();
-                        $buffy .= $td_module_1->render();
-                        $buffy .= $td_block_layout->close6();
-
-                        if ($td_current_column == 2) {
-                            $buffy .= $td_block_layout->close_row();
-                        }
-
-
+                        $buffy .= $td_module_4->render();
                         break;
 
                     case '3': //three column layout
                         $buffy .= $td_block_layout->open_row();
 
-                        $buffy .= $td_block_layout->open4();
-                        $buffy .= $td_module_1->render();
-                        $buffy .= $td_block_layout->close4();
+                        $buffy .= $td_block_layout->open6();
+                        $buffy .= $td_module_4->render();
+                        $buffy .= $td_block_layout->close6();
 
-                        if ($td_current_column == 3) {
+                        if ($td_current_column == 2) {
                             $buffy .= $td_block_layout->close_row();
                         }
 

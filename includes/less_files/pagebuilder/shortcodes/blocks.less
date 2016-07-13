@@ -1,0 +1,211 @@
+/*  ----------------------------------------------------------------------------
+    Block Wrap
+*/
+.td_block_wrap {
+  position: relative;
+  clear: both;
+}
+
+/*  ----------------------------------------------------------------------------
+    Block Titles + Line
+*/
+.block-title {
+  position: relative;
+  padding: 2px 0 8px 0;
+  font-family: @font2;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  a, span, label { /* label is for jetpack */
+    display: inline-block;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: @td_theme_color;
+    .opacity(0.3);
+  }
+}
+// firefox fix
+@-moz-document url-prefix() {
+  .block-title {
+    a, span, label { /* label is for jetpack */
+      padding: 6px 12px 5px 12px;
+    }
+  }
+}
+
+// All blocks header with theme accent color
+.block-title,
+.td-related-title,
+.wpb_tabs .wpb_tabs_nav,
+.woocommerce div.product .woocommerce-tabs ul.tabs:before {
+  border-color: @td_theme_color;
+}
+.td_block_wrap .td-subcat-item .td-cur-simple-item {
+  color: @td_theme_color;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Block category filter
+*/
+.td-subcat-filter {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  opacity: 0;
+  z-index: 2;
+
+  ul {
+    margin: 0;
+  }
+
+  .td-display-filter {
+    display: none !important;
+  }
+
+  // Category list
+  .td-subcat-list {
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1;
+
+    .td-subcat-item {
+      display: inline-block;
+      line-height: 1;
+      margin-left: 20px;
+    }
+
+    a {
+      font-family: @font2;
+      font-size: 13px;
+      color: #666;
+      line-height: 1;
+
+      &:hover {
+        color: @td_theme_color;
+      }
+    }
+  }
+
+  // Category dropdown
+  .td-subcat-dropdown {
+    display: inline-block;
+    font-style: italic;
+    text-align: right;
+    vertical-align: top;
+
+    // menu dropdown
+    &:hover {
+      .td-subcat-more {
+
+        span, i {
+          color: @td_theme_color;
+        }
+      }
+
+      ul {
+        display: block;
+      }
+    }
+
+    .td-subcat-more {
+      position: relative;
+      margin-left: 13px;
+      padding-left: 13px;
+      line-height: 1;
+      cursor: pointer;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+
+      i {
+        font-size: 9px;
+        margin-left: 7px;
+        margin-right: 7px;
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background-color: #000;
+        .opacity(0.08);
+      }
+    }
+
+    ul {
+      list-style: none;
+      position: absolute;
+      right: 0;
+      top: 16px;
+      min-width: 140px;
+      padding: 12px 0;
+      background-color: rgba(255, 255, 255, 0.94);
+      z-index: 999;
+      .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.08));
+      display: none;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: @td_theme_color;
+      }
+    }
+
+    a {
+      font-family: @font2;
+      font-size: 13px;
+      color: #666;
+      white-space: nowrap;
+      display: block;
+      line-height: 23px;
+      padding: 0 22px;
+
+      &:hover {
+        color: @td_theme_color;
+      }
+    }
+
+    li {
+      margin-left: 0;
+    }
+
+    span {
+      font-family: @font3;
+      font-size: 13px;
+      color: #777;
+      line-height: 1;
+    }
+  }
+}
+
+// firefox fix
+@-moz-document url-prefix() {
+  .td-subcat-filter .td-subcat-dropdown .td-subcat-more {
+    height: 31px !important;
+  }
+}
+
+.td-js-loaded .td-subcat-filter {
+  opacity: 1;
+  .transition(opacity 0.3s);
+}
