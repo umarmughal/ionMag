@@ -152,7 +152,6 @@
   display: inline-block;
 }
 
-.td-post-author-name,
 .td-post-date {
   position: relative;
   margin-right: 8px;
@@ -168,6 +167,37 @@
     height: 2px;
     background-color: #000;
     .opacity(0.2);
+  }
+}
+
+.td-post-author-name {
+  position: relative;
+  margin-right: 8px;
+  padding-right: 11px;
+  font-weight: 500;
+
+  .td-author-by {
+    display: inline;
+    .opacity(0.5);
+  }
+
+  .td-author-line {
+    display: none;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 2px;
+    right: -1px;
+    width: 2px;
+    height: 2px;
+    background-color: #000;
+    .opacity(0.1);
+  }
+
+  span {
+    display: none;
   }
 }
 
