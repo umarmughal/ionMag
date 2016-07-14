@@ -1,0 +1,143 @@
+/*
+  General big grids
+*/
+.td-big-grid-post {
+  position: relative;
+  overflow: hidden;
+
+  // stars
+  .entry-review-stars {
+    color: #fff;
+    margin-top: -5px;
+  }
+
+  // category tag
+  .td-post-category {
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 0 0 5px 0;
+    padding: 3px 7px;
+    line-height: 13px;
+    pointer-events: auto;
+  }
+
+  // meta info container
+  .td-meta-info-container {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .td-meta-align {
+    pointer-events: none;
+  }
+
+  .td-post-author-name a,
+  .td-post-author-name span,
+  .td-post-date {
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  }
+
+  .entry-title {
+    margin: 0;
+
+    a {
+      color: #fff;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  .td-module-meta-info {
+    margin: 11px 0 20px 20px;
+    min-height: 0;
+    z-index: 1;
+  }
+
+  .td-post-author-name {
+    pointer-events: auto;
+  }
+
+  .td-big-grid-meta {
+    z-index: 1;
+  }
+
+
+  // empty modules color
+  .td-module-thumb {
+    background-color: #e5e5e5;
+  }
+
+  // author name + date
+  .td-post-author-name,
+  .td-post-date {
+    top: 0;
+  }
+
+  // video icon
+  .td-video-play-ico img {
+    z-index: 1;
+  }
+}
+
+.td_block_big_grid_1,
+.td_block_big_grid_2,
+.td_block_big_grid_3 {
+  padding-bottom: 48px;
+}
+
+// Slide Grid
+.iosSlider.td_block_wrap {
+  margin-bottom: 34px !important;
+}
+
+/*
+  Big grid 2
+*/
+.td_block_big_grid_2 {
+  // general
+  .td-big-grid-post {
+    float: left;
+  }
+
+  .td-big-thumb {
+    margin-right: 3px;
+
+    .td-module-thumb {
+      width: 741px;
+      height: 486px;
+    }
+  }
+
+  .td-small-thumb {
+    .td-module-thumb {
+      width: 324px;
+      height: 160px;
+    }
+  }
+
+  .td-big-grid-post-1,
+  .td-big-grid-post-2 {
+    margin-bottom: 3px;
+  }
+
+  &.td-grid-style-5,
+  &.td-grid-style-6 {
+    .td-module-meta-info {
+      margin-left: 0;
+      margin-right: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  // empty module
+  .td-module-empty {
+    .td-module-thumb {
+      width: 324px;
+      height: 160px;
+    }
+  }
+}
