@@ -75,17 +75,17 @@ class td_block_8 extends td_block {
                     case '3': //three column layout
                         if ($td_post_count == 0) { //first post
                             $buffy .= $td_module_4->render();
-                            $td_current_column = 0;
+                            $td_current_column = 1;
                         } else {
                             $buffy .= $td_block_layout->open_row();
 
                             $buffy .= $td_block_layout->open6();
                             $buffy .= $td_module_5->render();
                             $buffy .= $td_block_layout->close6();
-                        }
 
-                        if ($td_current_column == 3) {
-                            $buffy .= $td_block_layout->close_row();
+                            if ($td_current_column == 3) {
+                                $buffy .= $td_block_layout->close_row();
+                            }
                         }
 
                         break;

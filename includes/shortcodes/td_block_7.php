@@ -87,10 +87,10 @@ class td_block_7 extends td_block {
                             $buffy .= $td_block_layout->open4();
                             $buffy .= $td_module_2->render();
                             $buffy .= $td_block_layout->close4();
-                        }
 
-                        if ($td_current_column == 3) {
-                            $buffy .= $td_block_layout->close_row();
+                            if ($td_current_column == 3) {
+                                $buffy .= $td_block_layout->close_row();
+                            }
                         }
 
                         break;
