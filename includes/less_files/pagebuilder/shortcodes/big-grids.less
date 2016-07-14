@@ -3,24 +3,14 @@
 */
 .td-big-grid-post {
   position: relative;
+  font-family: @font2;
+  text-align: center;
   overflow: hidden;
 
   // stars
   .entry-review-stars {
     color: #fff;
     margin-top: -5px;
-  }
-
-  // category tag
-  .td-post-category {
-    font-size: 10px;
-    font-weight: 500;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0 0 5px 0;
-    padding: 3px 7px;
-    line-height: 13px;
-    pointer-events: auto;
   }
 
   // meta info container
@@ -39,32 +29,56 @@
   .td-post-author-name span,
   .td-post-date {
     color: #fff;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
   }
 
   .entry-title {
     margin: 0;
+    padding: 0;
+    text-transform: uppercase;
 
     a {
       color: #fff;
-      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    &:after {
+      display: none;
     }
   }
 
   .td-module-meta-info {
-    margin: 11px 0 20px 20px;
     min-height: 0;
     z-index: 1;
   }
 
   .td-post-author-name {
     pointer-events: auto;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    .opacity(1);
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .td-post-date {
+    .opacity(0.8);
   }
 
   .td-big-grid-meta {
     z-index: 1;
   }
 
+  // module thumb
+  .td-module-thumb {
+    overflow: hidden;
+    margin: 0;
+
+    img {
+      max-width: none;
+    }
+  }
 
   // empty modules color
   .td-module-thumb {
@@ -95,42 +109,41 @@
 }
 
 /*
-  Big grid 2
+  Big grid 1
 */
-.td_block_big_grid_2 {
+.td_block_big_grid_1 {
   // general
   .td-big-grid-post {
     float: left;
   }
 
   .td-big-thumb {
-    margin-right: 3px;
+    margin-right: 10px;
 
     .td-module-thumb {
-      width: 741px;
-      height: 486px;
+      width: 640px;
+      height: 450px;
+    }
+
+    img {
+      height: 100%;
     }
   }
 
   .td-small-thumb {
     .td-module-thumb {
-      width: 324px;
-      height: 160px;
+      width: 330px;
+      height: 220px;
+    }
+
+    img {
+      width: 100%;
     }
   }
 
   .td-big-grid-post-1,
   .td-big-grid-post-2 {
-    margin-bottom: 3px;
-  }
-
-  &.td-grid-style-5,
-  &.td-grid-style-6 {
-    .td-module-meta-info {
-      margin-left: 0;
-      margin-right: 0;
-      margin-bottom: 0;
-    }
+    margin-bottom: 10px;
   }
 
   // empty module
