@@ -1586,6 +1586,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   height: 100%;
   vertical-align: top;
   padding: 22px 0;
+  line-height: 1;
 }
 .td_mega_menu_sub_cats a {
   display: block;
@@ -1593,13 +1594,14 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   text-transform: uppercase;
   font-weight: 500;
   color: #000;
-  padding: 1px 32px;
+  padding: 7px 10px 7px 32px;
   position: relative;
   vertical-align: middle;
 }
 .td_mega_menu_sub_cats .mega-menu-cat-all {
   margin-top: 17px;
-  padding-top: 19px;
+  padding-top: 25px;
+  line-height: 1;
 }
 .td_mega_menu_sub_cats .mega-menu-cat-all:before {
   content: '';

@@ -153,7 +153,7 @@ class td_block_mega_menu extends td_block {
 
                 //show all categories only on ajax
                 if (empty($sub_cat_ajax)) {
-                    $buffy .= '<a class="cur-sub-cat mega-menu-sub-cat-' . $this->block_uid . ' mega-menu-cat-all" id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="" href="' . get_category_link($category_id) . '">' . __td('All', TD_THEME_NAME) . '</a>';
+                    $buffy .= '<a class="cur-sub-cat mega-menu-sub-cat-' . $this->block_uid . ' mega-menu-cat-all" id="' . td_global::td_generate_unique_id() . '" data-td_block_id="' . $this->block_uid . '" data-td_filter_value="" href="' . get_category_link($category_id) . '">' . __td('All', TD_THEME_NAME) . ' ' . get_cat_name($td_category->parent) . '</a>';
                 }
 
                 $buffy .= '</div>';
