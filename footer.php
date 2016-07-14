@@ -37,13 +37,11 @@
 
     <?php } ?>
 
-    <div class="td-footer-rec-wrap td-container-wrap">
-        <div class="td-container">
-            <div class="td-footer-rec-title">Advertisement</div>
-
-            <?php echo td_global_blocks::get_instance('td_block_ad_box')->render(array('spot_id' => 'footer_top')); ?>
-        </div>
-    </div>
+    <?php
+    $tds_footer_top_title = td_util::get_option('tds_footer_top_title');
+    // ad spot
+    echo td_global_blocks::get_instance('td_block_ad_box')->render(array('spot_id' => 'footer_top', 'spot_title' => $tds_footer_top_title));
+    ?>
 
     <div class="td-footer-outer-wrapper">
         <!-- Footer -->

@@ -1,0 +1,156 @@
+/*
+  General big grids
+*/
+.td-big-grid-post {
+  position: relative;
+  font-family: @font2;
+  text-align: center;
+  overflow: hidden;
+
+  // stars
+  .entry-review-stars {
+    color: #fff;
+    margin-top: -5px;
+  }
+
+  // meta info container
+  .td-meta-info-container {
+    position: absolute;
+    pointer-events: none;
+    z-index: 1;
+    width: 100%;
+  }
+
+  .td-meta-align {
+    pointer-events: none;
+  }
+
+  .td-post-author-name a,
+  .td-post-author-name span,
+  .td-post-date {
+    color: #fff;
+  }
+
+  .entry-title {
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+
+    a {
+      color: #fff;
+    }
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .td-module-meta-info {
+    min-height: 0;
+    z-index: 1;
+  }
+
+  .td-post-author-name {
+    pointer-events: auto;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    .opacity(1);
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .td-post-date {
+    .opacity(0.8);
+  }
+
+  .td-big-grid-meta {
+    z-index: 1;
+  }
+
+  // module thumb
+  .td-module-thumb {
+    overflow: hidden;
+    margin: 0;
+
+    img {
+      max-width: none;
+    }
+  }
+
+  // empty modules color
+  .td-module-thumb {
+    background-color: #e5e5e5;
+  }
+
+  // author name + date
+  .td-post-author-name,
+  .td-post-date {
+    top: 0;
+  }
+
+  // video icon
+  .td-video-play-ico img {
+    z-index: 1;
+  }
+}
+
+.td_block_big_grid_1,
+.td_block_big_grid_2,
+.td_block_big_grid_3 {
+  padding-bottom: 48px;
+}
+
+// Slide Grid
+.iosSlider.td_block_wrap {
+  margin-bottom: 34px !important;
+}
+
+/*
+  Big grid 1
+*/
+.td_block_big_grid_1 {
+  // general
+  .td-big-grid-post {
+    float: left;
+  }
+
+  .td-big-thumb {
+    margin-right: 10px;
+
+    .td-module-thumb {
+      width: 640px;
+      height: 450px;
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  .td-small-thumb {
+    .td-module-thumb {
+      width: 330px;
+      height: 220px;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .td-big-grid-post-1,
+  .td-big-grid-post-2 {
+    margin-bottom: 10px;
+  }
+
+  // empty module
+  .td-module-empty {
+    .td-module-thumb {
+      width: 324px;
+      height: 160px;
+    }
+  }
+}

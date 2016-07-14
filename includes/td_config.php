@@ -352,6 +352,23 @@ class td_config {
             )
         );
 
+        td_api_module::add('td_module_mx1',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx1.php',
+                'text' => 'Module MX1',
+                'img' => '',
+                'used_on_blocks' => array('td_block_big_grid_1'),
+                'excerpt_title' => 25,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,                      // if the module uses columns on the page template + loop
+                'category_label' => true,
+                'class' => 'td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
         td_api_module::add('td_module_mx2',
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx2.php',
@@ -365,6 +382,23 @@ class td_config {
                 'uses_columns' => false,                      // if the module uses columns on the page template + loop
                 'category_label' => true,
                 'class' => 'td_module_wrap td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
+        td_api_module::add('td_module_mx4',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx4.php',
+                'text' => 'Module MX4',
+                'img' => '',
+                'used_on_blocks' => array('td_block_big_grid_1'),
+                'excerpt_title' => 25,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,                      // if the module uses columns on the page template + loop
+                'category_label' => true,
+                'class' => 'td-animation-stack',
                 'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
@@ -726,6 +760,13 @@ class td_config {
                         "description" => "Optional - a title for the Ad, like - Advertisement - if you leave it blank the block will not have a title",
                         "holder" => "div",
                         "class" => ""
+                    ),
+                    array (
+                        'param_name' => 'css',
+                        'value' => '',
+                        'type' => 'css_editor',
+                        'heading' => 'Css',
+                        'group' => 'Design options',
                     )
                 )
             )
