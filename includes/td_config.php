@@ -633,6 +633,44 @@ class td_config {
             )
         );
 
+        td_api_block::add('td_block_7',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 7',
+                "base" => 'td_block_7',
+                "class" => 'td_block_7',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_7.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_8',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 8',
+                "base" => 'td_block_8',
+                "class" => 'td_block_8',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_8.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
         td_api_block::add('td_block_big_grid_1',
             array(
                 'map_in_visual_composer' => true,

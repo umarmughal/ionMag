@@ -3480,6 +3480,25 @@ blockquote.pull-right:after {
   margin-left: 170px;
   min-height: 133px;
 }
+/*  ----------------------------------------------------------------------------
+    Block 7
+*/
+.td_block_7 .td-column-3 .td_module_4 .entry-thumb {
+  width: 100%;
+}
+/*  ----------------------------------------------------------------------------
+    Block 8
+*/
+.td_block_8 .td-column-3 .td_module_4 .entry-thumb {
+  width: 100%;
+}
+.td_block_8 .td-column-3 .td_module_5 .td-module-thumb {
+  width: 150px;
+}
+.td_block_8 .td-column-3 .td_module_5 .td-item-details {
+  margin-left: 170px;
+  min-height: 133px;
+}
 #td_css_split_separator {
   visibility: visible;
 }
