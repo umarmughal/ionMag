@@ -13,11 +13,15 @@ class td_block_4 extends td_block {
         //get the js for this block
         $buffy .= $this->get_block_js();
 
+        $buffy .= '<div class="td-block-header">';
+
         //get the block title
         $buffy .= $this->get_block_title();
 
         //get the sub category filter for this block
         $buffy .= $this->get_pull_down_filter();
+
+        $buffy .= '</div>'; // /.td-block-header
 
         $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
         $buffy .= $this->inner($this->td_query->posts);  //inner content of the block

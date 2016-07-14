@@ -13,11 +13,15 @@ class td_block_5 extends td_block {
         //get the js for this block
         $buffy .= $this->get_block_js();
 
+        $buffy .= '<div class="td-block-header">';
+
         //get the block title
         $buffy .= $this->get_block_title();
 
         //get the sub category filter for this block
         $buffy .= $this->get_pull_down_filter();
+
+        $buffy .= '</div>'; // /.td-block-header
 
         $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
         $buffy .= $this->inner($this->td_query->posts);  //inner content of the block
@@ -43,11 +47,12 @@ class td_block_5 extends td_block {
         if (!empty($posts)) {
             foreach ($posts as $post) {
                 $td_module_5 = new td_module_5($post);
+                $td_module_2 = new td_module_2($post);
 
                 switch ($td_column_number) {
 
                     case '1': //one column layout
-                        $buffy .= $td_module_5->render();
+                        $buffy .= $td_module_2->render();
                         break;
 
                     case '2': //two column layout

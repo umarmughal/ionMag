@@ -9,16 +9,21 @@
 /*  ----------------------------------------------------------------------------
     Block Titles + Line
 */
+.td-block-header {
+  margin-bottom: 20px;
+  .clearfix();
+}
+
 .block-title {
+  float: left;
   position: relative;
-  padding: 2px 0 8px 0;
+  padding: 4px 0 8px 0;
   font-family: @font2;
   font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
-  margin-top: 0;
-  margin-bottom: 20px;
+  margin: 0;
 
   a, span, label { /* label is for jetpack */
     display: inline-block;
@@ -59,175 +64,114 @@
 /*  ----------------------------------------------------------------------------
     Block category filter
 */
-.td-subcat-filter {
+/* control wrapper (default white) */
+.td-wrapper-pulldown-filter {
   display: inline-block;
-  position: absolute;
-  top: 0;
-  right: 0;
-  opacity: 0;
-  z-index: 2;
+  float: right;
+  font-style: italic;
+  font-size: 13px;
+  color: #666;
+  text-align: right;
 
-  ul {
-    margin: 0;
-  }
-
-  .td-display-filter {
-    display: none !important;
-  }
-
-  // Category list
-  .td-subcat-list {
+  .td-pulldown-filter-display-option {
     display: inline-block;
-    vertical-align: top;
-    line-height: 1;
+    position: relative;
+    right: 0;
+    padding-left: 13px;
+    height: 20px;
+    cursor: pointer;
+    white-space: nowrap;
 
-    .td-subcat-item {
-      display: inline-block;
-      line-height: 1;
-      margin-left: 20px;
+    i {
+      font-size: 8px;
+      padding: 0 7px;
     }
 
-    a {
-      font-family: @font2;
-      font-size: 13px;
-      color: #666;
-      line-height: 1;
-
-      &:hover {
-        color: @td_theme_color;
-      }
-    }
-  }
-
-  // Category dropdown
-  .td-subcat-dropdown {
-    display: inline-block;
-    font-style: italic;
-    text-align: right;
-    vertical-align: top;
-
-    // menu dropdown
     &:hover {
-      .td-subcat-more {
-
-        span, i {
-          color: @td_theme_color;
-        }
-      }
+      color: @td_theme_color;
 
       ul {
         display: block;
       }
     }
 
-    .td-subcat-more {
-      position: relative;
-      margin-left: 13px;
-      padding-left: 13px;
-      line-height: 1;
-      cursor: pointer;
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-
-      i {
-        font-size: 9px;
-        margin-left: 7px;
-        margin-right: 7px;
-      }
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 1px;
-        height: 100%;
-        background-color: #000;
-        .opacity(0.08);
-      }
-    }
-
-    ul {
-      list-style: none;
+    &:before {
+      content: '';
       position: absolute;
-      right: 0;
-      top: 16px;
-      min-width: 140px;
-      padding: 12px 0;
-      background-color: rgba(255, 255, 255, 0.94);
-      z-index: 999;
-      .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.08));
-      display: none;
-
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background-color: @td_theme_color;
-      }
+      left: 0;
+      top: 0;
+      width: 1px;
+      height: 100%;
+      background-color: #000;
+      .opacity(0.08);
     }
+  }
 
-    a {
-      font-family: @font2;
-      font-size: 13px;
-      color: #666;
-      white-space: nowrap;
-      display: block;
-      line-height: 23px;
-      padding: 0 22px;
+  .td-pulldown-filter-list {
+    position: absolute;
+    display: none;
+    top: 10px;
+    right: 0;
+    padding: 11px 0;
+    min-width: 141px;
+    background-color: rgba(255, 255, 255, 0.94);
+    .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.08));
+    border-top: 1px solid @td_theme_color;
+    z-index: 2;
+  }
 
-      &:hover {
-        color: @td_theme_color;
-      }
-    }
+  .td-pulldown-filter-item {
+     list-style: none;
+   }
 
-    li {
-      margin-left: 0;
-    }
+  .td-pulldown-filter-link {
+    line-height: 23px;
+    color: #444;
+    white-space: nowrap;
+    display: block;
+    padding: 0 21px;
 
-    span {
-      font-family: @font3;
-      font-size: 13px;
-      color: #777;
-      line-height: 1;
+    &:hover {
+      color: @td_theme_color;
     }
   }
 }
 
-// firefox fix
-@-moz-document url-prefix() {
-  .td-subcat-filter .td-subcat-dropdown .td-subcat-more {
-    height: 31px !important;
+/*open the list (default white)*/
+.td-pulldown-filter-list-open {
+  .td-pulldown-filter-list {
+    display: block;
   }
 }
 
-.td-js-loaded .td-subcat-filter {
+// filter siblings fix hide cats until all is loaded
+.td-js-loaded .td-category-siblings {
   opacity: 1;
   .transition(opacity 0.3s);
 }
 
+// fix margin bottom overwritten by VC
+.wpb_wrapper .td_block_wrap {
+  .td-pulldown-filter-display-option {
+    margin: 0;
+  }
+}
 
-// error message that shows up when a requiered setting is missing from the block (weather widget / video playlist etc)
-.td-block-missing-settings {
-  font-size:11px;
-  text-align: left;
-  padding: 20px;
-  background-color: #faf8fc;
-  border: 1px solid #eeecf0;
 
-    span {
-      background-color: #fe6c61;
-      color: white;
-      font-weight: bold;
-      padding: 3px 8px 4px 8px;
-      border-radius: 4px;
-      font-size: 10px;
-      position: relative;
-      top:-1px;
-      margin-right: 10px;
+/*  ----------------------------------------------------------------------------
+    Block 5
+*/
+.td_block_5 {
+  .td-column-3 {
+    .td_module_5 {
+      .td-module-thumb {
+        width: 150px;
+      }
+
+      .td-item-details {
+        margin-left: 170px;
+        min-height: 133px;
+      }
     }
+  }
 }
