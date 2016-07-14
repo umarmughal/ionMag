@@ -52,8 +52,6 @@ class td_block_related_posts extends td_block {
         $buffy .= $this->inner($this->td_query->posts, $td_column_number);  //inner content of the block
         $buffy .= '</div>';
 
-        //get the ajax pagination for this block
-        $buffy .= $this->get_block_pagination();
         $buffy .= '</div> <!-- ./block -->';
         return $buffy;
     }

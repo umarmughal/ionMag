@@ -442,6 +442,8 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 
   .td_block_inner {
     margin-left: 200px;
+    position: relative;
+    right: -1px;
   }
 }
 
@@ -509,10 +511,11 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     bottom: -4px;
   }
 
-  .td-module-title {
+  .entry-title {
     font-weight: 500;
     font-size: 14px;
     margin: 7px 6px 0;
+    padding-bottom: 0;
     line-height: 18px;
 
     a {
@@ -522,6 +525,10 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
       &:hover {
         color: @td_theme_color;
       }
+    }
+
+    &:after {
+      display: none;
     }
   }
 
@@ -544,6 +551,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td-no-subcats {
   .td_block_inner {
     margin-left: 0;
+    right: 0;
   }
 
   .td-mega-span {

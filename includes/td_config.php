@@ -369,6 +369,23 @@ class td_config {
             )
         );
 
+        td_api_module::add('td_module_related_posts',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_related_posts.php',
+                'text' => 'Related posts module',
+                'img' => '',
+                'used_on_blocks' => array('td_block_related_posts'),
+                'excerpt_title' => 25,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,
+                'category_label' => true,
+                'class' => 'td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
 
 
         /**
@@ -428,6 +445,19 @@ class td_config {
             )
         );
 
+        td_api_thumb::add('td_80x60',
+            array(
+                'name' => 'td_80x60',
+                'width' => 80,
+                'height' => 60,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'small',
+                'used_on' => array(
+                    'Live search'
+                )
+            )
+        );
+
         td_api_thumb::add('td_260x195',
             array(
                 'name' => 'td_260x195',
@@ -441,15 +471,15 @@ class td_config {
             )
         );
 
-        td_api_thumb::add('td_80x60',
+        td_api_thumb::add('td_198x145',
             array(
-                'name' => 'td_80x60',
-                'width' => 80,
-                'height' => 60,
+                'name' => 'td_198x145',
+                'width' => 198,
+                'height' => 145,
                 'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'small',
+                'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Live search'
+                    'Related posts'
                 )
             )
         );
@@ -499,6 +529,101 @@ class td_config {
                 "category" => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_1',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_1.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_2',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 2',
+                "base" => 'td_block_2',
+                "class" => 'td_block_2',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_2.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_3',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 3',
+                "base" => 'td_block_3',
+                "class" => 'td_block_3',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_3.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_4',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 4',
+                "base" => 'td_block_4',
+                "class" => 'td_block_4',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_4.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_5',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 5',
+                "base" => 'td_block_5',
+                "class" => 'td_block_5',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_5.php',
+                "params" => array_merge(
+                    self::get_map_block_general_array(),
+                    self::get_map_filter_array(),
+                    self::get_map_block_ajax_filter_array(),
+                    self::get_map_block_pagination_array()
+                )
+            )
+        );
+
+        td_api_block::add('td_block_6',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Block 6',
+                "base" => 'td_block_6',
+                "class" => 'td_block_6',
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_1',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_6.php',
                 "params" => array_merge(
                     self::get_map_block_general_array(),
                     self::get_map_filter_array(),
@@ -700,20 +825,10 @@ class td_config {
             )
         );
 
-        td_api_module::add('td_module_related_posts',
+        td_api_block::add('td_block_related_posts',
             array(
-                'file' => td_global::$get_template_directory . '/includes/modules/td_module_related_posts.php',
-                'text' => 'Related posts module',
-                'img' => '',
-                'used_on_blocks' => array('td_block_related_posts'),
-                'excerpt_title' => 25,
-                'excerpt_content' => '',
-                'enabled_on_more_articles_box' => false,
-                'enabled_on_loops' => false,
-                'uses_columns' => false,
-                'category_label' => true,
-                'class' => 'td-animation-stack',
-                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+                'map_in_visual_composer' => false,
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_related_posts.php',
             )
         );
 
