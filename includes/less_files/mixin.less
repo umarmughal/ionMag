@@ -48,6 +48,12 @@
   -o-transition: @transition1, @transition2;
   transition: @transition1, @transition2;
 }
+.transition_important(@transition) {
+  -webkit-transition: @transition !important;
+  -moz-transition: @transition !important;
+  -o-transition: @transition !important;
+  transition: @transition !important;
+}
 
 // Opacity
 .opacity(@value) {
