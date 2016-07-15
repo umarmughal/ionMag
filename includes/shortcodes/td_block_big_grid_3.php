@@ -24,7 +24,7 @@ class td_block_big_grid_3 extends td_block {
 
 	    $buffy = '';
 
-        $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1')) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1 td-big-grids')) . '" ' . $this->get_block_html_atts() . '>';
             $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
                 $buffy .= $this->inner($this->td_query->posts); //inner content of the block
                 $buffy .= '<div class="clearfix"></div>';
@@ -67,7 +67,7 @@ class td_block_big_grid_3 extends td_block {
                         $buffy .= $td_module_mx_empty->render($i);
                     }
                 }
-	                $buffy .= '</div>';  // close td-big-grid-scroll
+	                //$buffy .= '</div>';  // close td-big-grid-scroll
                 $buffy .= '</div>'; // close td-big-grid-wrapper
             }
 
