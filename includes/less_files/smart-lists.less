@@ -9,7 +9,7 @@
 }
 
 .td-smart-list-button {
-  font-family: @font3;
+  font-family: @font2;
   line-height: 40px;
   background-color: #222;
   color: #fff;
@@ -152,6 +152,7 @@
 
   .td-number-and-title {
     width: 100%;
+    min-height: 40px;
     position: relative;
     padding: 0;
     margin-bottom: 45px;
@@ -160,7 +161,9 @@
   }
 
   .td-sml-current-item-nr {
-    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: #000;
     margin-right: 20px;
     font-size: 23px;
@@ -173,6 +176,7 @@
 
   .td-sml-current-item-title {
     display: inline-block;
+    padding: 4px 0 0 61px;
     font-size: 23px;
     font-weight: 500;
   }
