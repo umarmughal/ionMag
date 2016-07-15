@@ -197,6 +197,21 @@ class td_config {
 	    );
 
 
+
+        /**
+         * smart lists
+         */
+        td_api_smart_list::add('td_smart_list_1',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/smart_lists/td_smart_list_1.php',
+                'text' => 'Smart list 1',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/smart_lists/td_smart_list_1.png',
+                'extract_first_image' => true,
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
+
         /**
          * modules list
          */
