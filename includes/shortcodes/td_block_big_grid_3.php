@@ -2,11 +2,11 @@
 
 /**
  *
- * Class td_block_big_grid_1
+ * Class td_block_big_grid_3
  */
-class td_block_big_grid_1 extends td_block {
+class td_block_big_grid_3 extends td_block {
 
-    const POST_LIMIT = 3;
+    const POST_LIMIT = 2;
 
     function render($atts, $content = null){
 
@@ -53,18 +53,9 @@ class td_block_big_grid_1 extends td_block {
 
                 foreach ($posts as $post) {
 
-                    if ($post_count == 0) {
-                        $td_module_mx4 = new td_module_mx4($post);
-                        $buffy .= $td_module_mx4->render($post_count);
-
-	                    $buffy .= '<div class="td-big-grid-scroll' . $td_scroll_posts . '">';
-                        $post_count++;
-                        continue;
-                    }
-
-                    $td_module_mx1 = new td_module_mx1($post);
-                    $buffy .= $td_module_mx1->render($post_count);
-
+                    $td_module_mx5 = new td_module_mx5($post);
+                    $buffy .= $td_module_mx5->render($post_count);
+                    
                     $post_count++;
                 }
 
@@ -76,7 +67,7 @@ class td_block_big_grid_1 extends td_block {
                         $buffy .= $td_module_mx_empty->render($i);
                     }
                 }
-	                $buffy .= '</div>';  // close td-big-grid-scroll
+	                //$buffy .= '</div>';  // close td-big-grid-scroll
                 $buffy .= '</div>'; // close td-big-grid-wrapper
             }
 
