@@ -591,7 +591,17 @@ img {
 .wpb_row {
   margin-bottom: 0;
 }
-.vc_column_container > .vc_column-inner {
+.vc_col-has-fill > .vc_column-inner,
+.vc_row-has-fill + .vc_row-full-width + .vc_row > .vc_column_container > .vc_column-inner,
+.vc_row-has-fill + .vc_row > .vc_column_container > .vc_column-inner,
+.vc_row-has-fill + .vc_vc_row > .vc_row > .vc_vc_column > .vc_column_container > .vc_column-inner,
+.vc_row-has-fill + .vc_vc_row_inner > .vc_row > .vc_vc_column_inner > .vc_column_container > .vc_column-inner,
+.vc_row-has-fill > .vc_column_container > .vc_column-inner,
+.vc_row-has-fill > .vc_row > .vc_vc_column > .vc_column_container > .vc_column-inner,
+.vc_row-has-fill > .vc_vc_column_inner > .vc_column_container > .vc_column-inner {
+  padding-top: 0;
+}
+.vc_row .vc_column-inner {
   padding-left: 0;
   padding-right: 0;
 }
@@ -6646,40 +6656,41 @@ tagdiv animations
 }
 .td-lb-box {
   position: absolute;
-  width: 19px;
-  height: 19px;
+  width: 17px;
+  height: 17px;
+  border-radius: 19px;
 }
 .td-lb-box-1 {
   top: 0;
   left: 0;
 }
 .td-lb-box-2 {
-  top: 0;
-  left: 20px;
+  top: -7px;
+  left: 19px;
 }
 .td-lb-box-3 {
   top: 0;
-  left: 40px;
+  left: 38px;
 }
 .td-lb-box-4 {
-  top: 20px;
-  right: 0;
+  top: 19px;
+  right: -7px;
 }
 .td-lb-box-5 {
   bottom: 0;
   right: 0;
 }
 .td-lb-box-6 {
-  bottom: 0;
-  left: 20px;
+  bottom: -7px;
+  left: 19px;
 }
 .td-lb-box-7 {
   bottom: 0;
   left: 0;
 }
 .td-lb-box-8 {
-  top: 20px;
-  left: 0;
+  top: 19px;
+  left: -7px;
 }
 /*  ----------------------------------------------------------------------------
     loader
@@ -6688,11 +6699,11 @@ tagdiv animations
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 59px;
-  height: 59px;
-  margin-top: -29.5px;
+  width: 55px;
+  height: 55px;
+  margin-top: -27.5px;
   /* Half the height */
-  margin-left: -29.5px;
+  margin-left: -27.5px;
   /* Half the width */
   /* responsive phone */
   -webkit-transition: all 400ms cubic-bezier(0.55, 0, 0.1, 1);
@@ -6723,7 +6734,7 @@ tagdiv animations
   left: 0;
 }
 .td-loader-infinite .td-lb-box-2 {
-  top: 0;
+  top: -4px;
   left: 11px;
 }
 .td-loader-infinite .td-lb-box-3 {
@@ -6732,14 +6743,14 @@ tagdiv animations
 }
 .td-loader-infinite .td-lb-box-4 {
   top: 11px;
-  right: 0;
+  right: -4px;
 }
 .td-loader-infinite .td-lb-box-5 {
   bottom: 0;
   right: 0;
 }
 .td-loader-infinite .td-lb-box-6 {
-  bottom: 0;
+  bottom: -4px;
   left: 11px;
 }
 .td-loader-infinite .td-lb-box-7 {
@@ -6748,7 +6759,7 @@ tagdiv animations
 }
 .td-loader-infinite .td-lb-box-8 {
   top: 11px;
-  left: 0;
+  left: -4px;
 }
 .td-loader-infinite.td-loader-gif {
   width: 32px;

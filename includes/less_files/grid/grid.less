@@ -107,8 +107,21 @@
   margin-bottom: 0;
 }
 
-// latest version 4.9
-.vc_column_container > .vc_column-inner {
+// Visual Composer VC latest version 4.9
+// @updated by RA 14 july 2016 - if we use !important, the build in design tab from visual composer cannot overwrite
+.vc_col-has-fill>.vc_column-inner,
+.vc_row-has-fill+.vc_row-full-width+.vc_row>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_row>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_vc_row>.vc_row>.vc_vc_column>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill+.vc_vc_row_inner>.vc_row>.vc_vc_column_inner>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_row>.vc_vc_column>.vc_column_container>.vc_column-inner,
+.vc_row-has-fill>.vc_vc_column_inner>.vc_column_container>.vc_column-inner {
+  padding-top: 0;
+}
+
+//  @updated by RA 14 july 2016 - made more generic and added padding-top reset. I've updated the templates that are in the theme
+.vc_row .vc_column-inner  {
   padding-left: 0;
   padding-right: 0;
 }
