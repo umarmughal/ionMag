@@ -110,6 +110,7 @@ class td_config {
             //'td_main' =>              '/includes/js_files/td_main.js',
             'td_fps' =>                 '/includes/js_files/td_fps.js',
             'tdAnimationScroll' =>      '/includes/wp_booster/js_dev/tdAnimationScroll.js',
+            'tdHomepageFull' =>         '/includes/wp_booster/js_dev/tdHomepageFull.js',
             'tdBackstr' =>              '/includes/wp_booster/js_dev/tdBackstr.js',
 
             //'td_scroll_effects.js' => '/includes/js_files/td_scroll_effects.js',
