@@ -1123,6 +1123,12 @@ img {
   color: #000;
   font-weight: 500;
 }
+.top-header-menu .td_user_logd_in {
+  font-weight: bold;
+}
+.top-header-menu .td_user_logd_in:hover {
+  text-decoration: none !important;
+}
 .top-header-menu .current-menu-item > a,
 .top-header-menu .current-menu-ancestor > a,
 .top-header-menu .current-category-ancestor > a {
@@ -1135,6 +1141,15 @@ img {
 .top-header-menu .td-mega-menu ul,
 .top-header-menu ul ul {
   display: none !important;
+}
+.td_sp_login_ico_style {
+  position: absolute;
+  top: 3px;
+  right: -9px;
+}
+.td_sp_logout_ico_style {
+  top: 3px;
+  left: 17px;
 }
 /*  ----------------------------------------------------------------------------
     search & social
@@ -5734,20 +5749,15 @@ img.mfp-img {
   background-repeat: no-repeat;
   z-index: -3;
 }
-.td_sp_login_ico_style {
-  position: absolute;
-  top: 3px;
-  right: -9px;
+.mfp-content {
+  /* wrapper */
+  /* the panel title */
+  /* error message */
 }
-.td_sp_logout_ico_style {
-  top: 3px;
-  left: 17px;
-}
-/* wrapper */
-.td-login-wrap {
+.mfp-content .td-login-wrap {
   position: relative;
 }
-.td-login-wrap .td-back-button {
+.mfp-content .td-back-button {
   visibility: hidden;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
@@ -5764,10 +5774,10 @@ img.mfp-img {
   height: 50px;
   z-index: 99;
 }
-.td-login-wrap .td-back-button i {
+.mfp-content .td-back-button i {
   line-height: 50px;
 }
-.td-login-inputs {
+.mfp-content .td-login-inputs {
   width: 100%;
   display: inline-block;
   position: relative;
@@ -5776,7 +5786,7 @@ img.mfp-img {
   font-weight: 400;
   color: #fff;
 }
-.td-login-inputs label {
+.mfp-content .td-login-inputs label {
   position: absolute;
   top: 8px;
   left: 0;
@@ -5787,7 +5797,7 @@ img.mfp-img {
   transition: all 0.2s ease;
   pointer-events: none;
 }
-.td-login-inputs:after {
+.mfp-content .td-login-inputs:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -5799,7 +5809,7 @@ img.mfp-img {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 30 ")";
   filter: alpha(opacity=30);
 }
-.td-login-wrap .td-login-input {
+.mfp-content .td-login-input {
   position: relative;
   background-color: transparent !important;
   height: 40px;
@@ -5811,23 +5821,24 @@ img.mfp-img {
   outline: none;
   border: 0;
 }
-.td-login-wrap .td-login-input:focus ~ label,
-.td-login-wrap .td-login-input:valid ~ label {
+.mfp-content .td-login-input:focus ~ label,
+.mfp-content .td-login-input:valid ~ label {
   top: -18px;
   font-size: 11px;
   opacity: 0.6;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 60 ")";
   filter: alpha(opacity=60);
 }
-.td-login-wrap .td-login-input:invalid {
+.mfp-content .td-login-input:invalid {
   font-style: italic;
 }
-.td-login-button {
+.mfp-content .td-login-button {
   width: 100%;
   height: 50px;
   background-color: #fff;
   padding: 5px 12px 6px;
   margin-top: 20px;
+  margin-bottom: 0;
   text-transform: uppercase;
   text-shadow: none;
   font-size: 13px;
@@ -5843,30 +5854,30 @@ img.mfp-img {
   -o-transition: background-color 0.2s ease !important;
   transition: background-color 0.2s ease !important;
 }
-.td-login-button:active,
-.td-login-button:hover {
+.mfp-content .td-login-button:active,
+.mfp-content .td-login-button:hover {
   -webkit-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 1px 1px 4px 0px rgba(0, 0, 0, 0.2);
   background-color: #d4e328;
 }
-.td-login-info-text {
+.mfp-content .td-login-info-text {
   display: block;
   margin-top: 6px;
   font-size: 11px;
   color: #fff;
 }
-.td-login-info-text a {
+.mfp-content .td-login-info-text a {
   color: inherit;
   -webkit-transition: color 0.2s ease;
   -moz-transition: color 0.2s ease;
   -o-transition: color 0.2s ease;
   transition: color 0.2s ease;
 }
-.td-login-info-text a:hover {
+.mfp-content .td-login-info-text a:hover {
   color: #000;
 }
-#register-link {
+.mfp-content #register-link {
   width: 100%;
   display: block;
   padding: 13px;
@@ -5877,7 +5888,7 @@ img.mfp-img {
   cursor: pointer;
   position: relative;
 }
-#register-link:before {
+.mfp-content #register-link:before {
   content: '';
   width: 100%;
   height: 100%;
@@ -5891,21 +5902,21 @@ img.mfp-img {
   -o-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
-#register-link:hover:before {
+.mfp-content #register-link:hover:before {
   opacity: 0.2;
 }
-.td-login-form-div {
+.mfp-content .td-login-form-div {
   position: absolute;
   top: 0;
   margin: 0 20%;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td-login-form-div {
+  .mfp-content .td-login-form-div {
     margin: 0 5%;
   }
 }
-#td-login-div {
+.mfp-content #td-login-div {
   transform: translate3d(0, 0, 0);
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
@@ -5916,7 +5927,7 @@ img.mfp-img {
   -o-transition: all 0.5s cubic-bezier(0.79, 0.14, 0.15, 0.86) 0s;
   transition: all 0.5s cubic-bezier(0.79, 0.14, 0.15, 0.86) 0s;
 }
-#td-login-div.td-display-none {
+.mfp-content #td-login-div.td-display-none {
   visibility: hidden;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
@@ -5926,21 +5937,21 @@ img.mfp-img {
   -o-transition: all 0.3s cubic-bezier(0.79, 0.14, 0.15, 0.86) 0s;
   transition: all 0.3s cubic-bezier(0.79, 0.14, 0.15, 0.86) 0s;
 }
-.td-login-animation #td-login-div {
+.mfp-content .td-login-animation #td-login-div {
   transform: translate3d(-300px, 0, 0);
   -webkit-transform: translate3d(-300px, 0, 0);
   -moz-transform: translate3d(-300px, 0, 0);
   -ms-transform: translate3d(-300px, 0, 0);
   -o-transform: translate3d(-300px, 0, 0);
 }
-.td-login-animation .td-back-button {
+.mfp-content .td-login-animation .td-back-button {
   visibility: visible;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
   filter: alpha(opacity=100);
 }
-#td-register-div,
-#td-forgot-pass-div {
+.mfp-content #td-register-div,
+.mfp-content #td-forgot-pass-div {
   visibility: hidden;
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 0 ")";
@@ -5955,8 +5966,8 @@ img.mfp-img {
   -ms-transform: translate3d(300px, 0, 0);
   -o-transform: translate3d(300px, 0, 0);
 }
-#td-register-div.td-display-block,
-#td-forgot-pass-div.td-display-block {
+.mfp-content #td-register-div.td-display-block,
+.mfp-content #td-forgot-pass-div.td-display-block {
   visibility: visible;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
@@ -5971,7 +5982,7 @@ img.mfp-img {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
 }
-#login-form .mfp-close {
+.mfp-content #login-form .mfp-close {
   position: absolute;
   top: 26px;
   width: 20px;
@@ -5980,7 +5991,7 @@ img.mfp-img {
   font-size: 0;
   color: #fff;
 }
-#login-form .mfp-close:before {
+.mfp-content #login-form .mfp-close:before {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -5994,24 +6005,23 @@ img.mfp-img {
   vertical-align: bottom;
   color: #fff;
 }
-#login-form #login-link {
+.mfp-content #login-form #login-link {
   position: absolute;
   left: 26px;
   top: 28px;
   cursor: pointer;
 }
-#login-form .mfp-close {
+.mfp-content #login-form .mfp-close {
   right: 27px;
   left: auto;
   opacity: 1;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 100 ")";
   filter: alpha(opacity=100);
 }
-#login-form .mfp-close:before {
+.mfp-content #login-form .mfp-close:before {
   content: '\e905';
 }
-/* the panel title */
-.td-login-panel-title {
+.mfp-content .td-login-panel-title {
   padding: 26px 0 22px 0;
   line-height: 20px;
   font-size: 17px;
@@ -6019,12 +6029,11 @@ img.mfp-img {
   color: #fff;
   pointer-events: none;
 }
-.td-login-panel-descr {
+.mfp-content .td-login-panel-descr {
   margin-bottom: 77px;
   font-size: 13px;
   line-height: 1;
 }
-/* error message */
 .mfp-content .td_display_err {
   color: #fff;
   padding: 14px 30px;
@@ -6052,12 +6061,8 @@ img.mfp-img {
 .mfp-content .td_display_msg_ok:before {
   background-color: #fff;
   opacity: 0.1;
-}
-.top-header-menu .td_user_logd_in {
-  font-weight: bold;
-}
-.top-header-menu .td_user_logd_in:hover {
-  text-decoration: none !important;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 10 ")";
+  filter: alpha(opacity=10);
 }
 /**
 tagdiv animations

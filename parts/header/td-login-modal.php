@@ -49,7 +49,6 @@ echo '
                             <input type="button" name="forgot_button" id="forgot_button" class="wpb_button btn td-login-button" value="' . __td('Send My Password', TD_THEME_NAME) . '">
                             <div class="td-login-info-text">' . __td('A password will be e-mailed to you.', TD_THEME_NAME) . '</div>
                         </div>
-
                     </div>
                 </div>
                 ';
