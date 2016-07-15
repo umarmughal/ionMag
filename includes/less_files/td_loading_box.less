@@ -1,10 +1,13 @@
-@td_loader_size: 19px;
-@td_loader_gutter:1px;
+@td_loader_size: 17px;
+@td_loader_gutter:2px;
+
+@td_circle_offset: -7px;
 
 .td-lb-box {
   position: absolute;
   width: @td_loader_size;
   height: @td_loader_size;
+  border-radius: 19px;
 }
 
 .td-lb-box-1 {
@@ -13,7 +16,7 @@
 }
 
 .td-lb-box-2 {
-  top: 0;
+  top: @td_circle_offset;
   left: @td_loader_size + @td_loader_gutter;
 }
 
@@ -24,7 +27,7 @@
 
 .td-lb-box-4 {
   top: @td_loader_size + @td_loader_gutter;
-  right: 0;
+  right: @td_circle_offset;
 }
 
 .td-lb-box-5 {
@@ -33,7 +36,7 @@
 }
 
 .td-lb-box-6 {
-  bottom: 0;
+  bottom: @td_circle_offset;
   left: @td_loader_size + @td_loader_gutter;
 }
 
@@ -44,7 +47,7 @@
 
 .td-lb-box-8 {
   top: @td_loader_size + @td_loader_gutter;
-  left: 0;
+  left: @td_circle_offset;
 }
 
 
@@ -95,6 +98,8 @@
 /*  ----------------------------------------------------------------------------
     infinite loader - the small loader used on infinite scroll
 */
+@td_circle_offset_2:-4px;
+
 .td-loader-infinite {
   top:auto;
   bottom: 0px;
@@ -114,7 +119,7 @@
   }
 
   .td-lb-box-2 {
-    top: 0;
+    top: @td_circle_offset_2;
     left: @td_loader_size + @td_loader_gutter;
   }
 
@@ -125,7 +130,7 @@
 
   .td-lb-box-4 {
     top: @td_loader_size + @td_loader_gutter;
-    right: 0;
+    right: @td_circle_offset_2;
   }
 
   .td-lb-box-5 {
@@ -134,7 +139,7 @@
   }
 
   .td-lb-box-6 {
-    bottom: 0;
+    bottom: @td_circle_offset_2;
     left: @td_loader_size + @td_loader_gutter;
   }
 
@@ -145,7 +150,7 @@
 
   .td-lb-box-8 {
     top: @td_loader_size + @td_loader_gutter;
-    left: 0;
+    left: @td_circle_offset_2;
   }
 
   @td_gif_size: @td_loader_size * 3 + @td_loader_gutter * 2;

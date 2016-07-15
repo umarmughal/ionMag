@@ -62,6 +62,111 @@
 
 
 /*  ----------------------------------------------------------------------------
+    Ajax Next Prev
+*/
+.td-next-prev-wrap {
+  position: relative;
+  text-align: center;
+  clear: both;
+
+  a {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 9px;
+    line-height: 20px;
+    text-align: center;
+
+    &, &:hover {
+      color: #010101;
+    }
+  }
+
+  .ajax-page-disabled {
+    opacity: 0.5;
+  }
+
+  .td-ajax-prev-page {
+    padding-right: 19px;
+  }
+
+  .td-ajax-next-page {
+    position: relative;
+    padding-left: 21px;
+
+    &:before{
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 1px;
+      height: 100%;
+      background-color: #000;
+      .opacity(0.08)
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Load more button
+*/
+.td-load-more-wrap {
+  text-align: center;
+  clear: both;
+}
+
+.td_ajax_load_more {
+  display: inline-block;
+  padding: 20px 38px 5px 38px;
+  font-family: @font2;
+  font-size: 13px;
+  font-weight: 600;
+  color: #000;
+  text-transform: uppercase;
+  line-height: 1;
+  text-align: center;
+  vertical-align: middle;
+  .box-shadow(inset 1px 1px 0px 0px rgba(0,0,0,0.09));
+
+  i {
+    margin-top: 3px;
+    position: relative;
+    display: block;
+    font-size: 0;
+
+    &:after {
+      content: '\e900';
+      font-family: @font3;
+      font-size: 9px;
+      color: #bebebe;
+    }
+  }
+
+  &:hover {
+    color: @td_theme_color;
+    text-decoration: none !important;
+    .box-shadow(inset 1px 1px 0px 0px rgba(0,0,0,0.13));
+  }
+
+  &.ajax-page-disabled {
+    visibility: hidden !important;
+  }
+}
+
+.td_block_inner_overflow {
+  overflow: hidden;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    infinite loader
+*/
+.td-load-more-infinite-wrap {
+  display: none;
+}
+
+
+/*  ----------------------------------------------------------------------------
     Block category filter
 */
 /* control wrapper (default white) */
