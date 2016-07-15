@@ -1,6 +1,6 @@
 <!-- Thumbs on Modules/Blocks -->
 <?php
-    echo td_panel_generator::ajax_box('Thumbs on modules &amp; blocks', array(
+    echo td_panel_generator::ajax_box('Thumbs on Modules/Blocks', array(
         'td_ajax_calling_file' => basename(__FILE__),
         'td_ajax_box_id' => 'td_thumbs_on_modules_and_blocks',
         ), '', 'td_panel_box_thumb_on_modules'
@@ -53,7 +53,63 @@
 <?php echo td_panel_generator::box_end();?>
 
 
+<!-- Meta info on Modules/Blocks -->
+<?php echo td_panel_generator::box_start('Meta info on Modules/Blocks', false); ?>
 
+<!-- Show author name -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">SHOW AUTHOR NAME</span>
+        <p>Enable or disable the author name (on blocks and modules)</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::checkbox(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_m_show_author_name',
+            'true_value' => 'hide',
+            'false_value' => ''
+        ));
+        ?>
+    </div>
+</div>
+
+<!-- Show date -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">SHOW DATE</span>
+        <p>Enable or disable the post date (on blocks and modules)</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::checkbox(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_m_show_date',
+            'true_value' => '',
+            'false_value' => 'hide'
+        ));
+        ?>
+    </div>
+</div>
+
+<!-- SHow comment count -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">SHOW COMMENT COUNT</span>
+        <p>Enable or disable comment number (on blocks and modules)</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::checkbox(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_m_show_comments',
+            'true_value' => '',
+            'false_value' => 'hide'
+        ));
+        ?>
+    </div>
+</div>
+<?php echo td_panel_generator::box_end();?>
 
 
 <!-- 7 days post sorting -->
