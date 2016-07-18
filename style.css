@@ -6407,14 +6407,15 @@ img.mfp-img {
   opacity: 0.2;
 }
 .mfp-content .td-login-form-div {
+  width: 100%;
   position: absolute;
   top: 0;
-  margin: 0 20%;
+  padding: 0 20%;
   /* responsive portrait phone */
 }
-@media (max-width: 767px) {
+@media (max-width: 480px) {
   .mfp-content .td-login-form-div {
-    margin: 0 5%;
+    padding: 0 5%;
   }
 }
 .mfp-content #td-login-div {
