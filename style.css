@@ -6407,14 +6407,15 @@ img.mfp-img {
   opacity: 0.2;
 }
 .mfp-content .td-login-form-div {
+  width: 100%;
   position: absolute;
   top: 0;
-  margin: 0 20%;
+  padding: 0 20%;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
   .mfp-content .td-login-form-div {
-    margin: 0 5%;
+    padding: 0 5%;
   }
 }
 .mfp-content #td-login-div {
@@ -7361,6 +7362,25 @@ tagdiv animations
   background-repeat: no-repeat;
   background-size: auto;
   background-position: center bottom;
+}
+.td-footer-outer-wrapper .td_block_wrap,
+.td-footer-outer-wrapper .widget {
+  margin-top: 44px;
+  text-align: left;
+}
+.td-footer-outer-wrapper .td-pulldown-filter-display-option span {
+  color: #fff;
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 60 ")";
+  filter: alpha(opacity=60);
+}
+.td-footer-outer-wrapper .block-title a,
+.td-footer-outer-wrapper .block-title span,
+.td-footer-outer-wrapper .block-title label {
+  color: #fff;
+}
+.td-footer-outer-wrapper a {
+  color: #fff;
 }
 .footer-social-wrap:after,
 .td-subfooter-menu:after {

@@ -237,7 +237,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_2.php',
                 'text' => 'Module 2',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1'),
+                'used_on_blocks' => array('td_block_2'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
                 'enabled_on_more_articles_box' => true,
@@ -254,7 +254,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_3.php',
                 'text' => 'Module 3',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1'),
+                'used_on_blocks' => array('td_block_3'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -271,7 +271,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_4.php',
                 'text' => 'Module 4',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1'),
+                'used_on_blocks' => array('td_block_4'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '0',
                 'enabled_on_more_articles_box' => true,
@@ -288,7 +288,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_5.php',
                 'text' => 'Module 5',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1'),
+                'used_on_blocks' => array('td_block_5'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
                 'enabled_on_more_articles_box' => true,
@@ -305,7 +305,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_6.php',
                 'text' => 'Module 6',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1'),
+                'used_on_blocks' => array('td_block_6'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -322,7 +322,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx_empty.php',
                 'text' => 'Module MX Empty',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_1'),
+                'used_on_blocks' => array('td_block_big_grid_1', 'td_block_big_grid_2', 'td_block_big_grid_3'),
                 'excerpt_title' => '',
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -850,6 +850,73 @@ class td_config {
                         "value" => "",
                         "heading" => 'Ad title:',
                         "description" => "Optional - a title for the Ad, like - Advertisement - if you leave it blank the block will not have a title",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array (
+                        'param_name' => 'css',
+                        'value' => '',
+                        'type' => 'css_editor',
+                        'heading' => 'Css',
+                        'group' => 'Design options',
+                    )
+                )
+            )
+        );
+
+        td_api_block::add('td_block_popular_categories',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Popular category',
+                "base" => "td_block_popular_categories",
+                "class" => "td_block_popular_categories",
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-popular_categories',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_popular_categories.php',
+                "params" => array(
+                    array(
+                        "param_name" => "custom_title",
+                        "type" => "textfield",
+                        "value" => "Block title",
+                        "heading" => 'Optional - custom title for this block:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url",
+                        "type" => "textfield",
+                        "value" => "",
+                        "heading" => 'Optional - custom url for this block (when the module title is clicked):',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title text color',
+                        "param_name" => "header_text_color",
+                        "value" => '',
+                        "description" => 'Optional - Choose a custom title text color for this block'
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title background color',
+                        "param_name" => "header_color",
+                        "value" => '',
+                        "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array(
+                        "param_name" => "limit",
+                        "type" => "textfield",
+                        "value" => "6",
+                        "heading" => 'Limit the number of categories shown:',
+                        "description" => "",
                         "holder" => "div",
                         "class" => ""
                     ),
