@@ -4189,14 +4189,12 @@ blockquote.pull-right:after {
 }
 .td-post-source-tags,
 .author-box-wrap,
-.td-post-sharing-bottom,
-.td_block_related_posts {
+.td-post-sharing-bottom {
   position: relative;
 }
 .td-post-source-tags:after,
 .author-box-wrap:after,
-.td-post-sharing-bottom:after,
-.td_block_related_posts:after {
+.td-post-sharing-bottom:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -4635,8 +4633,6 @@ blockquote.pull-right:after {
 }
 .td_block_related_posts {
   position: relative;
-  margin-bottom: 21px;
-  padding-bottom: 16px;
 }
 .td_block_related_posts .td-module-image {
   margin-bottom: 8px;
@@ -5016,6 +5012,9 @@ blockquote.pull-right:after {
   background-color: #42bdcd;
 }
 .comments {
+  position: relative;
+  margin-top: 16px;
+  padding-top: 21px;
   font-family: 'Work Sans', sans-serif;
   clear: both;
 }
@@ -5039,6 +5038,18 @@ blockquote.pull-right:after {
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 30 ")";
   filter: alpha(opacity=30);
+}
+.comments:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.04;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 4 ")";
+  filter: alpha(opacity=4);
 }
 /*  ----------------------------------------------------------------------------
     Comment section
@@ -5154,11 +5165,6 @@ blockquote.pull-right:after {
 }
 .comment-reply-link:hover {
   color: #000;
-}
-.single .comments {
-  margin-bottom: 48px;
-  padding-top: 10px;
-  margin-top: -10px;
 }
 /*  ----------------------------------------------------------------------------
     Comment form
