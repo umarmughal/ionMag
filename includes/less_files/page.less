@@ -1,3 +1,22 @@
+/*  ----------------------------------------------------------------------------
+    Page title
+*/
+.td-page-title {
+  margin: -2px 0 35px 0;
+  padding: 0;
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 24px;
+
+  &:after {
+    display: none;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Default page template
+*/
 .td-main-page-wrap {
   padding: 30px 0;
 }
@@ -151,9 +170,9 @@
     font-size: 25px;
     line-height: 24px;
     text-transform: uppercase;
-    font-weight: 500;
 
     &:after {
+      display: block;
       left: 50%;
       .transform(translateX(-50%));
       width: 80px;
@@ -246,7 +265,6 @@
     padding: 0;
     font-size: 23px;
     line-height: 24px;
-    font-weight: 500;
 
     &:after {
       display: none;
