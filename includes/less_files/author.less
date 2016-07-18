@@ -1,0 +1,110 @@
+.td-author-header {
+  margin-bottom: 43px;
+  text-align: center;
+
+  .td-crumb-container {
+    text-align: left;
+  }
+
+
+  /*  ----------------------------------------------------------------------------
+    Title & avatar
+  */
+  .td-author-title-avatar {
+    text-align: center;
+  }
+
+  .entry-title,
+  .avatar {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .entry-title {
+    margin-bottom: 0;
+    padding-bottom: 17px;
+    font-size: 25px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &:after {
+      left: 50%;
+      .transform(translateX(-50%));
+      width: 80px;
+    }
+  }
+
+  .avatar {
+    width: 60px;
+    margin: -8px 0 0 22px;
+    .border-radius(50%);
+  }
+
+
+  /*  ----------------------------------------------------------------------------
+    Author box
+  */
+  .author-box-wrap {
+    padding: 0;
+    margin: 0;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  .desc {
+    margin-left: 0;
+    padding-top: 14px;
+  }
+
+  .td-author-counters,
+  .td-author-url,
+  .td-author-social {
+    display: inline-block;
+  }
+
+  .td-author-url,
+  .td-author-social {
+    margin: 0 0 0 41px;
+  }
+
+  // Counters
+  .td-author-counters {
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  .td-author-comments-count {
+    margin-left: 15px;
+  }
+
+  .count {
+    margin-right: 8px;
+    padding: 3px 8px 2px 7px;
+    border: 1px solid #ccc;
+    .border-radius(10px);
+  }
+
+  // Social media
+  .td-social-icon-wrap {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Description
+  .td-author-description {
+    width: 78.061224%;
+    margin: 0 auto 2px auto;
+    padding-top: 33px;
+    font-family: @font2;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: center;
+  }
+}

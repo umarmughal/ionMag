@@ -5138,6 +5138,102 @@ blockquote.pull-right:after {
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
 }
+.td-author-header {
+  margin-bottom: 43px;
+  text-align: center;
+  /*  ----------------------------------------------------------------------------
+    Title & avatar
+  */
+  /*  ----------------------------------------------------------------------------
+    Author box
+  */
+}
+.td-author-header .td-crumb-container {
+  text-align: left;
+}
+.td-author-header .td-author-title-avatar {
+  text-align: center;
+}
+.td-author-header .entry-title,
+.td-author-header .avatar {
+  display: inline-block;
+  vertical-align: middle;
+}
+.td-author-header .entry-title {
+  margin-bottom: 0;
+  padding-bottom: 17px;
+  font-size: 25px;
+  line-height: 24px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.td-author-header .entry-title:after {
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  width: 80px;
+}
+.td-author-header .avatar {
+  width: 60px;
+  margin: -8px 0 0 22px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.td-author-header .author-box-wrap {
+  padding: 0;
+  margin: 0;
+}
+.td-author-header .author-box-wrap:before,
+.td-author-header .author-box-wrap:after {
+  display: none;
+}
+.td-author-header .desc {
+  margin-left: 0;
+  padding-top: 14px;
+}
+.td-author-header .td-author-counters,
+.td-author-header .td-author-url,
+.td-author-header .td-author-social {
+  display: inline-block;
+}
+.td-author-header .td-author-url,
+.td-author-header .td-author-social {
+  margin: 0 0 0 41px;
+}
+.td-author-header .td-author-counters {
+  font-size: 11px;
+  font-style: italic;
+}
+.td-author-header .td-author-comments-count {
+  margin-left: 15px;
+}
+.td-author-header .count {
+  margin-right: 8px;
+  padding: 3px 8px 2px 7px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.td-author-header .td-social-icon-wrap {
+  margin-right: 12px;
+}
+.td-author-header .td-social-icon-wrap:last-child {
+  margin-right: 0;
+}
+.td-author-header .td-author-description {
+  width: 78.061224%;
+  margin: 0 auto 2px auto;
+  padding-top: 33px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
+  line-height: 23px;
+  text-align: center;
+}
 @font-face {
   font-family: 'wpion';
   src: url('images/icons/wpion.eot?1');
