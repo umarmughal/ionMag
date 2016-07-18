@@ -21,7 +21,7 @@
   li {
     line-height: 30px;
     list-style: none;
-    margin-left: 12px;
+    margin-left: 0;
 
     li {
       margin-left: 21px;
@@ -66,11 +66,6 @@
 
   td {
     padding: 8px 0;
-
-    /* responsive portrait tablet */
-    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-      padding: 5px 0;
-    }
   }
 
   #today {
@@ -86,11 +81,6 @@
 
   thead tr {
     line-height: 34px;
-
-    /* responsive portrait tablet */
-    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-      line-height: 28px;
-    }
   }
 
   tfoot {
@@ -166,12 +156,6 @@
     padding-bottom: 7px;
     border-bottom: 1px dashed #f1f1f1;
     font-family: @font3;
-
-    /* responsive portrait tablet */
-    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-      margin-bottom: 3px;
-      padding-bottom: 2px;
-    }
 
     &:last-child {
       border-bottom: none;
