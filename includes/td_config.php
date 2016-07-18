@@ -1230,6 +1230,10 @@ class td_config {
                 'css_style_id' => 'google_font_source_sans_pro',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700'
             ),
+            '525' => array(
+                'css_style_id' => 'google_font_droid_serif',
+                'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Droid+Serif:400,700'
+            ),
         );
 
 
