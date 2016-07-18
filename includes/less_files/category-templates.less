@@ -1,0 +1,158 @@
+/*  ----------------------------------------------------------------------------
+    General Category Templates
+*/
+.td-category-header {
+  clear: both;
+
+  .td-container {
+    position: relative;
+  }
+
+  .entry-title {
+    margin-bottom: 22px;
+    padding-bottom: 17px;
+    font-size: 25px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &:after {
+      left: 50%;
+      .transform(translateX(-50%));
+      width: 80px;
+    }
+  }
+
+  .entry-category a {
+    font-size: 11px;
+    padding: 4px 8px 5px 8px;
+  }
+}
+
+.td-category-crumb-filter {
+  margin-bottom: 19px;
+  padding-top: 30px;
+  .clearfix();
+
+  .entry-crumbs {
+    padding-top: 3px;
+    float: left;
+  }
+
+  .td-pulldown-filter-display-option {
+    padding-left: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.td-category-description {
+  width: 78.061224%;
+  margin: 0 auto 2px auto;
+  text-align: center;
+
+  p {
+    font-style: italic;
+    font-family: @font2;
+    color: #666;
+    font-size: 15px;
+    line-height: 23px;
+  }
+}
+
+
+// category siblings filter
+.td-category-siblings {
+  z-index: 2;
+  opacity: 0;
+  width: 744px;
+  position: relative;
+
+  .td-category {
+    display: inline-block;
+    vertical-align: top;
+    height: 20px;
+    overflow: hidden;
+  }
+
+  .td-subcat-more {
+    line-height: 1;
+    padding: 4px 5px 3px;
+  }
+
+  .td-subcat-dropdown {
+    background-color: transparent;
+    display: inline-block;
+    padding: 0;
+    position: absolute;
+    border: 1px solid #eaeaea;
+    color: #222;
+    top: 0;
+
+    i {
+      margin: 0;
+      top: 0;
+    }
+
+    ul {
+      z-index: 999;
+      border: 1px solid #e6e6e6;
+      margin: 0;
+    }
+
+    &:hover {
+      border-color: #222;
+      color: #fff;
+      background-color: #222;
+
+      ul {
+        display: block;
+        border-color: #222;
+        right: -1px;
+        top: 23px;
+
+        &:before {
+          background-color: #222;
+          content: '';
+          height: 4px;
+          position: absolute;
+          right: -1px;
+          top: -5px;
+          width: 21px;
+        }
+      }
+    }
+
+    li {
+      list-style: none;
+      margin-left: 0;
+    }
+
+    a {
+      display: block;
+      color: #fff;
+      padding: 0 13px;
+      white-space: nowrap;
+      text-transform: none;
+      font-size: 10px;
+
+      &:hover {
+        color: @td_theme_color;
+      }
+
+      &.td-current-sub-category {
+        background-color: transparent;
+        color: @td_theme_color;
+      }
+    }
+  }
+}
+
+// filter siblings fix hide cats until all is loaded
+.td-js-loaded .td-category-siblings {
+  opacity: 1;
+  .transition(opacity 0.3s);
+}
