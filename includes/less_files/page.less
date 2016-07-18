@@ -69,3 +69,257 @@
     }
   }
 }
+
+
+/*  ----------------------------------------------------------------------------
+    Search box
+*/
+.search-page-wrap {
+  margin-top: -1px;
+  float: right;
+}
+
+.td-search-form-widget {
+  position: relative;
+}
+
+.td-widget-search-input {
+  width: 251px !important;
+  height: 29px !important;
+  margin: 0 -3px 0 0 !important;
+  padding: 0 11px !important;
+  line-height: 17px !important;
+  font-size: 13px !important;
+  color: #666 !important;
+  border: 0 !important;
+  border-bottom: 1px solid #ebebeb !important;
+  outline: none !important;
+}
+
+#searchsubmit {
+  outline: none;
+  background-color: #fff;
+  min-width: 50px;
+  height: 29px;
+  margin: 0 !important;
+  line-height: 17px;
+  padding: 7px 9px 8px 9px;
+  text-shadow: none;
+  vertical-align: top;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  border: 1px solid #ebebeb;
+  border-top: 0;
+  border-right: 0;
+
+
+  &:hover {
+    background-color: transparent;
+    color: @td_theme_color;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Author page
+*/
+.td-author-header {
+  margin-bottom: 43px;
+  text-align: center;
+
+  .td-crumb-container {
+    text-align: left;
+  }
+
+
+  // Title & avatar
+  .td-author-title-avatar {
+    text-align: center;
+  }
+
+  .entry-title,
+  .avatar {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .entry-title {
+    margin-bottom: 0;
+    padding-bottom: 17px;
+    font-size: 25px;
+    line-height: 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    &:after {
+      left: 50%;
+      .transform(translateX(-50%));
+      width: 80px;
+    }
+  }
+
+  .avatar {
+    width: 60px;
+    margin: -8px 0 0 22px;
+    .border-radius(50%);
+  }
+
+
+  // Author box
+  .author-box-wrap {
+    padding: 0;
+    margin: 0;
+
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+
+  .desc {
+    margin-left: 0;
+    padding-top: 14px;
+  }
+
+  .td-author-counters,
+  .td-author-url,
+  .td-author-social {
+    display: inline-block;
+  }
+
+  .td-author-url,
+  .td-author-social {
+    margin: 0 0 0 41px;
+  }
+
+  // Counters
+  .td-author-counters {
+    font-size: 11px;
+    font-style: italic;
+  }
+
+  .td-author-comments-count {
+    margin-left: 15px;
+  }
+
+  .count {
+    margin-right: 8px;
+    padding: 3px 8px 2px 7px;
+    border: 1px solid #ccc;
+    .border-radius(10px);
+  }
+
+  // Social media
+  .td-social-icon-wrap {
+    margin-right: 12px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  // Description
+  .td-author-description {
+    width: 78.061224%;
+    margin: 0 auto 2px auto;
+    padding-top: 33px;
+    font-family: @font2;
+    font-size: 15px;
+    line-height: 23px;
+    text-align: center;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Search page
+*/
+.td-search-header {
+  margin-bottom: 32px;
+  .clearfix();
+
+  .entry-title {
+    float: left;
+    margin: 0;
+    padding: 0;
+    font-size: 23px;
+    line-height: 24px;
+    font-weight: 500;
+
+    &:after {
+      display: none;
+    }
+  }
+
+  .td-search-query {
+    color: @td_theme_color;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    404 page
+*/
+.td-404-head {
+  padding: 60px 0;
+  text-align: center;
+
+  .search-page-wrap {
+    float: none;
+  }
+}
+
+.td-404-title {
+  position: relative;
+  padding-bottom: 17px;
+  font-family: @font2;
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 24px;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    .transform(translateX(-50%));
+    background-color: @td_theme_color;
+    width: 80px;
+    height: 1px;
+    .opacity(0.3);
+  }
+}
+
+.td-404-sub-title {
+  margin-bottom: 18px;
+  font-family: @font4;
+  font-size: 72px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.td-404-sub-sub-title {
+  margin-bottom: 31px;
+  font-family: @font2;
+  font-size: 15px;
+  font-style: italic;
+  line-height: 23px;
+  color: #666;
+
+  a {
+    border: medium none;
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 16px;
+    padding: 8px 15px;
+    margin-left: 6px;
+
+    &:hover {
+      color: #fff;
+      background-color: @td_theme_color;
+    }
+  }
+}

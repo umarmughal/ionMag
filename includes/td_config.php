@@ -1048,10 +1048,30 @@ class td_config {
         td_api_category_top_posts_style::add('td_category_top_posts_style_1',
             array (
                 'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_1.php',
-                'posts_shown_in_the_loop' => 5,
+                'posts_shown_in_the_loop' => 3,
                 'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-1.png',
                 'text' => 'Grid 1',
                 'td_block_name' => 'td_block_big_grid_1'
+            )
+        );
+
+        td_api_category_top_posts_style::add('td_category_top_posts_style_2',
+            array (
+                'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_2.php',
+                'posts_shown_in_the_loop' => 3,
+                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-1.png',
+                'text' => 'Grid 2',
+                'td_block_name' => 'td_block_big_grid_2'
+            )
+        );
+
+        td_api_category_top_posts_style::add('td_category_top_posts_style_3',
+            array (
+                'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_3.php',
+                'posts_shown_in_the_loop' => 2,
+                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-1.png',
+                'text' => 'Grid 3',
+                'td_block_name' => 'td_block_big_grid_3'
             )
         );
 
@@ -1209,6 +1229,10 @@ class td_config {
             '521' => array(
                 'css_style_id' => 'google_font_source_sans_pro',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700'
+            ),
+            '525' => array(
+                'css_style_id' => 'google_font_droid_serif',
+                'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Droid+Serif:400,700'
             ),
         );
 
