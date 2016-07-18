@@ -5234,6 +5234,82 @@ blockquote.pull-right:after {
   line-height: 23px;
   text-align: center;
 }
+.td-search-header {
+  margin-bottom: 32px;
+  *zoom: 1;
+}
+.td-search-header:before,
+.td-search-header:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.td-search-header:after {
+  clear: both;
+}
+.td-search-header:before,
+.td-search-header:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.td-search-header:after {
+  clear: both;
+}
+.td-search-header .entry-title {
+  float: left;
+  margin: 0;
+  padding: 0;
+  font-size: 23px;
+  line-height: 24px;
+  font-weight: 500;
+}
+.td-search-header .entry-title:after {
+  display: none;
+}
+.td-search-header .td-search-query {
+  color: #42bdcd;
+}
+.search-page-search-wrap {
+  float: right;
+}
+.td-search-form-widget {
+  position: relative;
+}
+.td-widget-search-input {
+  width: 251px !important;
+  height: 29px !important;
+  margin: 0 !important;
+  padding: 0 11px !important;
+  line-height: 17px !important;
+  font-size: 13px !important;
+  color: #666 !important;
+  border: 0 !important;
+  border-bottom: 1px solid #ebebeb !important;
+  outline: none !important;
+}
+#searchsubmit {
+  outline: none;
+  background-color: #fff;
+  min-width: 50px;
+  height: 29px;
+  margin: 0 !important;
+  line-height: 17px;
+  padding: 7px 9px 8px 9px;
+  text-shadow: none;
+  vertical-align: top;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  border: 1px solid #ebebeb;
+  border-top: 0;
+  border-right: 0;
+}
+#searchsubmit:hover {
+  background-color: transparent;
+  color: #42bdcd;
+}
 @font-face {
   font-family: 'wpion';
   src: url('images/icons/wpion.eot?1');
