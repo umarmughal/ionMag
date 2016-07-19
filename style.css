@@ -4417,12 +4417,6 @@ blockquote.pull-right:after {
 }
 .td-post-content input[type=submit] {
   position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -o-transform: translateX(-50%);
   width: 100%;
   height: 44px;
   font-family: 'Work Sans', sans-serif;
@@ -5247,6 +5241,9 @@ blockquote.pull-right:after {
   display: block;
   margin-right: -23px;
 }
+.comment-respond p {
+  padding-right: 23px;
+}
 .comment-respond textarea,
 .comment-respond input {
   padding: 14px;
@@ -5285,9 +5282,6 @@ blockquote.pull-right:after {
 }
 .logged-in-as a:hover {
   color: #42bdcd;
-}
-p {
-  padding-right: 23px;
 }
 .comment-form-input-wrap {
   float: left;
