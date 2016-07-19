@@ -864,6 +864,100 @@ class td_config {
             )
         );
 
+        td_api_block::add('td_block_authors',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Authors box',
+                "base" => "td_block_authors",
+                "class" => "",
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_authors',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_authors.php',
+                "params" => array(
+                    array(
+                        "param_name" => "custom_title",
+                        "type" => "textfield",
+                        "value" => 'Block title',
+                        "heading" => "Block title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array (
+                        "param_name" => "roles",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "User roles",
+                        "description" => "Optional - Filter by role, add one or more <a target=\"_blank\" href=\"https://codex.wordpress.org/Roles_and_Capabilities\">user roles</a> , separate them with a comma (ex. Administrator, Editor, Author, Contributor, Subscriber)",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url",
+                        "type" => "textfield",
+                        "value" => "",
+                        "heading" => 'Block title - custom url',
+                        "description" => "Optional - (when the module title is clicked)",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "sort",
+                        "type" => "dropdown",
+                        "value" => array('- Sort by name -' => '', 'Sort by post count' => 'post_count'),
+                        "heading" => 'Sort authors by:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "exclude",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Exclude authors id (, separated)",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "include",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Include authors id (, separated) - do not use with exclude",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title text color',
+                        "param_name" => "header_text_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title text color for this block'
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title background color',
+                        "param_name" => "header_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array (
+                        'param_name' => 'css',
+                        'value' => '',
+                        'type' => 'css_editor',
+                        'heading' => 'Css',
+                        'group' => 'Design options',
+                    )
+                )
+            )
+        );
+
         td_api_block::add('td_block_popular_categories',
             array(
                 'map_in_visual_composer' => true,
