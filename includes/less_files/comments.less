@@ -3,7 +3,8 @@
   font-family: @font2;
   clear: both;
 
-  .td-comments-title {
+  .td-comments-title-wrap h4,
+  .comment-reply-title {
     position: relative;
     margin: 0;
     padding-bottom: 1px;
@@ -22,7 +23,7 @@
     }
   }
 
-  div:first-child {
+  & > div:first-child {
     position: relative;
     margin-top: 16px;
     padding-top: 21px;
@@ -100,11 +101,11 @@
 
   cite {
     display: inline-block;
-    padding-top: 6px;
+    padding-top: 5px;
     font-weight: 500;
     font-size: 15px;
     font-style: normal;
-    line-height: 1;
+    line-height: 21px;
   }
 
   p {
@@ -212,6 +213,11 @@
     margin-bottom: 20px;
   }
 
+  form {
+    display: block;
+    margin-right: -23px;
+  }
+
   textarea,
   input {
     padding: 14px;
@@ -255,17 +261,21 @@
   }
 }
 
+p {
+  padding-right: 23px;
+}
+
 .comment-form-input-wrap {
   float: left;
   width: 33.3333%;
   margin-bottom: 23px;
   font-family: @font2;
   color: #666;
+}
 
-  &:first-of-type {
-    margin-bottom: 16px;
-    width: 100%;
-  }
+.td-form-comment {
+  margin-bottom: 16px;
+  width: 100%;
 }
 
 #cancel-comment-reply-link {

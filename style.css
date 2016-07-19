@@ -5059,14 +5059,16 @@ blockquote.pull-right:after {
   font-family: 'Work Sans', sans-serif;
   clear: both;
 }
-.comments .td-comments-title {
+.comments .td-comments-title-wrap h4,
+.comments .comment-reply-title {
   position: relative;
   margin: 0;
   padding-bottom: 1px;
   font-size: 15px;
   font-weight: 600;
 }
-.comments .td-comments-title:after {
+.comments .td-comments-title-wrap h4:after,
+.comments .comment-reply-title:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -5078,12 +5080,12 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 30 ")";
   filter: alpha(opacity=30);
 }
-.comments div:first-child {
+.comments > div:first-child {
   position: relative;
   margin-top: 16px;
   padding-top: 21px;
 }
-.comments div:first-child:before {
+.comments > div:first-child:before {
   content: '';
   position: absolute;
   top: 0;
@@ -5149,11 +5151,11 @@ blockquote.pull-right:after {
 }
 .comment cite {
   display: inline-block;
-  padding-top: 6px;
+  padding-top: 5px;
   font-weight: 500;
   font-size: 15px;
   font-style: normal;
-  line-height: 1;
+  line-height: 21px;
 }
 .comment p {
   margin-bottom: 0;
@@ -5241,6 +5243,10 @@ blockquote.pull-right:after {
 .comment-respond .comment-reply-title {
   margin-bottom: 20px;
 }
+.comment-respond form {
+  display: block;
+  margin-right: -23px;
+}
 .comment-respond textarea,
 .comment-respond input {
   padding: 14px;
@@ -5280,6 +5286,9 @@ blockquote.pull-right:after {
 .logged-in-as a:hover {
   color: #42bdcd;
 }
+p {
+  padding-right: 23px;
+}
 .comment-form-input-wrap {
   float: left;
   width: 33.3333%;
@@ -5287,7 +5296,7 @@ blockquote.pull-right:after {
   font-family: 'Work Sans', sans-serif;
   color: #666;
 }
-.comment-form-input-wrap:first-of-type {
+.td-form-comment {
   margin-bottom: 16px;
   width: 100%;
 }
@@ -5466,6 +5475,77 @@ blockquote.pull-right:after {
   -moz-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
+}
+/*  ----------------------------------------------------------------------------
+    wordpress default galleries
+*/
+.gallery-item {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.gallery-item .gallery-caption {
+  text-align: center;
+  margin: 0;
+}
+.gallery-item .gallery-icon img {
+  display: inline-block;
+}
+.gallery-columns-2,
+.gallery-columns-3,
+.gallery-columns-4,
+.gallery-columns-5,
+.gallery-columns-6,
+.gallery-columns-7,
+.gallery-columns-8,
+.gallery-columns-9 {
+  margin-bottom: 20px;
+}
+.gallery-columns-2 .gallery-item {
+  max-width: 50%;
+}
+.gallery-columns-3 .gallery-item {
+  max-width: 33.33%;
+}
+.gallery-columns-4 .gallery-item {
+  max-width: 25%;
+}
+.gallery-columns-5 .gallery-item {
+  max-width: 20%;
+}
+.gallery-columns-6 .gallery-item {
+  max-width: 16.66%;
+}
+.gallery-columns-7 .gallery-item {
+  max-width: 14.28%;
+}
+.gallery-columns-8 .gallery-item {
+  max-width: 12.5%;
+}
+.gallery-columns-9 .gallery-item {
+  max-width: 11.11%;
+}
+/*  ----------------------------------------------------------------------------
+    custom gallery-columns-1
+*/
+.gallery-columns-1 .gallery-item {
+  margin-bottom: 30px;
+  position: relative;
+}
+.gallery-columns-1 .gallery-item img {
+  display: block;
+}
+.gallery-columns-1 .gallery-caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #0e0e0e;
+  color: white;
+  font-size: 12px;
+  font-style: normal;
+  padding: 8px 14px 10px 14px;
 }
 @font-face {
   font-family: 'wpion';
