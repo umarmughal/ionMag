@@ -94,17 +94,21 @@ class td_block_authors extends td_block {
                 $buffy .= '</div>';
 
 
-                $buffy .= '<span class="td-author-post-count">';
-                $buffy .= count_user_posts($td_author->ID). ' '  . __td('POSTS', TD_THEME_NAME);
-                $buffy .= '</span>';
+//                $buffy .= '<span class="td-author-post-count">';
+//                $buffy .= count_user_posts($td_author->ID). ' '  . __td('POSTS', TD_THEME_NAME);
+//                $buffy .= '</span>';
+//
+//                $buffy .= '<span class="td-author-comments-count">';
+//                $comment_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) AS total FROM $wpdb->comments WHERE comment_approved = 1 AND user_id = %d", $td_author->ID));
+//                $buffy .= $comment_count . ' '  . __td('COMMENTS', TD_THEME_NAME);
+//                $buffy .= '</span>';
 
-                $buffy .= '<span class="td-author-comments-count">';
-                $comment_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) AS total FROM $wpdb->comments WHERE comment_approved = 1 AND user_id = %d", $td_author->ID));
-                $buffy .= $comment_count . ' '  . __td('COMMENTS', TD_THEME_NAME);
-                $buffy .= '</span>';
+//                $buffy .= '<div class="td-authors-url">';
+//                $buffy .= '<a href="' . $td_author->user_url . '">' . $td_author->user_url .'</a>';
+//                $buffy .= '</div>';
 
-                $buffy .= '<div class="td-authors-url">';
-                $buffy .= '<a href="' . $td_author->user_url . '">' . $td_author->user_url .'</a>';
+                $buffy .= '<div class="td-authors-link">';
+                $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">About me</a>';
                 $buffy .= '</div>';
 
                 $buffy .= '</div>';
