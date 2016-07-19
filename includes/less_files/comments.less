@@ -5,7 +5,7 @@
   font-family: @font2;
   clear: both;
 
-  h4, h3 {
+  .td-comments-title {
     position: relative;
     margin: 0;
     padding-bottom: 1px;
@@ -101,20 +101,6 @@
     margin-bottom: 20px;
   }
 
-  .comment-content {
-    margin-top: 6px;
-    color: #666;
-
-    p {
-      margin-bottom: 18px;
-      font-size: 13px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   p {
     margin-bottom: 0;
     word-wrap: break-word;
@@ -159,6 +145,40 @@
   font-style: italic;
   line-height: 1;
   color: #ccc;
+}
+
+.comment-content {
+  margin-top: 6px;
+  color: #666;
+
+  p {
+    font-family: @font2;
+    margin-bottom: 18px;
+    font-size: 13px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  li,
+  table {
+    font-size: 13px;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 6px;
+  }
+
+  dd {
+    font-size: 13px;
+    font-style: italic;
+  }
+
+  blockquote p {
+    font-size: 24px;
+    line-height: 32px;
+  }
 }
 
 .comment-meta {
