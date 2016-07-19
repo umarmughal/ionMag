@@ -16,17 +16,21 @@
 }
 
 //in post navigation
-.single-post .page-nav > div {
-  display: inline-block;
-  background-color: @td_theme_color;
-  margin-right: 2px;
-  min-width: 35px;
-  text-align: center;
-  color: #fff;
-  line-height: 35px;
-  float: left;
-  padding: 0 14px;
-  border-radius: 35px;
+.single-post .page-nav {
+  margin-bottom: 30px;
+
+  & > div {
+    display: inline-block;
+    background-color: @td_theme_color;
+    margin-right: 2px;
+    min-width: 35px;
+    text-align: center;
+    color: #fff;
+    line-height: 35px;
+    float: left;
+    padding: 0 14px;
+    border-radius: 35px;
+  }
 }
 
 
@@ -99,6 +103,7 @@
 
   .entry-title {
     margin-bottom: 8px;
+    padding-bottom: 4px;
     word-wrap: break-word;
     font-size: 31px;
     font-weight: 400;
@@ -261,17 +266,49 @@
 
 
 /*  ----------------------------------------------------------------------------
+    Post content
+*/
+.td-post-content {
+  padding-bottom: 20px;
+
+  input[type=submit] {
+    position: relative;
+    left: 50%;
+    .transform(translateX(-50%));
+    width: 100%;
+    height: 44px;
+    font-family: @font2;
+    font-weight: 600;
+    text-transform: uppercase;
+    .border-radius(3px);
+    .box-shadow(0px 2px 0px 0px rgba(166, 166, 166, 0.75));
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
     Source and Via
 */
 // source/via + tag group
 .td-post-source-tags {
   margin-bottom: 21px;
-  padding: 4px 0 30px 0;
+  padding-bottom: 30px;
   font-size: 11px;
 
   a {
     font-size: 11px;
   }
+}
+
+.td-post-source-tags .td-no-tags {
+  margin-bottom: 34px;
+}
+
+.td-post-source-via {
+  margin-bottom: 9px;
+  padding-top: 4px;
+  font-family: @font2;
+  font-style: italic;
 
   &:before {
     content: '';
@@ -283,16 +320,6 @@
     background-color: @td_theme_color;
     .opacity(0.3);
   }
-}
-
-.td-post-source-tags .td-no-tags {
-  margin-bottom: 34px;
-}
-
-.td-post-source-via {
-  margin-bottom: 9px;
-  font-family: @font2;
-  font-style: italic;
 }
 
 .td-post-small-box {
