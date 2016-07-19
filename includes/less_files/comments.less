@@ -62,12 +62,17 @@
     }
   }
 
-  article {
-    padding: 20px 0 11px 0;
-  }
-
   &:first-child:before {
     display: none;
+  }
+
+  article {
+    padding: 20px 0 11px 0;
+    min-height: 60px;
+  }
+
+  .comment-meta {
+    margin: 0;
   }
 
   .comment:before {
@@ -75,30 +80,42 @@
   }
 
   .avatar {
-    float: left;
-    margin-right: 20px;
-    margin-bottom: 20px;
+    position: absolute;
+    top: 20px;
+    left: 0;
     width: 60px;
     .border-radius(50%);
   }
 
-  cite {
-    display: inline-block;
-    padding-top: 3px;
-    font-weight: 500;
-    font-size: 15px;
-    font-style: normal;
-    line-height: 1;
-  }
-
+  footer,
   .comment-content,
   .comment-meta,
   .comment-respond {
     margin-left: 80px;
   }
 
-  .comment-respond {
-    margin-bottom: 20px;
+  cite {
+    display: inline-block;
+    padding-top: 6px;
+    font-weight: 500;
+    font-size: 15px;
+    font-style: normal;
+    line-height: 1;
+  }
+
+  .comment-content {
+    margin-top: 6px;
+    margin-bottom: 3px;
+    color: #666;
+
+    p {
+      margin-bottom: 18px;
+      font-size: 13px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   p {
@@ -124,12 +141,15 @@
         border-bottom: none;
       }
 
-      .avatar {
-        width: 40px;
-        height: 40px;
-        position: relative;
+      article {
+        min-height: 40px;
       }
 
+      .avatar {
+        width: 40px;
+      }
+
+      footer,
       .comment-content,
       .comment-meta,
       .comment-respond {
@@ -140,7 +160,7 @@
 }
 .comment-link {
   float: right;
-  padding-top: 8px;
+  padding-top: 9px;
   font-size: 11px;
   font-style: italic;
   line-height: 1;
