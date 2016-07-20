@@ -10,7 +10,8 @@
 /*  ----------------------------------------------------------------------------
     Block Titles + Line
 */
-.td-block-header {
+.td-block-title-wrap {
+  position: relative;
   margin-bottom: 20px;
   .clearfix();
 }
@@ -18,7 +19,7 @@
 .block-title {
   float: none;
   position: relative;
-  padding: 4px 0 8px 0;
+  padding: 0;
   font-family: @font2;
   font-size: 15px;
   font-weight: 600;
@@ -28,6 +29,7 @@
 
   a, span, label { /* label is for jetpack */
     display: inline-block;
+    margin: 8px 0;
   }
 
   &:after {
@@ -39,14 +41,6 @@
     height: 1px;
     background-color: @td_theme_color;
     .opacity(0.3);
-  }
-}
-// firefox fix
-@-moz-document url-prefix() {
-  .block-title {
-    a, span, label { /* label is for jetpack */
-      padding: 6px 12px 5px 12px;
-    }
   }
 }
 
@@ -70,7 +64,7 @@
   text-align: center;
   clear: both;
   line-height: 1;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 
   a {
     display: inline-block;
@@ -78,9 +72,10 @@
     font-size: 9px;
     line-height: 20px;
     text-align: center;
+    color: #000;
 
-    &, &:hover {
-      color: #010101;
+    &:hover {
+      color: @td_theme_color;
     }
   }
 
@@ -116,6 +111,7 @@
 .td-load-more-wrap {
   text-align: center;
   clear: both;
+  margin-bottom: 22px;
 }
 
 .td_ajax_load_more {
@@ -129,7 +125,7 @@
   line-height: 1;
   text-align: center;
   vertical-align: middle;
-  .box-shadow(inset 1px 1px 0px 0px rgba(0,0,0,0.09));
+  .box-shadow(inset 1px 1px 0px 0px rgba(0,0,0,0.06));
 
   i {
     margin-top: 3px;
@@ -148,7 +144,7 @@
   &:hover {
     color: @td_theme_color;
     text-decoration: none !important;
-    .box-shadow(inset 1px 1px 0px 0px rgba(0,0,0,0.13));
+    .box-shadow(inset 1px 1px 0px 0px rgba(0,0,0,0.09));
   }
 
   &.ajax-page-disabled {
@@ -174,12 +170,17 @@
 */
 /* control wrapper (default white) */
 .td-wrapper-pulldown-filter {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
   display: inline-block;
-  float: right;
   font-style: italic;
   font-size: 13px;
   color: #666;
   text-align: right;
+  height: 30px;
 
   .td-pulldown-filter-display-option {
     display: inline-block;
@@ -188,11 +189,18 @@
     padding-left: 13px;
     cursor: pointer;
     white-space: nowrap;
-    line-height: 26px;
+    line-height: 30px;
 
     i {
-      font-size: 8px;
-      padding: 0 7px;
+      font-size: 12px;
+      padding: 0 5px;
+      vertical-align: middle;
+      top: 1px;
+      position: relative;
+
+      &:before {
+        content: "\e801";
+      }
     }
 
     &:hover {
@@ -207,7 +215,9 @@
       content: '';
       position: absolute;
       left: 0;
-      top: 2px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
       width: 1px;
       height: 20px;
       background-color: #000;
@@ -221,7 +231,7 @@
     top: 100%;
     right: 0;
     padding: 11px 0;
-    margin: 0;
+    margin: -1px 0 0 0;
     min-width: 141px;
     background-color: rgba(255, 255, 255, 0.94);
     .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.08));
@@ -231,6 +241,7 @@
 
   .td-pulldown-filter-item {
      list-style: none;
+    margin: 0;
    }
 
   .td-pulldown-filter-link,
@@ -239,7 +250,7 @@
     color: #444;
     white-space: nowrap;
     display: block;
-    padding: 0 24px;
+    padding: 0 20px;
 
     &:hover {
       color: @td_theme_color;
@@ -263,7 +274,7 @@
 // fix margin bottom overwritten by VC
 .wpb_wrapper .td_block_wrap {
   .td-pulldown-filter-display-option {
-    margin: 0;
+    //margin: 0;
   }
 }
 
@@ -272,13 +283,12 @@
     Block 1
 */
 .td_block_1 {
-  padding-bottom: 14px;
+  padding-bottom: 18px;
 
-  .td_block_inner {
-    .td-block-row:last-child .td_module_wrap,
-    .td_module_wrap:last-child {
-      padding-bottom: 27px;
-    }
+
+  .td-block-row:last-child .td_module_wrap,
+  .td-column-1 .td_module_wrap:last-child {
+    padding-bottom: 27px;
   }
 }
 
