@@ -3980,6 +3980,7 @@ blockquote.pull-right:after {
 .td-no-comment .td-post-date:after {
   display: none;
 }
+.entry-review-stars,
 .td-post-author-name,
 .td-post-date,
 .td-module-comments,
@@ -3987,14 +3988,15 @@ blockquote.pull-right:after {
 .td-post-views {
   display: inline-block;
 }
+.entry-review-stars,
+.td-post-author-name,
 .td-post-date {
   position: relative;
   margin-right: 8px;
   padding-right: 11px;
-  opacity: 0.5;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 50 ")";
-  filter: alpha(opacity=50);
 }
+.entry-review-stars:after,
+.td-post-author-name:after,
 .td-post-date:after {
   content: '';
   position: absolute;
@@ -4007,10 +4009,10 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 20 ")";
   filter: alpha(opacity=20);
 }
+.entry-review-stars {
+  vertical-align: bottom;
+}
 .td-post-author-name {
-  position: relative;
-  margin-right: 8px;
-  padding-right: 11px;
   font-weight: 500;
 }
 .td-post-author-name .td-author-by {
@@ -4022,20 +4024,13 @@ blockquote.pull-right:after {
 .td-post-author-name .td-author-line {
   display: none;
 }
-.td-post-author-name:after {
-  content: '';
-  position: absolute;
-  bottom: 2px;
-  right: -1px;
-  width: 2px;
-  height: 2px;
-  background-color: #000;
-  opacity: 0.1;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 10 ")";
-  filter: alpha(opacity=10);
-}
 .td-post-author-name span {
   display: none;
+}
+.td-post-date {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 50 ")";
+  filter: alpha(opacity=50);
 }
 .td-module-comments a,
 .td-post-comments a {
@@ -4109,6 +4104,9 @@ blockquote.pull-right:after {
 }
 .td_module_3 .td-module-title:after {
   display: none;
+}
+.td_module_3 .entry-review-stars {
+  vertical-align: middle;
 }
 /*  ----------------------------------------------------------------------------
     Module 4
@@ -4190,6 +4188,9 @@ blockquote.pull-right:after {
 }
 .td_module_6 .td-post-category {
   margin-right: 4px;
+}
+.td_module_6 .entry-review-stars {
+  vertical-align: middle;
 }
 .td-module-number6 .td-block-row .td-module-wrap:before {
   display: block;
@@ -4695,10 +4696,14 @@ blockquote.pull-right:after {
   min-height: 0;
   z-index: 1;
 }
+.td-big-grid-post .entry-review-stars,
 .td-big-grid-post .td-post-author-name,
 .td-big-grid-post .td-post-date {
   margin: 0;
   padding: 0;
+}
+.td-big-grid-post .entry-review-stars:after {
+  display: none;
 }
 .td-big-grid-post .td-post-author-name {
   pointer-events: auto;
@@ -4750,6 +4755,13 @@ blockquote.pull-right:after {
 }
 .td-big-grid-post .td-video-play-ico img {
   z-index: 1;
+}
+/*
+  Big grids 2 & 3
+*/
+.td_block_big_grid_2 .entry-review-stars,
+.td_block_big_grid_3 .entry-review-stars {
+  color: #000;
 }
 /*
   Big grid 1
