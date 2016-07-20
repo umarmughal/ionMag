@@ -3885,6 +3885,8 @@ blockquote.pull-right:after {
   font-size: 15px;
   line-height: 20px;
   font-weight: 600;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 .entry-title:after {
   content: '';
@@ -6418,6 +6420,11 @@ blockquote.pull-right:after {
 .td-category-crumb-filter .entry-crumbs {
   padding-top: 3px;
   float: left;
+}
+.td-category-crumb-filter .td-wrapper-pulldown-filter {
+  position: relative;
+  float: right;
+  margin-top: -3px;
 }
 .td-category-crumb-filter .td-pulldown-filter-display-option {
   padding-left: 0;
