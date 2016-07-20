@@ -5100,7 +5100,6 @@ blockquote.pull-right:after {
 }
 .td_top_authors .avatar {
   margin-bottom: 7px;
-  width: 196px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -6205,7 +6204,6 @@ blockquote.pull-right:after {
   width: 80px;
 }
 .td-author-header .avatar {
-  width: 60px;
   margin: -8px 0 0 22px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;

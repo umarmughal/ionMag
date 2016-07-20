@@ -40,7 +40,7 @@ td_global::$current_author_obj = $part_cur_auth_obj;
                             <span><?php echo $part_cur_auth_obj->display_name; ?></span>
                         </h1>
 
-                        <?php  echo get_avatar($part_cur_auth_obj->user_email, '96'); ?>
+                        <?php  echo get_avatar($part_cur_auth_obj->user_email, '60'); ?>
                     </div>
 
                     <?php

@@ -86,7 +86,7 @@ class td_block_authors extends td_block {
                     $current_author_class = ' td-active';
                 }
                 $buffy .= '<div class="td_mod_wrap td-pb-padding-side' . $current_author_class . '">';
-                $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . get_avatar($td_author->user_email, '70') . '</a>';
+                $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . get_avatar($td_author->user_email, '196') . '</a>';
                 $buffy .= '<div class="item-details">';
 
                 $buffy .= '<div class="td-authors-name">';
