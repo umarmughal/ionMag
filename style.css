@@ -4237,32 +4237,33 @@ blockquote.pull-right:after {
 /*  ----------------------------------------------------------------------------
     Block Titles + Line
 */
-.td-block-header {
+.td-block-title-wrap {
+  position: relative;
   margin-bottom: 20px;
   *zoom: 1;
 }
-.td-block-header:before,
-.td-block-header:after {
+.td-block-title-wrap:before,
+.td-block-title-wrap:after {
   display: table;
   content: '';
   line-height: 0;
 }
-.td-block-header:after {
+.td-block-title-wrap:after {
   clear: both;
 }
-.td-block-header:before,
-.td-block-header:after {
+.td-block-title-wrap:before,
+.td-block-title-wrap:after {
   display: table;
   content: '';
   line-height: 0;
 }
-.td-block-header:after {
+.td-block-title-wrap:after {
   clear: both;
 }
 .block-title {
   float: left;
   position: relative;
-  padding: 4px 0 8px 0;
+  padding: 0;
   font-family: 'Work Sans', sans-serif;
   font-size: 15px;
   font-weight: 600;
@@ -4275,6 +4276,7 @@ blockquote.pull-right:after {
 .block-title label {
   /* label is for jetpack */
   display: inline-block;
+  margin: 8px 0;
 }
 .block-title:after {
   content: '';
@@ -4287,14 +4289,6 @@ blockquote.pull-right:after {
   opacity: 0.3;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" 30 ")";
   filter: alpha(opacity=30);
-}
-@-moz-document url-prefix() {
-  .block-title a,
-  .block-title span,
-  .block-title label {
-    /* label is for jetpack */
-    padding: 6px 12px 5px 12px;
-  }
 }
 .block-title,
 .td-related-title,
@@ -4313,7 +4307,7 @@ blockquote.pull-right:after {
   text-align: center;
   clear: both;
   line-height: 1;
-  margin-bottom: 30px;
+  margin-bottom: 22px;
 }
 .td-next-prev-wrap a {
   display: inline-block;
@@ -4321,10 +4315,10 @@ blockquote.pull-right:after {
   font-size: 9px;
   line-height: 20px;
   text-align: center;
+  color: #000;
 }
-.td-next-prev-wrap a,
 .td-next-prev-wrap a:hover {
-  color: #010101;
+  color: #42bdcd;
 }
 .td-next-prev-wrap .ajax-page-disabled {
   opacity: 0.5;
@@ -4354,6 +4348,7 @@ blockquote.pull-right:after {
 .td-load-more-wrap {
   text-align: center;
   clear: both;
+  margin-bottom: 22px;
 }
 .td_ajax_load_more {
   display: inline-block;
@@ -4366,9 +4361,9 @@ blockquote.pull-right:after {
   line-height: 1;
   text-align: center;
   vertical-align: middle;
-  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.09);
-  box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.09);
+  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.06);
+  -moz-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.06);
+  box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.06);
 }
 .td_ajax_load_more i {
   margin-top: 3px;
@@ -4385,9 +4380,9 @@ blockquote.pull-right:after {
 .td_ajax_load_more:hover {
   color: #42bdcd;
   text-decoration: none !important;
-  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.13);
-  -moz-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.13);
-  box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.09);
+  -moz-box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.09);
+  box-shadow: inset 1px 1px 0px 0px rgba(0, 0, 0, 0.09);
 }
 .td_ajax_load_more.ajax-page-disabled {
   visibility: hidden !important;
@@ -4406,12 +4401,17 @@ blockquote.pull-right:after {
 */
 /* control wrapper (default white) */
 .td-wrapper-pulldown-filter {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
   display: inline-block;
-  float: right;
   font-style: italic;
   font-size: 13px;
   color: #666;
   text-align: right;
+  height: 30px;
 }
 .td-wrapper-pulldown-filter .td-pulldown-filter-display-option {
   display: inline-block;
@@ -4420,11 +4420,17 @@ blockquote.pull-right:after {
   padding-left: 13px;
   cursor: pointer;
   white-space: nowrap;
-  line-height: 26px;
+  line-height: 30px;
 }
 .td-wrapper-pulldown-filter .td-pulldown-filter-display-option i {
-  font-size: 8px;
-  padding: 0 7px;
+  font-size: 12px;
+  padding: 0 5px;
+  vertical-align: middle;
+  top: 1px;
+  position: relative;
+}
+.td-wrapper-pulldown-filter .td-pulldown-filter-display-option i:before {
+  content: "\e801";
 }
 .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover {
   color: #42bdcd;
@@ -4436,7 +4442,9 @@ blockquote.pull-right:after {
   content: '';
   position: absolute;
   left: 0;
-  top: 2px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
   width: 1px;
   height: 20px;
   background-color: #000;
@@ -4450,7 +4458,7 @@ blockquote.pull-right:after {
   top: 100%;
   right: 0;
   padding: 11px 0;
-  margin: 0;
+  margin: -1px 0 0 0;
   min-width: 141px;
   background-color: rgba(255, 255, 255, 0.94);
   -webkit-box-shadow: inset 0px 0px 1px 0px rgba(0, 0, 0, 0.08);
@@ -4461,6 +4469,7 @@ blockquote.pull-right:after {
 }
 .td-wrapper-pulldown-filter .td-pulldown-filter-item {
   list-style: none;
+  margin: 0;
 }
 .td-wrapper-pulldown-filter .td-pulldown-filter-link,
 .td-wrapper-pulldown-filter .td-pulldown-category-filter-link {
@@ -4468,7 +4477,7 @@ blockquote.pull-right:after {
   color: #444;
   white-space: nowrap;
   display: block;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
 .td-wrapper-pulldown-filter .td-pulldown-category-filter-link:hover {
@@ -4484,9 +4493,6 @@ blockquote.pull-right:after {
   -moz-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
-}
-.wpb_wrapper .td_block_wrap .td-pulldown-filter-display-option {
-  margin: 0;
 }
 /*  ----------------------------------------------------------------------------
     Quote on Blocks
@@ -4506,10 +4512,10 @@ blockquote.pull-right:after {
     Block 1
 */
 .td_block_1 {
-  padding-bottom: 14px;
+  padding-bottom: 18px;
 }
-.td_block_1 .td_block_inner .td-block-row:last-child .td_module_wrap,
-.td_block_1 .td_block_inner .td_module_wrap:last-child {
+.td_block_1 .td-block-row:last-child .td_module_wrap,
+.td_block_1 .td-column-1 .td_module_wrap:last-child {
   padding-bottom: 27px;
 }
 /*  ----------------------------------------------------------------------------
@@ -7960,7 +7966,6 @@ tagdiv animations
 }
 .widget_rss .block-title .rsswidget {
   color: #fff;
-  padding: 6px 12px 5px 12px;
 }
 .widget_rss li {
   margin-bottom: 14px;

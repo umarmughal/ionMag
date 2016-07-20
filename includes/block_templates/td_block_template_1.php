@@ -39,36 +39,62 @@ class td_block_template_1 {
         $raw_css = "
         <style>
 
-            /* @header_color */
+            /* @header_text_color */
             .$unique_block_class .td_module_wrap:hover .entry-title a,
             .$unique_block_class .td-load-more-wrap a:hover,
         	.$unique_block_class .td_quote_on_blocks,
         	.$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
         	.$unique_block_class .td-wrapper-pulldown-filter a.td-pulldown-filter-link:hover,
-        	.$unique_block_class .td-instagram-user a {
-                color: @header_color;
-            }
-
-            .$unique_block_class .td-next-prev-wrap a:hover i {
-                background-color: @header_color;
-                border-color: @header_color;
+            .$unique_block_class .block-title span,
+            .$unique_block_class .block-title a,
+            .$unique_block_class .td-module-comments a:hover,
+            .$unique_block_class .td-next-prev-wrap a:hover {
+                color: @header_text_color;
             }
 
             .$unique_block_class .td_module_wrap .td-post-category:hover,
-			.$unique_block_class .td-trending-now-title,
+            .$unique_block_class .block-title:after,
+            .$unique_block_class .entry-title:after {
+                background-color: @header_text_color;
+            }
+
+            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list {
+                border-color: @header_text_color;
+            }
+
+            /* @header_color */
             .$unique_block_class .block-title span,
-            .$unique_block_class .td-weather-information:before,
-            .$unique_block_class .td-weather-week:before,
-            .$unique_block_class .td-exchange-header:before,
             .$unique_block_class .block-title a {
                 background-color: @header_color;
             }
 
-            /* @header_text_color */
-            .$unique_block_class .td-trending-now-title,
             .$unique_block_class .block-title span,
             .$unique_block_class .block-title a {
-                color: @header_text_color;
+                margin: 0;
+                padding: 7px 10px;
+            }
+            .$unique_block_class .block-title:after {
+                display: none;
+            }
+
+            .$unique_block_class .td_module_wrap:hover .entry-title a,
+            .$unique_block_class .td-load-more-wrap a:hover,
+        	.$unique_block_class .td_quote_on_blocks,
+        	.$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
+        	.$unique_block_class .td-wrapper-pulldown-filter a.td-pulldown-filter-link:hover,
+            .$unique_block_class .td-module-comments a:hover,
+            .$unique_block_class .td-next-prev-wrap a:hover {
+                color: @header_color;
+            }
+
+            .$unique_block_class .td_module_wrap .td-post-category:hover,
+            .$unique_block_class .block-title:after,
+            .$unique_block_class .entry-title:after {
+                background-color: @header_color;
+            }
+
+            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list {
+                border-color: @header_color;
             }
 
         </style>
@@ -131,7 +157,7 @@ class td_block_template_1 {
 
         //show the default display value
         $buffy .= '<div id="td-pulldown-' . $this->template_data_array['block_uid'] . '-val"><span>';
-        $buffy .=  $this->template_data_array['td_pull_down_items'][0]['name'] . ' </span><i class="td-icon-menu-down"></i>';
+        $buffy .=  $this->template_data_array['td_pull_down_items'][0]['name'] . ' </span><i class="td-icon-down"></i>';
         $buffy .= '</div>';
 
         //builde the dropdown
