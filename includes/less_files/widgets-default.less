@@ -4,6 +4,11 @@
 // general widgets
 .widget {
   margin-bottom: 38px;
+  font-size: 13px;
+
+  &.td_block_wrap {
+    padding-bottom: 0;
+  }
 
   a {
     color: #111;
@@ -19,7 +24,7 @@
   }
 
   li {
-    line-height: 30px;
+    line-height: 36px;
     list-style: none;
     margin-left: 0;
 
@@ -37,7 +42,8 @@
   }
 
   .block-title {
-    margin-bottom: 13px;
+    float: none;
+    margin-bottom: 11px;
     width: 100%;
 
     span a {
@@ -69,7 +75,6 @@
   }
 
   #today {
-    //background-color: @td_grid_border_color;
     font-weight: bold;
     color: #000000;
   }
@@ -103,8 +108,13 @@
 // categories
 .widget_categories {
   li span {
+    display: inline-block;
     float: right;
-    margin-right: 10px;
+    margin-top: 8px;
+    padding: 2px 6px 3px 7px;
+    line-height: 1;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    .border-radius(10px);
   }
 }
 

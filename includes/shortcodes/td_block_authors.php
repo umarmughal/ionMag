@@ -90,7 +90,8 @@ class td_block_authors extends td_block {
                 $buffy .= '<div class="item-details">';
 
                 $buffy .= '<div class="td-authors-name">';
-                $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . $td_author->display_name . '</a>';
+                //$buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . $td_author->display_name . '</a>';
+                $buffy .= $td_author->display_name;
                 $buffy .= '</div>';
 
 
