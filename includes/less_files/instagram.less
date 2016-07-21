@@ -21,7 +21,7 @@
       width: 94%;
       height: 94%;
       border: 1px solid #fff;
-      opacity: 0;
+      .opacity(0);
       position: absolute;
       top: 0;
       left: 0;
@@ -34,7 +34,7 @@
       content: '';
       width: 100%;
       height: 100%;
-      opacity: 0;
+      .opacity(0);
       position: absolute;
       top: 0;
       left: 0;
@@ -45,10 +45,10 @@
 
   &:hover {
     a:before {
-      opacity: 0.4;
+      .opacity(0.4);
     }
     a:after {
-      opacity: 0.1;
+      .opacity(0.1);
     }
   }
 }

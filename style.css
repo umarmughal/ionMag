@@ -4668,6 +4668,79 @@ blockquote.pull-right:after {
 .td_author .td-author-page a:hover {
   color: #42bdcd;
 }
+/*  ----------------------------------------------------------------------------
+    Custom block
+*/
+.td_block_custom .td-custom {
+  position: relative;
+}
+.td_block_custom .td-custom:hover .td-custom-image a:before,
+.td_block_custom .td-custom:hover .td-custom-image a:after {
+  opacity: 0.4;
+}
+.td_block_custom .td-custom-image a {
+  display: inline-block;
+}
+.td_block_custom .td-custom-image a:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='0')";
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -moz-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.td_block_custom .td-custom-image a:after {
+  content: '';
+  width: 94%;
+  height: 94%;
+  border: 1px solid #fff;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='0')";
+  filter: alpha(opacity=0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  -webkit-transition: opacity 0.3s ease 0s;
+  -moz-transition: opacity 0.3s ease 0s;
+  -o-transition: opacity 0.3s ease 0s;
+  transition: opacity 0.3s ease 0s;
+}
+.td_block_custom .td-custom-image img {
+  vertical-align: top;
+}
+.td_block_custom .td-custom-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.td_block_custom .entry-title {
+  margin: 0;
+  padding: 0;
+  font-size: 19px;
+  text-transform: uppercase;
+}
+.td_block_custom .entry-title a {
+  color: #fff;
+}
+.td_block_custom .entry-title:after {
+  display: none;
+}
 /*
   Style 1
 */
@@ -8530,6 +8603,8 @@ tagdiv animations
   height: 94%;
   border: 1px solid #fff;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='0')";
+  filter: alpha(opacity=0);
   position: absolute;
   top: 0;
   left: 0;
@@ -8546,6 +8621,8 @@ tagdiv animations
   width: 100%;
   height: 100%;
   opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='0')";
+  filter: alpha(opacity=0);
   position: absolute;
   top: 0;
   left: 0;
@@ -8557,9 +8634,13 @@ tagdiv animations
 }
 .td-instagram-element:hover a:before {
   opacity: 0.4;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='40')";
+  filter: alpha(opacity=40);
 }
 .td-instagram-element:hover a:after {
   opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='10')";
+  filter: alpha(opacity=10);
 }
 .td-images-on-row-1 .td-instagram-element {
   width: 100%;

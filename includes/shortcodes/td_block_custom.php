@@ -60,14 +60,42 @@ class td_block_custom extends td_block {
         switch($td_item_count) {
             case '1':
                 $buffy .= $td_block_layout->open12();
-                $buffy .= $items2[0][0];
+                foreach($items2 as $item) {
+                    $buffy .= '<div class="td-custom td-big-image">';
+
+                    $buffy .= '<div class="td-custom-image">';
+                    $buffy .= '<a href="' . $item[1] . '" rel="bookmark" title="' . $item[0] . '">';
+                    $buffy .= '<img src="http://192.168.0.178/wp_012/wp-content/themes/012/images/no-thumb/td_640x400.png">';
+                    $buffy .= '</a>';
+                    $buffy .= '</div>';
+
+                    $buffy .= '<div class="td-custom-title">';
+                    $buffy .= '<h3 class="entry-title"><a href="' . $item[1] . '">' . $item[0] . '</a></h3>';
+                    $buffy .= '</div>';
+
+                    $buffy .= '</div>';
+                }
                 $buffy .= $td_block_layout->close12();
                 break;
             case '2':
                 $buffy .= $td_block_layout->open_row();
                 foreach($items2 as $item) {
                     $buffy .= $td_block_layout->open6();
-                    $buffy .= $item[0];
+
+                    $buffy .= '<div class="td-custom td-medium-image">';
+
+                    $buffy .= '<div class="td-custom-image">';
+                    $buffy .= '<a href="' . $item[1] . '" rel="bookmark" title="' . $item[0] . '">';
+                    $buffy .= '<img src="http://192.168.0.178/wp_012/wp-content/themes/012/images/no-thumb/td_640x400.png">';
+                    $buffy .= '</a>';
+                    $buffy .= '</div>';
+
+                    $buffy .= '<div class="td-custom-title">';
+                    $buffy .= '<h3 class="entry-title"><a href="' . $item[1] . '">' . $item[0] . '</a></h3>';
+                    $buffy .= '</div>';
+
+                    $buffy .= '</div>';
+
                     $buffy .= $td_block_layout->close6();
                 }
                 $buffy .= $td_block_layout->close_row();
@@ -78,17 +106,17 @@ class td_block_custom extends td_block {
                     $buffy .= $td_block_layout->open4();
 
                     $buffy .= '<div class="td-custom td-medium-image">';
-                    $buffy .= '<div class="td-custom-image">';
 
+                    $buffy .= '<div class="td-custom-image">';
                     $buffy .= '<a href="' . $item[1] . '" rel="bookmark" title="' . $item[0] . '">';
                     $buffy .= '<img src="http://192.168.0.178/wp_012/wp-content/themes/012/images/no-thumb/td_300x220.png">';
                     $buffy .= '</a>';
+                    $buffy .= '</div>';
 
                     $buffy .= '<div class="td-custom-title">';
-                    $buffy .= '<h3 class="entry-title">' . $item[0] . '</h3>';
+                    $buffy .= '<h3 class="entry-title"><a href="' . $item[1] . '">' . $item[0] . '</a></h3>';
                     $buffy .= '</div>';
 
-                    $buffy .= '</div>';
                     $buffy .= '</div>';
 
                     $buffy .= $td_block_layout->close4();
@@ -98,9 +126,25 @@ class td_block_custom extends td_block {
             case '4':
                 $buffy .= $td_block_layout->open_row();
                 foreach($items2 as $item) {
-                    $buffy .= $td_block_layout->open6();
-                    $buffy .= $item[0];
-                    $buffy .= $td_block_layout->close6();
+                    //$buffy .= $td_block_layout->open3();
+                    $buffy .= '<div class="td-pb-span3">';
+
+                    $buffy .= '<div class="td-custom td-tiny-image">';
+
+                    $buffy .= '<div class="td-custom-image">';
+                    $buffy .= '<a href="' . $item[1] . '" rel="bookmark" title="' . $item[0] . '">';
+                    $buffy .= '<img src="http://192.168.0.178/wp_012/wp-content/themes/012/images/no-thumb/td_300x220.png">';
+                    $buffy .= '</a>';
+                    $buffy .= '</div>';
+
+                    $buffy .= '<div class="td-custom-title">';
+                    $buffy .= '<h3 class="entry-title"><a href="' . $item[1] . '">' . $item[0] . '</a></h3>';
+                    $buffy .= '</div>';
+
+                    $buffy .= '</div>';
+
+                    $buffy .= '</div>';
+                    //$buffy .= $td_block_layout->close3();
                 }
                 $buffy .= $td_block_layout->close_row();
                 break;
