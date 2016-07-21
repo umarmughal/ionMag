@@ -19,14 +19,14 @@ class td_block_instagram extends td_block {
         }
 
         $buffy = ''; //output buffer
-        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes() . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
 
 		    //get the block js
 		    $buffy .= $this->get_block_css();
 
             //get the block title
             $buffy .= $this->get_block_title();
-            $buffy .= '<div id=' . $this->block_uid . ' class="td-instagram-wrap td-column-' . $td_column_number . '">';
+            $buffy .= '<div id=' . $this->block_uid . ' class="td-instagram-wrap">';
                 $buffy.= td_instagram::render_generic($atts);
             $buffy .= '</div>';
         $buffy .= '</div> <!-- ./block -->';

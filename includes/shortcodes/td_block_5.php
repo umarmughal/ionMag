@@ -9,7 +9,7 @@ class td_block_5 extends td_block {
 
         $buffy = ''; //output buffer
 
-        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes() . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
         $buffy .= $this->get_block_css();
@@ -23,7 +23,7 @@ class td_block_5 extends td_block {
             $buffy .= $this->get_pull_down_filter(); //get the sub category filter for this block
         $buffy .= '</div>';
 
-        $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner td-column-' . $td_column_number . '">';
+        $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
         $buffy .= $this->inner($this->td_query->posts);  //inner content of the block
         $buffy .= '</div>';
 
@@ -41,44 +41,34 @@ class td_block_5 extends td_block {
             $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
         }
 
-        $td_post_count = 0; // the number of posts rendered
-        $td_current_column = 1; //the current column
+        $td_post_count = 1; // the number of posts rendered
 
         if (!empty($posts)) {
             foreach ($posts as $post) {
+                $td_module_3 = new td_module_3($post);
                 $td_module_5 = new td_module_5($post);
-                $td_module_2 = new td_module_2($post);
 
                 switch ($td_column_number) {
 
                     case '1': //one column layout
-                        $buffy .= $td_module_2->render();
+                        $buffy .= $td_module_3->render();
                         break;
 
                     case '2': //two column layout
                         $buffy .= $td_module_5->render();
-
                         break;
 
                     case '3': //three column layout
                         $buffy .= $td_block_layout->open_row();
-
                         $buffy .= $td_block_layout->open6();
                         $buffy .= $td_module_5->render();
                         $buffy .= $td_block_layout->close6();
 
-                        if ($td_current_column == 2) {
+                        if ($td_post_count == 2) {
                             $buffy .= $td_block_layout->close_row();
+                            $td_post_count = 0;
                         }
-
                         break;
-                }
-
-                //current column
-                if ($td_current_column == $td_column_number) {
-                    $td_current_column = 1;
-                } else {
-                    $td_current_column++;
                 }
 
                 $td_post_count++;

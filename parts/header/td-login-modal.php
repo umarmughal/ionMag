@@ -12,7 +12,6 @@ if($users_can_register == 1){
     $users_can_register_link = '<a id="register-link">' . __td('Create an account', TD_THEME_NAME) . '</a>';
 
     $users_can_register_form = '
-                <a href="#" class="td-back-button"><i class="td-icon-modal-back"></i></a>
                 <div id="td-register-div" class="td-login-form-div td-display-none">
                     <div class="td-login-panel-title">' . __td('Create an account', TD_THEME_NAME) . '</div>
                     <div class="td-login-panel-descr">' . __td('Welcome! Register for an account', TD_THEME_NAME) .'</div>
@@ -27,7 +26,7 @@ if($users_can_register == 1){
 echo '
                 <div  id="login-form" class="white-popup-block mfp-hide mfp-with-anim">
                     <div class="td-login-wrap">
-
+                        <a href="#" class="td-back-button"><i class="td-icon-modal-back"></i></a>
                         <div id="td-login-div" class="td-login-form-div td-display-block">
                             <div class="td-login-panel-title">' . __td('Sign in', TD_THEME_NAME) . '</div>
                             <div class="td-login-panel-descr">' . __td('Welcome! Log into your account', TD_THEME_NAME) .'</div>

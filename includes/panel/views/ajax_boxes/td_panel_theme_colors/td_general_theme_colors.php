@@ -9,7 +9,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_theme_color',
-            'default_color' => '#4db2ec'
+            'default_color' => '#42bdcd'
         ));
         ?>
     </div>
