@@ -92,7 +92,7 @@ class td_block_7 extends td_block {
                         } else { //the rest
                             $buffy .= $td_block_layout->open_row();
                             $buffy .= $td_block_layout->open4();
-                            $buffy .= $td_module_2->render();
+                            $buffy .= $td_module_1->render();
                             $buffy .= $td_block_layout->close4();
 
                             if ($td_current_column == 3) {
