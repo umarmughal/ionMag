@@ -5097,25 +5097,25 @@ blockquote.pull-right:after {
   top: -19px;
   bottom: auto;
 }
-.td_top_authors {
+.td_author {
   padding-bottom: 38px;
 }
-.td_top_authors .block-title {
+.td_author .block-title {
   float: none;
   margin-bottom: 20px;
   width: 100%;
 }
-.td_top_authors .td_mod_wrap {
+.td_author .td_mod_wrap {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
 }
-.td_top_authors .avatar {
+.td_author .avatar {
   margin-bottom: 7px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.td_top_authors .td-authors-name {
+.td_author .td-author-name {
   position: relative;
   margin-bottom: 10px;
   padding-bottom: 15px;
@@ -5123,7 +5123,7 @@ blockquote.pull-right:after {
   font-weight: 500;
   text-transform: uppercase;
 }
-.td_top_authors .td-authors-name:after {
+.td_author .td-author-name:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -5140,15 +5140,21 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='20')";
   filter: alpha(opacity=20);
 }
-.td_top_authors .td-authors-link {
+.td_author .td-author-description {
+  padding: 2px 0 16px 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 15px;
+  line-height: 19px;
+}
+.td_author .td-author-page {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
   font-style: italic;
 }
-.td_top_authors .td-authors-link a {
+.td_author .td-author-page a {
   color: #000;
 }
-.td_top_authors .td-authors-link a:hover {
+.td_author .td-author-page a:hover {
   color: #42bdcd;
 }
 #td_css_split_separator {

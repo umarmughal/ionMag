@@ -958,6 +958,185 @@ class td_config {
             )
         );
 
+        td_api_block::add('td_block_author',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Author',
+                "base" => "td_block_author",
+                "class" => "",
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_author',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_author.php',
+                "params" => array(
+                    array(
+                        "param_name" => "custom_title",
+                        "type" => "textfield",
+                        "value" => 'Block title',
+                        "heading" => "Block title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "author_id",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Author id",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "author_url",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Author page url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "open_in_new_window",
+                        "type" => "dropdown",
+                        "value" => array('- Same window -' => '', 'New window' => 'y'),
+                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title text color',
+                        "param_name" => "header_text_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title text color for this block'
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title background color',
+                        "param_name" => "header_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array (
+                        'param_name' => 'css',
+                        'value' => '',
+                        'type' => 'css_editor',
+                        'heading' => 'Css',
+                        'group' => 'Design options',
+                    )
+                )
+            )
+        );
+
+        td_api_block::add('td_block_custom',
+            array(
+                'map_in_visual_composer' => true,
+                "name" => 'Custom block',
+                "base" => "td_block_custom",
+                "class" => "",
+                "controls" => "full",
+                "category" => 'Blocks',
+                'icon' => 'icon-pagebuilder-td_block_custom',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_custom.php',
+                "params" => array(
+                    array(
+                        "param_name" => "custom_title",
+                        "type" => "textfield",
+                        "value" => 'Block title',
+                        "heading" => "Block title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url_item1",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Custom url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "open_in_new_window_item1",
+                        "type" => "dropdown",
+                        "value" => array('- Same window -' => '', 'New window' => 'y'),
+                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url_item2",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Custom url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "open_in_new_window_item2",
+                        "type" => "dropdown",
+                        "value" => array('- Same window -' => '', 'New window' => 'y'),
+                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url_item3",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Custom url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "open_in_new_window_item3",
+                        "type" => "dropdown",
+                        "value" => array('- Same window -' => '', 'New window' => 'y'),
+                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title text color',
+                        "param_name" => "header_text_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title text color for this block'
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title background color',
+                        "param_name" => "header_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array (
+                        'param_name' => 'css',
+                        'value' => '',
+                        'type' => 'css_editor',
+                        'heading' => 'Css',
+                        'group' => 'Design options',
+                    )
+                )
+            )
+        );
+
         td_api_block::add('td_block_popular_categories',
             array(
                 'map_in_visual_composer' => true,
