@@ -134,6 +134,19 @@
   font-family: @font2;
   font-size: 12px;
   line-height: 1;
+
+  & > div,
+  & > a,
+  & > span {
+    &:last-child {
+      margin-right: 0;
+      padding-right: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
 }
 
 .td-no-comment {
@@ -200,6 +213,7 @@
   .opacity(0.5);
 }
 
+.entry-review-stars,
 .td-module-comments,
 .td-post-comments {
   a {

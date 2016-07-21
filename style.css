@@ -1013,13 +1013,6 @@ img {
 .td-drop-down-search .td-aj-search-results .td_module_mx2 .td-module-thumb {
   margin-left: 20px;
 }
-.td-drop-down-search .td-aj-search-results .td_module_mx2 .entry-review-stars {
-  margin-right: 0;
-  padding-right: 0;
-}
-.td-drop-down-search .td-aj-search-results .td_module_mx2 .entry-review-stars:after {
-  display: none;
-}
 .td-drop-down-search .no-result {
   background-color: #fdfdfd;
   border: 1px solid #ededed;
@@ -1675,6 +1668,18 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   float: left;
   text-align: center;
 }
+.td-mega-span .td-item-details {
+  margin-bottom: 23px;
+}
+.td-mega-span .td-item-details > span,
+.td-mega-span .td-item-details > div {
+  margin: 0;
+  padding: 0;
+}
+.td-mega-span .td-item-details > span:after,
+.td-mega-span .td-item-details > div:after {
+  display: none;
+}
 .td-mega-span .td-post-category-wrap {
   bottom: -4px;
 }
@@ -1696,21 +1701,11 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   display: none;
 }
 .td-mega-span .entry-review-stars {
-  margin-right: 0;
-  padding-right: 0;
   font-size: 12px;
-}
-.td-mega-span .entry-review-stars:after {
-  display: none;
 }
 .td-mega-span .td-post-date {
   font-size: 12px;
   display: block;
-  margin: 0 0 23px 0;
-  padding: 0;
-}
-.td-mega-span .td-post-date:after {
-  display: none;
 }
 .td-mega-span .td-module-image {
   margin-bottom: 8px;
@@ -3991,6 +3986,17 @@ blockquote.pull-right:after {
   font-size: 12px;
   line-height: 1;
 }
+.td-module-meta-info > div:last-child,
+.td-module-meta-info > a:last-child,
+.td-module-meta-info > span:last-child {
+  margin-right: 0;
+  padding-right: 0;
+}
+.td-module-meta-info > div:last-child:after,
+.td-module-meta-info > a:last-child:after,
+.td-module-meta-info > span:last-child:after {
+  display: none;
+}
 .td-no-comment .td-post-date {
   margin-right: 0;
   padding-right: 0;
@@ -4050,6 +4056,7 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='50')";
   filter: alpha(opacity=50);
 }
+.entry-review-stars a,
 .td-module-comments a,
 .td-post-comments a {
   position: relative;
@@ -4058,15 +4065,18 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='70')";
   filter: alpha(opacity=70);
 }
+.entry-review-stars a i,
 .td-module-comments a i,
 .td-post-comments a i {
   vertical-align: middle;
   margin: -1px 6px 0 0;
 }
+.entry-review-stars a:hover,
 .td-module-comments a:hover,
 .td-post-comments a:hover {
   color: #42bdcd;
 }
+.entry-review-stars a:before,
 .td-module-comments a:before,
 .td-post-comments a:before {
   font-family: 'wpion', sans-serif;

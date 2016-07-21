@@ -496,7 +496,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 252px;
-  -webkit-overflow-scrolling: touch; //overflow scroll-bar on IOS
+  -webkit-overflow-scrolling: touch;
 }
 
 .td-mega-row {
@@ -508,6 +508,20 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   width: 33.33333%;
   float: left;
   text-align: center;
+
+  .td-item-details {
+    margin-bottom: 23px;
+
+    & > span,
+    & > div {
+      margin: 0;
+      padding: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
 
   .td-post-category-wrap {
     bottom: -4px;
@@ -535,24 +549,12 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   }
 
   .entry-review-stars {
-    margin-right: 0;
-    padding-right: 0;
     font-size: 12px;
-
-    &:after {
-      display: none;
-    }
   }
 
   .td-post-date {
     font-size: 12px;
     display: block;
-    margin: 0 0 23px 0;
-    padding: 0;
-
-    &:after {
-      display: none;
-    }
   }
 
   .td-module-image {
