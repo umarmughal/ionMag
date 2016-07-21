@@ -1,0 +1,152 @@
+/*  ----------------------------------------------------------------------------
+    header
+*/
+.td-review {
+  width: 100%;
+  margin-bottom: 40px;
+  font-family: @font2;
+  font-size: 13px;
+
+  td {
+    padding: 7px 14px;
+  }
+
+  .block-title {
+    display: inline-block;
+    padding-top: 0;
+    float: none;
+    margin-bottom: 20px;
+  }
+
+  .td-review-summary {
+    padding: 21px 14px;
+  }
+
+  i {
+    margin-top: 5px;
+  }
+
+  .td-review-row-stars:hover {
+    background-color: #fcfcfc;
+  }
+
+  .td-review-percent-sign {
+    font-size: 15px;
+    line-height: 1;
+  }
+}
+
+.td-review-header {
+  td {
+    padding: 0;
+    border: 0;
+  }
+}
+
+// review stars icon size
+.td-icon-star,
+.td-icon-star-empty,
+.td-icon-star-half {
+  width: 18px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    rating stars
+*/
+.td-review-stars {
+  text-align: center;
+}
+
+.td-review-final-score {
+  line-height: 80px;
+  font-size: 48px;
+  margin-bottom: 5px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    review bars
+*/
+.td-rating-bar-wrap {
+  margin: 0 0 7px 0;
+  background-color: #f5f5f5;
+
+  div {
+    height: 20px;
+    background-color: @td_theme_color;
+    max-width: 100%;
+  }
+}
+
+.td-review-row-bars {
+  .td-review-desc {
+    display: inline-block;
+    padding-bottom: 2px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    percent
+*/
+.td-review-percent {
+  float: right;
+  padding-bottom: 2px;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    footer
+*/
+
+.td-review-summary {
+  padding: 21px 0 0 0;
+  vertical-align: top;
+
+  .block-title {
+    padding: 0;
+    margin-bottom: 14px;
+
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.td-review-summary-content {
+  margin-right: 21px;
+}
+
+.td-review-score {
+  font-weight: 700;
+  text-align: center;
+  padding: 0;
+  vertical-align: bottom;
+  width: 150px;
+}
+
+.td-review-overall {
+  padding: 0 0 28px 0;
+  line-height: 14px;
+
+  .td-icon-star,
+  .td-icon-star-empty,
+  .td-icon-star-half {
+    width: 20px;
+    font-size: 15px;
+    color: @td_theme_color;
+  }
+
+  span {
+    font-size: 11px;
+  }
+}
+
+.td-review-final-score {
+  color: @td_theme_color;
+}
+
+.td-review-final-star {
+  margin-bottom: 5px;
+}
