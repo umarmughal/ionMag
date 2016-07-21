@@ -1608,6 +1608,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   display: table;
   width: 100%;
   padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
 }
 .td_block_mega_menu .td_block_inner {
   margin-left: 200px;
@@ -5780,6 +5781,7 @@ blockquote.pull-right:after {
 }
 .td_block_related_posts {
   position: relative;
+  margin-bottom: 0;
 }
 .td_block_related_posts .td-module-image {
   margin-bottom: 8px;
@@ -8802,6 +8804,9 @@ tagdiv animations
 }
 .td-instagram-followers span {
   font-weight: 600;
+}
+.td_block_instagram {
+  margin-bottom: 0;
 }
 .td_block_instagram.td-column-1 .td-images-on-row-3 .td-video-play-ico img,
 .td_block_instagram.td-column-1 .td-images-on-row-4 .td-video-play-ico img,
