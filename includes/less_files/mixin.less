@@ -68,7 +68,7 @@
 .opacity(@value) {
   @ieval: @value*100;
   opacity: @value;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="@ieval")";
+  -ms-filter: %("progid:DXImageTransform.Microsoft.Alpha(Opacity='%a')", @ieval);
   filter: alpha(opacity=@ieval);
 }
 

@@ -53,10 +53,15 @@
     z-index: 1;
   }
 
+  .entry-review-stars,
   .td-post-author-name,
   .td-post-date {
     margin: 0;
     padding: 0;
+  }
+
+  .entry-review-stars:after {
+    display: none;
   }
 
   .td-post-author-name {
@@ -123,6 +128,18 @@
     z-index: 1;
   }
 }
+
+
+/*
+  Big grids 2 & 3
+*/
+.td_block_big_grid_2,
+.td_block_big_grid_3 {
+  .entry-review-stars {
+    color: #000;
+  }
+}
+
 
 /*
   Big grid 1
@@ -258,6 +275,7 @@
     }
   }
 }
+
 
 /*
   Big grid 2

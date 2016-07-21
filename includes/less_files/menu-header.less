@@ -177,7 +177,7 @@ ul.sf-menu li li.sfHover li ul {
   margin-left: -30px;
   padding: 16px 0;
   background-color: #fff;
-  .box-shadow(inset 0px 0px 1px 0px rgba(0, 0, 0, 0.25));
+  .box-shadow(inset 0 0 1px 0 rgba(0, 0, 0, 0.25));
 
   li {
     width: 100%;
@@ -496,7 +496,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   overflow-x: hidden;
   overflow-y: auto;
   max-height: 252px;
-  -webkit-overflow-scrolling: touch; //overflow scroll-bar on IOS
+  -webkit-overflow-scrolling: touch;
 }
 
 .td-mega-row {
@@ -508,6 +508,20 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   width: 33.33333%;
   float: left;
   text-align: center;
+
+  .td-item-details {
+    margin-bottom: 23px;
+
+    & > span,
+    & > div {
+      margin: 0;
+      padding: 0;
+
+      &:after {
+        display: none;
+      }
+    }
+  }
 
   .td-post-category-wrap {
     bottom: -4px;
@@ -534,15 +548,13 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     }
   }
 
+  .entry-review-stars {
+    font-size: 12px;
+  }
+
   .td-post-date {
     font-size: 12px;
     display: block;
-    margin: 0 0 23px 0;
-    padding: 0;
-
-    &:after {
-      display: none;
-    }
   }
 
   .td-module-image {
