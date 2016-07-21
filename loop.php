@@ -26,7 +26,7 @@ if ($td_module['uses_columns'] === false) {
 }
 
 ?>
-<div class="td-modules-container td-module-number<?php echo $loop_module_id; ?>">
+<div class="td-modules-container td-module-number<?php echo $loop_module_id; ?> td-module-<?php echo $loop_sidebar_position; ?>">
     <?php
     if (have_posts()) {
         while ( have_posts() ) : the_post();

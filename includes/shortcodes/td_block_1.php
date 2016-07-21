@@ -9,7 +9,7 @@ class td_block_1 extends td_block {
 
         $buffy = ''; //output buffer
         
-        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes() . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
         $buffy .= $this->get_block_css();
@@ -23,7 +23,7 @@ class td_block_1 extends td_block {
             $buffy .= $this->get_pull_down_filter(); //get the sub category filter for this block
         $buffy .= '</div>';
 
-        $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner td-column-' . $td_column_number . '">';
+        $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
         $buffy .= $this->inner($this->td_query->posts);  //inner content of the block
         $buffy .= '</div>';
 
@@ -56,7 +56,6 @@ class td_block_1 extends td_block {
 
                     case '2': //two column layout
                         $buffy .= $td_block_layout->open_row();
-
                         $buffy .= $td_block_layout->open6();
                         $buffy .= $td_module_1->render();
                         $buffy .= $td_block_layout->close6();
@@ -64,13 +63,10 @@ class td_block_1 extends td_block {
                         if ($td_current_column == 2) {
                             $buffy .= $td_block_layout->close_row();
                         }
-
-
                         break;
 
                     case '3': //three column layout
                         $buffy .= $td_block_layout->open_row();
-
                         $buffy .= $td_block_layout->open4();
                         $buffy .= $td_module_1->render();
                         $buffy .= $td_block_layout->close4();
@@ -78,7 +74,6 @@ class td_block_1 extends td_block {
                         if ($td_current_column == 3) {
                             $buffy .= $td_block_layout->close_row();
                         }
-
                         break;
                 }
 

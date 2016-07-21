@@ -45,8 +45,8 @@ class td_block_template_1 {
         	.$unique_block_class .td_quote_on_blocks,
         	.$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
         	.$unique_block_class .td-wrapper-pulldown-filter a.td-pulldown-filter-link:hover,
-            .$unique_block_class .block-title span,
-            .$unique_block_class .block-title a,
+            .$unique_block_class div .block-title span,
+            .$unique_block_class div .block-title a,
             .$unique_block_class .td-module-comments a:hover,
             .$unique_block_class .td-next-prev-wrap a:hover {
                 color: @header_text_color;
@@ -54,27 +54,31 @@ class td_block_template_1 {
 
             .$unique_block_class .td_module_wrap .td-post-category:hover,
             .$unique_block_class .block-title:after,
-            .$unique_block_class .entry-title:after {
+            .$unique_block_class .entry-title:after,
+            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list:before {
                 background-color: @header_text_color;
-            }
-
-            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list {
-                border-color: @header_text_color;
             }
 
             /* @header_color */
             .$unique_block_class .block-title span,
             .$unique_block_class .block-title a {
                 background-color: @header_color;
-            }
-
-            .$unique_block_class .block-title span,
-            .$unique_block_class .block-title a {
                 margin: 0;
-                padding: 7px 10px;
+                padding: 8px 10px;
+                color: #fff;
             }
             .$unique_block_class .block-title:after {
                 display: none;
+            }
+            .$unique_block_class .td-block-title-wrap {
+                margin-bottom: 22px;
+            }
+            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list {
+                margin-top: -2px;
+            }
+            .$unique_block_class .block-title {
+                font-size: 13px;
+                font-weight: 500;
             }
 
             .$unique_block_class .td_module_wrap:hover .entry-title a,
@@ -89,12 +93,9 @@ class td_block_template_1 {
 
             .$unique_block_class .td_module_wrap .td-post-category:hover,
             .$unique_block_class .block-title:after,
-            .$unique_block_class .entry-title:after {
+            .$unique_block_class .entry-title:after,
+            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list:before {
                 background-color: @header_color;
-            }
-
-            .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list {
-                border-color: @header_color;
             }
 
         </style>

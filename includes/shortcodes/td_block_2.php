@@ -3,9 +3,13 @@ class td_block_2 extends td_block {
     function render($atts, $content = null) {
         parent::render($atts); // sets the live atts, $this->atts, $this->block_uid, $this->td_query (it runs the query)
 
+        if (empty($td_column_number)) {
+            $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
+        }
+
         $buffy = ''; //output buffer
 
-        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes() . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
         $buffy .= $this->get_block_css();
@@ -52,7 +56,6 @@ class td_block_2 extends td_block {
 
                     case '2': //two column layout
                         $buffy .= $td_block_layout->open_row();
-
                         $buffy .= $td_block_layout->open6();
                         $buffy .= $td_module_2->render();
                         $buffy .= $td_block_layout->close6();
@@ -60,13 +63,10 @@ class td_block_2 extends td_block {
                         if ($td_current_column == 2) {
                             $buffy .= $td_block_layout->close_row();
                         }
-
-
                         break;
 
                     case '3': //three column layout
                         $buffy .= $td_block_layout->open_row();
-
                         $buffy .= $td_block_layout->open4();
                         $buffy .= $td_module_2->render();
                         $buffy .= $td_block_layout->close4();
@@ -74,7 +74,6 @@ class td_block_2 extends td_block {
                         if ($td_current_column == 3) {
                             $buffy .= $td_block_layout->close_row();
                         }
-
                         break;
                 }
 
