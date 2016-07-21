@@ -1055,6 +1055,15 @@ class td_config {
                         "class" => ""
                     ),
                     array(
+                        "param_name" => "image_title_item1",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Image title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
                         "param_name" => "custom_url_item1",
                         "type" => "textfield",
                         "value" => '',
@@ -1068,6 +1077,15 @@ class td_config {
                         "type" => "dropdown",
                         "value" => array('- Same window -' => '', 'New window' => 'y'),
                         "heading" => __("Open in:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "image_title_item2",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Image title",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1091,6 +1109,15 @@ class td_config {
                         "class" => ""
                     ),
                     array(
+                        "param_name" => "image_title_item3",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Image title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
                         "param_name" => "custom_url_item3",
                         "type" => "textfield",
                         "value" => '',
@@ -1101,6 +1128,33 @@ class td_config {
                     ),
                     array(
                         "param_name" => "open_in_new_window_item3",
+                        "type" => "dropdown",
+                        "value" => array('- Same window -' => '', 'New window' => 'y'),
+                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "image_title_item4",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Image title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url_item4",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Custom url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "open_in_new_window_item4",
                         "type" => "dropdown",
                         "value" => array('- Same window -' => '', 'New window' => 'y'),
                         "heading" => __("Open in:", TD_THEME_NAME),
