@@ -149,6 +149,11 @@
     display: inline-block;
     vertical-align: middle;
   }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    text-align: center;
+  }
 }
 
 .td-post-sharing-top {
@@ -167,6 +172,11 @@
   position: relative;
   margin-right: 26px;
   vertical-align: middle;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    display: none;
+  }
 }
 
 .td-default-sharing {
@@ -206,6 +216,18 @@
   font-weight: 600;
   line-height: 29px;
   margin: -2px 0 0 12px;
+}
+
+.td-social-facebook,
+.td-social-twitter {
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    padding: 0;
+
+    .td-social-but-text {
+      display: none;
+    }
+  }
 }
 
 .td-social-facebook .td-icon-facebook,
@@ -423,6 +445,14 @@
   display: none;
 }
 
+.td-post-prev-post,
+.td-post-next-post {
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 50%;
+  }
+}
+
 
 /*  ----------------------------------------------------------------------------
     Author box
@@ -565,6 +595,11 @@
 
   .td-module-image {
     margin-bottom: 8px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 10px;
+    }
   }
 
   .entry-title {
@@ -575,6 +610,11 @@
 
     &:after {
       display: none;
+    }
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      font-size: 15px;
     }
   }
 }
