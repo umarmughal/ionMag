@@ -34,6 +34,34 @@
     font-size: 19px;
     line-height: 24px;
   }
+
+  /* responsive portrait tablet */
+  @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+    .td-module-thumb {
+      width: 160px;
+    }
+
+    .td-item-details {
+      margin-left: 185px;
+      min-height: 118px;
+    }
+  }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    .entry-thumb {
+      width: 100%;
+    }
+
+    .td-module-thumb {
+      width: 190px;
+    }
+
+    .td-item-details {
+      margin-left: 215px;
+      min-height: 140px;
+    }
+  }
 }
 // hide bottom border on latest modules
 .td-module-number5 {
