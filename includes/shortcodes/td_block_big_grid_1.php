@@ -27,7 +27,6 @@ class td_block_big_grid_1 extends td_block {
         $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1 td-big-grids')) . '" ' . $this->get_block_html_atts() . '>';
             $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
                 $buffy .= $this->inner($this->td_query->posts); //inner content of the block
-                $buffy .= '<div class="clearfix"></div>';
             $buffy .= '</div>';
         $buffy .= '</div> <!-- ./block -->';
         return $buffy;
@@ -37,50 +36,43 @@ class td_block_big_grid_1 extends td_block {
 
         $buffy = '';
 
-            $td_block_layout = new td_block_layout();
+        $td_block_layout = new td_block_layout();
 
-            if (!empty($posts)) {
+        if (!empty($posts)) {
 
-                $buffy .= '<div class="td-big-grid-wrapper">';
+            $buffy .= '<div class="td-big-grid-wrapper">';
 
-                $post_count = 0;
+            $post_count = 0;
 
-	            // when 2 posts make post scroll full
-	            $td_scroll_posts = '';
-	            if (count($posts) == 2) {
-		            $td_scroll_posts = ' td-scroll-full';
-	            }
+            foreach ($posts as $post) {
 
-                foreach ($posts as $post) {
-
-                    if ($post_count == 0) {
-                        $td_module_mx3 = new td_module_mx3($post);
-                        $buffy .= $td_module_mx3->render($post_count);
-
-	                    $buffy .= '<div class="td-big-grid-scroll' . $td_scroll_posts . '">';
-                        $post_count++;
-                        continue;
-                    }
-
-                    $td_module_mx1 = new td_module_mx1($post);
-                    $buffy .= $td_module_mx1->render($post_count);
+                if ($post_count == 0) {
+                    $td_module_mx3 = new td_module_mx3($post);
+                    $buffy .= $td_module_mx3->render($post_count);
 
                     $post_count++;
+                    continue;
                 }
 
-                if ($post_count < self::POST_LIMIT) {
+                $td_module_mx1 = new td_module_mx1($post);
+                $buffy .= $td_module_mx1->render($post_count);
 
-                    for ($i = $post_count; $i < self::POST_LIMIT; $i++) {
-
-                        $td_module_mx_empty = new td_module_mx_empty();
-                        $buffy .= $td_module_mx_empty->render($i);
-                    }
-                }
-	                $buffy .= '</div>';  // close td-big-grid-scroll
-                $buffy .= '</div>'; // close td-big-grid-wrapper
+                $post_count++;
             }
 
-            $buffy .= $td_block_layout->close_all_tags();
+            if ($post_count < self::POST_LIMIT) {
+
+                for ($i = $post_count; $i < self::POST_LIMIT; $i++) {
+
+                    $td_module_mx_empty = new td_module_mx_empty();
+                    $buffy .= $td_module_mx_empty->render($i);
+                }
+            }
+            $buffy .= '<div class="clearfix"></div>';
+            $buffy .= '</div>'; // close td-big-grid-wrapper
+        }
+
+        $buffy .= $td_block_layout->close_all_tags();
         return $buffy;
     }
 }

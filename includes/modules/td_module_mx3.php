@@ -10,15 +10,13 @@ class td_module_mx3 extends td_module {
         ob_start();
         ?>
 
-        <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post", "td-small-thumb")); ?>">
-            <div class="td-module-image">
-                <?php echo $this->get_image('td_640x400');?>
-                <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_mx3') == 'yes') { echo $this->get_category(); }?></div>
-            </div>
+        <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post", "td-big-thumb")); ?>">
+            <?php echo $this->get_image('td_640x400');?>
 
             <div class="td-meta-info-container">
                 <div class="td-meta-align">
                     <div class="td-big-grid-meta">
+                        <?php if (td_util::get_option('tds_category_module_mx3') == 'yes') { echo $this->get_category(); }?>
                         <?php echo $this->get_title();?>
                     </div>
 

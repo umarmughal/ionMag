@@ -7,6 +7,11 @@
     bottom: 0;
   }
 
+  .entry-title {
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
   .td-module-thumb {
     a:last-child:before {
       bottom: 0;
@@ -25,12 +30,11 @@
     }
   }
 
-  // thumbs
+  // thumbs font size
   .td-big-thumb {
     .entry-title {
       font-size: 23px;
-      font-weight: 600;
-      line-height: 34px;
+      line-height: 30px;
     }
   }
 
@@ -38,23 +42,20 @@
     .entry-title {
       font-size: 19px;
       line-height: 24px;
-      font-weight: 600;
     }
   }
 
   .td-small-thumb {
     .entry-title {
-      font-size: 16px;
+      font-size: 15px;
       line-height: 20px;
-      font-weight: 600;
     }
   }
 
   .td-tiny-thumb {
     .entry-title {
-      font-size: 15px;
-      line-height: 17px;
-      font-weight: 500;
+      font-size: 12px;
+      line-height: 15px;
     }
   }
 
@@ -68,12 +69,7 @@
       }
 
       a:last-child:before {
-        bottom: 0;
-        content: "";
-        display: block;
         height: 100%;
-        width: 100%;
-        position: absolute;
         .transition(background-color 0.3s ease);
       }
     }
