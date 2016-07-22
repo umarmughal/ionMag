@@ -14,11 +14,19 @@
     font-size: 21px;
     line-height: 26px;
   }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    padding-bottom: 37px;
+
+    .td-module-thumb {
+      height: 350px;
+    }
+  }
 }
 
 // loop with Module 4
 .td-module-number4 {
-
   // no sidebar
   &.td-module-no_sidebar {
     margin: 0 -15px;

@@ -1,6 +1,16 @@
 .td-header-logo {
   position: relative;
   padding: 30px 0;
+
+  /* responsive portrait tablet */
+  @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+    padding: 16px 0;
+  }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    padding: 8px 0;
+  }
 }
 
 /*  ----------------------------------------------------------------------------
@@ -25,6 +35,49 @@
   h1 {
     margin: 0;
   }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    display: none;
+  }
+}
+
+.td-main-menu-logo {
+  display: none;
+  float: left;
+  margin-right: 10px;
+  height: 40px;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    display: block;
+    margin-right: 0;
+    height: 0;
+  }
+
+  a {
+    line-height: 50px;
+  }
+
+  img {
+    padding: 3px 0;
+    position: relative;
+    vertical-align: middle;
+    max-height: 48px;
+
+    @media (max-width: @responsive_p_phone_max) {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      .transform(translate(-50%, -50%));
+      padding: 0;
+    }
+
+
+    @media (max-width: @responsive_l_tablet_max) {
+      max-height: 40px;
+    }
+  }
 }
 
 .td-visual-hidden {
@@ -35,6 +88,70 @@
   overflow: hidden;
   padding: 0;
   position: absolute;
+}
+
+// logo in header
+// disable
+.td-logo-in-header .td-sticky-disable {
+  &.td-mobile-logo,
+  &.td-header-logo {
+    display: none;
+  }
+  &.td-mobile-logo {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: block;
+    }
+  }
+}
+
+// header logo
+.td-logo-in-header .td-sticky-header {
+  &.td-mobile-logo {
+    display: none;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: inherit;
+    }
+  }
+
+  &.td-header-logo {
+    display: block;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: none;
+    }
+  }
+}
+
+// mobile logo
+.td-logo-in-header .td-sticky-mobile {
+  &.td-mobile-logo {
+    display: block;
+  }
+
+  &.td-header-logo {
+    display: none;
+  }
+}
+
+.td-affix .td-logo-in-menu .td-sticky-mobile {
+  &.td-header-logo {
+    display: none;
+  }
+
+  &.td-mobile-logo {
+    display: block;
+  }
+}
+
+// condition when no mobile logo
+.td-affix .td-logo-in-menu .td-main-logo {
+  display: none;
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    display: block;
+  }
 }
 
 /*  ----------------------------------------------------------------------------
@@ -55,5 +172,10 @@
     bottom: 0;
     left: 0;
     right: 0;
+  }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 100%;
   }
 }
