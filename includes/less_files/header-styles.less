@@ -7,6 +7,12 @@
     height: 108px;
   }
 
+  .td-main-menu-logo img {
+    left: 1.5%;
+    .transform(translateX(0));
+    .transform(translateY(-50%));
+  }
+
   .td-header-main-menu {
     padding-right: 0;
     text-align: center;
@@ -33,5 +39,16 @@
 
   .sf-menu ul {
     text-align: left;
+  }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    .td-header-logo {
+      display: none;
+    }
+
+    .td-header-main-menu .td-search-btns-wrap {
+      right: 1.5%;
+    }
   }
 }
