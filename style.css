@@ -1005,6 +1005,9 @@ img {
 .td-header-style-2 .sf-menu ul {
   text-align: left;
 }
+.td-header-style-2 .td-header-sp-recs {
+  margin-top: -11px;
+}
 @media (max-width: 767px) {
   .td-header-style-2 .td-header-main-menu {
     text-align: left;
