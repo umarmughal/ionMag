@@ -6300,9 +6300,34 @@ blockquote.pull-right:after {
 }
 .comment .children {
   margin-left: 80px;
+  /* responsive portrait phone */
+}
+@media (max-width: 600px) {
+  .comment .children {
+    margin-left: 40px;
+  }
 }
 .comment .children .children {
   margin-left: 60px;
+  /* responsive portrait phone */
+}
+@media (max-width: 600px) {
+  .comment .children .children {
+    margin-left: 0;
+  }
+}
+.comment .children .children .children {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .comment .children .children .children {
+    margin-left: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .comment .children .children .children {
+    margin-left: 0;
+  }
 }
 .comment .children .comment:last-child {
   margin-bottom: 0;
@@ -6323,7 +6348,7 @@ blockquote.pull-right:after {
 }
 .comment-link {
   float: right;
-  padding-top: 9px;
+  padding-top: 11px;
   font-size: 11px;
   font-style: italic;
   line-height: 1;
