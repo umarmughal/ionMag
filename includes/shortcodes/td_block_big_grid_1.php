@@ -54,8 +54,8 @@ class td_block_big_grid_1 extends td_block {
                 foreach ($posts as $post) {
 
                     if ($post_count == 0) {
-                        $td_module_mx4 = new td_module_mx4($post);
-                        $buffy .= $td_module_mx4->render($post_count);
+                        $td_module_mx3 = new td_module_mx3($post);
+                        $buffy .= $td_module_mx3->render($post_count);
 
 	                    $buffy .= '<div class="td-big-grid-scroll' . $td_scroll_posts . '">';
                         $post_count++;

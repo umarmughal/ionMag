@@ -53,8 +53,8 @@ class td_block_big_grid_3 extends td_block {
 
                 foreach ($posts as $post) {
 
-                    $td_module_mx5 = new td_module_mx5($post);
-                    $buffy .= $td_module_mx5->render($post_count);
+                    $td_module_mx3 = new td_module_mx3($post);
+                    $buffy .= $td_module_mx3->render($post_count);
                     
                     $post_count++;
                 }

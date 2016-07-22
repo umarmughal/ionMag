@@ -12,8 +12,8 @@ class td_module_5 extends td_module {
         ?>
 
         <div class="<?php echo $this->get_module_classes();?>" <?php echo $this->get_item_scope();?>>
-            <div class="td-module-image td-module-image-abs">
-                <?php echo $this->get_image('td_250x184');?>
+            <div class="td-module-image td-module-image-float">
+                <?php echo $this->get_image('td_260x195');?>
             </div>
 
             <div class="td-item-details td-category-small">
@@ -32,6 +32,7 @@ class td_module_5 extends td_module {
             </div>
 
             <?php echo $this->get_quotes_on_blocks();?>
+            <div class="clearfix"></div>
         </div>
 
         <?php return ob_get_clean();

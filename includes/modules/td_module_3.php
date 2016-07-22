@@ -12,7 +12,7 @@ class td_module_3 extends td_module {
         ?>
 
         <div class="<?php echo $this->get_module_classes();?>" <?php echo $this->get_item_scope();?>>
-            <div class="td-module-image td-module-image-abs">
+            <div class="td-module-image td-module-image-float">
                 <?php echo $this->get_image('td_100x70');?>
             </div>
 
@@ -26,6 +26,7 @@ class td_module_3 extends td_module {
             </div>
 
             <?php echo $this->get_quotes_on_blocks();?>
+            <div class="clearfix"></div>
         </div>
 
         <?php return ob_get_clean();

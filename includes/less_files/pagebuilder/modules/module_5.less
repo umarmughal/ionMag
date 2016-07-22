@@ -3,7 +3,7 @@
 */
 .td_module_5 {
   margin-bottom: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 
   &:before {
     content: '';
@@ -16,9 +16,14 @@
     opacity: 0.06;
   }
 
-  .td-item-details {
-    margin-left: 280px;
-    min-height: 184px;
+  .td-module-image {
+    margin-right: 30px;
+    margin-bottom: 10px;
+    width: 260px;
+  }
+
+  .td-excerpt {
+    margin-bottom: 7px;
   }
 
   .td-post-category {
@@ -33,6 +38,7 @@
     padding-bottom: 10px;
     font-size: 19px;
     line-height: 24px;
+    display: table; // this fix the line title when image is floating
   }
 }
 // hide bottom border on latest modules

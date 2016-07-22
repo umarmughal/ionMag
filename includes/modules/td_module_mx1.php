@@ -11,7 +11,7 @@ class td_module_mx1 extends td_module {
         ?>
 
         <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post", "td-small-thumb")); ?>">
-            <?php echo $this->get_image('td_320x240');?>
+            <?php echo $this->get_image('td_485x360');?>
 
             <div class="td-meta-info-container">
                 <div class="td-meta-align">
