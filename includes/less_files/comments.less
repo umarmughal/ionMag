@@ -120,8 +120,30 @@
   .children {
     margin-left: 80px;
 
+
+    /* responsive portrait phone */
+    @media (max-width: 600px) {
+      margin-left: 40px;
+    }
+
     .children {
       margin-left: 60px;
+
+      /* responsive portrait phone */
+      @media (max-width: 600px) {
+        margin-left: 0;
+      }
+
+      .children {
+        /* responsive portrait phone */
+        @media (max-width: @responsive_p_phone_max) {
+          margin-left: 0;
+        }
+
+        @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+          margin-left: 0;
+        }
+      }
     }
 
     .comment {
@@ -148,9 +170,10 @@
     }
   }
 }
+
 .comment-link {
   float: right;
-  padding-top: 9px;
+  padding-top: 11px;
   font-size: 11px;
   font-style: italic;
   line-height: 1;
