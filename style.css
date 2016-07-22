@@ -4929,9 +4929,6 @@ blockquote.pull-right:after {
 /*  ----------------------------------------------------------------------------
     Author block
 */
-.td_author {
-  padding-bottom: 38px;
-}
 .td_author .block-title {
   float: none;
   margin-bottom: 20px;
@@ -8593,9 +8590,6 @@ tagdiv animations
 }
 .wp-video .wp-video-shortcode {
   outline: none;
-}
-.td_block_social_counter {
-  padding-bottom: 38px;
 }
 .td_block_social_counter .block-title {
   float: none;
