@@ -27,7 +27,6 @@ class td_block_big_grid_3 extends td_block {
         $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1 td-big-grids')) . '" ' . $this->get_block_html_atts() . '>';
             $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
                 $buffy .= $this->inner($this->td_query->posts); //inner content of the block
-                $buffy .= '<div class="clearfix"></div>';
             $buffy .= '</div>';
         $buffy .= '</div> <!-- ./block -->';
         return $buffy;
@@ -45,16 +44,10 @@ class td_block_big_grid_3 extends td_block {
 
                 $post_count = 0;
 
-	            // when 2 posts make post scroll full
-	            $td_scroll_posts = '';
-	            if (count($posts) == 2) {
-		            $td_scroll_posts = ' td-scroll-full';
-	            }
-
                 foreach ($posts as $post) {
 
-                    $td_module_mx3 = new td_module_mx3($post);
-                    $buffy .= $td_module_mx3->render($post_count);
+                    $td_module_mx4 = new td_module_mx4($post);
+                    $buffy .= $td_module_mx4->render($post_count);
                     
                     $post_count++;
                 }
@@ -67,7 +60,7 @@ class td_block_big_grid_3 extends td_block {
                         $buffy .= $td_module_mx_empty->render($i);
                     }
                 }
-	                //$buffy .= '</div>';  // close td-big-grid-scroll
+                $buffy .= '<div class="clearfix"></div>';
                 $buffy .= '</div>'; // close td-big-grid-wrapper
             }
 

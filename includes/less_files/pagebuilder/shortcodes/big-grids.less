@@ -36,6 +36,7 @@
 
   .td-post-category {
     padding: 3px 6px;
+    pointer-events: auto;
   }
 
   .entry-title {
@@ -73,11 +74,6 @@
     overflow: hidden;
     margin: 0;
     height: 100%;
-    background-color: #ccc;
-  }
-
-  // empty modules color
-  .td-module-thumb {
     background-color: #e5e5e5;
   }
 
@@ -237,51 +233,80 @@
   Big grid 2
 */
 .td_block_big_grid_2 {
-  margin-right: -10px;
+  margin-left: -5px;
+  margin-right: -5px;
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 
   // general
   .td-big-grid-post {
     width: 33.33333333%;
+    padding: 0 5px;
     float: left;
-
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100%;
+      padding: 0;
       float: none;
-      padding-top: 10px;
-    }
-
-    &:first-child {
-      /* responsive portrait phone */
-      @media (max-width: @responsive_p_phone_max) {
-        padding-top: 0;
-      }
-    }
-
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      margin-bottom: 15px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
+      margin-bottom: 20px;
     }
   }
-
-  .td-module-image {
-    margin-bottom: 15px;
-  }
-
   .entry-review-stars {
     color: #000;
   }
+  .td-meta-info-container {
+    pointer-events: auto;
+    position: relative;
+  }
+  .td-meta-align {
+    pointer-events: auto;
+  }
+  .td-module-image {
+    height: 236px;
+    margin-bottom: 15px;
 
-  .td-module-thumb {
-    height: 240px;
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      height: 174px;
+      margin-bottom: 8px;
+    }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      height: 210px;
+      margin-bottom: 10px;
+    }
+  }
+  .entry-title {
+    margin-bottom: 11px;
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      margin-bottom: 5px;
+    }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin: 0 10px 6px;
+    }
   }
 
-  .td-meta-info-container {
-    position: relative;
+  .td-big-grid-post-2 {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 0;
+    }
+  }
+
+  // overwrite big grids styles
+  &.td-grid-style-1 {
+    .entry-title {
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        font-size: 15px !important;
+        line-height: 20px !important;
+      }
+    }
   }
 }
 
@@ -291,92 +316,129 @@
   Big grid 3
 */
 .td_block_big_grid_3 {
-  margin-right: -10px;
-  margin-bottom: 44px;
-
+  // general
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
+    margin-left: -10px;
     margin-right: -10px;
   }
+  .entry-review-stars {
+    color: #000;
+  }
+  .td-module-image {
+    margin-bottom: 0;
+  }
 
-  // general
   .td-big-grid-post {
     width: 50%;
     float: left;
-    margin-bottom: 20px;
-    overflow: visible;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100%;
       float: none;
-    }
-
-    &:first-child {
-      .td-meta-info-container {
-        left: auto;
-        right: 0;
-      }
-
-      /* responsive portrait phone */
-      @media (max-width: @responsive_p_phone_max) {
-        padding-bottom: 10px;
-
-        .td-meta-info-container {
-          right: 50%;
-          .transform(translateX(50%));
-        }
-      }
-    }
-  }
-
-  .entry-review-stars {
-    color: #000;
-  }
-
-  .td-module-thumb {
-    height: 360px;
-
-    /* responsive portrait tablet */
-    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-      height: 300px;
-    }
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      width: 100%;
-      height: 260px;
-    }
-  }
-
-  .td-medium-thumb {
-    padding-right: 10px;
-
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      padding-right: 0;
+      border: none !important;
     }
   }
 
   .td-meta-info-container {
-    bottom: -35px;
+    position: relative;
+    top: 100%;
     background-color: #fff;
-    width: 92.16494845360825%;
-    padding-bottom: 19px;
+    width: 92%;
+    margin-top: -36px;
+    pointer-events: auto;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
-      bottom: 0;
-      left: 50%;
-      .transform(translateX(-50%));
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .td-module-image {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      height: 210px;
     }
   }
 
+  .td-meta-align {
+    pointer-events: auto;
+  }
+
   .td-big-grid-meta {
-    padding: 16px 20px 10px 20px;
+    padding: 18px 20px 10px;
+
+    /* responsive portrait tablet */
+    @media (max-width: @responsive_p_tablet_max) {
+      padding-top: 11px;
+    }
   }
 
   .td-post-category-wrap {
-    top: -19px;
+    width: 92%;
+    bottom: 31px;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 100%;
+    }
+  }
+
+  .td-video-play-ico img {
+    top: 20px;
     bottom: auto;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      top: 10px;
+      left: auto !important;
+      right: 10px !important;
+    }
+  }
+
+  // post 1
+  .td-big-grid-post-0 {
+    border-right: 5px solid transparent;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 20px;
+    }
+
+    .td-meta-info-container {
+      float: right;
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        float: none;
+      }
+    }
+    .td-post-category-wrap {
+      right: 0;
+    }
+    .td-video-play-ico img {
+      left: 20px;
+      right: auto;
+    }
+  }
+  // post 2
+  .td-big-grid-post-1 {
+    border-left: 5px solid transparent;
+
+    .td-video-play-ico img {
+      right: 20px;
+      left: auto;
+    }
+  }
+
+  // overwrite big grids styles
+  &.td-grid-style-1 {
+    .entry-title {
+      font-size: 19px;
+      line-height: 24px;
+
+      /* responsive portrait tablet + phone */
+      @media (max-width: @responsive_p_tablet_max) {
+        font-size: 15px !important;
+        line-height: 20px !important;
+      }
+    }
   }
 }
