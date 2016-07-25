@@ -30,14 +30,12 @@ td_global::$custom_no_posts_message = __td('No results for your search', TD_THEM
 ?>
     <div class="td-search-header">
         <div class="td-container">
-            <div class="td-pb-row">
-                <div class="td-pb-span12">
-                    <div class="td-crumb-container">
-                        <?php echo td_page_generator::get_search_breadcrumbs(); ?>
-                    </div>
-
-                    <?php locate_template('parts/page-search-box.php', true); ?>
+            <div class="td-pb-span12">
+                <div class="td-crumb-container">
+                    <?php echo td_page_generator::get_search_breadcrumbs(); ?>
                 </div>
+
+                <?php locate_template('parts/page-search-box.php', true); ?>
             </div>
         </div>
     </div>

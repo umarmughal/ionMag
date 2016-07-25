@@ -73,6 +73,11 @@
 
   td {
     padding: 8px 0;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      padding: 5px 0;
+    }
   }
 
   #today {
@@ -88,6 +93,11 @@
 
   thead tr {
     line-height: 34px;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      line-height: 28px;
+    }
   }
 
   tfoot {

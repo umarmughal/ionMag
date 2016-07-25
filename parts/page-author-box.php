@@ -10,6 +10,14 @@ global $part_cur_auth_obj;
 
 ?>
 <div class="author-box-wrap td-author-page">
+    <div class="td-author-title-avatar">
+        <h1 class="entry-title td-page-title">
+            <span><?php echo $part_cur_auth_obj->display_name; ?></span>
+        </h1>
+
+        <?php  echo get_avatar($part_cur_auth_obj->user_email, '60'); ?>
+    </div>
+
     <div class="desc">
         <div class="td-author-counters">
             <span class="td-author-post-count">

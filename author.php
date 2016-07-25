@@ -29,25 +29,15 @@ td_global::$current_author_obj = $part_cur_auth_obj;
 
     <div class="td-author-header">
         <div class="td-container">
-            <div class="td-pb-row">
-                <div class="td-pb-span12">
-                    <div class="td-crumb-container">
-                        <?php echo td_page_generator::get_author_breadcrumbs($part_cur_auth_obj); // generate the breadcrumbs ?>
-                    </div>
-
-                    <div class="td-author-title-avatar">
-                        <h1 class="entry-title td-page-title">
-                            <span><?php echo $part_cur_auth_obj->display_name; ?></span>
-                        </h1>
-
-                        <?php  echo get_avatar($part_cur_auth_obj->user_email, '60'); ?>
-                    </div>
-
-                    <?php
-                    //load the author box located in - parts/page-author-box.php - can be overwritten by the child theme
-                    locate_template('parts/page-author-box.php', true);
-                    ?>
+            <div class="td-pb-span12">
+                <div class="td-crumb-container">
+                    <?php echo td_page_generator::get_author_breadcrumbs($part_cur_auth_obj); // generate the breadcrumbs ?>
                 </div>
+
+                <?php
+                //load the author box located in - parts/page-author-box.php - can be overwritten by the child theme
+                locate_template('parts/page-author-box.php', true);
+                ?>
             </div>
         </div>
     </div>

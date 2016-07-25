@@ -1,27 +1,10 @@
+/*  ----------------------------------------------------------------------------
+    General
+*/
 .comments {
   position: relative;
   font-family: @font2;
   clear: both;
-
-  .td-comments-title-wrap h4,
-  .comment-reply-title {
-    position: relative;
-    margin: 0;
-    padding-bottom: 1px;
-    font-size: 15px;
-    font-weight: 600;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 80px;
-      height: 1px;
-      background-color: @td_theme_color;
-      .opacity(0.3);
-    }
-  }
 
   & > div:first-child {
     position: relative;
@@ -40,18 +23,65 @@
   }
 }
 
+// titles
+.td-comments-title-wrap h4,
+.comment-reply-title {
+  position: relative;
+  margin: 0;
+  padding-bottom: 1px;
+  font-size: 15px;
+  font-weight: 600;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    height: 1px;
+    background-color: @td_theme_color;
+    .opacity(0.3);
+  }
+}
+
+.comment-reply-title {
+  margin-bottom: 20px;
+}
+
 
 /*  ----------------------------------------------------------------------------
     Comment section
 */
+// general
 .comment-list {
   margin: 0 0 20px 0;
+}
+
+// logged in as message
+.logged-in-as {
+  margin: 0 0 10px 0;
+  font-size: 13px;
+
+  a {
+    font-weight: 600;
+
+    &:hover {
+      color: @td_theme_color;
+    }
+  }
 }
 
 .comment {
   position: relative;
   list-style: none;
   margin-left: 0;
+
+  footer,
+  .comment-content,
+  .comment-meta,
+  .comment-respond {
+    margin-left: 80px;
+  }
 
   &, .comment {
     &:before {
@@ -66,8 +96,8 @@
     }
   }
 
-  &:first-child:before {
-    display: none;
+  .comment:before {
+    display: block;
   }
 
   article {
@@ -75,14 +105,8 @@
     min-height: 60px;
   }
 
-  .comment-meta {
-    margin: 0;
-  }
 
-  .comment:before {
-    display: block;
-  }
-
+  // avatar
   .avatar {
     position: absolute;
     top: 20px;
@@ -91,13 +115,7 @@
     .border-radius(50%);
   }
 
-  footer,
-  .comment-content,
-  .comment-meta,
-  .comment-respond {
-    margin-left: 80px;
-  }
-
+  // username
   cite {
     display: inline-block;
     padding-top: 5px;
@@ -106,70 +124,9 @@
     font-style: normal;
     line-height: 21px;
   }
-
-  p {
-    margin-bottom: 0;
-    word-wrap: break-word;
-  }
-
-  .logged-in-as {
-    margin-bottom: 10px;
-  }
-
-  .children {
-    margin-left: 80px;
-
-
-    /* responsive portrait phone */
-    @media (max-width: 600px) {
-      margin-left: 40px;
-    }
-
-    .children {
-      margin-left: 60px;
-
-      /* responsive portrait phone */
-      @media (max-width: 600px) {
-        margin-left: 0;
-      }
-
-      .children {
-        /* responsive portrait phone */
-        @media (max-width: @responsive_p_phone_max) {
-          margin-left: 0;
-        }
-
-        @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-          margin-left: 0;
-        }
-      }
-    }
-
-    .comment {
-      &:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-      }
-
-      article {
-        min-height: 40px;
-      }
-
-      .avatar {
-        width: 40px;
-      }
-
-      footer,
-      .comment-content,
-      .comment-meta,
-      .comment-respond {
-        margin-left: 60px;
-      }
-    }
-  }
 }
 
+// date
 .comment-link {
   float: right;
   padding-top: 11px;
@@ -179,8 +136,10 @@
   color: #ccc;
 }
 
+// comment content
 .comment-content {
-  margin-top: 6px;
+  margin: 6px 0 0 0;
+  word-wrap: break-word;
   color: #666;
 
   p {
@@ -213,10 +172,12 @@
   }
 }
 
+// meta info
 .comment-meta {
   margin-top: 3px;
 }
 
+// reply link
 .comment-reply-link {
   font-size: 11px;
   color: @td_theme_color;
@@ -226,23 +187,79 @@
   }
 }
 
+// replies
+.children {
+  margin-left: 80px;
+
+  /* responsive portrait phone */
+  @media (max-width: 600px) {
+    margin-left: 40px;
+  }
+
+  .children {
+    margin-left: 60px;
+
+    /* responsive portrait phone */
+    @media (max-width: 600px) {
+      margin-left: 0;
+    }
+
+    .children {
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        margin-left: 0;
+      }
+
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .comment {
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    article {
+      min-height: 40px;
+    }
+
+    .avatar {
+      width: 40px;
+    }
+
+    footer,
+    .comment-content,
+    .comment-meta,
+    .comment-respond {
+      margin-left: 60px;
+    }
+  }
+}
+
 
 /*  ----------------------------------------------------------------------------
     Comment form
 */
+// general
 .comment-respond {
-  .comment-reply-title {
-    margin-bottom: 20px;
-  }
-
   form {
     display: block;
     margin-right: -23px;
   }
+}
 
-  p {
-    padding-right: 23px;
-  }
+// inputs
+.comment-form-input-wrap {
+  float: left;
+  width: 33.3333%;
+  margin-bottom: 23px;
+  padding-right: 23px;
+  font-family: @font2;
+  color: #666;
 
   textarea,
   input {
@@ -260,41 +277,20 @@
 
   input {
     height: 36px;
-  }
 
-  input[type=submit] {
-    width: 100%;
-    height: 52px;
-    font-family: @font2;
-    font-weight: 600;
-    text-transform: uppercase;
-    .border-radius(3px);
-    .box-shadow(0 2px 0 0 rgba(166, 166, 166, 0.75));
-  }
-}
-
-.logged-in-as {
-  margin-top: 0;
-  margin-bottom: 10px;
-  font-size: 13px;
-
-  a {
-    font-weight: 600;
-
-    &:hover {
-      color: @td_theme_color;
+    &[type=submit] {
+      width: 100%;
+      height: 52px;
+      font-family: @font2;
+      font-weight: 600;
+      text-transform: uppercase;
+      .border-radius(3px);
+      .box-shadow(0 2px 0 0 rgba(166, 166, 166, 0.75));
     }
   }
 }
 
-.comment-form-input-wrap {
-  float: left;
-  width: 33.3333%;
-  margin-bottom: 23px;
-  font-family: @font2;
-  color: #666;
-}
-
+// reply form
 .td-form-comment {
   margin-bottom: 16px;
   width: 100%;

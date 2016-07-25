@@ -175,5 +175,15 @@
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
     width: 100%;
+    height: auto;
+
+    img,
+    .adsbygoogle{
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+      .transform(translate(0));
+    }
   }
 }
