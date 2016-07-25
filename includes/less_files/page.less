@@ -1,7 +1,46 @@
 /*  ----------------------------------------------------------------------------
+    Default page template
+*/
+.td-main-page-wrap {
+  padding: 30px 0;
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Breadcrumbs
+*/
+.td-crumb-container {
+  min-height: 35px;
+  margin-bottom: 10px;
+  padding-top: 25px;
+}
+
+.entry-crumbs {
+  font-family: @font2;
+  font-size: 12px;
+  color: #c3c3c3;
+  line-height: 18px;
+
+  a {
+    color: #b2b2b2;
+
+    &:hover {
+      color: #6a6a6a;
+    }
+  }
+
+  .td-bread-sep {
+    font-size: 10px;
+    margin: 0 6px;
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
     Page title
 */
 .td-page-title {
+  display: inline-block;
   margin: -2px 0 35px 0;
   padding: 0;
   font-size: 23px;
@@ -15,21 +54,11 @@
 
 
 /*  ----------------------------------------------------------------------------
-    Default page template
-*/
-.td-main-page-wrap {
-  padding: 30px 0;
-}
-
-
-/*  ----------------------------------------------------------------------------
     Pagination
 */
 .page-nav {
   font-family: @font2;
   font-size: 13px;
-  display: inline-block;
-  width: 100%;
   margin-bottom: 48px;
 
   a,
@@ -148,16 +177,16 @@
 */
 .td-author-header {
   margin-bottom: 43px;
-  text-align: center;
 
-  .td-crumb-container {
-    text-align: left;
-  }
-
-
-  // Title & avatar
-  .td-author-title-avatar {
+  // Author box
+  .author-box-wrap {
+    padding: 0;
+    margin: 0;
     text-align: center;
+
+    &:before {
+     display: none;
+    }
   }
 
   .entry-title,
@@ -182,20 +211,9 @@
   }
 
   .avatar {
+    float: none;
     margin: -8px 0 0 22px;
     .border-radius(50%);
-  }
-
-
-  // Author box
-  .author-box-wrap {
-    padding: 0;
-    margin: 0;
-
-    &:before,
-    &:after {
-      display: none;
-    }
   }
 
   .desc {
@@ -248,7 +266,6 @@
     font-family: @font2;
     font-size: 15px;
     line-height: 23px;
-    text-align: center;
   }
 }
 
@@ -257,20 +274,7 @@
     Search page
 */
 .td-search-header {
-  margin-bottom: 32px;
   .clearfix();
-
-  .entry-title {
-    float: left;
-    margin: 0;
-    padding: 0;
-    font-size: 23px;
-    line-height: 24px;
-
-    &:after {
-      display: none;
-    }
-  }
 
   .td-search-query {
     color: @td_theme_color;
@@ -326,19 +330,4 @@
   font-style: italic;
   line-height: 23px;
   color: #666;
-
-  a {
-    border: medium none;
-    color: #fff;
-    font-size: 11px;
-    font-weight: bold;
-    line-height: 16px;
-    padding: 8px 15px;
-    margin-left: 6px;
-
-    &:hover {
-      color: #fff;
-      background-color: @td_theme_color;
-    }
-  }
 }

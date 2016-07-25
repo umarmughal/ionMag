@@ -34,36 +34,6 @@
   }
 }
 
-
-/*  ----------------------------------------------------------------------------
-    Breadcrumbs
-*/
-.td-crumb-container {
-  min-height: 35px;
-  margin-bottom: 10px;
-  padding-top: 25px;
-}
-
-.entry-crumbs {
-  font-family: @font2;
-  font-size: 12px;
-  color: #c3c3c3;
-  line-height: 18px;
-
-  a {
-    color: #b2b2b2;
-
-    &:hover {
-      color: #6a6a6a;
-    }
-  }
-
-  .td-bread-sep {
-    font-size: 10px;
-    margin: 0 6px;
-  }
-}
-
 /*  ----------------------------------------------------------------------------
     Category
 */
@@ -71,9 +41,7 @@
   list-style: none;
   font-family: @font2;
   font-size: 10px;
-  margin-top: 0;
-  margin-bottom: 11px;
-  line-height: 1;
+  margin: 0 0 11px 0;
 
   li {
     display: inline-block;
@@ -82,15 +50,14 @@
   }
 
   a {
-    color: #fff;
+    display: inline-block;
     background-color: #000;
     padding: 4px 8px;
+    color: #fff;
     white-space: nowrap;
-    display: inline-block;
 
     &:hover {
       background-color: @td_theme_color;
-      color: #fff;
     }
   }
 }
@@ -166,12 +133,12 @@
 }
 
 .td-post-share-title {
-  font-family: @font2;
-  font-weight: 600;
-  font-size: 15px;
   position: relative;
   margin-right: 26px;
   vertical-align: middle;
+  font-family: @font2;
+  font-weight: 600;
+  font-size: 15px;
 
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
@@ -305,7 +272,7 @@
     Post content
 */
 .td-post-content {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 
   input[type=submit] {
     position: relative;
@@ -328,10 +295,6 @@
   position: relative;
   padding-bottom: 29px;
   font-size: 11px;
-
-  a {
-    font-size: 11px;
-  }
 
   &:before {
     top: auto;
@@ -436,7 +399,6 @@
 
   a {
     display: block;
-    font-size: 16px;
     line-height: 20px;
     font-weight: 500;
     color: #000;
@@ -585,6 +547,7 @@
     }
   }
 }
+
 //end columns
 .td_block_related_posts {
   position: relative;
