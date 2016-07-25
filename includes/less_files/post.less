@@ -1,4 +1,4 @@
-.td-post-next-prev,
+.td-post-source-tags,
 .author-box-wrap,
 .td-post-sharing-bottom,
 .td_block_related_posts {
@@ -325,11 +325,17 @@
 */
 // source/via + tag group
 .td-post-source-tags {
+  position: relative;
   padding-bottom: 29px;
   font-size: 11px;
 
   a {
     font-size: 11px;
+  }
+
+  &:before {
+    top: auto;
+    bottom: 0;
   }
 }
 

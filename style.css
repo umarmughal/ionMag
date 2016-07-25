@@ -5624,13 +5624,13 @@ blockquote.pull-right:after {
 #td_css_split_separator {
   visibility: visible;
 }
-.td-post-next-prev,
+.td-post-source-tags,
 .author-box-wrap,
 .td-post-sharing-bottom,
 .td_block_related_posts {
   position: relative;
 }
-.td-post-next-prev:before,
+.td-post-source-tags:before,
 .author-box-wrap:before,
 .td-post-sharing-bottom:before,
 .td_block_related_posts:before {
@@ -5909,11 +5909,16 @@ blockquote.pull-right:after {
     Source and Via
 */
 .td-post-source-tags {
+  position: relative;
   padding-bottom: 29px;
   font-size: 11px;
 }
 .td-post-source-tags a {
   font-size: 11px;
+}
+.td-post-source-tags:before {
+  top: auto;
+  bottom: 0;
 }
 .td-post-source-via {
   position: relative;
@@ -8536,6 +8541,12 @@ tagdiv animations
   display: block;
   width: 100%;
 }
+@media (max-width: 767px) {
+  .td-a-rec-id-footer_top {
+    padding-top: 16px;
+    padding-bottom: 34px;
+  }
+}
 /*  ----------------------------------------------------------------------------
     WordPress default widgets
 */
@@ -8595,6 +8606,12 @@ tagdiv animations
 }
 .widget_calendar td {
   padding: 8px 0;
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .widget_calendar td {
+    padding: 5px 0;
+  }
 }
 .widget_calendar #today {
   background-color: #42bdcd;
@@ -8607,6 +8624,12 @@ tagdiv animations
 }
 .widget_calendar thead tr {
   line-height: 34px;
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .widget_calendar thead tr {
+    line-height: 28px;
+  }
 }
 .widget_calendar tfoot td {
   border: none;
