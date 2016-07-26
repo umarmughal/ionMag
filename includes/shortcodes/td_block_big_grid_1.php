@@ -40,7 +40,9 @@ class td_block_big_grid_1 extends td_block {
 
         if (!empty($posts)) {
 
-            $buffy .= '<div class="td-big-grid-wrapper">';
+            $td_count_posts = count($posts); // post count number
+
+            $buffy .= '<div class="td-big-grid-wrapper td-posts-' . $td_count_posts . '">';
 
             $post_count = 0;
 
@@ -65,7 +67,7 @@ class td_block_big_grid_1 extends td_block {
                 for ($i = $post_count; $i < self::POST_LIMIT; $i++) {
 
                     $td_module_mx_empty = new td_module_mx_empty();
-                    $buffy .= $td_module_mx_empty->render($i);
+                    $buffy .= $td_module_mx_empty->render($i, 'td-small-thumb'); // size of the module: td-tiny-thumb - td-small-thumb - td-medium-thumb - td-big-thumb
                 }
             }
             $buffy .= '<div class="clearfix"></div>';

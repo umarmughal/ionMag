@@ -16,11 +16,11 @@ class td_module_mx_empty extends td_module {
 
     function __construct() {}
 
-    function render($order_no) {
+    function render($order_no, $thumb_size) {
         ob_start();
         ?>
 
-        <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post", "td-module-empty")); ?>">
+        <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post", "td-module-empty", $thumb_size)); ?>">
             <div class="td-module-thumb"></div>
         </div>
 
