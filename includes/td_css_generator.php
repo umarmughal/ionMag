@@ -553,20 +553,14 @@ function td_css_generator() {
     }
     
     /* @footer_bottom_text_color */
-    .td-sub-footer-container {
-      color: @footer_bottom_text_color;
-    }
-    
-    .td-subfooter-menu li a {
+    .td-sub-footer-container,
+    .td-subfooter-menu li a,
+    .td-sub-footer-copy {
       color: @footer_bottom_text_color !important;
     }
     
     .td-subfooter-menu li:after {
       background-color: @footer_bottom_text_color !important;
-    }
-    
-    .td-sub-footer-copy {
-      color: @footer_bottom_text_color;
     }
     
     /* @footer_bottom_hover_color */
