@@ -16,6 +16,13 @@ if (empty($loop_module_id)) {  //not sure if we need a default here
     $loop_module_id = 1;
 }
 
+$td_sidebar_position = '';
+if ($loop_sidebar_position == 'no_sidebar'){
+    $td_sidebar_position = 'td-module-no-sidebar';
+} else {
+    $td_sidebar_position = 'td-module-with-sidebar';
+}
+
 $td_module_class = td_api_module::_helper_get_module_class_from_loop_id($loop_module_id);
 
 
@@ -26,7 +33,7 @@ if ($td_module['uses_columns'] === false) {
 }
 
 ?>
-<div class="td-modules-container td-module-number<?php echo $loop_module_id; ?> td-module-<?php echo $loop_sidebar_position; ?>">
+<div class="td-modules-container td-module-number<?php echo $loop_module_id; ?> <?php echo $td_sidebar_position; ?>">
     <?php
     if (have_posts()) {
         while ( have_posts() ) : the_post();
