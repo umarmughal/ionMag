@@ -253,11 +253,15 @@
 }
 
 // inputs
+.comment-form-input-wrap,
+.form-submit {
+  padding-right: 23px;
+}
+
 .comment-form-input-wrap {
   float: left;
   width: 33.3333%;
   margin-bottom: 23px;
-  padding-right: 23px;
   font-family: @font2;
   color: #666;
 
@@ -277,17 +281,17 @@
 
   input {
     height: 36px;
-
-    &[type=submit] {
-      width: 100%;
-      height: 52px;
-      font-family: @font2;
-      font-weight: 600;
-      text-transform: uppercase;
-      .border-radius(3px);
-      .box-shadow(0 2px 0 0 rgba(166, 166, 166, 0.75));
-    }
   }
+}
+
+.form-submit .submit {
+  width: 100%;
+  height: 52px;
+  font-family: @font2;
+  font-weight: 600;
+  text-transform: uppercase;
+  .border-radius(3px);
+  .box-shadow(0 2px 0 0 rgba(166, 166, 166, 0.75));
 }
 
 // reply form

@@ -35,11 +35,25 @@
   }
 
   a {
-    color: #fff;
+    color: #fff !important;
+
+    &:hover {
+      color: @td_theme_color !important;
+    }
   }
 
   .widget_categories li span {
     border-color: rgba(255, 255, 255, 0.2);
+  }
+
+  .td-author-description,
+  .rssSummary {
+    color: #ccc !important;
+  }
+
+  .rss-date,
+  cite {
+    color: #fff;
   }
 }
 
