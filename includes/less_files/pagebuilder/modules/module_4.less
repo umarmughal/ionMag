@@ -23,18 +23,21 @@
 
 // loop with Module 4
 .td-module-number4 {
-  // no sidebar
-  &.td-module-no-sidebar {
-    margin: 0 -15px;
+  /* responsive portrait phone */
+  @media (min-width: @responsive_p_phone_max) {
+    // no sidebar
+    &.td-module-no-sidebar {
+      margin: 0 -15px;
 
-    .td_module_wrap {
-      width: 50%;
-      padding-left: 15px;
-      padding-right: 15px;
-      float: left;
+      .td_module_wrap {
+        width: 50%;
+        padding-left: 15px;
+        padding-right: 15px;
+        float: left;
 
-      &:nth-child(odd) {
-        clear: both;
+        &:nth-child(odd) {
+          clear: both;
+        }
       }
     }
   }
