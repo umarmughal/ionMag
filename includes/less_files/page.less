@@ -208,8 +208,9 @@
 
     &:after {
       display: block;
-      left: 50%;
-      .transform(translateX(-50%));
+      left: 0;
+      right: 0;
+      margin: 0 auto;
       width: 80px;
     }
   }
@@ -319,8 +320,9 @@
     content: '';
     position: absolute;
     bottom: 0;
-    left: 50%;
-    .transform(translateX(-50%));
+    right: 0;
+    left: 0;
+    margin: 0 auto;
     background-color: @td_theme_color;
     width: 80px;
     height: 1px;
