@@ -8771,7 +8771,7 @@ tagdiv animations
 .widget_categories li span {
   display: inline-block;
   margin-top: -5px;
-  padding: 4px 7px;
+  padding: 4px 6px;
   min-width: 22px;
   line-height: 1;
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -8780,6 +8780,7 @@ tagdiv animations
   border-radius: 10px;
   position: absolute;
   right: 0;
+  text-align: center;
 }
 .widget_recent_comments {
   margin-bottom: 42px;
