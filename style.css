@@ -4354,10 +4354,10 @@ blockquote.pull-right:after {
     height: 350px;
   }
 }
-.td-module-number4.td-module-no_sidebar {
+.td-module-number4.td-module-no-sidebar {
   margin: 0 -15px;
 }
-.td-module-number4.td-module-no_sidebar .td_module_wrap {
+.td-module-number4.td-module-no-sidebar .td_module_wrap {
   width: 50%;
   padding-left: 15px;
   padding-right: 15px;
