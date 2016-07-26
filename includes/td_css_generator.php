@@ -104,6 +104,12 @@ function td_css_generator() {
     $td_css_compiler->load_setting('login_background_position');
     $td_css_compiler->load_setting('login_background_opacity');
 
+    //load the user settings
+    // general
+    $td_css_compiler->load_setting('theme_color');
+    $td_css_compiler->load_setting('header_color');
+    $td_css_compiler->load_setting('text_header_color');
+
     //output the style
     return $td_css_compiler->compile_css();
 
