@@ -9,6 +9,7 @@
   }
 
   .entry-title {
+    display: block;
     margin-bottom: 22px;
     padding-bottom: 17px;
     font-size: 25px;
@@ -18,8 +19,9 @@
 
     &:after {
       display: block;
-      left: 50%;
-      .transform(translateX(-50%));
+      left: 0;
+      right: 0;
+      margin: 0 auto;
       width: 80px;
     }
   }

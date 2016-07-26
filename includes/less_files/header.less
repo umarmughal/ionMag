@@ -148,6 +148,7 @@
 // condition when no mobile logo
 .td-affix .td-logo-in-menu .td-main-logo {
   display: none;
+
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
     display: block;
@@ -163,27 +164,27 @@
   width: 74.28571428571429%;
   height: 90px;
 
-  img,
-  .adsbygoogle{
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    .transform(translate(-50%, -50%));
-  }
-
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
     width: 100%;
     height: auto;
+  }
 
-    img,
-    .adsbygoogle{
-      display: block;
+  img,
+  .adsbygoogle{
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
       position: relative;
       top: 0;
       left: 0;
-      .transform(translate(0));
     }
   }
 }
