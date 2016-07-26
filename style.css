@@ -724,7 +724,8 @@ img {
 /* responsive portrait phone */
 @media (max-width: 767px) {
   /* container */
-  .td-container {
+  .td-container,
+  .tdc-row {
     padding-left: 10px;
     padding-right: 10px;
   }
@@ -6579,52 +6580,52 @@ blockquote.pull-right:after {
 .comment-reply-link:hover {
   color: #000;
 }
-.children {
+.comments .children {
   margin-left: 80px;
   /* responsive portrait phone */
 }
 @media (max-width: 600px) {
-  .children {
+  .comments .children {
     margin-left: 40px;
   }
 }
-.children .children {
+.comments .children .children {
   margin-left: 60px;
   /* responsive portrait phone */
 }
 @media (max-width: 600px) {
-  .children .children {
+  .comments .children .children {
     margin-left: 0;
   }
 }
-.children .children .children {
+.comments .children .children .children {
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .children .children .children {
+  .comments .children .children .children {
     margin-left: 0;
   }
 }
 @media (min-width: 768px) and (max-width: 1018px) {
-  .children .children .children {
+  .comments .children .children .children {
     margin-left: 0;
   }
 }
-.children .comment:last-child {
+.comments .children .comment:last-child {
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none;
 }
-.children .comment article {
+.comments .children .comment article {
   min-height: 40px;
 }
-.children .comment .avatar {
+.comments .children .comment .avatar {
   width: 40px;
 }
-.children .comment footer,
-.children .comment .comment-content,
-.children .comment .comment-meta,
-.children .comment .comment-respond {
+.comments .children .comment footer,
+.comments .children .comment .comment-content,
+.comments .children .comment .comment-meta,
+.comments .children .comment .comment-respond {
   margin-left: 60px;
 }
 /*  ----------------------------------------------------------------------------
@@ -6672,6 +6673,10 @@ blockquote.pull-right:after {
   -webkit-box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
   -moz-box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
   box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
+  -webkit-transition: background-color 0.2s ease;
+  -moz-transition: background-color 0.2s ease;
+  -o-transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 .td-form-comment {
   margin-bottom: 16px;
@@ -8651,6 +8656,7 @@ tagdiv animations
 .widget {
   margin-bottom: 38px;
   font-size: 13px;
+  font-family: 'Work Sans', sans-serif;
 }
 .widget.td_block_wrap {
   padding-bottom: 0;
@@ -8667,12 +8673,17 @@ tagdiv animations
   margin: 0;
 }
 .widget li {
-  line-height: 30px;
+  line-height: 1;
   list-style: none;
   margin-left: 0;
 }
+.widget li a {
+  padding: 9px 0;
+  display: inline-block;
+}
 .widget li li {
   margin-left: 21px;
+  font-size: 12px;
 }
 .widget select {
   width: 100%;
@@ -8711,10 +8722,14 @@ tagdiv animations
     padding: 5px 0;
   }
 }
+.widget_calendar tbody a {
+  color: #42bdcd;
+}
 .widget_calendar #today {
   background-color: #42bdcd;
   font-weight: bold;
   color: #fff;
+  border-color: #42bdcd;
 }
 .widget_calendar caption {
   font-weight: bold;
@@ -8742,18 +8757,29 @@ tagdiv animations
   color: #42bdcd;
 }
 .widget_categories li {
-  line-height: 36px;
+  line-height: 1;
+  margin-right: 40px;
+}
+.widget_categories li li {
+  margin-right: 0;
+}
+.widget_categories li a {
+  padding: 11px 0;
+  width: 100%;
+  display: block;
 }
 .widget_categories li span {
   display: inline-block;
-  float: right;
-  margin-top: 8px;
-  padding: 2px 6px 3px 7px;
+  margin-top: -5px;
+  padding: 4px 7px;
+  min-width: 22px;
   line-height: 1;
   border: 1px solid rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  position: absolute;
+  right: 0;
 }
 .widget_recent_comments {
   margin-bottom: 42px;
@@ -8764,9 +8790,9 @@ tagdiv animations
   margin-bottom: 18px;
 }
 .widget_recent_comments a {
-  font-style: italic;
+  display: inline !important;
   font-size: 13px;
-  font-weight: 600;
+  font-weight: 500;
 }
 .widget_recent_comments li {
   margin: 10px 0 !important;

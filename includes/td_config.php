@@ -525,6 +525,19 @@ class td_config {
             )
         );
 
+        td_api_thumb::add('td_245x184',
+            array(
+                'name' => 'td_245x184',
+                'width' => 245,
+                'height' => 184,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Mega menu'
+                )
+            )
+        );
+
         td_api_thumb::add('td_198x145',
             array(
                 'name' => 'td_198x145',
