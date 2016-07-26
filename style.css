@@ -970,7 +970,7 @@ img {
   bottom: 0;
   right: 0;
   left: 0;
-  margin: 0 auto;
+  margin: auto;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -9494,6 +9494,15 @@ tagdiv animations
   background-size: auto;
   background-position: center bottom;
 }
+.td-footer-outer-wrapper a {
+  color: #fff !important;
+}
+.td-footer-outer-wrapper a:hover {
+  color: #42bdcd !important;
+}
+.td-footer-outer-wrapper .td-post-category:hover {
+  color: #fff !important;
+}
 .td-footer-outer-wrapper .td_block_wrap,
 .td-footer-outer-wrapper .widget {
   margin-top: 44px;
@@ -9509,12 +9518,6 @@ tagdiv animations
 .td-footer-outer-wrapper .block-title span,
 .td-footer-outer-wrapper .block-title label {
   color: #fff;
-}
-.td-footer-outer-wrapper a {
-  color: #fff !important;
-}
-.td-footer-outer-wrapper a:hover {
-  color: #42bdcd !important;
 }
 .td-footer-outer-wrapper .widget_categories li span {
   border-color: rgba(255, 255, 255, 0.2);
