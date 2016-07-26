@@ -127,15 +127,16 @@
   float: right;
 }
 
-.td-search-form-widget {
+.td-search-form-widget,
+.search-form{
   position: relative;
 }
 
 .td-widget-search-input,
 .search-field {
-  width: 251px !important;
+  width: 100% !important;
   height: 29px !important;
-  margin: 0 -3px 0 0 !important;
+  margin: 0 !important;
   padding: 0 11px !important;
   line-height: 17px !important;
   font-size: 13px !important;
@@ -147,6 +148,9 @@
 
 #searchsubmit,
 .search-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
   outline: none;
   background-color: #fff !important;
   min-width: 50px !important;
@@ -278,6 +282,15 @@
 
   .td-search-query {
     color: @td_theme_color;
+  }
+
+  .td-widget-search-input {
+    width: 256px !important;
+    margin-right: -3px !important;
+  }
+
+  #searchsubmit {
+    position: relative;
   }
 }
 
