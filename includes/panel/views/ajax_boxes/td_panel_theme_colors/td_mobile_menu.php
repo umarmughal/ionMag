@@ -82,7 +82,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_text_active_color',
-            'default_color' => '#73C7E3'
+            'default_color' => '#42bdcd'
         ));
         ?>
     </div>

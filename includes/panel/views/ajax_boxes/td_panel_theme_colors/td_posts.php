@@ -9,7 +9,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_title_color',
-            'default_color' => '#111111'
+            'default_color' => '#000'
         ));
         ?>
     </div>
@@ -26,7 +26,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_author_name_color',
-            'default_color' => '#000000'
+            'default_color' => '#46bfce'
         ));
         ?>
     </div>
@@ -43,7 +43,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_content_color',
-            'default_color' => '#444444'
+            'default_color' => '#000'
         ));
         ?>
     </div>
@@ -60,7 +60,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_h_color',
-            'default_color' => '#222222'
+            'default_color' => '#000'
         ));
         ?>
     </div>

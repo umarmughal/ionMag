@@ -518,6 +518,69 @@ function td_css_generator() {
         color: @text_logo_tagline_color;
     }
     
+    /* @post_title_color */
+    .td-post-header .entry-title {
+      color: @post_title_color;
+    }
+    
+    /* @post_author_name_color */
+    .td-post-author-name a {
+      color: @post_author_name_color;
+    }
+    
+    /* @post_content_color */
+    .td-post-content,
+    .td-post-content p {
+    	color: @post_content_color;
+    }
+
+    /* @post_h_color */
+    .td-post-content h1,
+    .td-post-content h2,
+    .td-post-content h3,
+    .td-post-content h4,
+    .td-post-content h5,
+    .td-post-content h6 {
+    	color: @post_h_color;
+    }
+
+    /* @post_blockquote_color */
+    .post blockquote p,
+    .page blockquote p {
+    	color: @post_blockquote_color;
+    }
+    .post .td_quote_box,
+    .page .td_quote_box {
+        border-color: @post_blockquote_color;
+    }
+    
+    /* @page_title_color */
+    .td-page-title,
+    .woocommerce-page .page-title {
+    	color: @page_title_color;
+    }
+
+    /* @page_content_color */
+    .td-page-content p,
+    .td-page-content .td_block_text_with_title,
+    .woocommerce-page .page-description > p {
+    	color: @page_content_color;
+    }
+
+    /* @page_h_color */
+    .td-page-content h1,
+    .td-page-content h2,
+    .td-page-content h3,
+    .td-page-content h4,
+    .td-page-content h5,
+    .td-page-content h6 {
+    	color: @page_h_color;
+    }
+
+    .td-page-content .widgettitle {
+        color: #fff;
+    }
+    
     /* @footer_color */
     .td-footer-wrapper {
       background-color: @footer_color;
@@ -697,6 +760,12 @@ function td_css_generator() {
     $td_css_compiler->load_setting('footer_bottom_text_color');
     $td_css_compiler->load_setting('footer_bottom_hover_color');
     
+    // Posts colors
+    $td_css_compiler->load_setting('post_title_color');
+    $td_css_compiler->load_setting('post_author_name_color');
+    $td_css_compiler->load_setting('post_content_color');
+    $td_css_compiler->load_setting('post_h_color');
+    $td_css_compiler->load_setting('post_blockquote_color');
 
 
 

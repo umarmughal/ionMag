@@ -217,7 +217,7 @@ echo td_panel_generator::ajax_box('Mobile menu / Mobile search', array(
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_footer_bottom_hover_color',
-            'default_color' => '#cccccc'
+            'default_color' => '#42bdcd'
         ));
         ?>
     </div>

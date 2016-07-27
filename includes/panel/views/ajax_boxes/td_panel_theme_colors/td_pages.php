@@ -10,7 +10,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_page_title_color',
-            'default_color' => '#111111'
+            'default_color' => '#000'
         ));
         ?>
     </div>
@@ -27,7 +27,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_page_content_color',
-            'default_color' => '#444444'
+            'default_color' => '#000'
         ));
         ?>
     </div>
@@ -44,7 +44,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_page_h_color',
-            'default_color' => '#111111'
+            'default_color' => '#000'
         ));
         ?>
     </div>

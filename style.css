@@ -2890,7 +2890,7 @@ h4,
 h5,
 h6 {
   font-family: 'Work Sans', sans-serif;
-  color: #111;
+  color: #000;
   font-weight: 400;
   margin: 6px 0 6px 0;
 }
@@ -2900,7 +2900,7 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  color: #111;
+  color: #000;
 }
 h1 {
   font-size: 32px;
@@ -3271,7 +3271,7 @@ figure.aligncenter {
 .mce-content-body {
   font-size: 15px;
   line-height: 26px;
-  color: #222;
+  color: #000;
 }
 .td-page-content a:hover,
 .td-post-content a:hover,
@@ -5840,6 +5840,7 @@ blockquote.pull-right:after {
   font-size: 31px;
   font-weight: 400;
   line-height: 37px;
+  color: #000;
 }
 .td-post-header .td-post-comments a:before {
   display: none;
