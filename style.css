@@ -4055,6 +4055,12 @@ blockquote.pull-right:after {
 .td_module_wrap {
   position: relative;
   padding-bottom: 46px;
+  /* responsive portrait tablet + mobile */
+}
+@media (max-width: 1018px) {
+  .td_module_wrap {
+    padding-bottom: 30px;
+  }
 }
 .td_module_wrap:hover .entry-title a {
   color: #42bdcd;
@@ -7058,16 +7064,7 @@ blockquote.pull-right:after {
   padding-bottom: 9px;
 }
 .td-review .td-review-summary {
-  padding: 21px 14px;
-}
-@media (max-width: 767px) {
-  .td-review .td-review-summary {
-    padding-top: 14px;
-    padding-bottom: 14px;
-  }
-}
-.td-review i {
-  margin-top: 5px;
+  padding: 10px 14px;
 }
 .td-review .td-review-row-stars:hover {
   background-color: #fcfcfc;
@@ -7076,16 +7073,19 @@ blockquote.pull-right:after {
   font-size: 15px;
   line-height: 1;
 }
-.td-icon-star,
-.td-icon-star-empty,
-.td-icon-star-half {
-  width: 18px;
+.entry-review-stars i {
+  width: 14px;
 }
 /*  ----------------------------------------------------------------------------
     rating stars
 */
 .td-review-stars {
   text-align: center;
+}
+.td-review-stars i {
+  margin-top: 5px;
+  width: 18px;
+  font-size: 13px;
 }
 .td-review-final-score {
   line-height: 80px;
@@ -7176,11 +7176,9 @@ blockquote.pull-right:after {
   padding: 0 0 28px 0;
   line-height: 14px;
 }
-.td-review-overall .td-icon-star,
-.td-review-overall .td-icon-star-empty,
-.td-review-overall .td-icon-star-half {
-  width: 20px;
-  font-size: 15px;
+.td-review-overall i {
+  width: 18px;
+  font-size: 13px;
   color: #42bdcd;
 }
 .td-review-overall span {
@@ -7203,7 +7201,7 @@ blockquote.pull-right:after {
 }
 .td-category-header .entry-title {
   display: block;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   padding-bottom: 17px;
   font-size: 25px;
   line-height: 24px;
@@ -7222,8 +7220,8 @@ blockquote.pull-right:after {
   padding: 4px 8px 5px 8px;
 }
 .td-category-crumb-filter {
-  margin-bottom: 19px;
-  padding-top: 30px;
+  margin-bottom: 18px;
+  padding-top: 22px;
   *zoom: 1;
 }
 .td-category-crumb-filter:before,
@@ -7260,8 +7258,8 @@ blockquote.pull-right:after {
   display: none;
 }
 .td-category-description {
-  width: 78.061224%;
-  margin: 0 auto 2px auto;
+  width: 80%;
+  margin: 22px auto 23px;
   text-align: center;
 }
 .td-category-description p {
