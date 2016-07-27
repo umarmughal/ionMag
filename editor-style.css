@@ -130,7 +130,7 @@ h4,
 h5,
 h6 {
   font-family: 'Work Sans', sans-serif;
-  color: #111;
+  color: #000;
   font-weight: 400;
   margin: 6px 0 6px 0;
 }
@@ -140,7 +140,7 @@ h3 > a,
 h4 > a,
 h5 > a,
 h6 > a {
-  color: #111;
+  color: #000;
 }
 h1 {
   font-size: 32px;
@@ -511,7 +511,7 @@ figure.aligncenter {
 .mce-content-body {
   font-size: 15px;
   line-height: 26px;
-  color: #222;
+  color: #000;
 }
 .td-page-content a:hover,
 .td-post-content a:hover,
