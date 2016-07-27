@@ -1581,6 +1581,282 @@ class td_config {
 	                'text' => 'Mega Menu Sub-Categories',
 	                'type' => 'default',
                 )
+            ),
+            'Modules and Blocks General' => array (
+                'blocks_title' => array(
+                    'text' => 'Blocks/Widgets Title',
+                    'type' => 'default',
+                ),
+                'blocks_author' => array(
+                    'text' => 'Author',
+                    'type' => 'default',
+                ),
+                'blocks_date' => array(
+                    'text' => 'Date',
+                    'type' => 'default',
+                ),
+                'blocks_comment' =>  array(
+                    'text' => 'Comment',
+                    'type' => 'default',
+                ),
+                'blocks_category' =>  array(
+                    'text' => 'Category tag',
+                    'type' => 'default',
+                ),
+                'blocks_filter' =>  array(
+                    'text' => 'Filter dropdown',
+                    'type' => 'default',
+                ),
+                'blocks_excerpt' =>  array(
+                    'text' => 'Excerpt',
+                    'type' => 'default',
+                )
+            ),
+            'Modules and Blocks - Article Title' => array (
+                'modules_general' => array(
+                    'text' => 'General font',
+                    'type' => 'general_setting',
+                ),
+                'module_1' =>  array(
+                    'text' => 'Module 1',
+                    'type' => 'default',
+                ),
+                'module_2' =>  array(
+                    'text' => 'Module 2',
+                    'type' => 'default',
+                ),
+                'module_3' =>  array(
+                    'text' => 'Module 3',
+                    'type' => 'default',
+                ),
+                'module_4' =>  array(
+                    'text' => 'Module 4',
+                    'type' => 'default',
+                ),
+                'module_5' =>  array(
+                    'text' => 'Module 5',
+                    'type' => 'default',
+                ),
+                'module_6' =>  array(
+                    'text' => 'Module 6',
+                    'type' => 'default',
+                )
+            ),
+            'Mobile menu' => array (
+                'mobile_general' => array(
+                    'text' => 'General font',
+                    'type' => 'general_setting',
+                ),
+                'mobile_menu' => array(
+                    'text' => 'Mobile Menu',
+                    'type' => 'default',
+                ),
+                'mobile_sub_menu' => array(
+                    'text' => 'Mobile Sub-Menu',
+                    'type' => 'default',
+                )
+            ),
+            'Post title' => array (
+                'post_general' => array(
+                    'text' => 'General font',
+                    'type' => 'general_setting',
+                ),
+                'post_title' =>  array(
+                    'text' => 'Default template',
+                    'type' => 'default',
+                ),
+                'post_title_style1' =>  array(
+                    'text' => 'Style 1 template',
+                    'type' => 'default',
+                )
+            ),
+            'Post content' => array (
+                'post_content' =>  array(
+                    'text' => 'Post Content',
+                    'type' => 'default',
+                ),
+                'post_blockquote' =>  array(
+                    'text' => 'Default Blockquote',
+                    'type' => 'default',
+                ),
+                'post_box_quote' =>  array(
+                    'text' => 'Box Quote',
+                    'type' => 'default',
+                ),
+                'post_pull_quote' =>  array(
+                    'text' => 'Pull Quote',
+                    'type' => 'default',
+                ),
+                'post_lists' =>  array(
+                    'text' => 'Lists',
+                    'type' => 'default',
+                ),
+                'post_h1' =>  array(
+                    'text' => 'H1',
+                    'type' => 'default',
+                ),
+                'post_h2' =>  array(
+                    'text' => 'H2',
+                    'type' => 'default',
+                ),
+                'post_h3' =>  array(
+                    'text' => 'H3',
+                    'type' => 'default',
+                ),
+                'post_h4' =>  array(
+                    'text' => 'H4',
+                    'type' => 'default',
+                ),
+                'post_h5' =>  array(
+                    'text' => 'H5',
+                    'type' => 'default',
+                ),
+                'post_h6' =>  array(
+                    'text' => 'H6',
+                    'type' => 'default',
+                ),
+            ),
+            'Post elements' => array (
+                'post_category' =>  array(
+                    'text' => 'Category tag',
+                    'type' => 'default',
+                ),
+                'post_author' =>  array(
+                    'text' => 'Author',
+                    'type' => 'default',
+                ),
+                'post_date' =>  array(
+                    'text' => 'Date',
+                    'type' => 'default',
+                ),
+                'post_comment' =>  array(
+                    'text' => 'Views and Comments',
+                    'type' => 'default',
+                ),
+                'via_source_tag' =>  array(
+                    'text' => 'Via/Source/Tags',
+                    'type' => 'default',
+                ),
+                'post_next_prev_text' =>  array(
+                    'text' => 'Next/Prev Text',
+                    'type' => 'default',
+                ),
+                'post_next_prev' =>  array(
+                    'text' => 'Next/Prev Post Title',
+                    'type' => 'default',
+                ),
+                'box_author_name' =>  array(
+                    'text' => 'Box Author Name',
+                    'type' => 'default',
+                ),
+                'box_author_url' =>  array(
+                    'text' => 'Box Author URL',
+                    'type' => 'default',
+                ),
+                'box_author_description' =>  array(
+                    'text' => 'Box Author Description',
+                    'type' => 'default',
+                ),
+                'post_related' =>  array(
+                    'text' => 'Related Article Title',
+                    'type' => 'default',
+                ),
+                'post_share' =>  array(
+                    'text' => 'Share Text',
+                    'type' => 'default',
+                ),
+                'post_image_caption' =>  array(
+                    'text' => 'Image caption',
+                    'type' => 'default',
+                ),
+                'post_subtitle_small' =>  array(
+                    'text' => 'Subtitle post style Default, 1',
+                    'type' => 'default',
+                )
+            ),
+            'Pages' => array (
+                'page_title' =>  array(
+                    'text' => 'Page title',
+                    'type' => 'default',
+                ),
+                'page_content' =>  array(
+                    'text' => 'Page content',
+                    'type' => 'default',
+                ),
+                'page_h1' =>  array(
+                    'text' => 'H1',
+                    'type' => 'default',
+                ),
+                'page_h2' =>  array(
+                    'text' => 'H2',
+                    'type' => 'default',
+                ),
+                'page_h3' =>  array(
+                    'text' => 'H3',
+                    'type' => 'default',
+                ),
+                'page_h4' =>  array(
+                    'text' => 'H4',
+                    'type' => 'default',
+                ),
+                'page_h5' =>  array(
+                    'text' => 'H5',
+                    'type' => 'default',
+                ),
+                'page_h6' =>  array(
+                    'text' => 'H6',
+                    'type' => 'default',
+                ),
+            ),
+            'Footer' => array (
+                'footer_text_about' =>  array(
+                    'text' => 'Text under logo',
+                    'type' => 'default',
+                ),
+                'footer_copyright_text' =>  array(
+                    'text' => 'Copyright text',
+                    'type' => 'default',
+                ),
+                'footer_menu_text' =>  array(
+                    'text' => 'Footer menu',
+                    'type' => 'default',
+                ),
+            ),
+            'Other' => array (
+                'breadcrumb' =>  array(
+                    'text' => 'Breadcrumb',
+                    'type' => 'default',
+                ),
+                'category_tag' =>  array(
+                    'text' => 'Sub-Category tags from Category pages',
+                    'type' => 'default',
+                ),
+                'news_ticker_title' =>  array(
+                    'text' => 'News Ticker title',
+                    'type' => 'default',
+                ),
+                'pagination' =>  array(
+                    'text' => 'Pagination',
+                    'type' => 'default',
+                ),
+                'dropcap' =>  array(
+                    'text' => 'Dropcap',
+                    'type' => 'default',
+                ),
+                'default_widgets' =>  array(
+                    'text' => 'Default Widgets',
+                    'type' => 'default',
+                ),
+                'default_buttons' =>  array(
+                    'text' => 'Default Buttons',
+                    'type' => 'default',
+                )
+            ),
+            'Body' => array (
+                'body_text' =>  array(
+                    'text' => 'Body - General font',
+                    'type' => 'default',
+                ),
             )
         ); // end td_global::$typography_settings_list
 
