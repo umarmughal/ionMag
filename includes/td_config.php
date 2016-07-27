@@ -1580,14 +1580,6 @@ class td_config {
                 'mega_menu_categ' => array(
 	                'text' => 'Mega Menu Sub-Categories',
 	                'type' => 'default',
-                ),
-                'mobile_menu' => array(
-	                'text' => 'Mobile Menu',
-	                'type' => 'default',
-                ),
-                'mobile_sub_menu' => array(
-	                'text' => 'Mobile Sub-Menu',
-	                'type' => 'default',
                 )
             )
         ); // end td_global::$typography_settings_list

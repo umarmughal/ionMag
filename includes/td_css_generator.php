@@ -397,11 +397,9 @@ function td_css_generator() {
     /* HEADER COLORS */
 
     /* @header_wrap_color */
-    
-    
-    
-    
-    
+    .td-header-logo {
+      background-color: @header_wrap_color;
+    }
     
     /* TEXT LOGO COLOR */
     /* @text_logo_color */
@@ -714,7 +712,14 @@ function td_css_generator() {
     $td_css_compiler->load_setting('login_background_position');
     $td_css_compiler->load_setting('login_background_opacity');
 
+    /**
+     * add td_fonts_css_buffer from database into the source of the page
+     *
+     * td_fonts_css_buffer : used to store the css generated for custom font files in the database
+     */
+    $td_fonts_css_buffer = td_fonts::td_add_fonts_css_buffer();
+
     //output the style
-    return $td_css_compiler->compile_css();
+    return $td_fonts_css_buffer . $td_css_compiler->compile_css();
 
 }
