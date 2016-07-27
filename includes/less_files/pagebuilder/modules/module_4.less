@@ -6,6 +6,11 @@
 
   .td-module-image {
     margin-bottom: 17px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 12px;
+    }
   }
 
   .td-module-title {
@@ -13,6 +18,14 @@
     padding-bottom: 15px;
     font-size: 21px;
     line-height: 26px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 11px;
+      padding-bottom: 11px;
+      font-size: 19px;
+      line-height: 23px;
+    }
   }
 
   /* responsive portrait phone */
