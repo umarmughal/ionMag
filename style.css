@@ -9574,7 +9574,7 @@ tagdiv animations
   display: inline-block;
   margin: 0 26px;
 }
-.footer-social-wrap a {
+.footer-social-wrap .td-social-icon-wrap a {
   color: #fff;
 }
 .footer-social-wrap .td-icon-font {
@@ -9620,7 +9620,6 @@ tagdiv animations
   font-size: 15px;
   font-weight: 500;
   text-transform: uppercase;
-  color: #fff;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
