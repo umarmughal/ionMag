@@ -617,8 +617,10 @@ function td_css_generator() {
     
     /* @top_menu */
     .top-header-menu > li > a,
-    .td-header-sp-top-menu .td_data_time {
-        @top_menu
+    .td-header-sp-top-menu .td_data_time,
+    .td-header-sp-top-widget .td-search-btns-wrap i,
+    .td-header-sp-top-widget .td-social-icon-wrap i {
+       @top_menu
     }
     /* @top_sub_menu */
     .top-header-menu .menu-item-has-children li a {
