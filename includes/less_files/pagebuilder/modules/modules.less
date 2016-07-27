@@ -9,6 +9,11 @@
   position: relative;
   padding-bottom: 46px;
 
+  /* responsive portrait tablet + mobile */
+  @media (max-width: @responsive_p_tablet_max) {
+    padding-bottom: 30px;
+  }
+
   &:hover .entry-title a {
     color: @td_theme_color;
   }
