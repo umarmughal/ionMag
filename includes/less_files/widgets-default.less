@@ -5,6 +5,7 @@
 .widget {
   margin-bottom: 38px;
   font-size: 13px;
+  font-family: @font2;
 
   &.td_block_wrap {
     padding-bottom: 0;
@@ -25,12 +26,18 @@
   }
 
   li {
-    line-height: 30px;
+    line-height: 1;
     list-style: none;
     margin-left: 0;
 
+    a {
+      padding: 9px 0;
+      display: inline-block;
+    }
+
     li {
       margin-left: 21px;
+      font-size: 12px;
     }
   }
 
@@ -80,10 +87,15 @@
     }
   }
 
+  tbody a {
+    color: @td_theme_color;
+  }
+
   #today {
     background-color: @td_theme_color;
     font-weight: bold;
     color: #fff;
+    border-color: @td_theme_color;
   }
 
   caption {
@@ -120,16 +132,30 @@
 // categories
 .widget_categories {
   li{
-    line-height: 36px;
+    line-height: 1;
+    margin-right: 40px;
+
+    li {
+      margin-right: 0;
+    }
+
+    a {
+      padding: 11px 0;
+      width: 100%;
+      display: block;
+    }
 
     span {
       display: inline-block;
-      float: right;
-      margin-top: 8px;
-      padding: 2px 6px 3px 7px;
+      margin-top: -5px;
+      padding: 4px 6px;
+      min-width: 22px;
       line-height: 1;
       border: 1px solid rgba(0, 0, 0, 0.2);
       .border-radius(10px);
+      position: absolute;
+      right: 0;
+      text-align: center;
     }
   }
 }
@@ -145,9 +171,9 @@
   }
 
   a {
-    font-style: italic;
+    display: inline !important;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
   }
 
   li {

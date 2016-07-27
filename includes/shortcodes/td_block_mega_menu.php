@@ -47,7 +47,7 @@ class td_block_mega_menu extends td_block {
 	    //get subcategories, it returns false if there are no categories
 	    $get_block_sub_cats = $this->get_mega_menu_subcategories($atts);
 
-	     $additional_classes = array();
+	    $additional_classes = array();
 
 
         //we have subcategories
@@ -78,7 +78,7 @@ class td_block_mega_menu extends td_block {
 
         $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
         //inner content of the block
-        $buffy .= $this->inner($this->td_query->posts);
+        $buffy .= $this->inner($this->td_query->posts, $get_block_sub_cats);
         $buffy .= '</div>';
 
 
@@ -91,7 +91,7 @@ class td_block_mega_menu extends td_block {
         return $buffy;
     }
 
-    function inner($posts, $td_column_number = '') {
+    function inner($posts, $get_block_sub_cats) {
 
         $buffy = '';
 
@@ -103,7 +103,7 @@ class td_block_mega_menu extends td_block {
             foreach ($posts as $post) {
                 $td_module_mega_menu = new td_module_mega_menu($post);
                 $buffy .= '<div class="td-mega-span">';
-                $buffy .= $td_module_mega_menu->render();
+                $buffy .= $td_module_mega_menu->render($get_block_sub_cats);
                 $buffy .= '</div>';
             }
 

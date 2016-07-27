@@ -7,13 +7,18 @@ class td_module_mega_menu extends td_module {
         parent::__construct($post);
     }
 
-    function render() {
+    function render($get_block_sub_cats) {
         ob_start();
         ?>
 
         <div class="<?php echo $this->get_module_classes(array("td_mod_mega_menu")); ?>">
             <div class="td-module-image">
-                <?php echo $this->get_image('td_260x195');?>
+                <?php
+                if($get_block_sub_cats !== false) {
+                    echo $this->get_image('td_260x195');
+                } else {
+                    echo $this->get_image('td_245x184');
+                } ?>
                 <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_mega_menu') == 'yes') { echo $this->get_category(); }?></div>
             </div>
 
