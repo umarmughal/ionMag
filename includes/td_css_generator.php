@@ -237,11 +237,13 @@ function td_css_generator() {
       color: @theme_color;
     }
     
+    /* BACKGROUND COLOR */
     /* @site_background_color */
     body {
       background-color: @site_background_color;
     }
     
+    /* BLOCK HEADER BACKGROUND COLOR */
     /* @header_color */
     .block-title span,
     .block-title a {
@@ -286,6 +288,7 @@ function td_css_generator() {
         background-color: @header_color;
     }
     
+    /* BLOCK HEADER TEXT COLOR */
     /* @text_header_color */
     .td_module_wrap:hover .entry-title a,
     .td-load-more-wrap a:hover,
@@ -306,12 +309,18 @@ function td_css_generator() {
     .td-wrapper-pulldown-filter .td-pulldown-filter-list:before {
         background-color: @text_header_color;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* Top Menu Colors */
     
+    /* TOP MENU BACKGROUND COLOR */
     /* @top_menu_color */
     .td-header-top-menu {
       background-color: @top_menu_color;
     }
     
+    /* TOP MENU TEXT COLOR */
     /* @top_menu_text_color */
     .td-header-top-menu,
     .td-header-top-menu a,
@@ -321,16 +330,19 @@ function td_css_generator() {
         color: @top_menu_text_color;
     }
     
+    /* TOP MENU TEXT HOVER COLOR */
     /* @top_menu_text_hover_color */
     .top-header-menu > li a:hover {
       color: @top_menu_text_hover_color;
     }
     
+    /* TOP MENU SOCIAL ICONS COLOR */
     /* @top_social_icons_color */
     .td-header-sp-top-widget .td-social-icon-wrap > a {
       color: @top_social_icons_color;
     }
     
+    /* TOP MENU SOCIAL ICONS HOVER COLOR */
     /* @top_social_icons_hover_color */
     .td-social-icon-wrap:hover i.td-icon-font,
     .td-social-icon-wrap:hover i.td-icon-behance,
@@ -375,19 +387,25 @@ function td_css_generator() {
     .td-social-icon-wrap:hover i.td-icon-youtube {
       color: @top_social_icons_hover_color;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* Main Menu Colors */
     
+    /* MENU BACKGROUND COLOR */
     /* @menu_color */
     .td-header-menu-wrap {
       background-color: @menu_color;
       border: none;
 
-
+    /* MENU TEXT COLOR */
     /* @menu_text_color */
     .td-header-wrap .td-header-menu-wrap .sf-menu > li > a,
     .td-header-wrap .header-search-wrap .td-icon-search {
         color: @menu_text_color;
     }
     
+    /* MENU ACTIVE & HOVER COLOR */
     /* @submenu_hover_color */
     .sf-menu ul .menu-item > a:hover,
     .sf-menu > .current-menu-item > a,
@@ -417,7 +435,12 @@ function td_css_generator() {
     .td-header-main-menu .td-post-category:hover {
       background-color: @submenu_hover_color;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* MOBILE MENU / MOBILE SEARCH COLORS */
     
+    /* MENU BAR BACKGROUND COLOR */
     /* @mobile_menu_color */
     @media (max-width: 767px) {
         body .td-header-wrap .td-header-main-menu {
@@ -425,6 +448,7 @@ function td_css_generator() {
         }
     }
 
+    /* MENU BAR ICONS COLOR */
     /* @mobile_icons_color */
     @media (max-width: 767px) {
         body #td-top-mobile-toggle i,
@@ -433,6 +457,7 @@ function td_css_generator() {
         }
     }
 
+    /* BACKGROUND GRADIENT COLOR */
     /* @mobile_gradient_one_mob */
     .td-menu-background:before,
     .td-search-background:before {
@@ -445,7 +470,7 @@ function td_css_generator() {
         background: linear-gradient(to bottom, @mobile_gradient_one_mob 0%, @mobile_gradient_two_mob 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@mobile_gradient_one_mob', endColorstr='@mobile_gradient_two_mob', GradientType=0 );
     }
-
+    
     /* @mobile_text_active_color */
     .td-mobile-content .current-menu-item > a,
     .td-mobile-content .current-menu-ancestor > a,
@@ -501,6 +526,10 @@ function td_css_generator() {
         border-bottom-color: @mobile_text_color !important;
     }
 
+
+    /* ------------------------------------------------------ */
+    /* HEADER COLORS */
+
     /* @header_wrap_color */
     
     
@@ -508,32 +537,42 @@ function td_css_generator() {
     
     
     
+    /* TEXT LOGO COLOR */
     /* @text_logo_color */
     .td-header-wrap .td-logo-text-container .td-logo-text {
         color: @text_logo_color;
     }
 
+    /* TEXT LOGO TAGLINE COLOR */
     /* @text_logo_tagline_color */
     .td-header-wrap .td-logo-text-container .td-tagline-text {
         color: @text_logo_tagline_color;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* POSTS COLORS */
     
+    /* POST TITLE COLOR */
     /* @post_title_color */
     .td-post-header .entry-title {
       color: @post_title_color;
     }
     
+    /* POST AUTHOR NAME COLOR */
     /* @post_author_name_color */
     .td-post-author-name a {
       color: @post_author_name_color;
     }
     
+    /* POST TEXT COLOR */
     /* @post_content_color */
     .td-post-content,
     .td-post-content p {
     	color: @post_content_color;
     }
 
+    /* POST H COLOR */
     /* @post_h_color */
     .td-post-content h1,
     .td-post-content h2,
@@ -544,6 +583,7 @@ function td_css_generator() {
     	color: @post_h_color;
     }
 
+    /* POST BLOCKQUOTE COLOR */
     /* @post_blockquote_color */
     .post blockquote p,
     .page blockquote p {
@@ -553,13 +593,19 @@ function td_css_generator() {
     .page .td_quote_box {
         border-color: @post_blockquote_color;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* PAGES COLORS */
     
+    /* PAGE TITLE COLOR */
     /* @page_title_color */
     .td-page-title,
     .woocommerce-page .page-title {
     	color: @page_title_color;
     }
 
+    /* PAGE TEXT COLOR */
     /* @page_content_color */
     .td-page-content p,
     .td-page-content .td_block_text_with_title,
@@ -567,6 +613,7 @@ function td_css_generator() {
     	color: @page_content_color;
     }
 
+    /* PAGE H COLOR */
     /* @page_h_color */
     .td-page-content h1,
     .td-page-content h2,
@@ -580,12 +627,18 @@ function td_css_generator() {
     .td-page-content .widgettitle {
         color: #fff;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* FOOTER COLORS */
     
+    /* FOOTER BACKGROUND COLOR */
     /* @footer_color */
     .td-footer-wrapper {
       background-color: @footer_color;
     }
     
+    /* FOOTER TEXT COLOR */
     /* @footer_text_color */
     .td-footer-wrapper,
     .td-footer-wrapper a,
@@ -599,6 +652,7 @@ function td_css_generator() {
       color: @footer_text_color;
     }
     
+    /* FOOTER WIDGET HEADER TEXT COLOR */
     /* @footer_widget_text_color */
     .td-footer-wrapper .block-title a,
     .td-footer-wrapper .block-title span,
@@ -609,12 +663,18 @@ function td_css_generator() {
     .td-footer-wrapper .block-title:after{
       background-color: @footer_widget_text_color;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* SUBFOOTER COLORS */
     
+    /* SUBFOOTER BACKGROUND COLOR */
     /* @footer_bottom_color */
     .td-sub-footer-container {
       background-color: @footer_bottom_color;
     }
     
+    /* SUBFOOTER TEXT COLOR */
     /* @footer_bottom_text_color */
     .td-sub-footer-container,
     .td-subfooter-menu li a,
@@ -626,6 +686,7 @@ function td_css_generator() {
       background-color: @footer_bottom_text_color;
     }
     
+    /* SUBFOOTER MENU HOVER COLOR */
     /* @footer_bottom_hover_color */
     .td-subfooter-menu .menu-item > a:hover,
     .td-subfooter-menu .sfHover > a,
@@ -634,9 +695,10 @@ function td_css_generator() {
     .td-subfooter-menu .current-menu-item > a {
       color: @footer_bottom_hover_color;
     }
-    
-    
-    
+
+
+    /* ------------------------------------------------------ */
+    /* FOOTER BACKGROUND */
     
     /* @footer_background_image */
     .td-footer-outer-wrapper:before {
@@ -662,6 +724,10 @@ function td_css_generator() {
     .td-footer-outer-wrapper:before {
         opacity: @footer_background_opacity;
     }
+
+
+    /* ------------------------------------------------------ */
+    /* LOGIN MODAL BACKGROUND */
 
     /* @login_background_image */
     .white-popup-block:before {
