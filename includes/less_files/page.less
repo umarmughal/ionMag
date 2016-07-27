@@ -140,54 +140,6 @@
   float: right;
 }
 
-.td-search-form-widget,
-.search-form{
-  position: relative;
-}
-
-.td-widget-search-input,
-.search-field {
-  width: 100% !important;
-  height: 29px !important;
-  margin: 0 !important;
-  padding: 0 11px !important;
-  line-height: 17px !important;
-  font-size: 13px !important;
-  color: #666 !important;
-  border: 0 !important;
-  border-bottom: 1px solid #ebebeb !important;
-  outline: none !important;
-}
-
-#searchsubmit,
-.search-submit {
-  position: absolute;
-  right: 0;
-  top: 0;
-  outline: none;
-  background-color: #fff !important;
-  min-width: 50px !important;
-  height: 29px !important;
-  margin: 0 !important;
-  line-height: 17px !important;
-  padding: 7px 9px 8px 9px !important;
-  text-shadow: none;
-  vertical-align: top !important;
-  text-transform: uppercase;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  color: #000 !important;
-  border: 1px solid #ebebeb !important;
-  border-top: 0 !important;
-  border-right: 0 !important;
-
-
-  &:hover {
-    background-color: transparent;
-    color: @td_theme_color;
-  }
-}
-
 
 /*  ----------------------------------------------------------------------------
     Author page
@@ -298,13 +250,8 @@
     color: @td_theme_color;
   }
 
-  .td-widget-search-input {
-    width: 256px !important;
-    margin-right: -3px !important;
-  }
-
-  #searchsubmit {
-    position: relative;
+  input[type=text].td-widget-search-input {
+    width: 300px;
   }
 }
 
