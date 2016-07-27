@@ -61,6 +61,14 @@
   font-size: 13px;
   margin-bottom: 48px;
 
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+    width: auto;
+  }
+
   a,
   span {
     display: inline-block;
@@ -90,6 +98,11 @@
     margin: 0;
     border: none;
     padding-left: 6px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: none;
+    }
   }
 
   .current {

@@ -596,14 +596,14 @@ function td_css_generator() {
     .td-footer-wrapper .rss-date,
     .td-footer-wrapper cite,
     .footer-social-wrap a {
-      color: @footer_text_color !important;
+      color: @footer_text_color;
     }
     
     /* @footer_widget_text_color */
     .td-footer-wrapper .block-title a,
     .td-footer-wrapper .block-title span,
     .td-footer-wrapper .block-title label {
-      color: @footer_widget_text_color !important;
+      color: @footer_widget_text_color;
     }
     
     .td-footer-wrapper .block-title:after{
@@ -619,11 +619,11 @@ function td_css_generator() {
     .td-sub-footer-container,
     .td-subfooter-menu li a,
     .td-sub-footer-copy {
-      color: @footer_bottom_text_color !important;
+      color: @footer_bottom_text_color;
     }
     
     .td-subfooter-menu li:after {
-      background-color: @footer_bottom_text_color !important;
+      background-color: @footer_bottom_text_color;
     }
     
     /* @footer_bottom_hover_color */
@@ -632,7 +632,7 @@ function td_css_generator() {
     .td-subfooter-menu .current-menu-ancestor > a,
     .td-subfooter-menu .current-category-ancestor > a,
     .td-subfooter-menu .current-menu-item > a {
-      color: @footer_bottom_hover_color !important;
+      color: @footer_bottom_hover_color;
     }
     
     
