@@ -1075,42 +1075,26 @@ img {
 }
 .td-drop-down-search #td-header-search {
   width: 100%;
-  height: 31px;
+  height: 28px;
   margin: 0;
-  padding: 0 85px 0 11px;
-  line-height: 17px;
+  padding: 0 11px;
   font-size: 13px;
   color: #666;
   border: 0;
   border-bottom: 1px solid #ebebeb;
-  outline: none;
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  .td-drop-down-search #td-header-search {
-    width: 91%;
-    font-size: 16px;
-  }
 }
 .td-drop-down-search .btn {
-  outline: none;
   position: absolute;
-  background-color: #fff;
-  height: 31px;
-  min-width: 50px;
-  line-height: 17px;
-  padding: 7px 15px 8px;
-  text-shadow: none;
-  vertical-align: top;
+  right: 20px;
+  background-color: transparent;
+  height: 14px;
+  margin: 6px 0;
+  padding: 0 1px 0 8px;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 700;
   color: #000;
-  right: 20px;
-  margin: 0 !important;
-  border: 1px solid #ebebeb;
-  border-top: 0;
-  border-right: 0;
+  border-left: 1px solid #ebebeb;
 }
 .td-drop-down-search .btn:hover {
   background-color: transparent;
@@ -6833,50 +6817,6 @@ blockquote.pull-right:after {
   margin-top: -1px;
   float: right;
 }
-.td-search-form-widget,
-.search-form {
-  position: relative;
-}
-.td-widget-search-input,
-.search-field {
-  width: 100% !important;
-  height: 29px !important;
-  margin: 0 !important;
-  padding: 0 11px !important;
-  line-height: 17px !important;
-  font-size: 13px !important;
-  color: #666 !important;
-  border: 0 !important;
-  border-bottom: 1px solid #ebebeb !important;
-  outline: none !important;
-}
-#searchsubmit,
-.search-submit {
-  position: absolute;
-  right: 0;
-  top: 0;
-  outline: none;
-  background-color: #fff !important;
-  min-width: 50px !important;
-  height: 29px !important;
-  margin: 0 !important;
-  line-height: 17px !important;
-  padding: 7px 9px 8px 9px !important;
-  text-shadow: none;
-  vertical-align: top !important;
-  text-transform: uppercase;
-  font-size: 11px !important;
-  font-weight: 700 !important;
-  color: #000 !important;
-  border: 1px solid #ebebeb !important;
-  border-top: 0 !important;
-  border-right: 0 !important;
-}
-#searchsubmit:hover,
-.search-submit:hover {
-  background-color: transparent;
-  color: #42bdcd;
-}
 /*  ----------------------------------------------------------------------------
     Author page
 */
@@ -6986,12 +6926,8 @@ blockquote.pull-right:after {
 .td-search-header .td-search-query {
   color: #42bdcd;
 }
-.td-search-header .td-widget-search-input {
-  width: 256px !important;
-  margin-right: -3px !important;
-}
-.td-search-header #searchsubmit {
-  position: relative;
+.td-search-header input[type=text].td-widget-search-input {
+  width: 300px;
 }
 /*  ----------------------------------------------------------------------------
     404 page
@@ -8632,6 +8568,48 @@ tagdiv animations
   padding: 0;
   color: inherit;
 }
+.widget_search {
+  margin-bottom: 48px;
+}
+.widget_search .block-title {
+  margin-bottom: 20px;
+}
+.td-search-form-widget,
+.search-form {
+  position: relative;
+}
+input[type=text].td-widget-search-input,
+.search-field {
+  width: 100%;
+  height: 28px;
+  margin: 0;
+  padding: 0 11px;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 13px;
+  color: #666;
+  border: 0;
+  border-bottom: 1px solid #ebebeb;
+}
+#searchsubmit,
+input[type=submit].search-submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  height: 14px;
+  margin: 6px 0;
+  padding: 0 1px 0 8px;
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 700;
+  color: #000;
+  border-left: 1px solid #ebebeb;
+}
+#searchsubmit:hover,
+input[type=submit].search-submit:hover {
+  background-color: transparent;
+  color: #42bdcd;
+}
 .widget_calendar {
   margin-bottom: 36px;
 }
@@ -8810,15 +8788,6 @@ tagdiv animations
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='50')";
   filter: alpha(opacity=50);
-}
-.widget_search {
-  margin-bottom: 48px;
-}
-.widget_search .block-title {
-  margin-bottom: 20px;
-}
-.widget_search .search-submit {
-  height: 30px !important;
 }
 .widget_text .block-title {
   margin-bottom: 13px;
