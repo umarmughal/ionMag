@@ -7,11 +7,11 @@
 
 .td_module_wrap {
   position: relative;
-  padding-bottom: 46px;
+  padding-bottom: 37px;
 
-  /* responsive portrait tablet + mobile */
-  @media (max-width: @responsive_p_tablet_max) {
-    padding-bottom: 40px;
+  /* responsive portrait tablet */
+  @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+    padding-bottom: 27px;
   }
 
   &:hover .entry-title a {
@@ -282,4 +282,9 @@
   font-style: italic;
   line-height: 19px;
   color: #808080;
+
+  /* responsive portrait tablet + mobile */
+  @media (max-width: @responsive_p_tablet_max) {
+    padding-top: 14px;
+  }
 }
