@@ -578,7 +578,7 @@ class td_config {
 
         td_api_header_style::add('2',
             array(
-                'text' => '<strong>Style 2</strong>',
+                'text' => '<strong>Style 2 - </strong> Center menu and logo',
                 'file' => td_global::$get_template_directory . '/parts/header/header-style-2.php'
             )
         );
