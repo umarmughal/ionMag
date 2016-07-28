@@ -69,15 +69,15 @@ $buffy .= '<div class="td-pb-span12"><aside class="footer-logo-wrap">';
 $buffy .= '</aside></div>';
 
 // description
-//$buffy .= '<div class="' . $td_social_enabled . '"><aside class="footer-text-wrap">';
-//    $buffy .= '<div class="block-title"><span>' . __td('ABOUT US', TD_THEME_NAME) . '</span></div>';
-//    $buffy .= stripcslashes($td_footer_text);
-//
-//    if (!empty($td_footer_email)) {
-//        $buffy .= '<div class="footer-email-wrap">';
-//        $buffy .= __td('Contact us', TD_THEME_NAME) . ': <a href="mailto:' . $td_footer_email  . '">' . $td_footer_email . '</a>';
-//        $buffy .= '</div>';
-//    }
-//$buffy .= '</aside></div>';
+$buffy .= '<div class="td-pb-span12"><aside class="footer-text-wrap">';
+    //$buffy .= '<div class="block-title"><span>' . __td('ABOUT US', TD_THEME_NAME) . '</span></div>';
+    $buffy .= stripcslashes($td_footer_text);
+
+    if (!empty($td_footer_email)) {
+        $buffy .= '<div class="footer-email-wrap">';
+        $buffy .= __td('Contact us', TD_THEME_NAME) . ': <a href="mailto:' . $td_footer_email  . '">' . $td_footer_email . '</a>';
+        $buffy .= '</div>';
+    }
+$buffy .= '</aside></div>';
 
 echo $buffy;

@@ -7125,7 +7125,7 @@ blockquote.pull-right:after {
   margin-right: 0;
 }
 .td-author-header .td-author-description {
-  width: 78.061224%;
+  width: 80%;
   margin: 0 auto 2px auto;
   padding-top: 33px;
   font-family: 'Work Sans', sans-serif;
@@ -9782,6 +9782,23 @@ input.search-submit:hover {
 }
 .td-subfooter-menu .fa {
   margin-right: 3px;
+}
+.footer-text-wrap {
+  width: 80%;
+  margin: 0 auto;
+  padding: 8px 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 14px;
+  line-height: 23px;
+}
+.footer-email-wrap {
+  margin-top: 12px;
+}
+.footer-email-wrap a {
+  color: #42bdcd;
+}
+.footer-email-wrap a:hover {
+  color: #fff;
 }
 .td-sub-footer-copy {
   padding: 15px 0 16px;

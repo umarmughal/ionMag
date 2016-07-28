@@ -87,7 +87,7 @@ function td_css_generator() {
     .td-mega-menu-page .wpb_content_element ul li a :hover,
     .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
     .td-instagram-user a,
-    .td-footer-outer-wrapper a:hover {
+    .footer-email-wrap a {
       color: @theme_color;
     }
     
@@ -494,7 +494,6 @@ function td_css_generator() {
     /* FOOTER TEXT COLOR */
     /* @footer_text_color */
     .td-footer-wrapper,
-    .td-footer-wrapper a,
     .td-footer-wrapper .td-pulldown-filter-display-option span,
     .td-footer-wrapper .block-title a,
     .td-footer-wrapper .block-title span,
