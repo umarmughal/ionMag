@@ -471,6 +471,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
     width: 165px;
     max-width: 165px;
+    padding: 10px 0;
   }
 
   a {
@@ -482,12 +483,24 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     padding: 7px 10px 7px 32px;
     position: relative;
     vertical-align: middle;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      padding: 7px 10px 7px 17px;
+      font-size: 10px;
+    }
   }
 
   .mega-menu-cat-all {
     margin-top: 17px;
     padding-top: 25px;
     line-height: 1;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      margin-top: 8px;
+      padding-top: 14px;
+    }
 
     &:before {
       content: '';
@@ -544,9 +557,15 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   .entry-title {
     font-weight: 500;
     font-size: 14px;
+    line-height: 18px;
     margin: 7px 6px 0;
     padding-bottom: 0;
-    line-height: 18px;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      font-size: 12px;
+      line-height: 14px;
+    }
 
     a {
       color: #000;
@@ -584,10 +603,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 
   .td-mega-span {
     width: 25%;
-  }
-
-  .td-module-thumb {
-    min-height: 184px;
   }
 }
 
