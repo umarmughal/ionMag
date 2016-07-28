@@ -1647,10 +1647,6 @@ class td_config {
                     'text' => 'General font',
                     'type' => 'general_setting',
                 ),
-                'module_mega_menu' =>  array(
-                    'text' => 'Module mega menu',
-                    'type' => 'default',
-                ),
                 'module_mx2' =>  array(
                     'text' => 'Module MX2',
                     'type' => 'default',

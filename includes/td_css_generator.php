@@ -718,10 +718,6 @@ function td_css_generator() {
     .td-big-grid-post .entry-title {
 		@other_modules_general
 	}
-    /* @module_mega_menu */
-    .td-mega-span .entry-title {
-        @module_mega_menu
-    }
     /* @module_mx2 */
     .td_module_mx2 .entry-title {
     	@module_mx2
