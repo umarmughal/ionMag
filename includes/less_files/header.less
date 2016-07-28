@@ -164,7 +164,6 @@
   position: relative;
   float: right;
   width: 74.28571428571429%;
-  height: 90px;
 
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
@@ -173,8 +172,7 @@
   }
 
   img,
-  .adsbygoogle{
-    display: block;
+  .adsbygoogle {
     position: absolute;
     top: 0;
     bottom: 0;
@@ -188,5 +186,9 @@
       top: 0;
       left: 0;
     }
+  }
+
+  .adsbygoogle {
+    display: block !important;
   }
 }
