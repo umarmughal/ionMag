@@ -744,6 +744,22 @@ function td_css_generator() {
     }
     
     
+    /* mobile_general */
+	#td-mobile-nav,
+	#td-mobile-nav .wpb_button,
+	.td-search-wrap-mob {
+		@mobile_general
+	}
+    /* @mobile_menu */
+    .td-mobile-content li a {
+        @mobile_menu
+    }
+    /* @mobile_sub_menu */
+    .td-mobile-content .sub-menu a {
+        @mobile_sub_menu
+    }
+    
+    
     /* post_general */
 	.post .td-post-header .entry-title {
 		@post_general
