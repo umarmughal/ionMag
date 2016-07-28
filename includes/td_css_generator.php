@@ -714,6 +714,40 @@ function td_css_generator() {
     }
     
     
+    /* other_modules_general */
+    .td-big-grid-post .entry-title {
+		@other_modules_general
+	}
+    /* @module_mega_menu */
+    .td-mega-span .entry-title {
+        @module_mega_menu
+    }
+    /* @module_mx2 */
+    .td_module_mx2 .entry-title {
+    	@module_mx2
+    }
+    /* @big_grid_big */
+    .td-big-grid-post.td-big-thumb .td-big-grid-meta,
+    .td-big-thumb .td-big-grid-meta .entry-title {
+        @big_grid_big
+    }
+    /* @big_grid_medium */
+    .td-big-grid-post.td-medium-thumb .td-big-grid-meta,
+    .td-medium-thumb .td-big-grid-meta .entry-title {
+        @big_grid_medium
+    }
+    /* @big_grid_small */
+    .td-big-grid-post.td-small-thumb .td-big-grid-meta,
+    .td-small-thumb .td-big-grid-meta .entry-title {
+        @big_grid_small
+    }
+    /* @big_grid_tiny */
+    .td-big-grid-post.td-tiny-thumb .td-big-grid-meta,
+    .td-tiny-thumb .td-big-grid-meta .entry-title {
+        @big_grid_tiny
+    }
+    
+    
     /* post_general */
 	.post .td-post-header .entry-title {
 		@post_general
