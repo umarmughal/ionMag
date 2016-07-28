@@ -88,10 +88,6 @@
 
     a {
       color: #fff;
-
-      &:hover {
-        color: #fff;
-      }
     }
   }
 
@@ -111,6 +107,12 @@
 /* Logo */
 .footer-logo-wrap {
   padding: 30px 0;
+
+  img {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
 
 
@@ -192,7 +194,12 @@
   padding: 8px 0;
   font-family: @font2;
   font-size: 14px;
-  line-height: 23px;
+  line-height: 21px;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 100%;
+  }
 }
 
 .footer-email-wrap {
@@ -202,7 +209,7 @@
     color: @td_theme_color;
 
     &:hover {
-      color: #fff;
+      text-decoration: underline;
     }
   }
 }
