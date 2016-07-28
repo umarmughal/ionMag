@@ -8819,6 +8819,95 @@ tagdiv animations
 .td-a-rec-id-content_bottom img {
   margin-bottom: 0;
 }
+.td-a-rec-id-content_inline > div {
+  margin: 0 auto 21px auto;
+}
+.td-g-rec-id-content_inline .adsbygoogle {
+  margin-bottom: 21px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.td-g-rec-id-content_inlineleft,
+.td-a-rec-id-content_inlineleft {
+  float: left;
+  /* responsive portrait phone */
+}
+.td-g-rec-id-content_inlineleft .td-adspot-title,
+.td-a-rec-id-content_inlineleft .td-adspot-title {
+  margin-right: 21px;
+}
+@media (max-width: 767px) {
+  .td-g-rec-id-content_inlineleft .td-adspot-title,
+  .td-a-rec-id-content_inlineleft .td-adspot-title {
+    margin: 0;
+  }
+}
+.td-g-rec-id-content_inlineleft > div,
+.td-a-rec-id-content_inlineleft > div,
+.td-g-rec-id-content_inlineleft .adsbygoogle,
+.td-a-rec-id-content_inlineleft .adsbygoogle {
+  margin-bottom: 15px;
+  margin-top: 9px;
+  margin-right: 21px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-g-rec-id-content_inlineleft > div,
+  .td-a-rec-id-content_inlineleft > div,
+  .td-g-rec-id-content_inlineleft .adsbygoogle,
+  .td-a-rec-id-content_inlineleft .adsbygoogle {
+    margin: 0 auto 26px auto;
+  }
+}
+.td-g-rec-id-content_inlineleft img,
+.td-a-rec-id-content_inlineleft img {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .td-g-rec-id-content_inlineleft,
+  .td-a-rec-id-content_inlineleft {
+    float: none;
+    text-align: center;
+  }
+}
+.td-g-rec-id-content_inlineright,
+.td-a-rec-id-content_inlineright {
+  float: right;
+  /* responsive portrait phone */
+}
+.td-g-rec-id-content_inlineright > div,
+.td-a-rec-id-content_inlineright > div,
+.td-g-rec-id-content_inlineright .adsbygoogle,
+.td-a-rec-id-content_inlineright .adsbygoogle {
+  margin-bottom: 15px;
+  margin-top: 6px;
+  margin-left: 21px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-g-rec-id-content_inlineright > div,
+  .td-a-rec-id-content_inlineright > div,
+  .td-g-rec-id-content_inlineright .adsbygoogle,
+  .td-a-rec-id-content_inlineright .adsbygoogle {
+    margin: 0 auto 26px auto;
+  }
+}
+.td-g-rec-id-content_inlineright img,
+.td-a-rec-id-content_inlineright img {
+  margin-bottom: 0;
+}
+@media (max-width: 767px) {
+  .td-g-rec-id-content_inlineright,
+  .td-a-rec-id-content_inlineright {
+    float: none;
+    text-align: center;
+  }
+}
 .td-a-rec-id-sidebar,
 .td-g-rec-id-sidebar {
   margin-bottom: 38px;
