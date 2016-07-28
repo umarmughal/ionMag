@@ -24,18 +24,11 @@ if (empty($td_footer_logo_title)) {
     $td_footer_logo_title = $td_logo_title;
 }
 
-$td_social_enabled = '';
-if(td_util::get_option('tds_footer_social') != 'no') {
-	$td_social_enabled = 'td-pb-span5';
-} else {
-	$td_social_enabled = 'td-pb-span9';
-}
-
 $buffy = '';
 
 // social icons
 if(td_util::get_option('tds_footer_social') != 'no') {
-    $buffy .= '<div class="td-pb-span12"><aside class="footer-social-wrap td-social-style-2">';
+    $buffy .= '<div class="td-pb-span12"><aside class="footer-social-wrap">';
 //	    $buffy .= '<div class="block-title"><span>' . __td('FOLLOW US', TD_THEME_NAME) . '</span></div>';
     //get the socials that are set by user
     $td_get_social_network = td_util::get_option('td_social_networks');
