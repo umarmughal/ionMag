@@ -9702,6 +9702,9 @@ input.search-submit:hover {
 .footer-social-wrap .td-social-icon-wrap a {
   color: #fff;
 }
+.footer-social-wrap .td-social-icon-wrap a:hover {
+  color: #fff;
+}
 .footer-social-wrap .td-icon-font {
   margin-right: 6px;
   vertical-align: middle;

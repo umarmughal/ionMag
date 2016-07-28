@@ -77,21 +77,18 @@ function td_css_generator() {
     .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
     .widget a:hover,
     .widget_calendar tfoot a:hover,
+    .widget_calendar tbody a,
     .td_social_type .td_social_button a:hover,
     .td-subfooter-menu li.menu-item > a:hover,
     .td-subfooter-menu li.sfHover > a,
     .td-subfooter-menu li.current-menu-ancestor > a,
     .td-subfooter-menu li.current-category-ancestor > a,
     .td-subfooter-menu li.current-menu-item > a,
-    .td-sub-footer-copy i {
-      color: @theme_color;
-    }
-    
     .td-mega-menu-page .wpb_content_element ul li a :hover,
     .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
     .td-instagram-user a,
     .td-footer-outer-wrapper a:hover {
-      color: @theme_color !important;
+      color: @theme_color;
     }
     
     input[type=submit]:hover,
@@ -134,7 +131,8 @@ function td_css_generator() {
     .wpb_text_column .td_quote_box,
     .td_block_text_with_title .td_quote_box,
     .mce-content-body .td_quote_box,
-    .comment-content .td_quote_box {
+    .comment-content .td_quote_box,
+     .widget_calendar #today {
       border-color: @theme_color;
     }
     
