@@ -4623,10 +4623,10 @@ blockquote.pull-right:after {
 .td_module_mx2 .td-module-title {
   margin: 0 0 8px 0;
   padding-bottom: 0;
+  font-size: 12px;
   line-height: 15px;
 }
 .td_module_mx2 .td-module-title a {
-  font-size: 12px;
   font-weight: 500;
   color: #000;
 }
@@ -9026,7 +9026,7 @@ input.search-submit:hover {
   vertical-align: middle;
 }
 .widget_rss li {
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   padding-bottom: 11px;
   border-bottom: 1px solid #f5f5f5;
   line-height: 21px;
