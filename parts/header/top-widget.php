@@ -1,6 +1,4 @@
-
 <div class="td-header-sp-top-widget">
-
     <?php
     //check to see if we show the search form
     if(td_util::get_option('tds_search_placement') == 'top_bar') { ?>
@@ -35,5 +33,4 @@
             }
         }
     ?>
-
 </div>
