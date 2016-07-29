@@ -820,6 +820,10 @@ img {
     padding: 8px 0;
   }
 }
+.td-header-menu-wrap-full {
+  z-index: 9998;
+  position: relative;
+}
 /*  ----------------------------------------------------------------------------
     Logo in header
 */
