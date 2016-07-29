@@ -507,7 +507,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'small',
                 'used_on' => array(
-                    'Module MX2'
+                    'Live search'
                 )
             )
         );
