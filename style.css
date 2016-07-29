@@ -1147,6 +1147,7 @@ img {
 .td-drop-down-search .result-msg a {
   color: #42bdcd;
   display: block;
+  line-height: initial;
 }
 .td-drop-down-search .result-msg a:hover {
   opacity: 0.8;
@@ -9115,6 +9116,7 @@ tagdiv animations
   padding: 0 16px;
   font-size: 14px;
   font-style: italic;
+  /* responsive portrait phone */
 }
 .td-a-rec-id-footer_top .td-adspot-title:before,
 .td-g-rec-id-footer_top .td-adspot-title:before,
@@ -9134,6 +9136,14 @@ tagdiv animations
 .td-a-rec-id-footer_top .td-adspot-title:after,
 .td-g-rec-id-footer_top .td-adspot-title:after {
   right: 100%;
+}
+@media (max-width: 767px) {
+  .td-a-rec-id-footer_top .td-adspot-title:before,
+  .td-g-rec-id-footer_top .td-adspot-title:before,
+  .td-a-rec-id-footer_top .td-adspot-title:after,
+  .td-g-rec-id-footer_top .td-adspot-title:after {
+    display: none;
+  }
 }
 .td-a-rec-id-footer_top a,
 .td-g-rec-id-footer_top a {

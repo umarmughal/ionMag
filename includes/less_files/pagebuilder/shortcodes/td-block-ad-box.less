@@ -300,6 +300,14 @@
     &:after {
       right: 100%;
     }
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
   }
 
   a {
