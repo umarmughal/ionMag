@@ -28,18 +28,26 @@
     <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
 </div>
 
-<!--<div class="td-search-btns-wrap">-->
-<!--    <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>-->
-<!--    <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>-->
-<!--</div>-->
-<!---->
-<!--<div class="td-search-box-wrap">-->
-<!--    <div class="td-drop-down-search" aria-labelledby="td-header-search-button">-->
-<!--        <form method="get" class="td-search-form" action="--><?php //echo esc_url(home_url( '/' )); ?><!--">-->
-<!--            <div role="search" class="td-head-form-search-wrap">-->
-<!--                <input id="td-header-search" type="text" value="--><?php //echo get_search_query(); ?><!--" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="--><?php //_etd('Search', TD_THEME_NAME)?><!--" />-->
-<!--            </div>-->
-<!--        </form>-->
-<!--        <div id="td-aj-search"></div>-->
-<!--    </div>-->
-<!--</div>-->
+<?php
+//check to see if we show the search form
+if(td_util::get_option('tds_search_placement') == '') { ?>
+    <div class="td-search-btns-wrap">
+        <a id="td-header-search-button" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+        <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+    </div>
+    
+    <div class="td-search-box-wrap">
+        <div class="td-drop-down-search" aria-labelledby="td-header-search-button">
+            <form method="get" class="td-search-form" action="<?php echo esc_url(home_url( '/' )); ?>">
+                <div role="search" class="td-head-form-search-wrap">
+                    <input id="td-header-search" type="text" value="<?php echo get_search_query(); ?>" name="s" autocomplete="off" /><input class="wpb_button wpb_btn-inverse btn" type="submit" id="td-header-search-top" value="<?php _etd('Search', TD_THEME_NAME)?>" />
+                </div>
+            </form>
+            <div id="td-aj-search"></div>
+        </div>
+    </div>
+<?php } else { //mobile search button ?>
+    <div class="td-search-btns-wrap">
+        <a id="td-header-search-button-mob" href="#" role="button" class="dropdown-toggle " data-toggle="dropdown"><i class="td-icon-search"></i></a>
+    </div>
+<?php } ?>

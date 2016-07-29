@@ -220,7 +220,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_1.php',
                 'text' => 'Module 1',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1'),
+                'used_on_blocks' => array('td_block_1', 'td_block_4', 'td_block_7', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -237,7 +237,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_2.php',
                 'text' => 'Module 2',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_2'),
+                'used_on_blocks' => array('td_block_2', 'td_block_7'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
                 'enabled_on_more_articles_box' => true,
@@ -254,7 +254,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_3.php',
                 'text' => 'Module 3',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_3'),
+                'used_on_blocks' => array('td_block_3', 'td_block_5', 'td_block_7', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -271,7 +271,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_4.php',
                 'text' => 'Module 4',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_4'),
+                'used_on_blocks' => array('td_block_4', 'td_block_7', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '0',
                 'enabled_on_more_articles_box' => true,
@@ -288,7 +288,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_5.php',
                 'text' => 'Module 5',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_5'),
+                'used_on_blocks' => array('td_block_5', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
                 'enabled_on_more_articles_box' => true,
@@ -407,7 +407,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx3.php',
                 'text' => 'Module MX3',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_3'),
+                'used_on_blocks' => array('td_block_big_grid_1'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -424,7 +424,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx4.php',
                 'text' => 'Module MX4',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_2'),
+                'used_on_blocks' => array('td_block_big_grid_2', 'td_block_big_grid_3'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -507,7 +507,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'small',
                 'used_on' => array(
-                    'Live search'
+                    'Module MX2'
                 )
             )
         );
@@ -520,7 +520,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Mega menu', 'Module 5'
+                    'Module 5', 'Mega menu'
                 )
             )
         );
@@ -559,7 +559,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module MX1'
+                    'Module MX1', 'Module MX4'
                 )
             )
         );
