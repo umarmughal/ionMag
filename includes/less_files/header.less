@@ -14,7 +14,7 @@
 }
 
 /*  ----------------------------------------------------------------------------
-    logo
+    Logo in header
 */
 .td-header-sp-logo {
   position: relative;
@@ -42,6 +42,19 @@
   }
 }
 
+
+/*  ----------------------------------------------------------------------------
+    Logo in menu
+*/
+// general
+#td-header-menu {
+  width: 100%;
+
+  .td-header-logo {
+    padding: 0;
+  }
+}
+
 .td-main-menu-logo {
   display: none;
   float: left;
@@ -63,7 +76,7 @@
     padding: 3px 0;
     position: relative;
     vertical-align: middle;
-    max-height: 48px;
+    max-height: 40px;
 
     @media (max-width: @responsive_p_phone_max) {
       position: absolute;
@@ -74,14 +87,28 @@
       margin: auto;
       padding: 0;
     }
+  }
+}
 
-
-    @media (max-width: @responsive_l_tablet_max) {
-      max-height: 40px;
+// menu logo disable
+.td-logo-in-menu .td-sticky-disable {
+  &.td-mobile-logo {
+    display: none;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: block;
+    }
+  }
+  &.td-header-logo {
+    display: block;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: none;
     }
   }
 }
 
+// h1 logo title seo
 .td-visual-hidden {
   border: 0;
   width: 1px;
@@ -92,22 +119,7 @@
   position: absolute;
 }
 
-// logo in header
-// disable
-.td-logo-in-header .td-sticky-disable {
-  &.td-mobile-logo,
-  &.td-header-logo {
-    display: none;
-  }
-  &.td-mobile-logo {
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      display: block;
-    }
-  }
-}
-
-// header logo
+// header logo image
 .td-logo-in-header .td-sticky-header {
   &.td-mobile-logo {
     display: none;
@@ -126,14 +138,42 @@
   }
 }
 
-// mobile logo
-.td-logo-in-header .td-sticky-mobile {
+// mobile logo image
+.td-logo-in-menu .td-sticky-mobile {
   &.td-mobile-logo {
-    display: block;
+    display: none;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: block;
+    }
   }
 
   &.td-header-logo {
-    display: none;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: none;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
+    Header menu affix
+*/
+.td-header-menu-wrap.td-affix {
+  -webkit-transform: translate3d(0, 0, 0); //chrome / safari / ios fix for 3d parallax
+  transform: translate3d(0, 0, 0);
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  z-index: 9999;
+  position: fixed !important;
+  background-color: rgb(255,255,255);
+  background-color: rgba(255,255,255,0.95);
+  top: 0;
+
+  .td-main-menu-logo {
+    margin-right: 32px;
   }
 }
 
@@ -147,6 +187,12 @@
   }
 }
 
+.td-affix .td-logo-in-menu .td-sticky-disable {
+  &.td-header-logo {
+    display: none;
+  }
+}
+
 // condition when no mobile logo
 .td-affix .td-logo-in-menu .td-main-logo {
   display: none;
@@ -157,38 +203,27 @@
   }
 }
 
-/*  ----------------------------------------------------------------------------
-    ad
-*/
-.td-header-sp-recs {
-  position: relative;
-  float: right;
-  width: 74.28571428571429%;
+.td-affix .td-logo-in-menu.td-logo-sticky .td-main-logo {
+  display: block;
+}
+
+// fix menu affix when admin bar + responsive
+.admin-bar .td-header-menu-wrap.td-affix {
+  top: 32px;
 
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
-    width: 100%;
-    height: auto;
+    top: 46px;
   }
 
-  img,
-  .adsbygoogle {
-    position: absolute;
+  @media (max-width: 602px) {
     top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      position: relative;
-      top: 0;
-      left: 0;
-    }
   }
+}
 
-  .adsbygoogle {
-    display: block !important;
+// Small height for menu with affix
+@media (min-width: @responsive_p_tablet_min) {
+  .td-affix .td-logo-sticky {
+    display: block;
   }
 }

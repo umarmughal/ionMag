@@ -75,7 +75,7 @@
 }
 
 
-/* Header Image & Google AD */
+// header ad
 .td-header-rec-wrap {
   position: relative;
   min-height: 90px;
@@ -86,6 +86,39 @@
     margin-right: auto;
     display: table;
     min-height: 0 !important;
+  }
+}
+
+.td-header-sp-recs {
+  position: relative;
+  float: right;
+  width: 74.28571428571429%;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 100%;
+    height: auto;
+  }
+
+  img,
+  .adsbygoogle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+
+  .adsbygoogle {
+    display: block !important;
   }
 }
 

@@ -1,4 +1,6 @@
 <div id="td-header-menu" role="navigation">
+    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
+
     <div class="td-main-menu-logo td-logo-in-header">
         <?php
         if (td_util::get_option('tds_logo_menu_upload') == '') {
@@ -24,8 +26,6 @@
         echo '</ul>';
     }
     ?>
-
-    <div id="td-top-mobile-toggle"><a href="#"><i class="td-icon-font td-icon-mobile"></i></a></div>
 </div>
 
 <?php
