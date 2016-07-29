@@ -1409,10 +1409,25 @@ img {
 }
 .td-header-menu-wrap {
   position: relative;
-  border: 1px solid #ebebeb;
-  border-left: 0;
-  border-right: 0;
   /* responsive portrait phone */
+}
+.td-header-menu-wrap:before,
+.td-header-menu-wrap:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #000;
+  opacity: 0.08;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='8')";
+  filter: alpha(opacity=8);
+}
+.td-header-menu-wrap:before {
+  top: 0;
+}
+.td-header-menu-wrap:after {
+  bottom: 0;
 }
 @media (max-width: 767px) {
   .td-header-menu-wrap {
@@ -1800,7 +1815,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td_block_mega_menu .td_block_inner {
   margin-left: 200px;
   position: relative;
-  right: -1px;
   /* responsive portrait tablet */
 }
 @media (min-width: 768px) and (max-width: 1018px) {
@@ -1881,8 +1895,15 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 }
 .td-mega-span {
   width: 33.33333%;
+  min-width: 260px;
   float: left;
   text-align: center;
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-mega-span {
+    min-width: 189px;
+  }
 }
 .td-mega-span .td-item-details {
   display: block;
@@ -1936,10 +1957,10 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 }
 .td-no-subcats .td_block_inner {
   margin-left: 0;
-  right: 0;
 }
 .td-no-subcats .td-mega-span {
   width: 25%;
+  min-width: 0;
 }
 .td_mod_mega_menu:hover .entry-title a {
   color: #42bdcd;
@@ -1970,14 +1991,10 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 */
 .td-header-main-menu .td-search-btns-wrap {
   position: absolute;
-  right: 1.4%;
-  top: 50%;
-  transform: translateY(-50%);
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
+  top: 0;
+  right: 0;
   margin-top: -1px;
+  line-height: 55px;
 }
 .td-header-main-menu .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;

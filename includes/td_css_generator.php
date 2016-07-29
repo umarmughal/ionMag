@@ -624,7 +624,8 @@ function td_css_generator() {
     	@top_sub_menu
     }
     /* @main_menu */
-    ul.sf-menu > .td-menu-item > a {
+    ul.sf-menu > .td-menu-item > a,
+     .td-header-main-menu .td-search-btns-wrap {
         @main_menu
     }
     /* @main_sub_menu */
