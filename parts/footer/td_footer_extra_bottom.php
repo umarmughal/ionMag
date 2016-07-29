@@ -62,7 +62,7 @@ $buffy .= '<div class="td-pb-span12"><aside class="footer-logo-wrap">';
 $buffy .= '</aside></div>';
 
 // description & email
-if( !( empty($td_footer_text) && empty($td_footer_email) ) ) {
+if(!(empty($td_footer_text) && empty($td_footer_email))) {
     $buffy .= '<div class="td-pb-span12"><aside class="footer-text-wrap">';
     $buffy .= stripcslashes($td_footer_text);
 
