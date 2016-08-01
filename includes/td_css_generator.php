@@ -24,7 +24,6 @@ function td_css_generator() {
     .sf-menu > li > a:hover,
     .sf-menu > .sfHover > a,
     .sf-menu ul .menu-item > a:hover,
-    .sf-menu ul .menu-item > a:hover,
     .sf-menu ul .sfHover > a,
     .sf-menu ul .current-menu-ancestor > a,
     .sf-menu ul .current-category-ancestor > a,
@@ -267,7 +266,6 @@ function td_css_generator() {
     
     /* MENU ACTIVE & HOVER COLOR */
     /* @submenu_hover_color */
-    .sf-menu ul .menu-item > a:hover,
     .sf-menu > .current-menu-item > a,
     .sf-menu > .current-menu-ancestor > a,
     .sf-menu > .current-category-ancestor > a,
