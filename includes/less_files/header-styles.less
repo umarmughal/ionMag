@@ -18,7 +18,11 @@
 
   .td-header-main-menu {
     padding-right: 0;
-    text-align: center;
+
+    /* desktop only */
+    @media (min-width: @responsive_p_phone_max) {
+      text-align: center;
+    }
 
     .td-header-menu-search {
       right: auto;
@@ -32,9 +36,6 @@
 
     .td-icon-search {
       width: auto;
-    }
-
-    .td-search-box-wrap {
     }
 
     @media (max-width: @responsive_p_phone_max) {
@@ -57,12 +58,8 @@
 
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
-    .td-header-main-menu {
-      text-align: left;
-    }
-
     .td-header-main-menu .td-search-btns-wrap {
-      right: 2%;
+      right: 0;
     }
   }
 }
