@@ -26,14 +26,11 @@
     background-color: #222;
     border: none;
 
-    &:before {
-      content: "";
-      background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAD1BM…GAhQQCyEd++8AAAAUSURBVAjXY1AAQgMgdABCCBAAQQAT6AFRBPHcWgAAAABJRU5ErkJggg==');
-      width: 100%;
-      height: 12px;
-      position: absolute;
+    &:after {
       bottom: -12px;
-      z-index: 1;
+      background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMGAhQQCyEd++8AAAAUSURBVAjXY1AAQgMgdABCCBAAQQAT6AFRBPHcWgAAAABJRU5ErkJggg==');
+      height: 12px;
+      opacity: 1;
     }
   }
 }
@@ -114,9 +111,9 @@ ul.sf-menu li li.sfHover li ul {
 }
 
 // fix the z-index when menu is o 2 lines
-.sf-menu .current-menu-ancestor,
-.sf-menu .current-category-ancestor,
-.sf-menu .current-menu-item {
+.sf-menu > .current-menu-ancestor,
+.sf-menu > .current-category-ancestor,
+.sf-menu > .current-menu-item {
   z-index: 0;
 }
 
