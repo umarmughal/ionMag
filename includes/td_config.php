@@ -2115,7 +2115,291 @@ class td_config {
                 )
             );
 
+            td_api_tinymce_formats::add('td_tinymce_item_1',
+                array(
+                    'title' => 'Text padding'
+                ));
 
+            td_api_tinymce_formats::add('td_tinymce_item_1_1',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => 'text ⇠',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-0',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_1_2',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => '⇢ text',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-4',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_1_3',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => '⇢ text ⇠',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-1',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_1_4',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => '⇢ text ⇠⇠',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-3',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_1_5',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => '⇢⇢ text ⇠',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-6',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_1_6',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => '⇢⇢ text ⇠⇠',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-2',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_1_7',
+                array(
+                    'parent_id' => 'td_tinymce_item_1',
+                    'title' => '⇢⇢⇢ text ⇠⇠⇠',
+                    'block' => 'div',
+                    'classes' => 'td-paragraph-padding-5',
+                    'wrapper' => true,
+                ));
+
+
+//	        td_api_tinymce_formats::add('td_tinymce_item_2',
+//		        array(
+//			        'title' => 'Text scroll effects'
+//		        ));
+//
+//		        td_api_tinymce_formats::add('td_tinymce_item_2_1',
+//			        array(
+//				        'parent_id' => 'td_tinymce_item_2',
+//				        'title' => 'Fade in gray background',
+//				        'selector' => 'p, h3, blockquote',
+//				        'classes' => 'td-scroll-e-text-1 td-scroll-effect',
+//				        'icon' => 'td-test-icons'
+//			        ));
+//
+//		        td_api_tinymce_formats::add('td_tinymce_item_2_2',
+//			        array(
+//				        'parent_id' => 'td_tinymce_item_2',
+//				        'title' => 'Fade in text color border',
+//				        'selector' => 'p, h3, blockquote',
+//				        'classes' => 'td-scroll-e-text-2 td-scroll-effect',
+//				        'icon' => 'td-test-icons'
+//			        ));
+
+            td_api_tinymce_formats::add('td_tinymce_item_3',
+                array(
+                    'title' => 'Arrow list',
+                    'selector' => 'ul',
+                    'classes' => 'td-arrow-list'
+                ));
+
+
+            td_api_tinymce_formats::add('td_blockquote',
+                array(
+                    'title' => 'Quotes'
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_1',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Quote left',
+                    'block' => 'blockquote',
+                    'classes' => 'td_quote td_quote_left',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_2',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Quote right',
+                    'block' => 'blockquote',
+                    'classes' => 'td_quote td_quote_right',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_3',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Quote box center',
+                    'block' => 'blockquote',
+                    'classes' => 'td_quote_box td_box_center',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_4',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Quote box left',
+                    'block' => 'blockquote',
+                    'classes' => 'td_quote_box td_box_left',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_5',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Quote box right',
+                    'block' => 'blockquote',
+                    'classes' => 'td_quote_box td_box_right',
+                    'wrapper' => true,
+                ));
+
+
+            td_api_tinymce_formats::add('td_blockquote_6',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Pull quote center',
+                    'block' => 'blockquote',
+                    'classes' => 'td_pull_quote td_pull_center',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_7',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Pull quote left',
+                    'block' => 'blockquote',
+                    'classes' => 'td_pull_quote td_pull_left',
+                    'wrapper' => true,
+                ));
+
+            td_api_tinymce_formats::add('td_blockquote_8',
+                array(
+                    'parent_id' => 'td_blockquote',
+                    'title' => 'Pull quote right',
+                    'block' => 'blockquote',
+                    'classes' => 'td_pull_quote td_pull_right',
+                    'wrapper' => true,
+                ));
+
+
+            // two columns text
+            td_api_tinymce_formats::add('td_text_columns',
+                array(
+                    'title' => 'Text columns'
+                ));
+            td_api_tinymce_formats::add('td_text_columns_0',
+                array(
+                    'parent_id' => 'td_text_columns',
+                    'title' => 'two columns',
+                    'block' => 'div',
+                    'classes' => 'td_text_columns_two_cols',
+                    'wrapper' => true,
+                ));
+
+            // dropcap
+            td_api_tinymce_formats::add('td_dropcap',
+                array(
+                    'title' => 'Dropcaps'
+                ));
+            td_api_tinymce_formats::add('td_dropcap_0',
+                array(
+                    'parent_id' => 'td_dropcap',
+                    'title' => 'Box',
+                    'classes' => 'dropcap',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_dropcap_1',
+                array(
+                    'parent_id' => 'td_dropcap',
+                    'title' => 'Circle',
+                    'classes' => 'dropcap dropcap1',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_dropcap_2',
+                array(
+                    'parent_id' => 'td_dropcap',
+                    'title' => 'Regular',
+                    'classes' => 'dropcap dropcap2',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_dropcap_3',
+                array(
+                    'parent_id' => 'td_dropcap',
+                    'title' => 'Bold',
+                    'classes' => 'dropcap dropcap3',
+                    'inline' => 'span'
+                ));
+
+
+            // highlighter
+            td_api_tinymce_formats::add('td_text_highlight',
+                array(
+                    'title' => 'Text highlighting'
+                ));
+            td_api_tinymce_formats::add('td_text_highlight_0',
+                array(
+                    'parent_id' => 'td_text_highlight',
+                    'title' => 'Black censured',
+                    'classes' => 'td_text_highlight_0',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_text_highlight_red',
+                array(
+                    'parent_id' => 'td_text_highlight',
+                    'title' => 'Red marker',
+                    'classes' => 'td_text_highlight_marker_red td_text_highlight_marker',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_text_highlight_blue',
+                array(
+                    'parent_id' => 'td_text_highlight',
+                    'title' => 'Blue marker',
+                    'classes' => 'td_text_highlight_marker_blue td_text_highlight_marker',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_text_highlight_green',
+                array(
+                    'parent_id' => 'td_text_highlight',
+                    'title' => 'Green marker',
+                    'classes' => 'td_text_highlight_marker_green td_text_highlight_marker',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_text_highlight_yellow',
+                array(
+                    'parent_id' => 'td_text_highlight',
+                    'title' => 'Yellow marker',
+                    'classes' => 'td_text_highlight_marker_yellow td_text_highlight_marker',
+                    'inline' => 'span'
+                ));
+            td_api_tinymce_formats::add('td_text_highlight_pink',
+                array(
+                    'parent_id' => 'td_text_highlight',
+                    'title' => 'Pink marker',
+                    'classes' => 'td_text_highlight_marker_pink td_text_highlight_marker',
+                    'inline' => 'span'
+                ));
+
+            // clear elements
+            td_api_tinymce_formats::add('td_clear_elements',
+                array(
+                    'title' => 'Clear element',
+                    'selector' => 'a,p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li,table,img,code,blockquote',
+                    'styles' => array(
+                        'clear' => 'both'
+                    )
+                ));
 
 
         }

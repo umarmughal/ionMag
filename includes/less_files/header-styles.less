@@ -8,6 +8,14 @@
     height: 108px;
   }
 
+  .td-header-sp-recs {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
   .td-header-main-menu {
     padding-right: 0;
     text-align: center;
@@ -37,6 +45,11 @@
 
   .td-header-sp-recs {
     margin-top: -11px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-top: 0;
+    }
   }
 
   /* responsive portrait phone */

@@ -133,7 +133,7 @@
 
 
 /*  ----------------------------------------------------------------------------
-    Search box
+    Search page
 */
 .search-page-wrap {
   margin-top: -1px;
@@ -265,6 +265,16 @@
 
   .search-page-wrap {
     float: none;
+  }
+
+  .search-page-wrap {
+    width: 300px;
+    margin: 0 auto;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 100%;
+    }
   }
 }
 

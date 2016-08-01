@@ -54,10 +54,13 @@
 */
 // general
 #td-header-menu {
-  width: 100%;
-
   .td-header-logo {
     padding: 0;
+  }
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    width: 100%;
   }
 }
 
@@ -177,6 +180,11 @@
   background-color: rgb(255,255,255);
   background-color: rgba(255,255,255,0.95);
   top: 0;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    background-color: #222;
+  }
 
   .td-main-menu-logo {
     margin-right: 32px;
