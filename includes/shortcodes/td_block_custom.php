@@ -126,7 +126,6 @@ class td_block_custom extends td_block {
             case '4':
                 $buffy .= $td_block_layout->open_row();
                 foreach($items2 as $item) {
-                    //$buffy .= $td_block_layout->open3();
                     $buffy .= '<div class="td-pb-span3">';
 
                     $buffy .= '<div class="td-custom td-tiny-image">';
@@ -144,7 +143,6 @@ class td_block_custom extends td_block {
                     $buffy .= '</div>';
 
                     $buffy .= '</div>';
-                    //$buffy .= $td_block_layout->close3();
                 }
                 $buffy .= $td_block_layout->close_row();
                 break;
