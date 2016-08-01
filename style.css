@@ -2017,7 +2017,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   position: absolute;
   top: 0;
   right: 0;
-  margin-top: -1px;
   line-height: 55px;
 }
 .td-header-main-menu .td-search-btns-wrap:hover .td-icon-search {
