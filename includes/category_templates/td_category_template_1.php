@@ -5,7 +5,7 @@ class td_category_template_1 extends td_category_template {
         ?>
 
         <!-- subcategory -->
-        <div class="td-category-header">
+        <div class="td-category-header td-container-wrap">
             <div class="td-container">
                 <div class="td-pb-row">
                     <div class="td-pb-span12">

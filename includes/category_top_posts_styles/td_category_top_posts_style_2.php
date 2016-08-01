@@ -13,7 +13,7 @@ class td_category_top_posts_style_2 extends td_category_top_posts_style {
         ?>
 
         <!-- big grid -->
-        <div class="td-category-grid">
+        <div class="td-category-grid td-container-wrap">
             <div class="td-container">
                 <div class="td-pb-row">
                     <div class="td-pb-span12">

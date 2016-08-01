@@ -27,7 +27,7 @@ td_global::$current_author_obj = $part_cur_auth_obj;
 
 ?>
 
-    <div class="td-author-header">
+    <div class="td-author-header td-container-wrap">
         <div class="td-container">
             <div class="td-pb-span12">
                 <div class="td-crumb-container">
@@ -42,7 +42,7 @@ td_global::$current_author_obj = $part_cur_auth_obj;
         </div>
     </div>
 
-    <div class="td-main-content-wrap">
+    <div class="td-main-content-wrap td-container-wrap">
         <div class="td-container <?php echo $td_sidebar_position; ?>">
             <div class="td-pb-row">
                 <?php

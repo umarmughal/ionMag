@@ -28,7 +28,7 @@ td_global::$custom_no_posts_message = __td('No results for your search', TD_THEM
 
 
 ?>
-    <div class="td-search-header">
+    <div class="td-search-header td-container-wrap">
         <div class="td-container">
             <div class="td-pb-span12">
                 <div class="td-crumb-container">
@@ -40,7 +40,7 @@ td_global::$custom_no_posts_message = __td('No results for your search', TD_THEM
         </div>
     </div>
 
-    <div class="td-main-content-wrap">
+    <div class="td-main-content-wrap td-container-wrap">
         <div class="td-container <?php echo $td_sidebar_position; ?>">
 
             <div class="td-pb-row">

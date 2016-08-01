@@ -18,7 +18,7 @@ $loop_module_id = td_util::get_option('tds_' . $template_id . '_page_layout', 1)
 get_header();
 
 ?>
-    <div class="td-main-content-wrap">
+    <div class="td-main-content-wrap td-container-wrap">
         <div class="td-container">
             <div class="td-pb-span12">
                 <div class="td-404-head">

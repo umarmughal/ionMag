@@ -35,7 +35,7 @@ if (is_day()) {
     $td_archive_title = __td('Archives', TD_THEME_NAME);
 }
 ?>
-    <div class="td-main-content-wrap">
+    <div class="td-main-content-wrap td-container-wrap">
         <div class="td-container <?php echo $td_sidebar_position; ?>">
             <div class="td-crumb-container">
                 <?php echo td_page_generator::get_archive_breadcrumbs(); // get the breadcrumbs - /includes/wp_booster/td_page_generator.php ?>

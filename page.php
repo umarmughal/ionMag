@@ -45,7 +45,7 @@ if ($td_use_page_builder) {
     if (have_posts()) { ?>
         <?php while ( have_posts() ) : the_post(); ?>
 
-            <div class="td-main-content-wrap td-main-page-wrap">
+            <div class="td-main-content-wrap td-main-page-wrap td-container-wrap">
                 <?php the_content(); ?>
                 <?php
                 if($td_enable_or_disable_page_comments == 'show_comments') {
@@ -68,7 +68,7 @@ if ($td_use_page_builder) {
     //no page builder detected, we load a default page template with sidebar / no sidebar
     ?>
 
-    <div class="td-main-content-wrap">
+    <div class="td-main-content-wrap td-container-wrap">
         <div class="td-container <?php echo $td_sidebar_position; ?>">
             <div class="td-crumb-container">
                 <?php echo td_page_generator::get_page_breadcrumbs(get_the_title()); ?>

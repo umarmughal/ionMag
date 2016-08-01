@@ -9,7 +9,7 @@ global $loop_module_id, $loop_sidebar_position, $post, $td_sidebar_position;
 $td_mod_single = new td_module_single($post);
 
 ?>
-<div class="td-main-content-wrap">
+<div class="td-main-content-wrap td-container-wrap">
 
     <div class="td-container td-post-template-default <?php echo $td_sidebar_position; ?>">
         <div class="td-crumb-container"><?php echo td_page_generator::get_single_breadcrumbs($td_mod_single->title); ?></div>
