@@ -1335,6 +1335,7 @@ img {
 .top-header-menu li:hover .sub-menu {
   display: block !important;
 }
+.top-header-menu li:hover.td-mega-menu ul,
 .top-header-menu li:hover .sub-menu ul {
   display: none !important;
 }
