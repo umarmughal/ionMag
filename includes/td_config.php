@@ -236,7 +236,7 @@ class td_config {
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_2.php',
                 'text' => 'Module 2',
-                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_2.png',
                 'used_on_blocks' => array('td_block_2', 'td_block_7'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
@@ -253,7 +253,7 @@ class td_config {
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_3.php',
                 'text' => 'Module 3',
-                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_3.png',
                 'used_on_blocks' => array('td_block_3', 'td_block_5', 'td_block_7', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
@@ -270,7 +270,7 @@ class td_config {
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_4.php',
                 'text' => 'Module 4',
-                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_4.png',
                 'used_on_blocks' => array('td_block_4', 'td_block_7', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '0',
@@ -287,7 +287,7 @@ class td_config {
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_5.php',
                 'text' => 'Module 5',
-                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_5.png',
                 'used_on_blocks' => array('td_block_5', 'td_block_8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
@@ -304,7 +304,7 @@ class td_config {
             array(
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_6.php',
                 'text' => 'Module 6',
-                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_6.png',
                 'used_on_blocks' => array('td_block_6'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
@@ -1435,7 +1435,7 @@ class td_config {
             array (
                 'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_2.php',
                 'posts_shown_in_the_loop' => 3,
-                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-2.png',
                 'text' => 'Grid 2',
                 'td_block_name' => 'td_block_big_grid_2'
             )
@@ -1445,7 +1445,7 @@ class td_config {
             array (
                 'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_3.php',
                 'posts_shown_in_the_loop' => 2,
-                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-3.png',
                 'text' => 'Grid 3',
                 'td_block_name' => 'td_block_big_grid_3'
             )
@@ -1511,7 +1511,7 @@ class td_config {
         
         td_api_footer_template::add('td_footer_template_2',
             array(
-                'img' => td_global::$get_template_directory_uri . '/images/panel/footer_templates/icon-footer-1.png',
+                'img' => td_global::$get_template_directory_uri . '/images/panel/footer_templates/icon-footer-2.png',
                 'file' => td_global::$get_template_directory . '/parts/footer/td_footer_template_2.php',
                 'text' => 'Style 2'
 
