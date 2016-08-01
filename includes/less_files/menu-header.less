@@ -196,6 +196,10 @@ ul.sf-menu li li.sfHover li ul {
 /*  ----------------------------------------------------------------------------
     submenu
 */
+.sf-menu li > ul { // submenu 1px up
+  margin-top: -1px;
+}
+
 .sf-menu ul {
   position: absolute;
   top: -999em;
@@ -681,6 +685,13 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 
     &:hover .td-icon-search {
       color: @td_theme_color;
+    }
+  }
+
+  #td-header-search-button-mob {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 45px;
     }
   }
 

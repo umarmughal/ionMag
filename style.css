@@ -989,6 +989,9 @@ img {
 .td-affix .td-logo-in-menu .td-sticky-disable.td-header-logo {
   display: none;
 }
+.td-header-style-2 .td-affix .td-header-main-menu .td-header-menu-search {
+  right: 0;
+}
 .td-affix .td-logo-in-menu .td-main-logo {
   display: none;
   /* responsive portrait phone */
@@ -1044,9 +1047,15 @@ img {
   padding-right: 0;
   text-align: center;
 }
-.td-header-style-2 .td-header-main-menu .menu-header-search {
+.td-header-style-2 .td-header-main-menu .td-header-menu-search {
   right: auto;
   display: inline-block;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-header-style-2 .td-header-main-menu .td-header-menu-search {
+    right: 0;
+  }
 }
 .td-header-style-2 .td-header-main-menu .td-icon-search {
   width: auto;
@@ -1252,10 +1261,6 @@ img {
   margin: 0;
   padding: 0;
   display: inline-block;
-  /* covaseala maxima */
-  /* ------------------------------------- */
-  /* ------------------------------------- */
-  /* ------------------------------------- */
 }
 .top-header-menu > li {
   display: inline-block;
@@ -1333,15 +1338,12 @@ img {
 .top-header-menu .current-category-ancestor > a {
   color: #42bdcd;
 }
-.top-header-menu li:hover .sub-menu {
-  display: block;
+.top-header-menu > .td-normal-menu:hover > .sub-menu {
+  display: block !important;
 }
+.top-header-menu .sub-menu,
 .top-header-menu ul .td-icon-menu-down,
 .top-header-menu .td-mega-menu .td-icon-menu-down {
-  display: none;
-}
-.top-header-menu .td-mega-menu ul,
-.top-header-menu ul ul {
   display: none !important;
 }
 .td_sp_login_ico_style {
@@ -1601,6 +1603,9 @@ ul.sf-menu li li.sfHover li ul {
 /*  ----------------------------------------------------------------------------
     submenu
 */
+.sf-menu li > ul {
+  margin-top: -1px;
+}
 .sf-menu ul {
   position: absolute;
   top: -999em;
@@ -2021,6 +2026,14 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 }
 .td-header-menu-search .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;
+}
+.td-header-menu-search #td-header-search-button-mob {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-header-menu-search #td-header-search-button-mob {
+    width: 45px;
+  }
 }
 .td-header-menu-search .td-icon-search {
   font-size: 15px;

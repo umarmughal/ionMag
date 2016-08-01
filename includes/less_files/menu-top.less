@@ -140,27 +140,15 @@
   }
 
   // hover submenu & megamenu
-  li:hover {
-    &.td-mega-menu,
-    .sub-menu {
-      ul {
-        display: none !important;
-      }
-    }
-
-    .sub-menu {
+  > .td-normal-menu:hover {
+    > .sub-menu {
       display: block !important;
     }
   }
 
-
+  .sub-menu,
   ul .td-icon-menu-down,
   .td-mega-menu .td-icon-menu-down {
-    display: none;
-  }
-
-  .td-mega-menu ul,
-  ul ul {
     display: none !important;
   }
 }

@@ -23,6 +23,11 @@
     .td-header-menu-search {
       right: auto;
       display: inline-block;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        right: 0;
+      }
     }
 
     .td-icon-search {
