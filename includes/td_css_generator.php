@@ -86,7 +86,8 @@ function td_css_generator() {
     .td-mega-menu-page .wpb_content_element ul li a :hover,
     .td-smart-list-dropdown-wrap .td-smart-list-button:hover,
     .td-instagram-user a,
-    .footer-email-wrap a {
+    .footer-email-wrap a,
+     .td-sub-footer-copy i {
       color: @theme_color;
     }
     
@@ -256,11 +257,17 @@ function td_css_generator() {
     .td-header-menu-wrap {
       background-color: @menu_color;
       border: none;
+    }
+    
+    .td-header-menu-wrap:before,
+    .td-header-menu-wrap:after {
+      display: none;
+    }
 
     /* MENU TEXT COLOR */
     /* @menu_text_color */
-    .td-header-wrap .td-header-menu-wrap .sf-menu > li > a,
-    .td-header-wrap .header-search-wrap .td-icon-search {
+    .sf-menu > li > a,
+    .td-header-wrap .td-header-menu-search .td-icon-search {
         color: @menu_text_color;
     }
     
@@ -294,8 +301,6 @@ function td_css_generator() {
 
     /* ------------------------------------------------------ */
     /* MOBILE MENU / MOBILE SEARCH COLORS */
-    
-    /* MENU BAR BACKGROUND COLOR */
     /* @mobile_menu_color */
     @media (max-width: 767px) {
         body .td-header-wrap .td-header-main-menu {
@@ -303,16 +308,20 @@ function td_css_generator() {
         }
     }
 
-    /* MENU BAR ICONS COLOR */
     /* @mobile_icons_color */
     @media (max-width: 767px) {
         body #td-top-mobile-toggle i,
-        .td-header-wrap .header-search-wrap .td-icon-search {
+        .td-header-menu-search i {
             color: @mobile_icons_color !important;
         }
     }
 
-    /* BACKGROUND GRADIENT COLOR */
+    /* @mobile_background_color */
+    .td-menu-background:before,
+    .td-search-background:before {
+        background: @mobile_background_color;
+    }
+    
     /* @mobile_gradient_one_mob */
     .td-menu-background:before,
     .td-search-background:before {
@@ -325,7 +334,7 @@ function td_css_generator() {
         background: linear-gradient(to bottom, @mobile_gradient_one_mob 0%, @mobile_gradient_two_mob 100%);
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@mobile_gradient_one_mob', endColorstr='@mobile_gradient_two_mob', GradientType=0 );
     }
-    
+
     /* @mobile_text_active_color */
     .td-mobile-content .current-menu-item > a,
     .td-mobile-content .current-menu-ancestor > a,
@@ -371,7 +380,6 @@ function td_css_generator() {
     .td-search-wrap-mob .td-post-date {
         color: @mobile_text_color;
     }
-    
     .td-search-wrap-mob .td-search-input:before,
     .td-search-wrap-mob .td-search-input:after,
     #td-mobile-nav .td-menu-login-section .td-menu-login span {
@@ -380,6 +388,60 @@ function td_css_generator() {
 
     #td-mobile-nav .td-register-section .td-login-input {
         border-bottom-color: @mobile_text_color !important;
+    }
+
+    /* @login_text_color */
+    .white-popup-block,
+    .mfp-content .td-login-panel-title,
+    .mfp-content .td-login-inputs,
+    .mfp-content .td-login-input,
+    .mfp-content .td-login-info-text,
+    .mfp-content #register-link,
+    .mfp-content #login-form .mfp-close:before,
+    .mfp-content .td-back-button i {
+        color: @login_text_color;
+    }
+    
+    .mfp-content .td-login-inputs:after {
+        background-color: @login_text_color;
+    }
+    
+    .mfp-content #register-link:before {
+        border-color: @login_text_color;
+    }
+    
+    /* @login_button_background */
+    .mfp-content .td-login-button {
+        background-color: @login_button_background;
+    }
+    
+    /* @login_button_color */
+    .mfp-content .td-login-button {
+        color: @login_button_color;
+    }
+    
+    /* @login_hover_background */
+    .mfp-content .td-login-button:active,
+    .mfp-content .td-login-button:hover {
+        background-color: @login_hover_background;
+    }
+    
+    /* @login_hover_color */
+    .mfp-content .td-login-button:active,
+    .mfp-content .td-login-button:hover {
+        color: @login_hover_color;
+    }
+    
+    /* @login_gradient_one */
+    .white-popup-block:after {
+        background: @login_gradient_one;
+        background: -moz-linear-gradient(45deg, @login_gradient_one 0%, @login_gradient_two 100%);
+        background: -webkit-gradient(left bottom, right top, color-stop(0%, @login_gradient_one), color-stop(100%, @login_gradient_two));
+        background: -webkit-linear-gradient(45deg, @login_gradient_one 0%, @login_gradient_two 100%);
+        background: -o-linear-gradient(45deg, @login_gradient_one 0%, @login_gradient_two 100%);
+        background: -ms-linear-gradient(45deg, @login_gradient_one 0%, @login_gradient_two 100%);
+        background: linear-gradient(45deg, @login_gradient_one 0%, @login_gradient_two 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@login_gradient_one', endColorstr='@login_gradient_two', GradientType=0 );
     }
 
 
@@ -457,11 +519,16 @@ function td_css_generator() {
     .td-page-title {
     	color: @page_title_color;
     }
+    
+    .td-page-title:after {
+        background-color: @page_title_color; 
+    }
 
     /* PAGE TEXT COLOR */
     /* @page_content_color */
+    .td-page-content,
     .td-page-content p,
-    .td-page-content .td_block_text_with_titl {
+    .td-page-content .td_block_text_with_title {
     	color: @page_content_color;
     }
 
@@ -1039,6 +1106,7 @@ function td_css_generator() {
     $td_css_compiler->load_setting('mobile_icons_color');
     $td_css_compiler->load_setting('mobile_text_color');
     $td_css_compiler->load_setting('mobile_text_active_color');
+    $td_css_compiler->load_setting('mobile_background_color');
     // menu gradient color
     $td_css_compiler->load_setting('mobile_gradient_one_mob');
     $td_css_compiler->load_setting('mobile_gradient_two_mob');
@@ -1050,6 +1118,27 @@ function td_css_generator() {
     if (!empty($td_css_compiler->settings['mobile_gradient_one_mob']) && empty($td_css_compiler->settings['mobile_gradient_two_mob'])) {
         $td_css_compiler->load_setting_raw('mobile_gradient_two_mob', '#b8333e');
     }
+
+    // sign in/join color
+    $td_css_compiler->load_setting('login_text_color');
+    $td_css_compiler->load_setting('login_button_background');
+    $td_css_compiler->load_setting('login_button_color');
+    $td_css_compiler->load_setting('login_hover_background');
+    $td_css_compiler->load_setting('login_hover_color');
+    // login gradient color
+    $td_css_compiler->load_setting('login_gradient_one');
+    $td_css_compiler->load_setting('login_gradient_two');
+    //color one is empty
+    if (empty($td_css_compiler->settings['login_gradient_one']) && !empty($td_css_compiler->settings['login_gradient_two'])) {
+        $td_css_compiler->load_setting_raw('login_gradient_one', 'rgba(42, 128, 203, 0.8)');
+    }
+    //color two is empty
+    if (!empty($td_css_compiler->settings['login_gradient_one']) && empty($td_css_compiler->settings['login_gradient_two'])) {
+        $td_css_compiler->load_setting_raw('login_gradient_two', 'rgba(66, 189, 205, 0.8)');
+    }
+
+    $td_css_compiler->load_setting('mobile_button_background_mob');
+    $td_css_compiler->load_setting('mobile_button_color_mob');
 
     // header colors
     $td_css_compiler->load_setting('header_wrap_color');
@@ -1066,15 +1155,17 @@ function td_css_generator() {
     $td_css_compiler->load_setting('footer_bottom_text_color');
     $td_css_compiler->load_setting('footer_bottom_hover_color');
     
-    // Posts colors
+    // post colors
     $td_css_compiler->load_setting('post_title_color');
     $td_css_compiler->load_setting('post_author_name_color');
     $td_css_compiler->load_setting('post_content_color');
     $td_css_compiler->load_setting('post_h_color');
     $td_css_compiler->load_setting('post_blockquote_color');
 
-
-
+    // page colors
+    $td_css_compiler->load_setting('page_title_color');
+    $td_css_compiler->load_setting('page_content_color');
+    $td_css_compiler->load_setting('page_h_color');
 
     // footer background
     $td_css_compiler->load_setting('footer_background_image');
