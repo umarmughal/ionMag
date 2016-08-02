@@ -15,31 +15,28 @@ function td_css_generator() {
     .td-drop-down-search .btn:hover,
     .td-drop-down-search .result-msg a,
     .top-header-menu > li a:hover,
-    .top-header-menu .current-menu-item > a,
-    .top-header-menu .current-menu-ancestor > a,
-    .top-header-menu .current-category-ancestor > a,
-    .sf-menu > .current-menu-item > a,
-    .sf-menu > .current-menu-ancestor > a,
-    .sf-menu > .current-category-ancestor > a,
+    body div .current-menu-item > a,
+    body div .current-menu-ancestor > a,
+    body div .current-category-ancestor > a,
     .sf-menu > li > a:hover,
-    .sf-menu > .sfHover > a,
+    .sf-menu .sfHover > a,
     .sf-menu ul .menu-item > a:hover,
     .sf-menu ul .sfHover > a,
-    .sf-menu ul .current-menu-ancestor > a,
-    .sf-menu ul .current-category-ancestor > a,
-    .sf-menu ul .current-menu-item > a,
     .td_mega_menu_sub_cats .cur-sub-cat,
     .td-mega-span .entry-title a:hover,
     .td_mod_mega_menu:hover .entry-title a,
     .td-header-main-menu .td-search-btns-wrap:hover .td-icon-search,
     a,
     cite a:hover,
+    
     .td-page-content blockquote p,
     .td-post-content blockquote p,
     .wpb_text_column blockquote p,
     .td_block_text_with_title blockquote p,
     .mce-content-body blockquote p,
     .comment-content blockquote p,
+    
+    
     .td_module_wrap:hover .entry-title a,
     .td-next-prev-wrap a:hover,
     .td_ajax_load_more:hover,
@@ -55,12 +52,11 @@ function td_css_generator() {
     .td-social-sharing-buttons:hover .td-social-but-text,
     .td-post-small-box a:hover,
     .td-post-next-prev-content span,
-    .td-post-next-prev-conten a:hover,
+    .td-post-next-prev-content a:hover,
     .author-box-wrap .td-author-social a:hover,
     .td-author-name a:hover,
     .td-author-url a:hover,
-    .td-related-title .td-related-left:hover,
-    .td-related-title .td-related-right:hover,
+    .td-related-title a:hover,
     .td-related-title .td-cur-simple-item,
     .logged-in-as a:hover,
     .comment-reply-link,
@@ -68,9 +64,7 @@ function td_css_generator() {
     #searchsubmit:hover,
     .search-submit:hover,
     .td-search-header .td-search-query,
-    .td-review-overall .td-icon-star,
-    .td-review-overall .td-icon-star-empty,
-    .td-review-overall .td-icon-star-half,
+    .td-review-overall i,
     .td-review-final-score,
     .td-category-siblings .td-subcat-dropdown a:hover,
     .td-category-siblings .td-subcat-dropdown a.td-current-sub-category,
@@ -993,7 +987,6 @@ function td_css_generator() {
     .wpb_text_column h6 {
     	@page_h6
     }
-    
     
     /* @footer_text_about */
 	.footer-text-wrap {

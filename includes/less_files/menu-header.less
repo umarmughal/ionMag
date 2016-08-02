@@ -665,11 +665,15 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   }
 
   i {
-    padding-top: 2px;
     font-size: 15px;
     line-height: 55px;
     width: 55px;
     color: #000;
+
+    &:before {
+      position: relative;
+      top: 2px;
+    }
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {

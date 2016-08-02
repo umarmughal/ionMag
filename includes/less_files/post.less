@@ -594,19 +594,19 @@
     display: inline-block;
     padding-bottom: 8px;
     white-space: nowrap;
-
-    &:hover {
-      color: @td_theme_color;
-    }
   }
 
   .td-related-left {
     margin-right: 30px;
   }
 
+  .td-cur-simple-item,
+  a:hover {
+    color: @td_theme_color;
+  }
+
   .td-cur-simple-item {
     position: relative;
-    color: @td_theme_color;
 
     &:after {
       content: '';
