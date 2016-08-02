@@ -1068,7 +1068,13 @@ img {
   }
 }
 .td-header-style-2 #td-header-search-button i {
-  padding-left: 16px;
+  margin-left: 10px;
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-header-style-2 #td-header-search-button i {
+    margin-left: 0;
+  }
 }
 /* the search button */
 #td-header-search-button {
@@ -1111,6 +1117,7 @@ img {
   /* responsive portrait phone */
   /* search form */
   /* this class is added by the js to open the menu - will be used for animation */
+  /* responsive all without phone */
 }
 @media (max-width: 767px) {
   .td-drop-down-search {
@@ -1145,8 +1152,10 @@ img {
   background-color: transparent;
   color: #42bdcd;
 }
-.td-drop-down-search.td-drop-down-search-open {
-  display: block;
+@media (min-width: 768px) {
+  .td-drop-down-search.td-drop-down-search-open {
+    display: block;
+  }
 }
 .td-drop-down-search .td-search-form {
   margin: 20px;
@@ -1462,8 +1471,11 @@ img {
 @media (max-width: 767px) {
   .td-header-main-menu {
     padding-right: 64px;
-    padding-left: 2px;
+    padding-left: 0;
   }
+}
+.td-header-main-menu .td-search-box-wrap {
+  margin-top: -1px;
 }
 /*  ----------------------------------------------------------------------------
     SF menu
@@ -1990,19 +2002,19 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td-header-menu-search .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;
 }
-.td-header-menu-search i {
+.td-header-menu-search .td-search-btns-wrap i {
   font-size: 15px;
   line-height: 55px;
   width: 55px;
   color: #000;
   /* responsive portrait phone */
 }
-.td-header-menu-search i:before {
+.td-header-menu-search .td-search-btns-wrap i:before {
   position: relative;
   top: 2px;
 }
 @media (max-width: 767px) {
-  .td-header-menu-search i {
+  .td-header-menu-search .td-search-btns-wrap i {
     color: #fff;
   }
 }
@@ -2042,7 +2054,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   width: 55px;
   line-height: 55px;
   display: inline-block;
-  padding-top: 1px;
   color: #fff;
 }
 /*
@@ -4650,6 +4661,9 @@ blockquote.pull-right:after {
 /*  ----------------------------------------------------------------------------
     Module MX2
 */
+.td_module_mx2 {
+  text-align: left;
+}
 .td_module_mx2 .td-module-thumb {
   position: absolute;
   margin-bottom: 0;
@@ -6196,6 +6210,10 @@ blockquote.pull-right:after {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
+}
+.td-social-sharing-buttons .td-sp {
+  width: 14px;
+  height: 20px;
 }
 .td-social-sharing-buttons:hover {
   border-color: #dbdbdb;

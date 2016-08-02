@@ -43,7 +43,11 @@
 
   @media (max-width: @responsive_p_phone_max) {
     padding-right: 64px;
-    padding-left: 2px;
+    padding-left: 0;
+  }
+
+  .td-search-box-wrap {
+    margin-top: -1px; // fix the alignment when the menu have borders
   }
 }
 /*  ----------------------------------------------------------------------------
@@ -662,22 +666,22 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     &:hover .td-icon-search {
       color: @td_theme_color;
     }
-  }
 
-  i {
-    font-size: 15px;
-    line-height: 55px;
-    width: 55px;
-    color: #000;
+    i {
+      font-size: 15px;
+      line-height: 55px;
+      width: 55px;
+      color: #000;
 
-    &:before {
-      position: relative;
-      top: 2px;
-    }
+      &:before {
+        position: relative;
+        top: 2px;
+      }
 
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      color: #fff;
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        color: #fff;
+      }
     }
   }
 

@@ -74,8 +74,11 @@
   }
 
   /* this class is added by the js to open the menu - will be used for animation */
-  &.td-drop-down-search-open {
-    display: block;
+  /* responsive all without phone */
+  @media (min-width: @responsive_p_tablet_min) {
+    &.td-drop-down-search-open {
+      display: block;
+    }
   }
 
   .td-search-form {
