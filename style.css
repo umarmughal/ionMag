@@ -4120,6 +4120,7 @@ blockquote.pull-right:after {
   color: #42bdcd;
 }
 .entry-title {
+  font-family: 'Work Sans', sans-serif;
   position: relative;
   margin: 0 0 13px 0;
   padding-bottom: 11px;
@@ -6413,6 +6414,7 @@ blockquote.pull-right:after {
 .td-post-next-prev-content a {
   display: block;
   line-height: 20px;
+  font-size: 15px;
   font-weight: 500;
   color: #000;
 }
@@ -6581,7 +6583,7 @@ blockquote.pull-right:after {
 .td_block_related_posts .entry-title {
   margin-bottom: 0;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 15px;
   /* responsive portrait phone */
 }
