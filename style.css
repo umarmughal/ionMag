@@ -989,9 +989,6 @@ img {
 .td-affix .td-logo-in-menu .td-sticky-disable.td-header-logo {
   display: none;
 }
-.td-header-style-2 .td-affix .td-header-main-menu .td-header-menu-search {
-  right: 0;
-}
 .td-affix .td-logo-in-menu .td-main-logo {
   display: none;
   /* responsive portrait phone */
@@ -1027,11 +1024,18 @@ img {
     Style 2
 */
 .td-header-style-2 {
-  /* responsive portrait phone */
+  /* desktop only */
+}
+@media (min-width: 767px) {
+  .td-header-style-2 .td-header-logo {
+    padding: 19px 0;
+  }
 }
 .td-header-style-2 .td-header-sp-logo,
 .td-header-style-2 .td-header-sp-recs {
   width: 100%;
+}
+.td-header-style-2 .td-header-sp-logo {
   height: 108px;
 }
 .td-header-style-2 .td-header-sp-recs {
@@ -1039,7 +1043,6 @@ img {
 }
 @media (max-width: 767px) {
   .td-header-style-2 .td-header-sp-recs {
-    width: 100%;
     height: auto;
   }
 }
@@ -1052,40 +1055,20 @@ img {
     text-align: center;
   }
 }
-.td-header-style-2 .td-header-main-menu .td-header-menu-search {
-  right: auto;
-  display: inline-block;
-  /* responsive portrait phone */
+.td-header-style-2 .sf-menu > li:last-child > a {
+  padding-right: 0;
 }
-@media (max-width: 767px) {
-  .td-header-style-2 .td-header-main-menu .td-header-menu-search {
-    right: 0;
+.td-header-style-2 .td-header-menu-search {
+  /* desktop only */
+}
+@media (min-width: 767px) {
+  .td-header-style-2 .td-header-menu-search {
+    right: auto;
+    display: inline-block;
   }
 }
-.td-header-style-2 .td-header-main-menu .td-icon-search {
-  width: auto;
-}
-@media (max-width: 767px) {
-  .td-header-style-2 .td-header-main-menu {
-    padding-right: 2px;
-  }
-}
-.td-header-style-2 .sf-menu ul {
-  text-align: left;
-}
-.td-header-style-2 .td-header-sp-recs {
-  margin-top: -11px;
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  .td-header-style-2 .td-header-sp-recs {
-    margin-top: 0;
-  }
-}
-@media (max-width: 767px) {
-  .td-header-style-2 .td-header-main-menu .td-search-btns-wrap {
-    right: 0;
-  }
+.td-header-style-2 #td-header-search-button i {
+  padding-left: 16px;
 }
 /* the search button */
 #td-header-search-button {
@@ -1718,7 +1701,6 @@ ul.sf-menu li li.sfHover li ul {
   }
 }
 .sf-menu a.sf-with-ul {
-  padding-right: 31px;
   min-width: 1px;
   /* trigger IE7 hasLayout so spans position accurately */
 }
@@ -1994,27 +1976,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td_mod_mega_menu:hover .entry-title a {
   color: #42bdcd;
 }
-/* toggle button - burger button */
-#td-top-mobile-toggle {
-  display: none;
-}
-#td-top-mobile-toggle a {
-  display: inline-block;
-}
-#td-top-mobile-toggle i {
-  font-size: 18px;
-  width: 20px;
-  line-height: 55px;
-  display: inline-block;
-  padding-top: 1px;
-  color: #000;
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  #td-top-mobile-toggle i {
-    color: #fff !important;
-  }
-}
 /*  ----------------------------------------------------------------------------
     Search
 */
@@ -2024,31 +1985,26 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   right: 0;
 }
 .td-header-menu-search .td-search-btns-wrap {
-  line-height: 55px;
   text-align: center;
 }
 .td-header-menu-search .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;
 }
-.td-header-menu-search #td-header-search-button-mob {
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  .td-header-menu-search #td-header-search-button-mob {
-    width: 45px;
-  }
-}
-.td-header-menu-search .td-icon-search {
+.td-header-menu-search i {
+  padding-top: 2px;
   font-size: 15px;
-  width: 35px;
+  line-height: 55px;
+  width: 55px;
   color: #000;
-  vertical-align: middle;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td-header-menu-search .td-icon-search {
+  .td-header-menu-search i {
     color: #fff;
   }
+}
+.td-header-menu-search #td-header-search-button-mob i {
+  font-size: 20px;
 }
 /*
   Mobile menu
@@ -2079,12 +2035,12 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   display: inline-block;
 }
 #td-top-mobile-toggle i {
-  font-size: 18px;
-  width: 54px;
+  font-size: 22px;
+  width: 55px;
   line-height: 55px;
   display: inline-block;
   padding-top: 1px;
-  color: #000;
+  color: #fff;
 }
 /*
     Mobile opened menu with admin bar
