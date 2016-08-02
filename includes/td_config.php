@@ -2080,15 +2080,15 @@ class td_config {
 	                </div>',
 
 	            // admin panel - header
-		        'text_header_logo' => 'Text logo',
+		        'text_header_logo' => '',
 
-		        'text_header_logo_description' => '--- The text logo is used only by Header Style 1. The other header styles use only images for logos',
+		        'text_header_logo_description' => '',
 
-		        'text_header_logo_mobile' => '---',
+		        'text_header_logo_mobile' => '-',
 
-		        'text_header_logo_mobile_image' => '---',
+		        'text_header_logo_mobile_image' => '160x40px',
 
-		        'text_header_logo_mobile_image_retina' => '---',
+		        'text_header_logo_mobile_image_retina' => '320x80px',
 
                 // what widgets do not work on the smart sidebar
                 'text_smart_sidebar_widget_support' => '
