@@ -2214,8 +2214,8 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 }
 .td-mobile-content li a {
   display: block;
-  line-height: 21px;
-  font-size: 21px;
+  line-height: 17px;
+  font-size: 17px;
   color: #000;
   margin-left: 0;
   padding: 12px 30px 12px 12px;
@@ -2224,11 +2224,13 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td-mobile-content .td-icon-menu-right {
   position: absolute;
   cursor: pointer;
-  top: 10px;
-  right: -4px;
+  top: 3px;
+  right: -3px;
   z-index: 1000;
-  font-size: 14px;
-  padding: 6px 12px;
+  font-size: 12px;
+  padding: 12px;
+  width: 37px;
+  height: 37px;
   float: right;
   color: #000;
   -webkit-transform-origin: 50% 48% 0;
@@ -2271,9 +2273,10 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   /* 2nd level submenu */
 }
 .td-mobile-content .sub-menu .td-icon-menu-right {
-  font-size: 11px;
-  right: -2px;
-  top: 8px;
+  padding: 14px;
+  font-size: 9px;
+  right: -3px;
+  top: 1px;
   color: #000;
 }
 .td-mobile-content .sub-menu a {
