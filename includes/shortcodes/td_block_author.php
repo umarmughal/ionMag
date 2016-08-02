@@ -12,12 +12,6 @@ class td_block_author extends td_block {
                 'open_in_new_window' => ''
             ), $atts));
 
-
-
-        if (empty($author_id)) {
-            return;
-        }
-
         $td_target = '';
         if (!empty($open_in_new_window)) {
             $td_target = ' target="_blank"';
