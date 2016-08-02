@@ -323,7 +323,6 @@ ul.sf-menu li li.sfHover li ul {
 }
 
 .sf-menu a.sf-with-ul {
-  padding-right: 31px;
   min-width: 1px; /* trigger IE7 hasLayout so spans position accurately */
 
   @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
@@ -648,29 +647,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   color: @td_theme_color;
 }
 
-/* toggle button - burger button */
-#td-top-mobile-toggle {
-  display: none;
-
-  a {
-    display: inline-block;
-  }
-
-  i {
-    font-size: 18px;
-    width: 20px;
-    line-height: 55px;
-    display: inline-block;
-    padding-top: 1px;
-    color: #000;
-
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      color: #fff !important;
-    }
-  }
-}
-
 
 /*  ----------------------------------------------------------------------------
     Search
@@ -681,7 +657,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   right: 0;
 
   .td-search-btns-wrap {
-    line-height: 55px;
     text-align: center;
 
     &:hover .td-icon-search {
@@ -689,22 +664,20 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     }
   }
 
-  #td-header-search-button-mob {
-    /* responsive portrait phone */
-    @media (max-width: @responsive_p_phone_max) {
-      width: 45px;
-    }
-  }
-
-  .td-icon-search {
+  i {
+    padding-top: 2px;
     font-size: 15px;
-    width: 35px;
+    line-height: 55px;
+    width: 55px;
     color: #000;
-    vertical-align: middle;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       color: #fff;
     }
+  }
+
+  #td-header-search-button-mob i {
+    font-size: 20px;
   }
 }
