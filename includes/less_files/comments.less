@@ -253,6 +253,11 @@
   form {
     display: block;
     margin-right: -23px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-right: -8px;
+    }
   }
 }
 
@@ -260,6 +265,11 @@
 .comment-form-input-wrap,
 .form-submit {
   padding-right: 23px;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    padding-right: 8px;
+  }
 }
 
 .comment-form-input-wrap {
