@@ -9,7 +9,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_menu_color',
-            'default_color' => '#222222'
+            'default_color' => '#fff'
         ));
         ?>
     </div>
@@ -26,7 +26,24 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_icons_color',
-            'default_color' => '#ffffff'
+            'default_color' => '#fff'
+        ));
+        ?>
+    </div>
+</div>
+
+<!-- Menu background color -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title">BACKGROUND COLOR</span>
+        <p>Select menu/search panel background</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_mobile_background_color',
+            'default_color' => '#fff'
         ));
         ?>
     </div>
@@ -43,12 +60,12 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_gradient_one_mob',
-            'default_color' => '#333145'
+            'default_color' => ''
         ));
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_gradient_two_mob',
-            'default_color' => '#b8333e'
+            'default_color' => ''
         ));
         ?>
     </div>
@@ -99,12 +116,12 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_button_background_mob',
-            'default_color' => '#ffffff'
+            'default_color' => '#000'
         ));
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_button_color_mob',
-            'default_color' => '#000000'
+            'default_color' => '#fff'
         ));
         ?>
     </div>
