@@ -70,26 +70,26 @@ if (!empty($post->ID)) {
 ?>
 
 <div class="td-main-content-wrap td-main-page-wrap">
+    <div class="td-container td-page-container">
+        <?php
+        /*
+        the first part of the page (built with the page builder)  - empty($paged) or $paged < 2 = first page
+        ---------------------------------------------------------------------------------------- */
+        //td_global::$cur_single_template_sidebar_pos = 'no_sidebar';
+        if(!empty($post->post_content)) { //show this only when we have content
+            if (empty($paged) or $paged < 2) { //show this only on the first page
+                if (have_posts()) { ?>
+                    <?php while ( have_posts() ) : the_post(); ?>
 
-    <?php
-    /*
-    the first part of the page (built with the page builder)  - empty($paged) or $paged < 2 = first page
-    ---------------------------------------------------------------------------------------- */
-    //td_global::$cur_single_template_sidebar_pos = 'no_sidebar';
-    if(!empty($post->post_content)) { //show this only when we have content
-        if (empty($paged) or $paged < 2) { //show this only on the first page
-            if (have_posts()) { ?>
-                <?php while ( have_posts() ) : the_post(); ?>
+                        <?php the_content(); ?>
 
-                    <?php the_content(); ?>
-
-                <?php endwhile; ?>
-            <?php }
+                    <?php endwhile; ?>
+                <?php }
+            }
         }
-    }
 
-    ?>
-
+        ?>
+    </div>
 
     <div class="td-container td-pb-article-list">
         <div class="td-pb-row">

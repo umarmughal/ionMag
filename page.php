@@ -46,18 +46,20 @@ if ($td_use_page_builder) {
         <?php while ( have_posts() ) : the_post(); ?>
 
             <div class="td-main-content-wrap td-main-page-wrap td-container-wrap">
-                <?php the_content(); ?>
-                <?php
-                if($td_enable_or_disable_page_comments == 'show_comments') {
-                    ?>
-                    <div class="td-pb-row">
-                        <div class="td-pb-span12">
-                            <?php comments_template('', true); ?>
-                        </div>
-                    </div>
+                <div class="td-container td-page-container">
+                    <?php the_content(); ?>
                     <?php
-                }
-                ?>
+                    if($td_enable_or_disable_page_comments == 'show_comments') {
+                        ?>
+                        <div class="td-pb-row">
+                            <div class="td-pb-span12">
+                                <?php comments_template('', true); ?>
+                            </div>
+                        </div>
+                        <?php
+                    }
+                    ?>
+                </div>
             </div> <!-- /.td-main-content-wrap -->
 
 
