@@ -18,6 +18,7 @@ function td_css_generator() {
     body div .current-menu-item > a,
     body div .current-menu-ancestor > a,
     body div .current-category-ancestor > a,
+    .sf-menu > .current-menu-item > a,
     .sf-menu > li > a:hover,
     .sf-menu .sfHover > a,
     .sf-menu ul .menu-item > a:hover,
@@ -28,15 +29,12 @@ function td_css_generator() {
     .td-header-main-menu .td-search-btns-wrap:hover .td-icon-search,
     a,
     cite a:hover,
-    
     .td-page-content blockquote p,
     .td-post-content blockquote p,
     .wpb_text_column blockquote p,
     .td_block_text_with_title blockquote p,
     .mce-content-body blockquote p,
     .comment-content blockquote p,
-    
-    
     .td_module_wrap:hover .entry-title a,
     .td-next-prev-wrap a:hover,
     .td_ajax_load_more:hover,

@@ -6197,6 +6197,10 @@ blockquote.pull-right:after {
   -moz-border-radius: 15px;
   border-radius: 15px;
 }
+.td-social-sharing-buttons .td-sp {
+  width: 14px;
+  height: 20px;
+}
 .td-social-sharing-buttons:hover {
   border-color: #dbdbdb;
 }
@@ -6911,10 +6915,23 @@ blockquote.pull-right:after {
 .comment-respond form {
   display: block;
   margin-right: -23px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .comment-respond form {
+    margin-right: -8px;
+  }
 }
 .comment-form-input-wrap,
 .form-submit {
   padding-right: 23px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .comment-form-input-wrap,
+  .form-submit {
+    padding-right: 8px;
+  }
 }
 .comment-form-input-wrap {
   float: left;
