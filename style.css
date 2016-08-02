@@ -1737,7 +1737,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 }
 .td-mega-menu ul {
   position: absolute;
-  width: 980px !important;
+  width: 100% !important;
   height: auto;
   margin-left: 0;
   padding: 0;
@@ -1913,7 +1913,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   -webkit-overflow-scrolling: touch;
 }
 .td-mega-row {
-  display: table-cell;
   width: 100%;
 }
 .td-mega-span {
