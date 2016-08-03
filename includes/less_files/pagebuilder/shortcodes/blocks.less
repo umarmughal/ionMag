@@ -267,18 +267,20 @@
 */
 .td_quote_on_blocks {
   font-family: @font2;
-  font-size: 30px;
-  line-height: 35px;
+  font-size: 25px;
+  line-height: 30px;
   font-weight: 400;
   font-style: italic;
   text-align: left;
   text-transform: uppercase;
   color: @td_theme_color;
-  margin-top: 10px;
+  margin-top: 15px;
 
-  /* responsive portrait phone */
-  @media (max-width: @responsive_p_phone_max) {
-    display: none;
+  /* responsive portrait tablet */
+  @media (max-width: @responsive_p_tablet_max) {
+    font-size: 22px;
+    line-height: 28px;
+    margin-top: 10px;
   }
 }
 

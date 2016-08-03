@@ -143,39 +143,42 @@ h6 > a {
 }
 h1 {
   font-size: 44px;
-  line-height: 60px;
+  line-height: 48px;
   margin-top: 33px;
   margin-bottom: 23px;
 }
 h2 {
   font-size: 33px;
-  line-height: 48px;
+  line-height: 37px;
   margin-top: 27px;
   margin-bottom: 17px;
 }
 h3 {
   font-size: 25px;
-  line-height: 38px;
+  line-height: 29px;
   margin-top: 24px;
   margin-bottom: 14px;
 }
 h4 {
   font-size: 19px;
-  line-height: 30px;
+  line-height: 24px;
   margin-top: 21px;
   margin-bottom: 11px;
+  font-weight: bold;
 }
 h5 {
   font-size: 16px;
   line-height: 24px;
   margin-top: 19px;
   margin-bottom: 9px;
+  font-weight: bold;
 }
 h6 {
   font-size: 13px;
   line-height: 19px;
   margin-top: 19px;
   margin-bottom: 9px;
+  font-weight: bold;
 }
 .videopress-placeholder {
   width: 100% !important;
@@ -201,7 +204,7 @@ textarea {
   max-width: 100%;
   height: 168px;
   min-height: 168px;
-  padding: 6px 9px 6px 9px;
+  padding: 6px 9px;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -510,7 +513,7 @@ figure.aligncenter {
 .mce-content-body {
   font-size: 16px;
   line-height: 24px;
-  color: #000;
+  color: #222;
 }
 .td-page-content a:hover,
 .td-post-content a:hover,
@@ -540,7 +543,7 @@ figure.aligncenter {
 .td_block_text_with_title li,
 .woocommerce #tab-description li,
 .mce-content-body li {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 24px;
 }
 .td-page-content p,
@@ -619,7 +622,7 @@ figure.aligncenter {
   font-family: 'Work Sans', sans-serif;
   font-size: 31px;
   line-height: 36px;
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
   text-align: center;
   text-transform: uppercase;
@@ -776,8 +779,8 @@ figure.aligncenter {
 .comment-content .td_quote_box p {
   font-family: 'Source Sans Pro', sans-serif;
   color: #777777;
-  font-size: 13px;
-  line-height: 21px;
+  font-size: 14px;
+  line-height: 20px;
   padding-bottom: 16px;
   margin: 0;
   text-transform: none;
@@ -901,10 +904,11 @@ figure.aligncenter {
 .comment-content .td_pull_quote p {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
-  line-height: 26px;
+  line-height: 20px;
   font-weight: 600;
   text-transform: none;
   text-align: center;
+  margin-bottom: 0;
 }
 .td-page-content .td_pull_quote p:first-child:before,
 .td-post-content .td_pull_quote p:first-child:before,
@@ -1108,7 +1112,7 @@ blockquote.pull-right:after {
   font-weight: bold;
   font-size: 79px;
   line-height: 69px;
-  margin: 0 9px 0 0;
+  margin: 0;
   padding: 0 13px 0 0;
 }
 /*  ----------------------------------------------------------------------------
@@ -1137,7 +1141,7 @@ blockquote.pull-right:after {
 */
 .td_text_highlight_0 {
   background-color: rgba(0, 0, 0, 0.77);
-  padding: 5px 0 6px 0;
+  padding: 2px 0 3px 0;
   margin: 0 8px 0 8px;
   box-shadow: 8px 0 0 rgba(0, 0, 0, 0.77), -8px 0 0 rgba(0, 0, 0, 0.77);
   color: #2a2a2a;
@@ -1151,7 +1155,7 @@ blockquote.pull-right:after {
   cursor: default;
 }
 .td_text_highlight_marker {
-  padding: 5px 0 6px 0;
+  padding: 2px 0 3px 0;
   margin: 0 8px 0 8px;
   color: white;
   -webkit-transition: color 400ms;
