@@ -943,7 +943,7 @@ class td_config {
         td_api_block::add('td_block_author',
             array(
                 'map_in_visual_composer' => true,
-                "name" => 'Author',
+                "name" => 'Author box',
                 "base" => "td_block_author",
                 "class" => "",
                 "controls" => "full",
