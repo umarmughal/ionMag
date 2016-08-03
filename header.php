@@ -21,7 +21,7 @@
 <?php locate_template('parts/search.php', true);?>
 
 
-<div id="td-outer-wrap">
+<div id="td-outer-wrap" class="td-theme-wrap">
     <?php //this is closing in the footer.php file ?>
 
 <?php

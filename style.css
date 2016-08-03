@@ -2063,9 +2063,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   color: #000;
   display: block;
 }
-.td-mega-span .entry-title a:hover {
-  color: #42bdcd;
-}
 .td-mega-span .entry-title:after {
   display: none;
 }
@@ -5455,22 +5452,22 @@ blockquote.pull-right:after {
 /*  ----------------------------------------------------------------------------
     Author block
 */
-.td_author .block-title {
+.td_block_author .block-title {
   float: none;
   margin-bottom: 20px;
   width: 100%;
 }
-.td_author .td_mod_wrap {
+.td_block_author .td_mod_wrap {
   font-family: 'Work Sans', sans-serif;
   text-align: center;
 }
-.td_author .avatar {
+.td_block_author .avatar {
   margin-bottom: 7px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
 }
-.td_author .td-author-name {
+.td_block_author .td-author-name {
   position: relative;
   margin-bottom: 10px;
   padding-bottom: 15px;
@@ -5478,7 +5475,7 @@ blockquote.pull-right:after {
   font-weight: 500;
   text-transform: uppercase;
 }
-.td_author .td-author-name:after {
+.td_block_author .td-author-name:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -5492,21 +5489,21 @@ blockquote.pull-right:after {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='20')";
   filter: alpha(opacity=20);
 }
-.td_author .td-author-description {
+.td_block_author .td-author-description {
   padding: 2px 0 16px 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
   line-height: 19px;
 }
-.td_author .td-author-page {
+.td_block_author .td-author-page {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 15px;
   font-style: italic;
 }
-.td_author .td-author-page a {
+.td_block_author a {
   color: #000;
 }
-.td_author .td-author-page a:hover {
+.td_block_author a:hover {
   color: #42bdcd;
 }
 /*  ----------------------------------------------------------------------------
