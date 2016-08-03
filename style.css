@@ -3463,8 +3463,8 @@ figure.aligncenter {
 .td_block_text_with_title li,
 .woocommerce #tab-description li,
 .mce-content-body li {
-  font-size: 17px;
-  line-height: 24px;
+  font-size: 16px;
+  line-height: 26px;
 }
 .td-page-content p,
 .td-post-content p,
@@ -4808,7 +4808,6 @@ blockquote.pull-right:after {
 */
 .td-block-title-wrap {
   position: relative;
-  margin-bottom: 20px;
   *zoom: 1;
 }
 .td-block-title-wrap:before,
@@ -4838,7 +4837,7 @@ blockquote.pull-right:after {
   font-weight: 600;
   text-transform: uppercase;
   line-height: 1;
-  margin: 0;
+  margin: 0 0 20px 0;
 }
 .block-title a,
 .block-title span,

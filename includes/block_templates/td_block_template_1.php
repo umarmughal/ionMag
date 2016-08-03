@@ -71,15 +71,13 @@ class td_block_template_1 {
             .$unique_block_class .block-title:after {
                 display: none;
             }
-            .$unique_block_class .td-block-title-wrap {
-                margin-bottom: 22px;
-            }
             .$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-list {
                 margin-top: -2px;
             }
             .$unique_block_class .block-title {
                 font-size: 13px;
                 font-weight: 500;
+                margin-bottom: 22px;
             }
 
             .$unique_block_class .td_module_wrap:hover .entry-title a,
