@@ -970,10 +970,19 @@ class td_config {
                         "class" => ""
                     ),
                     array(
+                        "param_name" => "author_url_text",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Author page link text",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
                         "param_name" => "author_url",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Author page url",
+                        "heading" => "Author page link url",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""

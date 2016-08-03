@@ -8,6 +8,7 @@ class td_block_author extends td_block {
         extract(shortcode_atts(
             array(
                 'author_id' => '',
+                'author_url_text' => '',
                 'author_url' => '',
                 'open_in_new_window' => ''
             ), $atts));
@@ -42,9 +43,11 @@ class td_block_author extends td_block {
         $buffy .= $td_author->description;
         $buffy .= '</div>';
 
-        $buffy .= '<div class="td-author-page">';
-        $buffy .= '<a href="' . $author_url . '"' . $td_target . '>' . __td('About me', TD_THEME_NAME) . '</a>';
-        $buffy .= '</div>';
+        if(!empty($author_url)) {
+            $buffy .= '<div class="td-author-page">';
+            $buffy .= '<a href="' . $author_url . '"' . $td_target . '>' . $author_url_text . '</a>';
+            $buffy .= '</div>';
+        }
 
         $buffy .= '</div>';
 
