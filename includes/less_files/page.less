@@ -157,6 +157,11 @@
 .td-author-header {
   padding-bottom: 43px;
 
+  /* responsive portrait tablet */
+  @media (max-width: @responsive_p_tablet_max) {
+    padding-bottom: 23px;
+  }
+
   // Author box
   .author-box-wrap {
     padding: 0;
@@ -180,6 +185,12 @@
     font-size: 25px;
     line-height: 24px;
     text-transform: uppercase;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding-bottom: 0;
+      margin-top: 10px;
+      width: 100%;
+    }
 
     &:after {
       display: block;
@@ -187,6 +198,10 @@
       right: 0;
       margin: 0 auto;
       width: 80px;
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        display: none;
+      }
     }
   }
 
@@ -194,6 +209,12 @@
     float: none;
     margin: -8px 0 0 22px;
     .border-radius(50%);
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin: 15px 0 0;
+      width: 120px;
+    }
   }
 
   .desc {
@@ -205,17 +226,30 @@
   .td-author-url,
   .td-author-social {
     display: inline-block;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      display: block;
+    }
   }
 
   .td-author-url,
   .td-author-social {
     margin: 0 0 0 41px;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin: 0;
+    }
   }
 
   // Counters
   .td-author-counters {
     font-size: 11px;
     font-style: italic;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 5px;
+    }
   }
 
   .td-author-comments-count {
@@ -229,15 +263,6 @@
     .border-radius(10px);
   }
 
-  // Social media
-  .td-social-icon-wrap {
-    margin-right: 12px;
-
-    &:last-child {
-      margin-right: 0;
-    }
-  }
-
   // Description
   .td-author-description {
     width: 80%;
@@ -246,6 +271,12 @@
     font-family: @font2;
     font-size: 15px;
     line-height: 23px;
+
+    /* responsive portrait tablet */
+    @media (max-width: @responsive_p_tablet_max) {
+      width: 95%;
+      padding-top: 13px;
+    }
   }
 }
 
@@ -272,6 +303,11 @@
 .td-404-head {
   padding: 60px 0;
   text-align: center;
+
+  /* responsive */
+  @media (max-width: @responsive_p_tablet_max) {
+    padding: 30px 0;
+  }
 
   .search-page-wrap {
     float: none;
@@ -321,8 +357,7 @@
 .td-404-sub-sub-title {
   margin-bottom: 31px;
   font-family: @font2;
-  font-size: 15px;
-  font-style: italic;
-  line-height: 23px;
+  font-size: 14px;
+  line-height: 21px;
   color: #666;
 }
