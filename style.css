@@ -9922,21 +9922,49 @@ input.search-submit:hover {
 */
 .td_smart_list_1 {
   margin-top: 38px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 {
+    margin-top: 20px;
+  }
 }
 .td_smart_list_1 .td-item {
-  margin-bottom: 53px;
+  margin-bottom: 50px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-item {
+    margin-bottom: 30px;
+  }
+}
+.td_smart_list_1 .td-item:last-child {
+  margin-bottom: 0;
+}
+.td_smart_list_1 .td-item h2 {
+  line-height: 30px;
+  margin-bottom: 0;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-item h2 {
+    text-align: center;
+    margin-top: 0;
+  }
 }
 .td_smart_list_1 .td-number-and-title {
   width: 100%;
   min-height: 40px;
   position: relative;
-  padding: 0;
-  padding-bottom: 38px;
+  padding: 0 0 21px 0;
   font-family: 'Work Sans', sans-serif;
   text-align: left;
+  /* responsive portrait phone */
 }
-.td_smart_list_1 h2 {
-  margin-bottom: 0;
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-number-and-title {
+    padding-bottom: 17px;
+  }
 }
 .td_smart_list_1 .td-sml-current-item-nr {
   position: absolute;
@@ -9950,21 +9978,38 @@ input.search-submit:hover {
   color: #fff;
   min-width: 40px;
   text-align: center;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-sml-current-item-nr {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+  }
 }
 .td_smart_list_1 .td-sml-current-item-title {
   display: inline-block;
   padding: 4px 0 0 61px;
   font-size: 23px;
   font-weight: 500;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-sml-current-item-title {
+    padding: 14px 0 0;
+    font-size: 19px;
+    line-height: 25px;
+    width: 100%;
+  }
 }
 .td_smart_list_1 .td-sml-description {
   margin-top: 0;
 }
 .td_smart_list_1 .td-slide-smart-list-figure {
-  margin: 8px 0 24px 0;
+  margin: 0 0 24px 0;
 }
-.td_smart_list_1 h2 {
-  line-height: 32px;
+.td_smart_list_1 .td-slide-smart-list-figure img {
+  display: block;
 }
 /*
     general
