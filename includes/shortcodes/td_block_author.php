@@ -43,7 +43,7 @@ class td_block_author extends td_block {
         $buffy .= $td_author->description;
         $buffy .= '</div>';
 
-        if(!empty($author_url)) {
+        if(!empty($author_url_text)) {
             $buffy .= '<div class="td-author-page">';
             $buffy .= '<a href="' . $author_url . '"' . $td_target . '>' . $author_url_text . '</a>';
             $buffy .= '</div>';
