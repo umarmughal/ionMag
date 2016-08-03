@@ -773,7 +773,7 @@ class td_config {
                 "class" => 'td_block_big_grid_2',
                 "controls" => "full",
                 "category" => 'Blocks',
-                'icon' => 'icon-pagebuilder-td_block_big_grid_1',
+                'icon' => 'icon-pagebuilder-td_block_big_grid_2',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_big_grid_2.php',
                 "params" => self::td_block_big_grid_params(),
             )
@@ -787,7 +787,7 @@ class td_config {
                 "class" => 'td_block_big_grid_3',
                 "controls" => "full",
                 "category" => 'Blocks',
-                'icon' => 'icon-pagebuilder-td_block_big_grid_1',
+                'icon' => 'icon-pagebuilder-td_block_big_grid_3',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_big_grid_3.php',
                 "params" => self::td_block_big_grid_params(),
             )
