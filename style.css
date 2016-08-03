@@ -24,6 +24,7 @@ Tags:black, white, one-column, two-columns, fixed-layout
 */
 body {
   visibility: visible !important;
+  background-color: #fff;
 }
 /*  ----------------------------------------------------------------------------
     responsive settings
