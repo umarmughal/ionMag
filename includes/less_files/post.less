@@ -299,12 +299,16 @@
 // source/via + tag group
 .td-post-source-tags {
   position: relative;
-  padding-bottom: 29px;
   font-size: 11px;
 
   &:before {
     top: auto;
     bottom: 0;
+  }
+
+  > div:last-child,
+  > ul {
+    padding-bottom: 29px;
   }
 }
 
