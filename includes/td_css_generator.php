@@ -76,7 +76,7 @@ function td_css_generator() {
     .footer-email-wrap a,
     .td-sub-footer-copy i,
     .td_mod_related_posts:hover .entry-title > a,
-    .td_block_related_posts .entry-title a:hover{
+    .td-footer-outer-wrapper a:hover {
       color: @theme_color;
     }
 
