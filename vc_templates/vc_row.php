@@ -143,9 +143,9 @@ if ( ! $parallax && $has_video_bg ) {
 $css_class = preg_replace( '/\s+/', ' ', apply_filters( VC_SHORTCODE_CUSTOM_CSS_FILTER_TAG, implode( ' ', array_filter( array_unique( $css_classes ) ) ), $this->settings['base'], $atts ) );
 $wrapper_attributes[] = 'class="' . esc_attr( trim( $css_class ) ) . '"';
 
-$output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
+$output .= '<div class="tdc-row"><div ' . implode( ' ', $wrapper_attributes ) . '>';
 $output .= wpb_js_remove_wpautop( $content );
-$output .= '</div>';
+$output .= '</div></div>';
 $output .= $after_output;
 
 echo $output;
