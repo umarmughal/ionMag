@@ -9923,7 +9923,7 @@ input.search-submit:hover {
 @media print {
   html,
   body {
-    background-color: #FFF;
+    background-color: #fff;
     color: #000;
     margin: 0;
     padding: 0;
@@ -9962,11 +9962,12 @@ input.search-submit:hover {
   .single-post .td-post-next-prev,
   .single-post .td_block_related_posts,
   .single-post #comments,
+  .single-post .td-footer-instagram-container,
   .single-post .td-footer-container,
   .single-post .td-footer-wrapper,
   .single-post .td-sub-footer-container,
   .single-post .td-category,
-  .single-post .td-post-views,
+  .single-post .td-post-views-wrap,
   .single-post .td-post-comments,
   .single-post .td-scroll-up,
   .single-post iframe,
@@ -9980,6 +9981,11 @@ input.search-submit:hover {
   }
   .backstretch {
     display: none;
+  }
+  .author-box-wrap .desc {
+    margin: 0;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
   }
   .td-main-content,
   header {
