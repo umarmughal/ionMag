@@ -76,7 +76,10 @@ function td_css_generator() {
     .footer-email-wrap a,
     .td-sub-footer-copy i,
     .td_mod_related_posts:hover .entry-title > a,
-    .td-footer-outer-wrapper a:hover {
+    .td-footer-outer-wrapper a:hover,
+    .td_block_authors .td_authors_wrap:hover .td-authors-name a,
+    .td_block_authors .td_authors_wrap.td-active .td-authors-name a,
+    .td_block_authors .td-authors-url a:hover {
       color: @theme_color;
     }
 

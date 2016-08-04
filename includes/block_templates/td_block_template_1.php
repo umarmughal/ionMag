@@ -49,7 +49,11 @@ class td_block_template_1 {
             .$unique_block_class div .block-title span,
             .$unique_block_class div .block-title a,
             .$unique_block_class .td-module-comments a:hover,
-            .$unique_block_class .td-next-prev-wrap a:hover {
+            .$unique_block_class .td-next-prev-wrap a:hover,
+            .$unique_block_class .td-authors-url a:hover,
+            .$unique_block_class .td_authors_wrap:hover .td-authors-name a,
+            .$unique_block_class .td_authors_wrap.td-active .td-authors-name a,
+            .$unique_block_class .td-authors-url a:hover {
                 color: @header_text_color;
             }
 
@@ -87,7 +91,11 @@ class td_block_template_1 {
         	.$unique_block_class .td-wrapper-pulldown-filter a.td-pulldown-filter-link:hover,
         	.$unique_block_class .td-wrapper-pulldown-filter a.td-cur-simple-item,
             .$unique_block_class .td-module-comments a:hover,
-            .$unique_block_class .td-next-prev-wrap a:hover {
+            .$unique_block_class .td-next-prev-wrap a:hover,
+            .$unique_block_class .td-authors-url a:hover,
+            .$unique_block_class .td_authors_wrap:hover .td-authors-name a,
+            .$unique_block_class .td_authors_wrap.td-active .td-authors-name a,
+            .$unique_block_class .td-authors-url a:hover {
                 color: @header_color;
             }
 

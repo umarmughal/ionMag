@@ -2,11 +2,10 @@
 * More stories box
 */
 .td-more-articles-box {
-  -webkit-transform: translate3d(0, 0, 0); //chrome / safari / ios fix for 3d parallax
-  transform: translate3d(0, 0, 0);
+  //.transform(translate3d(0, 0, 0)); // with translate on firefox disappear the bottom border
   position: fixed;
   width: 341px;
-  bottom: 48px;
+  bottom: 64px;
   right: -384px;
   background-color: #fff;
   padding: 20px;
@@ -15,16 +14,12 @@
   border-color: rgba(0, 0, 0, 0.08);
   z-index: 9999;
   visibility: hidden;
-  -webkit-transition: all 500ms cubic-bezier(0.265, 0.365, 0.260, 0.865);
-  -moz-transition: all 500ms cubic-bezier(0.265, 0.365, 0.260, 0.865);
-  -o-transition: all 500ms cubic-bezier(0.265, 0.365, 0.260, 0.865);
-  transition: all 500ms cubic-bezier(0.265, 0.365, 0.260, 0.865); /* custom */
+  .transition(all 500ms cubic-bezier(0.265, 0.365, 0.260, 0.865));
 
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
     display: none !important;
   }
-
 }
 
 .td-more-articles-box-title {

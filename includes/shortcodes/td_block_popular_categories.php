@@ -51,7 +51,7 @@ class td_block_popular_categories extends td_block {
         $buffy .= $this->get_block_title();
 
         if (!empty($categories)) {
-            $buffy .= '<ul class="td-pb-padding-side">';
+            $buffy .= '<ul>';
             foreach ($categories as $category) {
                 if (strtolower($category->cat_name) != 'uncategorized') {
                     $buffy .= '<li><a href="' . get_category_link($category->cat_ID) . '">' . $category->name . '<span class="td-cat-no">' . $category->count . '</span></a></li>';

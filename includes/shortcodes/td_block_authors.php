@@ -72,8 +72,10 @@ class td_block_authors extends td_block {
         //get the block js
         $buffy .= $this->get_block_css();
 
-        $buffy .= $this->get_block_title();
-
+        // block title wrap
+        $buffy .= '<div class="td-block-title-wrap">';
+            $buffy .= $this->get_block_title(); //get the block title
+        $buffy .= '</div>';
 
         if (!empty($td_authors)) {
             foreach ($td_authors as $td_author) {
@@ -85,7 +87,7 @@ class td_block_authors extends td_block {
                 if (!empty(td_global::$current_author_obj->ID) and td_global::$current_author_obj->ID == $td_author->ID) {
                     $current_author_class = ' td-active';
                 }
-                $buffy .= '<div class="td_mod_wrap td-pb-padding-side' . $current_author_class . '">';
+                $buffy .= '<div class="td_authors_wrap' . $current_author_class . '">';
                 $buffy .= '<div class="td-author-avatar">';
                 $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . get_avatar($td_author->user_email, '60') . '</a>';
                 $buffy .= '</div>';

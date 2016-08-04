@@ -28,10 +28,13 @@ class td_block_author extends td_block {
         //get the block js
         $buffy .= $this->get_block_css();
 
-        $buffy .= $this->get_block_title();
+        // block title wrap
+        $buffy .= '<div class="td-block-title-wrap">';
+            $buffy .= $this->get_block_title(); //get the block title
+        $buffy .= '</div>';
 
 
-        $buffy .= '<div class="td_mod_wrap td-pb-padding-side">';
+        $buffy .= '<div class="td_author_wrap">';
         $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . get_avatar($td_author->user_email, '196') . '</a>';
         $buffy .= '<div class="item-details">';
 
