@@ -3,11 +3,9 @@ Header style 2
 -->
 
 <div class="td-header-wrap td-header-style-2">
-    <div class="td-header-top-menu">
-        <div class="td-container-wrap">
-            <div class="td-container">
-                <?php td_api_top_bar_template::_helper_show_top_bar() ?>
-            </div>
+    <div class="td-header-top-menu td-container-wrap">
+        <div class="td-container">
+            <?php td_api_top_bar_template::_helper_show_top_bar() ?>
         </div>
     </div>
 

@@ -11,7 +11,7 @@ class td_module_mega_menu extends td_module {
         ob_start();
         ?>
 
-        <div class="<?php echo $this->get_module_classes(array("td_mod_mega_menu")); ?>">
+        <div class="<?php echo $this->get_module_classes(); ?>">
             <div class="td-module-image">
                 <?php
                 if($get_block_sub_cats !== false) {

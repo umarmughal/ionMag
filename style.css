@@ -1053,14 +1053,17 @@ img {
     Header menu affix
 */
 .td-header-menu-wrap.td-affix {
-  -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  -o-transform: translate3d(0, 0, 0);
   margin-right: auto;
   margin-left: auto;
   width: 100%;
   z-index: 9999;
   position: fixed !important;
-  background-color: #ffffff;
+  background-color: #fff;
   background-color: rgba(255, 255, 255, 0.95);
   top: 0;
   /* responsive portrait phone */
@@ -1373,9 +1376,6 @@ img {
   line-height: 1;
   text-decoration: none;
 }
-.top-header-menu > li a:hover {
-  color: #42bdcd;
-}
 .top-header-menu > li:last-of-type a {
   margin-right: 0;
 }
@@ -1433,11 +1433,6 @@ img {
 .top-header-menu .td_user_logd_in:hover {
   text-decoration: none !important;
 }
-.top-header-menu .current-menu-item > a,
-.top-header-menu .current-menu-ancestor > a,
-.top-header-menu .current-category-ancestor > a {
-  color: #42bdcd;
-}
 .top-header-menu > .td-normal-menu:hover > .sub-menu {
   display: block !important;
 }
@@ -1454,6 +1449,12 @@ img {
 .td_sp_logout_ico_style {
   top: 3px;
   left: 17px;
+}
+.td-header-top-menu .top-header-menu a:hover,
+.td-header-top-menu .top-header-menu .current-menu-item > a,
+.td-header-top-menu .top-header-menu .current-menu-ancestor > a,
+.td-header-top-menu .top-header-menu .current-category-ancestor > a {
+  color: #42bdcd;
 }
 /*  ----------------------------------------------------------------------------
     search & social
@@ -1556,6 +1557,13 @@ img {
 .td-header-menu-wrap:after {
   bottom: 0;
 }
+.td-header-menu-wrap.td-affix:after {
+  display: block;
+  bottom: -12px;
+  background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMGAhQQCyEd++8AAAAUSURBVAjXY1AAQgMgdABCCBAAQQAT6AFRBPHcWgAAAABJRU5ErkJggg==');
+  height: 12px;
+  opacity: 1;
+}
 @media (max-width: 767px) {
   .td-header-menu-wrap {
     background-color: #222;
@@ -1591,6 +1599,7 @@ img {
 .sf-menu li {
   margin: 0;
   list-style: none;
+  text-align: left;
 }
 /* responsive phone */
 @media (max-width: 767px) {
@@ -2087,7 +2096,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   width: 25%;
   min-width: 0;
 }
-.td_mod_mega_menu:hover .entry-title a {
+.td_module_mega_menu:hover .entry-title a {
   color: #42bdcd;
 }
 /*  ----------------------------------------------------------------------------

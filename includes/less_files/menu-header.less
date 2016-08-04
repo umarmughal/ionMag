@@ -16,9 +16,16 @@
     top: 0;
   }
 
-
   &:after {
     bottom: 0;
+  }
+
+  &.td-affix:after {
+    display: block;
+    bottom: -12px;
+    background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAMBAMAAABRpcpkAAAAD1BMVEUAAAAAAAAAAAAAAAAAAABPDueNAAAABXRSTlMGAhQQCyEd++8AAAAUSURBVAjXY1AAQgMgdABCCBAAQQAT6AFRBPHcWgAAAABJRU5ErkJggg==');
+    height: 12px;
+    opacity: 1;
   }
 
   /* responsive portrait phone */
@@ -56,6 +63,7 @@
 .sf-menu, .sf-menu ul, .sf-menu li {
   margin: 0;
   list-style: none;
+  text-align: left;
 }
 
 /* responsive phone */
@@ -643,7 +651,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   }
 }
 
-.td_mod_mega_menu:hover .entry-title a {
+.td_module_mega_menu:hover .entry-title a {
   color: @td_theme_color;
 }
 
