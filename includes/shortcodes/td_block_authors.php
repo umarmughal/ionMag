@@ -86,21 +86,22 @@ class td_block_authors extends td_block {
                     $current_author_class = ' td-active';
                 }
                 $buffy .= '<div class="td_mod_wrap td-pb-padding-side' . $current_author_class . '">';
-                $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . get_avatar($td_author->user_email, '196') . '</a>';
-                $buffy .= '<div class="item-details">';
+                $buffy .= '<div class="td-author-avatar">';
+                $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . get_avatar($td_author->user_email, '60') . '</a>';
+                $buffy .= '</div>';
 
+                $buffy .= '<div class="item-details">';
                 $buffy .= '<div class="td-authors-name">';
                 $buffy .= '<a href="' . get_author_posts_url($td_author->ID) . '">' . $td_author->display_name . '</a>';
                 $buffy .= '</div>';
 
-
                 $buffy .= '<span class="td-author-post-count">';
-                $buffy .= count_user_posts($td_author->ID). ' '  . __td('POSTS', TD_THEME_NAME);
+                $buffy .= '<span class="count">' . count_user_posts($td_author->ID) . '</span>' . __td('POSTS', TD_THEME_NAME);
                 $buffy .= '</span>';
 
                 $buffy .= '<span class="td-author-comments-count">';
                 $comment_count = $wpdb->get_var($wpdb->prepare("SELECT COUNT(*) AS total FROM $wpdb->comments WHERE comment_approved = 1 AND user_id = %d", $td_author->ID));
-                $buffy .= $comment_count . ' '  . __td('COMMENTS', TD_THEME_NAME);
+                $buffy .= '<span class="count">' . $comment_count . '</span>' . __td('COMMENTS', TD_THEME_NAME);
                 $buffy .= '</span>';
 
                 $buffy .= '<div class="td-authors-url">';
