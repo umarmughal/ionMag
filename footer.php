@@ -1,7 +1,7 @@
     <!-- Instagram -->
     <?php if (td_util::get_option('tds_footer_instagram') == 'show') { ?>
 
-        <div class="td-main-content-wrap td-footer-instagram-container">
+        <div class="td-main-content-wrap td-footer-instagram-container td-container-wrap">
             <?php
             //get the instagram id from the panel
             $tds_footer_instagram_id = td_util::get_option('tds_footer_instagram_id');
@@ -37,14 +37,14 @@
 
     <?php } ?>
 
-    <div class="td-footer-ad">
+    <div class="td-footer-ad td-container-wrap">
         <?php
         $tds_footer_top_title = td_util::get_option('tds_footer_top_title'); // ad title
         echo td_global_blocks::get_instance('td_block_ad_box')->render(array('spot_id' => 'footer_top', 'spot_title' => $tds_footer_top_title)); // ad spot
         ?>
     </div>
 
-    <div class="td-footer-outer-wrapper">
+    <div class="td-footer-outer-wrapper td-container-wrap">
         <!-- Footer -->
         <?php
         if (td_util::get_option('tds_footer') != 'no') {
@@ -54,7 +54,7 @@
 
         <!-- Sub Footer -->
         <?php if (td_util::get_option('tds_sub_footer') != 'no') { ?>
-            <div class="td-sub-footer-container td-container-wrap">
+            <div class="td-sub-footer-container">
                 <div class="td-container">
                     <div class="td-pb-row">
                         <div class="td-pb-span12 td-sub-footer-menu">

@@ -1,4 +1,4 @@
-<div class="td-footer-wrapper td-container-wrap">
+<div class="td-footer-wrapper">
     <div class="td-container">
         <div class="td-pb-row">
             <div class="td-pb-span4">

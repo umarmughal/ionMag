@@ -20,8 +20,8 @@ Header style 1
         </div>
     </div>
 
-    <div class="td-header-menu-wrap-full">
-        <div class="td-header-menu-wrap td-container-wrap">
+    <div class="td-header-menu-wrap-full td-container-wrap">
+        <div class="td-header-menu-wrap">
             <div class="td-container td-header-main-menu">
                 <?php locate_template('parts/header/header-menu.php', true);?>
             </div>

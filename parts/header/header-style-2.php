@@ -11,21 +11,19 @@ Header style 2
         </div>
     </div>
 
-    <div class="td-header-logo">
-        <div class="td-container-wrap">
-            <div class="td-container">
-                <div class="td-header-sp-recs">
-                    <?php locate_template('parts/header/ads.php', true); ?>
-                </div>
-                <div class="td-header-sp-logo">
-                    <?php locate_template('parts/header/logo-h1.php', true);?>
-                </div>
+    <div class="td-header-logo td-container-wrap">
+        <div class="td-container">
+            <div class="td-header-sp-recs">
+                <?php locate_template('parts/header/ads.php', true); ?>
+            </div>
+            <div class="td-header-sp-logo">
+                <?php locate_template('parts/header/logo-h1.php', true);?>
             </div>
         </div>
     </div>
 
-    <div class="td-header-menu-wrap-full">
-        <div class="td-header-menu-wrap td-container-wrap">
+    <div class="td-header-menu-wrap-full td-container-wrap">
+        <div class="td-header-menu-wrap">
             <div class="td-container td-header-main-menu">
                 <?php locate_template('parts/header/header-menu.php', true);?>
             </div>
