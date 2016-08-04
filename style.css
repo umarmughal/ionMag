@@ -6210,6 +6210,9 @@ blockquote.pull-right:after {
     margin-right: 0;
   }
 }
+.td_top_authors .td-author-avatar img {
+  display: block;
+}
 .td_top_authors .avatar {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
