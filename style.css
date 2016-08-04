@@ -9915,6 +9915,72 @@ input.search-submit:hover {
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
 }
+@media print {
+  html,
+  body {
+    background-color: #FFF;
+    color: #000;
+    margin: 0;
+    padding: 0;
+  }
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+  ul,
+  ol,
+  li {
+    page-break-inside: avoid;
+  }
+  table,
+  tr,
+  td {
+    page-break-before: avoid;
+  }
+  .single-post .td-header-wrap,
+  .single-post .td-main-sidebar,
+  .single-post #td-theme-settings,
+  .single-post .td-header-top-menu,
+  .single-post .td-header-menu-wrap,
+  .single-post .td-header-sp-ads,
+  .single-post .td-main-sidebar,
+  .single-post .td-post-source-tags,
+  .single-post .td-post-sharing,
+  .single-post .td-post-next-prev,
+  .single-post .td_block_related_posts,
+  .single-post #comments,
+  .single-post .td-footer-container,
+  .single-post .td-footer-wrapper,
+  .single-post .td-sub-footer-container,
+  .single-post .td-category,
+  .single-post .td-post-views,
+  .single-post .td-post-comments,
+  .single-post .td-scroll-up,
+  .single-post iframe,
+  .single-post .td-more-articles-box,
+  .single-post .td_block_video_playlist,
+  .single-post .td-crumb-container,
+  .single-post .td-g-rec,
+  .single-post .td-a-rec,
+  .single-post .author-box-wrap .avatar {
+    display: none !important;
+  }
+  .backstretch {
+    display: none;
+  }
+  .td-main-content,
+  header {
+    width: 100% !important;
+  }
+}
 /*  ----------------------------------------------------------------------------
     General smart list style
 */
