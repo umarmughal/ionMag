@@ -1699,10 +1699,6 @@ class td_config {
                 'post_title' =>  array(
                     'text' => 'Default template',
                     'type' => 'default',
-                ),
-                'post_title_style1' =>  array(
-                    'text' => 'Style 1 template',
-                    'type' => 'default',
                 )
             ),
             'Post content' => array (

@@ -187,19 +187,6 @@ ul.sf-menu li li.sfHover li ul {
   z-index: 999;
 }
 
-
-.td-affix {
-  /* hover and current menu */
-  .sf-menu > .current-menu-item > a, // current top menu
-  .sf-menu > .current-menu-ancestor > a, //current menu parent (top)
-  .sf-menu > .current-category-ancestor > a,
-  .sf-menu > li > a:hover, //normal hover
-  .sf-menu > .sfHover > a //when the submenu is opend
-  {
-    background-color: transparent;
-  }
-}
-
 #td-header-menu {
   display: inline-block;
   vertical-align: top;
@@ -671,7 +658,9 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     &:hover .td-icon-search {
       color: @td_theme_color;
     }
+  }
 
+  #td-header-search-button {
     .td-icon-search {
       font-size: 15px;
       line-height: 55px;
@@ -685,8 +674,17 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
     }
   }
 
-  #td-header-search-button-mob i {
-    font-size: 20px;
-    color: #fff;
+  #td-header-search-button-mob {
+    .td-icon-search {
+      font-size: 20px;
+      line-height: 55px;
+      width: 55px;
+      color: #fff;
+
+      &:before {
+        position: relative;
+        top: 2px;
+      }
+    }
   }
 }

@@ -646,12 +646,12 @@ function td_css_generator() {
        @top_menu
     }
     /* @top_sub_menu */
-    .top-header-menu .menu-item-has-children li a {
+    .top-header-menu .sub-menu a {
     	@top_sub_menu
     }
     /* @main_menu */
-    ul.sf-menu > .td-menu-item > a,
-    .td-header-menu-search i {
+    .sf-menu > li > a,
+    .td-header-menu-search #td-header-search-button .td-icon-search {
         @main_menu
     }
     /* @main_sub_menu */
@@ -669,40 +669,32 @@ function td_css_generator() {
     
     
     /* @blocks_title */
+    .block-title > label,
     .block-title > span,
     .block-title > a,
     .widgettitle,
-    .td-trending-now-title,
-    .wpb_tabs li a,
-    .vc_tta-container .vc_tta-color-grey.vc_tta-tabs-position-top.vc_tta-style-classic .vc_tta-tabs-container .vc_tta-tab > a,
-    .td-related-title a,
-     .td-a-rec-id-sidebar .td-adspot-title {
+    .td-related-title a {
         @blocks_title
     }
     /* @blocks_author */
-    .td-post-author-name a {
+    .td_module_wrap .td-post-author-name a {
         @blocks_author
     }
     /* @blocks_date */
-    .td-post-date .entry-date {
+    .td_module_wrap .td-post-date .entry-date {
         @blocks_date
     }
     /* @blocks_comment */
-    .td-module-comments a,
-    .td-post-views span,
-    .td-post-comments a {
+    .td-module-comments a {
         @blocks_comment
     }
     /* @blocks_category */
-    .td-big-grid-meta .td-post-category,
-    .td_module_wrap .td-post-category,
-    .td-module-image .td-post-category {
+    .td-big-grids .td-post-category,
+    .td_module_wrap .td-post-category {
         @blocks_category
     }
     /* @blocks_filter */
-    .td-subcat-filter .td-subcat-dropdown a,
-    .td-subcat-filter .td-subcat-list a,
-    .td-subcat-filter .td-subcat-dropdown span {
+    .td_block_wrap .td-wrapper-pulldown-filter {
         @blocks_filter
     }
     /* @blocks_excerpt */
@@ -794,10 +786,6 @@ function td_css_generator() {
     /* @post_title */
     .td-post-template-default .td-post-header .entry-title {
         @post_title
-    }
-    /* @post_title_style1 */
-    .td-post-template-1 .td-post-header .entry-title {
-        @post_title_style1
     }
     /* @post_content */
     .td-post-content p,
