@@ -69,7 +69,7 @@ if (!empty($post->ID)) {
 }
 ?>
 
-<div class="td-main-content-wrap td-main-page-wrap">
+<div class="td-main-content-wrap td-main-page-wrap td-container-wrap">
     <div class="td-container td-page-container">
         <?php
         /*

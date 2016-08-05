@@ -9,7 +9,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_top_menu_color',
-            'default_color' => ''
+            'default_color' => '#1a1f2b'
         ));
         ?>
     </div>
@@ -27,7 +27,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_top_menu_text_color',
-            'default_color' => ''
+            'default_color' => '#ffffff'
         ));
         ?>
     </div>
@@ -45,7 +45,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_top_menu_text_hover_color',
-            'default_color' => ''
+            'default_color' => '#42bdcd'
         ));
         ?>
     </div>
@@ -62,7 +62,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_top_social_icons_color',
-            'default_color' => ''
+            'default_color' => '#ffffff'
         ));
         ?>
     </div>

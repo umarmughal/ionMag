@@ -63,7 +63,7 @@
 		echo td_panel_generator::color_picker(array(
 			'ds' => 'td_option',
 			'option_id' => 'tds_text_header_color',
-			'default_color' => ''
+			'default_color' => '#000000'
 		));
 		?>
 	</div>
