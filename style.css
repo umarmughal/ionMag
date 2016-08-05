@@ -4970,7 +4970,7 @@ blockquote.pull-right:after {
 /* control wrapper (default white) */
 .td-wrapper-pulldown-filter {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   top: 0;
   right: 0;
   margin: auto;
