@@ -46,8 +46,8 @@
     color: #fff;
   }
 
-  .widget_categories li span {
-    border-color: rgba(255, 255, 255, 0.2);
+  .widget_categories li span:before {
+    border-color: #fff;
   }
 
   .td-author-description,
@@ -135,7 +135,7 @@
   }
 }
 
-.footer-email-wrap {
+.footer-text-wrap .footer-email-wrap {
   margin-top: 12px;
 
   a {
@@ -188,14 +188,6 @@
       }
     }
 
-    .menu-item > a:hover,
-    .sfHover > a,
-    .current-menu-ancestor > a,
-    .current-category-ancestor > a,
-    .current-menu-item > a {
-      color: @td_theme_color;
-    }
-
     &:last-of-type {
       &:after {
         display: none;
@@ -212,6 +204,14 @@
       background-color: #fff;
       .opacity(0.26);
     }
+  }
+
+  .menu-item > a:hover,
+  .sfHover > a,
+  .current-menu-ancestor > a,
+  .current-category-ancestor > a,
+  .current-menu-item > a {
+    color: @td_theme_color;
   }
 
   ul {

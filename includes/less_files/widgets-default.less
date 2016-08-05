@@ -184,7 +184,7 @@ input.search-submit {
 
 // categories
 .widget_categories {
-  li{
+  li {
     line-height: 1;
     margin-right: 40px;
 
@@ -204,11 +204,21 @@ input.search-submit {
       padding: 4px 6px;
       min-width: 22px;
       line-height: 1;
-      border: 1px solid rgba(0, 0, 0, 0.2);
-      .border-radius(10px);
       position: absolute;
       right: 0;
       text-align: center;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #000;
+        .border-radius(10px);
+        opacity: 0.2;
+      }
     }
   }
 }

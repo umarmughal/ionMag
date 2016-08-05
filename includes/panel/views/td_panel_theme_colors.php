@@ -103,6 +103,16 @@ echo td_panel_generator::ajax_box('Mobile menu / Mobile search', array(
 <?php echo td_panel_generator::box_end();?>
 
 
+<!-- SIGN IN/JOIN MODAL -->
+<?php
+echo td_panel_generator::ajax_box('Sign in / Join modal', array(
+        'td_ajax_calling_file' => basename(__FILE__),
+        'td_ajax_box_id' => 'td_login_modal'
+    )
+);
+?>
+
+
 <hr>
 <div class="td-section-separator">Footer</div>
 

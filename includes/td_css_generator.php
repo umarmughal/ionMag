@@ -254,14 +254,14 @@ function td_css_generator() {
     /* MOBILE MENU / MOBILE SEARCH COLORS */
     /* @mobile_menu_color */
     @media (max-width: 767px) {
-        body .td-header-wrap .td-header-main-menu {
+        .td-header-wrap .td-header-main-menu {
             background-color: @mobile_menu_color !important;
         }
     }
 
     /* @mobile_icons_color */
     @media (max-width: 767px) {
-        body #td-top-mobile-toggle i,
+        #td-top-mobile-toggle i,
         .td-header-menu-search i {
             color: @mobile_icons_color !important;
         }
@@ -336,6 +336,9 @@ function td_css_generator() {
     #td-mobile-nav .td-menu-login-section .td-menu-login span {
         background-color: @mobile_text_color;
     }
+    #td-mobile-nav .td-menu-logout a:before {
+        border-color: @mobile_text_color;
+    }
 
     #td-mobile-nav .td-register-section .td-login-input {
         border-bottom-color: @mobile_text_color !important;
@@ -352,37 +355,30 @@ function td_css_generator() {
     .mfp-content .td-back-button i {
         color: @login_text_color;
     }
-    
     .mfp-content .td-login-inputs:after {
         background-color: @login_text_color;
     }
-    
     .mfp-content #register-link:before {
         border-color: @login_text_color;
     }
-    
     /* @login_button_background */
     .mfp-content .td-login-button {
         background-color: @login_button_background;
     }
-    
     /* @login_button_color */
     .mfp-content .td-login-button {
         color: @login_button_color;
     }
-    
     /* @login_hover_background */
     .mfp-content .td-login-button:active,
     .mfp-content .td-login-button:hover {
         background-color: @login_hover_background;
     }
-    
     /* @login_hover_color */
     .mfp-content .td-login-button:active,
     .mfp-content .td-login-button:hover {
         color: @login_hover_color;
     }
-    
     /* @login_gradient_one */
     .white-popup-block:after {
         background: @login_gradient_one;
@@ -400,7 +396,7 @@ function td_css_generator() {
     /* HEADER COLORS */
 
     /* @header_wrap_color */
-    .td-header-logo {
+    .td-header-logo-wrap {
       background-color: @header_wrap_color;
     }
     
@@ -425,10 +421,13 @@ function td_css_generator() {
     .td-post-header .entry-title {
       color: @post_title_color;
     }
+    .td-post-header .entry-title:after {
+      background-color: @post_title_color;
+    }
     
     /* POST AUTHOR NAME COLOR */
     /* @post_author_name_color */
-    .td-post-author-name a {
+    .td-post-header .td-post-author-name a {
       color: @post_author_name_color;
     }
     
@@ -503,7 +502,7 @@ function td_css_generator() {
     
     /* FOOTER BACKGROUND COLOR */
     /* @footer_color */
-    .td-footer-wrapper {
+    .td-footer-outer-wrapper {
       background-color: @footer_color;
     }
     
@@ -516,10 +515,20 @@ function td_css_generator() {
     .td-footer-wrapper .block-title label,
     .td-footer-wrapper .rss-date,
     .td-footer-wrapper cite,
-    .footer-social-wrap a {
+    .td-footer-outer-wrapper a,
+    .footer-social-wrap .td-social-icon-wrap a,
+    .td-sub-footer-copy {
       color: @footer_text_color;
     }
-    
+    .td-subfooter-menu li:after,
+    .footer-social-wrap:after,
+    .td-subfooter-menu:after {
+      background-color: @footer_text_color;
+    }
+    .td-footer-outer-wrapper .widget_categories li span:before {
+      border-color: @footer_text_color;
+    }
+
     /* FOOTER WIDGET HEADER TEXT COLOR */
     /* @footer_widget_text_color */
     .td-footer-wrapper .block-title a,
@@ -528,7 +537,7 @@ function td_css_generator() {
       color: @footer_widget_text_color;
     }
     
-    .td-footer-wrapper .block-title:after{
+    .td-footer-wrapper .block-title:after {
       background-color: @footer_widget_text_color;
     }
 
@@ -559,7 +568,8 @@ function td_css_generator() {
     .td-subfooter-menu .sfHover > a,
     .td-subfooter-menu .current-menu-ancestor > a,
     .td-subfooter-menu .current-category-ancestor > a,
-    .td-subfooter-menu .current-menu-item > a {
+    .td-subfooter-menu .current-menu-item > a,
+    .td-sub-footer-copy i {
       color: @footer_bottom_hover_color;
     }
 

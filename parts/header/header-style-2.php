@@ -9,7 +9,7 @@ Header style 2
         </div>
     </div>
 
-    <div class="td-header-logo td-container-wrap">
+    <div class="td-header-logo-wrap td-container-wrap">
         <div class="td-container">
             <div class="td-header-sp-recs">
                 <?php locate_template('parts/header/ads.php', true); ?>

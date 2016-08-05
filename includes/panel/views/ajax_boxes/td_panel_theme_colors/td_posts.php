@@ -18,7 +18,7 @@
 <!-- Author name -->
 <div class="td-box-row">
     <div class="td-box-description">
-        <span class="td-box-title">POST & BLOCK AUTHOR NAME COLOR</span>
+        <span class="td-box-title">POST AUTHOR NAME COLOR</span>
         <p>Select author name color</p>
     </div>
     <div class="td-box-control-full">
@@ -26,7 +26,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_author_name_color',
-            'default_color' => '#46bfce'
+            'default_color' => '#42bdcd'
         ));
         ?>
     </div>
@@ -43,7 +43,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_content_color',
-            'default_color' => '#000'
+            'default_color' => '#000000'
         ));
         ?>
     </div>
@@ -60,7 +60,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_h_color',
-            'default_color' => '#000'
+            'default_color' => '#000000'
         ));
         ?>
     </div>
@@ -77,7 +77,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_blockquote_color',
-            'default_color' => ''
+            'default_color' => '#42bdcd'
         ));
         ?>
     </div>

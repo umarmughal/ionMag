@@ -9,7 +9,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_menu_color',
-            'default_color' => '#fff'
+            'default_color' => '#000000'
         ));
         ?>
     </div>
@@ -26,7 +26,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_icons_color',
-            'default_color' => '#fff'
+            'default_color' => '#ffffff'
         ));
         ?>
     </div>
@@ -43,7 +43,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_background_color',
-            'default_color' => '#fff'
+            'default_color' => '#ffffff'
         ));
         ?>
     </div>
@@ -82,7 +82,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_text_color',
-            'default_color' => '#ffffff'
+            'default_color' => '#000000'
         ));
         ?>
     </div>
@@ -116,12 +116,12 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_button_background_mob',
-            'default_color' => '#000'
+            'default_color' => '#000000'
         ));
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_mobile_button_color_mob',
-            'default_color' => '#fff'
+            'default_color' => '#ffffff'
         ));
         ?>
     </div>
