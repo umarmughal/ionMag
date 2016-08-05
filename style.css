@@ -2113,24 +2113,19 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 .td-header-menu-search .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;
 }
-.td-header-menu-search .td-search-btns-wrap i {
+.td-header-menu-search .td-search-btns-wrap .td-icon-search {
   font-size: 15px;
   line-height: 55px;
   width: 55px;
   color: #000;
-  /* responsive portrait phone */
 }
-.td-header-menu-search .td-search-btns-wrap i:before {
+.td-header-menu-search .td-search-btns-wrap .td-icon-search:before {
   position: relative;
   top: 2px;
 }
-@media (max-width: 767px) {
-  .td-header-menu-search .td-search-btns-wrap i {
-    color: #fff;
-  }
-}
 .td-header-menu-search #td-header-search-button-mob i {
   font-size: 20px;
+  color: #fff;
 }
 /*
   Mobile menu
@@ -2675,9 +2670,6 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   line-height: 50px;
   color: #fff;
   border: none;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
   margin: 17px 0 15px;
   font-size: 17px;
   border-radius: 0;
@@ -2821,11 +2813,8 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   width: 100%;
   text-transform: uppercase;
   line-height: 50px;
-  color: #000;
+  color: #fff;
   border: none;
-  -webkit-box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
-  -moz-box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.36);
   margin: 10px 0 40px;
   font-size: 17px;
   border-radius: 0;
