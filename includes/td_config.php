@@ -1788,10 +1788,6 @@ class td_config {
                     'text' => 'Box Author Description',
                     'type' => 'default',
                 ),
-                'post_related' =>  array(
-                    'text' => 'Related Article Title',
-                    'type' => 'default',
-                ),
                 'post_share' =>  array(
                     'text' => 'Share Text',
                     'type' => 'default',
@@ -1801,7 +1797,7 @@ class td_config {
                     'type' => 'default',
                 ),
                 'post_subtitle_small' =>  array(
-                    'text' => 'Subtitle post style Default, 1',
+                    'text' => 'Subtitle post style Default',
                     'type' => 'default',
                 )
             ),
@@ -1856,14 +1852,6 @@ class td_config {
             'Other' => array (
                 'breadcrumb' =>  array(
                     'text' => 'Breadcrumb',
-                    'type' => 'default',
-                ),
-                'category_tag' =>  array(
-                    'text' => 'Sub-Category tags from Category pages',
-                    'type' => 'default',
-                ),
-                'news_ticker_title' =>  array(
-                    'text' => 'News Ticker title',
                     'type' => 'default',
                 ),
                 'pagination' =>  array(

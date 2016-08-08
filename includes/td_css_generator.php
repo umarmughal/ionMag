@@ -850,6 +850,7 @@ function td_css_generator() {
         @post_date
     }
     /* @post_comment */
+    .post header .td-post-views-text,
     .post header .td-post-views span,
     .post header .td-post-comments {
         @post_comment
@@ -864,7 +865,7 @@ function td_css_generator() {
         @post_next_prev_text
     }
     /* @post_next_prev */
-    .post .td-post-next-prev-content a {
+    .td_block_related_posts .entry-title {
         @post_next_prev
     }
     /* @box_author_name */
@@ -879,10 +880,6 @@ function td_css_generator() {
     .post .author-box-wrap .td-author-description {
         @box_author_description
     }
-    /* @post_related */
-    .td_block_related_posts .entry-title a {
-        @post_related
-    }
     /* @post_share */
     .post .td-post-share-title {
         @post_share
@@ -893,53 +890,44 @@ function td_css_generator() {
 		@post_image_caption
 	}
     /* @post_subtitle_small */
-    .td-post-template-default .td-post-sub-title,
-    .td-post-template-1 .td-post-sub-title {
+    .td-post-template-default .td-post-sub-title {
         @post_subtitle_small
     }
     
     
     /* @page_title */
     .td-page-title,
-    .td-category-title-holder .td-page-title,
     .td-category-header .entry-title {
     	@page_title
     }
     /* @page_content */
     .td-page-content,
     .td-page-content p,
-    .td-page-content .td_block_text_with_title,
-    .wpb_text_column p {
+    .td-page-content .td_block_text_with_title {
     	@page_content
     }
     /* @page_h1 */
-    .td-page-content h1,
-    .wpb_text_column h1 {
+    .td-page-content h1 {
     	@page_h1
     }
     /* @page_h2 */
-    .td-page-content h2,
-    .wpb_text_column h2 {
+    .td-page-content h2 {
     	@page_h2
     }
     /* @page_h3 */
-    .td-page-content h3,
-    .wpb_text_column h3 {
+    .td-page-content h3 {
     	@page_h3
     }
     /* @page_h4 */
-    .td-page-content h4,
-    .wpb_text_column h4 {
+    .td-page-content h4 {
     	@page_h4
     }
     /* @page_h5 */
-    .td-page-content h5,
-    .wpb_text_column h5 {
+    .td-page-content h5 {
     	@page_h5
     }
     /* @page_h6 */
-    .td-page-content h6,
-    .wpb_text_column h6 {
+    .td-page-content h6 {
     	@page_h6
     }
     
@@ -952,7 +940,7 @@ function td_css_generator() {
 		@footer_copyright_text
 	}
 	/* @footer_menu_text */
-	.td-sub-footer-menu ul li a {
+	.td-sub-footer-menu li a {
 		@footer_menu_text
 	}
     
@@ -962,21 +950,13 @@ function td_css_generator() {
     .entry-crumbs span  {
     	@breadcrumb
     }
-    /* @category_tag */
-    .category .td-category a {
-    	@category_tag
-    }
-    /* @news_ticker_title */
-    .td-trending-now-display-area .entry-title {
-    	@news_ticker_title
-    }
     /* @pagination */
     .page-nav a,
     .page-nav span {
     	@pagination
     }
     /* @dropcap */
-    #td-outer-wrap span.dropcap {
+    .td-theme-wrap .dropcap {
     	@dropcap
     }
     /* @default_widgets */
@@ -1002,6 +982,7 @@ function td_css_generator() {
     /* @default_buttons */
 	input[type=\"submit\"],
 	.td-read-more a,
+	.td_ajax_load_more,
 	.vc_btn {
 		@default_buttons
 	}
