@@ -1046,7 +1046,53 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
+	                array(
+		                "param_name" => "horizontal_separator_item0",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
                     array(
+                        "param_name" => "image_title_item0",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Image title",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "custom_url_item0",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Custom url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+	                array(
+		                "param_name" => "image_item0",
+		                "type" => "image",
+		                "value" => '',
+		                "heading" => "Image",
+		                "description" => "",
+		                "holder" => "div",
+		                "class" => ""
+	                ),
+	                array(
+                        "param_name" => "open_in_new_window_item0",
+                        "type" => "checkbox",
+                        "value" => '',
+                        "heading" => __("Open in new window:", TD_THEME_NAME),
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+	                array(
+		                "param_name" => "horizontal_separator_item1",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "image_title_item1",
                         "type" => "textfield",
                         "value" => '',
@@ -1064,16 +1110,30 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "image_item1",
+		                "type" => "image",
+		                "value" => '',
+		                "heading" => "Image",
+		                "description" => "",
+		                "holder" => "div",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "open_in_new_window_item1",
-                        "type" => "dropdown",
-                        "value" => array('- Same window -' => '', 'New window' => 'y'),
-                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "type" => "checkbox",
+                        "value" => '',
+                        "heading" => __("Open in new window:", TD_THEME_NAME),
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "horizontal_separator_item2",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "image_title_item2",
                         "type" => "textfield",
                         "value" => '',
@@ -1091,16 +1151,30 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "image_item2",
+		                "type" => "image",
+		                "value" => '',
+		                "heading" => "Image",
+		                "description" => "",
+		                "holder" => "div",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "open_in_new_window_item2",
-                        "type" => "dropdown",
-                        "value" => array('- Same window -' => '', 'New window' => 'y'),
-                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "type" => "checkbox",
+                        "value" => '',
+                        "heading" => __("Open in new window:", TD_THEME_NAME),
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "horizontal_separator_item3",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "image_title_item3",
                         "type" => "textfield",
                         "value" => '',
@@ -1118,38 +1192,25 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
-                        "param_name" => "open_in_new_window_item3",
-                        "type" => "dropdown",
-                        "value" => array('- Same window -' => '', 'New window' => 'y'),
-                        "heading" => __("Open in:", TD_THEME_NAME),
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => ""
-                    ),
-                    array(
-                        "param_name" => "image_title_item4",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Image title",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => ""
-                    ),
-                    array(
-                        "param_name" => "custom_url_item4",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Custom url",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => ""
-                    ),
-                    array(
+	                array(
+		                "param_name" => "image_item3",
+		                "type" => "image",
+		                "value" => '',
+		                "heading" => "Image",
+		                "description" => "",
+		                "holder" => "div",
+		                "class" => ""
+	                ),
+	                array(
+		                "param_name" => "horizontal_separator_item4",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "open_in_new_window_item4",
-                        "type" => "dropdown",
-                        "value" => array('- Same window -' => '', 'New window' => 'y'),
-                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "type" => "checkbox",
+                        "value" => '',
+                        "heading" => __("Open in new window:", TD_THEME_NAME),
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
