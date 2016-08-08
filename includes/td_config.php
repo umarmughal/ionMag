@@ -1045,6 +1045,11 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
+	                array(
+		                "param_name" => "horizontal_separator_item0",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
                     array(
                         "param_name" => "image_title_item0",
                         "type" => "textfield",
@@ -1081,7 +1086,12 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "horizontal_separator_item1",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "image_title_item1",
                         "type" => "textfield",
                         "value" => '',
@@ -1117,7 +1127,12 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "horizontal_separator_item2",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "image_title_item2",
                         "type" => "textfield",
                         "value" => '',
@@ -1153,7 +1168,12 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array(
+	                array(
+		                "param_name" => "horizontal_separator_item3",
+		                "type" => "horizontal_separator",
+		                "class" => ""
+	                ),
+	                array(
                         "param_name" => "image_title_item3",
                         "type" => "textfield",
                         "value" => '',
@@ -1178,6 +1198,11 @@ class td_config {
 		                "heading" => "Image",
 		                "description" => "",
 		                "holder" => "div",
+		                "class" => ""
+	                ),
+	                array(
+		                "param_name" => "horizontal_separator_item4",
+		                "type" => "horizontal_separator",
 		                "class" => ""
 	                ),
 	                array(
