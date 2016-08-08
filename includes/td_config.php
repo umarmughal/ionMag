@@ -5,6 +5,7 @@
 
 define("TD_THEME_NAME", "Ionmag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
+define("TD_THEME_FORUM_URL", "http://support.wpion.com/");
 define("TD_THEME_DOC_URL", "http://forum.tagdiv.com/whats-included/");
 define("TD_THEME_DEMO_URL", "http://demo.tagdiv.com/" . strtolower(TD_THEME_NAME));
 define("TD_THEME_DEMO_DOC_URL", 'http://forum.tagdiv.com/introduction/');  //the url to the demo documentation
@@ -2090,6 +2091,14 @@ class td_config {
                 </ul>
                 '
 	        );
+
+            /*
+	         * the list with sections from backend to hide or show them
+	         */
+            td_global::$td_backend_settings = array(
+                'vc_usage' => false, // require Visual composer - show/hide the message
+                'activate_theme' => false // show/hide the Activate theme section
+            );
 
 
             td_global::$theme_plugins_list = array(
