@@ -9,7 +9,7 @@
         echo td_panel_generator::color_picker(array(
             'ds' => 'td_option',
             'option_id' => 'tds_post_title_color',
-            'default_color' => '#000'
+            'default_color' => '#000000'
         ));
         ?>
     </div>
