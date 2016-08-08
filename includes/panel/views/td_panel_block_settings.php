@@ -67,8 +67,8 @@
         echo td_panel_generator::checkbox(array(
             'ds' => 'td_option',
             'option_id' => 'tds_m_show_author_name',
-            'true_value' => 'hide',
-            'false_value' => ''
+            'true_value' => 'show',
+            'false_value' => 'hide'
         ));
         ?>
     </div>
