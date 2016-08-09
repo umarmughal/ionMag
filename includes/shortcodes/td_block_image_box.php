@@ -184,8 +184,8 @@ class td_block_image_box extends td_block {
 					$buffy .= '<div class="td-custom td-medium-image">';
 
 					$buffy .= '<div class="td-custom-image">';
-					$buffy .= '<a href="#" rel="bookmark" title="Image title">';
-					$buffy .= '<img src="http://192.168.0.178/wp_012/wp-content/themes/012/images/no-thumb/td_640x400.png">';
+					$buffy .= '<a href="#" rel="bookmark" title="Custom title">';
+					$buffy .= '<img src="' . get_template_directory_uri() . '/images/no-thumb/td_640x400.png">';
 					$buffy .= '</a>';
 					$buffy .= '</div>';
 
