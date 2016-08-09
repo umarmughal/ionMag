@@ -1661,13 +1661,18 @@ usage:
 */
 /* max width  - content + sidebar */
 html .mceContentBody {
-  max-width: 696px;
-  margin-left: 24px;
-  margin-right: 24px;
-  background: #ffffff url('images/editor-style/grid-sidebar-desktop.gif') repeat-y left top;
+  max-width: 640px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background: #ffffff url('images/editor-style/grid-sidebar-desktop.png') repeat-y left top;
   font-family: 'Source Sans Pro', sans-serif;
   position: relative;
   /* responsive Landscape tablet */
+}
+html .mceContentBody * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 html .mceContentBody:after {
   content: 'SIDEBAR';
@@ -1676,7 +1681,8 @@ html .mceContentBody:after {
   right: -50px;
   top: 0;
   display: block;
-  width: 5px;
+  width: 12px;
+  text-align: center;
   word-break: break-all;
 }
 html .mceContentBody .td-scroll-effect {
@@ -1692,8 +1698,8 @@ html .mceContentBody .td-scroll-effect {
 }
 /* max width  - full content */
 html .mceContentBody-max-width-big {
-  max-width: 1068px;
-  background: #ffffff url('images/editor-style/grid-no-sidebar-desktop.gif') repeat-y left top;
+  max-width: 980px;
+  background: #ffffff url('images/editor-style/grid-no-sidebar-desktop.png') repeat-y left top;
   /* responsive Landscape tablet */
 }
 html .mceContentBody-max-width-big:after {
