@@ -7,6 +7,12 @@
   .td-page-container {
     max-width: none;
 
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
     //remove empty <p></p>
     p:empty {
       display: none;
