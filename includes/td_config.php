@@ -1068,7 +1068,7 @@ class td_config {
                         "param_name" => "image_title_item0",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Image title",
+                        "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
