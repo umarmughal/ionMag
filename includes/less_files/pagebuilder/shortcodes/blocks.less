@@ -786,11 +786,14 @@
   .td-custom {
     position: relative;
 
-    &:hover {
-      .td-custom-image a {
-        &:after {
-          margin: 15px;
-        }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin: 0 -10px;
+    }
+
+    a:hover {
+      &:after {
+        margin: 15px;
       }
     }
   }
@@ -798,9 +801,13 @@
   .td-custom-image {
     a {
       display: block;
-      height: 220px;
       background-size: cover;
       background-position: center;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        margin-bottom: 5px;
+      }
 
       &:before {
         content: '';
@@ -844,6 +851,7 @@
     text-align: center;
     width: 100%;
     padding: 10px 20px;
+    pointer-events: none;
   }
 
   .entry-title {
@@ -852,12 +860,86 @@
     font-size: 19px;
     text-transform: uppercase;
 
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      font-size: 16px;
+    }
+
     a {
       color: #fff;
     }
 
     &:after {
       display: none;
+    }
+  }
+
+  // grid
+  .td-image-box-row {
+    margin: 0 -20px;
+  }
+  .td-image-box-span {
+    padding: 0 20px;
+    float: left;
+  }
+
+  .td-big-image {
+    .td-image-box-span {
+      width: 100%;
+    }
+
+    a {
+      height: 360px;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        height: 160px;
+      }
+    }
+  }
+  .td-medium-image {
+    .td-image-box-span {
+      width: 50%;
+    }
+
+    a {
+      height: 320px;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+          height: 160px;
+      }
+    }
+  }
+  .td-small-image {
+    a {
+      height: 220px;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        height: 160px;
+      }
+    }
+  }
+  .td-tiny-image {
+    a {
+      height: 160px;
+
+      &:after {
+        margin: 8px;
+      }
+      &:hover:after {
+        margin: 12px;
+      }
+    }
+
+    .entry-title {
+      font-size: 12px;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        font-size: 16px;
+      }
     }
   }
 }

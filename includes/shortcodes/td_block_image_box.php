@@ -7,6 +7,7 @@ class td_block_image_box extends td_block {
 
 		extract(shortcode_atts(
 			array(
+				'height' => '',
 				'image_title_item0' => 'Custom title',
 				'custom_url_item0' => '#',
 				'open_in_new_window_item0' => '',
@@ -43,6 +44,11 @@ class td_block_image_box extends td_block {
 			}
 		}
 
+		$box_height = '';
+		if(!empty($height)) {
+			$box_height = ' height:' . $height . 'px';
+		}
+
 		$buffy = '';
 		$buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
 
@@ -69,7 +75,7 @@ class td_block_image_box extends td_block {
 
 					$buffy .= '<div class="td-custom td-big-image">';
 						$buffy .= '<div class="td-custom-image">';
-						$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\')" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+						$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 						$buffy .= '</div>';
 						$buffy .= '<div class="td-custom-title">';
 						$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
@@ -80,28 +86,28 @@ class td_block_image_box extends td_block {
 				break;
 
 			case 2:
-				$buffy .= $td_block_layout->open_row();
-				foreach($items as $item) {
-					$buffy .= $td_block_layout->open6();
+				$buffy .= '<div class="td-image-box-row td-medium-image">';
+					foreach($items as $item) {
+						$buffy .= '<div class="td-image-box-span">';
 
-					$target = '';
+							$target = '';
 
-					if ( '' !== $item[ 'open_in_new_window' ] ) {
-						$target = ' target="_blank" ';
+							if ( '' !== $item[ 'open_in_new_window' ] ) {
+								$target = ' target="_blank" ';
+							}
+
+							$buffy .= '<div class="td-custom">';
+								$buffy .= '<div class="td-custom-image">';
+								$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+								$buffy .= '</div>';
+								$buffy .= '<div class="td-custom-title">';
+								$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
+								$buffy .= '</div>';
+							$buffy .= '</div>';
+						$buffy .= '</div>';
 					}
-
-					$buffy .= '<div class="td-custom td-medium-image">';
-						$buffy .= '<div class="td-custom-image">';
-						$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\')" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
-						$buffy .= '</div>';
-						$buffy .= '<div class="td-custom-title">';
-						$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
-						$buffy .= '</div>';
-					$buffy .= '</div>';
-
-					$buffy .= $td_block_layout->close6();
-				}
-				$buffy .= $td_block_layout->close_row();
+					$buffy .= '<div class="clearfix"></div>';
+				$buffy .= '</div>';
 				break;
 
 			case 3:
@@ -115,9 +121,9 @@ class td_block_image_box extends td_block {
 						$target = ' target="_blank" ';
 					}
 
-					$buffy .= '<div class="td-custom td-medium-image">';
+					$buffy .= '<div class="td-custom td-small-image">';
 						$buffy .= '<div class="td-custom-image">';
-						$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\')" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+						$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 						$buffy .= '</div>';
 						$buffy .= '<div class="td-custom-title">';
 						$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
@@ -142,7 +148,7 @@ class td_block_image_box extends td_block {
 
 						$buffy .= '<div class="td-custom td-tiny-image">';
 							$buffy .= '<div class="td-custom-image">';
-							$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\')" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+							$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 							$buffy .= '</div>';
 							$buffy .= '<div class="td-custom-title">';
 							$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
@@ -157,21 +163,21 @@ class td_block_image_box extends td_block {
 				$buffy .= $td_block_layout->open_row();
 
 				$index = 0;
-				while($index < 2) {
-					$buffy .= $td_block_layout->open6();
+				while($index < 3) {
+					$buffy .= $td_block_layout->open4();
 
-					$buffy .= '<div class="td-custom td-medium-image">';
+					$buffy .= '<div class="td-custom td-small-image">';
 
 					$buffy .= '<div class="td-custom-image">';
-					$buffy .= '<a href="#" rel="bookmark" title="Custom title" style="background-image: url(\'' . get_template_directory_uri() . '/images/no-thumb/td_640x400.png\')"></a>';
+					$buffy .= '<a href="#" rel="bookmark" title="Custom title" style="background-image: url(\'' . get_template_directory_uri() . '/images/no-thumb/td_640x400.png\');' . $box_height . '"></a>';
 					$buffy .= '</div>';
 					$buffy .= '<div class="td-custom-title">';
-					$buffy .= '<h3 class="entry-title"><a href="#">Image title</a></h3>';
+					$buffy .= '<h3 class="entry-title"><a href="#">Custom title</a></h3>';
 					$buffy .= '</div>';
 
 					$buffy .= '</div>';
 
-					$buffy .= $td_block_layout->close6();
+					$buffy .= $td_block_layout->close4();
 
 					$index++;
 				}

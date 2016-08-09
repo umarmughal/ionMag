@@ -1059,6 +1059,15 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-textfield-big"
                     ),
+                    array(
+                        "param_name" => "height",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => 'Box height:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
 	                array(
 		                "param_name" => "horizontal_separator_item0",
 		                "type" => "horizontal_separator",
@@ -1109,7 +1118,7 @@ class td_config {
                         "param_name" => "image_title_item1",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Image title",
+                        "heading" => "Block title",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1150,7 +1159,7 @@ class td_config {
                         "param_name" => "image_title_item2",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Image title",
+                        "heading" => "Block title",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1191,7 +1200,7 @@ class td_config {
                         "param_name" => "image_title_item3",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Image title",
+                        "heading" => "Block title",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""

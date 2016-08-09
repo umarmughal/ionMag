@@ -70,7 +70,7 @@ if (!empty($post->ID)) {
 ?>
 
 <div class="td-main-content-wrap td-main-page-wrap td-container-wrap">
-    <div class="td-container td-page-container">
+    <div class="tdc-content-wrap">
         <?php
         /*
         the first part of the page (built with the page builder)  - empty($paged) or $paged < 2 = first page
