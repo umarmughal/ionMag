@@ -46,7 +46,7 @@ if ($td_use_page_builder) {
         <?php while ( have_posts() ) : the_post(); ?>
 
             <div class="td-main-content-wrap td-main-page-wrap td-container-wrap">
-                <div class="td-container td-page-container">
+                <div class="td-container td-page-container tdc-content-wrap">
                     <?php the_content(); ?>
                     <?php
                     if($td_enable_or_disable_page_comments == 'show_comments') {
