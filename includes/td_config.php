@@ -500,6 +500,19 @@ class td_config {
             )
         );
 
+        td_api_thumb::add('td_640x0',
+            array(
+                'name' => 'td_640x0',
+                'width' => 640,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default'
+                )
+            )
+        );
+
         td_api_thumb::add('td_80x60',
             array(
                 'name' => 'td_80x60',
