@@ -48,7 +48,11 @@ class td_block_image_box extends td_block {
 
 		//get the block js
 		$buffy .= $this->get_block_css();
-		$buffy .= $this->get_block_title();
+
+		// block title wrap
+		$buffy .= '<div class="td-block-title-wrap">';
+			$buffy .= $this->get_block_title();
+		$buffy .= '</div>';
 
 		$td_block_layout = new td_block_layout();
 
