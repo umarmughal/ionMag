@@ -1039,16 +1039,16 @@ class td_config {
             )
         );
 
-        td_api_block::add('td_block_custom',
+        td_api_block::add('td_block_image_box',
             array(
                 'map_in_visual_composer' => true,
-                "name" => 'Custom block',
-                "base" => "td_block_custom",
+                "name" => 'Image box',
+                "base" => "td_block_image_box",
                 "class" => "",
                 "controls" => "full",
                 "category" => 'Blocks',
-                'icon' => 'icon-pagebuilder-td_block_custom',
-                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_custom.php',
+                'icon' => 'icon-pagebuilder-td_block_image_box',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_image_box.php',
                 "params" => array(
                     array(
                         "param_name" => "custom_title",

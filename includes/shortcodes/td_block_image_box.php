@@ -1,5 +1,5 @@
 <?php
-class td_block_custom extends td_block {
+class td_block_image_box extends td_block {
 
 
 	function render($atts, $content = null) {
@@ -44,7 +44,7 @@ class td_block_custom extends td_block {
 		}
 
 		$buffy = '';
-		$buffy .= '<div class="' . $this->get_block_classes(array('td_block_custom')) . '" ' . $this->get_block_html_atts() . '>';
+		$buffy .= '<div class="' . $this->get_block_classes(array('td_block_image_box')) . '" ' . $this->get_block_html_atts() . '>';
 
 		//get the block js
 		$buffy .= $this->get_block_css();
