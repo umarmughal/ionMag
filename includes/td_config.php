@@ -5,6 +5,7 @@
 
 define("TD_THEME_NAME", "Ionmag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
+define("TD_THEME_FORUM_URL", "http://support.wpion.com/");
 define("TD_THEME_DOC_URL", "http://forum.tagdiv.com/whats-included/");
 define("TD_THEME_DEMO_URL", "http://demo.tagdiv.com/" . strtolower(TD_THEME_NAME));
 define("TD_THEME_DEMO_DOC_URL", 'http://forum.tagdiv.com/introduction/');  //the url to the demo documentation
@@ -495,6 +496,19 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Module 4', 'Module MX3'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_640x0',
+            array(
+                'name' => 'td_640x0',
+                'width' => 640,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default'
                 )
             )
         );
@@ -1025,16 +1039,16 @@ class td_config {
             )
         );
 
-        td_api_block::add('td_block_custom',
+        td_api_block::add('td_block_image_box',
             array(
                 'map_in_visual_composer' => true,
-                "name" => 'Custom block',
-                "base" => "td_block_custom",
+                "name" => 'Image box',
+                "base" => "td_block_image_box",
                 "class" => "",
                 "controls" => "full",
                 "category" => 'Blocks',
-                'icon' => 'icon-pagebuilder-td_block_custom',
-                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_custom.php',
+                'icon' => 'icon-pagebuilder-td_block_image_box',
+                'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_image_box.php',
                 "params" => array(
                     array(
                         "param_name" => "custom_title",
@@ -1054,7 +1068,7 @@ class td_config {
                         "param_name" => "image_title_item0",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Image title",
+                        "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -2151,6 +2165,14 @@ class td_config {
                 </ul>
                 '
 	        );
+
+            /*
+	         * the list with sections from backend to hide or show them
+	         */
+            td_global::$td_backend_settings = array(
+                'vc_usage' => false, // require Visual composer - show/hide the message
+                'activate_theme' => false // show/hide the Activate theme section
+            );
 
 
             td_global::$theme_plugins_list = array(
