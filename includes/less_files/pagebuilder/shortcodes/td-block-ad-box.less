@@ -272,17 +272,21 @@
 .td-g-rec-id-footer_top {
   display: table;
   margin: 0 auto;
-  padding: 28px 10px 58px;
+  padding: 58px 10px 58px;
   text-align: center;
 
   .td-adspot-title {
     position: relative;
-    display: inline-block;
-    width: auto;
-    margin-bottom: 5px;
-    padding: 0 16px;
+    display: table;
+    margin: -29px auto 5px;
+    padding: 0 10px;
     font-size: 14px;
     font-style: italic;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin: -24px auto 0;
+    }
 
     &:before,
     &:after {
@@ -317,7 +321,7 @@
   }
 
   @media (max-width: @responsive_p_phone_max) {
-    padding-top: 16px;
+    padding-top: 34px;
     padding-bottom: 34px;
   }
 }

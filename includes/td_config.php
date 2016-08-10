@@ -1063,7 +1063,16 @@ class td_config {
                         "param_name" => "height",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => 'Box height:',
+                        "heading" => 'Image height:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "gap",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => 'Image gap:',
                         "description" => "",
                         "holder" => "div",
                         "class" => ""

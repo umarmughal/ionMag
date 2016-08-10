@@ -881,6 +881,12 @@
   .td-image-box-span {
     padding: 0 20px;
     float: left;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 100% !important;
+      float: none;
+    }
   }
 
   .td-big-image {
@@ -897,6 +903,7 @@
       }
     }
   }
+
   .td-medium-image {
     .td-image-box-span {
       width: 50%;
@@ -911,7 +918,12 @@
       }
     }
   }
+
   .td-small-image {
+    .td-image-box-span {
+      width: 33.33333333%;
+    }
+
     a {
       height: 220px;
 
@@ -921,7 +933,12 @@
       }
     }
   }
+
   .td-tiny-image {
+    .td-image-box-span {
+      width: 25%;
+    }
+
     a {
       height: 160px;
 
