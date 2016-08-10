@@ -3,6 +3,7 @@ class td_block_ad_box extends td_block {
 
 
     function render($atts, $content = null) {
+	    parent::render($atts);
 
         extract(shortcode_atts(
             array(
@@ -12,6 +13,13 @@ class td_block_ad_box extends td_block {
             ), $atts));
 
 
+		// For tagDiv composer add a placeholder element
+	    if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
+		    // 'td_block_wrap' is to identify a tagDiv composer element at binding
+		    // 'tdc-add-block' is to style de placeholder
+		    // block_uid is necessary to have a unique html template returned to the composer (without it the html change event doesn't trigger, and because of this the loader image is still preset)
+		    return '<div class="td_block_wrap tdc-add-block ' . $this->block_uid . '"></div>';
+	    }
 
         if (empty($spot_id)) {
             return;
