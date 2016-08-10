@@ -1656,9 +1656,6 @@ usage:
 
 @all_span_selector - is the begining of the span selector
  */
-#wpcontent {
-  background-color: red !important;
-}
 /*  ----------------------------------------------------------------------------
     editor style
 */
