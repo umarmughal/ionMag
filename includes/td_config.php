@@ -1077,6 +1077,31 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
+                    array(
+                        "param_name" => "alignment",
+                        "type" => "dropdown",
+                        "value" => array(
+                            'Center' => '',
+                            'Top' => 'top',
+                            'Bottom' => 'bottom'
+                        ),
+                        "heading" => 'Image alignment:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-small",
+                    ),
+                    array(
+                        "param_name" => "display",
+                        "type" => "dropdown",
+                        "value" => array(
+                            'Vertical' => '',
+                            'Horizontal' => 'horizontal'
+                        ),
+                        "heading" => 'Layout:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-small",
+                    ),
 	                array(
 		                "param_name" => "horizontal_separator_item0",
 		                "type" => "horizontal_separator",

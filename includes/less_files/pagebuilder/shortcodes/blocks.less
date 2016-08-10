@@ -877,6 +877,7 @@
   // grid
   .td-image-box-row {
     margin: 0 -20px;
+    .clearfix();
   }
   .td-image-box-span {
     padding: 0 20px;
@@ -957,6 +958,32 @@
       @media (max-width: @responsive_p_phone_max) {
         font-size: 16px;
       }
+    }
+  }
+
+  // horizontal
+  &.td-box-horizontal {
+    .td-image-box-row {
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+    }
+    .td-image-box-span {
+      float: none;
+      width: 100%;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+
+  // image alignment
+  &.td-image-top {
+    .td-custom-image a {
+      background-position: top center;
     }
   }
 }

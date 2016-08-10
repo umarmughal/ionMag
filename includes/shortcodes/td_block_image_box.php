@@ -9,6 +9,8 @@ class td_block_image_box extends td_block {
 			array(
 				'height' => '',
 				'gap' => '',
+				'display' => '',
+				'alignment' => '',
 				'image_title_item0' => 'Custom title',
 				'custom_url_item0' => '#',
 				'open_in_new_window_item0' => '',
@@ -53,12 +55,27 @@ class td_block_image_box extends td_block {
 		$box_gap_padding = '';
 		$box_gap_margin = '';
 		if(isset($gap)) {
-			$box_gap_padding = 'padding-left: ' . $gap . 'px; padding-right: ' . $gap . 'px';
-			$box_gap_margin = 'margin-left: -' . $gap . 'px; margin-right: -' . $gap . 'px';
+			$box_gap_padding = 'padding-left: ' . $gap . 'px; padding-right: ' . $gap . 'px;';
+			$box_gap_margin = 'margin-left: -' . $gap . 'px; margin-right: -' . $gap . 'px;';
+		}
+
+		$box_display = '';
+		$box_space = '';
+		if(!empty($display)) {
+			$box_display = ' td-box-horizontal';
+
+			if(isset($gap)) {
+				$box_space = ' margin-bottom: ' . $gap . 'px;';
+			}
+		}
+
+		$image_alignment = '';
+		if(!empty($alignment)) {
+			$image_alignment = ' td-image-top';
 		}
 
 		$buffy = '';
-		$buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+		$buffy .= '<div class="' . $this->get_block_classes(array($box_display, $image_alignment)) . '" ' . $this->get_block_html_atts() . '>';
 
 		//get the block js
 		$buffy .= $this->get_block_css();
@@ -73,7 +90,7 @@ class td_block_image_box extends td_block {
 		switch(count($items)) {
 			case 1:
 				$buffy .= '<div class="td-image-box-row td-big-image" style="' . $box_gap_margin . '">';
-					$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . '">';
+					$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding .  $box_space . '">';
 					foreach($items as $item) {
 
 						$target = '';
@@ -92,14 +109,13 @@ class td_block_image_box extends td_block {
 						$buffy .= '</div>';
 					}
 					$buffy .= '</div>';
-					$buffy .= '<div class="clearfix"></div>';
 				$buffy .= '</div>';
 				break;
 
 			case 2:
 				$buffy .= '<div class="td-image-box-row td-medium-image" style="' . $box_gap_margin . '">';
 					foreach($items as $item) {
-						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . '">';
+						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . $box_space . '">';
 
 							$target = '';
 
@@ -117,14 +133,13 @@ class td_block_image_box extends td_block {
 							$buffy .= '</div>';
 						$buffy .= '</div>';
 					}
-					$buffy .= '<div class="clearfix"></div>';
 				$buffy .= '</div>';
 				break;
 
 			case 3:
 				$buffy .= '<div class="td-image-box-row td-small-image" style="' . $box_gap_margin . '">';
 					foreach($items as $item) {
-						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . '">';
+						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . $box_space . '">';
 
 							$target = '';
 
@@ -142,14 +157,13 @@ class td_block_image_box extends td_block {
 							$buffy .= '</div>';
 						$buffy .= '</div>';
 					}
-					$buffy .= '<div class="clearfix"></div>';
 				$buffy .= '</div>';
 				break;
 
 			case 4:
 				$buffy .= '<div class="td-image-box-row td-tiny-image" style="' . $box_gap_margin . '">';
 					foreach($items as $item) {
-						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . '">';
+						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . $box_space . '">';
 
 							$target = '';
 
@@ -167,7 +181,6 @@ class td_block_image_box extends td_block {
 							$buffy .= '</div>';
 						$buffy .= '</div>';
 					}
-					$buffy .= '<div class="clearfix"></div>';
 				$buffy .= '</div>';
 				break;
 
@@ -176,7 +189,7 @@ class td_block_image_box extends td_block {
 
 					$index = 0;
 					while($index < 3) {
-						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . '">';
+						$buffy .= '<div class="td-image-box-span" style="' . $box_gap_padding . $box_space . '">';
 							$buffy .= '<div class="td-custom">';
 								$buffy .= '<div class="td-custom-image">';
 								$buffy .= '<a style="background-image: url(\'' . get_template_directory_uri() . '/images/no-thumb/td_640x400.png\');' . $box_height . '" href="#" rel="bookmark" title="Custom title"></a>';
@@ -189,7 +202,6 @@ class td_block_image_box extends td_block {
 
 						$index++;
 					}
-					$buffy .= '<div class="clearfix"></div>';
 				$buffy .= '</div>';
 				break;
 		}
