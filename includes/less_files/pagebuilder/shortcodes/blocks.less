@@ -793,7 +793,7 @@
 
     a:hover {
       &:after {
-        margin: 15px;
+        .opacity(0.6);
       }
     }
   }
@@ -824,7 +824,7 @@
       &:after {
         content: '';
         border: 1px solid #fff;
-        .opacity(0.4);
+        .opacity(0.3);
         position: absolute;
         top: 0;
         left: 0;
@@ -946,9 +946,6 @@
       &:after {
         margin: 8px;
       }
-      &:hover:after {
-        margin: 12px;
-      }
     }
 
     .entry-title {
@@ -974,9 +971,16 @@
       padding-right: 0 !important;
       margin-bottom: 5px;
 
+      a:after {
+        margin: 8px;
+      }
+
       &:last-child {
         margin-bottom: 0 !important;
       }
+    }
+    .entry-title {
+      font-size: 16px;
     }
   }
 
