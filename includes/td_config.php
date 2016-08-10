@@ -1066,7 +1066,7 @@ class td_config {
                         "heading" => 'Image height:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-small"
                     ),
                     array(
                         "param_name" => "gap",
@@ -1075,7 +1075,7 @@ class td_config {
                         "heading" => 'Image gap:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-small"
                     ),
                     array(
                         "param_name" => "alignment",
