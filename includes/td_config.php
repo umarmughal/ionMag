@@ -1060,6 +1060,24 @@ class td_config {
                         "class" => "tdc-textfield-big"
                     ),
                     array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title text color',
+                        "param_name" => "header_text_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title text color for this block'
+                    ),
+                    array(
+                        "type" => "colorpicker",
+                        "holder" => "div",
+                        "class" => "",
+                        "heading" => 'Title background color',
+                        "param_name" => "header_color",
+                        "value" => '', //Default Red color
+                        "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array(
                         "param_name" => "height",
                         "type" => "textfield",
                         "value" => '',
@@ -1108,13 +1126,22 @@ class td_config {
 		                "class" => ""
 	                ),
                     array(
+                        "param_name" => "image_item0",
+                        "type" => "image",
+                        "value" => '',
+                        "heading" => "Image",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
+                    array(
                         "param_name" => "image_title_item0",
                         "type" => "textfield",
                         "value" => '',
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
                     array(
                         "param_name" => "custom_url_item0",
@@ -1123,17 +1150,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
-	                array(
-		                "param_name" => "image_item0",
-		                "type" => "image",
-		                "value" => '',
-		                "heading" => "Image",
-		                "description" => "",
-		                "holder" => "div",
-		                "class" => ""
-	                ),
 	                array(
                         "param_name" => "open_in_new_window_item0",
                         "type" => "checkbox",
@@ -1148,14 +1166,23 @@ class td_config {
 		                "type" => "horizontal_separator",
 		                "class" => ""
 	                ),
+                    array(
+                        "param_name" => "image_item1",
+                        "type" => "image",
+                        "value" => '',
+                        "heading" => "Image",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
 	                array(
                         "param_name" => "image_title_item1",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Block title",
+                        "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
                     array(
                         "param_name" => "custom_url_item1",
@@ -1164,17 +1191,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
-	                array(
-		                "param_name" => "image_item1",
-		                "type" => "image",
-		                "value" => '',
-		                "heading" => "Image",
-		                "description" => "",
-		                "holder" => "div",
-		                "class" => ""
-	                ),
 	                array(
                         "param_name" => "open_in_new_window_item1",
                         "type" => "checkbox",
@@ -1189,14 +1207,23 @@ class td_config {
 		                "type" => "horizontal_separator",
 		                "class" => ""
 	                ),
+                    array(
+                        "param_name" => "image_item2",
+                        "type" => "image",
+                        "value" => '',
+                        "heading" => "Image",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
 	                array(
                         "param_name" => "image_title_item2",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Block title",
+                        "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
                     array(
                         "param_name" => "custom_url_item2",
@@ -1205,17 +1232,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
-	                array(
-		                "param_name" => "image_item2",
-		                "type" => "image",
-		                "value" => '',
-		                "heading" => "Image",
-		                "description" => "",
-		                "holder" => "div",
-		                "class" => ""
-	                ),
 	                array(
                         "param_name" => "open_in_new_window_item2",
                         "type" => "checkbox",
@@ -1230,14 +1248,23 @@ class td_config {
 		                "type" => "horizontal_separator",
 		                "class" => ""
 	                ),
+                    array(
+                        "param_name" => "image_item3",
+                        "type" => "image",
+                        "value" => '',
+                        "heading" => "Image",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
+                    ),
 	                array(
                         "param_name" => "image_title_item3",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => "Block title",
+                        "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
                     array(
                         "param_name" => "custom_url_item3",
@@ -1246,22 +1273,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-medium"
                     ),
-	                array(
-		                "param_name" => "image_item3",
-		                "type" => "image",
-		                "value" => '',
-		                "heading" => "Image",
-		                "description" => "",
-		                "holder" => "div",
-		                "class" => ""
-	                ),
-	                array(
-		                "param_name" => "horizontal_separator_item4",
-		                "type" => "horizontal_separator",
-		                "class" => ""
-	                ),
 	                array(
                         "param_name" => "open_in_new_window_item4",
                         "type" => "checkbox",
@@ -1270,24 +1283,6 @@ class td_config {
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
-                    ),
-                    array(
-                        "type" => "colorpicker",
-                        "holder" => "div",
-                        "class" => "",
-                        "heading" => 'Title text color',
-                        "param_name" => "header_text_color",
-                        "value" => '', //Default Red color
-                        "description" => 'Optional - Choose a custom title text color for this block'
-                    ),
-                    array(
-                        "type" => "colorpicker",
-                        "holder" => "div",
-                        "class" => "",
-                        "heading" => 'Title background color',
-                        "param_name" => "header_color",
-                        "value" => '', //Default Red color
-                        "description" => 'Optional - Choose a custom title background color for this block'
                     ),
                     array (
                         'param_name' => 'css',
