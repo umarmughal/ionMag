@@ -5719,7 +5719,7 @@ blockquote.pull-right:after {
   margin-bottom: 0 !important;
 }
 .td_block_image_box.td-box-horizontal .entry-title {
-  font-size: 16px;
+  font-size: 15px;
 }
 .td_block_image_box.td-image-box-top .td-custom-image a {
   background-position: top center;
@@ -5730,6 +5730,9 @@ blockquote.pull-right:after {
 .td_block_image_box.td-image-box-style-2 .td-custom-image a:before,
 .td_block_image_box.td-image-box-style-2 .td-custom-image a:after {
   display: none;
+}
+.td_block_image_box.td-image-box-style-2 .entry-title {
+  font-size: 15px;
 }
 .td_block_image_box.td-image-box-style-2 .entry-title a {
   padding: 8px 16px;
