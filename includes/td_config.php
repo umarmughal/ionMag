@@ -837,7 +837,7 @@ class td_config {
                         "heading" => 'Use adspot :',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "",
                     ),
 
                     array(
@@ -905,7 +905,7 @@ class td_config {
                         "heading" => 'Sort authors by:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "exclude",
@@ -1106,7 +1106,7 @@ class td_config {
                         "heading" => 'Image alignment:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "display",
@@ -1118,7 +1118,7 @@ class td_config {
                         "heading" => 'Layout:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "",
                     ),
 	                array(
 		                "param_name" => "horizontal_separator_item0",
@@ -1396,7 +1396,7 @@ class td_config {
                         "heading" => "Instagram Header",
                         "description" => 'Display or hide the Instagram header section (default: On)',
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "tdc-dropdown-small",
                         'group' => 'Instagram'
                     ),
 
@@ -2607,7 +2607,7 @@ class td_config {
                 "heading" => 'Sort order:',
                 "description" => "How to sort the posts. Notice that Popular (last 7 days) option is affected by caching plugins and CDNs. For popular posts we recommend the jetpack (24-48hrs) method",
                 "holder" => "div",
-                "class" => "tdc-dropdown-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2641,7 +2641,7 @@ class td_config {
                 "heading" => 'Pagination:',
                 "description" => "Our blocks support pagination.",
                 "holder" => "div",
-                "class" => "tdc-dropdown-big",
+                "class" => "",
                 'group' => 'Pagination'
             ),
 
