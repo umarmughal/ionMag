@@ -822,22 +822,18 @@ class td_config {
                         "param_name" => "spot_id",
                         "type" => "dropdown",
                         "value" => array(
-                            '-- Select an ad spot --' => '',
-                            'sidebar' => 'sidebar',
-                            'content_inline' => 'content_inline',
-                            'content_top' => 'content_top',
-                            'content_bottom' => 'content_bottom',
-                            'header' => 'header',
-                            'custom_ad_1' => 'custom_ad_1',
-                            'custom_ad_2' => 'custom_ad_2',
-                            'custom_ad_3' => 'custom_ad_3',
-                            'custom_ad_4' => 'custom_ad_4',
-                            'custom_ad_5' => 'custom_ad_5'
+                            '- Select ad -' => '',
+                            'Sidebar' => 'sidebar',
+                            'Content inline' => 'content_inline',
+                            'Content top' => 'content_top',
+                            'Content bottom' => 'content_bottom',
+                            'Header' => 'header',
+                            'Custom ad 1' => 'custom_ad_1'
                         ),
-                        "heading" => 'Use adspot :',
+                        "heading" => 'Use adspot from:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-dropdown-big",
                     ),
 
                     array(
@@ -847,7 +843,7 @@ class td_config {
                         "heading" => 'Ad title:',
                         "description" => "Optional - a title for the Ad, like - Advertisement - if you leave it blank the block will not have a title",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-textfield-big",
                     ),
                     array (
                         'param_name' => 'css',
@@ -876,54 +872,18 @@ class td_config {
                         "type" => "textfield",
                         "value" => 'Block title',
                         "heading" => "Block title",
-                        "description" => "",
+                        "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "",
-                    ),
-                    array (
-                        "param_name" => "roles",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "User roles",
-                        "description" => "Optional - Filter by role, add one or more <a target=\"_blank\" href=\"https://codex.wordpress.org/Roles_and_Capabilities\">user roles</a> , separate them with a comma (ex. Administrator, Editor, Author, Contributor, Subscriber)",
-                        "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-textfield-big",
                     ),
                     array(
                         "param_name" => "custom_url",
                         "type" => "textfield",
                         "value" => "",
-                        "heading" => 'Block title - custom url',
-                        "description" => "Optional - (when the module title is clicked)",
+                        "heading" => 'Block title url',
+                        "description" => "Optional - Custom url when the block title is clicked",
                         "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "sort",
-                        "type" => "dropdown",
-                        "value" => array('- Sort by name -' => '', 'Sort by post count' => 'post_count'),
-                        "heading" => 'Sort authors by:',
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "exclude",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Exclude authors id (, separated)",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "include",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Include authors id (, separated) - do not use with exclude",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-textfield-big",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -942,6 +902,47 @@ class td_config {
                         "param_name" => "header_color",
                         "value" => '', //Default Red color
                         "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array(
+                        "param_name" => "",
+                        "type" => "horizontal_separator",
+                        "class" => ""
+                    ),
+                    array (
+                        "param_name" => "roles",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "User roles",
+                        "description" => "Optional - Filter by role, add one or more, separate them with a comma (ex. Administrator, Editor, Author, Contributor, Subscriber)",
+                        "holder" => "div",
+                        "class" => "tdc-textfield-big",
+                    ),
+                    array(
+                        "param_name" => "sort",
+                        "type" => "dropdown",
+                        "value" => array('- Sort by name -' => '', 'Sort by post count' => 'post_count'),
+                        "heading" => 'Sort authors by',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-big",
+                    ),
+                    array(
+                        "param_name" => "exclude",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Exclude authors IDs",
+                        "description" => "Write the IDs separated by comma",
+                        "holder" => "div",
+                        "class" => "tdc-textfield-big",
+                    ),
+                    array(
+                        "param_name" => "include",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Include authors IDs",
+                        "description" => "Write the IDs separated by comma - do not use with exclude",
+                        "holder" => "div",
+                        "class" => "tdc-textfield-big",
                     ),
                     array (
                         'param_name' => 'css',
@@ -970,45 +971,9 @@ class td_config {
                         "type" => "textfield",
                         "value" => 'Block title',
                         "heading" => "Block title",
-                        "description" => "",
+                        "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "author_id",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Author id",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "author_url_text",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Author page link text",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "author_url",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Author page link url",
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => "",
-                    ),
-                    array(
-                        "param_name" => "open_in_new_window",
-                        "type" => "checkbox",
-                        "value" => '',
-                        "heading" => __("Open in new window:", TD_THEME_NAME),
-                        "description" => "",
-                        "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-big",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1027,6 +992,42 @@ class td_config {
                         "param_name" => "header_color",
                         "value" => '', //Default Red color
                         "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array(
+                        "param_name" => "author_id",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Author ID",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-textfield-small",
+                    ),
+                    array(
+                        "param_name" => "author_url_text",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Author page link text",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-textfield-big",
+                    ),
+                    array(
+                        "param_name" => "author_url",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Author page link url",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-textfield-big",
+                    ),
+                    array(
+                        "param_name" => "open_in_new_window",
+                        "type" => "checkbox",
+                        "value" => '',
+                        "heading" => "Open in new window",
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => ""
                     ),
                     array (
                         'param_name' => 'css',
@@ -1055,9 +1056,9 @@ class td_config {
                         "type" => "textfield",
                         "value" => 'Block title',
                         "heading" => "Block title",
-                        "description" => "",
+                        "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "tdc-textfield-big"
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1081,7 +1082,7 @@ class td_config {
                         "param_name" => "height",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => 'Image height:',
+                        "heading" => 'Image height',
                         "description" => "",
                         "holder" => "div",
                         "class" => "tdc-textfield-small"
@@ -1090,7 +1091,7 @@ class td_config {
                         "param_name" => "gap",
                         "type" => "textfield",
                         "value" => '',
-                        "heading" => 'Image gap:',
+                        "heading" => 'Image gap',
                         "description" => "",
                         "holder" => "div",
                         "class" => "tdc-textfield-small"
@@ -1103,10 +1104,10 @@ class td_config {
                             'Center' => '',
                             'Bottom' => 'bottom'
                         ),
-                        "heading" => 'Image alignment:',
+                        "heading" => 'Image alignment',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-dropdown-big",
                     ),
                     array(
                         "param_name" => "display",
@@ -1115,10 +1116,10 @@ class td_config {
                             'Vertical' => '',
                             'Horizontal' => 'horizontal'
                         ),
-                        "heading" => 'Layout:',
+                        "heading" => 'Layout',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-dropdown-big",
                     ),
                     array(
                         "param_name" => "style",
@@ -1127,10 +1128,10 @@ class td_config {
                             '1 - With border' => '',
                             '2 - White box' => 'style-2'
                         ),
-                        "heading" => 'Box style:',
+                        "heading" => 'Box style',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-small",
+                        "class" => "tdc-dropdown-big",
                     ),
 	                array(
 		                "param_name" => "horizontal_separator_item0",
@@ -1141,7 +1142,7 @@ class td_config {
                         "param_name" => "image_item0",
                         "type" => "image",
                         "value" => '',
-                        "heading" => "Image",
+                        "heading" => "Image 1",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1168,7 +1169,7 @@ class td_config {
                         "param_name" => "open_in_new_window_item0",
                         "type" => "checkbox",
                         "value" => '',
-                        "heading" => __("Open in new window:", TD_THEME_NAME),
+                        "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1182,7 +1183,7 @@ class td_config {
                         "param_name" => "image_item1",
                         "type" => "image",
                         "value" => '',
-                        "heading" => "Image",
+                        "heading" => "Image 2",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1194,7 +1195,7 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
                     array(
                         "param_name" => "custom_url_item1",
@@ -1203,13 +1204,13 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item1",
                         "type" => "checkbox",
                         "value" => '',
-                        "heading" => __("Open in new window:", TD_THEME_NAME),
+                        "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1223,7 +1224,7 @@ class td_config {
                         "param_name" => "image_item2",
                         "type" => "image",
                         "value" => '',
-                        "heading" => "Image",
+                        "heading" => "Image 3",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1250,7 +1251,7 @@ class td_config {
                         "param_name" => "open_in_new_window_item2",
                         "type" => "checkbox",
                         "value" => '',
-                        "heading" => __("Open in new window:", TD_THEME_NAME),
+                        "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1264,7 +1265,7 @@ class td_config {
                         "param_name" => "image_item3",
                         "type" => "image",
                         "value" => '',
-                        "heading" => "Image",
+                        "heading" => "Image 4",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1291,7 +1292,7 @@ class td_config {
                         "param_name" => "open_in_new_window_item4",
                         "type" => "checkbox",
                         "value" => '',
-                        "heading" => __("Open in new window:", TD_THEME_NAME),
+                        "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
                         "class" => ""
@@ -1322,19 +1323,19 @@ class td_config {
                         "param_name" => "custom_title",
                         "type" => "textfield",
                         "value" => "Block title",
-                        "heading" => 'Optional - custom title for this block:',
-                        "description" => "",
+                        "heading" => 'Block title',
+                        "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-textfield-big",
                     ),
                     array(
                         "param_name" => "custom_url",
                         "type" => "textfield",
                         "value" => "",
-                        "heading" => 'Optional - custom url for this block (when the module title is clicked):',
-                        "description" => "",
+                        "heading" => 'Block title url',
+                        "description" => "Optional - Custom url when the block title is clicked",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-textfield-big",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1358,7 +1359,7 @@ class td_config {
                         "param_name" => "limit",
                         "type" => "textfield",
                         "value" => "6",
-                        "heading" => 'Limit the number of categories shown:',
+                        "heading" => 'Limit the number of categories',
                         "description" => "",
                         "holder" => "div",
                         "class" => "tdc-textfield-small",
@@ -1386,94 +1387,14 @@ class td_config {
                 'icon' => 'icon-pagebuilder-td-instagram',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_instagram.php',
                 "params" => array(
-
-                    array(
-                        "param_name" => "instagram_id",
-                        "type" => "textfield",
-                        "value" => '',
-                        "heading" => "Instagram ID",
-                        "description" => 'Enter the ID as it appears after the instagram url (ex. http://www.instagram.com/myID)',
-                        "holder" => "div",
-                        "class" => "",
-                        'group' => 'Instagram'
-                    ),
-
-                    array(
-                        "param_name" => "instagram_header",
-                        "type" => "dropdown",
-                        "value" => array (
-                            'On' => '',
-                            'Off' => 'off'
-                        ),
-                        "heading" => "Instagram Header",
-                        "description" => 'Display or hide the Instagram header section (default: On)',
-                        "holder" => "div",
-                        "class" => "tdc-dropdown-small",
-                        'group' => 'Instagram'
-                    ),
-
-                    array(
-                        "param_name" => "instagram_images_per_row",
-                        "type" => "dropdown",
-                        "value" => array (
-                            '- Default -' => '',
-                            '1' => 1,
-                            '2' => 2,
-                            '3' => 3,
-                            '4' => 4,
-                            '5' => 5,
-                            '6' => 6,
-                            '7' => 7,
-                            '8' => 8
-                        ),
-                        "heading" => 'Number of images per row:',
-                        "description" => 'Set the number of images displayed on each row (default is 3).',
-                        "holder" => "div",
-                        "class" => "tdc-dropdown-small",
-                        'group' => 'Instagram'
-                    ),
-
-                    array(
-                        "param_name" => "instagram_number_of_rows",
-                        "type" => "dropdown",
-                        "value" => array (
-                            '- Default -' => '',
-                            '1' => 1,
-                            '2' => 2,
-                            '3' => 3,
-                            '4' => 4,
-                            '5' => 5
-                        ),
-                        "heading" => 'Number of rows:',
-                        "description" => 'Set on how many rows to display the images (default is 1)',
-                        "holder" => "div",
-                        "class" => "tdc-dropdown-small",
-                        'group' => 'Instagram'
-                    ),
-
-                    array(
-                        "param_name" => "instagram_margin",
-                        "type" => "dropdown",
-                        "value" => array (
-                            'No gap' => '',
-                            '2 px' => 2,
-                            '5 px' => 5
-                        ),
-                        "heading" => "Image gap",
-                        "description" => 'Set a gap between images (default: No gap)',
-                        "holder" => "div",
-                        "class" => "",
-                        'group' => 'Instagram'
-                    ),
-
                     array(
                         "param_name" => "custom_title",
                         "type" => "textfield",
                         "value" => 'Block title',
-                        "heading" => "Custom title for this block:",
-                        "description" => "Optional - a title for this block, if you leave it blank the block will not have a title",
+                        "heading" => "Block title",
+                        "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "",
+                        "class" => "tdc-textfield-big",
                     ),
 
                     array(
@@ -1494,6 +1415,78 @@ class td_config {
                         "param_name" => "header_color",
                         "value" => '',
                         "description" => 'Optional - Choose a custom title background color for this block'
+                    ),
+                    array(
+                        "param_name" => "",
+                        "type" => "horizontal_separator",
+                        "class" => ""
+                    ),
+                    array(
+                        "param_name" => "instagram_id",
+                        "type" => "textfield",
+                        "value" => '',
+                        "heading" => "Instagram ID",
+                        "description" => 'Enter the ID as it appears after the instagram url (ex. http://www.instagram.com/myID)',
+                        "holder" => "div",
+                        "class" => "tdc-textfield-big"
+                    ),
+                    array(
+                        "param_name" => "instagram_header",
+                        "type" => "dropdown",
+                        "value" => array (
+                            'On' => '',
+                            'Off' => 'off'
+                        ),
+                        "heading" => "Instagram Header",
+                        "description" => 'Display or hide the Instagram header section (default: On)',
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-small"
+                    ),
+                    array(
+                        "param_name" => "instagram_images_per_row",
+                        "type" => "dropdown",
+                        "value" => array (
+                            '1' => 1,
+                            '2' => 2,
+                            '3' => '',
+                            '4' => 4,
+                            '5' => 5,
+                            '6' => 6,
+                            '7' => 7,
+                            '8' => 8
+                        ),
+                        "heading" => 'Images per row',
+                        "description" => 'Set the number of images displayed on each row (default is 3)',
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-small"
+                    ),
+                    array(
+                        "param_name" => "instagram_number_of_rows",
+                        "type" => "dropdown",
+                        "value" => array (
+                            '1' => '',
+                            '2' => 2,
+                            '3' => 3,
+                            '4' => 4,
+                            '5' => 5
+                        ),
+                        "heading" => 'Number of rows',
+                        "description" => 'Set on how many rows to display the images (default is 1)',
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-small"
+                    ),
+                    array(
+                        "param_name" => "instagram_margin",
+                        "type" => "dropdown",
+                        "value" => array (
+                            'No gap' => '',
+                            '2 px' => 2,
+                            '5 px' => 5
+                        ),
+                        "heading" => "Image gap",
+                        "description" => 'Set a gap between images (default: No gap)',
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-big"
                     ),
                     array (
                         'param_name' => 'css',
@@ -2310,29 +2303,6 @@ class td_config {
                 ));
 
 
-//	        td_api_tinymce_formats::add('td_tinymce_item_2',
-//		        array(
-//			        'title' => 'Text scroll effects'
-//		        ));
-//
-//		        td_api_tinymce_formats::add('td_tinymce_item_2_1',
-//			        array(
-//				        'parent_id' => 'td_tinymce_item_2',
-//				        'title' => 'Fade in gray background',
-//				        'selector' => 'p, h3, blockquote',
-//				        'classes' => 'td-scroll-e-text-1 td-scroll-effect',
-//				        'icon' => 'td-test-icons'
-//			        ));
-//
-//		        td_api_tinymce_formats::add('td_tinymce_item_2_2',
-//			        array(
-//				        'parent_id' => 'td_tinymce_item_2',
-//				        'title' => 'Fade in text color border',
-//				        'selector' => 'p, h3, blockquote',
-//				        'classes' => 'td-scroll-e-text-2 td-scroll-effect',
-//				        'icon' => 'td-test-icons'
-//			        ));
-
             td_api_tinymce_formats::add('td_tinymce_item_3',
                 array(
                     'title' => 'Arrow list',
@@ -2540,63 +2510,13 @@ class td_config {
     static function get_map_filter_array ($group = 'Filter') {
         return array(
             array(
-                "param_name" => "post_ids",
-                "type" => "textfield",
-                "value" => '',
-                "heading" => 'Post ID filter:',
-                "description" => "Filter multiple posts by ID. Enter here the post IDs separated by commas (ex: 10,27,233). To exclude posts from this block add them with '-' (ex: -7, -16)",
-                "holder" => "div",
-                "class" => "",
-                'group' => $group
-            ),
-            array(
                 "param_name" => "category_id",
                 "type" => "dropdown",
                 "value" => td_util::get_category2id_array(),
-                "heading" => 'Category filter:',
+                "heading" => 'Category filter',
                 "description" => "A single category filter. If you want to filter multiple categories, use the 'Multiple categories filter' and leave this to default",
                 "holder" => "div",
-                "class" => "",
-                'group' => $group
-            ),
-            array(
-                "param_name" => "category_ids",
-                "type" => "textfield",
-                "value" => '',
-                "heading" => 'Multiple categories filter:',
-                "description" => "Filter multiple categories by ID. Enter here the category IDs separated by commas (ex: 13,23,18). To exclude categories from this block add them with '-' (ex: -9, -10)",
-                "holder" => "div",
-                "class" => "",
-                'group' => $group
-            ),
-            array(
-                "param_name" => "tag_slug",
-                "type" => "textfield",
-                "value" => '',
-                "heading" => 'Filter by tag slug:',
-                "description" => "To filter multiple tag slugs, enter here the tag slugs separated by commas (ex: tag1,tag2,tag3)",
-                "holder" => "div",
-                "class" => "",
-                'group' => $group
-            ),
-            array(
-                "param_name" => "autors_id",
-                "type" => "textfield",
-                "value" => '',
-                "heading" => "Multiple authors filter:",
-                "description" => "Filter multiple authors by ID. Enter here the author IDs separated by commas (ex: 13,23,18).",
-                "holder" => "div",
-                "class" => "",
-                'group' => $group
-            ),
-            array(
-                "param_name" => "installed_post_types",
-                "type" => "textfield",
-                "value" =>  '',//tdUtil::create_array_installed_post_types(),
-                "heading" => 'Post Type:',
-                "description" => "Filter by post types. Usage: post, page, event - Write 1 or more post types delimited by commas",
-                "holder" => "div",
-                "class" => "",
+                "class" => "tdc-dropdown-extrabig",
                 'group' => $group
             ),
             array(
@@ -2616,17 +2536,67 @@ class td_config {
                     'Random posts from last 7 Day' => 'random_7_day' ,
                     'Most Commented' => 'comment_count'
                 ),
-                "heading" => 'Sort order:',
+                "heading" => 'Sort order',
                 "description" => "How to sort the posts. Notice that Popular (last 7 days) option is affected by caching plugins and CDNs. For popular posts we recommend the jetpack (24-48hrs) method",
                 "holder" => "div",
-                "class" => "",
+                "class" => "tdc-dropdown-extrabig",
+                'group' => $group
+            ),
+            array(
+                "param_name" => "post_ids",
+                "type" => "textfield",
+                "value" => '',
+                "heading" => 'Post ID filter',
+                "description" => "Filter multiple posts by ID. Enter here the post IDs separated by commas (ex: 10,27,233). To exclude posts from this block add them with '-' (ex: -7, -16)",
+                "holder" => "div",
+                "class" => "tdc-textfield-big",
+                'group' => $group
+            ),
+            array(
+                "param_name" => "category_ids",
+                "type" => "textfield",
+                "value" => '',
+                "heading" => 'Multiple categories filter',
+                "description" => "Filter multiple categories by ID. Enter here the category IDs separated by commas (ex: 13,23,18). To exclude categories from this block add them with '-' (ex: -9, -10)",
+                "holder" => "div",
+                "class" => "tdc-textfield-big",
+                'group' => $group
+            ),
+            array(
+                "param_name" => "tag_slug",
+                "type" => "textfield",
+                "value" => '',
+                "heading" => 'Filter by tag slug',
+                "description" => "To filter multiple tag slugs, enter here the tag slugs separated by commas (ex: tag1,tag2,tag3)",
+                "holder" => "div",
+                "class" => "tdc-textfield-big",
+                'group' => $group
+            ),
+            array(
+                "param_name" => "autors_id",
+                "type" => "textfield",
+                "value" => '',
+                "heading" => "Multiple authors filter",
+                "description" => "Filter multiple authors by ID. Enter here the author IDs separated by commas (ex: 13,23,18).",
+                "holder" => "div",
+                "class" => "tdc-textfield-big",
+                'group' => $group
+            ),
+            array(
+                "param_name" => "installed_post_types",
+                "type" => "textfield",
+                "value" =>  '',//tdUtil::create_array_installed_post_types(),
+                "heading" => 'Post Type',
+                "description" => "Filter by post types. Usage: post, page, event - Write 1 or more post types delimited by commas",
+                "holder" => "div",
+                "class" => "tdc-textfield-big",
                 'group' => $group
             ),
             array(
                 "param_name" => "limit",
                 "type" => "textfield",
                 "value" => '5',
-                "heading" => 'Limit post number:',
+                "heading" => 'Limit post number',
                 "description" => "If the field is empty the limit post number will be the number from Wordpress settings -> Reading",
                 "holder" => "div",
                 "class" => "tdc-textfield-small",
@@ -2635,7 +2605,7 @@ class td_config {
                 "param_name" => "offset",
                 "type" => "textfield",
                 "value" => '',
-                "heading" => 'Offset posts:',
+                "heading" => 'Offset posts',
                 "description" => "Start the count with an offset. If you have a block that shows 5 posts before this one, you can make this one start from the 6'th post (by using offset 5)",
                 "holder" => "div",
                 "class" => "tdc-textfield-small",
@@ -2650,7 +2620,7 @@ class td_config {
                 "param_name" => "ajax_pagination",
                 "type" => "dropdown",
                 "value" => array('- No pagination -' => '', 'Next Prev ajax' => 'next_prev', 'Load More button' => 'load_more', 'Infinite load' => 'infinite'),
-                "heading" => 'Pagination:',
+                "heading" => 'Pagination',
                 "description" => "Our blocks support pagination.",
                 "holder" => "div",
                 "class" => "",
@@ -2661,7 +2631,7 @@ class td_config {
                 "param_name" => "ajax_pagination_infinite_stop",
                 "type" => "textfield",
                 "value" => '',
-                "heading" => "Infinite load show 'Load more' after x pages:",
+                "heading" => "Infinite load show 'Load more' after x pages",
                 "description" => "ONLY FOR INFINITE LOAD pagination: Shows 'load more' button after x number of pages. Leave this blank to load posts forever when infinite load is set for ajax pagination",
                 "holder" => "div",
                 "class" => "",
@@ -2685,7 +2655,7 @@ class td_config {
                 "param_name" => "td_ajax_filter_type", //this is used to build the filter list (for example a list of categories from the id-s bellow)
                 "type" => "dropdown",
                 "value" => array('- No drop down ajax filter -' => '', 'Filter by categories' => 'td_category_ids_filter', 'Filter by authors' => 'td_author_ids_filter', 'Filter by tag IDs' => 'td_tag_slug_filter', 'Filter by popularity (Featured | All time popular)' => 'td_popularity_filter_fa'),
-                "heading" => 'Ajax dropdown - filter type:',
+                "heading" => 'Ajax dropdown - filter type',
                 "description" => "Show the ajax drop down filter. The ajax filters (except by popularity) require an additional parameter. If no ids are provided in the input below, the filter will show all the available items (ex: all authors, all categories etc..)",
                 "holder" => "div",
                 "class" => "",
@@ -2697,7 +2667,7 @@ class td_config {
                 "param_name" => "td_ajax_filter_ids", //the ids that we will show in the list
                 "type" => "textfield",
                 "value" => '',
-                "heading" => 'Ajax dropdown - show the following IDs:',
+                "heading" => 'Ajax dropdown - show the following IDs',
                 "description" => "The ajax drop down shows only the (author ids, categories ids OR tag IDs) that you enter here separated by comas",
                 "holder" => "div",
                 "class" => "",
@@ -2720,7 +2690,7 @@ class td_config {
                 "param_name" => "td_ajax_preloading",  //preloader settings
                 "type" => "dropdown",
                 "value" => array('- No preloading -' => '', 'Optimized preloading' => 'preload', 'Preload all' => 'preload_all'),
-                "heading" => 'Ajax dropdown - content preloading:',
+                "heading" => 'Ajax dropdown - content preloading',
                 "description" => "The content that is displayed when a user clicks on an ajax filter from the dropdown is preloaded on each pageview. WARNING: This feature consumes more resources on the server.",
                 "holder" => "div",
                 "class" => "",
@@ -2743,19 +2713,19 @@ class td_config {
                 "param_name" => "custom_title",
                 "type" => "textfield",
                 "value" => "Block title",
-                "heading" => 'Custom title for this block:',
-                "description" => "Optional - a title for this block, if you leave it blank the block will not have a title",
+                "heading" => 'Block title',
+                "description" => "Custom title for this block",
                 "holder" => "div",
-                "class" => ""
+                "class" => "tdc-textfield-big"
             ),
             array(
                 "param_name" => "custom_url",
                 "type" => "textfield",
                 "value" => "",
-                "heading" => 'Title url:',
-                "description" => "Optional - a custom url when the block title is clicked",
+                "heading" => 'Title text color',
+                "description" => "Optional - Choose a custom title text color for this block",
                 "holder" => "div",
-                "class" => ""
+                "class" => "tdc-textfield-big"
             ),
             array(
                 "type" => "colorpicker",
@@ -2794,10 +2764,10 @@ class td_config {
             "param_name" => "td_grid_style",
             "type" => "dropdown",
             "value" => array(),
-            "heading" => "Big grid style:",
+            "heading" => "Big grid style",
             "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
             "holder" => "div",
-            "class" => ""
+            "class" => "tdc-dropdown-extrabig"
         );
         foreach (td_global::$big_grid_styles_list as $big_grid_id => $params) {
             $td_grid_style_drop_down['value'][$big_grid_id] = $params['text'];
@@ -2811,10 +2781,10 @@ class td_config {
                 "value" => array(
                     'Grid style 1 - Default' => 'td-grid-style-1'
                 ),
-                "heading" => "Big grid style:",
+                "heading" => "Big grid style",
                 "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
                 "holder" => "div",
-                "class" => ""
+                "class" => "tdc-dropdown-extrabig"
             )
 
         );
