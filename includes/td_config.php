@@ -837,7 +837,7 @@ class td_config {
                         "heading" => 'Use adspot :',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-small",
+                        "class" => "",
                     ),
 
                     array(
@@ -847,7 +847,7 @@ class td_config {
                         "heading" => 'Ad title:',
                         "description" => "Optional - a title for the Ad, like - Advertisement - if you leave it blank the block will not have a title",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array (
                         'param_name' => 'css',
@@ -878,7 +878,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array (
                         "param_name" => "roles",
@@ -887,7 +887,7 @@ class td_config {
                         "heading" => "User roles",
                         "description" => "Optional - Filter by role, add one or more <a target=\"_blank\" href=\"https://codex.wordpress.org/Roles_and_Capabilities\">user roles</a> , separate them with a comma (ex. Administrator, Editor, Author, Contributor, Subscriber)",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "custom_url",
@@ -896,7 +896,7 @@ class td_config {
                         "heading" => 'Block title - custom url',
                         "description" => "Optional - (when the module title is clicked)",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "sort",
@@ -905,7 +905,7 @@ class td_config {
                         "heading" => 'Sort authors by:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-small",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "exclude",
@@ -914,7 +914,7 @@ class td_config {
                         "heading" => "Exclude authors id (, separated)",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "include",
@@ -923,7 +923,7 @@ class td_config {
                         "heading" => "Include authors id (, separated) - do not use with exclude",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -972,7 +972,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "author_id",
@@ -981,7 +981,7 @@ class td_config {
                         "heading" => "Author id",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "author_url_text",
@@ -990,7 +990,7 @@ class td_config {
                         "heading" => "Author page link text",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "author_url",
@@ -999,16 +999,16 @@ class td_config {
                         "heading" => "Author page link url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "open_in_new_window",
-                        "type" => "dropdown",
-                        "value" => array('- Same window -' => '', 'New window' => 'y'),
-                        "heading" => __("Open in:", TD_THEME_NAME),
+                        "type" => "checkbox",
+                        "value" => '',
+                        "heading" => __("Open in new window:", TD_THEME_NAME),
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => ""
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1057,7 +1057,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => ""
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1106,7 +1106,7 @@ class td_config {
                         "heading" => 'Image alignment:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-small",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "display",
@@ -1118,7 +1118,7 @@ class td_config {
                         "heading" => 'Layout:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-dropdown-small",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "style",
@@ -1153,7 +1153,7 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
                     array(
                         "param_name" => "custom_url_item0",
@@ -1162,7 +1162,7 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item0",
@@ -1235,7 +1235,7 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
                     array(
                         "param_name" => "custom_url_item2",
@@ -1244,7 +1244,7 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item2",
@@ -1276,7 +1276,7 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
                     array(
                         "param_name" => "custom_url_item3",
@@ -1285,7 +1285,7 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-medium"
+                        "class" => "tdc-textfield-big"
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item4",
@@ -1325,7 +1325,7 @@ class td_config {
                         "heading" => 'Optional - custom title for this block:',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "param_name" => "custom_url",
@@ -1334,7 +1334,7 @@ class td_config {
                         "heading" => 'Optional - custom url for this block (when the module title is clicked):',
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1394,7 +1394,7 @@ class td_config {
                         "heading" => "Instagram ID",
                         "description" => 'Enter the ID as it appears after the instagram url (ex. http://www.instagram.com/myID)',
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                         'group' => 'Instagram'
                     ),
 
@@ -1408,7 +1408,7 @@ class td_config {
                         "heading" => "Instagram Header",
                         "description" => 'Display or hide the Instagram header section (default: On)',
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "tdc-dropdown-small",
                         'group' => 'Instagram'
                     ),
 
@@ -1429,7 +1429,7 @@ class td_config {
                         "heading" => 'Number of images per row:',
                         "description" => 'Set the number of images displayed on each row (default is 3).',
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "tdc-dropdown-small",
                         'group' => 'Instagram'
                     ),
 
@@ -1447,7 +1447,7 @@ class td_config {
                         "heading" => 'Number of rows:',
                         "description" => 'Set on how many rows to display the images (default is 1)',
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "tdc-dropdown-small",
                         'group' => 'Instagram'
                     ),
 
@@ -1462,7 +1462,7 @@ class td_config {
                         "heading" => "Image gap",
                         "description" => 'Set a gap between images (default: No gap)',
                         "holder" => "div",
-                        "class" => "tdc-dropdown-big",
+                        "class" => "",
                         'group' => 'Instagram'
                     ),
 
@@ -1473,7 +1473,7 @@ class td_config {
                         "heading" => "Custom title for this block:",
                         "description" => "Optional - a title for this block, if you leave it blank the block will not have a title",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "",
                     ),
 
                     array(
@@ -2546,7 +2546,7 @@ class td_config {
                 "heading" => 'Post ID filter:',
                 "description" => "Filter multiple posts by ID. Enter here the post IDs separated by commas (ex: 10,27,233). To exclude posts from this block add them with '-' (ex: -7, -16)",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2556,7 +2556,7 @@ class td_config {
                 "heading" => 'Category filter:',
                 "description" => "A single category filter. If you want to filter multiple categories, use the 'Multiple categories filter' and leave this to default",
                 "holder" => "div",
-                "class" => "tdc-dropdown-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2566,7 +2566,7 @@ class td_config {
                 "heading" => 'Multiple categories filter:',
                 "description" => "Filter multiple categories by ID. Enter here the category IDs separated by commas (ex: 13,23,18). To exclude categories from this block add them with '-' (ex: -9, -10)",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2576,7 +2576,7 @@ class td_config {
                 "heading" => 'Filter by tag slug:',
                 "description" => "To filter multiple tag slugs, enter here the tag slugs separated by commas (ex: tag1,tag2,tag3)",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2586,7 +2586,7 @@ class td_config {
                 "heading" => "Multiple authors filter:",
                 "description" => "Filter multiple authors by ID. Enter here the author IDs separated by commas (ex: 13,23,18).",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2596,7 +2596,7 @@ class td_config {
                 "heading" => 'Post Type:',
                 "description" => "Filter by post types. Usage: post, page, event - Write 1 or more post types delimited by commas",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2619,7 +2619,7 @@ class td_config {
                 "heading" => 'Sort order:',
                 "description" => "How to sort the posts. Notice that Popular (last 7 days) option is affected by caching plugins and CDNs. For popular posts we recommend the jetpack (24-48hrs) method",
                 "holder" => "div",
-                "class" => "tdc-dropdown-small",
+                "class" => "",
                 'group' => $group
             ),
             array(
@@ -2653,7 +2653,7 @@ class td_config {
                 "heading" => 'Pagination:',
                 "description" => "Our blocks support pagination.",
                 "holder" => "div",
-                "class" => "tdc-dropdown-small",
+                "class" => "",
                 'group' => 'Pagination'
             ),
 
@@ -2664,7 +2664,7 @@ class td_config {
                 "heading" => "Infinite load show 'Load more' after x pages:",
                 "description" => "ONLY FOR INFINITE LOAD pagination: Shows 'load more' button after x number of pages. Leave this blank to load posts forever when infinite load is set for ajax pagination",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 'group' => 'Pagination'
             ),
             array (
@@ -2688,7 +2688,7 @@ class td_config {
                 "heading" => 'Ajax dropdown - filter type:',
                 "description" => "Show the ajax drop down filter. The ajax filters (except by popularity) require an additional parameter. If no ids are provided in the input below, the filter will show all the available items (ex: all authors, all categories etc..)",
                 "holder" => "div",
-                "class" => "tdc-dropdown-big",
+                "class" => "",
                 "group" => "Ajax filter"
             ),
 
@@ -2700,7 +2700,7 @@ class td_config {
                 "heading" => 'Ajax dropdown - show the following IDs:',
                 "description" => "The ajax drop down shows only the (author ids, categories ids OR tag IDs) that you enter here separated by comas",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 "group" => "Ajax filter"
             ),
 
@@ -2712,7 +2712,7 @@ class td_config {
                 "heading" => 'Ajax dropdown - Filter default text',
                 "description" => "The default text for the first item from the drop down. The first item shows the default block settings (the settings from the Filter tab)",
                 "holder" => "div",
-                "class" => "tdc-textfield-big",
+                "class" => "",
                 "group" => "Ajax filter"
             ),
 
@@ -2723,7 +2723,7 @@ class td_config {
                 "heading" => 'Ajax dropdown - content preloading:',
                 "description" => "The content that is displayed when a user clicks on an ajax filter from the dropdown is preloaded on each pageview. WARNING: This feature consumes more resources on the server.",
                 "holder" => "div",
-                "class" => "tdc-dropdown-big",
+                "class" => "",
                 "group" => "Ajax filter"
             ),
 
@@ -2746,7 +2746,7 @@ class td_config {
                 "heading" => 'Custom title for this block:',
                 "description" => "Optional - a title for this block, if you leave it blank the block will not have a title",
                 "holder" => "div",
-                "class" => "tdc-textfield-big"
+                "class" => ""
             ),
             array(
                 "param_name" => "custom_url",
@@ -2755,7 +2755,7 @@ class td_config {
                 "heading" => 'Title url:',
                 "description" => "Optional - a custom url when the block title is clicked",
                 "holder" => "div",
-                "class" => "tdc-textfield-big"
+                "class" => ""
             ),
             array(
                 "type" => "colorpicker",
@@ -2797,7 +2797,7 @@ class td_config {
             "heading" => "Big grid style:",
             "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
             "holder" => "div",
-            "class" => "tdc-dropdown-big"
+            "class" => ""
         );
         foreach (td_global::$big_grid_styles_list as $big_grid_id => $params) {
             $td_grid_style_drop_down['value'][$big_grid_id] = $params['text'];
@@ -2814,7 +2814,7 @@ class td_config {
                 "heading" => "Big grid style:",
                 "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
                 "holder" => "div",
-                "class" => "tdc-dropdown-big"
+                "class" => ""
             )
 
         );
