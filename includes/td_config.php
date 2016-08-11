@@ -1099,8 +1099,8 @@ class td_config {
                         "param_name" => "alignment",
                         "type" => "dropdown",
                         "value" => array(
-                            'Center' => '',
                             'Top' => 'top',
+                            'Center' => '',
                             'Bottom' => 'bottom'
                         ),
                         "heading" => 'Image alignment:',
@@ -1116,6 +1116,18 @@ class td_config {
                             'Horizontal' => 'horizontal'
                         ),
                         "heading" => 'Layout:',
+                        "description" => "",
+                        "holder" => "div",
+                        "class" => "tdc-dropdown-small",
+                    ),
+                    array(
+                        "param_name" => "style",
+                        "type" => "dropdown",
+                        "value" => array(
+                            '1 - With border' => '',
+                            '2 - White box' => 'style-2'
+                        ),
+                        "heading" => 'Box style:',
                         "description" => "",
                         "holder" => "div",
                         "class" => "tdc-dropdown-small",

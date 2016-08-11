@@ -11,6 +11,7 @@ class td_block_image_box extends td_block {
 				'gap' => '',
 				'display' => '',
 				'alignment' => '',
+				'style' => '',
 				'image_title_item0' => 'Custom title',
 				'custom_url_item0' => '#',
 				'open_in_new_window_item0' => '',
@@ -47,11 +48,16 @@ class td_block_image_box extends td_block {
 			}
 		}
 
+		// additional classes
+		$additional_classes = array();
+
+		// height
 		$box_height = '';
 		if(!empty($height)) {
 			$box_height = ' height: ' . $height . 'px';
 		}
 
+		// gap
 		$box_gap_padding = '';
 		$box_gap_margin = '';
 		if(isset($gap)) {
@@ -59,23 +65,27 @@ class td_block_image_box extends td_block {
 			$box_gap_margin = 'margin-left: -' . $gap . 'px; margin-right: -' . $gap . 'px;';
 		}
 
-		$box_display = '';
-		$box_space = '';
+		// layout
 		if(!empty($display)) {
-			$box_display = ' td-box-horizontal';
+			$additional_classes [] = 'td-box-horizontal';
 
 			if(isset($gap)) {
 				$box_space = ' margin-bottom: ' . $gap . 'px;';
 			}
 		}
 
-		$image_alignment = '';
+		// alignment
 		if(!empty($alignment)) {
-			$image_alignment = ' td-image-top';
+			$additional_classes [] = 'td-image-box-' . $atts['alignment'];
+		}
+
+		// style
+		if(!empty($atts['style'])) {
+			$additional_classes [] = 'td-image-box-' . $atts['style'];
 		}
 
 		$buffy = '';
-		$buffy .= '<div class="' . $this->get_block_classes(array($box_display, $image_alignment)) . '" ' . $this->get_block_html_atts() . '>';
+		$buffy .= '<div class="' . $this->get_block_classes($additional_classes) . '" ' . $this->get_block_html_atts() . '>';
 
 		//get the block js
 		$buffy .= $this->get_block_css();
