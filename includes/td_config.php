@@ -2722,7 +2722,7 @@ class td_config {
                 "param_name" => "custom_url",
                 "type" => "textfield",
                 "value" => "",
-                "heading" => 'Title text color',
+                "heading" => 'Title text url',
                 "description" => "Optional - Choose a custom title text color for this block",
                 "holder" => "div",
                 "class" => "tdc-textfield-big"
