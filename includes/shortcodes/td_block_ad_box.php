@@ -10,6 +10,7 @@ class td_block_ad_box extends td_block {
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content,
 	            'spot_title' => '',
+	            'el_class' => '',
             ), $atts));
 
 
@@ -91,7 +92,8 @@ class td_block_ad_box extends td_block {
             array(
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content
-                'spot_title' => ''
+                'spot_title' => '',
+	            'el_class' => '',
             ), $atts));
 
 
@@ -450,7 +452,7 @@ class td_block_ad_box extends td_block {
 
 
 
-        $buffy .= '<div class="td-g-rec td-g-rec-id-' . $spot_id . $align . '">' . "\n";
+        $buffy .= '<div class="td-g-rec td-g-rec-id-' . $spot_id . $align . ' ' . $el_class . '">' . "\n";
             $buffy .= '<script type="text/javascript">' . "\n";
 
 
@@ -534,19 +536,20 @@ class td_block_ad_box extends td_block {
             array(
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content
-                'spot_title' => ''
+                'spot_title' => '',
+	            'el_class' => '',
 
             ), $atts));
 
 
         $buffy = '';
 
-        $buffy .= '<div class="td-a-rec td-a-rec-id-' . $spot_id . $align . ' '
+	    $buffy .= '<div class="td-a-rec td-a-rec-id-' . $spot_id . $align . ' '
             . ((!empty($ad_array['disable_m'])) ? ' td-rec-hide-on-m' : '')
             . ((!empty($ad_array['disable_tl'])) ? ' td-rec-hide-on-tl' : '')
             . ((!empty($ad_array['disable_tp'])) ? ' td-rec-hide-on-tp' : '')
             . ((!empty($ad_array['disable_p'])) ? ' td-rec-hide-on-p' : '')
-            . '">';
+            . ' ' . $el_class . '">';
             if (!empty($spot_title)) {
                 $buffy .= '<span class="td-adspot-title">' . $spot_title . '</span>';
             }

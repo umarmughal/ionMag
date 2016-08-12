@@ -845,7 +845,21 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-textfield-big",
                     ),
-                    array (
+	                array(
+		                "param_name" => "separator",
+		                "type" => "horizontal_separator",
+		                "value" => "",
+		                "class" => ""
+	                ),
+	                array(
+		                'param_name' => 'el_class',
+		                'type' => 'textfield',
+		                'value' => '',
+		                'heading' => 'Extra class',
+		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+		                'class' => 'tdc-textfield-extrabig'
+	                ),
+	                array (
                         'param_name' => 'css',
                         'value' => '',
                         'type' => 'css_editor',

@@ -40,7 +40,7 @@ class td_block_related_posts extends td_block {
         //get the js for this block
         $buffy .= $this->get_block_js();
 
-        $buffy .= '<div class="' . $this->get_block_classes( array( $atts['el_class'] ) ) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
 
         //get the filter for this block
         $buffy .= '<h4 class="td-related-title">';

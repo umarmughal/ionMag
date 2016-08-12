@@ -12,6 +12,8 @@ class td_block_image_box extends td_block {
 				'display' => '',
 				'alignment' => '',
 				'style' => '',
+				'el_class' => '',
+
 				'image_title_item0' => 'Custom title',
 				'custom_url_item0' => '#',
 				'open_in_new_window_item0' => '',
@@ -49,7 +51,7 @@ class td_block_image_box extends td_block {
 		}
 
 		// additional classes
-		$additional_classes = array();
+		$additional_classes = array( $el_class );
 
 		// height
 		$box_height = '';
@@ -66,6 +68,8 @@ class td_block_image_box extends td_block {
 		}
 
 		// layout
+		$box_space = '';
+
 		if(!empty($display)) {
 			$additional_classes [] = 'td-box-horizontal';
 
@@ -85,7 +89,7 @@ class td_block_image_box extends td_block {
 		}
 
 		$buffy = '';
-		$buffy .= '<div class="' . $this->get_block_classes($additional_classes, $atts['el_class']) . '" ' . $this->get_block_html_atts() . '>';
+		$buffy .= '<div class="' . $this->get_block_classes($additional_classes) . '" ' . $this->get_block_html_atts() . '>';
 
 		//get the block js
 		$buffy .= $this->get_block_css();

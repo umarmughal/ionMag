@@ -7,10 +7,11 @@ class td_block_author extends td_block {
 
         extract(shortcode_atts(
             array(
-                'author_id' => '',
+                'author_id' => '1222',
                 'author_url_text' => '',
                 'author_url' => '',
-                'open_in_new_window' => ''
+                'open_in_new_window' => '',
+	            'el_class' => ''
             ), $atts));
 
         $td_target = '';
@@ -20,9 +21,16 @@ class td_block_author extends td_block {
 
         $td_author = get_user_by( 'id', $author_id );
 
+	    if ( false === $td_author ) {
+		    $buffy = '';
+		    $buffy .= '<div class="' . $this->get_block_classes( array( $el_class ) ) . '" ' . $this->get_block_html_atts() . '>';
+		    $buffy .= '</div>';
+		    return $buffy;
+	    }
+
 
         $buffy = '';
-        $buffy .= '<div class="' . $this->get_block_classes( array( $atts['el_class'] ) ) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes( array( $el_class ) ) . '" ' . $this->get_block_html_atts() . '>';
 
 
         //get the block js

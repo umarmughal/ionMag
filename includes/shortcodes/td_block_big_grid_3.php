@@ -13,7 +13,8 @@ class td_block_big_grid_3 extends td_block {
         // for big grids, extract the td_grid_style
         extract(shortcode_atts(
             array(
-                'td_grid_style' => 'td-grid-style-1'
+                'td_grid_style' => 'td-grid-style-1',
+	            'el_class' => ''
             ), $atts));
 
 
@@ -24,7 +25,7 @@ class td_block_big_grid_3 extends td_block {
 
 	    $buffy = '';
 
-        $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1 td-big-grids', $atts['el_class'])) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1 td-big-grids', $el_class)) . '" ' . $this->get_block_html_atts() . '>';
             $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
                 $buffy .= $this->inner($this->td_query->posts); //inner content of the block
             $buffy .= '</div>';
