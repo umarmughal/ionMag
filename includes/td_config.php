@@ -874,7 +874,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "tdc-textfield-extrabig",
                     ),
                     array(
                         "param_name" => "custom_url",
@@ -883,7 +883,7 @@ class td_config {
                         "heading" => 'Block title url',
                         "description" => "Optional - Custom url when the block title is clicked",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "tdc-textfield-extrabig",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -974,7 +974,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "tdc-textfield-extrabig",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1030,13 +1030,19 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
+                    array(
+                        "param_name" => "separator",
+                        "type" => "horizontal_separator",
+                        "value" => "",
+                        "class" => ""
+                    ),
 	                array(
 		                'param_name' => 'el_class',
 		                'type' => 'textfield',
 		                'value' => '',
 		                'heading' => 'Extra class',
 		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
-		                'class' => '',
+		                'class' => 'tdc-textfield-extrabig',
 		                'group' => ''
 	                ),
 	                array (
@@ -1068,7 +1074,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig"
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1149,13 +1155,19 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-dropdown-big",
                     ),
+                    array(
+                        "param_name" => "separator",
+                        "type" => "horizontal_separator",
+                        "value" => "",
+                        "class" => ""
+                    ),
 	                array(
 		                'param_name' => 'el_class',
 		                'type' => 'textfield',
 		                'value' => '',
 		                'heading' => 'Extra class',
 		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
-		                'class' => 'tdc-textfield-big'
+		                'class' => 'tdc-textfield-extrabig'
 	                ),
 	                array(
                         "param_name" => "image_item0",
@@ -1367,7 +1379,7 @@ class td_config {
                         "heading" => 'Block title',
                         "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "tdc-textfield-extrabig",
                     ),
                     array(
                         "param_name" => "custom_url",
@@ -1376,7 +1388,7 @@ class td_config {
                         "heading" => 'Block title url',
                         "description" => "Optional - Custom url when the block title is clicked",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "tdc-textfield-extrabig",
                     ),
                     array(
                         "type" => "colorpicker",
@@ -1405,13 +1417,19 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-textfield-small",
                     ),
+                    array(
+                        "param_name" => "separator",
+                        "type" => "horizontal_separator",
+                        "value" => "",
+                        "class" => ""
+                    ),
 	                array(
 		                'param_name' => 'el_class',
 		                'type' => 'textfield',
 		                'value' => '',
 		                'heading' => 'Extra class',
 		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
-		                'class' => '',
+		                'class' => 'tdc-textfield-extrabig',
 		                'group' => ''
 	                ),
 	                array (
@@ -1444,7 +1462,7 @@ class td_config {
                         "heading" => "Block title",
                         "description" => "Custom title for this block",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big",
+                        "class" => "tdc-textfield-extrabig",
                     ),
 
                     array(
@@ -1539,13 +1557,19 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-dropdown-big"
                     ),
+                    array(
+                        "param_name" => "separator",
+                        "type" => "horizontal_separator",
+                        "value" => "",
+                        "class" => ""
+                    ),
 	                array(
 		                'param_name' => 'el_class',
 		                'type' => 'textfield',
 		                'value' => '',
 		                'heading' => 'Extra class',
 		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
-		                'class' => 'tdc-textfield-big'
+		                'class' => 'tdc-textfield-extrabig'
 	                ),
 	                array (
                         'param_name' => 'css',
@@ -2696,14 +2720,20 @@ class td_config {
                 "class" => "",
                 'group' => 'Pagination'
             ),
+            array(
+                "param_name" => "separator",
+                "type" => "horizontal_separator",
+                "value" => "",
+                "class" => ""
+            ),
 	        array(
 		        'param_name' => 'el_class',
 		        'type' => 'textfield',
 		        'value' => '',
 		        'heading' => 'Extra class',
 		        'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
-		        'class' => '',
-		        'group' => 'Pagination'
+		        'class' => 'tdc-textfield-extrabig',
+		        'group' => ''
 	        ),
             array (
                 'param_name' => 'css',
@@ -2784,7 +2814,7 @@ class td_config {
                 "heading" => 'Block title',
                 "description" => "Custom title for this block",
                 "holder" => "div",
-                "class" => "tdc-textfield-big"
+                "class" => "tdc-textfield-extrabig"
             ),
             array(
                 "param_name" => "custom_url",
@@ -2793,7 +2823,7 @@ class td_config {
                 "heading" => 'Title text url',
                 "description" => "Optional - Choose a custom title text color for this block",
                 "holder" => "div",
-                "class" => "tdc-textfield-big"
+                "class" => "tdc-textfield-extrabig"
             ),
             array(
                 "type" => "colorpicker",
@@ -2853,21 +2883,27 @@ class td_config {
                 "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
                 "holder" => "div",
                 "class" => "tdc-dropdown-extrabig"
-            ),
-			array(
-				'param_name' => 'el_class',
-				'type' => 'textfield',
-				'value' => '',
-				'heading' => 'Extra class',
-				'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
-				'class' => 'tdc-textfield-extrabig',
-			)
+            )
         );
 
         // add the design options
         $map_filter_array = array_merge(
             $map_filter_array,
             array(
+                array(
+                    "param_name" => "separator",
+                    "type" => "horizontal_separator",
+                    "value" => "",
+                    "class" => ""
+                ),
+                array(
+                    'param_name' => 'el_class',
+                    'type' => 'textfield',
+                    'value' => '',
+                    'heading' => 'Extra class',
+                    'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+                    'class' => 'tdc-textfield-extrabig',
+                ),
                 array (
                     'param_name' => 'css',
                     'value' => '',
