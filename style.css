@@ -9963,6 +9963,30 @@ input.search-submit:hover {
   margin-bottom: 20px;
   width: 100%;
 }
+.td-social-list {
+  *zoom: 1;
+}
+.td-social-list:before,
+.td-social-list:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.td-social-list:after {
+  clear: both;
+}
+.td-social-list:before,
+.td-social-list:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.td-social-list:after {
+  clear: both;
+}
+.td-social-list .td_social_type:last-child {
+  margin-bottom: 0;
+}
 .td_social_type {
   position: relative;
   width: 100%;

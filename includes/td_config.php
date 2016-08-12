@@ -906,6 +906,7 @@ class td_config {
                     array(
                         "param_name" => "",
                         "type" => "horizontal_separator",
+                        "value" => "",
                         "class" => ""
                     ),
                     array (
@@ -1079,8 +1080,9 @@ class td_config {
                         "description" => 'Optional - Choose a custom title background color for this block'
                     ),
                     array(
-                        "param_name" => "",
+                        "param_name" => "separator",
                         "type" => "horizontal_separator",
+                        "value" => "",
                         "class" => ""
                     ),
                     array(
@@ -1181,6 +1183,7 @@ class td_config {
 	                array(
 		                "param_name" => "horizontal_separator_item1",
 		                "type" => "horizontal_separator",
+                        "value" => "",
 		                "class" => "",
                         "group" => 'Images'
 	                ),
@@ -1227,6 +1230,7 @@ class td_config {
 	                array(
 		                "param_name" => "horizontal_separator_item2",
 		                "type" => "horizontal_separator",
+                        "value" => "",
 		                "class" => "",
                         "group" => 'Images'
 	                ),
@@ -1273,6 +1277,7 @@ class td_config {
 	                array(
 		                "param_name" => "horizontal_separator_item3",
 		                "type" => "horizontal_separator",
+                        "value" => "",
 		                "class" => "",
                         "group" => 'Images'
 	                ),
@@ -1438,6 +1443,7 @@ class td_config {
                     array(
                         "param_name" => "",
                         "type" => "horizontal_separator",
+                        "value" => "",
                         "class" => ""
                     ),
                     array(
