@@ -7,7 +7,7 @@ class td_block_author extends td_block {
 
         extract(shortcode_atts(
             array(
-                'author_id' => '1222',
+                'author_id' => '1', // ID 1 for admin
                 'author_url_text' => '',
                 'author_url' => '',
                 'open_in_new_window' => '',
@@ -24,9 +24,20 @@ class td_block_author extends td_block {
 	    if ( false === $td_author ) {
 		    $buffy = '';
 		    $buffy .= '<div class="' . $this->get_block_classes( array( $el_class ) ) . '" ' . $this->get_block_html_atts() . '>';
+			    $buffy .= '<div class="td_author_wrap">';
+				    $buffy .= '<a href="#">' . get_avatar('', '196') . '</a>';
+
+				    $buffy .= '<div class="item-details">';
+					    $buffy .= '<div class="td-author-name">';
+				        $buffy .= '<a href="#">Author name</a>';
+					    $buffy .= '</div>';
+				    $buffy .= '</div>';
+			    $buffy .= '</div>';
 		    $buffy .= '</div>';
 		    return $buffy;
 	    }
+
+
 
 
         $buffy = '';
