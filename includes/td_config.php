@@ -1079,6 +1079,11 @@ class td_config {
                         "description" => 'Optional - Choose a custom title background color for this block'
                     ),
                     array(
+                        "param_name" => "",
+                        "type" => "horizontal_separator",
+                        "class" => ""
+                    ),
+                    array(
                         "param_name" => "height",
                         "type" => "textfield",
                         "value" => '',
@@ -1133,11 +1138,6 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-dropdown-big",
                     ),
-	                array(
-		                "param_name" => "horizontal_separator_item0",
-		                "type" => "horizontal_separator",
-		                "class" => ""
-	                ),
                     array(
                         "param_name" => "image_item0",
                         "type" => "image",
@@ -1145,7 +1145,8 @@ class td_config {
                         "heading" => "Image 1",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
                     array(
                         "param_name" => "image_title_item0",
@@ -1154,7 +1155,8 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
                     array(
                         "param_name" => "custom_url_item0",
@@ -1163,7 +1165,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item0",
@@ -1172,12 +1175,14 @@ class td_config {
                         "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
 	                array(
 		                "param_name" => "horizontal_separator_item1",
 		                "type" => "horizontal_separator",
-		                "class" => ""
+		                "class" => "",
+                        "group" => 'Images'
 	                ),
                     array(
                         "param_name" => "image_item1",
@@ -1186,7 +1191,8 @@ class td_config {
                         "heading" => "Image 2",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "image_title_item1",
@@ -1195,7 +1201,8 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
                     array(
                         "param_name" => "custom_url_item1",
@@ -1204,7 +1211,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item1",
@@ -1213,12 +1221,14 @@ class td_config {
                         "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
 	                array(
 		                "param_name" => "horizontal_separator_item2",
 		                "type" => "horizontal_separator",
-		                "class" => ""
+		                "class" => "",
+                        "group" => 'Images'
 	                ),
                     array(
                         "param_name" => "image_item2",
@@ -1227,7 +1237,8 @@ class td_config {
                         "heading" => "Image 3",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "image_title_item2",
@@ -1236,7 +1247,8 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
                     array(
                         "param_name" => "custom_url_item2",
@@ -1245,7 +1257,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item2",
@@ -1254,12 +1267,14 @@ class td_config {
                         "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
 	                array(
 		                "param_name" => "horizontal_separator_item3",
 		                "type" => "horizontal_separator",
-		                "class" => ""
+		                "class" => "",
+                        "group" => 'Images'
 	                ),
                     array(
                         "param_name" => "image_item3",
@@ -1268,7 +1283,8 @@ class td_config {
                         "heading" => "Image 4",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "image_title_item3",
@@ -1277,7 +1293,8 @@ class td_config {
                         "heading" => "Custom title",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
                     array(
                         "param_name" => "custom_url_item3",
@@ -1286,7 +1303,8 @@ class td_config {
                         "heading" => "Custom url",
                         "description" => "",
                         "holder" => "div",
-                        "class" => "tdc-textfield-big"
+                        "class" => "tdc-textfield-extrabig",
+                        "group" => 'Images'
                     ),
 	                array(
                         "param_name" => "open_in_new_window_item4",
@@ -1295,7 +1313,8 @@ class td_config {
                         "heading" => "Open in new window",
                         "description" => "",
                         "holder" => "div",
-                        "class" => ""
+                        "class" => "",
+                        "group" => 'Images'
                     ),
                     array (
                         'param_name' => 'css',
