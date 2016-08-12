@@ -22,7 +22,7 @@ class td_block_author extends td_block {
 
 
         $buffy = '';
-        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes( array( $atts['el_class'] ) ) . '" ' . $this->get_block_html_atts() . '>';
 
 
         //get the block js

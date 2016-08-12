@@ -43,7 +43,7 @@ class td_block_popular_categories extends td_block {
 
         $categories = get_categories($cat_args); // has a limit of 6 by default
 
-        $buffy .= '<div class="' . $this->get_block_classes(array('widget', 'widget_categories')) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes(array('widget', 'widget_categories', $atts['el_class'])) . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
         $buffy .= $this->get_block_css();

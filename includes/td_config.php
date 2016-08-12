@@ -1030,7 +1030,16 @@ class td_config {
                         "holder" => "div",
                         "class" => ""
                     ),
-                    array (
+	                array(
+		                'param_name' => 'el_class',
+		                'type' => 'textfield',
+		                'value' => '',
+		                'heading' => 'Extra class',
+		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+		                'class' => '',
+		                'group' => ''
+	                ),
+	                array (
                         'param_name' => 'css',
                         'value' => '',
                         'type' => 'css_editor',
@@ -1140,7 +1149,15 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-dropdown-big",
                     ),
-                    array(
+	                array(
+		                'param_name' => 'el_class',
+		                'type' => 'textfield',
+		                'value' => '',
+		                'heading' => 'Extra class',
+		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+		                'class' => 'tdc-textfield-big'
+	                ),
+	                array(
                         "param_name" => "image_item0",
                         "type" => "image",
                         "value" => '',
@@ -1321,7 +1338,7 @@ class td_config {
                         "class" => "",
                         "group" => 'Images'
                     ),
-                    array (
+	                array (
                         'param_name' => 'css',
                         'value' => '',
                         'type' => 'css_editor',
@@ -1388,7 +1405,16 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-textfield-small",
                     ),
-                    array (
+	                array(
+		                'param_name' => 'el_class',
+		                'type' => 'textfield',
+		                'value' => '',
+		                'heading' => 'Extra class',
+		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+		                'class' => '',
+		                'group' => ''
+	                ),
+	                array (
                         'param_name' => 'css',
                         'value' => '',
                         'type' => 'css_editor',
@@ -1513,7 +1539,15 @@ class td_config {
                         "holder" => "div",
                         "class" => "tdc-dropdown-big"
                     ),
-                    array (
+	                array(
+		                'param_name' => 'el_class',
+		                'type' => 'textfield',
+		                'value' => '',
+		                'heading' => 'Extra class',
+		                'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+		                'class' => 'tdc-textfield-big'
+	                ),
+	                array (
                         'param_name' => 'css',
                         'value' => '',
                         'type' => 'css_editor',
@@ -2662,6 +2696,15 @@ class td_config {
                 "class" => "",
                 'group' => 'Pagination'
             ),
+	        array(
+		        'param_name' => 'el_class',
+		        'type' => 'textfield',
+		        'value' => '',
+		        'heading' => 'Extra class',
+		        'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+		        'class' => '',
+		        'group' => 'Pagination'
+	        ),
             array (
                 'param_name' => 'css',
                 'value' => '',
@@ -2769,7 +2812,7 @@ class td_config {
                 "param_name" => "header_color",
                 "value" => '',
                 "description" => 'Optional - Choose a custom title background color for this block'
-            )
+            ),
 
         );//end generic array
     }
@@ -2810,8 +2853,15 @@ class td_config {
                 "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
                 "holder" => "div",
                 "class" => "tdc-dropdown-extrabig"
-            )
-
+            ),
+			array(
+				'param_name' => 'el_class',
+				'type' => 'textfield',
+				'value' => '',
+				'heading' => 'Extra class',
+				'description' => 'Style particular content element differently - add a class name and refer to it in custom CSS',
+				'class' => 'tdc-textfield-extrabig',
+			)
         );
 
         // add the design options

@@ -67,7 +67,7 @@ class td_block_authors extends td_block {
 
 
         $buffy = '';
-        $buffy .= '<div class="' . $this->get_block_classes(array('td_top_authors')) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes( array( 'td_top_authors', $atts['el_class'] ) ) . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
         $buffy .= $this->get_block_css();

@@ -85,7 +85,7 @@ class td_block_image_box extends td_block {
 		}
 
 		$buffy = '';
-		$buffy .= '<div class="' . $this->get_block_classes($additional_classes) . '" ' . $this->get_block_html_atts() . '>';
+		$buffy .= '<div class="' . $this->get_block_classes($additional_classes, $atts['el_class']) . '" ' . $this->get_block_html_atts() . '>';
 
 		//get the block js
 		$buffy .= $this->get_block_css();
