@@ -29,8 +29,11 @@ class td_block_instagram extends td_block {
 		    //get the block js
 		    $buffy .= $this->get_block_css();
 
-            //get the block title
-            $buffy .= $this->get_block_title();
+        // block title wrap
+        $buffy .= '<div class="td-block-title-wrap">';
+            $buffy .= $this->get_block_title(); //get the block title
+        $buffy .= '</div>';
+
             $buffy .= '<div id=' . $this->block_uid . ' class="td-instagram-wrap">';
                 $buffy.= td_instagram::render_generic($atts);
             $buffy .= '</div>';
