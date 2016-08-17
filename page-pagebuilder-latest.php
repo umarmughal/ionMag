@@ -86,6 +86,9 @@ if (!empty($post->ID)) {
                     <?php endwhile; ?>
                 <?php }
             }
+        } else if ( td_util::tdc_is_live_editor_iframe() ) {
+	        // The content needs to be shown (Maybe we have a previewed content, and we need the 'the_content' hook !)
+	        the_content();
         }
 
         ?>
