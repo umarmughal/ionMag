@@ -941,7 +941,7 @@ class td_config {
                         "description" => 'Optional - Choose a custom title background color for this block'
                     ),
                     array(
-                        "param_name" => "",
+                        "param_name" => "separator",
                         "type" => "horizontal_separator",
                         "value" => "",
                         "class" => ""
@@ -1522,7 +1522,7 @@ class td_config {
                         "description" => 'Optional - Choose a custom title background color for this block'
                     ),
                     array(
-                        "param_name" => "",
+                        "param_name" => "separator",
                         "type" => "horizontal_separator",
                         "value" => "",
                         "class" => ""
