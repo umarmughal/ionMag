@@ -75,6 +75,34 @@
 }
 
 
+// Image ad condition to hide the ad title and ad to
+/* responsive landscape desktop */
+@media (min-width: 1141px) {
+  .td-rec-hide-on-m {
+    display: none !important;
+  }
+}
+/* responsive landscape tablet */
+@media (min-width: @responsive_l_tablet_min) and (max-width: @responsive_l_tablet_max) {
+  .td-rec-hide-on-tl {
+    display: none !important;
+  }
+}
+
+/* responsive portrait tablet */
+@media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+  .td-rec-hide-on-tp {
+    display: none !important;
+  }
+}
+/* responsive portrait phone */
+@media (max-width: @responsive_p_phone_max) {
+  .td-rec-hide-on-p {
+    display: none !important;
+  }
+}
+
+
 // header ad
 .td-header-rec-wrap {
   position: relative;
@@ -231,32 +259,8 @@
 // sidebar ad
 .td-a-rec-id-sidebar,
 .td-g-rec-id-sidebar {
-  margin-bottom: 38px;
+  margin-bottom: 40px;
   text-align: center;
-
-  .td-adspot-title {
-    display: block;
-    position: relative;
-    padding-bottom: 8px;
-    text-align: left;
-    font-family: @font2;
-    font-size: 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: 1;
-    margin-bottom: 20px;
-
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 80px;
-      height: 1px;
-      background-color: @td_theme_color;
-      .opacity(0.3);
-    }
-  }
 }
 
 // footer ad

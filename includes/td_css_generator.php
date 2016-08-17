@@ -344,6 +344,31 @@ function td_css_generator() {
         border-bottom-color: @mobile_text_color !important;
     }
 
+    /* @mobile_background_image */
+    .td-menu-background,
+    .td-search-background {
+        background-image: url('@mobile_background_image');
+    }
+
+    /* @mobile_background_repeat */
+    .td-menu-background,
+    .td-search-background {
+        background-repeat: @mobile_background_repeat;
+    }
+
+    /* @mobile_background_size */
+    .td-menu-background,
+    .td-search-background {
+        background-size: @mobile_background_size;
+    }
+
+    /* @mobile_background_position */
+    .td-menu-background,
+    .td-search-background {
+        background-position: @mobile_background_position;
+    }
+
+
     /* @login_text_color */
     .white-popup-block,
     .mfp-content .td-login-panel-title,
@@ -731,35 +756,25 @@ function td_css_generator() {
     .td_module_6 .entry-title  {
     	@module_6
     }
-    
-    
-    /* other_modules_general */
-    .td-big-grid-post .entry-title {
-		@other_modules_general
-	}
     /* @module_mx2 */
     .td_module_mx2 .entry-title {
     	@module_mx2
     }
-    /* @big_grid_big */
-    .td-big-grid-post.td-big-thumb .td-big-grid-meta,
-    .td-big-thumb .td-big-grid-meta .entry-title {
-        @big_grid_big
+    
+    
+    /* big grids modules */
+    /* @module_mx1 */
+    .td_module_mx1 .entry-title {
+        @module_mx1
     }
-    /* @big_grid_medium */
-    .td-big-grid-post.td-medium-thumb .td-big-grid-meta,
-    .td-medium-thumb .td-big-grid-meta .entry-title {
-        @big_grid_medium
+    /* @module_mx3 */
+    .td_module_mx3 .entry-title {
+        @module_mx3
     }
-    /* @big_grid_small */
-    .td-big-grid-post.td-small-thumb .td-big-grid-meta,
-    .td-small-thumb .td-big-grid-meta .entry-title {
-        @big_grid_small
-    }
-    /* @big_grid_tiny */
-    .td-big-grid-post.td-tiny-thumb .td-big-grid-meta,
-    .td-tiny-thumb .td-big-grid-meta .entry-title {
-        @big_grid_tiny
+    /* @module_mx4 */
+    .td_module_mx4 .entry-title,
+    .td_block_big_grid_3.td-grid-style-1 .entry-title {
+        @module_mx4
     }
     
     
@@ -1097,6 +1112,12 @@ function td_css_generator() {
     $td_css_compiler->load_setting('page_title_color');
     $td_css_compiler->load_setting('page_content_color');
     $td_css_compiler->load_setting('page_h_color');
+
+    // mobile menu/search background
+    $td_css_compiler->load_setting('mobile_background_image');
+    $td_css_compiler->load_setting('mobile_background_repeat');
+    $td_css_compiler->load_setting('mobile_background_size');
+    $td_css_compiler->load_setting('mobile_background_position');
 
     // footer background
     $td_css_compiler->load_setting('footer_background_image');
