@@ -10,7 +10,7 @@ class td_module_mx3 extends td_module {
         ob_start();
         ?>
 
-        <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post", "td-big-thumb")); ?>">
+        <div class="<?php echo $this->get_module_classes(array("td-big-grid-post-$order_no", "td-big-grid-post")); ?>">
             <?php echo $this->get_image('td_640x400');?>
 
             <div class="td-meta-info-container">
