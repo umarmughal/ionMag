@@ -1887,31 +1887,23 @@ class td_config {
                 'module_6' =>  array(
                     'text' => 'Module 6',
                     'type' => 'default',
-                )
-            ),
-            'Modules MX and Other Blocks - Article Title' => array (
-                'other_modules_general' => array(
-                    'text' => 'General font',
-                    'type' => 'general_setting',
                 ),
                 'module_mx2' =>  array(
                     'text' => 'Module MX2',
                     'type' => 'default',
-                ),
-                'big_grid_tiny' =>  array(
-                    'text' => 'Big grid - Tiny img',
+                )
+            ),
+            'Big grids modules - Article Title' => array (
+                'module_mx1' =>  array(
+                    'text' => 'Module MX1',
                     'type' => 'default',
                 ),
-                'big_grid_small' =>  array(
-                    'text' => 'Big grid - Small img',
+                'module_mx3' =>  array(
+                    'text' => 'Module MX3',
                     'type' => 'default',
                 ),
-                'big_grid_medium' =>  array(
-                    'text' => 'Big grid - Medium img',
-                    'type' => 'default',
-                ),
-                'big_grid_big' =>  array(
-                    'text' => 'Big grid - Big img',
+                'module_mx4' =>  array(
+                    'text' => 'Module MX4',
                     'type' => 'default',
                 )
             ),

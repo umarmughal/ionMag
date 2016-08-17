@@ -756,35 +756,25 @@ function td_css_generator() {
     .td_module_6 .entry-title  {
     	@module_6
     }
-    
-    
-    /* other_modules_general */
-    .td-big-grid-post .entry-title {
-		@other_modules_general
-	}
     /* @module_mx2 */
     .td_module_mx2 .entry-title {
     	@module_mx2
     }
-    /* @big_grid_big */
-    .td-big-grid-post.td-big-thumb .td-big-grid-meta,
-    .td-big-thumb .td-big-grid-meta .entry-title {
-        @big_grid_big
+    
+    
+    /* big grids modules */
+    /* @module_mx1 */
+    .td_module_mx1 .entry-title {
+        @module_mx1
     }
-    /* @big_grid_medium */
-    .td-big-grid-post.td-medium-thumb .td-big-grid-meta,
-    .td-medium-thumb .td-big-grid-meta .entry-title {
-        @big_grid_medium
+    /* @module_mx3 */
+    .td_module_mx3 .entry-title {
+        @module_mx3
     }
-    /* @big_grid_small */
-    .td-big-grid-post.td-small-thumb .td-big-grid-meta,
-    .td-small-thumb .td-big-grid-meta .entry-title {
-        @big_grid_small
-    }
-    /* @big_grid_tiny */
-    .td-big-grid-post.td-tiny-thumb .td-big-grid-meta,
-    .td-tiny-thumb .td-big-grid-meta .entry-title {
-        @big_grid_tiny
+    /* @module_mx4 */
+    .td_module_mx4 .entry-title,
+    .td_block_big_grid_3.td-grid-style-1 .entry-title {
+        @module_mx4
     }
     
     

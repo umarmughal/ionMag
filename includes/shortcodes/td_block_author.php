@@ -10,8 +10,7 @@ class td_block_author extends td_block {
                 'author_id' => '1', // ID 1 for admin
                 'author_url_text' => '',
                 'author_url' => '',
-                'open_in_new_window' => '',
-	            'el_class' => ''
+                'open_in_new_window' => ''
             ), $atts));
 
         $td_target = '';
@@ -23,7 +22,7 @@ class td_block_author extends td_block {
 
 	    if ( false === $td_author ) {
 		    $buffy = '';
-		    $buffy .= '<div class="' . $this->get_block_classes( array( $el_class ) ) . '" ' . $this->get_block_html_atts() . '>';
+		    $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
 			    $buffy .= '<div class="td_author_wrap">';
 				    $buffy .= '<a href="#">' . get_avatar('', '196') . '</a>';
 
@@ -41,7 +40,7 @@ class td_block_author extends td_block {
 
 
         $buffy = '';
-        $buffy .= '<div class="' . $this->get_block_classes( array( $el_class ) ) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
 
 
         //get the block js
