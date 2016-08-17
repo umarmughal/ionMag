@@ -1,4 +1,25 @@
 /*  ----------------------------------------------------------------------------
+    Style 1
+*/
+.td-header-style-1 {
+  // logo
+  .td-header-sp-logo {
+    min-height: 90px;
+  }
+
+  // ads
+  .td-header-rec-wrap {
+    min-height: 90px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      min-height: 0;
+    }
+  }
+}
+
+
+/*  ----------------------------------------------------------------------------
     Style 2
 */
 .td-header-style-2 {
@@ -6,6 +27,13 @@
   @media (min-width: @responsive_p_tablet_min) {
     .td-header-logo-wrap {
       padding: 19px 0;
+    }
+  }
+
+  // logo
+  .td-header-sp-logo {
+    img {
+      position: relative;
     }
   }
 
@@ -22,15 +50,14 @@
   .td-header-sp-recs .adsbygoogle {
     position: relative;
   }
-  .td-header-rec-wrap {
-    min-height: 0;
-  }
 
   .td-header-sp-logo,
   .td-header-sp-recs {
+    text-align: center;
     width: 100%;
   }
 
+  // menu
   .td-header-main-menu {
     padding-right: 0;
 

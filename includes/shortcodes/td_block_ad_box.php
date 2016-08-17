@@ -23,13 +23,13 @@ class td_block_ad_box extends td_block {
             $rec_title .= '<span class="td-adspot-title">' . $spot_title . '</span>';
         }
 
-		// For tagDiv composer add a placeholder element
-	    if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
-		    // 'td_block_wrap' is to identify a tagDiv composer element at binding
-		    // 'tdc-add-block' is to style de placeholder
-		    // block_uid is necessary to have a unique html template returned to the composer (without it the html change event doesn't trigger, and because of this the loader image is still preset)
-		    return  '<div class="td_block_wrap ' . $this->block_uid . '_rand">' . $this->get_block_css() . $rec_title . '<div class="tdc-add-block">' . $spot_id . '</div></div>';
-	    }
+        // For tagDiv composer add a placeholder element
+        if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
+            // 'td_block_wrap' is to identify a tagDiv composer element at binding
+            // 'tdc-add-block' is to style de placeholder
+            // block_uid is necessary to have a unique html template returned to the composer (without it the html change event doesn't trigger, and because of this the loader image is still preset)
+            return  '<div class="td_block_wrap td-a-rec-id-' . $spot_id . ' ' . $this->block_uid . '_rand">' . $this->get_block_css() . $rec_title . '<div class="tdc-add-block"></div></div>';
+        }
 
         if (empty($spot_id)) {
             return;
@@ -568,7 +568,7 @@ class td_block_ad_box extends td_block {
 
         $buffy = '';
 
-	    $buffy .= '<div class="td-a-rec td-a-rec-id-' . $spot_id . $align . ' '
+	    $buffy .= '<div class="td-a-rec td-a-rec-id-' . $spot_id . $align
             . ((!empty($ad_array['disable_m'])) ? ' td-rec-hide-on-m' : '')
             . ((!empty($ad_array['disable_tl'])) ? ' td-rec-hide-on-tl' : '')
             . ((!empty($ad_array['disable_tp'])) ? ' td-rec-hide-on-tp' : '')
@@ -580,7 +580,9 @@ class td_block_ad_box extends td_block {
 
             $buffy .= $rec_title;
 
+            $buffy .= '<div class="td-rec-wrap">';
             $buffy .= do_shortcode(stripslashes($ad_array['ad_code']));
+            $buffy .= '</div>';
         $buffy .= '</div>';
 
 

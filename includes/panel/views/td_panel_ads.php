@@ -981,3 +981,40 @@ echo td_panel_generator::ajax_box('Footer top ad', array(
         )
     );
 ?>
+
+<?php
+echo td_panel_generator::ajax_box('Custom ad 2', array(
+        'td_ajax_calling_file' => basename(__FILE__),
+        'td_ajax_box_id' => 'td_get_ad_spot_by_id',
+        'ad_spot_id' => 'custom_ad_2'
+    )
+);
+?>
+
+<?php
+echo td_panel_generator::ajax_box('Custom ad 3', array(
+        'td_ajax_calling_file' => basename(__FILE__),
+        'td_ajax_box_id' => 'td_get_ad_spot_by_id',
+        'ad_spot_id' => 'custom_ad_3'
+    )
+);
+?>
+
+
+<?php
+echo td_panel_generator::ajax_box('Custom ad 4', array(
+        'td_ajax_calling_file' => basename(__FILE__),
+        'td_ajax_box_id' => 'td_get_ad_spot_by_id',
+        'ad_spot_id' => 'custom_ad_4'
+    )
+);
+?>
+
+<?php
+echo td_panel_generator::ajax_box('Custom ad 5', array(
+        'td_ajax_calling_file' => basename(__FILE__),
+        'td_ajax_box_id' => 'td_get_ad_spot_by_id',
+        'ad_spot_id' => 'custom_ad_5'
+    )
+);
+?>

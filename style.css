@@ -840,7 +840,6 @@ img {
   position: relative;
   float: left;
   width: 22.85714285714286%;
-  height: 90px;
   /* responsive portrait phone */
 }
 .td-header-sp-logo img {
@@ -850,10 +849,6 @@ img {
   bottom: 0;
   left: 0;
   right: 0;
-  max-height: 90px;
-}
-.td-header-sp-logo h1 {
-  margin: 0;
 }
 @media (max-width: 767px) {
   .td-header-sp-logo {
@@ -1129,6 +1124,21 @@ img {
   }
 }
 /*  ----------------------------------------------------------------------------
+    Style 1
+*/
+.td-header-style-1 .td-header-sp-logo {
+  min-height: 90px;
+}
+.td-header-style-1 .td-header-rec-wrap {
+  min-height: 90px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-header-style-1 .td-header-rec-wrap {
+    min-height: 0;
+  }
+}
+/*  ----------------------------------------------------------------------------
     Style 2
 */
 .td-header-style-2 {
@@ -1138,6 +1148,9 @@ img {
   .td-header-style-2 .td-header-logo-wrap {
     padding: 19px 0;
   }
+}
+.td-header-style-2 .td-header-sp-logo img {
+  position: relative;
 }
 .td-header-style-2 .td-a-rec,
 .td-header-style-2 .td-g-rec {
@@ -1154,11 +1167,9 @@ img {
 .td-header-style-2 .td-header-sp-recs .adsbygoogle {
   position: relative;
 }
-.td-header-style-2 .td-header-rec-wrap {
-  min-height: 0;
-}
 .td-header-style-2 .td-header-sp-logo,
 .td-header-style-2 .td-header-sp-recs {
+  text-align: center;
   width: 100%;
 }
 .td-header-style-2 .td-header-main-menu {
@@ -9305,13 +9316,21 @@ tagdiv animations
 .mpf-td-login-effect.mfp-removing.mfp-bg {
   opacity: 0;
 }
+.td-a-rec,
+.td-g-rec {
+  margin-bottom: 0;
+}
 .td-a-rec img,
 .td-g-rec img,
 .td-a-rec .adsbygoogle,
 .td-g-rec .adsbygoogle {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+}
+.td-rec-wrap {
+  margin-bottom: 21px;
+}
+.td-rec-wrap img {
+  margin: auto;
 }
 .td-visible-desktop {
   display: table;
@@ -9399,8 +9418,6 @@ tagdiv animations
   }
 }
 .td-header-rec-wrap {
-  position: relative;
-  min-height: 90px;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -9408,8 +9425,13 @@ tagdiv animations
     margin-left: auto;
     margin-right: auto;
     display: table;
-    min-height: 0 !important;
   }
+}
+.td-header-rec-wrap .td-rec-wrap {
+  margin-bottom: 0;
+}
+.td-header-rec-wrap .td_block_wrap {
+  position: static;
 }
 .td-header-sp-recs {
   position: relative;
@@ -9430,7 +9452,6 @@ tagdiv animations
   bottom: 0;
   right: 0;
   left: 0;
-  margin: auto;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -9465,17 +9486,6 @@ tagdiv animations
   clear: both;
   text-align: center;
 }
-.td-a-rec-id-content_top > div,
-.td-a-rec-id-content_bottom > div {
-  margin: 0 auto 21px auto;
-}
-.td-a-rec-id-content_top img,
-.td-a-rec-id-content_bottom img {
-  margin-bottom: 0;
-}
-.td-a-rec-id-content_inline > div {
-  margin: 0 auto 21px auto;
-}
 .td-g-rec-id-content_inline .adsbygoogle {
   margin-bottom: 21px;
   position: relative;
@@ -9501,8 +9511,6 @@ tagdiv animations
     margin: 0;
   }
 }
-.td-g-rec-id-content_inlineleft > div,
-.td-a-rec-id-content_inlineleft > div,
 .td-g-rec-id-content_inlineleft .adsbygoogle,
 .td-a-rec-id-content_inlineleft .adsbygoogle {
   margin-bottom: 15px;
@@ -9511,16 +9519,10 @@ tagdiv animations
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td-g-rec-id-content_inlineleft > div,
-  .td-a-rec-id-content_inlineleft > div,
   .td-g-rec-id-content_inlineleft .adsbygoogle,
   .td-a-rec-id-content_inlineleft .adsbygoogle {
     margin: 0 auto 26px auto;
   }
-}
-.td-g-rec-id-content_inlineleft img,
-.td-a-rec-id-content_inlineleft img {
-  margin-bottom: 0;
 }
 @media (max-width: 767px) {
   .td-g-rec-id-content_inlineleft,
@@ -9534,8 +9536,6 @@ tagdiv animations
   float: right;
   /* responsive portrait phone */
 }
-.td-g-rec-id-content_inlineright > div,
-.td-a-rec-id-content_inlineright > div,
 .td-g-rec-id-content_inlineright .adsbygoogle,
 .td-a-rec-id-content_inlineright .adsbygoogle {
   margin-bottom: 15px;
@@ -9544,16 +9544,10 @@ tagdiv animations
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td-g-rec-id-content_inlineright > div,
-  .td-a-rec-id-content_inlineright > div,
   .td-g-rec-id-content_inlineright .adsbygoogle,
   .td-a-rec-id-content_inlineright .adsbygoogle {
     margin: 0 auto 26px auto;
   }
-}
-.td-g-rec-id-content_inlineright img,
-.td-a-rec-id-content_inlineright img {
-  margin-bottom: 0;
 }
 @media (max-width: 767px) {
   .td-g-rec-id-content_inlineright,
@@ -9562,9 +9556,10 @@ tagdiv animations
     text-align: center;
   }
 }
-.td-a-rec-id-sidebar,
-.td-g-rec-id-sidebar {
+.td-a-rec-id-sidebar .td-rec-wrap {
   margin-bottom: 40px;
+}
+.td-g-rec-id-sidebar {
   text-align: center;
 }
 .td-footer-ad {
@@ -9576,11 +9571,14 @@ tagdiv animations
 .td-footer-ad .adsbygoogle {
   display: block !important;
 }
+.td-footer-ad .td-rec-wrap {
+  margin-bottom: 0;
+}
 .td-a-rec-id-footer_top,
 .td-g-rec-id-footer_top {
   display: table;
   margin: 0 auto;
-  padding: 58px 10px 58px;
+  padding: 58px 10px;
   text-align: center;
 }
 .td-a-rec-id-footer_top .td-adspot-title,
@@ -9638,6 +9636,13 @@ tagdiv animations
     padding-top: 34px;
     padding-bottom: 34px;
   }
+}
+.td-a-rec-id-custom_ad_1 .td-rec-wrap,
+.td-a-rec-id-custom_ad_2 .td-rec-wrap,
+.td-a-rec-id-custom_ad_3 .td-rec-wrap,
+.td-a-rec-id-custom_ad_4 .td-rec-wrap,
+.td-a-rec-id-custom_ad_5 .td-rec-wrap {
+  margin-bottom: 40px;
 }
 /*  ----------------------------------------------------------------------------
     WordPress default widgets
