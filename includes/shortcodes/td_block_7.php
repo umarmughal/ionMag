@@ -3,19 +3,13 @@ class td_block_7 extends td_block {
     function render($atts, $content = null) {
         parent::render($atts); // sets the live atts, $this->atts, $this->block_uid, $this->td_query (it runs the query)
 
-	    extract(shortcode_atts(
-		    array(
-			    'el_class' => '',
-		    ), $atts));
-
-
 	    if (empty($td_column_number)) {
 		    $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
 	    }
 
 	    $buffy = ''; //output buffer
 
-	    $buffy .= '<div class="' . $this->get_block_classes( array( $el_class ) ) . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
+	    $buffy .= '<div class="' . $this->get_block_classes() . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
 
         //get the block js
         $buffy .= $this->get_block_css();

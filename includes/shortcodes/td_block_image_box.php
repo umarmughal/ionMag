@@ -12,7 +12,7 @@ class td_block_image_box extends td_block {
 				'display' => '',
 				'alignment' => '',
 				'style' => '',
-				'el_class' => '',
+
 
 				'image_title_item0' => 'Custom title',
 				'custom_url_item0' => '#',
@@ -50,8 +50,7 @@ class td_block_image_box extends td_block {
 			}
 		}
 
-		// additional classes
-		$additional_classes = array( $el_class );
+
 
 		// height
 		$box_height = '';
@@ -69,6 +68,10 @@ class td_block_image_box extends td_block {
 
 		// layout
 		$box_space = '';
+
+		// additional classes
+		$additional_classes = array();
+
 
 		if(!empty($display)) {
 			$additional_classes [] = 'td-box-horizontal';
