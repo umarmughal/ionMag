@@ -10,16 +10,25 @@ class td_block_ad_box extends td_block {
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content,
 	            'spot_title' => '',
+                'custom_title' => '',
 	            'el_class' => '',
             ), $atts));
 
+        // rec title
+        $rec_title = '';
+        if(!empty($custom_title)) {
+            $rec_title .= '<div class="td-block-title-wrap">' . $this->get_block_title() . '</div>';
+        }
+        if(!empty($spot_title)) {
+            $rec_title .= '<span class="td-adspot-title">' . $spot_title . '</span>';
+        }
 
 		// For tagDiv composer add a placeholder element
 	    if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
 		    // 'td_block_wrap' is to identify a tagDiv composer element at binding
 		    // 'tdc-add-block' is to style de placeholder
 		    // block_uid is necessary to have a unique html template returned to the composer (without it the html change event doesn't trigger, and because of this the loader image is still preset)
-		    return '<div class="td_block_wrap tdc-add-block ' . $this->block_uid . '"></div>';
+		    return  '<div class="td_block_wrap ' . $this->block_uid . '_rand">' . $this->get_block_css() . $rec_title . '<div class="tdc-add-block">' . $spot_id . '</div></div>';
 	    }
 
         if (empty($spot_id)) {
@@ -85,7 +94,6 @@ class td_block_ad_box extends td_block {
     // copyright 2014 tagDiv
     function render_google_ads($ad_array, $atts) {
 
-
         $spot_id = ''; //the spot id header / sidebar etc we read it from shortcode
 
         extract(shortcode_atts(
@@ -93,13 +101,19 @@ class td_block_ad_box extends td_block {
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content
                 'spot_title' => '',
+                'custom_title' => '',
 	            'el_class' => '',
             ), $atts));
 
 
-        //echo ($p_w);
-
-        //print_r($ad_array);
+        // rec title
+        $rec_title = '';
+        if(!empty($custom_title)) {
+            $rec_title .= '<div class="td-block-title-wrap">' . $this->get_block_title() . '</div>';
+        }
+        if(!empty($spot_title)) {
+            $rec_title .= '<span class="td-adspot-title">' . $spot_title . '</span>';
+        }
 
         $default_ad_sizes = array (
             'header' => array (
@@ -452,12 +466,12 @@ class td_block_ad_box extends td_block {
 
 
 
-        $buffy .= '<div class="td-g-rec td-g-rec-id-' . $spot_id . $align . ' ' . $el_class . '">' . "\n";
+        $buffy .= '<div class="td-g-rec td-g-rec-id-' . $spot_id . $align . ' ' . $this->get_block_classes() . ' ' . $el_class . '">' . "\n";
+
+            //get the block js
+            $buffy .= $this->get_block_css();
+
             $buffy .= '<script type="text/javascript">' . "\n";
-
-
-            //$buffy .= 'var td_a_g_custom_size = ' . json_encode($default_ad_sizes[$spot_id]) . ';' . "\n";
-
 
             $buffy .= 'var td_screen_width = document.body.clientWidth;' . "\n";
 
@@ -466,7 +480,7 @@ class td_block_ad_box extends td_block {
                 $buffy .= '
                     if ( td_screen_width >= 1140 ) {
                         /* large monitors */
-                        document.write(\'' . (!empty($spot_title) ? ('<span class="td-adspot-title">' . $spot_title . '</span>') : '') . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['m_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['m_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
+                        document.write(\'' . $rec_title . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['m_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['m_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     }
             ';
@@ -477,7 +491,7 @@ class td_block_ad_box extends td_block {
 			    $buffy .= '
 	                    if ( td_screen_width >= 1019  && td_screen_width < 1140 ) {
 	                        /* landscape tablets */
-                        document.write(\'' . (!empty($spot_title) ? ('<span class="td-adspot-title">' . $spot_title . '</span>') : '') . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['tl_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['tl_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
+                        document.write(\'' . $rec_title . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['tl_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['tl_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
 	                        (adsbygoogle = window.adsbygoogle || []).push({});
 	                    }
 	                ';
@@ -488,7 +502,7 @@ class td_block_ad_box extends td_block {
                 $buffy .= '
                     if ( td_screen_width >= 768  && td_screen_width < 1019 ) {
                         /* portrait tablets */
-                        document.write(\'' . (!empty($spot_title) ? ('<span class="td-adspot-title">' . $spot_title . '</span>') : '') . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['tp_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['tp_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
+                        document.write(\'' . $rec_title . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['tp_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['tp_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     }
                 ';
@@ -498,7 +512,7 @@ class td_block_ad_box extends td_block {
                 $buffy .= '
                     if ( td_screen_width < 768 ) {
                         /* Phones */
-                        document.write(\'' . (!empty($spot_title) ? ('<span class="td-adspot-title">' . $spot_title . '</span>') : '') . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['p_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['p_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
+                        document.write(\'' . $rec_title . '<ins class="adsbygoogle" style="display:inline-block;width:' . $default_ad_sizes[$spot_id]['p_w'] . 'px;height:' . $default_ad_sizes[$spot_id]['p_h'] . 'px" data-ad-client="' . $ad_array['g_data_ad_client'] . '" data-ad-slot="' . $ad_array['g_data_ad_slot'] . '"></ins>\');
                         (adsbygoogle = window.adsbygoogle || []).push({});
                     }
                 ';
@@ -537,9 +551,19 @@ class td_block_ad_box extends td_block {
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content
                 'spot_title' => '',
+                'custom_title' => '',
 	            'el_class' => '',
 
             ), $atts));
+
+        // rec title
+        $rec_title = '';
+        if(!empty($custom_title)) {
+            $rec_title .= '<div class="td-block-title-wrap">' . $this->get_block_title() . '</div>';
+        }
+        if(!empty($spot_title)) {
+            $rec_title .= '<span class="td-adspot-title">' . $spot_title . '</span>';
+        }
 
 
         $buffy = '';
@@ -549,10 +573,13 @@ class td_block_ad_box extends td_block {
             . ((!empty($ad_array['disable_tl'])) ? ' td-rec-hide-on-tl' : '')
             . ((!empty($ad_array['disable_tp'])) ? ' td-rec-hide-on-tp' : '')
             . ((!empty($ad_array['disable_p'])) ? ' td-rec-hide-on-p' : '')
-            . ' ' . $el_class . '">';
-            if (!empty($spot_title)) {
-                $buffy .= '<span class="td-adspot-title">' . $spot_title . '</span>';
-            }
+            . ' ' . $this->get_block_classes() . ' ' . $el_class . '">';
+
+            //get the block js
+            $buffy .= $this->get_block_css();
+
+            $buffy .= $rec_title;
+
             $buffy .= do_shortcode(stripslashes($ad_array['ad_code']));
         $buffy .= '</div>';
 

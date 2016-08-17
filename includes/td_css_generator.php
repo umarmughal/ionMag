@@ -344,6 +344,31 @@ function td_css_generator() {
         border-bottom-color: @mobile_text_color !important;
     }
 
+    /* @mobile_background_image */
+    .td-menu-background,
+    .td-search-background {
+        background-image: url('@mobile_background_image');
+    }
+
+    /* @mobile_background_repeat */
+    .td-menu-background,
+    .td-search-background {
+        background-repeat: @mobile_background_repeat;
+    }
+
+    /* @mobile_background_size */
+    .td-menu-background,
+    .td-search-background {
+        background-size: @mobile_background_size;
+    }
+
+    /* @mobile_background_position */
+    .td-menu-background,
+    .td-search-background {
+        background-position: @mobile_background_position;
+    }
+
+
     /* @login_text_color */
     .white-popup-block,
     .mfp-content .td-login-panel-title,
@@ -1087,6 +1112,12 @@ function td_css_generator() {
     $td_css_compiler->load_setting('page_title_color');
     $td_css_compiler->load_setting('page_content_color');
     $td_css_compiler->load_setting('page_h_color');
+
+    // mobile menu/search background
+    $td_css_compiler->load_setting('mobile_background_image');
+    $td_css_compiler->load_setting('mobile_background_repeat');
+    $td_css_compiler->load_setting('mobile_background_size');
+    $td_css_compiler->load_setting('mobile_background_position');
 
     // footer background
     $td_css_compiler->load_setting('footer_background_image');

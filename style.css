@@ -9382,6 +9382,30 @@ tagdiv animations
     display: none;
   }
 }
+/* responsive landscape desktop */
+@media (min-width: 1141px) {
+  .td-rec-hide-on-m {
+    display: none !important;
+  }
+}
+/* responsive landscape tablet */
+@media (min-width: 1019px) and (max-width: 1140px) {
+  .td-rec-hide-on-tl {
+    display: none !important;
+  }
+}
+/* responsive portrait tablet */
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-rec-hide-on-tp {
+    display: none !important;
+  }
+}
+/* responsive portrait phone */
+@media (max-width: 767px) {
+  .td-rec-hide-on-p {
+    display: none !important;
+  }
+}
 .td-header-rec-wrap {
   position: relative;
   min-height: 90px;
@@ -9548,34 +9572,8 @@ tagdiv animations
 }
 .td-a-rec-id-sidebar,
 .td-g-rec-id-sidebar {
-  margin-bottom: 38px;
+  margin-bottom: 40px;
   text-align: center;
-}
-.td-a-rec-id-sidebar .td-adspot-title,
-.td-g-rec-id-sidebar .td-adspot-title {
-  display: block;
-  position: relative;
-  padding-bottom: 8px;
-  text-align: left;
-  font-family: 'Work Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  text-transform: uppercase;
-  line-height: 1;
-  margin-bottom: 20px;
-}
-.td-a-rec-id-sidebar .td-adspot-title:after,
-.td-g-rec-id-sidebar .td-adspot-title:after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 80px;
-  height: 1px;
-  background-color: #42bdcd;
-  opacity: 0.3;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='30')";
-  filter: alpha(opacity=30);
 }
 .td-footer-ad {
   background-color: #f3f3f3;
