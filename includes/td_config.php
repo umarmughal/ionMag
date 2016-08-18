@@ -133,16 +133,16 @@ class td_config {
 	     */
 	    td_global::$td_viewport_intervals = array(
 		    array(
-			    "limit_bottom" => 767,
-			    "sidebar_width" => 228,
+			    "limitBottom" => 767,
+			    "sidebarWidth" => 228,
 		    ),
 		    array(
-			    "limit_bottom" => 1018,
-			    "sidebar_width" => 300,
+			    "limitBottom" => 1018,
+			    "sidebarWidth" => 300,
 		    ),
 		    array(
-			    "limit_bottom" => 1140,
-			    "sidebar_width" => 324,
+			    "limitBottom" => 1140,
+			    "sidebarWidth" => 324,
 		    ),
 	    );
 
