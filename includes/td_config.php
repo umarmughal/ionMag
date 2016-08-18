@@ -508,7 +508,20 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Post template default'
+                    'Post template default', 'Smart list 1'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_980x0',
+            array(
+                'name' => 'td_980x0',
+                'width' => 980,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default', 'Smart list 1'
                 )
             )
         );
