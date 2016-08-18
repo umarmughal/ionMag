@@ -6609,10 +6609,28 @@ blockquote.pull-right:after {
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
   border-radius: 15px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-sharing-buttons {
+    min-width: 45px;
+    height: 35px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
+  }
 }
 .td-social-sharing-buttons .td-sp {
   width: 14px;
   height: 20px;
+}
+.td-social-sharing-buttons i {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-sharing-buttons i {
+    line-height: 35px;
+  }
 }
 .td-social-sharing-buttons:hover {
   border-color: #dbdbdb;
@@ -6646,7 +6664,8 @@ blockquote.pull-right:after {
   vertical-align: middle;
 }
 .td-social-google,
-.td-social-pinterest {
+.td-social-pinterest,
+.td-social-whatsapp {
   padding: 0;
   line-height: 29px;
 }
@@ -6654,16 +6673,34 @@ blockquote.pull-right:after {
   font-size: 14px;
   position: relative;
   color: #3d76c3;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-facebook .td-icon-facebook {
+    font-size: 18px;
+  }
 }
 .td-social-twitter .td-icon-twitter {
   font-size: 11px;
   color: #29c5f6;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-twitter .td-icon-twitter {
+    font-size: 16px;
+  }
 }
 .td-social-google .td-icon-googleplus {
   font-size: 13px;
   position: relative;
   top: 0;
   color: #eb4026;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-google .td-icon-googleplus {
+    font-size: 18px;
+  }
 }
 .td-social-pinterest {
   margin-right: 0;
@@ -6673,6 +6710,29 @@ blockquote.pull-right:after {
   position: relative;
   top: 1px;
   color: #ca212a;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-pinterest .td-icon-pinterest {
+    font-size: 16px;
+  }
+}
+.td-social-whatsapp {
+  display: none !important;
+  color: #7bbf6a;
+  margin-right: 0;
+  margin-left: 7px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-social-whatsapp {
+    display: inline-block !important;
+  }
+}
+.td-social-whatsapp i {
+  font-size: 20px;
+  top: 1px;
+  position: relative;
 }
 .td-classic-sharing {
   display: inline-block;
@@ -6682,10 +6742,21 @@ blockquote.pull-right:after {
   margin: 0 0 0 30px;
   height: 20px;
 }
+@media (max-width: 580px) {
+  .td-classic-sharing ul {
+    margin-left: 0;
+  }
+}
 .td-classic-sharing li {
   display: inline-block;
   height: 20px;
   margin-left: 0;
+}
+@media (max-width: 580px) {
+  .td-classic-sharing {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 .td-classic-twitter {
   position: relative;
