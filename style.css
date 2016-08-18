@@ -9315,6 +9315,13 @@ tagdiv animations
 .td-g-rec .adsbygoogle {
   display: block;
 }
+.td-adspot-title {
+  display: block;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 14px;
+  font-style: italic;
+}
 .td-rec-wrap {
   margin-bottom: 21px;
 }
@@ -9576,8 +9583,6 @@ tagdiv animations
   display: table;
   margin: -29px auto 5px;
   padding: 0 10px;
-  font-size: 14px;
-  font-style: italic;
   /* responsive portrait phone */
   /* responsive portrait phone */
 }
