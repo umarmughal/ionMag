@@ -59,7 +59,7 @@ class td_block_big_grid_2 extends td_block {
                 for ($i = $post_count; $i < self::POST_LIMIT; $i++) {
 
                     $td_module_mx_empty = new td_module_mx_empty();
-                    $buffy .= $td_module_mx_empty->render($i, 'td-small-thumb'); // size of the module: td-tiny-thumb - td-small-thumb - td-medium-thumb - td-big-thumb
+                    $buffy .= $td_module_mx_empty->render($i, 'td_module_mx5'); // module used
                 }
             }
             $buffy .= '<div class="clearfix"></div>';
