@@ -142,7 +142,7 @@ class td_config {
 		    ),
 		    array(
 			    "limitBottom" => 1140,
-			    "sidebarWidth" => 324,
+			    "sidebarWidth" => 300,
 		    ),
 	    );
 
