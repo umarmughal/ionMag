@@ -425,7 +425,24 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx4.php',
                 'text' => 'Module MX4',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_2', 'td_block_big_grid_3'),
+                'used_on_blocks' => array('td_block_big_grid_3'),
+                'excerpt_title' => 25,
+                'excerpt_content' => '',
+                'enabled_on_more_articles_box' => false,
+                'enabled_on_loops' => false,
+                'uses_columns' => false,                      // if the module uses columns on the page template + loop
+                'category_label' => true,
+                'class' => 'td-animation-stack',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
+        td_api_module::add('td_module_mx5',
+            array(
+                'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx5.php',
+                'text' => 'Module MX5',
+                'img' => '',
+                'used_on_blocks' => array('td_block_big_grid_2'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -2906,7 +2923,8 @@ class td_config {
                 "param_name" => "td_grid_style",
                 "type" => "dropdown",
                 "value" => array(
-                    'Grid style 1 - Default' => 'td-grid-style-1'
+                    'Grid style 1 - Center' => 'td-grid-style-1',
+                    'Grid style 2 - Left' => 'td-grid-style-2'
                 ),
                 "heading" => "Big grid style",
                 "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",
