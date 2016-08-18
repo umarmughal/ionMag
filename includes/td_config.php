@@ -133,16 +133,16 @@ class td_config {
 	     */
 	    td_global::$td_viewport_intervals = array(
 		    array(
-			    "limit_bottom" => 767,
-			    "sidebar_width" => 228,
+			    "limitBottom" => 767,
+			    "sidebarWidth" => 228,
 		    ),
 		    array(
-			    "limit_bottom" => 1018,
-			    "sidebar_width" => 300,
+			    "limitBottom" => 1018,
+			    "sidebarWidth" => 300,
 		    ),
 		    array(
-			    "limit_bottom" => 1140,
-			    "sidebar_width" => 324,
+			    "limitBottom" => 1140,
+			    "sidebarWidth" => 300,
 		    ),
 	    );
 
@@ -525,7 +525,20 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Post template default'
+                    'Post template default', 'Smart list 1'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_980x0',
+            array(
+                'name' => 'td_980x0',
+                'width' => 980,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default', 'Smart list 1'
                 )
             )
         );
