@@ -1,5 +1,13 @@
 // Firefox
 .td-md-is-firefox {
+  .td-header-menu-search {
+    #td-header-search-button {
+      .td-icon-search:before {
+        top: 1px;
+      }
+    }
+  }
+
   .td-post-category {
     padding-top: 3px;
     padding-bottom: 5px;
@@ -10,7 +18,14 @@
       //bottom: -3px;
     }
   }
+
+  .td-post-sharing-top {
+    .td-social-but-text {
+      margin-top: -1px;
+    }
+  }
 }
+
 
 // iOS
 .td-md-is-ios {
@@ -21,7 +36,14 @@
   .td-post-views {
     span {
       padding-top: 1px;
-      padding-bottom: 9px;
+      padding-bottom: 3px;
+    }
+  }
+
+  .td-author-header {
+    .count {
+      padding-top: 2px;
+      padding-bottom: 3px;
     }
   }
 }
