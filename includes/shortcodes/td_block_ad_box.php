@@ -23,8 +23,14 @@ class td_block_ad_box extends td_block {
             $rec_title .= '<span class="td-adspot-title">' . $spot_title . '</span>';
         }
 
-        // For tagDiv composer add a placeholder element
+	    // For tagDiv composer add a placeholder element
         if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
+
+	        // return if the ad for a specific spot id is empty
+	        if (($spot_id === 'header' || $spot_id === 'footer_top') && empty($ad_array[$spot_id]['ad_code'])) {
+		        return;
+	        }
+
             // 'td_block_wrap' is to identify a tagDiv composer element at binding
             // 'tdc-add-block' is to style de placeholder
             // block_uid is necessary to have a unique html template returned to the composer (without it the html change event doesn't trigger, and because of this the loader image is still preset)
@@ -37,13 +43,13 @@ class td_block_ad_box extends td_block {
 
         $ad_array = td_util::get_td_ads($spot_id);
 
-        // return if the ad for a specific spot id is empty
-        if (empty($ad_array[$spot_id]['ad_code'])) {
-            return;
-        }
+		// return if the ad for a specific spot id is empty
+	    if (empty($ad_array[$spot_id]['ad_code'])) {
+		    return;
+	    }
 
 
-        $buffy = '';
+	    $buffy = '';
 
         if (!empty($ad_array[$spot_id]['current_ad_type'])) {
 
