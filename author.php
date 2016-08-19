@@ -55,6 +55,9 @@ td_global::$current_author_obj = $part_cur_auth_obj;
                         ?>
                         <div class="td-pb-span8 td-main-content">
                             <div class="td-ss-main-content">
+                                <?php if (empty($paged) or $paged < 2) { ?>
+                                    <div class="td-block-title-wrap"><h4 class="block-title"><span><?php echo __td('Posts by', TD_THEME_NAME) . ' ' . $part_cur_auth_obj->display_name; ?></span></h4></div>
+                                <?php } ?>
                                 <?php locate_template('loop.php', true);?>
 
                                 <?php echo td_page_generator::get_pagination(); // the pagination?>
@@ -77,6 +80,9 @@ td_global::$current_author_obj = $part_cur_auth_obj;
                         ?>
                         <div class="td-pb-span8 td-main-content <?php echo $td_sidebar_position; ?>-content">
                             <div class="td-ss-main-content">
+                                <?php if (empty($paged) or $paged < 2) { ?>
+                                    <div class="td-block-title-wrap"><h4 class="block-title"><span><?php echo __td('Posts by', TD_THEME_NAME) . ' ' . $part_cur_auth_obj->display_name; ?></span></h4></div>
+                                <?php } ?>
                                 <?php locate_template('loop.php', true);?>
 
                                 <?php echo td_page_generator::get_pagination(); // the pagination?>
@@ -99,6 +105,9 @@ td_global::$current_author_obj = $part_cur_auth_obj;
                         ?>
                         <div class="td-pb-span12 td-main-content">
                             <div class="td-ss-main-content">
+                                <?php if (empty($paged) or $paged < 2) { ?>
+                                    <div class="td-block-title-wrap"><h4 class="block-title"><span><?php echo __td('Posts by', TD_THEME_NAME) . ' ' . $part_cur_auth_obj->display_name; ?></span></h4></div>
+                                <?php } ?>
                                 <?php locate_template('loop.php', true);?>
 
                                 <?php echo td_page_generator::get_pagination(); // the pagination?>

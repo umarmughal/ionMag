@@ -1,18 +1,29 @@
 /*
-  Style 1
+  Style 1 - Center
 */
-.td-grid-style-1 {
-  .entry-title {
-
-  }
-}
 
 
 /*
-  Style 1
+  Style 2 - Left
 */
 .td-grid-style-2 {
+  // general
   .td-big-grid-post {
     text-align: left;
+  }
+
+  /*
+      Big grids custom css
+  */
+  // big grid 2
+  &.td_block_big_grid_2 {
+    .td-meta-info-container {
+      padding-left: 0;
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        padding-left: 10px;
+      }
+    }
   }
 }

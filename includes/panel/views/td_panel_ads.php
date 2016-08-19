@@ -18,23 +18,6 @@ echo td_panel_generator::box_start('Header ad', false);?>
         </div>
     </div>
 
-
-    <div class="td-box-row">
-        <div class="td-box-description">
-            <span class="td-box-title">AD title:</span>
-            <p>A title for the Ad, like - <strong>Advertisement</strong> - if you leave it blank the ad spot will not have a title</p>
-        </div>
-        <div class="td-box-control-full">
-            <?php
-            echo td_panel_generator::input(array(
-                'ds' => 'td_option',
-                'option_id' => 'tds_header_ad_title'
-            ));
-            ?>
-        </div>
-    </div>
-
-
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">Advance usage:</span>

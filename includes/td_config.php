@@ -142,7 +142,7 @@ class td_config {
 		    ),
 		    array(
 			    "limitBottom" => 1140,
-			    "sidebarWidth" => 324,
+			    "sidebarWidth" => 300,
 		    ),
 	    );
 
@@ -525,7 +525,20 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Post template default'
+                    'Post template default', 'Smart list 1'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_980x0',
+            array(
+                'name' => 'td_980x0',
+                'width' => 980,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default', 'Smart list 1'
                 )
             )
         );
@@ -621,7 +634,10 @@ class td_config {
          */
         td_global::$big_grid_styles_list = array(
             'td-grid-style-1' => array(  // td-grid-style-1 - THIS HAS TO BE THE DEFAULT
-                'text' => 'Grid style 1'
+                'text' => 'Style 1 - Center'
+            ),
+            'td-grid-style-2' => array(  // td-grid-style-1 - THIS HAS TO BE THE DEFAULT
+                'text' => 'Style 2 - Left'
             )
         );
 
@@ -2918,8 +2934,8 @@ class td_config {
                 "param_name" => "td_grid_style",
                 "type" => "dropdown",
                 "value" => array(
-                    'Grid style 1 - Center' => 'td-grid-style-1',
-                    'Grid style 2 - Left' => 'td-grid-style-2'
+                    'Style 1 - Center' => 'td-grid-style-1',
+                    'Style 2 - Left' => 'td-grid-style-2'
                 ),
                 "heading" => "Big grid style",
                 "description" => "Each big grid comes in different styles. This option will change the appearance of the grid (including the hover effect).",

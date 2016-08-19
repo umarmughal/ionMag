@@ -56,7 +56,7 @@ $td_mod_single = new td_module_single($post);
                     break;
 
                 case 'no_sidebar':
-                    td_global::$load_featured_img_from_template = 'td_1068x0';
+                    td_global::$load_featured_img_from_template = 'td_980x0';
                     ?>
                         <div class="td-pb-span12 td-main-content" role="main">
                             <div class="td-ss-main-content">

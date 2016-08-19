@@ -43,9 +43,9 @@ class td_smart_list_1 extends td_smart_list {
         $first_img_caption = $item_array['first_img_caption'];
 
         if(td_global::$cur_single_template_sidebar_pos == 'no_sidebar') {
-            $first_img_info = wp_get_attachment_image_src($item_array['first_img_id'], 'td_1068x0');
+            $first_img_info = wp_get_attachment_image_src($item_array['first_img_id'], 'td_980x0');
         } else {
-            $first_img_info = wp_get_attachment_image_src($item_array['first_img_id'], 'td_696x0');
+            $first_img_info = wp_get_attachment_image_src($item_array['first_img_id'], 'td_640x0');
         }
         if (!empty($first_img_info[0])) {
 
