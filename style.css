@@ -11312,3 +11312,6 @@ body.td-animation-stack-type2 .post a.td-sml-link-to-image > img {
   padding-top: 3px;
   padding-bottom: 5px;
 }
+.td-md-is-ios .td-social-but-text {
+  margin-top: -1px;
+}
