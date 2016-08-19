@@ -109,7 +109,7 @@ function td_css_generator() {
     }
     
     @media (min-width: 1019px) {
-      .td-grid-style-1.td-hover-1 .td-big-grid-post:hover .td-post-category {
+      .td_block_big_grid_1 .td-big-grid-post:hover .td-post-category {
         background-color: @theme_color;
       }
     }
