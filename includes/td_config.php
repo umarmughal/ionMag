@@ -2308,43 +2308,38 @@ class td_config {
 	        /*
 	         * the list with custom texts of the theme
 	         */
-            td_global::$td_wp_admin_text_list = array(
 
-	            // the text for wp-admin -> new post -> featured video box. Usually is the text that tells what post templates support video
-	            'text_featured_video' => '
+	        /*
+			* the list with custom texts of the theme. admin texts
+			*/
+	        td_api_text::set('text_featured_video', '
 	                <div class="td-wpa-info">Paste a link from Vimeo or Youtube, it will be embedded in the post and the thumb used as the featured image of this post. <br/>You need to choose <strong>Video Format</strong> from above to use Featured Video.</div>
 	                <div class="td-wpa-info"><strong>Notice:</strong> Use only with those post templates:
 	                    <ul>
 	                        <li>Post style default</li>
 	                    </ul>
-	                </div>',
-
-	            // admin panel - header
-		        'text_header_logo' => '',
-
-		        'text_header_logo_description' => '',
-
-		        'text_header_logo_mobile' => '-',
-
-		        'text_header_logo_mobile_image' => '160x40px',
-
-		        'text_header_logo_mobile_image_retina' => '320x80px',
-
-                // what widgets do not work on the smart sidebar
-                'text_smart_sidebar_widget_support' => '
+	                </div>'
+	        );
+	        td_api_text::set('text_header_logo', '');
+	        td_api_text::set('text_header_logo_description', '');
+	        td_api_text::set('text_header_logo_mobile', '-');
+	        td_api_text::set('text_header_logo_mobile_image', '160 x 40px');
+	        td_api_text::set('text_header_logo_mobile_image_retina', '320 x 80px');
+	        td_api_text::set('text_smart_sidebar_widget_support', '
                 <ul>
                     <li>[tagDiv] Trending now</li>
                 </ul>
-                '
-	        );
+            ');
+	        td_api_text::set('welcome_fast_start', 'Install tagDiv composer plugin and also install the social counter plugin if you want to add the counters on your sidebar - from our <a href="admin.php?page=td_theme_plugins">plugins panel</a>');
 
             /*
 	         * the list with sections from backend to hide or show them
 	         */
-            td_global::$td_backend_settings = array(
-                'vc_usage' => false, // require Visual composer - show/hide the message
-                'activate_theme' => false // show/hide the Activate theme section
-            );
+            td_api_features::set('require_vc', false);
+	        td_api_features::set('require_activation', false);
+
+
+
 
 
             td_global::$theme_plugins_list = array(
