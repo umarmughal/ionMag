@@ -344,7 +344,7 @@
 
   @media (max-width: 580px) {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px;
   }
 }
 
@@ -357,6 +357,15 @@
   }
 }
 
+.td-pb-span8 {
+  .td-classic-sharing {
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      width: 100%;
+      margin: 20px 0 0 49px;
+    }
+  }
+}
 
 /*  ----------------------------------------------------------------------------
     Post content

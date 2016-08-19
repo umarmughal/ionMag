@@ -4673,7 +4673,7 @@ blockquote.pull-right:after {
 */
 .td_module_5 {
   margin-bottom: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 31px;
   /* responsive portrait tablet + phone */
 }
 @media (max-width: 1018px) {
@@ -5600,11 +5600,12 @@ blockquote.pull-right:after {
 }
 .td_block_image_box .td-custom-title {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   display: table;
   text-align: center;
   width: 100%;
@@ -6803,7 +6804,7 @@ blockquote.pull-right:after {
 @media (max-width: 580px) {
   .td-classic-sharing {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px;
   }
 }
 .td-classic-twitter {
@@ -6812,6 +6813,15 @@ blockquote.pull-right:after {
 }
 .td-classic-twitter .twitter-share-button {
   margin: 0 !important;
+}
+.td-pb-span8 .td-classic-sharing {
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-pb-span8 .td-classic-sharing {
+    width: 100%;
+    margin: 20px 0 0 49px;
+  }
 }
 /*  ----------------------------------------------------------------------------
     Post content
@@ -7535,7 +7545,7 @@ blockquote.pull-right:after {
 }
 .comment-form-input-wrap textarea,
 .comment-form-input-wrap input {
-  padding: 14px;
+  padding: 0 14px;
   border-color: #ebebeb;
 }
 .comment-form-input-wrap textarea:focus,
@@ -7544,6 +7554,8 @@ blockquote.pull-right:after {
 }
 .comment-form-input-wrap textarea {
   height: 200px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 .comment-form-input-wrap input {
   height: 36px;
@@ -11302,4 +11314,11 @@ body.td-animation-stack-type2 .post a.td-sml-link-to-image > img {
   -moz-transition: transform 0.4s cubic-bezier(0.13, 0.43, 0.57, 0.88), opacity 0.4s cubic-bezier(0.13, 0.43, 0.57, 0.88);
   -o-transition: transform 0.4s cubic-bezier(0.13, 0.43, 0.57, 0.88), opacity 0.4s cubic-bezier(0.13, 0.43, 0.57, 0.88);
   transition: transform 0.4s cubic-bezier(0.13, 0.43, 0.57, 0.88), opacity 0.4s cubic-bezier(0.13, 0.43, 0.57, 0.88);
+}
+.td-md-is-firefox .td-post-category {
+  padding-top: 3px;
+  padding-bottom: 5px;
+}
+.td-md-is-ios .td-social-but-text {
+  margin-top: -1px;
 }
