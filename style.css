@@ -5931,7 +5931,7 @@ blockquote.pull-right:after {
     -moz-transform: scale3d(1.06, 1.06, 1) rotate(0.02deg);
   }
   .td-big-grid-post:hover .td-module-thumb a:last-child:before {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .td-big-grid-post:hover .td-post-category {
     background-color: #42bdcd;
@@ -11321,4 +11321,8 @@ body.td-animation-stack-type2 .post a.td-sml-link-to-image > img {
 }
 .td-md-is-ios .td-social-but-text {
   margin-top: -1px;
+}
+.td-md-is-ios .td-post-views span {
+  padding-top: 1px;
+  padding-bottom: 9px;
 }
