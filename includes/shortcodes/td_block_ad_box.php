@@ -27,7 +27,7 @@ class td_block_ad_box extends td_block {
         if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
 
 	        // return if the ad for a specific spot id is empty
-	        if (($spot_id === 'header' || $spot_id === 'footer_top') && empty($ad_array[$spot_id]['ad_code'])) {
+	        if (($spot_id === 'header' || $spot_id === 'footer_top') && empty(td_util::get_td_ads($spot_id)[$spot_id]['ad_code'])) {
 		        return;
 	        }
 
