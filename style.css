@@ -6797,7 +6797,7 @@ blockquote.pull-right:after {
 @media (max-width: 580px) {
   .td-classic-sharing {
     width: 100%;
-    margin-top: 20px;
+    margin: 20px;
   }
 }
 .td-classic-twitter {
@@ -6806,6 +6806,15 @@ blockquote.pull-right:after {
 }
 .td-classic-twitter .twitter-share-button {
   margin: 0 !important;
+}
+.td-pb-span8 .td-classic-sharing {
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-pb-span8 .td-classic-sharing {
+    width: 100%;
+    margin: 20px 0 0 49px;
+  }
 }
 /*  ----------------------------------------------------------------------------
     Post content
