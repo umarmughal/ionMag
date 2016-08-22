@@ -1,4 +1,22 @@
-// IE 10 & 11
+// IE 8 & 9
+.ie8,
+.ie9 {
+  .td-menu-background,
+  #td-mobile-nav {
+    display: none;
+  }
+
+  .td-menu-mob-open-menu {
+    .td-menu-background,
+    #td-mobile-nav {
+      display: block;
+    }
+  }
+}
+
+
+// IE 9 & 10 & 11
+.ie9,
 .ie10,
 .ie11 {
   .td-post-category-wrap {
@@ -17,7 +35,12 @@
       line-height: 19px;
     }
   }
+}
 
+
+// IE 10 & 11
+.ie10,
+.ie11 {
   .td_block_big_grid_2 {
     .td-big-grid-post {
       .td-post-category-wrap {
