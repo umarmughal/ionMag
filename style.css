@@ -5766,8 +5766,8 @@ blockquote.pull-right:after {
 }
 @media (max-width: 1018px) {
   .td-mx-15 .entry-title {
-    font-size: 15px !important;
-    line-height: 20px !important;
+    font-size: 13px !important;
+    line-height: 18px !important;
   }
 }
 .td-mx-19 .entry-title {
@@ -5820,6 +5820,13 @@ blockquote.pull-right:after {
 */
 .td-big-grids {
   margin-bottom: 50px;
+}
+.td-big-grids .td_module_wrap {
+  padding-bottom: 0;
+}
+.td-big-grids .td-module-image {
+  margin-bottom: 0;
+  height: 100%;
 }
 .td-big-grid-post {
   position: relative;
