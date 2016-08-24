@@ -1671,6 +1671,42 @@ class td_config {
             )
         );
 
+	    $nav_menus = wp_get_nav_menus();
+
+	    if (empty($nav_menus)) {
+		    $td_block_list_menus = array('- No registered menu -' => '');
+	    } else {
+		    $td_block_list_menus = array('- Select menu -' => '');
+		    foreach ( (array) $nav_menus as $_nav_menu ) {
+			    $td_block_list_menus[esc_html(wp_html_excerpt( $_nav_menu->name, 40, '&hellip;' ))] = esc_attr( $_nav_menu->term_id );
+		    }
+	    }
+
+	    td_api_block::add('td_block_list_menu',
+		    array(
+			    'map_in_visual_composer' => true,
+			    "name" => 'List Menu',
+			    "base" => "td_block_list_menu",
+			    "class" => "",
+			    "controls" => "full",
+			    "category" => 'Blocks',
+			    'icon' => 'icon-pagebuilder-td_block_authors',
+			    'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_list_menu.php',
+			    'params' => array(
+				    array(
+					    "param_name" => "menu_id",
+					    "type" => "dropdown",
+					    "value" => $td_block_list_menus,
+					    "heading" => 'Use items from:',
+					    "description" => "",
+					    "holder" => "div",
+					    "class" => "tdc-dropdown-big",
+				    ),
+
+			    )
+		    )
+	    );
+
 
 
         /**

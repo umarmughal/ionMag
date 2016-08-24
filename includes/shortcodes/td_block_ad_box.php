@@ -24,7 +24,7 @@ class td_block_ad_box extends td_block {
         }
 
 	    // For tagDiv composer add a placeholder element
-        if (td_util::tdc_is_live_editor_iframe() or td_util::tdc_is_live_editor_ajax()) {
+        if (td_util::tdc_is_live_editor_iframe() || td_util::tdc_is_live_editor_ajax()) {
 
 	        // return if the ad for a specific spot id is empty
 	        if (($spot_id === 'header' || $spot_id === 'footer_top') && empty($ad_array[$spot_id]['ad_code'])) {
