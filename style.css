@@ -6233,9 +6233,11 @@ blockquote.pull-right:after {
 .td_block_big_grid_2 .td-meta-align {
   pointer-events: auto;
 }
+.td_block_big_grid_2 .td-module-image {
+  margin-bottom: 15px;
+}
 .td_block_big_grid_2 .td-module-thumb {
   height: 236px;
-  margin-bottom: 15px;
   /* responsive portrait tablet */
   /* responsive portrait phone */
 }
