@@ -1,33 +1,41 @@
 <?php
 class td_block_ad_box extends td_block {
 
+	private $atts = array();
 
     function render($atts, $content = null) {
 	    parent::render($atts);
 
-        extract(shortcode_atts(
+	    $this->atts = shortcode_atts(
             array(
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content,
 	            'spot_title' => '',
                 'custom_title' => '',
 	            'el_class' => '',
-            ), $atts));
+            ), $atts);
+
+	    $spot_id        = $this->atts['spot_id'];
+	    $custom_title   = $this->atts['custom_title'];
+	    $spot_title     = $this->atts['spot_title'];
 
         // rec title
         $rec_title = '';
         if(!empty($custom_title)) {
             $rec_title .= '<div class="td-block-title-wrap">' . $this->get_block_title() . '</div>';
         }
-        if(!empty($spot_title)) {
+
+	    if(!empty($spot_title)) {
             $rec_title .= '<span class="td-adspot-title">' . $spot_title . '</span>';
         }
 
 	    // For tagDiv composer add a placeholder element
         if (td_util::tdc_is_live_editor_iframe() || td_util::tdc_is_live_editor_ajax()) {
 
+	        $ad_array = td_util::get_td_ads($spot_id);
+
 	        // return if the ad for a specific spot id is empty
-	        if (($spot_id === 'header' || $spot_id === 'footer_top') && empty(td_util::get_td_ads($spot_id)[$spot_id]['ad_code'])) {
+	        if (($spot_id === 'header' || $spot_id === 'footer_top') && empty($ad_array[$spot_id]['ad_code'])) {
 		        return;
 	        }
 
@@ -53,7 +61,6 @@ class td_block_ad_box extends td_block {
 
         if (!empty($ad_array[$spot_id]['current_ad_type'])) {
 
-
             switch ($ad_array[$spot_id]['current_ad_type']) {
 
                 case 'other':
@@ -65,7 +72,6 @@ class td_block_ad_box extends td_block {
                     //render the magic google ads :)
                     $buffy .= $this->render_google_ads($ad_array[$spot_id], $atts);
                     break;
-
             }
         }
 
@@ -102,15 +108,20 @@ class td_block_ad_box extends td_block {
 
         $spot_id = ''; //the spot id header / sidebar etc we read it from shortcode
 
-        extract(shortcode_atts(
+	    $this->atts = shortcode_atts(
             array(
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content
                 'spot_title' => '',
                 'custom_title' => '',
 	            'el_class' => '',
-            ), $atts));
+            ), $atts);
 
+	    $spot_id        = $this->atts['spot_id'];
+	    $align          = $this->atts['align'];
+	    $custom_title   = $this->atts['custom_title'];
+	    $spot_title     = $this->atts['spot_title'];
+	    $el_class       = $this->atts['el_class'];
 
         // rec title
         $rec_title = '';
@@ -552,15 +563,20 @@ class td_block_ad_box extends td_block {
 
         $spot_id = ''; //the spot id header / sidebar etc we read it from shortcode
 
-        extract(shortcode_atts(
+        $this->atts = shortcode_atts(
             array(
                 'spot_id' => '', //header / sidebar etc
                 'align' => '', //align left or right in inline content
                 'spot_title' => '',
                 'custom_title' => '',
 	            'el_class' => '',
+            ), $atts);
 
-            ), $atts));
+	    $spot_id        = $this->atts['spot_id'];
+	    $align          = $this->atts['align'];
+	    $custom_title   = $this->atts['custom_title'];
+	    $spot_title     = $this->atts['spot_title'];
+	    $el_class       = $this->atts['el_class'];
 
         // rec title
         $rec_title = '';
