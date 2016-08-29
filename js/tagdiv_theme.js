@@ -12,47 +12,96 @@ jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,a,c,b,d){return 
 
 
 /*
- *  v0.2b - jQuery plugin
- * Copyright (c) 2008 Joel Birch
- * Dual licensed under the MIT and GPL licenses:
- * 	http://www.opensource.org/licenses/mit-license.php
- * 	http://www.gnu.org/licenses/gpl.html
- */
-(function(a){a.fn.supersubs=function(h){var f=a.extend({},a.fn.supersubs.defaults,h);return this.each(function(){var c=a(this),d=a.meta?a.extend({},f,c.data()):f,h=a('<li id="menu-fontsize">&#8212;</li>').css({padding:0,position:"absolute",top:"-999em",width:"auto"}).appendTo(c).width();a("#menu-fontsize").remove();$ULs=c.find("ul");$ULs.each(function(e){e=$ULs.eq(e);var g=e.children(),c=g.children("a"),f=g.css("white-space","nowrap").css("float"),b=e.add(g).add(c).css({"float":"none",width:"auto"}).end().end()[0].clientWidth/
-    h,b=b+d.extraWidth;b>d.maxWidth?b=d.maxWidth:b<d.minWidth&&(b=d.minWidth);b+="em";e.css("width",b);g.css({"float":f,width:"100%","white-space":"normal"}).each(function(){var c=a(">ul",this),d=void 0!==c.css("left")?"left":"right";c.css(d,b)})})})};a.fn.supersubs.defaults={minWidth:9,maxWidth:25,extraWidth:0}})(jQuery);
-
-
-
-/**
- * hoverIntent is similar to jQuery's built-in "hover" method except that
- * instead of firing the handlerIn function immediately, hoverIntent checks
- * to see if the user's mouse has slowed down (beneath the sensitivity
- * threshold) before firing the event. The handlerOut function is only
- * called after a matching handlerIn.
- *
- * hoverIntent r7 // 2013.03.11 // jQuery 1.9.1+
- * http://cherne.net/brian/resources/jquery.hoverIntent.html
- */
-(function(e){e.fn.hoverIntent=function(a,f,n){var b={interval:100,sensitivity:7,timeout:0},b="object"===typeof a?e.extend(b,a):e.isFunction(f)?e.extend(b,{over:a,out:f,selector:n}):e.extend(b,{over:a,out:a,selector:f}),g,h,j,k,l=function(b){g=b.pageX;h=b.pageY},m=function(a,d){d.hoverIntent_t=clearTimeout(d.hoverIntent_t);if(Math.abs(j-g)+Math.abs(k-h)<b.sensitivity)return e(d).off("mousemove.hoverIntent",l),d.hoverIntent_s=1,b.over.apply(d,[a]);j=g;k=h;d.hoverIntent_t=setTimeout(function(){m(a,d)},
-    b.interval)};a=function(a){var d=jQuery.extend({},a),c=this;c.hoverIntent_t&&(c.hoverIntent_t=clearTimeout(c.hoverIntent_t));"mouseenter"==a.type?(j=d.pageX,k=d.pageY,e(c).on("mousemove.hoverIntent",l),1!=c.hoverIntent_s&&(c.hoverIntent_t=setTimeout(function(){m(d,c)},b.interval))):(e(c).off("mousemove.hoverIntent",l),1==c.hoverIntent_s&&(c.hoverIntent_t=setTimeout(function(){c.hoverIntent_t=clearTimeout(c.hoverIntent_t);c.hoverIntent_s=0;b.out.apply(c,[d])},b.timeout)))};return this.on({"mouseenter.hoverIntent":a,
-    "mouseleave.hoverIntent":a},b.selector)}})(jQuery);
-
-/*
- * Superfish v1.5.13 - jQuery menu widget
+ * Supersubs v0.3b - jQuery plugin
  * Copyright (c) 2013 Joel Birch
  *
  * Dual licensed under the MIT and GPL licenses:
  * 	http://www.opensource.org/licenses/mit-license.php
  * 	http://www.gnu.org/licenses/gpl.html
  *
+ *
+ * This plugin automatically adjusts submenu widths of suckerfish-style menus to that of
+ * their longest list item children. If you use this, please expect bugs and report them
+ * to the jQuery Google Group with the word 'Superfish' in the subject line.
+ *
  */
-(function(c){c.fn.superfish=function(d){var f=c.fn.superfish,a=f.c,g=c('<i class="'+a.arrowClass+'"></i>'),h=function(){var e=c(this),b=l(e);clearTimeout(b.sfTimer);e.showSuperfishUl().siblings().hideSuperfishUl()},j=function(e){var b=c(this),d=l(b),a=f.op,g=function(){a.retainPath=-1<c.inArray(b[0],a.$path);b.hideSuperfishUl();a.$path.length&&1>b.parents("li."+a.hoverClass).length&&(a.onIdle.call(),c.proxy(h,a.$path,e)())};"click"===e.type?g():(clearTimeout(d.sfTimer),d.sfTimer=setTimeout(g,
-    a.delay))},l=function(e){e.hasClass(a.menuClass)&&c.error("Superfish requires you to update to a version of hoverIntent that supports event-delegation, such as this one: https://github.com/joeldbirch/onHoverIntent");e=e.closest("."+a.menuClass)[0];f.op=f.o[e.serial];return e},n=function(e){var b=c(this),a=b.siblings("ul");if(0<a.length&&!a.is(":visible")&&(b.data("follow",!1),"MSPointerDown"===e.type))return b.trigger("focus"),!1},p=function(a){var b=c(this),d=b.siblings("ul"),g=!1===b.data("follow")?
-    !1:!0;if(d.length&&(f.op.useClick||!g))a.preventDefault(),d.is(":visible")?f.op.useClick&&g&&c.proxy(j,b.parent("li"),a)():c.proxy(h,b.parent("li"))()};return this.addClass(a.menuClass).each(function(){var e=this.serial=f.o.length,b=c.extend({},f.defaults,d),k=c(this),l=k.find("li:has(ul)");b.$path=k.find("li."+b.pathClass).slice(0,b.pathLevels).each(function(){c(this).addClass(b.hoverClass+" "+a.bcClass).filter("li:has(ul)").removeClass(b.pathClass)});f.o[e]=f.op=b;b.autoArrows&&l.children("a").each(function(){c(this).addClass(a.anchorClass).append(g.clone())});
-    k.css("ms-touch-action","none");if(!f.op.useClick)if(c.fn.hoverIntent&&!f.op.disableHI)k.hoverIntent(h,j,"li:has(ul)");else k.on("mouseenter","li:has(ul)",h).on("mouseleave","li:has(ul)",j);e="MSPointerDown";navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad)/)||(e+=" touchstart");k.on("focusin","li",h).on("focusout","li",j).on("click","a",p).on(e,"a",n);l.not("."+a.bcClass).children("ul").show().hide();b.onInit.call(this)})};var g=c.fn.superfish;g.o=[];g.op={};g.c={bcClass:"sf-breadcrumb",
-    menuClass:"sf-js-enabled",anchorClass:"sf-with-ul",arrowClass:"td-icon-menu-down"};g.defaults={hoverClass:"sfHover",pathClass:"overideThisToUse",pathLevels:1,delay:800,animation:{opacity:"show"},animationOut:{opacity:"hide"},speed:"normal",speedOut:"fast",autoArrows:!0,disableHI:!1,useClick:!1,onInit:function(){},onBeforeShow:function(){},onShow:function(){},onHide:function(){},onIdle:function(){}};c.fn.extend({hideSuperfishUl:function(){var d=g.op,f=this,a=!0===d.retainPath?d.$path:"";d.retainPath=
-    !1;c("li."+d.hoverClass,this).add(this).not(a).children("ul").stop(!0,!0).animate(d.animationOut,d.speedOut,function(){$ul=c(this);$ul.parent().removeClass(d.hoverClass);d.onHide.call($ul);g.op.useClick&&f.children("a").data("follow",!1)});return this},showSuperfishUl:function(){var d=g.op,f=this,a=this.children("ul");f.addClass(d.hoverClass);d.onBeforeShow.call(a);a.stop(!0,!0).animate(d.animation,d.speed,function(){d.onShow.call(a);f.children("a").data("follow",!0)});var m=c(window).width(),h=this.children("ul").first();
-    if(0<h.length){var j=this.children("ul").first().offset().left+h.width();j>m&&(h.parent().parent().hasClass("sf-menu")?h.css("left","-"+(j-m)+"px"):h.addClass("reversed").css("left","-"+(h.width()+0)+"px"))}return this}})})(jQuery);
+
+(function($){ // $ will refer to jQuery within this closure
+
+    $.fn.supersubs = function(options){
+        var opts = $.extend({}, $.fn.supersubs.defaults, options);
+        // return original object to support chaining
+        return this.each(function() {
+            // cache selections
+            var $$ = $(this);
+            // support metadata
+            var o = $.meta ? $.extend({}, opts, $$.data()) : opts;
+            // cache all ul elements and show them in preparation for measurements
+            var $ULs = $$.find('ul').show();
+            // get the font size of menu.
+            // .css('fontSize') returns various results cross-browser, so measure an em dash instead
+            var fontsize = $('<li id="menu-fontsize">&#8212;</li>').css({
+                'padding' : 0,
+                'position' : 'absolute',
+                'top' : '-999em',
+                'width' : 'auto'
+            }).appendTo($$)[0].clientWidth; //clientWidth is faster than .width()
+            // remove em dash
+            $('#menu-fontsize').remove();
+            // loop through each ul in menu
+            $ULs.each(function(i) {
+                // cache this ul
+                var $ul = $(this);
+                // get all (li) children of this ul
+                var $LIs = $ul.children();
+                // get all anchor grand-children
+                var $As = $LIs.children('a');
+                // force content to one line and save current float property
+                var liFloat = $LIs.css('white-space','nowrap').css('float');
+                // remove width restrictions and floats so elements remain vertically stacked
+                $ul.add($LIs).add($As).css({
+                    'float' : 'none',
+                    'width'	: 'auto'
+                });
+                // this ul will now be shrink-wrapped to longest li due to position:absolute
+                // so save its width as ems.
+                var emWidth = $ul[0].clientWidth / fontsize;
+                // add more width to ensure lines don't turn over at certain sizes in various browsers
+                emWidth += o.extraWidth;
+                // restrict to at least minWidth and at most maxWidth
+                if (emWidth > o.maxWidth)		{ emWidth = o.maxWidth; }
+                else if (emWidth < o.minWidth)	{ emWidth = o.minWidth; }
+                emWidth += 'em';
+                // set ul to width in ems
+                $ul.css('width',emWidth);
+                // restore li floats to avoid IE bugs
+                // set li width to full width of this ul
+                // revert white-space to normal
+                $LIs.css({
+                    'float' : liFloat,
+                    'width' : '100%',
+                    'white-space' : 'normal'
+                })
+                // update offset position of descendant ul to reflect new width of parent.
+                // set it to 100% in case it isn't already set to this in the CSS
+                    .each(function(){
+                        var $childUl = $(this).children('ul');
+                        var offsetDirection = $childUl.css('left') !== undefined ? 'left' : 'right';
+                        $childUl.css(offsetDirection,'100%');
+                    });
+            }).hide();
+
+        });
+    };
+    // expose defaults
+    $.fn.supersubs.defaults = {
+        minWidth		: 9,		// requires em unit.
+        maxWidth		: 25,		// requires em unit.
+        extraWidth		: 0			// extra width can ensure lines don't sometimes turn over due to slight browser differences in how they round-off values
+    };
+
+})(jQuery); // plugin code ends
+
 
 
 
@@ -86,46 +135,6 @@ jQuery.extend(jQuery.easing,{def:"easeOutQuad",swing:function(e,a,c,b,d){return 
     function(a){clearTimeout(a)})})();
 
 
-function td_smooth_scroll() {
-    // SmoothScroll v1.2.1
-    // Licensed under the terms of the MIT license.
-
-    // People involved
-    //  - Balazs Galambosi (maintainer)
-    //  - Patrick Brunner  (original idea)
-    //  - Michael Herf     (Pulse Algorithm)
-
-    var defaultOptions={frameRate:150,animationTime:600,stepSize:120,pulseAlgorithm:!0,pulseScale:8,pulseNormalize:1,accelerationDelta:20,accelerationMax:1,keyboardSupport:!0,arrowScroll:50,touchpadSupport:!0,fixedBackground:!0,excluded:""},options=defaultOptions,isExcluded=!1,isFrame=!1,direction={x:0,y:0},initDone=!1,root=document.documentElement,activeElement,observer,deltaBuffer=[120,120,120],key={left:37,up:38,right:39,down:40,spacebar:32,pageup:33,pagedown:34,end:35,home:36};
-    "undefined"!==typeof chrome&&"undefined"!==typeof chrome.storage&&chrome.storage.sync.get(defaultOptions,function(a){options=a;initTest()});
-    function initTest(){var a=!1;-1<document.URL.indexOf("google.com/reader/view")&&(a=!0);if(options.excluded){var b=options.excluded.split(/[,\n] ?/);b.push("mail.google.com");for(var c=b.length;c--;)if(-1<document.URL.indexOf(b[c])){observer&&observer.disconnect();removeEvent("mousewheel",wheel);isExcluded=a=!0;break}}a&&removeEvent("keydown",keydown);options.keyboardSupport&&!a&&addEvent("keydown",keydown)}
-    function init(){if(document.body){var a=document.body,b=document.documentElement,c=window.innerHeight,d=a.scrollHeight;root=0<=document.compatMode.indexOf("CSS")?b:a;activeElement=a;initTest();initDone=!0;if(top!=self)isFrame=!0;else if(d>c&&(a.offsetHeight<=c||b.offsetHeight<=c)){var e=!1,d=function(){e||b.scrollHeight==document.height||(e=!0,setTimeout(function(){b.style.height=document.height+"px";e=!1},500))};b.style.height="auto";setTimeout(d,10);observer=new MutationObserver(d);observer.observe(a,
-        {attributes:!0,childList:!0,characterData:!1});root.offsetHeight<=c&&(c=document.createElement("div"),c.style.clear="both",a.appendChild(c))}-1<document.URL.indexOf("mail.google.com")?(c=document.createElement("style"),c.innerHTML=".iu { visibility: hidden }",(document.getElementsByTagName("head")[0]||b).appendChild(c)):-1<document.URL.indexOf("www.facebook.com")&&(c=document.getElementById("home_stream"))&&(c.style.webkitTransform="translateZ(0)");options.fixedBackground||isExcluded||(a.style.backgroundAttachment=
-        "scroll",b.style.backgroundAttachment="scroll")}}var que=[],pending=!1,lastScroll=+new Date;
-    function scrollArray(a,b,c,d){d||(d=1E3);directionCheck(b,c);if(1!=options.accelerationMax){var e=+new Date-lastScroll;e<options.accelerationDelta&&(e=(1+30/e)/2,1<e&&(e=Math.min(e,options.accelerationMax),b*=e,c*=e));lastScroll=+new Date}que.push({x:b,y:c,lastX:0>b?.99:-.99,lastY:0>c?.99:-.99,start:+new Date});if(!pending){var q=a===document.body,p=function(e){e=+new Date;for(var h=0,k=0,l=0;l<que.length;l++){var f=que[l],m=e-f.start,n=m>=options.animationTime,g=n?1:m/options.animationTime;options.pulseAlgorithm&&
-    (g=pulse(g));m=f.x*g-f.lastX>>0;g=f.y*g-f.lastY>>0;h+=m;k+=g;f.lastX+=m;f.lastY+=g;n&&(que.splice(l,1),l--)}q?window.scrollBy(h,k):(h&&(a.scrollLeft+=h),k&&(a.scrollTop+=k));b||c||(que=[]);que.length?requestFrame(p,a,d/options.frameRate+1):pending=!1};requestFrame(p,a,0);pending=!0}}
-    function wheel(a){initDone||init();var b=a.target,c=overflowingAncestor(b);if(!c||a.defaultPrevented||isNodeName(activeElement,"embed")||isNodeName(b,"embed")&&/\.pdf/i.test(b.src))return!0;var b=a.wheelDeltaX||0,d=a.wheelDeltaY||0;b||d||(d=a.wheelDelta||0);if(!options.touchpadSupport&&isTouchpad(d))return!0;1.2<Math.abs(b)&&(b*=options.stepSize/120);1.2<Math.abs(d)&&(d*=options.stepSize/120);scrollArray(c,-b,-d);a.preventDefault()}
-    function keydown(a){var b=a.target,c=a.ctrlKey||a.altKey||a.metaKey||a.shiftKey&&a.keyCode!==key.spacebar;if(/input|textarea|select|embed/i.test(b.nodeName)||b.isContentEditable||a.defaultPrevented||c||isNodeName(b,"button")&&a.keyCode===key.spacebar)return!0;var d;d=b=0;var c=overflowingAncestor(activeElement),e=c.clientHeight;c==document.body&&(e=window.innerHeight);switch(a.keyCode){case key.up:d=-options.arrowScroll;break;case key.down:d=options.arrowScroll;break;case key.spacebar:d=a.shiftKey?
-        1:-1;d=-d*e*.9;break;case key.pageup:d=.9*-e;break;case key.pagedown:d=.9*e;break;case key.home:d=-c.scrollTop;break;case key.end:e=c.scrollHeight-c.scrollTop-e;d=0<e?e+10:0;break;case key.left:b=-options.arrowScroll;break;case key.right:b=options.arrowScroll;break;default:return!0}scrollArray(c,b,d);a.preventDefault()}function mousedown(a){activeElement=a.target}var cache={};setInterval(function(){cache={}},1E4);var uniqueID=function(){var a=0;return function(b){return b.uniqueID||(b.uniqueID=a++)}}();
-    function setCache(a,b){for(var c=a.length;c--;)cache[uniqueID(a[c])]=b;return b}function overflowingAncestor(a){var b=[],c=root.scrollHeight;do{var d=cache[uniqueID(a)];if(d)return setCache(b,d);b.push(a);if(c===a.scrollHeight){if(!isFrame||root.clientHeight+10<c)return setCache(b,document.body)}else if(a.clientHeight+10<a.scrollHeight&&(overflow=getComputedStyle(a,"").getPropertyValue("overflow-y"),"scroll"===overflow||"auto"===overflow))return setCache(b,a)}while(a=a.parentNode)}
-    function addEvent(a,b,c){window.addEventListener(a,b,c||!1)}function removeEvent(a,b,c){window.removeEventListener(a,b,c||!1)}function isNodeName(a,b){return(a.nodeName||"").toLowerCase()===b.toLowerCase()}function directionCheck(a,b){a=0<a?1:-1;b=0<b?1:-1;if(direction.x!==a||direction.y!==b)direction.x=a,direction.y=b,que=[],lastScroll=0}var deltaBufferTimer;
-    function isTouchpad(a){if(a){a=Math.abs(a);deltaBuffer.push(a);deltaBuffer.shift();clearTimeout(deltaBufferTimer);deltaBufferTimer=setTimeout(function(){chrome.storage.local.set({deltaBuffer:deltaBuffer})},1E3);a=deltaBuffer[0]==deltaBuffer[1]&&deltaBuffer[1]==deltaBuffer[2];var b=isDivisible(deltaBuffer[0],120)&&isDivisible(deltaBuffer[1],120)&&isDivisible(deltaBuffer[2],120);return!(a||b)}}function isDivisible(a,b){return Math.floor(a/b)==a/b}
-    "undefined"!==typeof chrome&&"undefined"!==typeof chrome.storage&&chrome.storage.local.get("deltaBuffer",function(a){a.deltaBuffer&&(deltaBuffer=a.deltaBuffer)});var requestFrame=function(){return window.requestAnimationFrame||window.webkitRequestAnimationFrame||function(a,b,c){window.setTimeout(a,c||1E3/60)}}(),MutationObserver=window.MutationObserver||window.WebKitMutationObserver;
-    function pulse_(a){var b;a*=options.pulseScale;1>a?b=a-(1-Math.exp(-a)):(b=Math.exp(-1),--a,a=1-Math.exp(-a),b+=a*(1-b));return b*options.pulseNormalize}function pulse(a){if(1<=a)return 1;if(0>=a)return 0;1==options.pulseNormalize&&(options.pulseNormalize/=pulse_(1));return pulse_(a)}addEvent("mousedown",mousedown);addEvent("mousewheel",wheel);addEvent("load",init);
-} //end smooth scroll
-/**
- *   ___________________________________________
- *  |   __  _ ___  _   _   __  __ __  __   __   |
- *  |  |  \| | __|| | | |/' _/|  V  |/  \ / _]  |
- *  |  | | ' | _| | 'V' |`._`.| \_/ | /\ | [/\  |
- *  |  |_|\__|___|!_/ \_!|___/|_| |_|_||_|\__/  |
- *  |___________________________________________|
- *
- * Our portfolio:  http://themeforest.net/user/tagDiv/portfolio
- * by tagDiv  2014
- * Thanks for your interest in our theme! :)
- *
- *
- */
 /* global jQuery:false */
 
 
@@ -155,7 +164,7 @@ var tdDetect = {};
 
         /**
          * function to check the phone screen
-         * @see td_events
+         * @see tdEvents
          * The jQuery windows width is not reliable cross browser!
          */
         runIsPhoneScreen: function () {
@@ -267,281 +276,699 @@ var tdDetect = {};
  * Created by tagdiv on 13.05.2015.
  */
 
+/* global tdDetect: {} */
+/* global jQuery: {} */
 
-"use strict";
+var tdViewport = {};
 
+(function(){
 
-var td_viewport = {
+    "use strict";
 
+    tdViewport = {
 
-
-    /**
-     * - initial (default) value of the _current_interval_index
-     * - it's used by third part libraries
-     * - it used just as constant value
-     */
-    INTERVAL_INITIAL_INDEX: -1,
-
-
-
-    /**
-     * - keep the current interval index
-     * - it should be modified/taken just by setter/getter methods
-     * - after computing, it should not be a negative value
-     */
-    _current_interval_index : this.INTERVAL_INITIAL_INDEX,
+        /**
+         * - initial (default) value of the _currentIntervalIndex
+         * - it's used by third part libraries
+         * - it used just as constant value
+         */
+        INTERVAL_INITIAL_INDEX: -1,
 
 
 
-    /**
-     * - it keeps the interval index
-     * - it should be modified/taken just by setter/getter methods
-     * - it must be a crescendo positive values
-     */
-    _interval_list : [],
+        /**
+         * - keep the current interval index
+         * - it should be modified/taken just by setter/getter methods
+         * - after computing, it should not be a negative value
+         */
+        _currentIntervalIndex : tdViewport.INTERVAL_INITIAL_INDEX,
 
 
 
-    /**
-     *
-     */
-    init: function init() {
-        if ((typeof window.td_viewport_interval_list !== 'undefined') && (window.td_viewport_interval_list.constructor === Array)) {
+        /**
+         * - it keeps the interval index
+         * - it should be modified/taken just by setter/getter methods
+         * - it must be a crescendo positive values
+         */
+        _intervalList : [],
 
-            for (var i = 0; i < window.td_viewport_interval_list.length; i++) {
-                var item = new td_viewport.item();
 
-                var current_val = window.td_viewport_interval_list[i];
 
-                // the check is done to be sure that the intervals are well formatted
-                if (!current_val.hasOwnProperty('limit_bottom') || !current_val.hasOwnProperty('sidebar_width')) {
+        /**
+         *
+         */
+        init: function() {
+            if (('undefined' !== typeof window.td_viewport_interval_list) && (Array === window.td_viewport_interval_list.constructor)) {
+
+                for (var i = 0; i < window.td_viewport_interval_list.length; i++) {
+                    var item = new tdViewport.item();
+
+                    var currentVal = window.td_viewport_interval_list[i];
+
+                    // the check is done to be sure that the intervals are well formatted
+                    if (!currentVal.hasOwnProperty('limitBottom') || !currentVal.hasOwnProperty('sidebarWidth')) {
+                        break;
+                    }
+
+                    item.limitBottom = currentVal.limitBottom;
+                    item.sidebarWidth = currentVal.sidebarWidth;
+
+                    tdViewport._items.push(item);
+                }
+
+                tdViewport.detectChanges();
+            }
+        },
+
+
+
+        /**
+         * - getter of the _currentIntervalIndex
+         * - it should be used by outsiders libraries
+         * @returns {*}
+         */
+        getCurrentIntervalIndex : function() {
+            return tdViewport._currentIntervalIndex;
+        },
+
+
+
+        /**
+         * - setter of the _intervalList
+          - it should be used by outsiders libraries
+         * @param value
+         */
+        setIntervalList : function(value) {
+            tdViewport._intervalList = value;
+        },
+
+
+
+        /**
+         * - getter of the _intervalList
+         * - it should be used by outsiders libraries
+         * @returns {*}
+         */
+        getIntervalList : function() {
+            return tdViewport._intervalList;
+        },
+
+
+
+        /**
+         * - getter of the tdViewport current item
+         * - it should be used by outsiders libraries
+         * @returns {*}
+         */
+        getCurrentIntervalItem : function() {
+
+            if ((tdViewport.INTERVAL_INITIAL_INDEX === tdViewport._currentIntervalIndex) || (0 === tdViewport._currentIntervalIndex)) {
+                return null;
+            }
+            return tdViewport._items[tdViewport._currentIntervalIndex - 1];
+        },
+
+
+
+        _items : [],
+
+
+
+        item : function() {
+            this.limitBottom = undefined;
+            this.sidebarWidth = undefined;
+        },
+
+
+
+
+
+        /**
+         * - detect view port changes
+         * - it returns true if the change view port has changed, false otherwise
+         * - it also sets the _currentIntervalIndex
+         * @returns {boolean} True when viewport has changed
+         */
+        detectChanges: function() {
+            var result = false;
+
+            var realViewPortWidth = 0;
+            var localCurrentIntervalIndex = 0;
+
+            if (true === tdDetect.isSafari) {
+                realViewPortWidth = this._safariWiewPortWidth.getRealWidth();
+            } else {
+                realViewPortWidth = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+            }
+
+            for (var i = 0; i < tdViewport._items.length; i++) {
+
+                if (realViewPortWidth <= tdViewport._items[i].limitBottom) {
+
+                    if (localCurrentIntervalIndex !== tdViewport._currentIntervalIndex) {
+                        tdViewport._currentIntervalIndex = localCurrentIntervalIndex;
+                        result = true;
+
+                        tdViewport.log('changing viewport ' + tdViewport._currentIntervalIndex + ' ~ ' + realViewPortWidth);
+                    }
                     break;
                 }
-
-                item.limit_bottom = current_val['limit_bottom'];
-                item.sidebar_width = current_val['sidebar_width'];
-
-                td_viewport._items.push(item);
+                localCurrentIntervalIndex++;
             }
 
-            td_viewport.detect_changes();
-        }
-    },
+            if ((false === result) && (localCurrentIntervalIndex !== tdViewport._currentIntervalIndex)) {
+                tdViewport._currentIntervalIndex = localCurrentIntervalIndex;
+                result = true;
+
+                tdViewport.log('changing viewport ' + tdViewport._currentIntervalIndex + ' ~ ' + realViewPortWidth);
+            }
+            return result;
+        },
 
 
+        /**
+         * get the real view port width on safari
+         * @type {{divAdded: boolean, divJqueryObject: string, getRealWidth: Function}}
+         */
+        _safariWiewPortWidth : {
+            divAdded : false,
+            divJqueryObject : '',
 
-    /**
-     * - getter of the _current_interval_index
-     * - it should be used by outsiders libraries
-     * @returns {*}
-     */
-    get_current_interval_index : function get_current_interval_index() {
-        return td_viewport._current_interval_index;
-    },
-
-
-
-    /**
-     * - setter of the _interval_list
-      - it should be used by outsiders libraries
-     * @param value
-     */
-    set_interval_list : function set_interval_list(value) {
-        td_viewport._interval_list = value;
-    },
-
-
-
-    /**
-     * - getter of the _interval_list
-     * - it should be used by outsiders libraries
-     * @returns {*}
-     */
-    get_interval_list : function get_interval_list() {
-        return td_viewport._interval_list;
-    },
-
-
-
-    /**
-     * - getter of the td_viewport current item
-     * - it should be used by outsiders libraries
-     * @returns {*}
-     */
-    get_current_interval_item : function get_current_interval_item() {
-
-        if (td_viewport._current_interval_index == td_viewport.INTERVAL_INITIAL_INDEX ||
-            td_viewport._current_interval_index == 0) {
-
-            return null;
-        }
-
-        return td_viewport._items[td_viewport._current_interval_index - 1];
-    },
-
-
-
-
-
-    _items : [],
-
-
-
-
-    item : function item() {
-        this.limit_bottom = undefined;
-        this.sidebar_width = undefined;
-    },
-
-
-
-
-
-    /**
-     * - detect view port changes
-     * - it returns true if the change view port has changed, false otherwise
-     * - it also sets the _current_interval_index
-     * @returns {boolean} True when viewport has changed
-     */
-    detect_changes: function detect_changes() {
-        var result = false;
-
-        var real_view_port_width = 0;
-        var local_current_interval_index = 0;
-
-        if (tdDetect.isSafari === true) {
-            real_view_port_width = this._safari_view_port_width.get_real_width();
-        } else {
-            real_view_port_width = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-        }
-
-        for (var i = 0; i < td_viewport._items.length; i++) {
-
-            if (real_view_port_width <= td_viewport._items[i].limit_bottom) {
-
-                if (local_current_interval_index != td_viewport._current_interval_index) {
-                    td_viewport._current_interval_index = local_current_interval_index;
-                    result = true;
-
-                    td_viewport.log('changing viewport ' + td_viewport._current_interval_index + ' ~ ' + real_view_port_width);
+            getRealWidth : function() {
+                if (false === this.divAdded) {
+                    // we don't have a div present
+                    this.divJqueryObject = jQuery('<div>')
+                        .css({
+                            "height": "1px",
+                            "position": "absolute",
+                            "top": "-1px",
+                            "left": "0",
+                            "right": "0",
+                            "visibility": "hidden",
+                            "z-index": "-1"
+                        });
+                    this.divJqueryObject.appendTo('body');
+                    this.divAdded = true;
                 }
-
-                break;
+                return this.divJqueryObject.width();
             }
-            local_current_interval_index++;
+        },
+
+
+
+        log: function log(msg) {
+            //console.log(msg);
         }
+    };
 
-        if ((result == false) && (local_current_interval_index != td_viewport._current_interval_index)) {
-            td_viewport._current_interval_index = local_current_interval_index;
-            result = true;
+    tdViewport.init();
 
-            td_viewport.log('changing viewport ' + td_viewport._current_interval_index + ' ~ ' + real_view_port_width);
-        }
-
-        return result;
-    },
-
-
-    /**
-     * get the real view port width on safari
-     * @type {{div_added: boolean, div_jquery_object: string, get_real_width: Function}}
-     */
-    _safari_view_port_width : {
-        div_added : false,
-        div_jquery_object : '',
-
-        get_real_width : function get_real_widht () {
-            if (this.div_added === false) {
-                // we don't have a div present
-                this.div_jquery_object = jQuery('<div>')
-                    .css({
-
-                        "height": "1px",
-                        "position": "absolute",
-                        "top": "-1px",
-                        "left": "0",
-                        "right": "0",
-                        "visibility": "hidden",
-                        "z-index": "-1"
-
-                    });
-                this.div_jquery_object.appendTo('body');
-                this.div_added = true;
-            }
-            return this.div_jquery_object.width();
-        }
-    },
-
-
-
-    log: function log(msg) {
-        //console.log(msg);
-    }
-};
-
-td_viewport.init();
-
-"use strict";
+})();
 
 /*  ----------------------------------------------------------------------------
     Menu script
  */
 
+/* global jQuery:{} */
+/* global tdDetect:{} */
 
+var tdMenu = {};
+(function(){
+    'use strict';
 
-// top menu
+    tdMenu = {
 
-if (tdDetect.isTouchDevice) {
-    //touch
-    jQuery('.td-header-sp-top-menu .top-header-menu').superfish({
-        delay:300,
-        speed:'fast',
-        useClick:true
-    });
+        //submenu items (used on unbind)
+        _itemsWithSubmenu: null,
+        //main menu (used on unbind)
+        _mainMenu: null,
 
-} else {
+        //on touch - when you click outside the menu it will close all menus
+        _outsideClickArea: null,
+        _outsideClickExcludedAreas: '#td-header-menu .sf-menu, #td-header-menu .sf-menu *, .menu-top-container, .menu-top-container *',
 
-    //not touch
-    jQuery('.td-header-sp-top-menu .top-header-menu').superfish({
-        delay:600,
-        speed:200,
-        useClick:false
-    });
-}
-
-
-
-
-/*  ----------------------------------------------------------------------------
- On load
- */
-
-// header menu
-    jQuery('#td-header-menu .sf-menu').supersubs({
-        minWidth: 10, // minimum width of sub-menus in em units
-        maxWidth: 40, // maximum width of sub-menus in em units
-        extraWidth: 1 // extra width can ensure lines don't sometimes turn over
-    });
+        //added when menu is open
+        _openMenuClass: 'sfHover',
+        _openMenuBodyClass: 'td-open-menu',
 
 
 
-if (tdDetect.isTouchDevice) {
-    //touch
-    jQuery('#td-header-menu .sf-menu').superfish({
-        delay:300,
-        speed:'fast',
-        useClick:true
-    });
+        /*
+         * initialize menu
+         */
+        init: function() {
+            //get menu items
+            var mainMenu = jQuery('#td-header-menu .sf-menu'),
+                menus = jQuery('#td-header-menu .sf-menu, .top-header-menu'),
+                menuLinks = menus.find('.menu-item-has-children > a, .td-mega-menu > a');
 
-} else {
+            //add dropdown arrow on items with submenu
+            menuLinks.append('<i class="td-icon-menu-down"></i>');
 
-    //not touch
-    jQuery('#td-header-menu .sf-menu').superfish({
-        delay:600,
-        speed:200,
-        useClick:false
-    });
-}
+            //main menu width adjustment (top menu will use css)
+            mainMenu.supersubs({
+                minWidth: 10, // minimum width of sub-menus in em units
+                maxWidth: 20, // maximum width of sub-menus in em units
+                extraWidth: 1 // extra width can ensure lines don't sometimes turn over
+            });
+
+            //add sf-with-ul class to all anchors
+            menuLinks.addClass('sf-with-ul');
+            //add sf-js-enabled class
+            menus.addClass('sf-js-enabled');
+            //hide all submenus
+            menuLinks.parent().find('ul').first().css('display', 'none');
+
+            //set unbind items
+            tdMenu._mainMenu = mainMenu;
+            tdMenu._itemsWithSubmenu = menuLinks;
+            tdMenu._outsideClickArea = jQuery(window).not(tdMenu._outsideClickExcludedAreas);
+            //initialize menu
+            tdMenu._setHover(menuLinks, mainMenu);
+        },
+
+
+
+
+        /**
+         * adjust submenu position - if it goes out of window move it to the left
+         * @param item - submenu item
+         * @private
+         */
+        _getSubmenuPosition: function(item) {
+            var windowWidth = jQuery(window).width(),
+                submenuElement = item.children("ul").first();
+            if (submenuElement.length > 0) {
+                var submenuOffsetWidth = submenuElement.offset().left + submenuElement.width();
+                if (submenuOffsetWidth > windowWidth) {
+                    if (submenuElement.parent().parent().hasClass("sf-menu")) {
+                        //main menu
+                        submenuElement.css("left", "-" + (submenuOffsetWidth - windowWidth) + "px");
+                    } else {
+                        //submenu
+                        submenuElement.addClass("reversed").css("left", "-" + (submenuElement.width() + 0) + "px");
+                    }
+                }
+            }
+        },
+
+
+
+        /**
+         * calculate mouse direction
+         * @param x1 - old x position
+         * @param y1 - old y position
+         * @param x2 - current x position
+         * @param y2 - current y position
+         * @returns {number}
+         * @private
+         */
+        _getMouseAngleDirection: function(x1, y1, x2, y2) {
+            var dx = x2 - x1,
+                dy = y2 - y1;
+
+            return Math.atan2(dx, dy) / Math.PI * 180;
+        },
+
+
+
+        /**
+         * set menu functionality for desktop and touch devices
+         * @param menuLinks - submenu links (anchors)
+         * @param mainMenu - main menu
+         * @private
+         */
+        _setHover: function(menuLinks, mainMenu) {
+
+            /* TOUCH DEVICES */
+            if (tdDetect.isTouchDevice) {
+
+                //close menu when you tap outside of it
+                jQuery(document).on('touchstart', 'body', function(e) {
+                    var menuItems = menuLinks.parent(),
+                        pageBody = jQuery('body');
+                        //check if a menu is open and if the target is outside the menu
+                        if (pageBody.hasClass(tdMenu._openMenuBodyClass) && !menuItems.is(e.target) && menuItems.has(e.target).length === 0) {
+                            menuItems.removeClass(tdMenu._openMenuClass);
+                            menuItems.children('ul').hide();
+                            //remove open menu class from <body>
+                            pageBody.removeClass(tdMenu._openMenuBodyClass);
+                        }
+                });
+
+                //open-close the menu on touch
+                menuLinks.on('touchstart',
+                    function(event){
+                        event.preventDefault();
+                        event.stopPropagation();
+                        var currentMenuLink = jQuery(this),
+                            currentMenu = currentMenuLink.parent(),
+                            pageBody = jQuery('body');
+
+                        //menu is open
+                        if (currentMenu.hasClass(tdMenu._openMenuClass)) {
+                            //has a link, open it
+                            if (currentMenuLink.attr('href') !== null && currentMenuLink.attr('href') !== '#') {
+                                window.location.href = currentMenuLink.attr('href');
+
+                            //no link - close it
+                            } else {
+                                //if it's a main menu remove the body class
+                                if (currentMenu.parent().hasClass('sf-menu') || currentMenu.parent().hasClass('top-header-menu')) {
+                                    pageBody.removeClass(tdMenu._openMenuBodyClass);
+                                }
+                                currentMenu.removeClass(tdMenu._openMenuClass);
+                                //close submenus
+                                currentMenu.find('ul').hide();
+                                currentMenu.find('li').removeClass(tdMenu._openMenuClass);
+                            }
+
+                        //menu is not open
+                        } else {
+                            //a sibling may be open and we have to close it
+                            if (currentMenu.parent().hasClass('sf-menu') || currentMenu.parent().hasClass('top-header-menu')) {
+                                //main menu - close all menus
+                                menuLinks.parent().removeClass(tdMenu._openMenuClass);
+                                menuLinks.parent().children('ul').hide();
+                            } else {
+                                //submenu - close all siblings-submenus and open the current one
+                                var currentMenuSiblings = currentMenu.siblings();
+                                currentMenuSiblings.removeClass(tdMenu._openMenuClass);
+                                //close siblings
+                                currentMenuSiblings.find('ul').hide();
+                                currentMenuSiblings.find('li').removeClass(tdMenu._openMenuClass);
+                            }
+                            //open current
+                            currentMenu.addClass(tdMenu._openMenuClass);
+                            currentMenu.children('ul').show();
+                            //adjust menu position
+                            tdMenu._getSubmenuPosition(currentMenu);
+                            //add body class
+                            pageBody.addClass(tdMenu._openMenuBodyClass);
+                        }
+                    }
+                );
+
+             /* DESKTOP */
+            } else {
+
+                var lastMenuOpen = {},
+                    newMenuTimeout,
+                    timeoutCleared = true;
+
+                mainMenu.on('mouseleave', function() {
+                    //close all menus
+                    menuLinks.parent().removeClass(tdMenu._openMenuClass);
+                    menuLinks.parent().children('ul').hide();
+                    //reset last menu
+                    lastMenuOpen = {};
+
+                });
+
+                //apply hover only to main menu (top menu uses css)
+                mainMenu.find('.menu-item').hover(
+                    function(){
+
+                        //open the new menu element
+                        var currentMenu = jQuery(this),
+                            currentMenuSiblings = '',
+                            sensitivity = 5, //measure direction after x pixels
+                            pixelCount,
+                            oldX,
+                            oldY,
+                            mouseDirection;
+
+                        //menu has submenus
+                        if (currentMenu.hasClass('menu-item-has-children') ||  currentMenu.hasClass('td-mega-menu')) {
+
+                            //main menu
+                            if (currentMenu.parent().hasClass('sf-menu')) {
+                                //no menu is open - instantly open the current one
+                                if (jQuery.isEmptyObject(lastMenuOpen)) {
+                                    currentMenu.addClass(tdMenu._openMenuClass);
+                                    currentMenu.children('ul').show();
+                                    //set the last open menu
+                                    lastMenuOpen = currentMenu;
+
+                                //menu is open
+                                } else {
+
+                                    //execute only if it's a new menu
+                                    if (currentMenu[0] !== lastMenuOpen[0]) {
+
+                                        //initialize variables used for calculating mouse direction
+                                        pixelCount = 0;
+                                        oldX = 0;
+                                        oldY = 0;
+                                        mouseDirection = null;
+
+                                        //add timeout - when you enter a new menu
+                                        if (timeoutCleared === true) {
+                                            timeoutCleared = false;
+                                            newMenuTimeout = setTimeout(function() {
+                                                //close previous menus
+                                                menuLinks.parent().removeClass(tdMenu._openMenuClass);
+                                                menuLinks.parent().children('ul').hide();
+                                                //open current menu
+                                                currentMenu.addClass(tdMenu._openMenuClass);
+                                                currentMenu.children('ul').show();
+                                                //set the last open menu
+                                                lastMenuOpen = currentMenu;
+                                            }, 400);
+                                        }
+
+                                        currentMenu.on('mousemove', function(e) {
+                                            //reset pixeCount, calculate direction and define old x and y
+                                            if (pixelCount >= sensitivity) {
+                                                pixelCount = 0;
+                                                mouseDirection = tdMenu._getMouseAngleDirection(oldX, oldY, e.pageX, e.pageY);
+                                                oldX = e.pageX;
+                                                oldY = e.pageY;
+                                            } else {
+                                                pixelCount++;
+                                                //set the first x and y
+                                                if (oldX === 0 && oldY === 0) {
+                                                    oldX = e.pageX;
+                                                    oldY = e.pageY;
+                                                }
+                                            }
+
+                                            //debug mouse direction
+                                            //console.log(mouseDirection);
+
+                                            //current menu is different than the last one
+                                            if (mouseDirection !== null && (mouseDirection > 85 || mouseDirection < -85)) {
+                                                //close previous menus
+                                                menuLinks.parent().removeClass(tdMenu._openMenuClass);
+                                                menuLinks.parent().children('ul').hide();
+                                                //open current menu
+                                                currentMenu.addClass(tdMenu._openMenuClass);
+                                                currentMenu.children('ul').show();
+
+                                                //unbind mousemove event - menu is open, there's no need for it
+                                                currentMenu.off('mousemove');
+                                                //clear timeout - menu is open
+                                                clearTimeout(newMenuTimeout);
+                                                timeoutCleared = true;
+                                                //set the last open menu
+                                                lastMenuOpen = currentMenu;
+                                            }
+                                        });
+                                    }
+                                }
+
+                            //submenu
+                            } else {
+                                //submenu - close all siblings-submenus
+                                currentMenuSiblings = currentMenu.siblings();
+                                currentMenuSiblings.removeClass(tdMenu._openMenuClass);
+                                //close submenus
+                                currentMenuSiblings.find('ul').hide();
+                                currentMenuSiblings.find('li').removeClass(tdMenu._openMenuClass);
+                                //open current menu
+                                currentMenu.addClass(tdMenu._openMenuClass);
+                                currentMenu.children('ul').show();
+                                //adjust menu position
+                                tdMenu._getSubmenuPosition(currentMenu);
+                            }
+
+                        //menu item doesn't have submenu
+                        } else {
+                            //main menu
+                            if (currentMenu.parent().hasClass('sf-menu') || currentMenu.parent().hasClass('top-header-menu')) {
+                                //execute only if another menu is open
+                                if (!jQuery.isEmptyObject(lastMenuOpen)) {
+
+                                    //initialize variables used for calculating mouse direction
+                                    pixelCount = 0;
+                                    oldX = 0;
+                                    oldY = 0;
+                                    mouseDirection = null;
+
+                                    //add timeout - when you enter a new menu
+                                    if (timeoutCleared === true) {
+                                        timeoutCleared = false;
+                                        newMenuTimeout = setTimeout(function() {
+                                            //close previous menus
+                                            menuLinks.parent().removeClass(tdMenu._openMenuClass);
+                                            menuLinks.parent().children('ul').hide();
+                                            lastMenuOpen = {};
+                                        }, 400);
+                                    }
+
+                                    currentMenu.on('mousemove', function(e) {
+                                        //reset pixeCount, calculate direction and define old x and y
+                                        if (pixelCount >= sensitivity) {
+                                            pixelCount = 0;
+                                            mouseDirection = tdMenu._getMouseAngleDirection(oldX, oldY, e.pageX, e.pageY);
+                                            oldX = e.pageX;
+                                            oldY = e.pageY;
+                                        } else {
+                                            pixelCount++;
+                                            //set the first x and y
+                                            if (oldX === 0 && oldY === 0) {
+                                                oldX = e.pageX;
+                                                oldY = e.pageY;
+                                            }
+                                        }
+
+                                        //current menu is different than the last one
+                                        if (mouseDirection !== null && (mouseDirection > 85 || mouseDirection < -85)) {
+                                            //close previous menus
+                                            menuLinks.parent().removeClass(tdMenu._openMenuClass);
+                                            menuLinks.parent().children('ul').hide();
+                                            //unbind mousemove event - menu is open, there's no need for it
+                                            currentMenu.off('mousemove');
+                                            //clear timeout - menu is open
+                                            clearTimeout(newMenuTimeout);
+                                            timeoutCleared = true;
+                                            //set the last open menu
+                                            lastMenuOpen = {};
+                                        }
+                                    });
+                                }
+                            //submenu
+                            } else {
+                                //close all siblings-submenus
+                                lastMenuOpen = currentMenu.parent();
+                                currentMenuSiblings = currentMenu.siblings();
+                                currentMenuSiblings.removeClass(tdMenu._openMenuClass);
+                                //close siblings submenus
+                                currentMenuSiblings.find('ul').hide();
+                                currentMenuSiblings.find('li').removeClass(tdMenu._openMenuClass);
+                            }
+                        }
+                    },
+
+
+                    //mouseleave
+                    function(){
+
+                        var currentMenu = jQuery(this);
+
+                        //clear menu timeout
+                        if (timeoutCleared === false) {
+                            clearTimeout(newMenuTimeout);
+                            timeoutCleared = true;
+                        }
+                        //unbind mousemove event
+                        currentMenu.off('mousemove');
+                    }
+                );
+            }
+
+        },
+
+
+
+        /**
+         * unbind menu events
+         */
+        unsetHover: function() {
+            if (tdMenu._itemsWithSubmenu !== null) {
+                tdMenu._itemsWithSubmenu.off();
+            }
+            //unbind outside click area events
+            if (tdMenu._outsideClickArea !== null) {
+                tdMenu._outsideClickArea.off();
+            }
+        }
+
+    };
+})();
+
+
+//initialize menu
+tdMenu.init();
+
+
+
+
+
+
+
+
+
+
+// // the old code
+// (function(){
+//     'use strict';
+//
+//     // top menu
+//
+//     if (tdDetect.isTouchDevice) {
+//         //touch
+//         jQuery('.td-header-sp-top-menu .top-header-menu').superfish({
+//             delay:300,
+//             speed:'fast',
+//             useClick:true
+//         });
+//
+//     } else {
+//
+//         //not touch
+//         jQuery('.td-header-sp-top-menu .top-header-menu').superfish({
+//             delay:600,
+//             speed:200,
+//             useClick:false
+//         });
+//     }
+//
+// /*  ----------------------------------------------------------------------------
+//  On load
+//  */
+//
+//     // header menu
+//     jQuery('#td-header-menu .sf-menu').supersubs({
+//         minWidth: 10, // minimum width of sub-menus in em units
+//         maxWidth: 40, // maximum width of sub-menus in em units
+//         extraWidth: 1 // extra width can ensure lines don't sometimes turn over
+//     });
+//
+//
+//
+//     if (tdDetect.isTouchDevice) {
+//         //touch
+//         jQuery('#td-header-menu .sf-menu').superfish({
+//             delay:300,
+//             speed:'fast',
+//             useClick:true
+//         });
+//
+//     } else {
+//
+//         //not touch
+//         jQuery('#td-header-menu .sf-menu').superfish({
+//             delay:600,
+//             speed:200,
+//             useClick:false
+//         });
+//     }
+// })();
+
+
+
+
 
 
 
@@ -581,7 +1008,7 @@ var tdUtil = {};
          */
         imageMoveClassToFigure: function ( classSelector ) {
             jQuery('figure .' + classSelector).each( function() {
-                jQuery(this).parent().parent().addClass(classSelector);
+                jQuery(this).parents('figure:first').addClass(classSelector);
                 jQuery(this).removeClass(classSelector);
             });
         },
@@ -724,7 +1151,44 @@ var tdUtil = {};
             } else {
                 return true;
             }
+        },
+
+
+        round: function ( value, precision, mode ) {
+            var m, f, isHalf, sgn; // helper variables
+            // making sure precision is integer
+            precision |= 0;
+            m = Math.pow(10, precision);
+            value *= m;
+            // sign of the number
+            sgn = (value > 0) | -(value < 0);
+            isHalf = value % 1 === 0.5 * sgn;
+            f = Math.floor(value);
+
+            if (isHalf) {
+                switch (mode) {
+                    case 'PHP_ROUND_HALF_DOWN':
+                        // rounds .5 toward zero
+                        value = f + (sgn < 0);
+                        break;
+                    case 'PHP_ROUND_HALF_EVEN':
+                        // rouds .5 towards the next even integer
+                        value = f + (f % 2 * sgn);
+                        break;
+                    case 'PHP_ROUND_HALF_ODD':
+                        // rounds .5 towards the next odd integer
+                        value = f + !(f % 2);
+                        break;
+                    default:
+                        // rounds .5 away from zero
+                        value = f + (sgn > 0);
+                }
+            }
+
+            return (isHalf ? value : Math.round(value)) / m;
         }
+
+
 
 
 
@@ -744,450 +1208,447 @@ var tdUtil = {};
  * V 1.1 - better iOS 8 support
  */
 
+/* global jQuery:{} */
+/* global tdDetect:{} */
+/* global tdUtil:{} */
 
-var td_affix = {
+var tdAffix = {};
 
-    // flag used to stop scrolling
-    allow_scroll: true,
+(function(){
+    'use strict';
 
-    //settings, obtained from ext
-    menu_selector: '', //the affix menu (this element will get the td-affix)
-    menu_wrap_selector: '', //the menu wrapper / placeholder
-    tds_snap_menu: '', //the panel setting
-    tds_snap_menu_logo: '', //the panel setting
+    tdAffix = {
 
-    is_menu_affix_height_computed: false, // flag used to compute menu_affix_height only once, when the menu is affix
-    is_menu_affix_height_on_mobile_computed: false, // flag used to compute menu_affix_height_on_mobile only once, when the menu is affix
+        // flag used to stop scrolling
+        allow_scroll: true,
 
-    menu_affix_height: 0, // the menu affix height [the height when it's really affix]
-    menu_affix_height_on_mobile: 0, // the menu affix height on mobile [the height when it's really affix]
+        //settings, obtained from ext
+        menu_selector: '', //the affix menu (this element will get the td-affix)
+        menu_wrap_selector: '', //the menu wrapper / placeholder
+        tds_snap_menu: '', //the panel setting
+        tds_snap_menu_logo: '', //the panel setting
 
+        is_menu_affix_height_computed: false, // flag used to compute menu_affix_height only once, when the menu is affix
+        is_menu_affix_height_on_mobile_computed: false, // flag used to compute menu_affix_height_on_mobile only once, when the menu is affix
 
-    main_menu_height: 0, // main menu height
-    top_offset: 0, //how much the menu is moved from the original position when it's affixed
-    menu_offset: 0, //used to hide the menu on scroll
-    is_requestAnimationFrame_running:false, //prevent multiple calls to requestAnimationFrame
-    is_menu_affix: false, //the current state of the menu, true if the menu is affix
-    is_top_menu:false, //true when the menu is at the top of the screen (0px topScroll)
-
-    //menu offset boundaries - so we do not fire the animation event when the boundary is hit
-    menu_offset_max_hit: false,
-    menu_offset_min_hit: true,
+        menu_affix_height: 0, // the menu affix height [the height when it's really affix]
+        menu_affix_height_on_mobile: 0, // the menu affix height on mobile [the height when it's really affix]
 
 
-    scroll_window_scrollTop_last: 0, //last scrollTop position, used to calculate the scroll direction
+        main_menu_height: 0, // main menu height
+        top_offset: 0, //how much the menu is moved from the original position when it's affixed
+        menu_offset: 0, //used to hide the menu on scroll
+        is_requestAnimationFrame_running: false, //prevent multiple calls to requestAnimationFrame
+        is_menu_affix: false, //the current state of the menu, true if the menu is affix
+        is_top_menu: false, //true when the menu is at the top of the screen (0px topScroll)
 
-    /**
-     * run the affix, we use the menu wrap selector to compute the menu position from top
-     *
-     {
-          menu_selector: '.td-header-main-menu',
-          menu_wrap_selector: '.td-header-menu-wrap',
-          tds_snap_menu: tdUtil.getBackendVar('tds_snap_menu')
-      }
-     */
-    init : function init (atts) {
-
-        //read the settings
-        td_affix.menu_selector = atts.menu_selector;
-        td_affix.menu_wrap_selector = atts.menu_wrap_selector;
-        td_affix.tds_snap_menu = atts.tds_snap_menu;
-        td_affix.tds_snap_menu_logo = atts.tds_snap_menu_logo;
-        td_affix.menu_affix_height = atts.menu_affix_height;
-        td_affix.menu_affix_height_on_mobile = atts.menu_affix_height_on_mobile;
-
-        //the snap menu is disabled from the panel
-        if (!td_affix.tds_snap_menu) {
-            return;
-        }
+        //menu offset boundaries - so we do not fire the animation event when the boundary is hit
+        menu_offset_max_hit: false,
+        menu_offset_min_hit: true,
 
 
-        // a computation before jquery.ready is necessary for firefox, where td_events.scroll comes before
-        if (tdDetect.isFirefox) {
-            td_affix.compute_top();
-            td_affix.compute_wrapper();
-        }
+        scroll_window_scrollTop_last: 0, //last scrollTop position, used to calculate the scroll direction
 
-        jQuery().ready(function() {
-            //compute on semi dom ready
-            td_affix.compute_top();
-            td_affix.compute_wrapper();
-        });
-
-        //recompute when all the page + logos are loaded
-        jQuery(window).load(function() {
-            td_affix.compute_top();
-            td_affix.compute_wrapper();
-
-            //recompute after 1 sec for retarded phones
-            setTimeout(function(){
-                td_affix.compute_top();
-            }, 1000);
-        });
-
-
-
-
-    },
-
-
-    /**
-     * - get the real affix height.
-     * The real affix height is computed only once, when the menu is affix. Till then, the function
-     * return the values set at init.
-     *
-     * These values are important because they are used in the td_smart_sidebar.js for the
-     * td_affix_menu_computed_height variable, which then is used to determine the sidebar position.
-     *
-     * For 'Newspaper', the sidebar needs a custom padding top (see @td_smart_sidebar.js), otherwise
-     * the sidebar is sticked to the affix menu.
-     *
-     *
-     * @returns {number} affix height
-     * @private
-     */
-    _get_menu_affix_height: function _get_menu_affix_height() {
-
-        //if (tdDetect.isPhoneScreen === true) {
-        //    return td_affix.menu_affix_height_on_mobile;
-        //}
-        //return td_affix.menu_affix_height;
-
-        if (tdDetect.isPhoneScreen === true) {
-            if (!td_affix.is_menu_affix_height_on_mobile_computed && td_affix.is_menu_affix) {
-
-                td_affix.is_menu_affix_height_on_mobile_computed = true;
-
-                // overwrite the td_affix.menu_affix_height_on_mobile variable with the real affix height
-                td_affix.menu_affix_height_on_mobile = jQuery(td_affix.menu_selector).height();
-            }
-            return td_affix.menu_affix_height_on_mobile;
-        }
-
-        if (!td_affix.is_menu_affix_height_computed && td_affix.is_menu_affix) {
-
-            td_affix.is_menu_affix_height_computed = true;
-
-            // overwrite the td_affix.menu_affix_height variable with the real affix height
-            td_affix.menu_affix_height = jQuery(td_affix.menu_selector).height();
-        }
-        return td_affix.menu_affix_height;
-    },
-
-
-
-    /**
-     * called by td_events.js on scroll
-     */
-    td_events_scroll: function td_events_scroll(scrollTop) {
-
-        if (!td_affix.allow_scroll) {
-            return;
-        }
-
-        //do not run if we don't have a snap menu
-        if (!td_affix.tds_snap_menu) {
-            return;
-        }
-
-
-        /*  ----------------------------------------------------------------------------
-         scroll direction + delta (used by affix for now)
-         to run thios code:
-         - td_affix.tds_snap_menu != '' (from above)
-         - td_affix.tds_snap_menu != 'snap'
+        /**
+         * run the affix, we use the menu wrap selector to compute the menu position from top
+         *
+         {
+              menu_selector: '.td-header-main-menu',
+              menu_wrap_selector: '.td-header-menu-wrap',
+              tds_snap_menu: tdUtil.getBackendVar('tds_snap_menu')
+          }
          */
-        if (td_affix.tds_snap_menu != 'snap') { //do not run on snap
-            if ((td_affix.tds_snap_menu != 'smart_snap_mobile' || tdDetect.isPhoneScreen === true)) {  // different from smart_snap_mobile or tdDetect.isPhoneScreen === true
+        init : function ( atts ) {
 
-                var scroll_direction = '';
-                var scrollDelta = 0;
+            //read the settings
+            tdAffix.menu_selector = atts.menu_selector;
+            tdAffix.menu_wrap_selector = atts.menu_wrap_selector;
+            tdAffix.tds_snap_menu = atts.tds_snap_menu;
+            tdAffix.tds_snap_menu_logo = atts.tds_snap_menu_logo;
+            tdAffix.menu_affix_height = atts.menu_affix_height;
+            tdAffix.menu_affix_height_on_mobile = atts.menu_affix_height_on_mobile;
 
-                //check the direction
-                if (scrollTop != td_affix.scroll_window_scrollTop_last) { //compute direction only if we have different last scroll top
-                    // compute the direction of the scroll
-                    if (scrollTop > td_affix.scroll_window_scrollTop_last) {
-                        scroll_direction = 'down';
-                    } else {
-                        scroll_direction = 'up';
-                    }
-                    //calculate the scroll delta
-                    scrollDelta = Math.abs(scrollTop - td_affix.scroll_window_scrollTop_last);
-                }
-
-                td_affix.scroll_window_scrollTop_last = scrollTop;
-            }
-        }
-
-        /*  ---------------------------------------------------------------------------- */
-
-        // show the logo on sticky menu if is always snap setting
-        if (td_affix.tds_snap_menu == 'snap' && td_affix.tds_snap_menu_logo != '') {
-            jQuery('.td-main-menu-logo').addClass('td-logo-sticky');
-        }
-
-
-
-
-        //if the menu is in the affix state
-
-        // the next check is to keep the text from the menu at the same position, when the menu comes from affix off to affix off
-        if ((scrollTop > td_affix.top_offset + (td_affix.main_menu_height / 2 - td_affix._get_menu_affix_height() / 2))
-
-            // - the affix is OFF when the next condition is not accomplished, which means that the affix is ON
-            // and the scroll to the top is LOWER than the initial td_affix.top_offset reduced by the affix real height
-            // - this condition makes the transition from the small affix menu to the larger menu of the page
-            || ((td_affix.is_menu_affix === true) && ('smart_snap_always' === td_affix.tds_snap_menu) && scrollTop > (td_affix.top_offset - td_affix._get_menu_affix_height()))
-
-            || td_affix.is_top_menu === true) {
-
-            //get the menu element
-            var td_affix_menu_element = jQuery(td_affix.menu_selector);
-
-            //turn affix on for it
-            td_affix._affix_on(td_affix_menu_element);
-
-
-            //if the menu is only with snap or we are on smart_snap_mobile + mobile, our job here in this function is done, return
-            if (td_affix.tds_snap_menu == 'snap' || (td_affix.tds_snap_menu =='smart_snap_mobile' && tdDetect.isPhoneScreen === false)) {
+            //the snap menu is disabled from the panel
+            if ( ! tdAffix.tds_snap_menu ) {
                 return;
             }
 
-            /*    ---  end simple snap  ---  */
+
+            // a computation before jquery.ready is necessary for firefox, where tdEvents.scroll comes before
+            if ( tdDetect.isFirefox ) {
+                tdAffix.compute_wrapper();
+                tdAffix.compute_top();
+
+            }
+
+            jQuery().ready(function() {
+                //compute on semi dom ready
+                tdAffix.compute_wrapper();
+                tdAffix.compute_top();
+
+            });
+
+            //recompute when all the page + logos are loaded
+            jQuery( window ).load(function() {
+                tdAffix.compute_wrapper();
+                tdAffix.compute_top();
+
+                //recompute after 1 sec for retarded phones
+                setTimeout(function(){
+                    tdAffix.compute_top();
+                }, 1000 );
+            });
+        },
+
+
+        /**
+         * - get the real affix height.
+         * The real affix height is computed only once, when the menu is affix. Till then, the function
+         * return the values set at init.
+         *
+         * These values are important because they are used in the tdSmartSidebar.js for the
+         * td_affix_menu_computed_height variable, which then is used to determine the sidebar position.
+         *
+         * For 'Newspaper', the sidebar needs a custom padding top (see @tdSmartSidebar.js), otherwise
+         * the sidebar is sticked to the affix menu.
+         *
+         *
+         * @returns {number} affix height
+         * @private
+         */
+        _get_menu_affix_height: function() {
+
+            //if (tdDetect.isPhoneScreen === true) {
+            //    return tdAffix.menu_affix_height_on_mobile;
+            //}
+            //return tdAffix.menu_affix_height;
+
+            if ( true === tdDetect.isPhoneScreen ) {
+                if ( ! tdAffix.is_menu_affix_height_on_mobile_computed && tdAffix.is_menu_affix ) {
+
+                    tdAffix.is_menu_affix_height_on_mobile_computed = true;
+
+                    // overwrite the tdAffix.menu_affix_height_on_mobile variable with the real affix height
+                    tdAffix.menu_affix_height_on_mobile = jQuery(tdAffix.menu_selector).height();
+                }
+                return tdAffix.menu_affix_height_on_mobile;
+            }
+
+            if ( ! tdAffix.is_menu_affix_height_computed && tdAffix.is_menu_affix ) {
+
+                tdAffix.is_menu_affix_height_computed = true;
+
+                // overwrite the tdAffix.menu_affix_height variable with the real affix height
+                tdAffix.menu_affix_height = jQuery(tdAffix.menu_selector).height();
+            }
+            return tdAffix.menu_affix_height;
+        },
+
+
+
+        /**
+         * called by tdEvents.js on scroll
+         */
+        td_events_scroll: function( scrollTop ) {
+
+            if ( ! tdAffix.allow_scroll ) {
+                return;
+            }
+
+            //do not run if we don't have a snap menu
+            if ( ! tdAffix.tds_snap_menu ) {
+                return;
+            }
 
 
             /*  ----------------------------------------------------------------------------
-             check scroll directions (we may also have scroll_direction = '', that's why we have to check for the specific state (up or down))
+             scroll direction + delta (used by affix for now)
+             to run thios code:
+             - tdAffix.tds_snap_menu != '' (from above)
+             - tdAffix.tds_snap_menu != 'snap'
              */
+            var scroll_direction = '';
+
+            if ( 'snap' !== tdAffix.tds_snap_menu ) { //do not run on snap
+                if ( ( 'smart_snap_mobile' !== tdAffix.tds_snap_menu || true === tdDetect.isPhoneScreen ) ) {  // different from smart_snap_mobile or tdDetect.isPhoneScreen === true
+
+                    var scrollDelta = 0;
+
+                    //check the direction
+                    if ( scrollTop !== tdAffix.scroll_window_scrollTop_last ) { //compute direction only if we have different last scroll top
+                        // compute the direction of the scroll
+                        if ( scrollTop > tdAffix.scroll_window_scrollTop_last ) {
+                            scroll_direction = 'down';
+                        } else {
+                            scroll_direction = 'up';
+                        }
+                        //calculate the scroll delta
+                        scrollDelta = Math.abs( scrollTop - tdAffix.scroll_window_scrollTop_last );
+                    }
+
+                    tdAffix.scroll_window_scrollTop_last = scrollTop;
+                }
+            }
+
+            /*  ---------------------------------------------------------------------------- */
+
+            // show the logo on sticky menu
+            if ( '' !== tdAffix.tds_snap_menu && '' !== tdAffix.tds_snap_menu_logo ) {
+                jQuery( '.td-main-menu-logo' ).addClass( 'td-logo-sticky' );
+            }
 
 
-            // boundary check - to not run the position on each scroll event
-            if ((td_affix.menu_offset_max_hit === false && scroll_direction=='down') || (td_affix.menu_offset_min_hit === false && scroll_direction=='up')) {
-                //request animation frame
-                //if (td_affix.is_requestAnimationFrame_running === false) {
+
+
+            //if the menu is in the affix state
+
+            // the next check is to keep the text from the menu at the same position, when the menu comes from affix off to affix off
+            if ( ( scrollTop > tdAffix.top_offset + ( tdAffix.main_menu_height / 2 - tdAffix._get_menu_affix_height() / 2 ) ) ||
+
+                    // - the affix is OFF when the next condition is not accomplished, which means that the affix is ON
+                    // and the scroll to the top is LOWER than the initial tdAffix.top_offset reduced by the affix real height
+                    // - this condition makes the transition from the small affix menu to the larger menu of the page
+                ( ( tdAffix.is_menu_affix === true ) && ( 'smart_snap_always' === tdAffix.tds_snap_menu) && scrollTop > ( tdAffix.top_offset - tdAffix._get_menu_affix_height() ) ) ||
+
+                tdAffix.is_top_menu === true ) {
+
+                //get the menu element
+                var td_affix_menu_element = jQuery( tdAffix.menu_selector );
+
+                //turn affix on for it
+                tdAffix._affix_on( td_affix_menu_element );
+
+
+                //if the menu is only with snap or we are on smart_snap_mobile + mobile, our job here in this function is done, return
+                if ( 'snap' === tdAffix.tds_snap_menu || ( 'smart_snap_mobile' === tdAffix.tds_snap_menu && false === tdDetect.isPhoneScreen ) ) {
+                    return;
+                }
+
+                /*    ---  end simple snap  ---  */
+
+
+                /*  ----------------------------------------------------------------------------
+                 check scroll directions (we may also have scroll_direction = '', that's why we have to check for the specific state (up or down))
+                 */
+
+
+                // boundary check - to not run the position on each scroll event
+                if ( ( false === tdAffix.menu_offset_max_hit && 'down' === scroll_direction ) || ( false === tdAffix.menu_offset_min_hit && 'up' === scroll_direction ) ) {
+                    //request animation frame
+                    //if (tdAffix.is_requestAnimationFrame_running === false) {
                     window.requestAnimationFrame(function(){
 
-                        //console.log(td_affix.menu_offset);
+                        //console.log(tdAffix.menu_offset);
                         //console.log(scrollDelta);
                         var offset = 0;
 
 
-                        if (scrollTop > 0) { // ios returns negative scrollTop values
-                            if (scroll_direction == 'down') {
+                        if ( scrollTop > 0 ) { // ios returns negative scrollTop values
+                            if ( 'down' === scroll_direction ) {
 
                                 //compute the offset
-                                offset = td_affix.menu_offset - scrollDelta;
+                                offset = tdAffix.menu_offset - scrollDelta;
 
-                                // the offset is a value in the [-td_affix.menu_affix_height, 0] and
-                                // not into the interval [-td_affix.main_menu_height, 0]
-                                if (offset < -td_affix._get_menu_affix_height()) {
-                                    offset = -td_affix._get_menu_affix_height();
+                                // the offset is a value in the [-tdAffix.menu_affix_height, 0] and
+                                // not into the interval [-tdAffix.main_menu_height, 0]
+                                if ( offset < -tdAffix._get_menu_affix_height() ) {
+                                    offset = -tdAffix._get_menu_affix_height();
                                 }
 
-                            } else if (scroll_direction == 'up') {
+                            } else if ( 'up' === scroll_direction ) {
                                 //compute the offset
-                                offset = td_affix.menu_offset + scrollDelta;
-                                if (offset > 0) {
+                                offset = tdAffix.menu_offset + scrollDelta;
+                                if ( offset > 0 ) {
                                     offset = 0;
                                 }
                             }
-
                         }
 
                         //td_debug.log_live(scroll_direction + ' | scrollTop: ' + scrollTop + '  | offset: ' + offset);
 
-                        //td_affix.is_requestAnimationFrame_running = true;
+                        //tdAffix.is_requestAnimationFrame_running = true;
 
                         //console.log(offset);
 
                         //move the menu
-                        tdUtil.tdMoveY(td_affix_menu_element[0], offset);
+                        tdUtil.tdMoveY( td_affix_menu_element[0], offset );
 
                         //td_affix_menu_element.css({top: (offset) + 'px'});  //legacy menu move code
 
                         //check boundaries
-                        if (offset == 0) {
-                            td_affix.menu_offset_min_hit = true;
+                        if ( 0 === offset ) {
+                            tdAffix.menu_offset_min_hit = true;
                         } else {
-                            td_affix.menu_offset_min_hit = false;
+                            tdAffix.menu_offset_min_hit = false;
                         }
 
 
-                        if (offset == -td_affix._get_menu_affix_height()) {
-                            td_affix.menu_offset_max_hit = true;
+                        if ( offset === -tdAffix._get_menu_affix_height() ) {
+                            tdAffix.menu_offset_max_hit = true;
                             //also hide the menu when it's 100% out of view on ios - the safari header is transparent and we can see the menu
-                            if(tdDetect.isIos === true || tdDetect.isSafari) { // safari also
+                            if ( ( true === tdDetect.isIos ) || tdDetect.isSafari ) { // safari also
                                 td_affix_menu_element.hide();
                             }
 
                             //show the logo on smart sticky menu
-                            if(td_affix.tds_snap_menu_logo != '') {
-                                jQuery('.td-main-menu-logo').addClass('td-logo-sticky');
+                            if ( '' !== tdAffix.tds_snap_menu_logo ) {
+                                jQuery( '.td-main-menu-logo' ).addClass( 'td-logo-sticky' );
                             }
                         } else {
-                            td_affix.menu_offset_max_hit = false;
+                            tdAffix.menu_offset_max_hit = false;
 
-                            if(tdDetect.isIos === true || tdDetect.isSafari) { //ios safari fix
+                            if ( ( true === tdDetect.isIos ) || tdDetect.isSafari ) { //ios safari fix
                                 td_affix_menu_element.show();
                             }
                         }
 
+                        //tdAffix.is_requestAnimationFrame_running = false;
 
-                        //td_affix.is_requestAnimationFrame_running = false;
+                        tdAffix.menu_offset = offset; //update the current offset of the menu
 
+                    }, td_affix_menu_element[0] );
 
+                    //}
+                    //console.log(offset + ' ' + scroll_direction);
 
+                } //end boundary check
 
-                        td_affix.menu_offset = offset; //update the current offset of the menu
-
-
-                    },td_affix_menu_element[0]);
-
-                //}
-                //console.log(offset + ' ' + scroll_direction);
-
-            } //end boundary check
-
-
-
-        } else {
-            td_affix._affix_off(jQuery(td_affix.menu_selector));
-        }
-    },
+            } else {
+                tdAffix._affix_off( jQuery( tdAffix.menu_selector ) );
+            }
+        },
 
 
-    /**
-     * calculates the affix point (the distance from the top when affix should be enabled)
-     * @see td_affix.init()
-     * @see td_events
-     */
-    compute_top: function compute_top() {
+        /**
+         * calculates the affix point (the distance from the top when affix should be enabled)
+         * @see tdAffix.init()
+         * @see tdEvents
+         */
+        compute_top: function() {
 
-        // to compute from the bottom of the menu, the top offset is incremented by the menu wrap height
-        td_affix.top_offset = jQuery(td_affix.menu_wrap_selector).offset().top;// + jQuery(td_affix.menu_wrap_selector).height();
-
-
-        // The top_offset is incremented with the menu_affix_height only on 'smart_snap_always', because of the sidebar
-        // which use the menu_offset (and menu_offset depends on this top_offset)
-        //
-        // Consider that the smart sidebar, increment the td_affix_menu_computed_height with the menu_offset value
-        // when the menu is on 'smart_snap_always'
-        if ('smart_snap_always' === td_affix.tds_snap_menu) {
-            td_affix.top_offset += td_affix.menu_affix_height;
-        }
+            // to compute from the bottom of the menu, the top offset is incremented by the menu wrap height
+            tdAffix.top_offset = jQuery( tdAffix.menu_wrap_selector ).offset().top;// + jQuery(tdAffix.menu_wrap_selector).height();
 
 
-        //check to see if the menu is at the top of the screen
-        if (td_affix.top_offset == 1) {
-            //switch to affix - because the menu is at the top of the page
-            //td_affix._affix_on(jQuery(td_affix.menu_selector));
-            td_affix.is_top_menu = true;
-        } else {
-            //check to see the current top offset
-            td_affix.is_top_menu = false;
-        }
-        td_affix.td_events_scroll(jQuery(window).scrollTop());
-
-        //alert(td_affix.top_offset);
-        //console.log('computed: ' + td_affix.top_offset);
-    },
-
-
-    /**
-     * recalculate the wrapper height. To support different menu heights
-     */
-    compute_wrapper: function compute_wrapper() {
-
-        // td-affix class is removed to compute a real height when the compute_wrapper is done on a scrolled page
-        if (jQuery(td_affix.menu_selector).hasClass('td-affix')) {
-            jQuery(td_affix.menu_selector).removeClass('td-affix');
-
-            //read the height of the menu
-            td_affix.main_menu_height = jQuery(td_affix.menu_selector).height();
-
-            jQuery(td_affix.menu_selector).addClass('td-affix');
-
-        } else {
-            //read the height of the menu
-            td_affix.main_menu_height = jQuery(td_affix.menu_selector).height();
-        }
-
-        // put the menu height to the wrapper. The wrapper remains in the place when the menu is affixed
-        jQuery(td_affix.menu_wrap_selector).css('height', td_affix.main_menu_height);
-    },
-
-    /**
-     * turns affix on for the menu element
-     * @param td_affix_menu_element
-     * @private
-     */
-    _affix_on: function _affix_on(td_affix_menu_element) {
-        if (td_affix.is_menu_affix === false) {
-
-
-            // Bug.Fix - affix menu flickering
-            // - the td_affix_menu_element is hidden because he is outside of the viewport
-            // - without it, there's a flicker effect of applying css style (classes) over it
-
-            if (('smart_snap_always' === td_affix.tds_snap_menu) && (tdDetect.isPhoneScreen !== true)) {
-                td_affix_menu_element.css('visibility', 'hidden');
+            // The top_offset is incremented with the menu_affix_height only on 'smart_snap_always', because of the sidebar
+            // which use the menu_offset (and menu_offset depends on this top_offset)
+            //
+            // Consider that the smart sidebar, increment the td_affix_menu_computed_height with the menu_offset value
+            // when the menu is on 'smart_snap_always'
+            if ( 'smart_snap_always' === tdAffix.tds_snap_menu ) {
+                tdAffix.top_offset += tdAffix.menu_affix_height;
             }
 
 
+            //check to see if the menu is at the top of the screen
+            if ( 1 === tdAffix.top_offset ) {
+                //switch to affix - because the menu is at the top of the page
+                //tdAffix._affix_on(jQuery(tdAffix.menu_selector));
+                tdAffix.is_top_menu = true;
+            } else {
+                //check to see the current top offset
+                tdAffix.is_top_menu = false;
+            }
+            tdAffix.td_events_scroll( jQuery(window).scrollTop() );
 
-            td_affix.menu_offset = -td_affix.top_offset;
+            //alert(tdAffix.top_offset);
+            //console.log('computed: ' + tdAffix.top_offset);
+        },
 
-            //make the menu fixed
-            td_affix_menu_element.addClass('td-affix');
 
-            //add body-td-affix class on body for header style 8 -> when scrolling down the window jumps 76px up when the menu is changing from header style 8 default to header style 8 affix
-            jQuery('body').addClass('body-td-affix');
+        /**
+         * recalculate the wrapper height. To support different menu heights
+         */
+        compute_wrapper: function() {
 
-            td_affix.is_menu_affix = true;
-        } else {
+            // td-affix class is removed to compute a real height when the compute_wrapper is done on a scrolled page
+            if ( jQuery( tdAffix.menu_selector ).hasClass( 'td-affix' ) ) {
+                jQuery( tdAffix.menu_selector ).removeClass( 'td-affix' );
 
-            // the td_affix_menu element is kept visible
-            if (tdDetect.isPhoneScreen !== true) {
-                td_affix_menu_element.css('visibility', '');
+                //read the height of the menu
+                tdAffix.main_menu_height = jQuery( tdAffix.menu_selector ).height();
+
+                jQuery( tdAffix.menu_selector ).addClass( 'td-affix' );
+
+            } else {
+                //read the height of the menu
+                tdAffix.main_menu_height = jQuery( tdAffix.menu_selector ).height();
+            }
+
+            // put the menu height to the wrapper. The wrapper remains in the place when the menu is affixed
+            jQuery( tdAffix.menu_wrap_selector ).css( 'height', tdAffix.main_menu_height );
+        },
+
+        /**
+         * turns affix on for the menu element
+         * @param td_affix_menu_element
+         * @private
+         */
+        _affix_on: function( td_affix_menu_element ) {
+            if ( false === tdAffix.is_menu_affix ) {
+
+
+                // Bug.Fix - affix menu flickering
+                // - the td_affix_menu_element is hidden because he is outside of the viewport
+                // - without it, there's a flicker effect of applying css style (classes) over it
+
+                if ( ( 'smart_snap_always' === tdAffix.tds_snap_menu ) && ( tdDetect.isPhoneScreen !== true ) ) {
+                    td_affix_menu_element.css( 'visibility', 'hidden' );
+                }
+
+                tdAffix.menu_offset = -tdAffix.top_offset;
+
+                //make the menu fixed
+                td_affix_menu_element.addClass( 'td-affix' );
+
+                //add body-td-affix class on body for header style 8 -> when scrolling down the window jumps 76px up when the menu is changing from header style 8 default to header style 8 affix
+                jQuery( 'body' ).addClass( 'body-td-affix' );
+
+                tdAffix.is_menu_affix = true;
+            } else {
+
+                // the td_affix_menu element is kept visible
+                if ( true  !== tdDetect.isPhoneScreen ) {
+                    td_affix_menu_element.css( 'visibility', '' );
+                }
+            }
+        },
+
+
+
+        /**
+         * Turns affix off for the menu element
+         * @param td_affix_menu_element
+         * @private
+         */
+        _affix_off: function( td_affix_menu_element ) {
+            if ( true === tdAffix.is_menu_affix ) {
+                //make the menu normal
+                jQuery( tdAffix.menu_selector ).removeClass( 'td-affix' );
+
+                //console.log(tdAffix.tds_snap_menu_logo);
+                //hide the logo from sticky menu when the menu is not affix
+                if( '' === tdAffix.tds_snap_menu_logo ) {
+                    jQuery( '.td-main-menu-logo' ).removeClass( 'td-logo-sticky' );
+                }
+
+                //remove body-td-affix class on body for header style 8 -> when scrolling down the window jumps 76px up when the menu is changing from header style 8 default to header style 8 affix
+                jQuery( 'body' ).removeClass( 'body-td-affix' );
+
+                tdAffix.is_menu_affix = false;
+
+                //move the menu to 0 (ios seems to skip animation frames)
+                tdUtil.tdMoveY( td_affix_menu_element[0], 0 );
+
+                if ( ( true === tdDetect.isIos ) || tdDetect.isSafari ) {
+                    td_affix_menu_element.show();
+                }
             }
         }
-    },
+    };
+})();
 
 
-
-    /**
-     * Turns affix off for the menu element
-     * @param td_affix_menu_element
-     * @private
-     */
-    _affix_off: function _affix_off(td_affix_menu_element) {
-        if (td_affix.is_menu_affix === true) {
-            //make the menu normal
-            jQuery(td_affix.menu_selector).removeClass('td-affix');
-
-            //hide the logo from sticky menu when the menu is not affix
-            if(td_affix.tds_snap_menu_logo != '') {
-                jQuery('.td-main-menu-logo').removeClass('td-logo-sticky');
-            }
-
-            //remove body-td-affix class on body for header style 8 -> when scrolling down the window jumps 76px up when the menu is changing from header style 8 default to header style 8 affix
-            jQuery('body').removeClass('body-td-affix');
-
-            td_affix.is_menu_affix = false;
-
-            //move the menu to 0 (ios seems to skip animation frames)
-            tdUtil.tdMoveY(td_affix_menu_element[0], 0);
-
-            if(tdDetect.isIos === true || tdDetect.isSafari) {
-                td_affix_menu_element.show();
-            }
-
-        }
-    }
-
-
-
-};
 
 
 
@@ -1202,6 +1663,8 @@ var td_affix = {
 
 /* global jQuery:false */
 /* global tdUtil:false */
+/* global tdModalImageLastEl:{} */
+/* global tdEvents:{} */
 
 
 "use strict";
@@ -1221,7 +1684,7 @@ jQuery().ready(function jQuery_ready() {
 
 
     // the mobile pull left menu (off canvas)
-    td_mobile_menu();
+    //td_mobile_menu();
 
     //handles the toogle efect on mobile menu
     td_mobile_menu_toogle();
@@ -1242,7 +1705,18 @@ jQuery().ready(function jQuery_ready() {
     //smart list drop down pagination
     td_smart_list_dropdown();
 
+    // the top menu date
+    if (typeof tdsDateFormat !== 'undefined') {
 
+        // php time() equivalent - js deals in milliseconds and php in seconds
+        var tdsDateTimestamp = Math.floor(new Date().getTime() / 1000);
+
+        // replace the date
+        var tdNewDateI18n = td_date_i18n(tdsDateFormat, tdsDateTimestamp);
+        jQuery('.td_data_time').text(tdNewDateI18n);
+    }
+
+    setMenuMinHeight();
 
 }); //end on load
 
@@ -1295,7 +1769,7 @@ var td_more_articles_box = {
     },
 
     /**
-     * called by td_events.js on scroll
+     * called by tdEvents.js on scroll
      */
     td_events_scroll: function td_events_scroll(scrollTop) {
 
@@ -1347,22 +1821,31 @@ function td_done_resizing(){
 function td_resize_videos() {
     //youtube in content
     jQuery(document).find('iframe[src*="youtube.com"]').each(function() {
-
-        if(jQuery(this).parent().hasClass("td_wrapper_playlist_player_youtube")) {
-            //do nothing for playlist player youtube
+        var videoMainContainer = jQuery(this).parent().parent().parent(),
+            videoInPlaylist = jQuery(this).parent().hasClass("td_wrapper_playlist_player_vimeo"),
+            video43AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-43"), //the video is set to 4:3 aspect ratio
+            video235AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-235"); //the video is set to 2.35:1 aspect ratio
+        if(videoInPlaylist || video43AspectRatio || video235AspectRatio) {
+            //do nothing for playlist player youtube or aspect ratios 4:3 and 2.35:1
+            //the video aspect ratio can be set on Visual Composer - Video Player widget settings
         } else {
             var td_video = jQuery(this);
             td_video.attr('width', '100%');
             var td_video_width = td_video.width();
-            td_video.css('height', td_video_width * 0.6, 'important');
+            td_video.css('height', td_video_width * 0.5625, 'important');
         }
     });
 
 
     //vimeo in content
     jQuery(document).find('iframe[src*="vimeo.com"]').each(function() {
-        if(jQuery(this).parent().hasClass("td_wrapper_playlist_player_vimeo")) {
-            //do nothing for playlist player vimeo
+        var videoMainContainer = jQuery(this).parent().parent().parent(),
+            videoInPlaylist = jQuery(this).parent().hasClass("td_wrapper_playlist_player_vimeo"),
+            video43AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-43"), //the video is set to 4:3 aspect ratio
+            video235AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-235"); //the video is set to 2.35:1 aspect ratio
+        if(videoInPlaylist || video43AspectRatio || video235AspectRatio) {
+            //do nothing for playlist player vimeo or aspect ratios 4:3 and 2.35:1
+            //the video aspect ratio can be set on Visual Composer - Video Player widget settings
         } else {
             var td_video = jQuery(this);
             td_video.attr('width', '100%');
@@ -1374,10 +1857,36 @@ function td_resize_videos() {
 
     //daily motion in content
     jQuery(document).find('iframe[src*="dailymotion.com"]').each(function() {
-        var td_video = jQuery(this);
-        td_video.attr('width', '100%');
-        var td_video_width = td_video.width();
-        td_video.css('height', td_video_width * 0.6, 'important');
+        var videoMainContainer = jQuery(this).parent().parent().parent(),
+            video43AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-43"), //video aspect ratio 4:3
+            video235AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-235"); //video aspect ratio 2.35:1
+        if (video43AspectRatio || video235AspectRatio) {
+            //do nothing for video aspect ratios 4:3 and 2.35:1
+            //the video aspect ratio can be set on Visual Composer - Video Player widget settings
+        } else {
+            var td_video = jQuery(this);
+            td_video.attr('width', '100%');
+            var td_video_width = td_video.width();
+            td_video.css('height', td_video_width * 0.6, 'important');
+        }
+
+    });
+
+    //facebook in content
+    jQuery(document).find('iframe[src*="facebook.com/plugins/video.php"]').each(function() {
+        var videoMainContainer = jQuery(this).parent().parent().parent(),
+            video43AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-43"), //video aspect ratio 4:3
+            video235AspectRatio = videoMainContainer.hasClass("vc_video-aspect-ratio-235"); //video aspect ratio 2.35:1
+        if (video43AspectRatio || video235AspectRatio) {
+            //do nothing for video aspect ratios 4:3 and 2.35:1
+            //the video aspect ratio can be set on Visual Composer - Video Player widget settings
+        } else {
+            var td_video = jQuery(this);
+            td_video.attr('width', '100%');
+            var td_video_width = td_video.width();
+            td_video.css('height', td_video_width * 0.5625, 'important');
+        }
+
     });
 
 
@@ -1400,68 +1909,110 @@ function td_resize_videos() {
 
 //handles mobile menu
 function td_mobile_menu() {
-    jQuery('#td-top-mobile-toggle a, .td-mobile-close a').click(function(){
-        if(jQuery('body').hasClass('td-menu-mob-open-menu')) {
-            jQuery('body').removeClass('td-menu-mob-open-menu');
-        } else {
-            if (tdDetect.isMobileDevice) {
-                // on mobile devices scroll to top instantly and wait a bit and open the menu
-                window.scrollTo(0, 0);
-                setTimeout(function(){
-                    jQuery('body').addClass('td-menu-mob-open-menu');
-                }, 100);
-            } else {
-                // on desktop open it with full animations
-                jQuery('body').addClass('td-menu-mob-open-menu');
-                setTimeout(function(){
-                    tdUtil.scrollToPosition(0, 1200);
-                }, 200);
-            }
-        }
-    });
+    //jQuery('#td-top-mobile-toggle a, .td-mobile-close a').click(function(){
+    //    if(jQuery('body').hasClass('td-menu-mob-open-menu')) {
+    //        jQuery('body').removeClass('td-menu-mob-open-menu');
+    //    } else {
+    //        if (tdDetect.isMobileDevice) {
+    //            // on mobile devices scroll to top instantly and wait a bit and open the menu
+    //            window.scrollTo(0, 0);
+    //            setTimeout(function(){
+    //                jQuery('body').addClass('td-menu-mob-open-menu');
+    //            }, 100);
+    //        } else {
+    //            // on desktop open it with full animations
+    //            jQuery('body').addClass('td-menu-mob-open-menu');
+    //            setTimeout(function(){
+    //                tdUtil.scrollToPosition(0, 1200);
+    //            }, 200);
+    //        }
+    //    }
+    //});
 }
 
 
 //handles open/close mobile menu
 function td_mobile_menu_toogle() {
 
-    jQuery('#td-mobile-nav .menu-item-has-children ul').hide();
+    //jQuery('#td-mobile-nav .menu-item-has-children ul').hide();
+    //
+    ////move thru all the menu and find the item with sub-menues to atach a custom class to them
+    //jQuery(document).find('#td-mobile-nav .menu-item-has-children').each(function(i) {
+    //
+    //    var class_name = 'td_mobile_elem_with_submenu_' + i;
+    //    jQuery(this).addClass(class_name);
+    //
+    //    //add an element to click on
+    //    //jQuery(this).children("a").append('<div class="td-element-after" data-parent-class="' + class_name + '"></div>');
+    //    jQuery(this).children("a").append('<i class="td-icon-menu-down td-element-after" data-parent-class="' + class_name + '"></i>');
+    //
+    //
+    //    //click on link elements with #
+    //    jQuery(this).children("a").addClass("td-link-element-after").attr("data-parent-class", class_name);
+    //});
+    //
+    //jQuery(".td-element-after, .td-link-element-after").click(function(event) {
+    //
+    //    if(jQuery(this).hasClass("td-element-after") || jQuery(this).attr("href") == "#" ){
+    //        event.preventDefault();
+    //        event.stopPropagation();
+    //    }
+    //
+    //
+    //    //take the li parent class
+    //    var parent_class = jQuery(this).data('parent-class');
+    //
+    //    //target the sub-menu to open
+    //    var target_to_open = '#td-mobile-nav .' + parent_class + ' > a + ul';
+    //    if(jQuery(target_to_open).css('display') == 'none') {
+    //        jQuery(target_to_open).show();
+    //    } else {
+    //        jQuery(target_to_open).hide();
+    //    }
+    //
+    //
+    //});
 
-    //move thru all the menu and find the item with sub-menues to atach a custom class to them
-    jQuery(document).find('#td-mobile-nav .menu-item-has-children').each(function(i) {
-
-        var class_name = 'td_mobile_elem_with_submenu_' + i;
-        jQuery(this).addClass(class_name);
-
-        //add an element to click on
-        //jQuery(this).children("a").append('<div class="td-element-after" data-parent-class="' + class_name + '"></div>');
-        jQuery(this).children("a").append('<i class="td-icon-menu-down td-element-after" data-parent-class="' + class_name + '"></i>');
-
-
-        //click on link elements with #
-        jQuery(this).children("a").addClass("td-link-element-after").attr("data-parent-class", class_name);
+    jQuery( '#td-top-mobile-toggle a, .td-mobile-close a' ).click(function(){
+        if ( jQuery( 'body' ).hasClass( 'td-menu-mob-open-menu' ) ) {
+            jQuery( 'body' ).removeClass( 'td-menu-mob-open-menu' );
+        } else {
+            jQuery( 'body' ).addClass( 'td-menu-mob-open-menu' );
+        }
     });
 
-    jQuery(".td-element-after, .td-link-element-after").click(function(event) {
 
-        if(jQuery(this).hasClass("td-element-after") || jQuery(this).attr("href") == "#" ){
-            event.preventDefault();
-            event.stopPropagation();
-        }
+    //handles open/close mobile menu
 
+    //move thru all the menu and find the item with sub-menues to atach a custom class to them
+    jQuery( document ).find( '#td-mobile-nav .menu-item-has-children' ).each(function( i ) {
 
-        //take the li parent class
-        var parent_class = jQuery(this).data('parent-class');
+        var class_name = 'td_mobile_elem_with_submenu_' + i;
+        jQuery(this).addClass( class_name );
 
-        //target the sub-menu to open
-        var target_to_open = '#td-mobile-nav .' + parent_class + ' > a + ul';
-        if(jQuery(target_to_open).css('display') == 'none') {
-            jQuery(target_to_open).show();
-        } else {
-            jQuery(target_to_open).hide();
-        }
+        //click on link elements with #
+        jQuery(this).children('a').addClass( 'td-link-element-after' );
 
+        jQuery(this).click(function( event ) {
 
+            /**
+             * currentTarget - the li element
+             * target - the element clicked inside of the currentTarget
+             */
+
+            var jQueryTarget = jQuery( event.target );
+
+            // html i element
+            if ( jQueryTarget.length &&
+                ( ( jQueryTarget.hasClass( 'td-element-after') || jQueryTarget.hasClass( 'td-link-element-after') ) &&
+                ( '#' === jQueryTarget.attr( 'href' ) || undefined === jQueryTarget.attr( 'href' ) ) ) ) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                jQuery( this ).toggleClass( 'td-sub-menu-open' );
+            }
+        });
     });
 }
 
@@ -1514,13 +2065,13 @@ if(!tdDetect.isTouchDevice && tdUtil.getBackendVar('td_ad_background_click_link'
 
         var target_jquery_obj = jQuery(target);
 
-        // td-content-wrap for NEWSMAG and td-boxex-layout for NEWSPAPER
-        if (target_jquery_obj.hasClass('td-content-wrap') || target_jquery_obj.hasClass('td-boxed-layout')) {
+        // td-outer-container for NEWSMAG and td-boxex-layout for NEWSPAPER
+        if (target_jquery_obj.hasClass('td-outer-container') || target_jquery_obj.hasClass('td-boxed-layout')) {
 
             //open the link ad page
             if(td_ad_background_click_target == '_blank') {
                 //open in a new window
-                window.open(td_ad_background_click_link)
+                window.open(td_ad_background_click_link);
             } else {
                 //open in the same window
                 location.href = td_ad_background_click_link;
@@ -1566,7 +2117,7 @@ function td_set_cookies_life(td_time_cookie_array) {
     expiry.setTime(expiry.getTime() + td_time_cookie_array[2]);
 
     // Date()'s toGMTSting() method will format the date correctly for a cookie
-    document.cookie = td_time_cookie_array[0] + "=" + td_time_cookie_array[1] + "; expires=" + expiry.toGMTString();
+    document.cookie = td_time_cookie_array[0] + "=" + td_time_cookie_array[1] + "; expires=" + expiry.toGMTString() + "; path=/";
 }
 
 
@@ -1624,7 +2175,7 @@ if (document.addEventListener){
 }
 
 /**
- * called by td_events.js on scroll - back to top
+ * called by tdEvents.js on scroll - back to top
  */
 var td_scroll_to_top_is_visible = false;
 function td_events_scroll_scroll_to_top(scrollTop) {
@@ -1753,7 +2304,7 @@ function td_post_template_6_title() {
 //used for smart lists
 function td_smart_lists_magnific_popup() {
     //magnific popup
-    jQuery(".td-slide-smart-list-figure").magnificPopup({
+    jQuery(".td-lightbox-enabled").magnificPopup({
         delegate: "a",
         type: "image",
         tLoading: "Loading image #%curr%...",
@@ -1793,15 +2344,16 @@ function td_smart_lists_magnific_popup() {
                     //jQuery(".td-iosSlider").iosSlider("goToSlide", this.currItem.index + 1 );
                     jQuery(".td-iosSlider").iosSlider("goToSlide", parseInt(nr_slide[1]) + 1);
                 } else {
-                    td_modal_image_last_el = item.el;
+                    tdModalImageLastEl = item.el;
                     setTimeout(function(){
                         tdUtil.scrollIntoView(item.el);
                     }, 100);
                 }
             },
             beforeClose: function() {
-                if (td_modal_image_last_el != '') {
-                    tdUtil.scrollIntoView(td_modal_image_last_el);
+                if (tdModalImageLastEl != '') {
+
+                    tdUtil.scrollIntoView(tdModalImageLastEl);
                 }
             }
         }
@@ -1847,6 +2399,54 @@ function td_get_document_height() {
 }
 
 
+/*  ----------------------------------------------------------------------------
+ Set the mobile menu min-height property
+
+ This is usually used to force vertical scroll bar appearance from the beginning.
+ Without it, on some mobile devices (ex Android), at scroll bar appearance there are some
+ visual issues.
+
+ */
+function setMenuMinHeight() {
+
+    if ( 'undefined' === typeof tdEvents.previousWindowInnerWidth ) {
+
+        // Save the previous width
+        tdEvents.previousWindowInnerWidth = tdEvents.window_innerWidth;
+
+    } else if ( tdEvents.previousWindowInnerWidth === tdEvents.window_innerWidth ) {
+
+        // Stop if the width has not been modified
+        return;
+    }
+
+    tdEvents.previousWindowInnerWidth = tdEvents.window_innerWidth;
+
+    var $tdMobileMenu = jQuery( '#td-mobile-nav' ),
+        cssHeight = tdEvents.window_innerHeight + 1;
+
+    if ( $tdMobileMenu.length ) {
+        $tdMobileMenu.css( 'min-height' , cssHeight + 'px' );
+    }
+
+    // Stop if we are not on mobile
+    if ( ! tdDetect.isMobileDevice ) {
+        return;
+    }
+
+    var $tdMobileBg = jQuery( '.td-menu-background' ),
+        $tdMobileBgSearch = jQuery( '.td-search-background' );
+
+    if ( $tdMobileBg.length ) {
+        $tdMobileBg.css( 'height' , ( cssHeight + 70 ) + 'px' );
+    }
+
+    if ( $tdMobileBgSearch.length ) {
+        $tdMobileBgSearch.css( 'height' , ( cssHeight + 70 ) + 'px' );
+    }
+
+
+}
 /* global jQuery:false */
 /* global tdUtil:false */
 
@@ -1899,14 +2499,14 @@ var tdLoadingBox = {};
 
                 var rgbaString = "rgba(" + colRgba.r + ", " + colRgba.g + ", " + colRgba.b + ", ";
 
-                tdLoadingBox.arrayColors[7] = rgbaString + " 1)";
-                tdLoadingBox.arrayColors[6] = rgbaString + " 0.6)";
+                tdLoadingBox.arrayColors[7] = rgbaString + " 0.9)";
+                tdLoadingBox.arrayColors[6] = rgbaString + " 0.7)";
                 tdLoadingBox.arrayColors[5] = rgbaString + " 0.5)";
                 tdLoadingBox.arrayColors[4] = rgbaString + " 0.3)";
-                tdLoadingBox.arrayColors[3] = rgbaString + " 0.2)";
-                tdLoadingBox.arrayColors[2] = rgbaString + " 0.08)";
-                tdLoadingBox.arrayColors[1] = rgbaString + " 0.05)";
-                tdLoadingBox.arrayColors[0] = rgbaString + " 0)";
+                tdLoadingBox.arrayColors[3] = rgbaString + " 0.15)";
+                tdLoadingBox.arrayColors[2] = rgbaString + " 0.15)";
+                tdLoadingBox.arrayColors[1] = rgbaString + " 0.15)";
+                tdLoadingBox.arrayColors[0] = rgbaString + " 0.15)";
 
             } else {
                 //default array
@@ -1992,312 +2592,425 @@ var tdLoadingBox = {};
 
 
 
-/*  ----------------------------------------------------------------------------
-    On load
- */
+/* global jQuery:{} */
+/* global tdDetect:{} */
+/* global tdLocalCache:{} */
+/* global td_ajax_url:{} */
+
+var tdAjaxSearch = {};
+
 jQuery().ready(function() {
-    td_ajax_search.init();
+
+    'use strict';
+
+    tdAjaxSearch.init();
+
 });
 
+(function() {
 
-var td_ajax_search = {
+    'use strict';
 
-    // private vars
-    _current_selection_index:0,
-    _last_request_results_count:0,
-    _first_down_up:true,
-    _is_search_open:false,
+    tdAjaxSearch = {
 
-
-    /**
-     * init the class
-     */
-    init: function init() {
+        // private vars
+        _current_selection_index: 0,
+        _last_request_results_count: 0,
+        _first_down_up: true,
+        _is_search_open: false,
 
 
-        // hide the drop down if we click outside of it
-        jQuery(document).click(function(e) {
-            if(
-                e.target.className !== "td-icon-search"
-                && e.target.id !== "td-header-search"
-                && e.target.id !== "td-header-search-top"
-                && td_ajax_search._is_search_open === true
-            ) {
-                td_ajax_search.hide_search_box();
-            }
-        });
+        /**
+         * init the class
+         */
+        init: function init() {
 
-
-        // show and hide the drop down on the search icon
-        jQuery('#td-header-search-button').click(function(event){
-            event.preventDefault();
-            if (td_ajax_search._is_search_open === true) {
-                td_ajax_search.hide_search_box();
-
-            } else {
-                td_ajax_search.show_search_box();
-            }
-        });
-
-
-        // keydown on the text box
-        jQuery('#td-header-search').keydown(function(event) {
-            if (
-                (event.which && event.which == 39)
-                || (event.keyCode && event.keyCode == 39)
-                || (event.which && event.which == 37)
-                || (event.keyCode && event.keyCode == 37))
-            {
-                //do nothing on left and right arrows
-                td_ajax_search.td_aj_search_input_focus();
-                return;
-            }
-
-
-
-
-            if ((event.which && event.which == 13) || (event.keyCode && event.keyCode == 13)) {
-                // on enter
-                var td_aj_cur_element = jQuery('.td-aj-cur-element');
-                if (td_aj_cur_element.length > 0) {
-                    //alert('ra');
-                    var td_go_to_url = td_aj_cur_element.find('.entry-title a').attr('href');
-                    window.location = td_go_to_url;
-                } else {
-                    jQuery(this).parent().parent().submit();
+            // hide the drop down if we click outside of it
+            jQuery(document).click(function(e) {
+                if (
+                    'td-icon-search' !== e.target.className &&
+                    'td-header-search' !== e.target.id &&
+                    'td-header-search-top' !== e.target.id &&
+                    true === tdAjaxSearch._is_search_open
+                ) {
+                    tdAjaxSearch.hide_search_box();
                 }
-                return false; //redirect for search on enter
-            } else {
+            });
 
-                if ((event.which && event.which == 40) || (event.keyCode && event.keyCode == 40)) {
-                    // down
-                    td_ajax_search.td_aj_search_move_prompt_down();
-                    return false; //disable the envent
 
-                } else if((event.which && event.which == 38) || (event.keyCode && event.keyCode == 38)) {
-                    //up
-                    td_ajax_search.td_aj_search_move_prompt_up();
-                    return false; //disable the envent
+            // show and hide the drop down on the search icon
+            jQuery( '#td-header-search-button' ).click(function(event){
+                event.preventDefault();
+                if (tdAjaxSearch._is_search_open === true) {
+                    tdAjaxSearch.hide_search_box();
+
                 } else {
+                    tdAjaxSearch.show_search_box();
+                }
+            });
 
+
+            // show and hide the drop down on the search icon for mobile
+            jQuery( '#td-header-search-button-mob' ).click(function(event){
+                jQuery( 'body' ).addClass( 'td-search-opened' );
+
+                var current_query = jQuery('#td-header-search-mob').val().trim();
+                if ( current_query.length > 0 ) {
+                    tdAjaxSearch.do_ajax_call_mob();
+                }
+            });
+
+
+            //close the search
+            jQuery( '.td-search-close a' ).click(function(){
+                jQuery( 'body' ).removeClass( 'td-search-opened' );
+            });
+
+
+            // keydown on the text box
+            jQuery( '#td-header-search' ).keydown(function(event) {
+                if (
+                    ( event.which && 39 === event.which ) ||
+                    ( event.keyCode && 39 === event.keyCode ) ||
+                    ( event.which && 37 === event.which ) ||
+                    ( event.keyCode && 37 === event.keyCode ) )
+                {
+                    //do nothing on left and right arrows
+                    tdAjaxSearch.td_aj_search_input_focus();
+                    return;
+                }
+
+                if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+                    // on enter
+                    var td_aj_cur_element = jQuery('.td-aj-cur-element');
+                    if (td_aj_cur_element.length > 0) {
+                        //alert('ra');
+                        var td_go_to_url = td_aj_cur_element.find('.entry-title a').attr('href');
+                        window.location = td_go_to_url;
+                    } else {
+                        jQuery(this).parent().parent().submit();
+                    }
+                    return false; //redirect for search on enter
+
+                } else if ( ( event.which && 40 === event.which ) || ( event.keyCode && 40 === event.keyCode ) ) {
+                    // down
+                    tdAjaxSearch.move_prompt_down();
+                    return false; //disable the envent
+
+                } else if ( ( event.which && 38 === event.which ) || ( event.keyCode && 38 === event.keyCode ) ) {
+                    //up
+                    tdAjaxSearch.move_prompt_up();
+                    return false; //disable the envent
+
+                } else {
                     //for backspace we have to check if the search query is empty and if so, clear the list
-                    if ((event.which && event.which == 8) || (event.keyCode && event.keyCode == 8)) {
+                    if ( ( event.which && 8 === event.which ) || ( event.keyCode && 8 === event.keyCode ) ) {
                         //if we have just one character left, that means it will be deleted now and we also have to clear the search results list
                         var search_query = jQuery(this).val();
-                        if (search_query.length == 1) {
+                        if ( 1 === search_query.length ) {
                             jQuery('#td-aj-search').empty();
                         }
-
                     }
 
                     //various keys
-                    td_ajax_search.td_aj_search_input_focus();
+                    tdAjaxSearch.td_aj_search_input_focus();
                     //jQuery('#td-aj-search').empty();
                     setTimeout(function(){
-                        td_ajax_search.do_ajax_call();
+                        tdAjaxSearch.do_ajax_call();
                     }, 100);
                 }
                 return true;
+            });
+
+            // keydown on the text box
+            jQuery('#td-header-search-mob').keydown(function(event) {
+
+                if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+                    // on enter
+                    var td_aj_cur_element = jQuery('.td-aj-cur-element');
+                    if (td_aj_cur_element.length > 0) {
+                        //alert('ra');
+                        var td_go_to_url = td_aj_cur_element.find( '.entry-title a' ).attr( 'href' );
+                        window.location = td_go_to_url;
+                    } else {
+                        jQuery(this).parent().parent().submit();
+                    }
+                    return false; //redirect for search on enter
+                } else {
+
+                    //for backspace we have to check if the search query is empty and if so, clear the list
+                    if ( ( event.which && 8 === event.which ) || ( event.keyCode && 8 === event.keyCode ) ) {
+                        //if we have just one character left, that means it will be deleted now and we also have to clear the search results list
+                        var search_query = jQuery(this).val();
+                        if ( 1 === search_query.length ) {
+                            jQuery('#td-aj-search-mob').empty();
+                        }
+                    }
+
+                    setTimeout(function(){
+                        tdAjaxSearch.do_ajax_call_mob();
+                    }, 100);
+
+                    return true;
+                }
+            });
+        },
+
+
+        show_search_box: function() {
+            jQuery( '.td-drop-down-search' ).addClass( 'td-drop-down-search-open' );
+            // do not try to autofocus on ios. It's still buggy as of 18 march 2015
+            if ( true !== tdDetect.isIos ) {
+                setTimeout(function(){
+                    document.getElementById( 'td-header-search' ).focus();
+                }, 200);
             }
-
-        });
-
-    },
+            tdAjaxSearch._is_search_open = true;
+        },
 
 
-    show_search_box: function open_search_box() {
-        jQuery(".td-drop-down-search").addClass('td-drop-down-search-open');
-        // do not try to autofocus on ios. It's still buggy as of 18 march 2015
-        if (tdDetect.isIos !== true) {
-            setTimeout(function(){
-                document.getElementById("td-header-search").focus();
-            }, 200);
-        }
-        td_ajax_search._is_search_open = true;
-    },
-
-
-    hide_search_box: function hide_search_box() {
-        jQuery(".td-drop-down-search").removeClass('td-drop-down-search-open');
-        td_ajax_search._is_search_open = false;
-    },
+        hide_search_box: function hide_search_box() {
+            jQuery(".td-drop-down-search").removeClass('td-drop-down-search-open');
+            tdAjaxSearch._is_search_open = false;
+        },
 
 
 
-    /**
-     * moves the select up
-     */
-    td_aj_search_move_prompt_up: function td_aj_search_move_prompt_up() {
-        if (td_ajax_search._first_down_up === true) {
-            td_ajax_search._first_down_up = false;
-            if (td_ajax_search._current_selection_index === 0) {
-                td_ajax_search._current_selection_index = td_ajax_search._last_request_results_count - 1;
-            } else {
-                td_ajax_search._current_selection_index--;
-            }
-        } else {
-            if (td_ajax_search._current_selection_index === 0) {
-                td_ajax_search._current_selection_index = td_ajax_search._last_request_results_count;
-            } else {
-                td_ajax_search._current_selection_index--;
-            }
-        }
-        jQuery('.td_module_wrap').removeClass('td-aj-cur-element');
-        if (td_ajax_search._current_selection_index  > td_ajax_search._last_request_results_count -1) {
-            //the input is selected
-            jQuery('.td-search-form').fadeTo(100, 1);
-        } else {
-            td_ajax_search.td_aj_search_input_remove_focus();
-            jQuery('.td_module_wrap').eq(td_ajax_search._current_selection_index).addClass('td-aj-cur-element');
-        }
-    },
-
-
-
-    /**
-     * moves the select prompt down
-     */
-    td_aj_search_move_prompt_down: function td_aj_search_move_prompt_down() {
-        if (td_ajax_search._first_down_up === true) {
-            td_ajax_search._first_down_up = false;
-        } else {
-            if (td_ajax_search._current_selection_index === td_ajax_search._last_request_results_count) {
-                td_ajax_search._current_selection_index = 0;
-            } else {
-                td_ajax_search._current_selection_index++;
-            }
-        }
-        jQuery('.td_module_wrap').removeClass('td-aj-cur-element');
-        if (td_ajax_search._current_selection_index > td_ajax_search._last_request_results_count - 1 ) {
-            //the input is selected
-            jQuery('.td-search-form').fadeTo(100, 1);
-        } else {
-            td_ajax_search.td_aj_search_input_remove_focus();
-            jQuery('.td_module_wrap').eq(td_ajax_search._current_selection_index).addClass('td-aj-cur-element');
-        }
-    },
-
-
-
-    /**
-     * puts the focus on the input box
-     */
-    td_aj_search_input_focus: function td_aj_search_input_focus() {
-        td_ajax_search._current_selection_index = 0;
-        td_ajax_search._first_down_up = true;
-        jQuery('.td-search-form').fadeTo(100, 1);
-        jQuery('.td_module_wrap').removeClass('td-aj-cur-element');
-    },
-
-
-
-    /**
-     * removes the focus from the input box
-     */
-    td_aj_search_input_remove_focus: function td_aj_search_input_remove_focus() {
-        if (td_ajax_search._last_request_results_count !== 0) {
-            jQuery('.td-search-form').css('opacity', 0.5);
-        }
-    },
-
-
-
-    /**
-     * AJAX: process the response from the server
-     */
-    process_ajax_response: function (data) {
-        var current_query = jQuery('#td-header-search').val();
-
-        //the search is empty - drop results
-        if (current_query == '') {
-            jQuery('#td-aj-search').empty();
-            return;
-        }
-
-        var td_data_object = jQuery.parseJSON(data); //get the data object
-        //drop the result - it's from a old query
-        if (td_data_object.td_search_query !== current_query) {
-            return;
-        }
-
-        //reset the current selection and total posts
-        td_ajax_search._current_selection_index = 0;
-        td_ajax_search._last_request_results_count = td_data_object.td_total_in_list;
-        td_ajax_search._first_down_up = true;
-
-
-        //update the query
-        jQuery('#td-aj-search').html(td_data_object.td_data);
-
-        /*
-         td_data_object.td_data
-         td_data_object.td_total_results
-         td_data_object.td_total_in_list
+        /**
+         * moves the select up
          */
-
-        // the .entry-thumb are searched for in the #td-aj-search object, sorted and added into the view port array items
-        if ((typeof window['td_animation_stack'] !== 'undefined')  && (window['td_animation_stack'].activated === true)) {
-            window['td_animation_stack'].check_for_new_items('#td-aj-search .td-animation-stack', window['td_animation_stack'].SORTED_METHOD.sort_left_to_right, true);
-            window['td_animation_stack'].compute_items();
-        }
-    },
-
-
-
-    /**
-     * AJAX: do the ajax request
-     */
-    do_ajax_call: function do_ajax_call() {
-        if (jQuery('#td-header-search').val() == '') {
-            td_ajax_search.td_aj_search_input_focus();
-            return;
-        }
-
-
-
-        var search_query = jQuery('#td-header-search').val();
-
-
-        //do we have a cache hit
-        if (tdLocalCache.exist(search_query)) {
-            td_ajax_search.process_ajax_response(tdLocalCache.get(search_query));
-            return; //cache HIT
-        }
-
-
-        //fk no cache hit - do the real request
-
-
-
-        jQuery.ajax({
-            type: 'POST',
-            url: td_ajax_url,
-            data: {
-                action: 'td_ajax_search',
-                td_string: search_query
-            },
-            success: function(data, textStatus, XMLHttpRequest){
-                tdLocalCache.set(search_query, data);
-                td_ajax_search.process_ajax_response(data);
-            },
-            error: function(MLHttpRequest, textStatus, errorThrown){
-                //console.log(errorThrown);
+        td_aj_search_move_prompt_up: function() {
+            if (tdAjaxSearch._first_down_up === true) {
+                tdAjaxSearch._first_down_up = false;
+                if (tdAjaxSearch._current_selection_index === 0) {
+                    tdAjaxSearch._current_selection_index = tdAjaxSearch._last_request_results_count - 1;
+                } else {
+                    tdAjaxSearch._current_selection_index--;
+                }
+            } else {
+                if (tdAjaxSearch._current_selection_index === 0) {
+                    tdAjaxSearch._current_selection_index = tdAjaxSearch._last_request_results_count;
+                } else {
+                    tdAjaxSearch._current_selection_index--;
+                }
             }
-        });
-    }
-
-
-};
+            tdAjaxSearch._repaintCurrentElement();
+        },
 
 
 
-"use strict";
+        /**
+         * moves the select prompt down
+         */
+        move_prompt_down: function() {
+            if (tdAjaxSearch._first_down_up === true) {
+                tdAjaxSearch._first_down_up = false;
+            } else {
+                if (tdAjaxSearch._current_selection_index === tdAjaxSearch._last_request_results_count) {
+                    tdAjaxSearch._current_selection_index = 0;
+                } else {
+                    tdAjaxSearch._current_selection_index++;
+                }
+            }
+            tdAjaxSearch._repaintCurrentElement();
+        },
+
+
+        /**
+         * Recompute the current element in the search results.
+         * Used by the move_prompt_up and move_prompt_down
+         * @private
+         */
+        _repaintCurrentElement: function() {
+            jQuery( '.td_module_wrap' ).removeClass( 'td-aj-cur-element' );
+
+            if (tdAjaxSearch._current_selection_index > tdAjaxSearch._last_request_results_count - 1 ) {
+                //the input is selected
+                jQuery( '.td-search-form' ).fadeTo( 100, 1 );
+            } else {
+                tdAjaxSearch.td_aj_search_input_remove_focus();
+                jQuery( '.td_module_wrap' ).eq( tdAjaxSearch._current_selection_index ).addClass( 'td-aj-cur-element' );
+            }
+        },
+
+
+        /**
+         * puts the focus on the input box
+         */
+        td_aj_search_input_focus: function() {
+            tdAjaxSearch._current_selection_index = 0;
+            tdAjaxSearch._first_down_up = true;
+            jQuery( '.td-search-form' ).fadeTo( 100, 1 );
+            jQuery( '.td_module_wrap' ).removeClass( 'td-aj-cur-element' );
+        },
+
+
+
+        /**
+         * removes the focus from the input box
+         */
+        td_aj_search_input_remove_focus: function() {
+            if ( 0 !== tdAjaxSearch._last_request_results_count ) {
+                jQuery( '.td-search-form' ).css( 'opacity', 0.5 );
+            }
+        },
+
+
+
+        /**
+         * AJAX: process the response from the server
+         */
+        process_ajax_response: function(data) {
+            var current_query = jQuery( '#td-header-search' ).val();
+
+            //the search is empty - drop results
+            if ( '' === current_query ) {
+                jQuery( '#td-aj-search' ).empty();
+                return;
+            }
+
+            var td_data_object = jQuery.parseJSON(data); //get the data object
+            //drop the result - it's from a old query
+            if ( td_data_object.td_search_query !== current_query ) {
+                return;
+            }
+
+            //reset the current selection and total posts
+            tdAjaxSearch._current_selection_index = 0;
+            tdAjaxSearch._last_request_results_count = td_data_object.td_total_in_list;
+            tdAjaxSearch._first_down_up = true;
+
+            //update the query
+            jQuery( '#td-aj-search' ).html( td_data_object.td_data );
+
+            /*
+             td_data_object.td_data
+             td_data_object.td_total_results
+             td_data_object.td_total_in_list
+             */
+
+            // the .entry-thumb are searched for in the #td-aj-search object, sorted and added into the view port array items
+            if ( ( 'undefined' !== typeof window.tdAnimationStack )  && ( true === window.tdAnimationStack.activated ) ) {
+                window.tdAnimationStack.check_for_new_items( '#td-aj-search .td-animation-stack', window.tdAnimationStack.SORTED_METHOD.sort_left_to_right, true );
+                window.tdAnimationStack.compute_items();
+            }
+        },
+
+
+        /**
+         * AJAX: process the response from the server for the responsive version of the theme
+         */
+        process_ajax_response_mob: function(data) {
+            var current_query = jQuery( '#td-header-search-mob' ).val();
+
+            //the search is empty - drop results
+            if ( '' === current_query ) {
+                jQuery('#td-aj-search-mob').empty();
+                return;
+            }
+
+            var td_data_object = jQuery.parseJSON( data ); //get the data object
+            //drop the result - it's from a old query
+            if ( td_data_object.td_search_query !== current_query ) {
+                return;
+            }
+
+            //update the query
+            jQuery( '#td-aj-search-mob' ).html( td_data_object.td_data );
+
+            // the .entry-thumb are searched for in the #td-aj-search-mob object, sorted and added into the view port array items
+            if ( ( 'undefined' !== typeof window.tdAnimationStack )  && ( true === window.tdAnimationStack.activated ) ) {
+                window.tdAnimationStack.check_for_new_items( '#td-aj-search-mob .td-animation-stack', window.tdAnimationStack.SORTED_METHOD.sort_left_to_right, true );
+                window.tdAnimationStack.compute_items();
+            }
+        },
+
+
+        /**
+         * AJAX: do the ajax request
+         */
+        do_ajax_call: function() {
+            var search_query = jQuery('#td-header-search').val();
+
+            if ( '' === search_query ) {
+                tdAjaxSearch.td_aj_search_input_focus();
+                return;
+            }
+
+            //do we have a cache hit
+            if (tdLocalCache.exist(search_query)) {
+                tdAjaxSearch.process_ajax_response(tdLocalCache.get(search_query));
+                return; //cache HIT
+            }
+
+            //fk no cache hit - do the real request
+
+            jQuery.ajax({
+                type: 'POST',
+                url: td_ajax_url,
+                data: {
+                    action: 'td_ajax_search',
+                    td_string: search_query
+                },
+                success: function(data, textStatus, XMLHttpRequest){
+                    tdLocalCache.set(search_query, data);
+                    tdAjaxSearch.process_ajax_response(data);
+                },
+                error: function(MLHttpRequest, textStatus, errorThrown){
+                    //console.log(errorThrown);
+                }
+            });
+        },
+
+
+        /**
+         * AJAX: do the ajax request for the responsive version of the theme
+         */
+        do_ajax_call_mob: function() {
+            var search_query = jQuery( '#td-header-search-mob' ).val();
+
+            if ( '' === search_query) {
+                return;
+            }
+
+            //do we have a cache hit
+            if ( tdLocalCache.exist( search_query ) ) {
+                tdAjaxSearch.process_ajax_response_mob( tdLocalCache.get( search_query ) );
+                return; //cache HIT
+            }
+
+            //fk no cache hit - do the real request
+
+            jQuery.ajax({
+                type: 'POST',
+                url: td_ajax_url,
+                data: {
+                    action: 'td_ajax_search',
+                    td_string: search_query
+                },
+                success: function( data, textStatus, XMLHttpRequest ){
+                    tdLocalCache.set( search_query, data );
+                    tdAjaxSearch.process_ajax_response_mob( data );
+                },
+                error: function( MLHttpRequest, textStatus, errorThrown ){
+                    //console.log(errorThrown);
+                }
+            });
+        }
+    };
+
+})();
+
+;'use strict';
 
 /* ----------------------------------------------------------------------------
- td_post_images.js
+ tdPostImages.js
  --------------------------------------------------------------------------- */
 
-
+/* global jQuery:{} */
+/* global tdUtil:{} */
+/* global tdAffix:{} */
+/* global tdIsScrollingAnimation:boolean */
 
 /*  ----------------------------------------------------------------------------
  On load
@@ -2305,20 +3018,20 @@ var td_ajax_search = {
 jQuery().ready(function() {
 
     //handles the modal images
-    td_modal_image();
+    tdModalImage();
 
     //move classes from post images to figure - td-post-image-full etc
-    tdUtil.imageMoveClassToFigure('td-post-image-full');
-    tdUtil.imageMoveClassToFigure('td-post-image-right');
-    tdUtil.imageMoveClassToFigure('td-post-image-left');
+    tdUtil.imageMoveClassToFigure( 'td-post-image-full' );
+    tdUtil.imageMoveClassToFigure( 'td-post-image-right' );
+    tdUtil.imageMoveClassToFigure( 'td-post-image-left' );
 
     /**
      * - add a general td-modal-image class to the all post images
      */
-    if ((typeof window.tds_general_modal_image !== 'undefined') && (window.tds_general_modal_image !== '')) {
-        jQuery('.single .td-post-content a > img').filter(function(index, element) {
-            if (element.className.indexOf('wp-image') != -1) {
-                jQuery(element).parent().addClass('td-modal-image');
+    if ( ( 'undefined' !== typeof window.tds_general_modal_image ) && ( '' !== window.tds_general_modal_image ) ) {
+        jQuery( '.single .td-post-content a > img' ).filter(function( index, element ) {
+            if ( -1 !== element.className.indexOf( 'wp-image' ) ) {
+                jQuery( element ).parent().addClass( 'td-modal-image' );
             }
         });
     }
@@ -2327,82 +3040,79 @@ jQuery().ready(function() {
 
 
 // used for scrolling to the last element
-var td_modal_image_last_el = '';
+var tdModalImageLastEl = '';
 
 // handles modal images for: Featured images, inline image, inline image with caption, galleries
-function td_modal_image() {
+function tdModalImage() {
 
     //fix wordpress figure + figcaption (we move the figcaption in the data-caption attribute of the link)
-    jQuery('figure.wp-caption').each(function() {
-        var caption_text = jQuery(this).children('figcaption').html();
-        jQuery(this).children('a').data('caption', caption_text);
+    jQuery( 'figure.wp-caption' ).each(function() {
+        var caption_text = jQuery( this ).children( 'figcaption' ).html();
+        jQuery( this ).children( 'a' ).data( 'caption', caption_text );
     });
 
     //move td-modal-image class to the parent a from the image. We can only add this class to the image via word press media editor
-    jQuery('.td-modal-image').each(function() {
-        jQuery(this).parent().addClass('td-modal-image');
-        jQuery(this).removeClass('td-modal-image');
+    jQuery( '.td-modal-image' ).each(function() {
+        jQuery( this ).parent().addClass( 'td-modal-image' );
+        jQuery( this ).removeClass( 'td-modal-image' );
     });
 
 
 
     //popup on modal images in articles
-    jQuery('article').magnificPopup({
-        type:'image',
+    jQuery( 'article' ).magnificPopup({
+        type: 'image',
         delegate: ".td-modal-image",
-        gallery:{
-            enabled:true,
-            tPrev: tdUtil.getBackendVar('td_magnific_popup_translation_tPrev'), // Alt text on left arrow
-            tNext: tdUtil.getBackendVar('td_magnific_popup_translation_tNext'), // Alt text on right arrow
-            tCounter: tdUtil.getBackendVar('td_magnific_popup_translation_tCounter') // Markup for "1 of 7" counter
+        gallery: {
+            enabled: true,
+            tPrev: tdUtil.getBackendVar( 'td_magnific_popup_translation_tPrev' ), // Alt text on left arrow
+            tNext: tdUtil.getBackendVar( 'td_magnific_popup_translation_tNext' ), // Alt text on right arrow
+            tCounter: tdUtil.getBackendVar( 'td_magnific_popup_translation_tCounter' ) // Markup for "1 of 7" counter
         },
         ajax: {
-            tError: tdUtil.getBackendVar('td_magnific_popup_translation_ajax_tError')
+            tError: tdUtil.getBackendVar( 'td_magnific_popup_translation_ajax_tError' )
         },
         image: {
-            tError: tdUtil.getBackendVar('td_magnific_popup_translation_image_tError'),
-            titleSrc: function(item) {//console.log(item.el);
+            tError: tdUtil.getBackendVar( 'td_magnific_popup_translation_image_tError' ),
+            titleSrc: function( item ) {//console.log(item.el);
                 //alert(jQuery(item.el).data("caption"));
-                var td_current_caption = jQuery(item.el).data('caption');
-                if (typeof td_current_caption != "undefined") {
+                var td_current_caption = jQuery( item.el ).data( 'caption' );
+                if ( 'undefined' !== typeof td_current_caption ) {
                     return td_current_caption;
                 } else {
                     return '';
                 }
-
-
             }
         },
         zoom: {
             enabled: true,
             duration: 300,
-            opener: function(element) {
-                return element.find("img");
+            opener: function( element ) {
+                return element.find( 'img' );
             }
         },
         callbacks: {
-            change: function(item) {
-                td_modal_image_last_el = item.el;
+            change: function( item ) {
+                tdModalImageLastEl = item.el;
                 //setTimeout(function(){
-                tdUtil.scrollIntoView(item.el);
+                tdUtil.scrollIntoView( item.el );
                 //}, 100);
-
             },
             beforeClose: function() {
-                td_affix.allow_scroll = false;
+                tdAffix.allow_scroll = false;
 
-                tdUtil.scrollIntoView(td_modal_image_last_el);
+                tdUtil.scrollIntoView( tdModalImageLastEl );
 
                 var interval_td_affix_scroll = setInterval(function() {
 
-                    if (!tdIsScrollingAnimation) {
-                        clearInterval(interval_td_affix_scroll);
+                    if ( ! tdIsScrollingAnimation ) {
+                        clearInterval( interval_td_affix_scroll );
                         setTimeout(function() {
-                            td_affix.allow_scroll = true;
-                            //td_affix.td_events_scroll(td_events.scroll_window_scrollTop);
-                        }, 100);
+                            tdAffix.allow_scroll = true;
+                            //tdAffix.td_events_scroll(td_events.scroll_window_scrollTop);
+                        }, 100 );
                     }
-                }, 100);
+                }, 100 );
             }
         }
     });
@@ -2413,34 +3123,33 @@ function td_modal_image() {
 
     //gallery popup
     //detect jetpack carousel and disable the theme popup
-    if (typeof jetpackCarouselStrings === 'undefined') {
+    if ( 'undefined' === typeof jetpackCarouselStrings ) {
 
         // copy gallery caption from figcaption to data-caption attribute of the link to the full image, in this way the modal can read the caption
-        jQuery('figure.gallery-item').each(function() {
-            var caption_text = jQuery(this).children('figcaption').html();
-            jQuery(this).find('a').data('caption', caption_text);
+        jQuery( 'figure.gallery-item' ).each(function() {
+            var caption_text = jQuery( this ).children( 'figcaption' ).html();
+            jQuery( this ).find( 'a' ).data( 'caption', caption_text );
         });
-
 
 
         //jquery tiled gallery
-        jQuery('.tiled-gallery').magnificPopup({
-            type:'image',
+        jQuery( '.tiled-gallery' ).magnificPopup({
+            type: 'image',
             delegate: "a",
-            gallery:{
-                enabled:true,
-                tPrev: tdUtil.getBackendVar('td_magnific_popup_translation_tPrev'), // Alt text on left arrow
-                tNext: tdUtil.getBackendVar('td_magnific_popup_translation_tNext'), // Alt text on right arrow
-                tCounter: tdUtil.getBackendVar('td_magnific_popup_translation_tCounter') // Markup for "1 of 7" counter
+            gallery: {
+                enabled: true,
+                tPrev: tdUtil.getBackendVar( 'td_magnific_popup_translation_tPrev' ), // Alt text on left arrow
+                tNext: tdUtil.getBackendVar( 'td_magnific_popup_translation_tNext' ), // Alt text on right arrow
+                tCounter: tdUtil.getBackendVar( 'td_magnific_popup_translation_tCounter' ) // Markup for "1 of 7" counter
             },
             ajax: {
-                tError: tdUtil.getBackendVar('td_magnific_popup_translation_ajax_tError')
+                tError: tdUtil.getBackendVar( 'td_magnific_popup_translation_ajax_tError' )
             },
             image: {
-                tError: tdUtil.getBackendVar('td_magnific_popup_translation_image_tError'),
-                titleSrc: function(item) {//console.log(item.el);
-                    var td_current_caption = jQuery(item.el).parent().find('.tiled-gallery-caption').text();
-                    if (typeof td_current_caption != "undefined") {
+                tError: tdUtil.getBackendVar( 'td_magnific_popup_translation_image_tError' ),
+                titleSrc: function( item ) {//console.log(item.el);
+                    var td_current_caption = jQuery( item.el ).parent().find( '.tiled-gallery-caption' ).text();
+                    if ( 'undefined' !== typeof td_current_caption ) {
                         return td_current_caption;
                     } else {
                         return '';
@@ -2450,41 +3159,40 @@ function td_modal_image() {
             zoom: {
                 enabled: true,
                 duration: 300,
-                opener: function(element) {
-                    return element.find("img");
+                opener: function( element ) {
+                    return element.find( 'img' );
                 }
             },
             callbacks: {
-                change: function(item) {
-                    td_modal_image_last_el = item.el;
-                    tdUtil.scrollIntoView(item.el);
+                change: function( item ) {
+                    tdModalImageLastEl = item.el;
+                    tdUtil.scrollIntoView( item.el );
                 },
                 beforeClose: function() {
-                    tdUtil.scrollIntoView(td_modal_image_last_el);
+                    tdUtil.scrollIntoView( tdModalImageLastEl );
                 }
-
             }
         });
 
 
 
-        jQuery('.gallery').magnificPopup({
-            type:'image',
-            delegate: ".gallery-icon > a",
-            gallery:{
-                enabled:true,
-                tPrev: tdUtil.getBackendVar('td_magnific_popup_translation_tPrev'), // Alt text on left arrow
-                tNext: tdUtil.getBackendVar('td_magnific_popup_translation_tNext'), // Alt text on right arrow
-                tCounter: tdUtil.getBackendVar('td_magnific_popup_translation_tCounter') // Markup for "1 of 7" counter
+        jQuery( '.gallery' ).magnificPopup({
+            type: 'image',
+            delegate: '.gallery-icon > a',
+            gallery: {
+                enabled: true,
+                tPrev: tdUtil.getBackendVar( 'td_magnific_popup_translation_tPrev' ), // Alt text on left arrow
+                tNext: tdUtil.getBackendVar( 'td_magnific_popup_translation_tNext' ), // Alt text on right arrow
+                tCounter: tdUtil.getBackendVar( 'td_magnific_popup_translation_tCounter' ) // Markup for "1 of 7" counter
             },
             ajax: {
-                tError: tdUtil.getBackendVar('td_magnific_popup_translation_ajax_tError')
+                tError: tdUtil.getBackendVar( 'td_magnific_popup_translation_ajax_tError' )
             },
             image: {
-                tError: tdUtil.getBackendVar('td_magnific_popup_translation_image_tError'),
-                titleSrc: function(item) {//console.log(item.el);
-                    var td_current_caption = jQuery(item.el).data('caption');
-                    if (typeof td_current_caption != "undefined") {
+                tError: tdUtil.getBackendVar( 'td_magnific_popup_translation_image_tError' ),
+                titleSrc: function( item ) {//console.log(item.el);
+                    var td_current_caption = jQuery( item.el ).data( 'caption' );
+                    if ( 'undefined' !== typeof td_current_caption ) {
                         return td_current_caption;
                     } else {
                         return '';
@@ -2494,25 +3202,21 @@ function td_modal_image() {
             zoom: {
                 enabled: true,
                 duration: 300,
-                opener: function(element) {
-                    return element.find("img");
+                opener: function( element ) {
+                    return element.find( 'img' );
                 }
             },
             callbacks: {
-                change: function(item) {
-                    td_modal_image_last_el = item.el;
-                    tdUtil.scrollIntoView(item.el);
+                change: function( item ) {
+                    tdModalImageLastEl = item.el;
+                    tdUtil.scrollIntoView( item.el );
                 },
                 beforeClose: function() {
-                    tdUtil.scrollIntoView(td_modal_image_last_el);
+                    tdUtil.scrollIntoView( tdModalImageLastEl );
                 }
-
             }
         });
-
-
     }
-
 } //end modal
 /**
  * tdBlocks.js
@@ -2526,8 +3230,8 @@ function td_modal_image() {
 
 
 
-/* global td_smart_sidebar:false */
-/* global td_animation_stack:false */
+/* global tdSmartSidebar:{} */
+/* global tdAnimationStack:{} */
 /* global tdUtil:false */                   //done
 /* global tdLoadingBox:false */             //done
 /* global tdInfiniteLoader:false */         //done
@@ -2629,7 +3333,7 @@ var tdBlocks = {};
                 //animate the list
                 var tdPullDownList = jQuery("#td_pulldown_" + currentBlockUid + "_list");
                 tdPullDownList.removeClass('fadeOut');
-                tdPullDownList.addClass('animated fadeIn'); //used for opacity animation
+                tdPullDownList.addClass('td_animated td_fadeIn'); //used for opacity animation
                 //tdPullDownList.css('visibility', 'visible');
             });
 
@@ -2647,7 +3351,7 @@ var tdBlocks = {};
                     //animate the list
                     var tdPullDownList = jQuery("#td_pulldown_" + current_block_uid + "_list");
                     tdPullDownList.removeClass('fadeOut');
-                    tdPullDownList.addClass('animated fadeIn'); //used for opacity animation
+                    tdPullDownList.addClass('td_animated td_fadeIn'); //used for opacity animation
                     tdPullDownList.css('visibility', 'visible');
 
                 },
@@ -2811,7 +3515,7 @@ var tdBlocks = {};
             //reset the page
             currentBlockObj.td_current_page = 1;
 
-            // we ues 'pull_down' just for the 'animated_xlong fadeInDown' effect
+            // we ues 'pull_down' just for the 'td_animated_xlong td_fadeInDown' effect
             tdBlocks.tdAjaxDoBlockRequest(currentBlockObj, 'pull_down');
         });
 
@@ -2842,6 +3546,8 @@ var tdBlocks = {};
             //change current filter value - the filter type is readed by td_ajax from the atts of the shortcode
             currentBlockObj.td_filter_value = jQuery(this).data('td_filter_value');
 
+            jQuery('.' + jQuery(this).data('td_block_id') + '_rand').find('.td-cur-simple-item').removeClass('td-cur-simple-item');
+            jQuery(this).addClass('td-cur-simple-item');
 
             currentBlockObj.td_current_page = 1;
 
@@ -2965,14 +3671,14 @@ var tdBlocks = {};
             if ( 'load_more' === td_user_action || 'infinite_load' === td_user_action ) {
 
                 // fix needed to keep sidebars fixed down when they are bottom of the content and the content grows up
-                for ( var i = 0; i < td_smart_sidebar.items.length; i++ ) {
-                    if ( 'case_3_bottom_of_content' === td_smart_sidebar.items[i].sidebar_state ) {
-                        td_smart_sidebar.items[i].sidebar_state = 'case_1_fixed_down';
+                for ( var i = 0; i < tdSmartSidebar.items.length; i++ ) {
+                    if ( 'case_3_bottom_of_content' === tdSmartSidebar.items[ i ].sidebar_state ) {
+                        tdSmartSidebar.items[ i ].sidebar_state = 'case_1_fixed_down';
                     }
                 }
 
                 jQuery(tdReplyObj.td_data).appendTo('#' + tdReplyObj.td_block_id);
-                //jQuery(tdReplyObj.td_data).addClass('animated_xxlong').appendTo('#' + tdReplyObj.td_block_id).addClass('fadeIn');
+                //jQuery(tdReplyObj.td_data).addClass('td_animated_xxlong').appendTo('#' + tdReplyObj.td_block_id).addClass('td_fadeIn');
                 //jQuery('#' + tdReplyObj.td_block_id).append(tdReplyObj.td_data); //append
             } else {
                 jQuery('#' + tdReplyObj.td_block_id).html(tdReplyObj.td_data); //in place
@@ -3024,7 +3730,7 @@ var tdBlocks = {};
             jQuery('.td-loader-gif').remove();
 
             //remove animation classes
-            elCurTdBlockInner.removeClass('fadeInRight fadeInLeft fadeInDown fadeInUp animated_xlong');
+            elCurTdBlockInner.removeClass('td_fadeInRight td_fadeInLeft td_fadeInDown td_fadeInUp td_animated_xlong');
 
             elCurTdBlockInner.addClass('td_block_inner_overflow');
             //auto height => fixed height
@@ -3067,7 +3773,7 @@ var tdBlocks = {};
                             .removeClass('td-loader-animation-start')
                             .addClass('td-loader-animation-mid');
                     },50);
-                    elCurTdBlockInner.addClass('animated_long fadeOut_to_1');
+                    elCurTdBlockInner.addClass('td_animated_long td_fadeOut_to_1');
 
                 }
             } // end cache_hit if
@@ -3098,37 +3804,37 @@ var tdBlocks = {};
             //get the current inner
             var elCurTdBlockInner = jQuery('#' + current_block_obj.id);
 
-            elCurTdBlockInner.removeClass('animated_long fadeOut_to_1');
+            elCurTdBlockInner.removeClass('td_animated_long td_fadeOut_to_1');
 
 
             // by default, the sort method used to animate the ajax response is left to the right
 
             var tdAnimationStackSortType;
 
-            if ( true === td_animation_stack.activated ) {
-                tdAnimationStackSortType = td_animation_stack.SORTED_METHOD.sort_left_to_right;
+            if ( true === tdAnimationStack.activated ) {
+                tdAnimationStackSortType = tdAnimationStack.SORTED_METHOD.sort_left_to_right;
             }
 
             switch(td_user_action) {
                 case 'next':
-                    elCurTdBlockInner.addClass('animated_xlong fadeInRight');
+                    elCurTdBlockInner.addClass('td_animated_xlong td_fadeInRight');
 
                     // the default sort method is modified to work from right to the left
                     if ( undefined !== tdAnimationStackSortType ) {
-                        tdAnimationStackSortType = td_animation_stack.SORTED_METHOD.sort_right_to_left;
+                        tdAnimationStackSortType = tdAnimationStack.SORTED_METHOD.sort_right_to_left;
                     }
 
                     break;
                 case 'back':
-                    elCurTdBlockInner.addClass('animated_xlong fadeInLeft');
+                    elCurTdBlockInner.addClass('td_animated_xlong td_fadeInLeft');
                     break;
 
                 case 'pull_down':
-                    elCurTdBlockInner.addClass('animated_xlong fadeInDown');
+                    elCurTdBlockInner.addClass('td_animated_xlong td_fadeInDown');
                     break;
 
                 case 'mega_menu':
-                    elCurTdBlockInner.addClass('animated_xlong fadeInDown');
+                    elCurTdBlockInner.addClass('td_animated_xlong td_fadeInDown');
                     break;
 
 
@@ -3167,14 +3873,14 @@ var tdBlocks = {};
                 jQuery('.td_block_inner_overflow').removeClass('td_block_inner_overflow');
                 elCurTdBlockInner.css('height', 'auto');
 
-                td_smart_sidebar.compute();
+                tdSmartSidebar.compute();
             },200);
 
 
 
 
             setTimeout( function () {
-                td_smart_sidebar.compute();
+                tdSmartSidebar.compute();
             }, 500);
 
 
@@ -3182,7 +3888,7 @@ var tdBlocks = {};
             // the .entry-thumb are searched for in the current block object, sorted and added into the view port array items
             if ( undefined !== tdAnimationStackSortType ) {
                 setTimeout( function () {
-                    td_animation_stack.check_for_new_items('#' + current_block_obj.id + ' .td-animation-stack', tdAnimationStackSortType, true);
+                    tdAnimationStack.check_for_new_items('#' + current_block_obj.id + ' .td-animation-stack', tdAnimationStackSortType, true);
                 }, 200);
             }
         },
@@ -3241,7 +3947,15 @@ var tdBlocks = {};
  v1.1
  */
 
-"use strict";
+/* global jQuery:{} */
+/* global tdDetect:{} */
+/* global td_ajax_url:string */
+
+/* global td_please_wait:string */
+/* global td_email_user_pass_incorrect:string */
+/* global td_email_user_incorrect:string */
+/* global td_email_incorrect:string */
+
 
 
 /*  ----------------------------------------------------------------------------
@@ -3249,10 +3963,13 @@ var tdBlocks = {};
  */
 jQuery().ready(function() {
 
+    'use strict';
+
     /**
      * Modal window js code
      */
-    jQuery('.td-login-modal-js').magnificPopup({
+
+    var modalSettings = {
         type: 'inline',
         preloader: false,
         focus: '#name',
@@ -3263,598 +3980,1771 @@ jQuery().ready(function() {
         callbacks: {
             beforeOpen: function() {
 
-
                 this.st.mainClass = this.st.el.attr('data-effect');
 
-
                 //empty all fields
-                td_modala_empty_all_fields();
+                tdLogin.clearFields();
 
                 //empty error display div
-                td_modala_empty_err_div();
+                tdLogin.showHideMsg();
 
-                if(jQuery(window).width() < 700) {
+                if( jQuery( window ).width() < 700) {
                     this.st.focus = false;
                 } else {
-                    if (tdDetect.isIe === false) {
+                    if ( false === tdDetect.isIe ) {
                         //do not focus on ie 10
                         this.st.focus = '#login_email';
                     }
-
                 }
             },
 
             beforeClose: function() {
             }
+        },
+
+        // The modal login is disabled for widths under less than 750px
+        disableOn: function() {
+            if( jQuery(window).width() < 750 ) {
+                return false;
+            }
+            return true;
+        }
+    };
+
+
+
+    if ( undefined !== window.tds_login_sing_in_widget ) {
+        // The following settings are only for the modal magnific popup, which is disable when width is less than 750px
+        jQuery( '.comment-reply-login' ).attr({
+            'href': '#login-form',
+            'data-effect': 'mpf-td-login-effect'
+        });
+
+        // Set the modal magnific popup settings
+        jQuery( '.comment-reply-login, .td-login-modal-js' ).magnificPopup( modalSettings );
+    }
+
+    // - Set the normal link that will apply only for windows widths less than 750px
+    // - Used for log in to leave a comment on post page to open the login section
+    jQuery( '.td-login-modal-js, .comment-reply-login' ).on( 'click', function( event ) {
+
+        if ( jQuery( window ).width() < 750 && undefined !== window.tds_login_sing_in_widget ) {
+
+
+            event.preventDefault();
+
+            // open the menu background
+            jQuery( 'body' ).addClass( 'td-menu-mob-open-menu' );
+
+            // hide the menu content
+            jQuery( '.td-mobile-container' ).hide();
+            jQuery( '#td-mobile-nav' ).addClass( 'td-hide-menu-content' );
+
+            setTimeout(function(){
+                jQuery( '.td-mobile-container' ).show();
+            }, 500);
+
+            //hides or shows the divs with inputs
+            tdLogin.showHideElementsMobile( [['#td-login-mob', 1], ['#td-register-mob', 0], ['#td-forgot-pass-mob', 0]] );
         }
     });
 
 
     //login
-    jQuery('#login-link').on( "click", function() {
+    jQuery( '#login-link' ).on( 'click', function() {
         //hides or shows the divs with inputs
-        show_hide_content_modala([['#td-login-div', 1], ['#td-register-div', 0], ['#td-forgot-pass-div', 0]]);
+        tdLogin.showHideElements( [['#td-login-div', 1], ['#td-register-div', 0], ['#td-forgot-pass-div', 0]] );
 
-        //moves focus on the tab
-        modala_swich_tabs([['#login-link', 1], ['#register-link', 0]]);
+        jQuery( '#login-form' ).addClass( 'td-login-animation' );
 
-        if(jQuery(window).width() > 700 && tdDetect.isIe === false) {
-            jQuery('#login_email').focus();
+        if ( jQuery(window).width() > 700 && tdDetect.isIe === false ) {
+            jQuery( '#login_email' ).focus();
         }
-
-        //empty all fields
-        //td_modala_empty_all_fields();
 
         //empty error display div
-        td_modala_empty_err_div();
+        tdLogin.showHideMsg();
     });
-    //login button
-    jQuery('#login_button').on( "click", function() {
-        handle_login_for_modal_window();
-    });
-    //enter key on #login_pass
-    jQuery('#login_pass').keydown(function(event) {
-        if ((event.which && event.which == 13) || (event.keyCode && event.keyCode == 13)) {
-            handle_login_for_modal_window();
-        }
-    });
+
 
     //register
-    jQuery('#register-link').on( "click", function() {
+    jQuery( '#register-link' ).on( 'click', function() {
         //hides or shows the divs with inputs
-        show_hide_content_modala([['#td-login-div', 0], ['#td-register-div', 1], ['#td-forgot-pass-div', 0]]);
+        tdLogin.showHideElements( [['#td-login-div', 0], ['#td-register-div', 1], ['#td-forgot-pass-div', 0]] );
 
-        //moves focus on the tab
-        modala_swich_tabs([['#login-link', 0], ['#register-link', 1]]);
+        jQuery( '#login-form' ).addClass( 'td-login-animation' );
 
-        if(jQuery(window).width() > 700  && tdDetect.isIe === false) {
-            jQuery('#register_email').focus();
+        if ( jQuery( window ).width() > 700  && false === tdDetect.isIe ) {
+            jQuery( '#register_email' ).focus();
         }
-
-        //empty all fields
-        //td_modala_empty_all_fields();
 
         //empty error display div
-        td_modala_empty_err_div();
+        tdLogin.showHideMsg();
     });
-    //register button
-    jQuery('#register_button').on( "click", function() {
-        handle_register_for_modal_window();
-    });
-    //enter key on #register_user
-    jQuery('#register_user').keydown(function(event) {
-        if ((event.which && event.which == 13) || (event.keyCode && event.keyCode == 13)) {
-            handle_register_for_modal_window();
-        }
-    });
+
 
     //forgot pass
-    jQuery('#forgot-pass-link').on( "click", function() {
+    jQuery( '#forgot-pass-link' ).on( 'click', function(event) {
+        //prevent scroll to page top
+        event.preventDefault();
         //hides or shows the divs with inputs
-        show_hide_content_modala([['#td-login-div', 0], ['#td-register-div', 0], ['#td-forgot-pass-div', 1]]);
+        tdLogin.showHideElements( [['#td-login-div', 0], ['#td-register-div', 0], ['#td-forgot-pass-div', 1]] );
 
-        //moves focus on the tab
-        modala_swich_tabs([['#login-link', 0], ['#register-link', 0]]);
+        jQuery( '#login-form' ).addClass( 'td-login-animation' );
 
-        if(jQuery(window).width() > 700 && tdDetect.isIe === false) {
-            jQuery('#forgot_email').focus();
+        if (jQuery( window ).width() > 700 && false === tdDetect.isIe ) {
+            jQuery( '#forgot_email' ).focus();
         }
-
-        //empty all fields
-        //td_modala_empty_all_fields();
 
         //empty error display div
-        td_modala_empty_err_div();
+        tdLogin.showHideMsg();
     });
-    //forgot button
-    jQuery('#forgot_button').on( "click", function() {
-        handle_forgot_password_for_modal_window();
+    
+
+    //login button
+    jQuery( '#login_button' ).on( 'click', function() {
+        tdLogin.handlerLogin();
     });
-    //enter key on #forgot_email
-    jQuery('#forgot_email').keydown(function(event) {
-        if ((event.which && event.which == 13) || (event.keyCode && event.keyCode == 13)) {
-            handle_forgot_password_for_modal_window();
+
+    //enter key on #login_pass
+    jQuery( '#login_pass' ).keydown(function(event) {
+        if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+            tdLogin.handlerLogin();
         }
     });
 
 
+    //register button
+    jQuery( '#register_button' ).on( 'click', function() {
+        tdLogin.handlerRegister();
+    });
+
+    //enter key on #register_user
+    jQuery( '#register_user' ).keydown(function(event) {
+        if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+            tdLogin.handlerRegister();
+        }
+    });
+
+
+    //forgot button
+    jQuery( '#forgot_button' ).on( 'click', function() {
+        tdLogin.handlerForgotPass();
+    });
+
+    //enter key on #forgot_email
+    jQuery( '#forgot_email' ).keydown(function(event) {
+        if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+            tdLogin.handlerForgotPass();
+        }
+    });
+
+
+    // marius
+    jQuery( '.td-back-button' ).on( 'click', function() {
+        //hides or shows the divs with inputs
+        tdLogin.showHideElements( [['#td-login-div', 1], ['#td-register-div', 0], ['#td-forgot-pass-div', 0]] );
+
+        jQuery( '#login-form' ).removeClass( 'td-login-animation' );
+
+        // clear the error message when press back
+        jQuery( '.td_display_err' ).hide();
+    });
 });//end jquery ready
 
 
 
-//patern to check emails
-var td_mod_pattern_email = /^[a-zA-Z0-9][a-zA-Z0-9_\.-]{0,}[a-zA-Z0-9]@[a-zA-Z0-9][a-zA-Z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$/;
 
-/**
- * handle all request made from login tab
- */
-function handle_login_for_modal_window() {
-    var login_email = jQuery('#login_email').val();
-    var login_pass = jQuery('#login_pass').val();
-
-    if(login_email && login_pass){
-        //empty error display div
-        //td_modala_empty_err_div();
-
-        modala_add_remove_class(['.td_display_err', 1, "td_display_msg_ok"]);
-        jQuery('.td_display_err').show();
-        td_modala_write_err_div(td_please_wait);
-
-        //call ajax for log in
-        td_modala_call_ajax('td_mod_login', login_email, '', login_pass);
-    } else {
-        jQuery('.td_display_err').show();
-        td_modala_write_err_div(td_email_user_pass_incorrect);
-    }
-}
-
-/**
- * handle all request made from register tab
- */
-function handle_register_for_modal_window() {
-    var register_email = jQuery('#register_email').val();
-    var register_user = jQuery('#register_user').val();
-
-    if(td_mod_pattern_email.test(register_email) && register_user){
-        //empty error display div
-        //td_modala_empty_err_div();
-
-        modala_add_remove_class(['.td_display_err', 1, "td_display_msg_ok"]);
-        jQuery('.td_display_err').show();
-        td_modala_write_err_div(td_please_wait);
-
-        //call ajax
-        td_modala_call_ajax('td_mod_register', register_email, register_user, '');
-    } else {
-        jQuery('.td_display_err').show();
-        td_modala_write_err_div(td_email_user_incorrect);
-    }
-}
-
-/**
- * handle all request made from forgot password tab
- */
-function handle_forgot_password_for_modal_window() {
-    var forgot_email = jQuery('#forgot_email').val();
-
-    if(td_mod_pattern_email.test(forgot_email)){
-        //empty error display div
-        //td_modala_empty_err_div();
-
-        modala_add_remove_class(['.td_display_err', 1, "td_display_msg_ok"]);
-        jQuery('.td_display_err').show();
-        td_modala_write_err_div(td_please_wait);
-
-        //call ajax
-        td_modala_call_ajax('td_mod_remember_pass', forgot_email, '', '');
-    } else {
-        jQuery('.td_display_err').show();
-        td_modala_write_err_div(td_email_incorrect);
-    }
-}
-
-/**
- * swhich the div's acordingly to the user action (Log In, Register, Remember Password)
- *
- * ids_array : array of ids that have to be showed or hidden
- */
-function show_hide_content_modala(ids_array) {
-    var length = ids_array.length;
-
-    for (var i = 0; i < length; i++) {
-        var element_id = ids_array[i][0];
-        var element_visibility = ids_array[i][1];
-
-        if (element_visibility == 1) {
-            jQuery(element_id).removeClass('td-dispaly-none').addClass('td-dispaly-block');
-        } else {
-            jQuery(element_id).removeClass('td-dispaly-block').addClass('td-dispaly-none');
-        }
-    }
-}
+var tdLogin = {};
 
 
-/**
- * swhich the tab's acordingly to the user action (Log In, Register, Remember Password)
- *
- * ids_array : array of ids that have to be focus on or unfocus
- */
-function modala_swich_tabs(ids_array) {
-    var length = ids_array.length;
+(function(){
 
-    for (var i = 0; i < length; i++) {
-        var element_id = ids_array[i][0];
-        var element_visibility = ids_array[i][1];
+    'use strict';
 
-        if (element_visibility == 1) {
-            jQuery(element_id).addClass('td_login_tab_focus');
-        } else {
-            jQuery(element_id).removeClass('td_login_tab_focus');
-        }
-    }
-}
+    tdLogin = {
 
+        //patern to check emails
+        email_pattern : /^[a-zA-Z0-9][a-zA-Z0-9_\.-]{0,}[a-zA-Z0-9]@[a-zA-Z0-9][a-zA-Z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$/,
 
-/**
- * adds or remove a class from an html object
- *
- * param : array with object identifier (id - # or class - .)
- * ex: ['.class_indetifier', 1, 'class_to_add'] or ['.class_indetifier', 0, 'class_to_remove']
- */
-function modala_add_remove_class(param) {
+        /**
+         * handle all request made from login tab
+         */
+        handlerLogin : function() {
+            var loginEmailEl = jQuery( '#login_email'),
+                loginPassEl = jQuery( '#login_pass' );
 
-    //add class
-    if (param[1] == 1) {
-        jQuery(param[0]).addClass(param[2]);
+            if ( loginEmailEl.length && loginPassEl.length ) {
+                var loginEmailVal = loginEmailEl.val().trim(),
+                    loginPassVal = loginPassEl.val().trim();
 
-        //remove class
-    } else {
-        jQuery(param[0]).removeClass(param[2]);
-    }
-}
+                if ( loginEmailVal && loginPassVal ) {
+                    tdLogin.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                    tdLogin.showHideMsg( td_please_wait );
 
-
-/**
- * empty the error div
- */
-function td_modala_empty_err_div() {
-    jQuery('.td_display_err').html('');
-    jQuery('.td_display_err').hide();
-}
-
-
-/**
- * write text to error div
- */
-function td_modala_write_err_div(message) {
-    jQuery('.td_display_err').html(message);
-}
-
-/**
- * empty all fields in modal window
- */
-function td_modala_empty_all_fields() {
-    //login fields
-    jQuery('#login_email').val('');
-    jQuery('#login_pass').val('');
-
-    //register fields
-    jQuery('#register_email').val('');
-    jQuery('#register_user').val('');
-
-    //forgot pass
-    jQuery('#forgot_email').val('');
-}
-
-
-/**
- * call to server from modal window
- *
- * @param $action : what action (log in, register, forgot email)
- * @param $email  : the email beening sent
- * @param $user   : the user name beening sent
- */
-function td_modala_call_ajax(sent_action, sent_email, sent_user, sent_pass) {
-    jQuery.ajax({
-        type: 'POST',
-        url: td_ajax_url,
-        data: {
-            action: sent_action,
-            email: sent_email,
-            user: sent_user,
-            pass: sent_pass
-        },
-        success: function(data, textStatus, XMLHttpRequest){
-            var td_data_object = jQuery.parseJSON(data); //get the data object
-
-            //check the response from server
-            switch(td_data_object[0]) {
-                case 'login':
-                    if(td_data_object[1] == 1) {
-                        location.reload(true);
-                    } else {
-                        modala_add_remove_class(['.td_display_err', 0, 'td_display_msg_ok']);
-                        jQuery('.td_display_err').show();
-                        td_modala_write_err_div(td_data_object[2]);
-                    }
-                    break;
-
-                case 'register':
-                    if(td_data_object[1] == 1) {
-                        modala_add_remove_class(['.td_display_err', 1, "td_display_msg_ok"]);
-                        jQuery('.td_display_err').show();
-                    } else {
-                        modala_add_remove_class(['.td_display_err', 0, "td_display_msg_ok"]);
-                        jQuery('.td_display_err').show();
-                    }
-                    td_modala_write_err_div(td_data_object[2]);
-                    break;
-
-                case 'remember_pass':
-                    if(td_data_object[1] == 1) {
-                        modala_add_remove_class(['.td_display_err', 1, "td_display_msg_ok"]);
-                        jQuery('.td_display_err').show();
-                    } else {
-                        modala_add_remove_class(['.td_display_err', 0, "td_display_msg_ok"]);
-                        jQuery('.td_display_err').show();
-                    }
-                    td_modala_write_err_div(td_data_object[2]);
-                    break;
-
+                    //call ajax for log in
+                    tdLogin.doAction( 'td_mod_login', loginEmailVal, '', loginPassVal );
+                } else {
+                    tdLogin.showHideMsg( td_email_user_pass_incorrect );
+                }
             }
-
-
         },
-        error: function(MLHttpRequest, textStatus, errorThrown){
-            //console.log(errorThrown);
+
+
+        /**
+         * handle all request made from register tab
+         */
+        handlerRegister : function() {
+            var registerEmailEl = jQuery( '#register_email' ),
+                registerUserEl = jQuery( '#register_user' );
+
+            if ( registerEmailEl.length && registerUserEl.length ) {
+                var registerEmailVal = registerEmailEl.val().trim(),
+                    registerUserVal = registerUserEl.val().trim();
+
+                if ( tdLogin.email_pattern.test( registerEmailVal ) && registerUserVal ) {
+
+                    tdLogin.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                    tdLogin.showHideMsg( td_please_wait );
+
+                    //call ajax
+                    tdLogin.doAction( 'td_mod_register', registerEmailVal, registerUserVal, '' );
+                } else {
+                    tdLogin.showHideMsg( td_email_user_incorrect );
+                }
+            }
+        },
+
+
+        /**
+         * handle all request made from forgot password tab
+         */
+        handlerForgotPass : function() {
+            var forgotEmailEl = jQuery( '#forgot_email' );
+
+            if ( forgotEmailEl.length ) {
+                var forgotEmailVal = forgotEmailEl.val().trim();
+
+                if ( tdLogin.email_pattern.test( forgotEmailVal ) ){
+
+                    tdLogin.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                    tdLogin.showHideMsg( td_please_wait );
+
+                    //call ajax
+                    tdLogin.doAction( 'td_mod_remember_pass', forgotEmailVal, '', '' );
+                } else {
+                    tdLogin.showHideMsg( td_email_incorrect );
+                }
+            }
+        },
+
+
+        /**
+         * swhich the div's acordingly to the user action (Log In, Register, Remember Password)
+         *
+         * ids_array : array of ids that have to be showed or hidden
+         */
+        showHideElements : function( ids_array ) {
+            if ( ids_array.constructor === Array ) {
+                var length = ids_array.length;
+
+                for ( var i = 0; i < length; i++ ) {
+                    if ( ids_array[ i ].constructor === Array && 2 === ids_array[ i ].length ) {
+                        var jqElement = jQuery( ids_array[ i ][0] );
+                        if ( jqElement.length ) {
+                            if ( 1 === ids_array[ i ][1] ) {
+                                jqElement.removeClass( 'td-display-none' ).addClass( 'td-display-block' );
+                            } else {
+                                jqElement.removeClass( 'td-display-block' ).addClass( 'td-display-none' );
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+        showHideElementsMobile : function( ids_array ) {
+            if ( ids_array.constructor === Array ) {
+                var length = ids_array.length;
+
+                for ( var i = 0; i < length; i++ ) {
+                    if ( ids_array[ i ].constructor === Array && 2 === ids_array[ i ].length ) {
+                        var jqElement = jQuery( ids_array[ i ][0] );
+                        if ( jqElement.length ) {
+                            if ( 1 === ids_array[ i ][1] ) {
+                                jqElement.removeClass( 'td-login-hide' ).addClass( 'td-login-show' );
+                            } else {
+                                jqElement.removeClass( 'td-login-show' ).addClass( 'td-login-hide' );
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+
+        showTabs : function( ids_array ) {
+            if ( ids_array.constructor === Array ) {
+                var length = ids_array.length;
+
+                for ( var i = 0; i < length; i++ ) {
+                    if ( ids_array[ i ].constructor === Array && 2 === ids_array[ i ].length ) {
+                        var jqElement = jQuery( ids_array[ i ][0] );
+                        if ( jqElement.length ) {
+                            if ( 1 === ids_array[ i ][1] ) {
+                                jqElement.addClass( 'td_login_tab_focus' );
+                            } else {
+                                jqElement.removeClass( 'td_login_tab_focus' );
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+
+        /**
+         * adds or remove a class from an html object
+         *
+         * param : array with object identifier (id - # or class - .)
+         * ex: ['.class_indetifier', 1, 'class_to_add'] or ['.class_indetifier', 0, 'class_to_remove']
+         */
+        addRemoveClass : function( param ) {
+            if ( param.constructor === Array && 3 === param.length ) {
+                var tdElement = jQuery( param[0] );
+                if ( tdElement.length ) {
+                    if ( 1 === param[1] ) {
+                        tdElement.addClass( param[2] );
+                    } else {
+                        tdElement.removeClass( param[2] );
+                    }
+                }
+            }
+        },
+
+
+        showHideMsg : function( msg ) {
+            var tdDisplayErr = jQuery( '.td_display_err' );
+            if ( tdDisplayErr.length ) {
+                if ( undefined !== msg && msg.constructor === String && msg.length > 0 ) {
+                    tdDisplayErr.show();
+                    tdDisplayErr.html( msg );
+                } else {
+                    tdDisplayErr.hide();
+                    tdDisplayErr.html( '' );
+                }
+            }
+        },
+
+
+        /**
+         * empty all fields in modal window
+         */
+        clearFields : function() {
+            //login fields
+            jQuery( '#login_email' ).val( '' );
+            jQuery( '#login_pass' ).val( '' );
+
+            //register fields
+            jQuery( '#register_email' ).val( '' );
+            jQuery( '#register_user' ).val( '' );
+
+            //forgot pass
+            jQuery( '#forgot_email' ).val( '' );
+        },
+
+
+        /**
+         * call to server from modal window
+         *
+         * @param $action : what action (log in, register, forgot email)
+         * @param $email  : the email beening sent
+         * @param $user   : the user name beening sent
+         */
+        doAction : function( sent_action, sent_email, sent_user, sent_pass ) {
+            jQuery.ajax({
+                type: 'POST',
+                url: td_ajax_url,
+                data: {
+                    action: sent_action,
+                    email: sent_email,
+                    user: sent_user,
+                    pass: sent_pass
+                },
+                success: function( data, textStatus, XMLHttpRequest ){
+                    var td_data_object = jQuery.parseJSON( data ); //get the data object
+
+                    //check the response from server
+                    switch( td_data_object[0] ) {
+                        case 'login':
+                            if ( 1 === td_data_object[1] ) {
+                                location.reload( true );
+                            } else {
+                                tdLogin.addRemoveClass( ['.td_display_err', 0, 'td_display_msg_ok'] );
+                                tdLogin.showHideMsg( td_data_object[2] );
+                            }
+                            break;
+
+                        case 'register':
+                            if ( 1 === td_data_object[1] ) {
+                                tdLogin.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                            } else {
+                                tdLogin.addRemoveClass( ['.td_display_err', 0, 'td_display_msg_ok'] );
+                            }
+                            tdLogin.showHideMsg( td_data_object[2] );
+                            break;
+
+                        case 'remember_pass':
+                            if ( 1 === td_data_object[1] ) {
+                                tdLogin.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                            } else {
+                                tdLogin.addRemoveClass( ['.td_display_err', 0, 'td_display_msg_ok'] );
+                            }
+                            tdLogin.showHideMsg( td_data_object[2] );
+                            break;
+                    }
+                },
+                error: function( MLHttpRequest, textStatus, errorThrown ){
+                    //console.log(errorThrown);
+                }
+            });
         }
-    });
-}
-/*  ----------------------------------------------------------------------------
- tagDiv live css compiler ( 2013 )
- - this script is used on our demo site to customize the theme live
- - not used on production sites
+    };
+
+})();
+/*
+ td_util.js
+ v1.1
  */
-var td_current_panel_stat = td_read_site_cookie('td_show_panel');
-if (td_current_panel_stat == 'show' || td_current_panel_stat == null) {
-    jQuery('.td-theme-settings-small').addClass('td-theme-settings-no-transition');
-    jQuery('.td-theme-settings-small').removeClass('td-theme-settings-small');
-}
+
+/* global jQuery:{} */
+/* global tdDetect:{} */
+/* global td_ajax_url:string */
+
+/* global td_please_wait:string */
+/* global td_email_user_pass_incorrect:string */
+/* global td_email_user_incorrect:string */
+/* global td_email_incorrect:string */
+
+
 
 /*  ----------------------------------------------------------------------------
  On load
  */
 jQuery().ready(function() {
 
-    //hide panel
-    jQuery("#td-theme-set-hide").click(function(event){
-        event.preventDefault();
-        event.stopPropagation();
-        //hide
-        td_set_cookies_life(['td_show_panel', 'hide', 86400000]);//86400000 is the number of milliseconds in a day
-        jQuery('#td-theme-settings').removeClass('td-theme-settings-no-transition');
-        jQuery('#td-theme-settings').addClass('td-theme-settings-small');
+    'use strict';
 
+    //login
+    jQuery( '#login-link-mob' ).on( 'click', function() {
+        //hides or shows the divs with inputs
+        tdLoginMob.showHideElements( [['#td-login-mob', 1], ['#td-register-mob', 0], ['#td-forgot-pass-mob', 0]] );
 
-        jQuery('.td-set-theme-style-link').removeClass('fadeInLeft');
+        jQuery( '#td-mobile-nav' ).addClass( 'td-hide-menu-content' );
 
+        if ( jQuery(window).width() > 700 && tdDetect.isIe === false ) {
+            jQuery( '#login_email-mob' ).focus();
+        }
+
+        //empty error display div
+        tdLoginMob.showHideMsg();
     });
 
-    //show panel
-    jQuery("#td-theme-settings").click(function(){
-        if (jQuery(this).hasClass('td-theme-settings-small')) {
+    //register
+    jQuery( '#register-link-mob' ).on( 'click', function() {
+        //hides or shows the divs with inputs
+        tdLoginMob.showHideElements( [['#td-login-mob', 0], ['#td-register-mob', 1], ['#td-forgot-pass-mob', 0]] );
 
-            jQuery('.td-set-theme-style-link').addClass('animated_xlong fadeInLeft');
+        jQuery( '#td-mobile-nav' ).addClass( 'td-hide-menu-content' );
 
-            //show full
-            td_set_cookies_life(['td_show_panel', 'show', 86400000]);//86400000 is the number of milliseconds in a day
-            jQuery('.td-theme-settings-small').removeClass('td-theme-settings-small');
+        if ( jQuery( window ).width() > 700  && false === tdDetect.isIe ) {
+            jQuery( '#register_email-mob' ).focus();
+        }
+
+        //empty error display div
+        tdLoginMob.showHideMsg();
+    });
+
+    //forgot pass
+    jQuery( '#forgot-pass-link-mob' ).on( 'click', function() {
+        //hides or shows the divs with inputs
+        tdLoginMob.showHideElements( [['#td-login-mob', 0], ['#td-register-mob', 0], ['#td-forgot-pass-mob', 1]] );
+
+        if (jQuery( window ).width() > 700 && false === tdDetect.isIe ) {
+            jQuery( '#forgot_email-mob' ).focus();
+        }
+
+        //empty error display div
+        tdLoginMob.showHideMsg();
+    });
+
+
+    //login button
+    jQuery( '#login_button-mob' ).on( 'click', function() {
+        tdLoginMob.handlerLogin();
+    });
+
+    //enter key on #login_pass
+    jQuery( '#login_pass-mob' ).keydown(function(event) {
+        if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+            tdLoginMob.handlerLogin();
         }
     });
+
+
+    //register button
+    jQuery( '#register_button-mob' ).on( 'click', function() {
+        tdLoginMob.handlerRegister();
+    });
+
+    //enter key on #register_user
+    jQuery( '#register_user-mob' ).keydown(function(event) {
+        if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+            tdLoginMob.handlerRegister();
+        }
+    });
+
+
+    //forgot button
+    jQuery( '#forgot_button-mob' ).on( 'click', function() {
+        tdLoginMob.handlerForgotPass();
+    });
+
+    //enter key on #forgot_email
+    jQuery( '#forgot_email-mob' ).keydown(function(event) {
+        if ( ( event.which && 13 === event.which ) || ( event.keyCode && 13 === event.keyCode ) ) {
+            tdLoginMob.handlerForgotPass();
+        }
+    });
+
+
+    // marius
+    // *****************************************************************************
+    // *****************************************************************************
+    // back login/register button
+    jQuery( '#td-mobile-nav .td-login-close a, #td-mobile-nav .td-register-close a' ).on( 'click', function() {
+        //hides or shows the divs with inputs
+        tdLoginMob.showHideElements( [['#td-login-mob', 0], ['#td-register-mob', 0], ['#td-forgot-pass-mob', 0]] );
+
+        jQuery( '#td-mobile-nav' ).removeClass( 'td-hide-menu-content' );
+    });
+
+    // back forgot pass button
+    jQuery( '#td-mobile-nav .td-forgot-pass-close a' ).on( 'click', function() {
+        //hides or shows the divs with inputs
+        tdLoginMob.showHideElements( [['#td-login-mob', 1], ['#td-register-mob', 0], ['#td-forgot-pass-mob', 0]] );
+    });
+
+});//end jquery ready
+
+
+
+
+
+var tdLoginMob = {};
+
+
+(function(){
+
+    'use strict';
+
+    tdLoginMob = {
+
+        //patern to check emails
+        email_pattern : /^[a-zA-Z0-9][a-zA-Z0-9_\.-]{0,}[a-zA-Z0-9]@[a-zA-Z0-9][a-zA-Z0-9_\.-]{0,}[a-z0-9][\.][a-z0-9]{2,4}$/,
+
+        /**
+         * handle all request made from login tab
+         */
+        handlerLogin : function() {
+            var loginEmailEl = jQuery( '#login_email-mob'),
+                loginPassEl = jQuery( '#login_pass-mob' );
+
+            if ( loginEmailEl.length && loginPassEl.length ) {
+                var loginEmailVal = loginEmailEl.val().trim(),
+                    loginPassVal = loginPassEl.val().trim();
+
+                if ( loginEmailVal && loginPassVal ) {
+                    tdLoginMob.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                    tdLoginMob.showHideMsg( td_please_wait );
+
+                    //call ajax for log in
+                    tdLoginMob.doAction( 'td_mod_login', loginEmailVal, '', loginPassVal );
+                } else {
+                    tdLoginMob.showHideMsg( td_email_user_pass_incorrect );
+                }
+            }
+        },
+
+
+        /**
+         * handle all request made from register tab
+         */
+        handlerRegister : function() {
+            var registerEmailEl = jQuery( '#register_email-mob' ),
+                registerUserEl = jQuery( '#register_user-mob' );
+
+            if ( registerEmailEl.length && registerUserEl.length ) {
+                var registerEmailVal = registerEmailEl.val().trim(),
+                    registerUserVal = registerUserEl.val().trim();
+
+                if ( tdLoginMob.email_pattern.test( registerEmailVal ) && registerUserVal ) {
+
+                    tdLoginMob.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                    tdLoginMob.showHideMsg( td_please_wait );
+
+                    //call ajax
+                    tdLoginMob.doAction( 'td_mod_register', registerEmailVal, registerUserVal, '' );
+                } else {
+                    tdLoginMob.showHideMsg( td_email_user_incorrect );
+                }
+            }
+        },
+
+
+        /**
+         * handle all request made from forgot password tab
+         */
+        handlerForgotPass : function() {
+            var forgotEmailEl = jQuery( '#forgot_email-mob' );
+
+            if ( forgotEmailEl.length ) {
+                var forgotEmailVal = forgotEmailEl.val().trim();
+
+                if ( tdLoginMob.email_pattern.test( forgotEmailVal ) ){
+
+                    tdLoginMob.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                    tdLoginMob.showHideMsg( td_please_wait );
+
+                    //call ajax
+                    tdLoginMob.doAction( 'td_mod_remember_pass', forgotEmailVal, '', '' );
+                } else {
+                    tdLoginMob.showHideMsg( td_email_incorrect );
+                }
+            }
+        },
+
+
+        /**
+         * swhich the div's acordingly to the user action (Log In, Register, Remember Password)
+         *
+         * ids_array : array of ids that have to be showed or hidden
+         */
+        showHideElements : function( ids_array ) {
+            if ( ids_array.constructor === Array ) {
+                var length = ids_array.length;
+
+                for ( var i = 0; i < length; i++ ) {
+                    if ( ids_array[ i ].constructor === Array && 2 === ids_array[ i ].length ) {
+                        var jqElement = jQuery( ids_array[ i ][0] );
+                        if ( jqElement.length ) {
+                            if ( 1 === ids_array[ i ][1] ) {
+                                jqElement.removeClass( 'td-login-hide' ).addClass( 'td-login-show' );
+                            } else {
+                                jqElement.removeClass( 'td-login-show' ).addClass( 'td-login-hide' );
+                            }
+                        }
+                    }
+                }
+            }
+        },
+
+
+        /**
+         * adds or remove a class from an html object
+         *
+         * param : array with object identifier (id - # or class - .)
+         * ex: ['.class_indetifier', 1, 'class_to_add'] or ['.class_indetifier', 0, 'class_to_remove']
+         */
+        addRemoveClass : function( param ) {
+            if ( param.constructor === Array && 3 === param.length ) {
+                var jqElement = jQuery( param[0] );
+                if ( jqElement.length ) {
+                    if ( 1 === param[1] ) {
+                        jqElement.addClass( param[2] );
+                    } else {
+                        jqElement.removeClass( param[2] );
+                    }
+                }
+            }
+        },
+
+
+        showHideMsg : function( msg ) {
+            var tdDisplayErr = jQuery( '.td_display_err' );
+            if ( tdDisplayErr.length ) {
+                if ( undefined !== msg && msg.constructor === String && msg.length > 0 ) {
+                    tdDisplayErr.show();
+                    tdDisplayErr.html( msg );
+                } else {
+                    tdDisplayErr.hide();
+                    tdDisplayErr.html( '' );
+                }
+            }
+        },
+
+
+        /**
+         * empty all fields in modal window
+         */
+        clearFields : function() {
+            //login fields
+            jQuery( '#login_email-mob' ).val( '' );
+            jQuery( '#login_pass-mob' ).val( '' );
+
+            //register fields
+            jQuery( '#register_email-mob' ).val( '' );
+            jQuery( '#register_user-mob' ).val( '' );
+
+            //forgot pass
+            jQuery( '#forgot_email-mob' ).val( '' );
+        },
+
+
+        /**
+         * call to server from modal window
+         *
+         * @param $action : what action (log in, register, forgot email)
+         * @param $email  : the email beening sent
+         * @param $user   : the user name beening sent
+         */
+        doAction : function( sent_action, sent_email, sent_user, sent_pass ) {
+            jQuery.ajax({
+                type: 'POST',
+                url: td_ajax_url,
+                data: {
+                    action: sent_action,
+                    email: sent_email,
+                    user: sent_user,
+                    pass: sent_pass
+                },
+                success: function( data, textStatus, XMLHttpRequest ){
+                    var td_data_object = jQuery.parseJSON( data ); //get the data object
+
+                    //check the response from server
+                    switch( td_data_object[0] ) {
+                        case 'login':
+                            if ( 1 === td_data_object[1] ) {
+                                location.reload( true );
+                            } else {
+                                tdLoginMob.addRemoveClass( ['.td_display_err', 0, 'td_display_msg_ok'] );
+                                tdLoginMob.showHideMsg( td_data_object[2] );
+                            }
+                            break;
+
+                        case 'register':
+                            if ( 1 === td_data_object[1] ) {
+                                tdLoginMob.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                            } else {
+                                tdLoginMob.addRemoveClass( ['.td_display_err', 0, 'td_display_msg_ok'] );
+                            }
+                            tdLoginMob.showHideMsg( td_data_object[2] );
+                            break;
+
+                        case 'remember_pass':
+                            if ( 1 === td_data_object[1] ) {
+                                tdLoginMob.addRemoveClass( ['.td_display_err', 1, 'td_display_msg_ok'] );
+                            } else {
+                                tdLoginMob.addRemoveClass( ['.td_display_err', 0, 'td_display_msg_ok'] );
+                            }
+                            tdLoginMob.showHideMsg( td_data_object[2] );
+                            break;
+                    }
+                },
+                error: function( MLHttpRequest, textStatus, errorThrown ){
+                    //console.log(errorThrown);
+                }
+            });
+        }
+    };
+
+})();
+
+
+
+/*  ----------------------------------------------------------------------------
+ tagDiv live css compiler ( 2013 )
+ - this script is used on our demo site to customize the theme live
+ - not used on production sites
+ */
+
+/* global jQuery:{} */
+/* global td_read_site_cookie:Function */
+/* global td_set_cookies_life:Function */
+/* global tdDetect: {} */
+
+var tdDemoMenu;
+
+(function(jQuery, undefined) {
+
+    'use strict';
+
+    tdDemoMenu = {
+
+        // document - horizontal mouse position
+        mousePosX: 0,
+
+        // document - vertical mouse position
+        mousePosY: 0,
+
+        // The timer waiting to start de interval
+        startTimeout: undefined,
+
+        // The interval that decreases the padding-left css value and increases the left css value of the screen demo (previewer of the demo)
+        startInterval: undefined,
+
+
+
+        // Flag marks that it's possible to move the mouse to the original demo
+        _extendedDemo: false,
+
+        // The current demo element (for which the counters have been applied)
+        _currentElement: undefined,
+
+        // The timer waiting to start the interval for extended demo
+        _startExtendedTimeout: undefined,
+
+        // The interval that decreases the width css value of the extended element
+        _startExtendedInterval: undefined,
+
+
+
+
+
+        init: function () {
+
+            // Get document mouse position
+            jQuery(document).mousemove(function (event) {
+                if (event.pageX || event.pageY) {
+                    tdDemoMenu.mousePosX = event.pageX;
+                    tdDemoMenu.mousePosY = event.pageY;
+                } else if (event.clientX || event.clientY) {
+                    tdDemoMenu.mousePosX = event.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+                    tdDemoMenu.mousePosY = event.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+                }
+            });
+
+
+            // cloase the preview on mouse leave
+            jQuery(document).mouseleave(function (event) {
+
+                // Any existing timeout is cleard to stop any further css settings
+                if (undefined !== tdDemoMenu.startTimeout) {
+                    window.clearTimeout(tdDemoMenu.startTimeout);
+                }
+
+                // Any existing interval is cleard to stop any further css settings
+                if (undefined !== tdDemoMenu.startInterval) {
+                    window.clearInterval(tdDemoMenu.startInterval);
+                }
+
+                jQuery('.td-screen-demo:first').css('visibility', 'hidden');
+                jQuery('.td-screen-demo-extend:first').hide();
+            });
+
+            // Show/hide the arrow skin scroll element
+            jQuery('#td-theme-settings').find('.td-skin-wrap:first').scroll(function (event) {
+                //console.log( event );
+
+                var theTarget = event.currentTarget,
+                    tdSkinScroll = jQuery(this).find('.td-skin-scroll:first');
+
+                if (theTarget.clientHeight + theTarget.scrollTop < theTarget.scrollHeight) {
+                    tdSkinScroll.css({
+                        bottom: 0
+                    });
+                } else {
+                    tdSkinScroll.css({
+                        bottom: -40
+                    });
+                }
+            });
+
+            jQuery('#td-theme-settings').find('.td-skin-scroll:first').click(function (event) {
+                //console.log( event );
+
+                var theTarget = event.currentTarget,
+                    tdSkinWrap = jQuery(this).closest('.td-skin-wrap');
+
+                tdSkinWrap.animate(
+                    {scrollTop: tdSkinWrap.scrollTop() + 200},
+                    {
+                        duration: 800,
+                        easing: 'easeInOutQuart'
+                    });
+            }).mouseenter(function (event) {
+                // Any existing timeout is cleard to stop any further css settings
+                if (undefined !== tdDemoMenu.startTimeout) {
+                    window.clearTimeout(tdDemoMenu.startTimeout);
+                }
+
+                // Any existing interval is cleard to stop any further css settings
+                if (undefined !== tdDemoMenu.startInterval) {
+                    window.clearInterval(tdDemoMenu.startInterval);
+                }
+
+                //jQuery( '#td-theme-settings' ).find( '.td-screen-demo:first' ).hide();
+                jQuery('#td-theme-settings').find('.td-screen-demo:first').css('visibility', 'hidden');
+            });
+
+
+
+
+            jQuery('.td-set-theme-style-link').hover(
+
+                // The mouse enter event handler
+                function (event) {
+
+                //console.log( 'in MAIN ' + contor++);
+
+                    // Any existing timeout is cleard to stop any further css settings
+                    if (undefined !== tdDemoMenu.startTimeout) {
+                        window.clearTimeout(tdDemoMenu.startTimeout);
+                    }
+
+                    // Any existing interval is cleard to stop any further css settings
+                    if (undefined !== tdDemoMenu.startInterval) {
+                        window.clearInterval(tdDemoMenu.startInterval);
+                    }
+
+                    var
+                    // The css class of the container element
+                        cssClassContainer = 'td-set-theme-style',
+
+                    // The jquery object of the current element
+                        $this = jQuery(this),
+
+                    // The jquery object of the container of the current element
+                        $thisContainer = $this.closest('.' + cssClassContainer),
+
+                    // The demo previewer
+                        jQueryDisplayEl = jQuery('.td-screen-demo:first'),
+
+                    // The ref top value considers the existing of the wpadminbar element
+                        refTopValue = 0,
+
+                    // The top value set to the css top setting
+                        topValue = 0,
+
+                    // The left value set to the css left setting
+                        rightValue = 0,
+
+                    // The padding value set to the css padding-left setting
+                        paddingRightValue = 0,
+
+                    // The extra value added to the css padding-left setting and removed from the css left setting (if we need to start earlier or later - does nothing with 0 value)
+                        extraRightValue = 0,
+
+                    // The jquery wpadminbar element
+                        jqWPAdminBar = jQuery('#wpadminbar');
+
+
+
+                    // Show the image into the image previewer
+                    var imgElement = jQueryDisplayEl.find('img:first'),
+                        dataImgUrl = $this.data('img-url');
+
+                    if (imgElement.length) {
+                        imgElement.attr('src', dataImgUrl);
+                    } else {
+                        jQueryDisplayEl.html('<img src="' + dataImgUrl + '"/>');
+                    }
+
+
+                    // The first column
+                    if ( 0 === jQuery( '.td-set-theme-style-link' ).index( this ) % 2 ) {
+                        rightValue = $thisContainer.outerWidth(true) * 2;
+
+                        // The second column
+                    } else {
+                        var $thisPrevContainer = $thisContainer.prev('.' + cssClassContainer);
+
+                        if ($thisPrevContainer.length) {
+                            rightValue = $thisPrevContainer.outerWidth(true) - extraRightValue;
+                            paddingRightValue = $thisPrevContainer.outerWidth(true) + extraRightValue;
+
+                        }
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+
+                    topValue = event.pageY - document.body.scrollTop - ( jQueryDisplayEl.outerHeight( true ) / 2 );
+
+                    // Do not allow displaying the previewer demo below the bottom of the window screen
+                    if (topValue + jQueryDisplayEl.outerHeight(true) > window.innerHeight) {
+                        topValue -= (topValue + jQueryDisplayEl.outerHeight(true)) - window.innerHeight;
+                    }
+
+                    // Do not allow displaying the previewer demo above the top of the window screen. It also checks if the wpadminbar exists.
+                    if (jqWPAdminBar.length) {
+                        refTopValue = jqWPAdminBar.outerHeight(true);
+                    } else {
+                        refTopValue = 0;
+                    }
+
+                    if (refTopValue > topValue) {
+                        topValue = refTopValue;
+                    }
+
+                    // The 'width' css property is used for Chrome and IE browsers which do not display the previewer image with auto width and auto height
+                    var cssSettings = {
+                            'top': topValue,
+                            'right': rightValue,
+                            'padding-right': paddingRightValue,
+                            'width': ''
+                        },
+                        dataWidthPreview = jQueryDisplayEl.data('width-preview');
+
+
+                    // For the first column of demos, the previewer has padding
+                    if (paddingRightValue > 0) {
+                        cssSettings.width = dataWidthPreview + paddingRightValue;
+                    }
+
+
+
+
+                    // Apply the computed css to the element
+                    jQueryDisplayEl.css(cssSettings);
+
+                    // The 'right-value' data will be used to set 'right' css value when the computed padding is < 0
+                    jQueryDisplayEl.data('right-value', rightValue + paddingRightValue);
+
+                    //jQueryDisplayEl.show();
+                    jQueryDisplayEl.css('visibility', 'visible');
+                },
+
+                // The mouse exit event handler
+                function (event) {
+
+                    //console.log('out MAIN ');
+
+                    jQuery('.td-screen-demo-extend:first').hide();
+
+                    var
+                    // The jquery object of the previewer demo element
+                        jQueryDisplayEl = jQuery('.td-screen-demo:first'),
+
+                    // The css right value
+                        existingRightValue = jQueryDisplayEl.css('right'),
+
+                    // The css padding-right value
+                        existingExtraRightValue = jQueryDisplayEl.css('padding-right'),
+
+                    // The css width value
+                        existingWidthValue = jQueryDisplayEl.css('width'),
+
+                    // The integer css right value
+                        newRightValue = parseInt(existingRightValue.replace('px', '')),
+
+                    // The integer css padding-right value
+                        newExtraRightValue = parseInt(existingExtraRightValue.replace('px', '')),
+
+                    // The step value used to decrease the padding-left css value and to increase the left css value
+                        step = 10,
+
+                    // The waiting time (ms) for the timeout
+                        startTimeoutWait = 50,
+
+                    // The time (ms) for the interval
+                    //startIntervalWait = 15,
+                    startIntervalWait = 15,
+
+                        newWidthValue = parseInt(existingWidthValue.replace('px', ''));
+
+
+                    var $this = jQuery(this);
+                    tdDemoMenu._currentElement = $this;
+
+                    var tdThemeSettingsWidth = parseInt(jQuery('#td-theme-settings').css('width').replace('px', ''));
+
+                    if (newExtraRightValue > 0) {
+
+                        // Clear any timeout if there's one, because a new one will be created
+                        if (undefined !== tdDemoMenu.startTimeout) {
+                            window.clearTimeout(tdDemoMenu.startTimeout);
+                            tdDemoMenu.startTimeout = undefined;
+                        }
+
+                        // Clear any interval if there's one, because a new one will be created
+                        if (undefined !== tdDemoMenu.startInterval) {
+                            window.clearInterval(tdDemoMenu.startInterval);
+                            tdDemoMenu.startInterval = undefined;
+                        }
+
+                        tdDemoMenu.startTimeout = setTimeout(function () {
+
+
+                            // Extended demo is eligible to be shown (true)
+                            // The flag is set to false when the mouse is found in wrong position (mouse position is reached)
+                            // The flag is set to true when the counters (the timer and the interval) finish, there the extended demo element being shown
+                            tdDemoMenu._extendedDemo = true;
+
+                            tdDemoMenu.startInterval = setInterval(function () {
+
+                                    var dataWidthPreview = jQueryDisplayEl.data('width-preview');
+
+                                    newRightValue += step;
+                                    newExtraRightValue -= step;
+                                    newWidthValue -= step;
+
+                                    var mousePositionFound = false;
+
+                                    if (newExtraRightValue <= 0 ||
+                                        newWidthValue < dataWidthPreview ||
+                                        tdDemoMenu.mousePosX <= jQuery(window).width() - tdThemeSettingsWidth ||
+                                        tdDemoMenu.mousePosX >= jQuery(window).width() - newRightValue) {
+
+                                        // Clear any timeout, and we should have one, because we finished
+                                        if (undefined !== tdDemoMenu.startTimeout) {
+                                            window.clearTimeout(tdDemoMenu.startTimeout);
+                                            tdDemoMenu.startTimeout = undefined;
+                                        }
+
+                                        // Clear any interval, and we should have one, because we finished
+                                        if (undefined !== tdDemoMenu.startInterval) {
+                                            window.clearInterval(tdDemoMenu.startInterval);
+                                            tdDemoMenu.startInterval = undefined;
+                                        }
+
+                                        newExtraRightValue = 0;
+                                        newRightValue = jQueryDisplayEl.data('right-value');
+                                        newWidthValue = dataWidthPreview;
+
+                                        if (tdDemoMenu.mousePosX >= jQuery(window).width() - newRightValue) {
+                                            mousePositionFound = true;
+                                        }
+                                    }
+
+                                    jQueryDisplayEl.css({
+                                        'right': newRightValue,
+                                        'padding-right': newExtraRightValue,
+                                        'width': newWidthValue
+                                    });
+
+                                    // The timeout started and the interval are stopped (The mouse was reached or the css computation is done)
+                                    if (mousePositionFound) {
+                                        tdDemoMenu._extendedDemo = false;
+                                        tdDemoMenu._checkMousePosition();
+                                    } else if (undefined === tdDemoMenu.startTimeout && undefined === tdDemoMenu.startInterval) {
+                                        tdDemoMenu._extendedDemo = true;
+                                        tdDemoMenu._showExtendedScreenDemo();
+                                    }
+
+                                }, startIntervalWait
+                            );
+                        }, startTimeoutWait);
+
+                    } else {
+                        //jQueryDisplayEl.hide();
+                        jQueryDisplayEl.css('visibility', 'hidden');
+                    }
+                }
+
+            ).mousemove(function(event) {
+                tdDemoMenu._moveScreenDemo( event );
+            });
+
+            jQuery('.td-screen-demo').hover(
+                function (event) {
+                    //jQuery(this).show();
+                    jQuery(this).css('visibility', 'visible');
+
+                    tdDemoMenu._resetTdScreeDemoExtendWidth();
+                },
+                function (event) {
+
+                    // We are on mouseleave event, and because of this, if the main counters (the timer and the interval) are not finished, it means we
+                    // don't have any extended demo element, so it's okay to set its flag to false and hide the extended demo element and the previewer demo element (this element)
+
+                    // The main counters (the timer and the interval) are cleared immediately, because their final step can make extend demo visible
+
+                    // Clear any timeout, and we should have one, because we finished
+                    if (undefined !== tdDemoMenu.startTimeout) {
+                        window.clearTimeout(tdDemoMenu.startTimeout);
+                        tdDemoMenu.startTimeout = undefined;
+                    }
+
+                    // Clear any interval, and we should have one, because we finished
+                    if (undefined !== tdDemoMenu.startInterval) {
+                        window.clearInterval(tdDemoMenu.startInterval);
+                        tdDemoMenu.startInterval = undefined;
+                    }
+
+                    //jQuery(this).hide();
+                    jQuery(this).css('visibility', 'hidden');
+                    jQuery('.td-screen-demo-extend:first').hide();
+                }
+
+            ).mousemove(function(event) {
+                //tdDemoMenu._moveScreenDemo( event );
+            });
+
+            jQuery('.td-screen-demo-extend').hover(
+                function (event) {
+
+                if ( tdDemoMenu._extendedDemo ) {
+
+                    // Set the flag to false to not execute this routine twice on mouseenter event
+                    tdDemoMenu._extendedDemo = false;
+
+                    var
+
+                    // The jquery current element
+                        $this = jQuery(this),
+
+                    // The jquery '.td-screen-demo' element
+                        $tdScreenDemo = jQuery('.td-screen-demo:first'),
+
+                    // The css width value
+                    //columnWidth = $this.data('width-column'),
+                        columnWidth = parseInt(jQuery('#td-theme-settings').css('width').replace('px', '')) / 2,
+
+                    // The step value used to decrease the padding-left css value and to increase the left css value
+                        step = 10,
+
+                    // The waiting time (ms) for the timeout
+                        startTimeoutWait = 50,
+
+                    // The time (ms) for the interval
+                    //startIntervalWait = 15,
+                        startIntervalWait = 15,
+
+                            newWidthValue = columnWidth;
+
+                        $this.css({
+                            'width': columnWidth + 'px',
+                            'top': $tdScreenDemo.css('top')
+                        });
+
+                        $this.show();
+                        //$tdScreenDemo.show();
+                        $tdScreenDemo.css('visibility', 'visible');
+
+
+                        tdDemoMenu._startExtendedTimeout = setTimeout(function () {
+
+                            tdDemoMenu._startExtendedInterval = setInterval(function () {
+
+                                newWidthValue -= step;
+
+                                var mousePositionFound = false;
+
+                                if (newWidthValue < 0 ||
+                                    tdDemoMenu.mousePosX <= jQuery(window).width() - columnWidth - newWidthValue) {
+
+                                    // Clear any timeout, and we should have one, because we finished
+                                    if (undefined !== tdDemoMenu._startExtendedTimeout) {
+                                        window.clearTimeout(tdDemoMenu._startExtendedTimeout);
+                                        tdDemoMenu._startExtendedTimeout = undefined;
+                                    }
+
+                                    // Clear any interval, and we should have one, because we finished
+                                    if (undefined !== tdDemoMenu._startExtendedInterval) {
+                                        window.clearInterval(tdDemoMenu._startExtendedInterval);
+                                        tdDemoMenu._startExtendedInterval = undefined;
+                                    }
+
+                                    if (tdDemoMenu.mousePosX <= jQuery(window).width() - columnWidth - newWidthValue) {
+                                        mousePositionFound = true;
+                                    }
+
+                                    newWidthValue = columnWidth;
+
+                                    $this.hide();
+                                }
+
+                                $this.css({
+                                    'width': newWidthValue,
+                                    'top': $tdScreenDemo.css('top')
+                                });
+
+                                if (mousePositionFound) {
+                                    tdDemoMenu._checkMousePosition();
+                                }
+                            }, startIntervalWait);
+                        }, startTimeoutWait);
+                    }
+                },
+                function (event) {
+
+                    /**
+                     * 1. clear any extended timer/interval
+                     * 2. hide the element
+                     * 3. adjust its width to the initial value
+                     * 4. hide the previewer element (this will be shown by the a mouseenter event if it's the case)
+                     */
+
+                    // Clear any timeout, and we should have one, because we finished
+                    if (undefined !== tdDemoMenu._startExtendedTimeout) {
+                        window.clearTimeout(tdDemoMenu._startExtendedTimeout);
+                        tdDemoMenu._startExtendedTimeout = undefined;
+                    }
+
+                    // Clear any interval, and we should have one, because we finished
+                    if (undefined !== tdDemoMenu._startExtendedInterval) {
+                        window.clearInterval(tdDemoMenu._startExtendedInterval);
+                        tdDemoMenu._startExtendedInterval = undefined;
+                    }
+
+                    tdDemoMenu._resetTdScreeDemoExtendWidth();
+
+                    jQuery(this).hide();
+
+                    //jQuery( '.td-screen-demo:first').hide();
+                    jQuery('.td-screen-demo:first').css('visibility', 'hidden');
+                }
+
+            ).mousemove(function(event) {
+                //tdDemoMenu._moveScreenDemo( event );
+            });
+        },
+
+
+
+
+        /**
+         * Position the '.td-screen-demo' element according to the mouse position
+         *
+         * @param event - mouse move
+         * @private
+         */
+        _moveScreenDemo: function( event ) {
+            var
+            // The jquery object of the previewer demo element
+                $screenDemo = jQuery( '.td-screen-demo:first' ),
+
+                $WPAdminBar = jQuery( '#wpadminbar' ),
+
+            // new top value
+                newTopValue = event.pageY - document.body.scrollTop - ( $screenDemo.outerHeight( true ) / 2 ),
+
+            // The reference top value used when #wpadminbar is enabled
+                refTopValue = 0;
+
+            if ( $WPAdminBar.length ) {
+                refTopValue = $WPAdminBar.outerHeight(true);
+            } else {
+                refTopValue = 0;
+            }
+
+            if ( refTopValue > newTopValue ) {
+                newTopValue = refTopValue;
+            }
+
+
+            if ( newTopValue < 0 ) {
+                newTopValue = 0;
+            } else if ( jQuery( window ).height() - $screenDemo.outerHeight( true ) / 2 < event.pageY - document.body.scrollTop ) {
+                newTopValue = jQuery( window ).height() - $screenDemo.outerHeight( true );
+            }
+
+            $screenDemo.css( 'top', newTopValue );
+        },
+
+
+
+
+
+        /**
+         * Used when the width of the demo menu has changed (the width of the extended screen also changes)
+         * @private
+         */
+        _resetTdScreeDemoExtendWidth: function () {
+
+            var widthColumn = parseInt(jQuery('#td-theme-settings').css('width').replace('px', '')) / 2;
+
+            jQuery('.td-screen-demo-extend:first').css({
+                'width': widthColumn + 'px'
+            });
+        },
+
+        _showExtendedScreenDemo: function () {
+
+            if (tdDemoMenu._extendedDemo) {
+
+                jQuery('.td-screen-demo-extend:first').css({
+                    top: jQuery('.td-screen-demo:first').css('top')
+                }).show();
+
+            }
+        },
+
+        _checkMousePosition: function () {
+
+            var theElement;
+
+            jQuery('.td-set-theme-style-link').each(function (index, element) {
+
+                tdDemoMenu._log(index);
+
+                var $this = jQuery(element),
+                    cssClassContainer = 'td-set-theme-style',
+                    $thisContainer = $this.closest('.' + cssClassContainer);
+
+                var verticalPosition = false;
+                var horizontalPosition = false;
+
+                if (0 === jQuery('.td-set-theme-style-link').index(element) % 2) {
+
+                    if (parseInt($thisContainer.position().top) + parseInt(jQuery(window).scrollTop()) < tdDemoMenu.mousePosY && tdDemoMenu.mousePosY < parseInt($thisContainer.position().top) + parseInt(jQuery(window).scrollTop()) + parseInt($thisContainer.outerHeight())) {
+                        verticalPosition = true;
+
+                        if (parseInt(jQuery(window).width()) - 2 * parseInt($thisContainer.outerWidth()) < tdDemoMenu.mousePosX && tdDemoMenu.mousePosX < parseInt(jQuery(window).width()) - parseInt($thisContainer.outerWidth())) {
+                            horizontalPosition = true;
+                        }
+                    }
+                    //tdDemoMenu._log( 'caz A : ' + index + ' > vert: ' + verticalPosition + ' > hori: ' + horizontalPosition + ' > posY: ' + tdDemoMenu.mousePosY + ' > posX: ' + tdDemoMenu.mousePosX +
+                    //    ' > top: ' + (parseInt($thisContainer.position().top) + parseInt(jQuery(window).scrollTop())) + ' > bottom: ' + (parseInt($thisContainer.position().top) + parseInt(jQuery(window).scrollTop()) + parseInt($thisContainer.outerHeight())) +
+                    //    ' > left: ' + (parseInt(jQuery( window ).width()) - 2 * parseInt($thisContainer.outerWidth())) + ' > right: ' + (parseInt(jQuery( window ).width()) - parseInt($thisContainer.outerWidth())) );
+
+                } else {
+                    var $thisPrevContainer = $thisContainer.prev('.' + cssClassContainer);
+
+                    if ($thisPrevContainer.length) {
+                        if (parseInt($thisPrevContainer.position().top) + parseInt(jQuery(window).scrollTop()) < tdDemoMenu.mousePosY && tdDemoMenu.mousePosY < (parseInt($thisPrevContainer.position().top) + parseInt(jQuery(window).scrollTop()) + parseInt($thisPrevContainer.outerHeight()))) {
+                            verticalPosition = true;
+
+                            if (parseInt(jQuery(window).width()) - parseInt($thisContainer.outerWidth()) < tdDemoMenu.mousePosX && tdDemoMenu.mousePosX < parseInt(jQuery(window).width())) {
+                                horizontalPosition = true;
+                            }
+                        }
+                    }
+                    //tdDemoMenu._log( 'caz B : ' + index + ' > vert: ' + verticalPosition + ' > hori: ' + horizontalPosition + ' > posY: ' + tdDemoMenu.mousePosY + ' > posX: ' + tdDemoMenu.mousePosX +
+                    //    ' > top: ' + ($thisPrevContainer.position().top + parseInt(jQuery(window).scrollTop())) + ' > bottom: ' + (parseInt($thisPrevContainer.position().top) + parseInt(jQuery(window).scrollTop()) + parseInt($thisPrevContainer.outerHeight())) +
+                    //    ' > left: ' + (parseInt(jQuery( window ).width()) - parseInt($thisContainer.outerWidth())) + ' > right: ' + parseInt(jQuery( window ).width()) );
+                }
+
+                // The element where the mouse is positioned, was found
+                if (verticalPosition && horizontalPosition) {
+                    theElement = element;
+                    return false;
+                }
+
+            });
+
+            if (undefined === theElement) {
+                //jQuery( '#td-theme-settings').find( '.td-screen-demo:first' ).hide();
+                jQuery('#td-theme-settings').find('.td-screen-demo:first').css('visibility', 'hidden');
+            } else {
+                jQuery(theElement).mouseenter();
+            }
+        },
+
+        _log: function (msg) {
+
+            //window.console.log( msg );
+        }
+
+    };
+
+})( jQuery );
+
+
+/**
+ * show the panel if the cookie is set
+ */
+(function() {
+    'use strict';
+    var td_current_panel_stat = td_read_site_cookie( 'td_show_panel' );
+    if ( 'hide' === td_current_panel_stat ) {
+        var jQueryObj = jQuery( '#td-theme-settings' );
+        if ( jQueryObj.length ) {
+            jQueryObj.removeClass( 'td-theme-settings-small' );
+            jQuery( '#td-theme-set-hide' ).html( 'DEMOS' );
+        }
+    } else {
+        jQuery( '#td-theme-set-hide' ).html( 'CLOSE');
+    }
+
+})();
+
+
+
+
+
+/*  ----------------------------------------------------------------------------
+ On load
+ */
+jQuery().ready(function() {
+
+    'use strict';
+
+    // do not run on iOS
+    if (tdDetect.isIos === false && tdDetect.isAndroid === false) {
+        tdDemoMenu.init();
+    }
+
+
+
+    // Show/hide the demo menu panel
+    jQuery( '#td-theme-set-hide' ).click(function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        var $this = jQuery(this),
+            jQueryObj = jQuery( '#td-theme-settings' );
+
+        if ( jQueryObj.hasClass( 'td-theme-settings-small' ) ) {
+            // close
+            jQueryObj.removeClass( 'td-theme-settings-small' );
+            jQueryObj.addClass( 'td-theme-settings-closed' );
+            $this.html( 'DEMOS' );
+
+            setTimeout(function(){
+                jQueryObj.addClass( 'td-ts-closed-no-transition' ); // add the remove transition class after the animation has finished
+            }, 450);
+
+            td_set_cookies_life( ['td_show_panel', 'hide', 86400000] );//86400000 is the number of milliseconds in a day
+
+
+        } else {
+            // open
+            jQueryObj.removeClass( 'td-ts-closed-no-transition' ); // remove the remove transition class :)
+
+
+            jQueryObj.addClass( 'td-theme-settings-small' );
+            jQueryObj.removeClass( 'td-theme-settings-closed' );
+            $this.html( 'CLOSE' );
+            td_set_cookies_life( ['td_show_panel', 'show', 86400000] );//86400000 is the number of milliseconds in a day
+        }
+    });
+
 
 }); //end on load
 /**
  * Created by RADU on 6/24/14.
  */
 
-"use strict";
+/* global jQuery: {} */
 
-/*  ----------------------------------------------------------------------------
- On load
- */
-jQuery().ready(function() {
-    //trending now
-    td_trending_now();
+var tdTrendingNow = {};
 
-    //call to trending now function to start auto scroll
-    td_trending_now_auto_start();
-});
+(function() {
 
+    "use strict";
 
-/*  ----------------------------------------------------------------------------
- trending now
- */
+    tdTrendingNow = {
 
-//global object that holds each `trending-now-wrapper` list of posts
-var td_trending_now_object = {
-    trending_now_autostart_blocks:[]
-};
+        // - the list of items
+        items: [],
 
-//trending now function : creates the array of posts in each trend and add events to the nav buttons
-function td_trending_now() {
+        // - trending now item
+        item: function item() {
+            //the block Unique id
+            this.blockUid = '';
+            //autostart
+            this.trendingNowAutostart = 'manual';
+            //autostart timer
+            this.trendingNowTimer = 0;
+            //slider position
+            this.trendingNowPosition = 0;
+            //posts list
+            this.trendingNowPosts = [];
+            // flag used to mark the initialization item
+            this._is_initialized = false;
+        },
 
-    //move thru all `trending-now-wrapper's` on the page
-    jQuery(".td-trending-now-wrapper").each(function() {
-        var wrapper_id = jQuery(this).attr("id");
-        var wrapper_id_navigation = jQuery(this).data("start");
+        //function used to init tdTrendingNow
+        init: function() {
+            tdTrendingNow.items = [];
+        },
 
-        if(wrapper_id_navigation != 'manual') {
-            td_trending_now_object.trending_now_autostart_blocks.push(wrapper_id);
-        }
-
-        var trending_list_posts = [];
-        var i_cont = 0;
-
-        //take the text from each post from current trending-now-wrapper
-        jQuery("#" + wrapper_id + " .td-trending-now-post").each(function() {
-            //trending_list_posts[i_cont] = jQuery(this)[0].outerHTML;
-            trending_list_posts[i_cont] = jQuery(this);
-
-            //increment the counter
-            i_cont++;
-        });
-
-        //add this array to `td_trending_now_object`
-        td_trending_now_object[wrapper_id] = trending_list_posts;
-        td_trending_now_object[wrapper_id + '_position'] = 0;
-    });
-
-    jQuery(".td-trending-now-nav-left").click(function(event){
-        event.preventDefault();
-        var wrapper_id_for_nav = jQuery(this).data("wrapper-id");
-
-        // if there's just a single post to be shown, there's no need for next/prev/autostart
-        if (wrapper_id_for_nav != undefined && td_trending_now_object[wrapper_id_for_nav].length <= 1) {
-            return;
-        }
-
-        var data_moving = jQuery(this).data("moving");
-        var control_start = jQuery(this).data("control-start");
-
-        /**
-         * used when the trending now block is used on auto mod and we click on show prev or show next article title
-         * this will make the auto mode wait another xx seconds before displaying the next article title
-         */
-        if(control_start != 'manual'){
-            clearInterval(td_trending_now_object[wrapper_id_for_nav + "_timer"]);
-            td_trending_now_object[wrapper_id_for_nav + "_timer"] = setInterval(function() {td_trending_now_change_text([wrapper_id_for_nav, 'left'], true);}, 3000);
-        }
-
-
-        //call to change the text
-        td_trending_now_change_text([wrapper_id_for_nav, 'right'], false);
-    });
-
-
-    jQuery(".td-trending-now-nav-right").click(function(event){
-        event.preventDefault();
-        var wrapper_id_for_nav = jQuery(this).data("wrapper-id");
-
-        // if there's just a single post to be shown, there's no need for next/prev/autostart
-        if (wrapper_id_for_nav != undefined && td_trending_now_object[wrapper_id_for_nav].length <= 1) {
-            return;
-        }
-
-        var data_moving = jQuery(this).data("moving");
-        var control_start = jQuery(this).data("control-start");
-
-        /**
-         * used when the trending now block is used on auto mod and we click on show prev or show next article title
-         * this will make the auto mode wait another xx seconds before displaying the next article title
-         */
-        if(control_start != 'manual'){
-            clearInterval(td_trending_now_object[wrapper_id_for_nav + "_timer"]);
-            td_trending_now_object[wrapper_id_for_nav + "_timer"] = setInterval(function() {td_trending_now_change_text([wrapper_id_for_nav, 'left'], true);}, 3000);
-        }
-
-        //call to change the text
-        td_trending_now_change_text([wrapper_id_for_nav, 'left'], true);
-    });
-
-    //console.log(td_trending_now_object);
-}
-
-
-/*
- function for changing the posts in `trending now` display area
- *
- *array_param[0] : the id of current `trending now wrapper`
- *array_param[1] : moving direction (left or right)
- */
-function td_trending_now_change_text(array_param, to_right) {
-
-    //for consistency use the same variables names as thh parent function
-    var wrapper_id_for_nav = array_param[0];
-    var data_moving = array_param[1];
-
-    //get the list of post and position for this trending now block
-    var posts_array_list_for_this_trend = td_trending_now_object[wrapper_id_for_nav];
-
-
-    // the following method is not so good because using it, many timers are already created
-    //
-    // if there's just a single post to be shown, there's no need for next/prev/autostart
-    //if (posts_array_list_for_this_trend.length <= 1) {
-    //    return;
-    //}
-
-    var posts_array_list_position = td_trending_now_object[wrapper_id_for_nav + '_position'];
-
-    var previous_post_array_list_position = posts_array_list_position;
-
-    //count how many post are in the list
-    var post_count = posts_array_list_for_this_trend.length - 1;
-
-    if(data_moving == "left") {
-        posts_array_list_position += 1;
-
-        if(posts_array_list_position > post_count) {
-            posts_array_list_position = 0;
-        }
-
-    } else {
-        posts_array_list_position -= 1;
-
-        if(posts_array_list_position < 0) {
-            posts_array_list_position = post_count;
-        }
-    }
-
-    //update the new position in the global `td_trending_now_object`
-    td_trending_now_object[wrapper_id_for_nav + '_position'] = posts_array_list_position;
-
-    posts_array_list_for_this_trend[previous_post_array_list_position].css('opacity', 0);
-    posts_array_list_for_this_trend[previous_post_array_list_position].css('z-index', 0);
-
-    for (var trending_post in posts_array_list_for_this_trend) {
-        posts_array_list_for_this_trend[trending_post].removeClass('animated_xlong fadeInLeft fadeInRight fadeOutLeft fadeOutRight');
-    }
-
-    posts_array_list_for_this_trend[posts_array_list_position].css('opacity', 1);
-    posts_array_list_for_this_trend[posts_array_list_position].css('z-index', 1);
-
-    if (to_right === true) {
-
-        posts_array_list_for_this_trend[previous_post_array_list_position].addClass('animated_xlong fadeOutLeft');
-        posts_array_list_for_this_trend[posts_array_list_position].addClass('animated_xlong fadeInRight');
-    } else {
-
-        posts_array_list_for_this_trend[previous_post_array_list_position].addClass('animated_xlong fadeOutRight');
-        posts_array_list_for_this_trend[posts_array_list_position].addClass('animated_xlong fadeInLeft');
-    }
-}
-
-
-//trending now function to auto start
-function td_trending_now_auto_start() {
-
-    var list = td_trending_now_object.trending_now_autostart_blocks;
-
-    for (var i = 0, len = list.length; i < len; i += 1) {
-        (function(i) {
-
-            // if there's just a single post to be shown, there's no need for next/prev/autostart
-            if (td_trending_now_object[list[i]].length <= 1) {
+        //internal utility function used to initialize an item
+        _initialize_item: function( item ) {
+            // an item must be initialized only once
+            if ( true === item._is_initialized ) {
                 return;
             }
+            // the item is marked as initialized
+            item._is_initialized = true;
+        },
+
+        //add an item
+        addItem: function( item ) {
+
+            //todo - add some checks on item
+            // check to see if the item is ok
+            if (typeof item.blockUid === 'undefined') {
+                throw 'item.blockUid is not valid';
+            }
+            if (typeof item.trendingNowPosts === 'undefined' || item.trendingNowPosts.length < 1) {
+                throw 'item.trendingNowPosts is not valid';
+            }
+
+            // the item is added in the items list
+            tdTrendingNow.items.push( item );
+
+            // the item is initialized only once when it is added
+            tdTrendingNow._initialize_item( item );
+
+            //autostart
+            tdTrendingNow.tdTrendingNowAutoStart(item.blockUid);
+        },
+
+        //deletes an item base on blockUid
+        deleteItem: function( blockUid ) {
+            for (var cnt = 0; cnt < tdTrendingNow.items.length; cnt++) {
+                if (tdTrendingNow.items[cnt].blockUid === blockUid) {
+                    tdTrendingNow.items.splice(cnt, 1); // remove the item from the "array"
+                    return true;
+                }
+            }
+            return false;
+        },
+
+        //switch to the previous item
+        itemPrev: function( blockUid ) {
+            //current item
+            var i, currentItem;
+            //get current item
+            for (var cnt = 0; cnt < tdTrendingNow.items.length; cnt++) {
+                if (tdTrendingNow.items[cnt].blockUid === blockUid) {
+                    currentItem = tdTrendingNow.items[cnt];
+                }
+            }
+
+            // if there's just a single post to be shown, there's no need for next/prev/autostart
+            if ((blockUid !== undefined) && (1 >= currentItem.trendingNowPosts.length))  {
+                return;
+            }
+
+            /**
+             * used when the trending now block is used on auto mod and we click on show prev or show next article title
+             * this will make the auto mode wait another xx seconds before displaying the next article title
+             */
+            if ('manual' !== currentItem.trendingNowAutostart) {
+                clearInterval(currentItem.trendingNowTimer);
+                currentItem.trendingNowTimer = setInterval(function () {
+                    tdTrendingNow.tdTrendingNowChangeText([blockUid, 'left'], true);
+                }, 3000);
+            }
+
+            //call to change the text
+            tdTrendingNow.tdTrendingNowChangeText([blockUid, 'right'], false);
+        },
+
+        //switch to the next item
+        itemNext: function ( blockUid ) {
+            //current item
+            var i, currentItem;
+            //get current item
+            for (var cnt = 0; cnt < tdTrendingNow.items.length; cnt++) {
+                if (tdTrendingNow.items[cnt].blockUid === blockUid) {
+                    currentItem = tdTrendingNow.items[cnt];
+                }
+            }
+
+            // if there's just a single post to be shown, there's no need for next/prev/autostart
+            if ((blockUid !== undefined) && (1 >= currentItem.trendingNowPosts.length))  {
+                return;
+            }
+
+            /**
+             * used when the trending now block is used on auto mod and we click on show prev or show next article title
+             * this will make the auto mode wait another xx seconds before displaying the next article title
+             */
+            if ('manual' !== currentItem.trendingNowAutostart) {
+                clearInterval(currentItem.trendingNowTimer);
+                currentItem.trendingNowTimer = setInterval(function () {
+                    tdTrendingNow.tdTrendingNowChangeText([blockUid, 'left'], true);
+                }, 3000);
+            }
+
+            //call to change the text
+            tdTrendingNow.tdTrendingNowChangeText([blockUid, 'left'], true);
+        },
+
+        /*
+         function for changing the posts in `trending now` display area
+         *
+         *array_param[0] : the id of current `trending now wrapper`
+         *array_param[1] : moving direction (left or right)
+         */
+        tdTrendingNowChangeText: function(array_param, to_right) {
+
+            //for consistency use the same variables names as thh parent function
+            var blockUid = array_param[0],
+                movingDirection = array_param[1],
+                postsArrayListForThisTrend = [],
+                postsArrayListPosition = 0,
+                itemPosition;
+
+            for (var cnt = 0; cnt < tdTrendingNow.items.length; cnt++) {
+                if (tdTrendingNow.items[cnt].blockUid === blockUid) {
+                    itemPosition = cnt;
+                    postsArrayListForThisTrend = tdTrendingNow.items[cnt].trendingNowPosts;
+                    postsArrayListPosition = tdTrendingNow.items[cnt].trendingNowPosition;
+                }
+            }
             
-            td_trending_now_object[list[i] + "_timer"] = setInterval(function() {
+            if (typeof itemPosition !== 'undefined' && itemPosition !== null) {
+                var previousPostArrayListPosition = postsArrayListPosition,
+                    post_count = postsArrayListForThisTrend.length - 1;//count how many post are in the list
+
+                if ('left' === movingDirection) {
+                    postsArrayListPosition += 1;
+
+                    if (postsArrayListPosition > post_count) {
+                        postsArrayListPosition = 0;
+                    }
+
+                } else {
+                    postsArrayListPosition -= 1;
+
+                    if (postsArrayListPosition < 0) {
+                        postsArrayListPosition = post_count;
+                    }
+                }
+
+                //update the new position in the global `tdTrendingNow`
+                tdTrendingNow.items[itemPosition].trendingNowPosition = postsArrayListPosition;
+
+                postsArrayListForThisTrend[previousPostArrayListPosition].css('opacity', 0);
+                postsArrayListForThisTrend[previousPostArrayListPosition].css('z-index', 0);
+
+                for (var trending_post in postsArrayListForThisTrend) {
+                    if (true === postsArrayListForThisTrend.hasOwnProperty(trending_post)) {
+                        postsArrayListForThisTrend[trending_post].removeClass('td_animated_xlong td_fadeInLeft td_fadeInRight td_fadeOutLeft td_fadeOutRight');
+                    }
+                }
+
+                postsArrayListForThisTrend[postsArrayListPosition].css('opacity', 1);
+                postsArrayListForThisTrend[postsArrayListPosition].css('z-index', 1);
+
+                if (true === to_right) {
+
+                    postsArrayListForThisTrend[previousPostArrayListPosition].addClass('td_animated_xlong td_fadeOutLeft');
+                    postsArrayListForThisTrend[postsArrayListPosition].addClass('td_animated_xlong td_fadeInRight');
+                } else {
+
+                    postsArrayListForThisTrend[previousPostArrayListPosition].addClass('td_animated_xlong td_fadeOutRight');
+                    postsArrayListForThisTrend[postsArrayListPosition].addClass('td_animated_xlong td_fadeInLeft');
+                }
+            }
+        },
+
+        //trending now function to auto start
+        tdTrendingNowAutoStart: function(blockUid) {
+            for (var cnt = 0; cnt < tdTrendingNow.items.length; cnt++) {
+                // if there's just a single post to be shown, there's no need for next/prev/autostart
+                if (tdTrendingNow.items[cnt].blockUid === blockUid && tdTrendingNow.items[cnt].trendingNowAutostart !== 'manual') {
+                    tdTrendingNow.items[cnt].trendingNowTimer = tdTrendingNow.setTimerChangingText(blockUid);
+                }
+            }
+        },
+
+        setTimerChangingText: function( blockUid ) {
+            return setInterval(function () {
                 //console.log(i + "=>" + list[i] + "\n");
-                td_trending_now_change_text([list[i], 'left'], true);
-            }, 3000)
-        })(i);
-    }
-}
+                tdTrendingNow.tdTrendingNowChangeText([blockUid, 'left'], true);
+            }, 3000);
+        }
+
+    };
+
+    tdTrendingNow.init();
+
+})();
 "use strict";
 
 
@@ -4056,734 +5946,701 @@ if (window.history && window.history.pushState) {
  * @depends on:
  * td_util
  * td_events
- * td_affix
+ * tdAffix
  */
 
-"use strict";
+/* global jQuery:{} */
+/* global tdUtil:{} */
+/* global tdViewport:{} */
+/* global tdAffix:{} */
 
 
-var td_smart_sidebar = {
-    hasItems: false, // this class will only work when this flag is true. If we don't have any items, all the calculations on scroll will be disabled by this flag
-    items: [], //the array that has all the items
-    scroll_window_scrollTop_last: 0, //last scrollTop position, used to calculate the scroll direction
+var tdSmartSidebar = {};
+
+(function(){
+
+    'use strict';
+
+    tdSmartSidebar = {
+        hasItems: false, // this class will only work when this flag is true. If we don't have any items, all the calculations on scroll will be disabled by this flag
+        items: [], //the array that has all the items
+        scroll_window_scrollTop_last: 0, //last scrollTop position, used to calculate the scroll direction
 
 
+        tds_snap_menu: tdUtil.getBackendVar( 'tds_snap_menu' ),   //read the snap menu setting from theme panel
 
-
-    tds_snap_menu: tdUtil.getBackendVar('tds_snap_menu'),   //read the snap menu setting from theme panel
-
-
-    /**
-     * @see td_smart_sidebar.td_events_resize
-     */
-    is_enabled: true, //if the smart sidebar is not needed (ex on mobile) put this flag to true
-    is_enabled_state_run_once: false, // make sure that we dun enable and disable only once
-    is_disabled_state_run_once:false,
-
-
-    is_tablet_grid: false, //we detect if the current grid is the tablet portrait one
-
-
-
-    _view_port_current_interval_index: td_viewport.get_current_interval_index(),
-
-
-
-    item: function() {
-        this.content_jquery_obj = '';
-        this.sidebar_jquery_obj = '';
-
-
-        // the position variables
-        this.sidebar_top = 0;
-        this.sidebar_bottom = 0;
-        this.sidebar_height = 0;
-
-
-
-        this.content_top = 0;
-        this.content_bottom = 0;
-
-        // the sidebar state
-        this.sidebar_state = '';
-
-        this.case_1_run_once = false;
-        this.case_2_run_once = false;
-        this.case_3_run_once = false;
-        this.case_3_last_sidebar_height = 0; // case 3 has to be recalculated if the sidebar height changes
-        this.case_3_last_content_height = 0; // recalculate case 3 if content height has changed
-        this.case_4_run_once = false;
-        this.case_4_last_menu_offset = 0;
-        this.case_5_run_once = false;
-        this.case_6_run_once = false;
-
-    },
-
-
-
-
-
-    //add item to the array
-    add_item: function add_item(item) {
-        td_smart_sidebar.hasItems = true; //put the flag that we have items
 
         /**
-         * add clear fix to the content and sidebar.
-         * we need the clear fix to clear the margin of the first and last element
+         * @see tdSmartSidebar.td_events_resize
          */
-        item.sidebar_jquery_obj
-            .prepend('<div class="clearfix"></div>')
-            .append('<div class="clearfix"></div>');
-
-        item.content_jquery_obj
-            .prepend('<div class="clearfix"></div>')
-            .append('<div class="clearfix"></div>');
+        is_enabled: true, //if the smart sidebar is not needed (ex on mobile) put this flag to true
+        is_enabled_state_run_once: false, // make sure that we dun enable and disable only once
+        is_disabled_state_run_once: false,
 
 
-        td_smart_sidebar.items.push(item);
+        is_tablet_grid: false, //we detect if the current grid is the tablet portrait one
 
 
-    },
+        _view_port_current_interval_index: tdViewport.getCurrentIntervalIndex(),
 
 
-
-    td_events_scroll: function td_events_scroll(scrollTop) {
-
-
-        // we don't have any smart sidebars, return
-        if (td_smart_sidebar.hasItems === false) {
-            return;
-        }
+        item: function() {
+            this.content_jquery_obj = '';
+            this.sidebar_jquery_obj = '';
 
 
-        // check if the smart sidebar is enabled ( the sidebar can be enabled / disabled on runtime )
-        if (td_smart_sidebar.is_enabled == false) {
-
-            if (td_smart_sidebar.is_disabled_state_run_once === false) { // this call runs only ONCE / state change - we don't want any code to run on mobile
-                td_smart_sidebar.is_disabled_state_run_once = true;
-                for (var item_index = 0; item_index < td_smart_sidebar.items.length; item_index++) {
-                    td_smart_sidebar.items[item_index].sidebar_jquery_obj.css({
-                        "width": "auto",
-                        "position": "static",
-                        "top": "auto",
-                        "bottom": "auto"
-                    });
-                }
-                td_smart_sidebar.log('smart_sidebar_disabled');
-            }
-
-            return;
-        }
+            // the position variables
+            this.sidebar_top = 0;
+            this.sidebar_bottom = 0;
+            this.sidebar_height = 0;
 
 
+            this.content_top = 0;
+            this.content_bottom = 0;
 
-        // all is done in an animation frame
-        window.requestAnimationFrame(function() {
+            // the sidebar state
+            this.sidebar_state = '';
+
+            this.case_1_run_once = false;
+            this.case_2_run_once = false;
+            this.case_3_run_once = false;
+            this.case_3_last_sidebar_height = 0; // case 3 has to be recalculated if the sidebar height changes
+            this.case_3_last_content_height = 0; // recalculate case 3 if content height has changed
+            this.case_4_run_once = false;
+            this.case_4_last_menu_offset = 0;
+            this.case_5_run_once = false;
+            this.case_6_run_once = false;
+        },
 
 
-
+        //add item to the array
+        add_item: function( item ) {
+            tdSmartSidebar.hasItems = true; //put the flag that we have items
 
             /**
-             * this is the height of the menu, computed live. We
-             * @type {number}
+             * add clear fix to the content and sidebar.
+             * we need the clear fix to clear the margin of the first and last element
              */
-            var td_affix_menu_computed_height = 0;
-            if (td_smart_sidebar.tds_snap_menu != '') { // if the menu is not snapping in any way - do not calculate this
+            item.sidebar_jquery_obj
+                .prepend( '<div class="clearfix"></div>' )
+                .append( '<div class="clearfix"></div>' );
 
-                // The main_menu_height was replaced with the _get_menu_affix_height(), because we need the size of the
-                // affix menu. In the 'Newspaper' the menu has different sizes when it is affix 'on' and 'off'.
-                td_affix_menu_computed_height = td_affix._get_menu_affix_height();
+            item.content_jquery_obj
+                .prepend( '<div class="clearfix"></div>' )
+                .append( '<div class="clearfix"></div>' );
 
-                // Menu offset value is added when we are on 'smart_snap_always' case
-                if ('smart_snap_always' === td_affix.tds_snap_menu) {
-                    td_affix_menu_computed_height += td_affix.menu_offset;
+
+            tdSmartSidebar.items.push( item );
+        },
+
+
+        td_events_scroll: function( scrollTop ) {
+
+
+            // we don't have any smart sidebars, return
+            if ( false === tdSmartSidebar.hasItems ) {
+                return;
+            }
+
+
+            // check if the smart sidebar is enabled ( the sidebar can be enabled / disabled on runtime )
+            if ( false === tdSmartSidebar.is_enabled ) {
+
+                if ( false === tdSmartSidebar.is_disabled_state_run_once ) { // this call runs only ONCE / state change - we don't want any code to run on mobile
+                    tdSmartSidebar.is_disabled_state_run_once = true;
+                    for ( var item_index = 0; item_index < tdSmartSidebar.items.length; item_index++ ) {
+                        tdSmartSidebar.items[ item_index ].sidebar_jquery_obj.css({
+                            width: 'auto',
+                            position: 'static',
+                            top: 'auto',
+                            bottom: 'auto'
+                        });
+                    }
+                    tdSmartSidebar.log( 'smart_sidebar_disabled' );
                 }
-            }
-            // The following height is added just for Newspaper theme.
-            // In the Newsmag theme, the sidebar elements have already a 'padding-top' of 20px
 
-            if (('undefined' !== typeof window.tdThemeName) && ('Newspaper' === window.tdThemeName)) {
-                td_affix_menu_computed_height += 20;
+                return;
             }
 
 
-
-
-
-            // compute the scrolling direction
-            var scroll_direction = '';
-            //check the direction
-            if (scrollTop != td_smart_sidebar.scroll_window_scrollTop_last) { // compute direction only if we have different last scroll top
-                // compute the direction of the scroll
-                if (scrollTop > td_smart_sidebar.scroll_window_scrollTop_last) {
-                    scroll_direction = 'down';
-                } else {
-                    scroll_direction = 'up';
-                }
-            }
-            td_smart_sidebar.scroll_window_scrollTop_last = scrollTop;
-
-
-
-            /**
-             * scrollTop - is the distance that is scrolled from the top of the document PLUS the height of the menu
-             */
-
-
-
-            var view_port_height = jQuery(window).height(); // ~ we can get this only once + on resize
-            var view_port_bottom = scrollTop + view_port_height;
-
-            scrollTop = scrollTop + td_affix_menu_computed_height;
-
-            // go in all the sidebar items
-            for (var item_index = 0; item_index < td_smart_sidebar.items.length; item_index++) {
-
-                var cur_item_ref = td_smart_sidebar.items[item_index];
-
-                cur_item_ref.content_top = cur_item_ref.content_jquery_obj.offset().top;
-                cur_item_ref.content_height = cur_item_ref.content_jquery_obj.height();
-                cur_item_ref.content_bottom = cur_item_ref.content_top + cur_item_ref.content_height;
-
-                cur_item_ref.sidebar_top = cur_item_ref.sidebar_jquery_obj.offset().top;
-                cur_item_ref.sidebar_height = cur_item_ref.sidebar_jquery_obj.height();
-                cur_item_ref.sidebar_bottom = cur_item_ref.sidebar_top + cur_item_ref.sidebar_height;
-
-
-
+            // all is done in an animation frame
+            window.requestAnimationFrame(function() {
 
 
                 /**
-                 * Is the sidebar smaller than the content ?
+                 * this is the height of the menu, computed live. We
+                 * @type {number}
                  */
-                if (cur_item_ref.content_height <= cur_item_ref.sidebar_height) {
-                    cur_item_ref.sidebar_state = 'case_6_content_too_small';
+                var td_affix_menu_computed_height = 0;
+                if ( '' !== tdSmartSidebar.tds_snap_menu ) { // if the menu is not snapping in any way - do not calculate this
+
+                    // The main_menu_height was replaced with the _get_menu_affix_height(), because we need the size of the
+                    // affix menu. In the 'Newspaper' the menu has different sizes when it is affix 'on' and 'off'.
+                    td_affix_menu_computed_height = tdAffix._get_menu_affix_height();
+
+                    // Menu offset value is added when we are on 'smart_snap_always' case
+                    if ('smart_snap_always' === tdAffix.tds_snap_menu) {
+                        td_affix_menu_computed_height += tdAffix.menu_offset;
+                    }
+                }
+                // The following height is added just for Newspaper theme.
+                // In the Newsmag theme, the sidebar elements have already a 'padding-top' of 20px
+
+                if ( ( 'undefined' !== typeof window.tdThemeName ) && ( 'Newspaper' === window.tdThemeName ) ) {
+                    td_affix_menu_computed_height += 20;
+                }
+
+
+
+
+
+                // compute the scrolling direction
+                var scroll_direction = '';
+                //check the direction
+                if ( scrollTop !== tdSmartSidebar.scroll_window_scrollTop_last ) { // compute direction only if we have different last scroll top
+                    // compute the direction of the scroll
+                    if ( scrollTop > tdSmartSidebar.scroll_window_scrollTop_last ) {
+                        scroll_direction = 'down';
+                    } else {
+                        scroll_direction = 'up';
+                    }
+                }
+                tdSmartSidebar.scroll_window_scrollTop_last = scrollTop;
 
 
 
                 /**
-                 * the sidebar is smaller than the view port?  that means that we have to switch to a more simpler sidebar AKA affix
-                */
+                 * scrollTop - is the distance that is scrolled from the top of the document PLUS the height of the menu
+                 */
 
-                } else if (cur_item_ref.sidebar_height < view_port_height) {
 
-                    // ref value used to compare the scroll top
-                    var ref_value = cur_item_ref.content_top;
 
-                    // For 'Newsmag' the ref value is incremented with td_affix_menu_computed_height
-                    // It solves a case when the affix menu leaves the 'case_2_top_of_content' phase to 'case_4_fixed_up' too early
-                    // It's because of how the grid, and smart sidebar, are built on Newspaper vs Newsmag
-                    if (!td_affix.is_menu_affix && ('undefined' !== typeof window.tdThemeName) && ('Newsmag' === window.tdThemeName) && ('smart_snap_always' === td_affix.tds_snap_menu)) {
-                        ref_value += td_affix_menu_computed_height;
-                    }
+                var view_port_height = jQuery( window ).height(); // ~ we can get this only once + on resize
+                var view_port_bottom = scrollTop + view_port_height;
 
-                    //if (td_smart_sidebar._is_smaller_or_equal(scrollTop, cur_item_ref.content_top)) {
-                    if (td_smart_sidebar._is_smaller_or_equal(scrollTop, ref_value)) {
-                        // not affix - we did not scroll to reach the sidebar
-                        cur_item_ref.sidebar_state = 'case_2_top_of_content';
-                    }
+                scrollTop = scrollTop + td_affix_menu_computed_height;
 
-                    // [1] if the sidebar is visible and we have enough space in the sidebar, place it at the top affix top
-                    // [2] if the sidebar is above the view port and nothing is visible, place the sidebar at the bottom of the column
+                // go in all the sidebar items
+                for ( var item_index = 0; item_index < tdSmartSidebar.items.length; item_index++ ) {
 
-                    else if (td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, scrollTop) === true) {
-                        if (td_smart_sidebar._is_smaller(scrollTop, cur_item_ref.content_bottom - cur_item_ref.sidebar_height)) { //this is a special case where on the initial load, the bottom of the content is visible and we have a lot of space to show the widget at the top affixed.
-                            cur_item_ref.sidebar_state = 'case_4_fixed_up'; // [1]87
-                        } else {
-                            cur_item_ref.sidebar_state = 'case_3_bottom_of_content'; // [2]
+                    var cur_item_ref = tdSmartSidebar.items[ item_index ];
+
+                    cur_item_ref.content_top = cur_item_ref.content_jquery_obj.offset().top;
+                    cur_item_ref.content_height = cur_item_ref.content_jquery_obj.height();
+                    cur_item_ref.content_bottom = cur_item_ref.content_top + cur_item_ref.content_height;
+
+                    cur_item_ref.sidebar_top = cur_item_ref.sidebar_jquery_obj.offset().top;
+                    cur_item_ref.sidebar_height = cur_item_ref.sidebar_jquery_obj.height();
+                    cur_item_ref.sidebar_bottom = cur_item_ref.sidebar_top + cur_item_ref.sidebar_height;
+
+
+
+
+
+                    /**
+                     * Is the sidebar smaller than the content ?
+                     */
+                    if ( cur_item_ref.content_height <= cur_item_ref.sidebar_height ) {
+                        cur_item_ref.sidebar_state = 'case_6_content_too_small';
+
+
+
+                        /**
+                         * the sidebar is smaller than the view port?  that means that we have to switch to a more simpler sidebar AKA affix
+                         */
+
+                    } else if ( cur_item_ref.sidebar_height < view_port_height ) {
+
+                        // ref value used to compare the scroll top
+                        var ref_value = cur_item_ref.content_top;
+
+                        // For 'Newsmag' the ref value is incremented with td_affix_menu_computed_height
+                        // It solves a case when the affix menu leaves the 'case_2_top_of_content' phase to 'case_4_fixed_up' too early
+                        // It's because of how the grid, and smart sidebar, are built on Newspaper vs Newsmag
+                        if ( ! tdAffix.is_menu_affix && ( 'undefined' !== typeof window.tdThemeName ) && ( 'Newsmag' === window.tdThemeName ) && ( 'smart_snap_always' === tdAffix.tds_snap_menu ) ) {
+                            ref_value += td_affix_menu_computed_height;
                         }
+
+                        //if (tdSmartSidebar._is_smaller_or_equal(scrollTop, cur_item_ref.content_top)) {
+                        if ( tdSmartSidebar._is_smaller_or_equal( scrollTop, ref_value ) ) {
+                            // not affix - we did not scroll to reach the sidebar
+                            cur_item_ref.sidebar_state = 'case_2_top_of_content';
+                        }
+
+                        // [1] if the sidebar is visible and we have enough space in the sidebar, place it at the top affix top
+                        // [2] if the sidebar is above the view port and nothing is visible, place the sidebar at the bottom of the column
+
+                        else if ( true === tdSmartSidebar._is_smaller( cur_item_ref.sidebar_bottom, scrollTop ) ) {
+                            if ( tdSmartSidebar._is_smaller( scrollTop, cur_item_ref.content_bottom - cur_item_ref.sidebar_height ) ) { //this is a special case where on the initial load, the bottom of the content is visible and we have a lot of space to show the widget at the top affixed.
+                                cur_item_ref.sidebar_state = 'case_4_fixed_up'; // [1]87
+                            } else {
+                                cur_item_ref.sidebar_state = 'case_3_bottom_of_content'; // [2]
+                            }
+
+
+                        } else {
+
+                            // affix
+                            if ( tdSmartSidebar._is_smaller_or_equal( cur_item_ref.content_bottom, cur_item_ref.sidebar_bottom ) ) { // check to see if we reached the bottom of the content / row
+                                if ( 'up' === scroll_direction && tdSmartSidebar._is_smaller_or_equal( scrollTop, cur_item_ref.sidebar_top ) ) {
+                                    cur_item_ref.sidebar_state = 'case_4_fixed_up'; // get out of the case_3_bottom_of_content state
+                                } else {
+                                    cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
+                                }
+
+                            } else {
+                                if ( cur_item_ref.content_bottom - scrollTop >= cur_item_ref.sidebar_height ) {
+                                    // Make sure that we have space for the sidebar to affix it to the top
+                                    cur_item_ref.sidebar_state = 'case_4_fixed_up';  // we are not at the bottom of the content
+                                } else {
+
+                                    // this case isn't reached. It's accomplish by the tdSmartSidebar._is_smaller_or_equal(cur_item_ref.content_bottom, cur_item_ref.sidebar_bottom) case
+
+                                    cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
+                                }
+                                //console.log(cur_item_ref.content_bottom + ' >= ' +  cur_item_ref.sidebar_bottom); //@todo fix this case pe ? @20may2016 era un url aici dar l-am sters din motive de securitate
+                            }
+                        }
+
+
+
+                        /**
+                         * the sidebar is larger than the view port and the content is bigger
+                         */
 
 
                     } else {
 
-                        // affix
-                        if (td_smart_sidebar._is_smaller_or_equal(cur_item_ref.content_bottom, cur_item_ref.sidebar_bottom)) { // check to see if we reached the bottom of the content / row
-                            if (scroll_direction == 'up' && td_smart_sidebar._is_smaller_or_equal(scrollTop, cur_item_ref.sidebar_top)) {
-                                cur_item_ref.sidebar_state = 'case_4_fixed_up'; // get out of the case_3_bottom_of_content state
-                            } else {
+                        //// if the sidebar is above the view port and nothing is visible, place the sidebar at the bottom of the column
+                        //if (tdSmartSidebar._is_smaller(cur_item_ref.sidebar_bottom, scrollTop) === true) {
+                        //    cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
+                        //    tdSmartSidebar.log(cur_item_ref.sidebar_bottom + ' ~ ' + scrollTop);
+                        //}
+
+
+                        // if the sidebar is above the view port and nothing is visible, place the sidebar fixed up if it's smaller than the viewport,
+                        //      fixed down, meaning that a possible previous operation could be 'scroll down'
+                        // if none of the above operations meets the conditions, the sidebar is placed at the bottom of the content
+                        if ( true === tdSmartSidebar._is_smaller( cur_item_ref.sidebar_bottom, scrollTop ) ) {
+
+                            if ( true === tdSmartSidebar._is_smaller_or_equal(scrollTop, cur_item_ref.sidebar_top ) &&
+
+                                true === tdSmartSidebar._is_smaller_or_equal( cur_item_ref.content_top, scrollTop ) //we are scrolling up ... make sure that we don't overshoot the sidebar by going over content_top. This happens when the sidebar is offseted by x number of pixels vs content
+                            ) {
+                                //console.log('sidebar_top' + cur_item_ref.sidebar_top + ' content top:' + cur_item_ref.content_top);
+                                cur_item_ref.sidebar_state = 'case_4_fixed_up';
+                            }
+                            else if (
+                                true === tdSmartSidebar._is_smaller( cur_item_ref.sidebar_bottom, view_port_bottom ) &&
+                                true === tdSmartSidebar._is_smaller( cur_item_ref.sidebar_bottom, cur_item_ref.content_bottom ) &&
+                                cur_item_ref.content_bottom >= view_port_bottom
+                            ) {
+                                cur_item_ref.sidebar_state = 'case_1_fixed_down';
+                            }
+                            else {
                                 cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
                             }
-
-                        } else {
-                            if (cur_item_ref.content_bottom - scrollTop >= cur_item_ref.sidebar_height) {
-                                // Make sure that we have space for the sidebar to affix it to the top
-                                cur_item_ref.sidebar_state = 'case_4_fixed_up';  // we are not at the bottom of the content
-                            } else {
-
-                                // this case isn't reached. It's accomplish by the td_smart_sidebar._is_smaller_or_equal(cur_item_ref.content_bottom, cur_item_ref.sidebar_bottom) case
-
-                                cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
-                            }
-                            //console.log(cur_item_ref.content_bottom + ' >= ' +  cur_item_ref.sidebar_bottom); //@todo fix this case pe http://0div.com:69/wp_marius/wp_010/homepage-with-a-post-featured/
-
                         }
 
-                    }
+
+
+                        // position:fixed; bottom:0
+                        else if (
+                            true === tdSmartSidebar._is_smaller( cur_item_ref.sidebar_bottom, view_port_bottom ) &&
+                            true === tdSmartSidebar._is_smaller( cur_item_ref.sidebar_bottom, cur_item_ref.content_bottom ) &&
+                            'down' === scroll_direction &&
+                            cur_item_ref.content_bottom >= view_port_bottom
+                        ) {
+                            //console.log(cur_item_ref.sidebar_bottom + ' < ' + cur_item_ref.content_bottom);
+                            cur_item_ref.sidebar_state = 'case_1_fixed_down';
+                        }
+
+                        // the sidebar is at the top of the content ( position:static )
+                        else if (
+                            true === tdSmartSidebar._is_smaller_or_equal( cur_item_ref.sidebar_top, cur_item_ref.content_top ) &&
+                            'up' === scroll_direction &&
+                            cur_item_ref.content_bottom >= view_port_bottom
+                        ) {
+                            cur_item_ref.sidebar_state = 'case_2_top_of_content';
+                        }
 
 
 
 
+                        // the sidebar reached the bottom of the content
+                        else if (
+                            ( true === tdSmartSidebar._is_smaller_or_equal(cur_item_ref.content_bottom, cur_item_ref.sidebar_bottom) && 'down' === scroll_direction ) ||
+                            cur_item_ref.content_bottom < view_port_bottom
 
-                /**
-                 * the sidebar is larger than the view port and the content is bigger
-                 */
+                        ) {
+                            cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
 
+                        }
+                        // scrolling up, the sidebar is fixed up ( position:fixed; top:0 )
+                        else if ( true === tdSmartSidebar._is_smaller_or_equal( scrollTop, cur_item_ref.sidebar_top ) && 'up' === scroll_direction &&
 
-                } else {
-
-                    //// if the sidebar is above the view port and nothing is visible, place the sidebar at the bottom of the column
-                    //if (td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, scrollTop) === true) {
-                    //    cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
-                    //    td_smart_sidebar.log(cur_item_ref.sidebar_bottom + ' ~ ' + scrollTop);
-                    //}
-
-
-                    // if the sidebar is above the view port and nothing is visible, place the sidebar fixed up if it's smaller than the viewport,
-                    //      fixed down, meaning that a possible previous operation could be 'scroll down'
-                    // if none of the above operations meets the conditions, the sidebar is placed at the bottom of the content
-                    if (td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, scrollTop) === true) {
-
-                        if (td_smart_sidebar._is_smaller_or_equal(scrollTop, cur_item_ref.sidebar_top) === true
-
-                            && td_smart_sidebar._is_smaller_or_equal(cur_item_ref.content_top, scrollTop) === true //we are scrolling up ... make sure that we don't overshoot the sidebar by going over content_top. This happens when the sidebar is offseted by x number of pixels vs content
+                            true === tdSmartSidebar._is_smaller_or_equal( cur_item_ref.content_top, scrollTop ) //we are scrolling up ... make sure that we don't overshoot the sidebar by going over content_top. This happens when the sidebar is offseted by x number of pixels vs content
                         ) {
                             //console.log('sidebar_top' + cur_item_ref.sidebar_top + ' content top:' + cur_item_ref.content_top);
                             cur_item_ref.sidebar_state = 'case_4_fixed_up';
                         }
-                        else if (
-                            td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, view_port_bottom) === true &&
-                            td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, cur_item_ref.content_bottom) === true &&
-                            cur_item_ref.content_bottom >= view_port_bottom
+
+
+
+
+                        /**
+                         * This is the case when the scroll direction is 'up', but the sidebar is above the viewport (it could be left behind by a fast operation like typing HOME key)
+                         */
+                        else if ('up' === scroll_direction && true === tdSmartSidebar._is_smaller_or_equal( view_port_bottom, cur_item_ref.sidebar_top ))
+                        {
+                            cur_item_ref.sidebar_state = 'case_2_top_of_content';
+                        }
+
+
+
+                        // when to put absolute?
+                        if (
+                            ( 'case_1_fixed_down' === cur_item_ref.sidebar_state && 'up' === scroll_direction ) ||
+                            ( 'case_4_fixed_up' === cur_item_ref.sidebar_state && 'down' === scroll_direction )
                         ) {
-                            cur_item_ref.sidebar_state = 'case_1_fixed_down';
+                            cur_item_ref.sidebar_state = 'case_5_absolute'; //absolute while going up?
                         }
-                        else {
-                            cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
-                        }
+
+                    } // end sidebar length check   cur_item_ref.sidebar_height < view_port_height
+
+
+
+
+                    /**
+                     * after we have the state, we enter this switch that makes sure that we only have one state change
+                     */
+
+                    // we have to set the content width via JS
+                    //var column_content_width = 339;
+                    //if (tdSmartSidebar.is_tablet_grid) {
+                    //    column_content_width = 251;
+                    //}
+
+
+                    var column_content_width = 0;
+
+                    var view_port_current_item = tdViewport.getCurrentIntervalItem();
+
+                    if ( null !== view_port_current_item ) {
+                        column_content_width = view_port_current_item.sidebarWidth;
+                        //tdSmartSidebar.log("column sidebar width : " + column_content_width);
                     }
 
 
 
-                    // position:fixed; bottom:0
-                    else if (
-                        td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, view_port_bottom) === true &&
-                        td_smart_sidebar._is_smaller(cur_item_ref.sidebar_bottom, cur_item_ref.content_bottom) === true &&
-                        scroll_direction == 'down' &&
-                        cur_item_ref.content_bottom >= view_port_bottom
-                    ) {
-                        //console.log(cur_item_ref.sidebar_bottom + ' < ' + cur_item_ref.content_bottom);
-                        cur_item_ref.sidebar_state = 'case_1_fixed_down';
+                    switch ( cur_item_ref.sidebar_state ) {
+                        case 'case_1_fixed_down':
+
+                            if ( true === cur_item_ref.case_1_run_once ) {
+                                break;
+                            }
+
+                            tdSmartSidebar.log( 'sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state );
+
+                            cur_item_ref.case_1_run_once = true;
+                            cur_item_ref.case_2_run_once = false;
+                            cur_item_ref.case_3_run_once = false;
+                            cur_item_ref.case_4_run_once = false;
+                            cur_item_ref.case_5_run_once = false;
+                            cur_item_ref.case_6_run_once = false;
+
+
+                            cur_item_ref.sidebar_jquery_obj.css({
+                                width: column_content_width,
+                                position: 'fixed',
+                                top: 'auto',
+                                bottom: '0',
+                                'z-index': '1'
+                            });
+
+
+                            break;
+
+                        case 'case_2_top_of_content':
+
+                            if ( true === cur_item_ref.case_2_run_once ) {
+                                break;
+                            }
+
+                            tdSmartSidebar.log( 'sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state );
+
+                            cur_item_ref.case_1_run_once = false;
+                            cur_item_ref.case_2_run_once = true;
+                            cur_item_ref.case_3_run_once = false;
+                            cur_item_ref.case_4_run_once = false;
+                            cur_item_ref.case_5_run_once = false;
+                            cur_item_ref.case_6_run_once = false;
+
+
+                            cur_item_ref.sidebar_jquery_obj.css({
+                                width: 'auto',
+                                position: 'static',
+                                top: 'auto',
+                                bottom: 'auto'
+                            });
+                            break;
+
+                        case 'case_3_bottom_of_content':
+                            // case 3 has to be recalculated if the sidebar height changes
+
+                            if ( true === cur_item_ref.case_3_run_once &&
+                                cur_item_ref.case_3_last_sidebar_height === cur_item_ref.sidebar_height &&
+                                cur_item_ref.case_3_last_content_height === cur_item_ref.content_height
+                            ) { //if the case already runned AND the sidebar height did not change
+                                break;
+                            }
+
+                            tdSmartSidebar.log( 'sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state );
+
+                            cur_item_ref.case_1_run_once = false;
+                            cur_item_ref.case_2_run_once = false;
+                            cur_item_ref.case_3_run_once = true;
+                            cur_item_ref.case_3_last_sidebar_height = cur_item_ref.sidebar_height;
+                            cur_item_ref.case_3_last_content_height = cur_item_ref.content_height;
+                            cur_item_ref.case_4_run_once = false;
+                            cur_item_ref.case_5_run_once = false;
+                            cur_item_ref.case_6_run_once = false;
+
+
+                            cur_item_ref.sidebar_jquery_obj.css({
+                                width: column_content_width,
+                                position: 'absolute',
+                                top: cur_item_ref.content_bottom - cur_item_ref.sidebar_height - cur_item_ref.content_top,
+                                bottom: 'auto'
+                            });
+                            break;
+
+                        case 'case_4_fixed_up':
+
+                            if ( true === cur_item_ref.case_4_run_once && cur_item_ref.case_4_last_menu_offset === td_affix_menu_computed_height ) { //if the case already runned AND the menu height did not changed
+                                break;
+                            }
+
+                            tdSmartSidebar.log( 'sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state );
+
+                            cur_item_ref.case_1_run_once = false;
+                            cur_item_ref.case_2_run_once = false;
+                            cur_item_ref.case_3_run_once = false;
+                            cur_item_ref.case_4_run_once = true;
+                            cur_item_ref.case_4_last_menu_offset = td_affix_menu_computed_height;
+                            cur_item_ref.case_5_run_once = false;
+                            cur_item_ref.case_6_run_once = false;
+
+
+                            cur_item_ref.sidebar_jquery_obj.css({
+                                width: column_content_width,
+                                position: 'fixed',
+                                top: td_affix_menu_computed_height,
+                                bottom: 'auto'
+                            });
+                            break;
+
+                        case 'case_5_absolute':
+
+                            if ( true === cur_item_ref.case_5_run_once ) {
+                                break;
+                            }
+
+                            tdSmartSidebar.log( 'sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state );
+
+                            cur_item_ref.case_1_run_once = false;
+                            cur_item_ref.case_2_run_once = false;
+                            cur_item_ref.case_3_run_once = false;
+                            cur_item_ref.case_4_run_once = false;
+                            cur_item_ref.case_5_run_once = true;
+                            cur_item_ref.case_6_run_once = false;
+
+
+                            cur_item_ref.sidebar_jquery_obj.css({
+                                width: column_content_width,
+                                position: 'absolute',
+                                top: cur_item_ref.sidebar_top - cur_item_ref.content_top,
+                                bottom: 'auto'
+                            });
+                            break;
+
+                        case 'case_6_content_too_small':
+
+                            if ( true === cur_item_ref.case_6_run_once ) {
+                                break;
+                            }
+
+                            tdSmartSidebar.log( 'sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state );
+
+                            cur_item_ref.case_1_run_once = false;
+                            cur_item_ref.case_2_run_once = false;
+                            cur_item_ref.case_3_run_once = false;
+                            cur_item_ref.case_4_run_once = false;
+                            cur_item_ref.case_5_run_once = false;
+                            cur_item_ref.case_6_run_once = true;
+
+                            cur_item_ref.sidebar_jquery_obj.css({
+                                width: 'auto',
+                                position: 'static',
+                                top: 'auto',
+                                bottom: 'auto'
+                            });
+                            break;
                     }
+                } // end for loop
+            }); // end request animation frame
+        }, // end td_events_scroll
 
-                    // the sidebar is at the top of the content ( position:static )
-                    else if (
-                        td_smart_sidebar._is_smaller_or_equal(cur_item_ref.sidebar_top, cur_item_ref.content_top) === true &&
-                        scroll_direction == 'up' &&
-                        cur_item_ref.content_bottom >= view_port_bottom
-                    ) {
-                        cur_item_ref.sidebar_state = 'case_2_top_of_content';
+
+        compute: function() {
+
+            tdSmartSidebar.td_events_scroll( jQuery( window ).scrollTop() );
+        },
+
+
+        // resets the run once flags. It may fail sometimes due to case_3_last_sidebar_height & case_4_last_menu_offset
+        reset_run_once_flags: function () {
+            for ( var item_index = 0; item_index < tdSmartSidebar.items.length; item_index++ ) {
+                tdSmartSidebar.items[ item_index ].case_1_run_once = false;
+                tdSmartSidebar.items[ item_index ].case_2_run_once = false;
+                tdSmartSidebar.items[ item_index ].case_3_run_once = false;
+                tdSmartSidebar.items[ item_index ].case_3_last_sidebar_height = 0;
+                tdSmartSidebar.items[ item_index ].case_3_last_content_height = 0;
+                tdSmartSidebar.items[ item_index ].case_4_run_once = false;
+                tdSmartSidebar.items[ item_index ].case_4_last_menu_offset = 0;
+                tdSmartSidebar.items[ item_index ].case_5_run_once = false;
+                tdSmartSidebar.items[ item_index ].case_6_run_once = false;
+            }
+        },
+
+
+
+        td_events_resize: function() {
+            // enable and disable the smart sidebar
+
+            tdSmartSidebar._view_port_current_interval_index = tdViewport.getCurrentIntervalIndex();
+
+            switch ( tdSmartSidebar._view_port_current_interval_index ) {
+
+                case 0 :
+
+                    tdSmartSidebar.is_enabled = false;
+
+                    // flag marked false to be made true only once, when the view port has not the first interval index [0]
+                    tdSmartSidebar.is_enabled_state_run_once = false;
+
+                    break;
+
+                case 1 :
+                    if ( false === tdSmartSidebar.is_tablet_grid ) { // we switched
+
+                        tdSmartSidebar.reset_run_once_flags();
+
+                        tdSmartSidebar.is_tablet_grid = true;
+                        tdSmartSidebar.is_desktop_grid = false;
+
+                        tdSmartSidebar.log( 'view port tablet' );
                     }
+                    tdSmartSidebar.is_enabled = true;
+                    tdSmartSidebar.is_disabled_state_run_once = false;
 
-
-
-
-                    // the sidebar reached the bottom of the content
-                    else if (
-                        (td_smart_sidebar._is_smaller_or_equal(cur_item_ref.content_bottom, cur_item_ref.sidebar_bottom) === true && scroll_direction == 'down')
-                        ||
-                        cur_item_ref.content_bottom < view_port_bottom
-
-                    ) {
-                        cur_item_ref.sidebar_state = 'case_3_bottom_of_content';
-
+                    if ( false === tdSmartSidebar.is_enabled_state_run_once ) {
+                        tdSmartSidebar.is_enabled_state_run_once = true;
+                        tdSmartSidebar.log( 'smart_sidebar_enabled' );
                     }
-                    // scrolling up, the sidebar is fixed up ( position:fixed; top:0 )
-                    else if (td_smart_sidebar._is_smaller_or_equal(scrollTop, cur_item_ref.sidebar_top) === true && scroll_direction == 'up'
+                    break;
 
-                    && td_smart_sidebar._is_smaller_or_equal(cur_item_ref.content_top, scrollTop) === true //we are scrolling up ... make sure that we don't overshoot the sidebar by going over content_top. This happens when the sidebar is offseted by x number of pixels vs content
-                    ) {
-                        //console.log('sidebar_top' + cur_item_ref.sidebar_top + ' content top:' + cur_item_ref.content_top);
-                        cur_item_ref.sidebar_state = 'case_4_fixed_up';
+                case 2 :
+                case 3 :
+                    if ( true === tdSmartSidebar.is_tablet_grid ) { // we switched
+
+                        tdSmartSidebar.reset_run_once_flags();
+
+                        tdSmartSidebar.is_tablet_grid = false;
+                        tdSmartSidebar.is_desktop_grid = true;
+
+                        tdSmartSidebar.log( 'view port desktop' );
                     }
+                    tdSmartSidebar.is_enabled = true;
+                    tdSmartSidebar.is_disabled_state_run_once = false;
 
-
-
-                    // when to put absolute?
-                    if (
-                        (cur_item_ref.sidebar_state == 'case_1_fixed_down' && scroll_direction == 'up') ||
-                        (cur_item_ref.sidebar_state == 'case_4_fixed_up' && scroll_direction == 'down')
-                    ) {
-                        cur_item_ref.sidebar_state = 'case_5_absolute'; //absolute while going up?
+                    if ( false === tdSmartSidebar.is_enabled_state_run_once ) {
+                        tdSmartSidebar.is_enabled_state_run_once = true;
+                        tdSmartSidebar.log( 'smart_sidebar_enabled' );
                     }
-
-                } // end sidebar length check   cur_item_ref.sidebar_height < view_port_height
-
-
-
-
-
-
-
-                /**
-                 * after we have the state, we enter this switch that makes sure that we only have one state change
-                 */
-
-                // we have to set the content width via JS
-                //var column_content_width = 339;
-                //if (td_smart_sidebar.is_tablet_grid) {
-                //    column_content_width = 251;
-                //}
-
-
-
-                var column_content_width = 0;
-
-                var view_port_current_item = td_viewport.get_current_interval_item();
-
-                if (view_port_current_item != null) {
-                    column_content_width = view_port_current_item.sidebar_width;
-                    //td_smart_sidebar.log("column sidebar width : " + column_content_width);
-                }
-
-
-
-                switch (cur_item_ref.sidebar_state) {
-                    case 'case_1_fixed_down':
-
-                        if (cur_item_ref.case_1_run_once === true) {
-                            break;
-                        }
-
-                        td_smart_sidebar.log('sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state);
-
-                        cur_item_ref.case_1_run_once = true;
-                        cur_item_ref.case_2_run_once = false;
-                        cur_item_ref.case_3_run_once = false;
-                        cur_item_ref.case_4_run_once = false;
-                        cur_item_ref.case_5_run_once = false;
-                        cur_item_ref.case_6_run_once = false;
-
-
-                        cur_item_ref.sidebar_jquery_obj.css({
-                            "width": column_content_width,
-                            "position": "fixed",
-                            "top": "auto",
-                            "bottom": "0",
-                            "z-index": "1"
-                        });
-
-
-                        break;
-
-                    case 'case_2_top_of_content':
-
-                        if (cur_item_ref.case_2_run_once === true) {
-                            break;
-                        }
-
-                        td_smart_sidebar.log('sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state);
-
-                        cur_item_ref.case_1_run_once = false;
-                        cur_item_ref.case_2_run_once = true;
-                        cur_item_ref.case_3_run_once = false;
-                        cur_item_ref.case_4_run_once = false;
-                        cur_item_ref.case_5_run_once = false;
-                        cur_item_ref.case_6_run_once = false;
-
-
-                        cur_item_ref.sidebar_jquery_obj.css({
-                            "width": "auto",
-                            "position": "static",
-                            "top": "auto",
-                            "bottom": "auto"
-                        });
-                        break;
-
-                    case 'case_3_bottom_of_content':
-                        // case 3 has to be recalculated if the sidebar height changes
-
-                        if (cur_item_ref.case_3_run_once === true &&
-                            cur_item_ref.case_3_last_sidebar_height == cur_item_ref.sidebar_height &&
-                            cur_item_ref.case_3_last_content_height == cur_item_ref.content_height
-                        ) { //if the case already runned AND the sidebar height did not change
-                            break;
-                        }
-
-                        td_smart_sidebar.log('sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state);
-
-                        cur_item_ref.case_1_run_once = false;
-                        cur_item_ref.case_2_run_once = false;
-                        cur_item_ref.case_3_run_once = true;
-                        cur_item_ref.case_3_last_sidebar_height = cur_item_ref.sidebar_height;
-                        cur_item_ref.case_3_last_content_height = cur_item_ref.content_height;
-                        cur_item_ref.case_4_run_once = false;
-                        cur_item_ref.case_5_run_once = false;
-                        cur_item_ref.case_6_run_once = false;
-
-
-                        cur_item_ref.sidebar_jquery_obj.css({
-                            "width": column_content_width,
-                            "position": "absolute",
-                            "top": cur_item_ref.content_bottom - cur_item_ref.sidebar_height - cur_item_ref.content_top,
-                            "bottom": "auto"
-                        });
-                        break;
-
-                    case 'case_4_fixed_up':
-
-                        if (cur_item_ref.case_4_run_once === true && cur_item_ref.case_4_last_menu_offset == td_affix_menu_computed_height) { //if the case already runned AND the menu height did not changed
-                            break;
-                        }
-
-                        td_smart_sidebar.log('sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state);
-
-                        cur_item_ref.case_1_run_once = false;
-                        cur_item_ref.case_2_run_once = false;
-                        cur_item_ref.case_3_run_once = false;
-                        cur_item_ref.case_4_run_once = true;
-                        cur_item_ref.case_4_last_menu_offset = td_affix_menu_computed_height;
-                        cur_item_ref.case_5_run_once = false;
-                        cur_item_ref.case_6_run_once = false;
-
-
-                        cur_item_ref.sidebar_jquery_obj.css({
-                            "width": column_content_width,
-                            "position": "fixed",
-                            "top": td_affix_menu_computed_height,
-                            "bottom": "auto"
-                        });
-                        break;
-
-                    case 'case_5_absolute':
-
-                        if (cur_item_ref.case_5_run_once === true) {
-                            break;
-                        }
-
-                        td_smart_sidebar.log('sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state);
-
-                        cur_item_ref.case_1_run_once = false;
-                        cur_item_ref.case_2_run_once = false;
-                        cur_item_ref.case_3_run_once = false;
-                        cur_item_ref.case_4_run_once = false;
-                        cur_item_ref.case_5_run_once = true;
-                        cur_item_ref.case_6_run_once = false;
-
-
-                        cur_item_ref.sidebar_jquery_obj.css({
-                            "width": column_content_width,
-                            "position": "absolute",
-                            "top": cur_item_ref.sidebar_top - cur_item_ref.content_top,
-                            "bottom": "auto"
-                        });
-                        break;
-
-
-                    case 'case_6_content_too_small':
-
-                        if (cur_item_ref.case_6_run_once === true) {
-                            break;
-                        }
-
-                        td_smart_sidebar.log('sidebar_id: ' + item_index + ' ' + cur_item_ref.sidebar_state);
-
-                        cur_item_ref.case_1_run_once = false;
-                        cur_item_ref.case_2_run_once = false;
-                        cur_item_ref.case_3_run_once = false;
-                        cur_item_ref.case_4_run_once = false;
-                        cur_item_ref.case_5_run_once = false;
-                        cur_item_ref.case_6_run_once = true;
-
-                        cur_item_ref.sidebar_jquery_obj.css({
-                            "width": "auto",
-                            "position": "static",
-                            "top": "auto",
-                            "bottom": "auto"
-                        });
-                        break;
-
-
-                }
-
-
-            } // end for loop
-
-
-        }); // end request animation frame
-    }, // end td_events_scroll
-
-
-    compute: function conpute() {
-
-        td_smart_sidebar.td_events_scroll(jQuery(window).scrollTop());
-    },
-
-
-    // resets the run once flags. It may fail sometimes due to case_3_last_sidebar_height & case_4_last_menu_offset
-    reset_run_once_flags: function () {
-        for (var item_index = 0; item_index < td_smart_sidebar.items.length; item_index++) {
-            td_smart_sidebar.items[item_index].case_1_run_once = false;
-            td_smart_sidebar.items[item_index].case_2_run_once = false;
-            td_smart_sidebar.items[item_index].case_3_run_once = false;
-            td_smart_sidebar.items[item_index].case_3_last_sidebar_height = 0;
-            td_smart_sidebar.items[item_index].case_3_last_content_height = 0;
-            td_smart_sidebar.items[item_index].case_4_run_once = false;
-            td_smart_sidebar.items[item_index].case_4_last_menu_offset = 0;
-            td_smart_sidebar.items[item_index].case_5_run_once = false;
-            td_smart_sidebar.items[item_index].case_6_run_once = false;
-        }
-    },
-
-
-
-    td_events_resize: function td_events_resize() {
-        // enable and disable the smart sidebar
-
-        td_smart_sidebar._view_port_current_interval_index = td_viewport.get_current_interval_index();
-
-        switch (td_smart_sidebar._view_port_current_interval_index) {
-
-            case 0 :
-
-                td_smart_sidebar.is_enabled = false;
-
-                // flag marked false to be made true only once, when the view port has not the first interval index [0]
-                td_smart_sidebar.is_enabled_state_run_once = false;
-
-                break;
-
-            case 1 :
-
-                if (td_smart_sidebar.is_tablet_grid === false) { // we switched
-
-                    td_smart_sidebar.reset_run_once_flags();
-
-                    td_smart_sidebar.is_tablet_grid = true;
-                    td_smart_sidebar.is_desktop_grid = false;
-
-                    td_smart_sidebar.log('view port tablet');
-                }
-                td_smart_sidebar.is_enabled = true;
-                td_smart_sidebar.is_disabled_state_run_once = false;
-
-                if (td_smart_sidebar.is_enabled_state_run_once === false) {
-                    td_smart_sidebar.is_enabled_state_run_once = true;
-                    td_smart_sidebar.log('smart_sidebar_enabled');
-                }
-
-                break;
-
-            case 2 :
-            case 3 :
-                if (td_smart_sidebar.is_tablet_grid === true) { // we switched
-
-                    td_smart_sidebar.reset_run_once_flags();
-
-                    td_smart_sidebar.is_tablet_grid = false;
-                    td_smart_sidebar.is_desktop_grid = true;
-
-                    td_smart_sidebar.log('view port desktop');
-                }
-                td_smart_sidebar.is_enabled = true;
-                td_smart_sidebar.is_disabled_state_run_once = false;
-
-                if (td_smart_sidebar.is_enabled_state_run_once === false) {
-                    td_smart_sidebar.is_enabled_state_run_once = true;
-                    td_smart_sidebar.log('smart_sidebar_enabled');
-                }
-
-                break;
-        }
-
-
-        // @todo we may be able to delay the compute a bit (aka run it on the 500ms timer)
-        td_smart_sidebar.compute();
-    },
-
-
-
-
-
-    log: function log(msg) {
-        //console.log(msg);
-    },
-
-
-
-
-
-    /**
-     * check if the two numbers are approximately equal OR the number1 is smaller.
-     * This function is used to compensate for differences in the offset top reported by IE, FF but not chrome
-     * IE and FF have an error for offset top of +- 0.5
-     * @param number1 - this has to be smaller or approximately equal with number2 to return true
-     * @param number2
-     * @returns {boolean}
-     * @private
-     */
-    _is_smaller_or_equal: function _is_smaller_or_equal(number1, number2) {
-        // check if the two numbers are approximately equal
-        // - first we check if the difference between the numbers is bigger than 1 unit
-        // - second we check if the first number is bigger than the second one
-        // if the two conditions are met, we return false
-
-
-        if ( Math.abs(number1 - number2) >= 1) {
-            // we have a difference that is bigger than 1 unit (px), check if the numbers are smaller or bigger
-            if (number1 < number2) {
-                return true;
-            } else {
-                return false;
+                    break;
             }
 
-
-        } else {
-            // the difference between the two numbers is smaller than one unit (1 px), this means that the two numbers are the same
-            return true;
-        }
-    },
+            // @todo we may be able to delay the compute a bit (aka run it on the 500ms timer)
+            tdSmartSidebar.compute();
+        },
 
 
-    /**
-     * Checks to see if number1 < number2 by at least one unit!
-     * @param number1
-     * @param number2
-     * @returns {boolean}
-     * @private
-     */
-    _is_smaller: function _is_smaller (number1, number2) {
-        if ( Math.abs(number1 - number2) >= 1) {
-            if (number1 < number2) {
-                return true;
+        log: function( msg ) {
+            //console.log(msg);
+        },
+
+
+        /**
+         * check if the two numbers are approximately equal OR the number1 is smaller.
+         * This function is used to compensate for differences in the offset top reported by IE, FF but not chrome
+         * IE and FF have an error for offset top of +- 0.5
+         * @param number1 - this has to be smaller or approximately equal with number2 to return true
+         * @param number2
+         * @returns {boolean}
+         * @private
+         */
+        _is_smaller_or_equal: function( number1, number2 ) {
+            // check if the two numbers are approximately equal
+            // - first we check if the difference between the numbers is bigger than 1 unit
+            // - second we check if the first number is bigger than the second one
+            // if the two conditions are met, we return false
+
+
+            if ( Math.abs( number1 - number2 ) >= 1) {
+                // we have a difference that is bigger than 1 unit (px), check if the numbers are smaller or bigger
+                if ( number1 < number2 ) {
+                    return true;
+                } else {
+                    return false;
+                }
             } else {
+                // the difference between the two numbers is smaller than one unit (1 px), this means that the two numbers are the same
+                return true;
+            }
+        },
+
+
+        /**
+         * Checks to see if number1 < number2 by at least one unit!
+         * @param number1
+         * @param number2
+         * @returns {boolean}
+         * @private
+         */
+        _is_smaller: function( number1, number2 ) {
+            if ( Math.abs( number1 - number2 ) >= 1) {
+                if ( number1 < number2 ) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                // the difference between the two numbers is smaller than one unit (1 px), this means that the two numbers are the same
                 return false;
             }
-        } else {
-            // the difference between the two numbers is smaller than one unit (1 px), this means that the two numbers are the same
-            return false;
         }
-    }
+    };
+
+    //console.log(tdSmartSidebar.items);
+})();
 
 
-
-
-
-};
-
-
-
-
-
-
-
-
-
-//console.log(td_smart_sidebar.items);
 
 /**
  * Infinite loader v1.0 by Radu O. / tagDiv
  * USES:
- *  - td_events.js
+ *  - tdEvents.js
  *  - for blocks:
  *      - td_block::get_block_pagination - custom load more
  *      - in td_js_generator.php - main block object has ajax_pagination_infinite_stop - to stop the infinite scroll after x number of pages and show the load more button after that
@@ -4969,562 +6826,6 @@ var tdInfiniteLoader = {};
         tdInfiniteLoader.computeTopDistances();
     });
 })();
-/**
- * activate smooth scroll
- */
-
-if (typeof window['tds_smooth_scroll'] !== 'undefined') {
-
-    if (tdDetect.isChrome === true && tdDetect.isAndroid === false) {
-
-        td_smooth_scroll();
-    }
-}
-
-
-
-function td_smooth_scroll() {
-
-// SmoothScroll v1.2.1
-// Licensed under the terms of the MIT license.
-
-// People involved
-//  - Balazs Galambosi (maintainer)
-//  - Patrick Brunner  (original idea)
-//  - Michael Herf     (Pulse Algorithm)
-
-// Scroll Variables (tweakable)
-    var defaultOptions = {
-
-        // Scrolling Core
-        frameRate        : 150, // [Hz]
-        animationTime    : 600, // [px]
-        stepSize         : 120, // [px]
-
-        // Pulse (less tweakable)
-        // ratio of "tail" to "acceleration"
-        pulseAlgorithm   : true,
-        pulseScale       : 8,
-        pulseNormalize   : 1,
-
-        // Acceleration
-        accelerationDelta : 20,  // 20
-        accelerationMax   : 1,   // 1
-
-        // Keyboard Settings
-        keyboardSupport   : true,  // option
-        arrowScroll       : 50,     // [px]
-
-        // Other
-        touchpadSupport   : true,
-        fixedBackground   : true,
-        excluded          : ""
-    };
-
-    var options = defaultOptions;
-
-
-// Other Variables
-    var isExcluded = false;
-    var isFrame = false;
-    var direction = { x: 0, y: 0 };
-    var initDone  = false;
-    var root = document.documentElement;
-    var activeElement;
-    var observer;
-    var deltaBuffer = [ 120, 120, 120 ];
-
-    var key = { left: 37, up: 38, right: 39, down: 40, spacebar: 32,
-        pageup: 33, pagedown: 34, end: 35, home: 36 };
-
-
-
-
-    /***********************************************
-     * INITIALIZE
-     ***********************************************/
-
-
-
-    /**
-     * Sets up scrolls array, determines if frames are involved.
-     */
-    function init() {
-
-        if (!document.body) return;
-
-        var body = document.body;
-        var html = document.documentElement;
-        var windowHeight = window.innerHeight;
-        var scrollHeight = body.scrollHeight;
-
-        // check compat mode for root element
-        root = (document.compatMode.indexOf('CSS') >= 0) ? html : body;
-        activeElement = body;
-
-
-        initDone = true;
-
-        // Checks if this script is running in a frame
-        if (top != self) {
-            isFrame = true;
-        }
-
-        /**
-         * This fixes a bug where the areas left and right to
-         * the content does not trigger the onmousewheel event
-         * on some pages. e.g.: html, body { height: 100% }
-         */
-        else if (scrollHeight > windowHeight &&
-            (body.offsetHeight <= windowHeight ||
-            html.offsetHeight <= windowHeight)) {
-
-            // DOMChange (throttle): fix height
-            var pending = false;
-            var refresh = function () {
-                if (!pending && html.scrollHeight != document.height) {
-                    pending = true; // add a new pending action
-                    setTimeout(function () {
-                        html.style.height = document.height + 'px';
-                        pending = false;
-                    }, 500); // act rarely to stay fast
-                }
-            };
-            html.style.height = 'auto';
-            setTimeout(refresh, 10);
-
-            var config = {
-                attributes: true,
-                childList: true,
-                characterData: false
-            };
-
-            observer = new MutationObserver(refresh);
-            observer.observe(body, config);
-
-            // clearfix
-            if (root.offsetHeight <= windowHeight) {
-                var underlay = document.createElement("div");
-                underlay.style.clear = "both";
-                body.appendChild(underlay);
-            }
-        }
-
-        // gmail performance fix
-        if (document.URL.indexOf("mail.google.com") > -1) {
-            var s = document.createElement("style");
-            s.innerHTML = ".iu { visibility: hidden }";
-            (document.getElementsByTagName("head")[0] || html).appendChild(s);
-        }
-        // facebook better home timeline performance
-        // all the HTML resized images make rendering CPU intensive
-        else if (document.URL.indexOf("www.facebook.com") > -1) {
-            var home_stream = document.getElementById("home_stream");
-            home_stream && (home_stream.style.webkitTransform = "translateZ(0)");
-        }
-        // disable fixed background
-        if (!options.fixedBackground && !isExcluded) {
-            body.style.backgroundAttachment = "scroll";
-            html.style.backgroundAttachment = "scroll";
-        }
-    }
-
-
-    /************************************************
-     * SCROLLING
-     ************************************************/
-
-    var que = [];
-    var pending = false;
-    var lastScroll = +new Date;
-
-    /**
-     * Pushes scroll actions to the scrolling queue.
-     */
-    function scrollArray(elem, left, top, delay) {
-
-        delay || (delay = 1000);
-        directionCheck(left, top);
-
-        if (options.accelerationMax != 1) {
-            var now = +new Date;
-            var elapsed = now - lastScroll;
-            if (elapsed < options.accelerationDelta) {
-                var factor = (1 + (30 / elapsed)) / 2;
-                if (factor > 1) {
-                    factor = Math.min(factor, options.accelerationMax);
-                    left *= factor;
-                    top  *= factor;
-                }
-            }
-            lastScroll = +new Date;
-        }
-
-        // push a scroll command
-        que.push({
-            x: left,
-            y: top,
-            lastX: (left < 0) ? 0.99 : -0.99,
-            lastY: (top  < 0) ? 0.99 : -0.99,
-            start: +new Date
-        });
-
-        // don't act if there's a pending queue
-        if (pending) {
-            return;
-        }
-
-        var scrollWindow = (elem === document.body);
-
-        var step = function (time) {
-
-            var now = +new Date;
-            var scrollX = 0;
-            var scrollY = 0;
-
-            for (var i = 0; i < que.length; i++) {
-
-                var item = que[i];
-                var elapsed  = now - item.start;
-                var finished = (elapsed >= options.animationTime);
-
-                // scroll position: [0, 1]
-                var position = (finished) ? 1 : elapsed / options.animationTime;
-
-                // easing [optional]
-                if (options.pulseAlgorithm) {
-                    position = pulse(position);
-                }
-
-                // only need the difference
-                var x = (item.x * position - item.lastX) >> 0;
-                var y = (item.y * position - item.lastY) >> 0;
-
-                // add this to the total scrolling
-                scrollX += x;
-                scrollY += y;
-
-                // update last values
-                item.lastX += x;
-                item.lastY += y;
-
-                // delete and step back if it's over
-                if (finished) {
-                    que.splice(i, 1); i--;
-                }
-            }
-
-            // scroll left and top
-            if (scrollWindow) {
-                window.scrollBy(scrollX, scrollY);
-            }
-            else {
-                if (scrollX) elem.scrollLeft += scrollX;
-                if (scrollY) elem.scrollTop  += scrollY;
-            }
-
-            // clean up if there's nothing left to do
-            if (!left && !top) {
-                que = [];
-            }
-
-            if (que.length) {
-                requestFrame(step, elem, (delay / options.frameRate + 1));
-            } else {
-                pending = false;
-            }
-        };
-
-        // start a new queue of actions
-        requestFrame(step, elem, 0);
-        pending = true;
-    }
-
-
-    /***********************************************
-     * EVENTS
-     ***********************************************/
-
-    /**
-     * Mouse wheel handler.
-     * @param {Object} event
-     */
-    function wheel(event) {
-
-        if (!initDone) {
-            init();
-        }
-
-        var target = event.target;
-        var overflowing = overflowingAncestor(target);
-
-        // use default if there's no overflowing
-        // element or default action is prevented
-        if (!overflowing || event.defaultPrevented ||
-            isNodeName(activeElement, "embed") ||
-            (isNodeName(target, "embed") && /\.pdf/i.test(target.src))) {
-            return true;
-        }
-
-        var deltaX = event.wheelDeltaX || 0;
-        var deltaY = event.wheelDeltaY || 0;
-
-        // use wheelDelta if deltaX/Y is not available
-        if (!deltaX && !deltaY) {
-            deltaY = event.wheelDelta || 0;
-        }
-
-        // check if it's a touchpad scroll that should be ignored
-        if (!options.touchpadSupport && isTouchpad(deltaY)) {
-            return true;
-        }
-
-        // scale by step size
-        // delta is 120 most of the time
-        // synaptics seems to send 1 sometimes
-        if (Math.abs(deltaX) > 1.2) {
-            deltaX *= options.stepSize / 120;
-        }
-        if (Math.abs(deltaY) > 1.2) {
-            deltaY *= options.stepSize / 120;
-        }
-
-        scrollArray(overflowing, -deltaX, -deltaY);
-        event.preventDefault();
-    }
-
-    /**
-     * Keydown event handler.
-     * @param {Object} event
-     */
-    function keydown(event) {
-
-        var target   = event.target;
-        var modifier = event.ctrlKey || event.altKey || event.metaKey ||
-            (event.shiftKey && event.keyCode !== key.spacebar);
-
-        // do nothing if user is editing text
-        // or using a modifier key (except shift)
-        // or in a dropdown
-        if ( /input|textarea|select|embed/i.test(target.nodeName) ||
-            target.isContentEditable ||
-            event.defaultPrevented   ||
-            modifier ) {
-            return true;
-        }
-        // spacebar should trigger button press
-        if (isNodeName(target, "button") &&
-            event.keyCode === key.spacebar) {
-            return true;
-        }
-
-        var shift, x = 0, y = 0;
-        var elem = overflowingAncestor(activeElement);
-        var clientHeight = elem.clientHeight;
-
-        if (elem == document.body) {
-            clientHeight = window.innerHeight;
-        }
-
-        switch (event.keyCode) {
-            case key.up:
-                y = -options.arrowScroll;
-                break;
-            case key.down:
-                y = options.arrowScroll;
-                break;
-            case key.spacebar: // (+ shift)
-                shift = event.shiftKey ? 1 : -1;
-                y = -shift * clientHeight * 0.9;
-                break;
-            case key.pageup:
-                y = -clientHeight * 0.9;
-                break;
-            case key.pagedown:
-                y = clientHeight * 0.9;
-                break;
-            case key.home:
-                y = -elem.scrollTop;
-                break;
-            case key.end:
-                var damt = elem.scrollHeight - elem.scrollTop - clientHeight;
-                y = (damt > 0) ? damt+10 : 0;
-                break;
-            case key.left:
-                x = -options.arrowScroll;
-                break;
-            case key.right:
-                x = options.arrowScroll;
-                break;
-            default:
-                return true; // a key we don't care about
-        }
-
-        scrollArray(elem, x, y);
-        event.preventDefault();
-    }
-
-    /**
-     * Mousedown event only for updating activeElement
-     */
-    function mousedown(event) {
-        activeElement = event.target;
-    }
-
-
-    /***********************************************
-     * OVERFLOW
-     ***********************************************/
-
-    var cache = {}; // cleared out every once in while
-    setInterval(function () { cache = {}; }, 10 * 1000);
-
-    var uniqueID = (function () {
-        var i = 0;
-        return function (el) {
-            return el.uniqueID || (el.uniqueID = i++);
-        };
-    })();
-
-    function setCache(elems, overflowing) {
-        for (var i = elems.length; i--;)
-            cache[uniqueID(elems[i])] = overflowing;
-        return overflowing;
-    }
-
-    function overflowingAncestor(el) {
-        var elems = [];
-        var rootScrollHeight = root.scrollHeight;
-        do {
-            var cached = cache[uniqueID(el)];
-            if (cached) {
-                return setCache(elems, cached);
-            }
-            elems.push(el);
-            if (rootScrollHeight === el.scrollHeight) {
-                if (!isFrame || root.clientHeight + 10 < rootScrollHeight) {
-                    return setCache(elems, document.body); // scrolling root in WebKit
-                }
-            } else if (el.clientHeight + 10 < el.scrollHeight) {
-                overflow = getComputedStyle(el, "").getPropertyValue("overflow-y");
-                if (overflow === "scroll" || overflow === "auto") {
-                    return setCache(elems, el);
-                }
-            }
-        } while (el = el.parentNode);
-    }
-
-
-    /***********************************************
-     * HELPERS
-     ***********************************************/
-
-    function addEvent(type, fn, bubble) {
-        window.addEventListener(type, fn, (bubble||false));
-    }
-
-    function removeEvent(type, fn, bubble) {
-        window.removeEventListener(type, fn, (bubble||false));
-    }
-
-    function isNodeName(el, tag) {
-        return (el.nodeName||"").toLowerCase() === tag.toLowerCase();
-    }
-
-    function directionCheck(x, y) {
-        x = (x > 0) ? 1 : -1;
-        y = (y > 0) ? 1 : -1;
-        if (direction.x !== x || direction.y !== y) {
-            direction.x = x;
-            direction.y = y;
-            que = [];
-            lastScroll = 0;
-        }
-    }
-
-    var deltaBufferTimer;
-
-    function isTouchpad(deltaY) {
-        if (!deltaY) return;
-        deltaY = Math.abs(deltaY)
-        deltaBuffer.push(deltaY);
-        deltaBuffer.shift();
-        clearTimeout(deltaBufferTimer);
-        deltaBufferTimer = setTimeout(function () {
-            chrome.storage.local.set({ deltaBuffer: deltaBuffer });
-        }, 1000);
-        var allEquals    = (deltaBuffer[0] == deltaBuffer[1] &&
-        deltaBuffer[1] == deltaBuffer[2]);
-        var allDivisable = (isDivisible(deltaBuffer[0], 120) &&
-        isDivisible(deltaBuffer[1], 120) &&
-        isDivisible(deltaBuffer[2], 120));
-        return !(allEquals || allDivisable);
-    }
-
-    function isDivisible(n, divisor) {
-        return (Math.floor(n / divisor) == n / divisor);
-    }
-
-    if(typeof(chrome) !== 'undefined' && typeof(chrome.storage) !== 'undefined') {
-        chrome.storage.local.get('deltaBuffer', function (stored) {
-            if (stored.deltaBuffer) {
-                deltaBuffer = stored.deltaBuffer;
-            }
-        });
-    }
-
-    var requestFrame = (function () {
-        return  window.requestAnimationFrame       ||
-            window.webkitRequestAnimationFrame ||
-            function (callback, element, delay) {
-                window.setTimeout(callback, delay || (1000/60));
-            };
-    })();
-
-    var MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
-
-
-    /***********************************************
-     * PULSE
-     ***********************************************/
-
-    /**
-     * Viscous fluid with a pulse for part and decay for the rest.
-     * - Applies a fixed force over an interval (a damped acceleration), and
-     * - Lets the exponential bleed away the velocity over a longer interval
-     * - Michael Herf, http://stereopsis.com/stopping/
-     */
-    function pulse_(x) {
-        var val, start, expx;
-        // test
-        x = x * options.pulseScale;
-        if (x < 1) { // acceleartion
-            val = x - (1 - Math.exp(-x));
-        } else {     // tail
-            // the previous animation ended here:
-            start = Math.exp(-1);
-            // simple viscous drag
-            x -= 1;
-            expx = 1 - Math.exp(-x);
-            val = start + (expx * (1 - start));
-        }
-        return val * options.pulseNormalize;
-    }
-
-    function pulse(x) {
-        if (x >= 1) return 1;
-        if (x <= 0) return 0;
-
-        if (options.pulseNormalize == 1) {
-            options.pulseNormalize /= pulse_(1);
-        }
-        return pulse_(x);
-    }
-
-    addEvent("mousedown", mousedown);
-    addEvent("mousewheel", wheel);
-    addEvent("load", init);
-} //end smooth scroll
 /*
 * used by vimeo in td_video shortcode
 * */
@@ -5539,659 +6840,870 @@ var Froogaloop=function(){function e(a){return new e.fn.init(a)}function h(a,c,b
  * v 1.0 - wp_011
  */
 
-"use strict";
+/* global tdAnimationScroll:{} */
+/* global tdAnimationStack:{} */
+/* global tdPullDown:{} */
+/* global tdBackstr:{} */
+/* global td_backstretch_items:Array */
+/* global td_compute_backstretch_item:Function */
 
-var td_custom_events = {
+/* global setMenuMinHeight:Function */
 
+var tdCustomEvents = {};
 
-    /**
-     * - callback real scroll called from td_events
-     * @private
-     */
-    _callback_scroll: function _callback_scroll() {
-        td_animation_scroll.compute_all_items();
-    },
+(function(){
 
+    'use strict';
 
-    /**
-     * - callback real resize called from td_events
-     * @private
-     */
-    _callback_resize: function _callback_resize() {
-
-    },
+    tdCustomEvents = {
 
 
-    /**
-     * - callback lazy scroll called from td_events at 100ms
-     * @private
-     */
-    _lazy_callback_scroll_100: function _lazy_callback_scroll_100() {
-        if (td_animation_stack.activated === true) {
-            td_animation_stack.td_events_scroll();
+        /**
+         * - callback real scroll called from td_events
+         * @private
+         */
+        _callback_scroll: function() {
+            tdAnimationScroll.compute_all_items();
+        },
+
+
+        /**
+         * - callback real resize called from td_events
+         * @private
+         */
+        _callback_resize: function() {
+
+        },
+
+
+        /**
+         * - callback lazy scroll called from td_events at 100ms
+         * @private
+         */
+        _lazy_callback_scroll_100: function() {
+            if ( true === tdAnimationStack.activated ) {
+                tdAnimationStack.td_events_scroll();
+            }
+        },
+
+
+        /**
+         * - callback lazy scroll called from td_events at 500ms
+         * @private
+         */
+        _lazy_callback_scroll_500: function() {
+
+        },
+
+
+
+        /**
+         * - callback lazy resize called from td_events at 100ms
+         * @private
+         */
+        _lazy_callback_resize_100: function() {
+            tdPullDown.td_events_resize();
+            tdBackstr.td_events_resize();
+            tdAnimationScroll.td_events_resize();
+        },
+
+
+        /**
+         * - callback lazy resize called from td_events at 500ms
+         * @private
+         */
+        _lazy_callback_resize_500: function() {
+            if ( true === tdAnimationStack.activated ) {
+                tdAnimationStack.td_events_resize();
+            }
+
+            // - every tdAnimationScroll.item item of the td_backstretch_items array must be reinitialized and repositioned for parallax effect
+            for ( var i = 0; i < td_backstretch_items.length; i++ ) {
+                tdAnimationScroll.reinitialize_item( td_backstretch_items[ i ], true );
+                td_compute_backstretch_item( td_backstretch_items[ i ] );
+
+                // compute_all_items is used instead, for requestAnimationFrame
+                //tdAnimationScroll.compute_item(td_backstretch_items[i]);
+            }
+
+            // for better performance it's used tdAnimationScroll.compute_all_items, because it uses requestAnimationFrame
+            tdAnimationScroll.compute_all_items();
+
+            // @todo It will be refactorized when td_site will be
+            setMenuMinHeight();
         }
-    },
+    };
+})();
 
-
-    /**
-     * - callback lazy scroll called from td_events at 500ms
-     * @private
-     */
-    _lazy_callback_scroll_500: function _lazy_callback_scroll_500() {
-
-    },
-
-
-
-    /**
-     * - callback lazy resize called from td_events at 100ms
-     * @private
-     */
-    _lazy_callback_resize_100: function _lazy_callback_resize_100() {
-        td_pulldown.td_events_resize();
-        td_backstr.td_events_resize();
-        td_animation_scroll.td_events_resize();
-    },
-
-
-    /**
-     * - callback lazy resize called from td_events at 500ms
-     * @private
-     */
-    _lazy_callback_resize_500: function _lazy_callback_resize_500() {
-        if (td_animation_stack.activated === true) {
-            td_animation_stack.td_events_resize();
-        }
-
-        // - every td_animation_scroll.item item of the td_backstretch_items array must be reinitialized and repositioned for parallax effect
-        for (var i = 0; i < td_backstretch_items.length; i++) {
-            td_animation_scroll.reinitialize_item(td_backstretch_items[i], true);
-            td_compute_backstretch_item(td_backstretch_items[i]);
-
-            // compute_all_items is used instead, for requestAnimationFrame
-            //td_animation_scroll.compute_item(td_backstretch_items[i]);
-        }
-
-        // for better performance it's used td_animation_scroll.compute_all_items, because it uses requestAnimationFrame
-        td_animation_scroll.compute_all_items();
-    }
-};
-
-/* td_events.js - handles the events that require throttling
+/* tdEvents.js - handles the events that require throttling
  * v 2.0 - wp_010
  *
  * moved in theme from wp_booster
  */
 
-"use strict";
+/* global jQuery:{} */
+/* global tdAffix:{} */
+/* global tdSmartSidebar:{} */
+/* global tdViewport:{} */
+/* global tdInfiniteLoader:{} */
+/* global td_more_articles_box:{} */
+/* global tdDetect:{} */
+/* global tdCustomEvents:{} */
 
-var td_events = {
+/* global td_events_scroll_scroll_to_top:Function */
 
-    //the events - we have timers that look at the variables and fire the event if the flag is true
-    scroll_event_slow_run: false,
-    scroll_event_medium_run: false,
+var tdEvents = {};
 
-    resize_event_slow_run: false, //when true, fire up the resize event
-    resize_event_medium_run: false,
+(function(){
+    'use strict';
 
+    tdEvents = {
 
-    scroll_window_scrollTop: 0, //used to store the scrollTop
+        //the events - we have timers that look at the variables and fire the event if the flag is true
+        scroll_event_slow_run: false,
+        scroll_event_medium_run: false,
 
-    window_pageYOffset: window.pageYOffset, // @todo see if it can replace scroll_window_scrollTop [used by others]
-    window_innerHeight: window.innerHeight, // used to store the window height
-    window_innerWidth: window.innerWidth, // used to store the window width
-
-    init: function init() {
-
-        jQuery(window).scroll(function() {
-            td_events.scroll_event_slow_run = true;
-            td_events.scroll_event_medium_run = true;
-
-            //read the scroll top
-            td_events.scroll_window_scrollTop = jQuery(window).scrollTop();
-            td_events.window_pageYOffset = window.pageYOffset;
-
-            /*  ----------------------------------------------------------------------------
-             Run affix menu event
-             */
-
-            td_affix.td_events_scroll(td_events.scroll_window_scrollTop); //main menu
-
-            td_smart_sidebar.td_events_scroll(td_events.scroll_window_scrollTop); //smart sidebar scroll
+        resize_event_slow_run: false, //when true, fire up the resize event
+        resize_event_medium_run: false,
 
 
-            // call real td_custom_events scroll
-            td_custom_events._callback_scroll();
-        });
+        scroll_window_scrollTop: 0, //used to store the scrollTop
+
+        window_pageYOffset: window.pageYOffset, // @todo see if it can replace scroll_window_scrollTop [used by others]
+        window_innerHeight: window.innerHeight, // used to store the window height
+        window_innerWidth: window.innerWidth, // used to store the window width
+
+        init: function() {
+
+            jQuery( window ).scroll(function() {
+                tdEvents.scroll_event_slow_run = true;
+                tdEvents.scroll_event_medium_run = true;
+
+                //read the scroll top
+                tdEvents.scroll_window_scrollTop = jQuery( window ).scrollTop();
+                tdEvents.window_pageYOffset = window.pageYOffset;
+
+                /*  ----------------------------------------------------------------------------
+                 Run affix menu event
+                 */
+
+                tdAffix.td_events_scroll( tdEvents.scroll_window_scrollTop ); //main menu
+
+                tdSmartSidebar.td_events_scroll( tdEvents.scroll_window_scrollTop ); //smart sidebar scroll
 
 
-        jQuery(window).resize(function() {
-            td_events.resize_event_slow_run = true;
-            td_events.resize_event_medium_run = true;
-
-            td_events.window_innerHeight = window.innerHeight;
-            td_events.window_innerWidth = window.innerWidth;
-
-            //var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-
-            //w = jQuery(document).width();
-            //console.log(w);
+                // call real tdCustomEvents scroll
+                tdCustomEvents._callback_scroll();
+            });
 
 
-            // call real td_custom_events resize
-            td_custom_events._callback_resize();
-        });
+            jQuery( window ).resize(function() {
+                tdEvents.resize_event_slow_run = true;
+                tdEvents.resize_event_medium_run = true;
+
+                tdEvents.window_innerHeight = window.innerHeight;
+                tdEvents.window_innerWidth = window.innerWidth;
+
+                //var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+
+                //w = jQuery(document).width();
+                //console.log(w);
 
 
-
-        //medium resolution timer for rest?
-        setInterval(function() {
-
-            // it must run before any others
-            td_viewport.detect_changes();
-
-            //scroll event
-            if (td_events.scroll_event_medium_run) {
-                td_events.scroll_event_medium_run = false;
-                //compute events for the infinite scroll
-                tdInfiniteLoader.computeEvents();
-
-
-                // call lazy td_custom_events scroll
-                td_custom_events._lazy_callback_scroll_100();
-            }
-
-            if (td_events.resize_event_medium_run) {
-                td_events.resize_event_medium_run = false;
-                td_smart_sidebar.td_events_resize();
-
-
-                // call lazy td_custom_events resize
-                td_custom_events._lazy_callback_resize_100();
-            }
-        }, 100);
+                // call real tdCustomEvents resize
+                tdCustomEvents._callback_resize();
+            });
 
 
 
-        //low resolution timer for rest?
-        setInterval(function() {
-            //scroll event
-            if (td_events.scroll_event_slow_run) {
-                td_events.scroll_event_slow_run = false;
+            //medium resolution timer for rest?
+            setInterval(function() {
 
-                //back to top
-                td_events_scroll_scroll_to_top(td_events.scroll_window_scrollTop);
+                // it must run before any others
+                tdViewport.detectChanges();
 
-                //more articles box
-                td_more_articles_box.td_events_scroll(td_events.scroll_window_scrollTop);
-
-
-                // call lazy td_custom_events scroll
-                td_custom_events._lazy_callback_scroll_500();
-            }
-
-            //resize event
-            if (td_events.resize_event_slow_run) {
-                td_events.resize_event_slow_run = false;
-                td_affix.compute_wrapper();
-                td_affix.compute_top();
-                tdDetect.runIsPhoneScreen();
+                //scroll event
+                if ( tdEvents.scroll_event_medium_run ) {
+                    tdEvents.scroll_event_medium_run = false;
+                    //compute events for the infinite scroll
+                    tdInfiniteLoader.computeEvents();
 
 
-                // call lazy td_custom_events resize
-                td_custom_events._lazy_callback_resize_500();
-            }
-        }, 500);
+                    // call lazy tdCustomEvents scroll
+                    tdCustomEvents._lazy_callback_scroll_100();
+                }
 
-    }
+                if ( tdEvents.resize_event_medium_run ) {
+                    tdEvents.resize_event_medium_run = false;
+                    tdSmartSidebar.td_events_resize();
+
+
+                    // call lazy tdCustomEvents resize
+                    tdCustomEvents._lazy_callback_resize_100();
+                }
+            }, 100);
 
 
 
-};
+            //low resolution timer for rest?
+            setInterval(function() {
+                //scroll event
+                if ( tdEvents.scroll_event_slow_run ) {
+                    tdEvents.scroll_event_slow_run = false;
 
-td_events.init();
-'use strict';
+                    //back to top
+                    td_events_scroll_scroll_to_top( tdEvents.scroll_window_scrollTop );
+
+                    //more articles box
+                    td_more_articles_box.td_events_scroll( tdEvents.scroll_window_scrollTop );
+
+
+                    // call lazy tdCustomEvents scroll
+                    tdCustomEvents._lazy_callback_scroll_500();
+                }
+
+                //resize event
+                if ( tdEvents.resize_event_slow_run ) {
+                    tdEvents.resize_event_slow_run = false;
+                    tdAffix.compute_wrapper();
+                    tdAffix.compute_top();
+                    tdDetect.runIsPhoneScreen();
+
+
+                    // call lazy tdCustomEvents resize
+                    tdCustomEvents._lazy_callback_resize_500();
+                }
+            }, 500);
+        }
+    };
+
+    tdEvents.init();
+})();
+
 /**
  * updates the view counter thru ajax
  */
-var td_ajax_count = {
 
-    td_get_views_counts_ajax : function td_get_views_counts_ajax (page_type, array_ids) {
+/* global jQuery:{} */
+/* global td_ajax_url:string */
 
-        //what function to call based on page type
-        var page_type_action = 'td_ajax_get_views';//page_type = page
-        if(page_type == "post") {
-            page_type_action = 'td_ajax_update_views';
-        }
+var tdAjaxCount = {};
 
-        jQuery.ajax({
-            type: 'POST',
-            url: td_ajax_url,
-            cache:true,
+(function(){
 
-            data: {
-                action: page_type_action,
-                td_post_ids: array_ids
-            },
-            success: function(data, textStatus, XMLHttpRequest){
-                var td_ajax_post_counts = jQuery.parseJSON(data);//get the return dara
+    'use strict';
 
-                //check the return var to be object
-                if (td_ajax_post_counts instanceof Object) {
-                    //alert('value is Object!');
+    tdAjaxCount = {
 
-                    //itinerate thru the object
-                    jQuery.each(td_ajax_post_counts, function(id_post, value) {
-                        //alert(id_post + ": " + value);
+        //td_get_views_counts_ajax : function( page_type, array_ids ) {
+        tdGetViewsCountsAjax : function( postType, arrayIds ) {
 
-                        //this is the count placeholder in witch we write the post count
-                        var current_post_count = ".td-nr-views-" + id_post;
-
-                        jQuery(current_post_count).html(value);
-                        //console.log(current_post_count + ': ' + value);
-                    });
-                }
-            },
-            error: function(MLHttpRequest, textStatus, errorThrown){
-                //console.log(errorThrown);
+            //what function to call based on postType
+            var pageTypeAction = 'td_ajax_get_views';//postType = page
+            if ( 'post' === postType ) {
+                pageTypeAction = 'td_ajax_update_views';
             }
-        });
 
-    }
-};
+            jQuery.ajax({
+                type: 'POST',
+                url: td_ajax_url,
+                cache: true,
+                data: {
+                    action: pageTypeAction,
+                    td_post_ids: arrayIds
+                },
+                success: function( data, textStatus, XMLHttpRequest ) {
+                    var tdAjaxPostCounts = jQuery.parseJSON( data );//get the return dara
+
+                    //check the return var to be object
+                    if ( tdAjaxPostCounts instanceof Object ) {
+                        //alert('value is Object!');
+
+                        //iterate throw the object
+                        jQuery.each( tdAjaxPostCounts, function( idPost, value ) {
+                            //alert(id_post + ": " + value);
+
+                            //this is the count placeholder in witch we write the post count
+                            var currentPostCount = '.td-nr-views-' + idPost;
+
+                            jQuery( currentPostCount ).html( value );
+                            //console.log(current_post_count + ': ' + value);
+                        });
+                    }
+                },
+                error: function( MLHttpRequest, textStatus, errorThrown ) {
+                    //console.log(errorThrown);
+                }
+            });
+        }
+    };
+})();
+
 /*
  td_video_playlist.js
  v1.1
  */
 
-"use strict";
-// jQuery(window).load(function() {//
+
+/* global jQuery:{} */
+/* global YT:{} */
+/* global tdDetect:{} */
+/* global $f:{} */
+
+/* jshint -W069 */
+/* jshint -W116 */
+
+var tdYoutubePlayers = {};
+var tdVimeoPlayers = {};
+
+// @todo this ready hook function must be moved from here
 jQuery().ready(function() {
 
-    //click on a youtube movie
-    jQuery('.td_click_video_youtube').click(function(){
+    'use strict';
 
-        //this flag is check to see if to start the movie
-        td_youtube_player.td_playlist_video_autoplay_youtube = 1;
-
-        //add pause to playlist control
-        td_playlist_general_functions.td_playlist_add_play_control('.td_youtube_control');
-
-        //create  and play the clicked video
-        var td_youtube_video = jQuery(this).attr("id").substring(3);
-        if(td_youtube_video != '') {
-            td_youtube_player.playVideo(td_youtube_video);
-        }
-    });
-
-
-
-    //click on youtube play control
-    jQuery('.td_youtube_control').click(function(){
-
-        //click to play
-        if(jQuery(this).hasClass('td-sp-video-play')){
-            //this is to enable video playing
-            td_youtube_player.td_playlist_video_autoplay_youtube = 1;
-
-            //play the video
-            td_youtube_player.td_playlist_youtube_play_video();
-
-        } else {
-
-            //put pause to the player
-            td_youtube_player.td_playlist_youtube_pause_video();
-        }
-    });
-
-
-
-    //check for youtube wrapper and add api code to create the player
-    if(jQuery('.td_wrapper_playlist_player_youtube').length > 0) {
-
-        if(jQuery('.td_wrapper_playlist_player_youtube').data("autoplay") == "1") {
-            td_youtube_player.td_playlist_video_autoplay_youtube = 1;
-        }
-
-        var first_video = jQuery('.td_wrapper_playlist_player_youtube').data('first-video');
-
-        if(first_video != '') {
-            td_youtube_player.td_playlist_id_youtube_video_running = first_video;
-
-            td_youtube_player.playVideo(first_video);
-        }
-    }
-
-
-
-    //check autoplay vimeo
-    if(jQuery('.td_wrapper_playlist_player_vimeo').data("autoplay") == "1") {
-        td_vimeo_playlist_obj.td_playlist_video_autoplay_vimeo = 1;
-    }
-
-    //click on a vimeo
-    jQuery('.td_click_video_vimeo').click(function(){
-
-        //this flag is check to see if to start the movie
-        td_vimeo_playlist_obj.td_playlist_video_autoplay_vimeo = 1;
-
-        //add pause to playlist control
-        td_playlist_general_functions.td_playlist_add_play_control('.td_vimeo_control');
-
-        //create  and play the clicked video
-        td_vimeo_playlist_obj.create_player(jQuery(this).attr("id").substring(3));
-    });
-
-
-
-
-
-    //check for vimeo wrapper and add api code to create the player
-    if(jQuery('.td_wrapper_playlist_player_vimeo').length > 0) {
-
-        //add play to playlist control
-        td_playlist_general_functions.td_playlist_add_play_control('.td_vimeo_control');
-
-        //create the iframe with the video
-        td_vimeo_playlist_obj.create_player(jQuery('.td_wrapper_playlist_player_vimeo').data("first-video"));
-    }
-
-
-
-
-    //click on youtube play control
-    jQuery('.td_vimeo_control').click(function(){
-
-        //click to play
-        if(jQuery(this).hasClass('td-sp-video-play')){
-            //this is to enable video playing
-            td_vimeo_playlist_obj.td_playlist_video_autoplay_vimeo = 1;
-
-            //play the video
-            td_vimeo_playlist_obj.td_playlisty_player_vimeo.api("play");
-
-        } else {
-
-            //put pause to the player
-            td_vimeo_playlist_obj.td_playlisty_player_vimeo.api("pause");
-        }
-    });
-
+    tdYoutubePlayers.init();
+    tdVimeoPlayers.init();
 });
 
 
-var td_youtube_player = {
-    td_yt_player: '',
 
-    td_player_container: 'player_youtube',
+(function() {
 
-    td_playlist_video_autoplay_youtube: 0,
-
-    td_playlist_id_youtube_video_running: '',
+    'use strict';
 
 
-    playVideo: function(videoId) {
-        if (typeof(YT) == 'undefined' || typeof(YT.Player) == 'undefined') {
-            window.onYouTubePlayerAPIReady = function() {
-                td_youtube_player.loadPlayer(td_youtube_player.td_player_container, videoId);
+    // the youtube list players (the init() method should be called before using the list)
+    tdYoutubePlayers = {
+
+        // the part name of the player id (they will be ex 'player_youtube_1', 'player_youtube_1', 'player_youtube_2', ...)
+        tdPlayerContainer: 'player_youtube',
+
+        // the internal list
+        players: [],
+
+
+        // the initialization of the youtube list players
+        init: function() {
+
+            var jqWrapperPlaylistPlayerYoutube = jQuery( '.td_wrapper_playlist_player_youtube' );
+
+            for ( var i = 0; i < jqWrapperPlaylistPlayerYoutube.length; i++ ) {
+
+                var jqPlayerWrapper = jQuery( jqWrapperPlaylistPlayerYoutube[ i ] ),
+                    youtubePlayer = tdYoutubePlayers.addPlayer( jqPlayerWrapper),
+                    playerId = youtubePlayer.tdPlayerContainer;
+
+                jqPlayerWrapper.parent().find( '.td_youtube_control').data( 'player-id', playerId );
+
+                var videoYoutubeElements = jqPlayerWrapper.parent().find( '.td_click_video_youtube');
+                for ( var j = 0; j < videoYoutubeElements.length; j++ ) {
+                    jQuery( videoYoutubeElements[ j ] ).data( 'player-id', playerId );
+
+                    if ( j + 1 < videoYoutubeElements.length) {
+                        jQuery( videoYoutubeElements[ j ] ).data( 'next-video-id', jQuery(videoYoutubeElements[ j + 1 ] ).data( 'video-id' ) );
+                    } else {
+                        jQuery( videoYoutubeElements[ j ] ).data( 'next-video-id', jQuery(videoYoutubeElements[0]).data( 'video-id' ) );
+                    }
+                }
+
+
+                if ( '1' == jqPlayerWrapper.data( 'autoplay' ) ) {
+                    youtubePlayer.autoplay = 1;
+                }
+
+                var firstVideo = jqPlayerWrapper.data( 'first-video' );
+
+                if ( '' !== firstVideo ) {
+                    youtubePlayer.tdPlaylistIdYoutubeVideoRunning = firstVideo;
+                    youtubePlayer.playVideo( firstVideo );
+                }
+            }
+
+            //click on a youtube movie
+            jQuery( '.td_click_video_youtube' ).click(function(){
+
+                var videoId = jQuery( this ).data( 'video-id' ),
+                    playerId = jQuery( this ).data( 'player-id' );
+
+                if ( undefined !== playerId && '' !== playerId && undefined !== videoId && '' !== videoId ) {
+                    tdYoutubePlayers.operatePlayer( playerId, 'play', videoId );
+                }
+            });
+
+
+
+            //click on youtube play control
+            jQuery( '.td_youtube_control' ).click(function(){
+
+                var playerId = jQuery( this ).data( 'player-id' );
+
+                if ( undefined !== playerId && '' !== playerId ) {
+                    if ( jQuery( this ).hasClass( 'td-sp-video-play' ) ){
+                        tdYoutubePlayers.operatePlayer( playerId, 'play' );
+                    } else {
+                        tdYoutubePlayers.operatePlayer( playerId, 'pause' );
+                    }
+                }
+            });
+        },
+
+
+        addPlayer: function( jqPlayerWrapper ) {
+
+            var containerId = tdYoutubePlayers.tdPlayerContainer + '_' + tdYoutubePlayers.players.length,
+                tdPlayer = tdYoutubePlayers.createPlayer( containerId, jqPlayerWrapper );
+
+            tdYoutubePlayers.players.push( tdPlayer );
+
+            return tdPlayer;
+        },
+
+        operatePlayer: function( playerId, option, videoId ) {
+            for ( var i = 0; i < tdYoutubePlayers.players.length; i++ ) {
+                if (tdYoutubePlayers.players[i].tdPlayerContainer == playerId ) {
+
+                    var youtubePlayer = tdYoutubePlayers.players[ i ];
+
+                    // This status is necessary just for mobile
+                    youtubePlayer.playStatus();
+
+                    if ( 'play' === option ) {
+
+                        youtubePlayer.autoplay = 1;
+
+                        if ( undefined === videoId ) {
+                            youtubePlayer.playerPlay();
+                        } else {
+                            youtubePlayer.playVideo(videoId);
+                        }
+                    } else if ( 'pause' == option ) {
+                        tdYoutubePlayers.players[i].playerPause();
+                    }
+                    break;
+                }
+            }
+        },
+
+
+        // create and return the youtube player object
+        createPlayer: function( containerId, jqPlayerWrapper ) {
+
+            var youtubePlayer = {
+
+                tdYtPlayer: '',
+
+                tdPlayerContainer: containerId,
+
+                autoplay: 0,
+
+                tdPlaylistIdYoutubeVideoRunning: '',
+
+                jqTDWrapperVideoPlaylist: jqPlayerWrapper.closest( '.td_wrapper_video_playlist' ),
+
+                jqPlayerWrapper: jqPlayerWrapper,
+
+                jqControlPlayer: '',
+
+                _videoId: '',
+
+                playVideo: function( videoId ) {
+
+                    youtubePlayer._videoId = videoId;
+
+                    if ( 'undefined' === typeof( YT ) || 'undefined' === typeof( YT.Player ) ) {
+
+                        window.onYouTubePlayerAPIReady = function () {
+
+                            for ( var i = 0; i < tdYoutubePlayers.players.length; i++ ) {
+                                tdYoutubePlayers.players[ i ].loadPlayer( );
+                            }
+                        };
+
+                        jQuery.getScript('https://www.youtube.com/player_api').done(function( script, textStatus ) {
+                            //alert(textStatus);
+                        });
+                    } else {
+                        youtubePlayer.loadPlayer( videoId );
+                    }
+                },
+
+
+                loadPlayer: function (videoId) {
+
+                    var videoIdToPlay = youtubePlayer._videoId;
+
+                    if ( undefined !== videoId ) {
+                        videoIdToPlay = videoId;
+                    }
+
+                    if ( undefined === videoIdToPlay ) {
+                        return;
+                    }
+
+                    //container is here in case we need to add multiple players on page
+                    youtubePlayer.tdPlaylistIdYoutubeVideoRunning = videoIdToPlay;
+
+                    var current_video_name = window.td_youtube_list_ids['td_' + youtubePlayer.tdPlaylistIdYoutubeVideoRunning]['title'],
+                        current_video_time = window.td_youtube_list_ids['td_' + youtubePlayer.tdPlaylistIdYoutubeVideoRunning]['time'];
+
+                    //remove focus from all videos from playlist
+                    youtubePlayer.jqTDWrapperVideoPlaylist.find( '.td_click_video_youtube' ).removeClass( 'td_video_currently_playing' );
+
+                    //add focus class on current playing video
+                    youtubePlayer.jqTDWrapperVideoPlaylist.find( '.td_' + videoIdToPlay ).addClass( 'td_video_currently_playing' );
+
+                    //ading the current video playing title and time to the control area
+                    youtubePlayer.jqTDWrapperVideoPlaylist.find( '.td_current_video_play_title_youtube' ).html( current_video_name );
+                    youtubePlayer.jqTDWrapperVideoPlaylist.find( '.td_current_video_play_time_youtube' ).html( current_video_time );
+
+                    youtubePlayer.jqPlayerWrapper.html('<div id=' + youtubePlayer.tdPlayerContainer + '></div>');
+
+                    youtubePlayer.jqControlPlayer = youtubePlayer.jqTDWrapperVideoPlaylist.find( '.td_youtube_control' );
+
+                    youtubePlayer.tdYtPlayer = new YT.Player(youtubePlayer.tdPlayerContainer, {//window.myPlayer = new YT.Player(container, {
+                        playerVars: {
+                            //modestbranding: 1,
+                            //rel: 0,
+                            //showinfo: 0,
+                            autoplay: youtubePlayer.autoplay
+                        },
+                        height: '100%',
+                        width: '100%',
+                        videoId: videoIdToPlay,
+                        events: {
+                            'onStateChange': youtubePlayer.onPlayerStateChange
+                        }
+                    });
+                },
+
+
+                onPlayerStateChange: function (event) {
+                    if (event.data === YT.PlayerState.PLAYING) {
+
+                        //add pause to playlist control
+                        youtubePlayer.pauseStatus();
+
+                    } else if (event.data === YT.PlayerState.ENDED) {
+
+                        youtubePlayer.playStatus();
+
+                        //if a video has ended then make auto play = 1; This is the case when the user set autoplay = 0 but start watching videos
+                        youtubePlayer.autoplay = 1;
+
+
+                        //get the next video
+                        var nextVideoId = '',
+                            tdVideoCurrentlyPlaying = youtubePlayer.jqTDWrapperVideoPlaylist.find( '.td_video_currently_playing' );
+
+                        if ( tdVideoCurrentlyPlaying.length ) {
+                            var nextSibling = jQuery( tdVideoCurrentlyPlaying ).next( '.td_click_video_youtube' );
+                            if ( nextSibling.length ) {
+                                nextVideoId = jQuery( nextSibling ).data( 'video-id' );
+                            }
+                            //else {
+                            //    var firstSibling = jQuery(tdVideoCurrentlyPlaying).siblings( '.td_click_video_youtube:first' );
+                            //    if ( firstSibling.length ) {
+                            //        nextVideoId = jQuery( firstSibling ).data( 'video-id' );
+                            //    }
+                            //}
+                        }
+
+                        if ('' !== nextVideoId) {
+                            youtubePlayer.playVideo(nextVideoId);
+                        }
+
+                    } else if (YT.PlayerState.PAUSED) {
+                        //add play to playlist control
+                        youtubePlayer.playStatus();
+                    }
+                },
+
+                //tdPlaylistYoutubeStopVideo: function () {
+                //    youtubePlayer.tdYtPlayer.stopVideo();
+                //},
+
+                playerPlay: function () {
+                    youtubePlayer.tdYtPlayer.playVideo();
+                },
+
+                playerPause: function () {
+                    youtubePlayer.tdYtPlayer.pauseVideo();
+                },
+
+                playStatus: function() {
+                    youtubePlayer.jqControlPlayer.removeClass( 'td-sp-video-pause' ).addClass( 'td-sp-video-play' );
+                },
+
+                pauseStatus: function() {
+                    youtubePlayer.jqControlPlayer.removeClass( 'td-sp-video-play' ).addClass( 'td-sp-video-pause' );
+                }
             };
-            jQuery.getScript('https://www.youtube.com/player_api');
-        } else {
-            td_youtube_player.loadPlayer(td_youtube_player.td_player_container, videoId);
+
+            return youtubePlayer;
         }
-    },
-
-
-    loadPlayer: function(container, videoId) {
-        //container is here in case we need to add multiple players on page
-        td_youtube_player.td_playlist_id_youtube_video_running = videoId;
-
-        var current_video_name = td_youtube_list_ids['td_' + td_youtube_player.td_playlist_id_youtube_video_running]['title'];
-        var current_video_time = td_youtube_list_ids['td_' + td_youtube_player.td_playlist_id_youtube_video_running]['time'];
-
-        //remove focus from all videos from playlist
-        td_playlist_general_functions.td_video_playlist_remove_focused('.td_click_video_youtube');
-
-        //add focus class on current playing video
-        jQuery('#td_' + videoId).addClass('td_video_currently_playing');
-
-        //ading the current video playing title and time to the control area
-        jQuery('#td_current_video_play_title_youtube').html(current_video_name);
-        jQuery('#td_current_video_play_time_youtube').html(current_video_time);
-
-        td_youtube_player.td_yt_player = '';
-        jQuery(".td_wrapper_playlist_player_youtube").html("<div id="+ td_youtube_player.td_player_container +"></div>");
-
-        td_youtube_player.td_yt_player = new YT.Player(container, {//window.myPlayer = new YT.Player(container, {
-            playerVars: {
-                //modestbranding: 1,
-                //rel: 0,
-                //showinfo: 0,
-                autoplay: td_youtube_player.td_playlist_video_autoplay_youtube
-            },
-            height: '100%',
-            width: '100%',
-            videoId: videoId,
-            events: {
-                'onReady': td_youtube_player.onPlayerReady,
-                'onStateChange': td_youtube_player.onPlayerStateChange
-            }
-        });
-    },
-
-
-    onPlayerStateChange: function onPlayerStateChange(event) {
-        if (event.data == YT.PlayerState.PLAYING) {
-
-            //add pause to playlist control
-            td_playlist_general_functions.td_playlist_add_pause_control('.td_youtube_control');
-
-        } else if (event.data == YT.PlayerState.ENDED) {
-            //video_events_js.on_stop('youtube');
-
-            //add play to playlist control
-            td_playlist_general_functions.td_playlist_add_play_control('.td_youtube_control');
-
-            //if a video has ended then make auto play = 1; This is the case when the user set autoplay = 0 but start watching videos
-            td_youtube_player.td_playlist_video_autoplay_youtube = 1;
-
-            //get the next video
-            var next_video_id = td_playlist_general_functions.td_playlist_choose_next_video([td_youtube_list_ids, td_youtube_player.td_playlist_id_youtube_video_running]);
-            if(next_video_id != '') {
-                td_youtube_player.playVideo(next_video_id);
-            }
-
-        } else if (YT.PlayerState.PAUSED) {
-            //add play to playlist control
-            td_playlist_general_functions.td_playlist_add_play_control('.td_youtube_control');
-        }
-    },
-
-    td_playlist_youtube_stopVideo: function td_playlist_youtube_stopVideo() {
-        td_youtube_player.td_yt_player.stopVideo();
-    },
-
-    td_playlist_youtube_play_video: function td_playlist_youtube_play_video() {
-        if(tdDetect.isMobileDevice) {
-            //alert('mobile');
-        } else {
-            td_youtube_player.td_yt_player.playVideo();
-        }
-    },
-
-    td_playlist_youtube_pause_video: function td_playlist_youtube_pause_video() {
-        td_youtube_player.td_yt_player.pauseVideo();
-    }
-};
+    };
 
 
 
 
+    // the vimeo list players (to use it, the init() method should be called)
+    // !Important. Usually, because of froogaloop implementation, there couldn't be multiple vimeo players running all at once on page.
+    tdVimeoPlayers = {
 
-//VIMEO
-var td_vimeo_playlist_obj = {
+        // the part name of the player id (they will be ex 'player_vimeo_0', 'player_vimeo_1', 'player_vimeo_2', ...)
+        tdPlayerContainer: 'player_vimeo',
 
-    current_video_playing : '',
+        // the internal list
+        players: [],
 
-    td_playlisty_player_vimeo: '',//a copy of the vimeo player : needed when playing or pausing the vimeo pleyer from the playlist control
+        // Set to true at the first autoplayed player created
+        // It's used to avoid the autoplay setting of the next players (multiple players can't have autoplay = 1 )
+        existingAutoplay: false,
 
-    td_playlist_video_autoplay_vimeo: '',//autoplay
 
-    create_player: function (video_id){
-        if(video_id != '') {
+        // init the vimeo list players
+        init: function() {
+            var jqTDWrapperPlaylistPlayerVimeo = jQuery( '.td_wrapper_playlist_player_vimeo' );
 
-            var vimeo_iframe_autoplay = '';
-
-            this.current_video_playing = video_id;
-
-            //remove focus class
-            td_playlist_general_functions.td_video_playlist_remove_focused('.td_click_video_vimeo');
-
-            //add focus clas on play movie
-            jQuery('#td_' + video_id).addClass('td_video_currently_playing');
-
-            //put movie data to control box
-            this.put_movie_data_to_control_box(video_id);
-
-            //check autoplay
-            if(this.td_playlist_video_autoplay_vimeo != 0) {
-                vimeo_iframe_autoplay = '&autoplay=1';
+            for ( var i = 0; i < jqTDWrapperPlaylistPlayerVimeo.length; i++ ) {
+                var vimeoPlayer = tdVimeoPlayers.addPlayer( jQuery(jqTDWrapperPlaylistPlayerVimeo[i]) );
+                if ( 0 !== vimeoPlayer.autoplay ) {
+                    tdVimeoPlayers.existingAutoplay = true;
+                }
             }
 
 
-            jQuery('.td_wrapper_playlist_player_vimeo').html('');
-            jQuery('.td_wrapper_playlist_player_vimeo').html('<iframe id="player_vimeo_1" src="https://player.vimeo.com/video/' + video_id + '?api=1&player_id=player_vimeo_1' + vimeo_iframe_autoplay + '"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>');//width="100%" height="100%"
+            //click on a vimeo
+            jQuery( '.td_click_video_vimeo' ).click(function(){
 
-            this.create_vimeo_object_player(jQuery);
-        }
+                var videoId = jQuery( this ).data( 'video-id' ),
+                    playerId = jQuery( this ).data( 'player-id' );
 
-    },
-
-    put_movie_data_to_control_box: function (video_id){
-        jQuery('#td_current_video_play_title_vimeo').html(td_vimeo_list_ids['td_' + video_id]['title']);
-        jQuery('#td_current_video_play_time_vimeo').html(td_vimeo_list_ids['td_' + video_id]['time']);
-    },
-
-    create_vimeo_object_player : function ($) {
-        var iframe = '';
-        var player = '';
-
-        iframe = $('#player_vimeo_1')[0];
-        player = $f(iframe);
-
-        //a copy of the vimeo player : needed when playing or pausing the vimeo pleyer from the playlist control
-        this.td_playlisty_player_vimeo = player;
-
-        // When the player is ready, add listeners for pause, finish, and playProgress
-        player.addEvent('ready', function() {
-            //status.text('ready');
-
-            player.addEvent('play', td_vimeo_playlist_obj.onPlay);
-            player.addEvent('pause', td_vimeo_playlist_obj.onPause);
-            player.addEvent('finish', td_vimeo_playlist_obj.onFinish);
-            player.addEvent('playProgress', td_vimeo_playlist_obj.onPlayProgress);
-        });
-    },
-
-    onPlay : function onPlay(id) {
-        td_playlist_general_functions.td_playlist_add_pause_control('.td_vimeo_control');
-
-        td_vimeo_playlist_obj.td_playlist_video_autoplay_vimeo = 1;
-    },
-
-    onPause : function onPause(id) {
-        td_playlist_general_functions.td_playlist_add_play_control('.td_vimeo_control');
-    },
-
-    onFinish : function onFinish(id) {
-        //status.text('finished');
-
-        //add play to playlist control
-        td_playlist_general_functions.td_playlist_add_play_control('.td_vimeo_control');
-
-        //if a video has ended then make auto play = 1; This is the case when the user set autoplay = 0 but start watching videos
-        td_vimeo_playlist_obj.td_playlist_video_autoplay_vimeo = 1;
-
-        if(tdDetect.isMobileDevice && tdDetect.isAndroid) {
-            //alert('is android');
-        } else {
-
-            //get the next video
-            var next_video_id = td_playlist_general_functions.td_playlist_choose_next_video([td_vimeo_list_ids, td_vimeo_playlist_obj.current_video_playing]);
-            if(next_video_id != '') {
-                td_vimeo_playlist_obj.create_player(next_video_id);
-            }
-        }
-    },
-
-    onPlayProgress : function onPlayProgress(data, id) {
-        //status.text(data.seconds + 's played');
-    }
-};
+                if ( undefined !== playerId && '' !== playerId && undefined !== videoId && '' !== videoId ) {
+                    tdVimeoPlayers.operatePlayer( playerId, 'play', videoId );
+                }
+            });
 
 
-//this object holds some functions used by both the youtube and vimeo
-var td_playlist_general_functions = {
-    td_video_playlist_remove_focused: function td_video_playlist_remove_focused(obj_class) {
-        //remove focus class
-        jQuery( obj_class).each(function(){
-            jQuery(this).removeClass('td_video_currently_playing');
-        });
-    },
+            //click on vimeo play control
+            jQuery( '.td_vimeo_control' ).click(function(){
+
+                var playerId = jQuery( this ).data( 'player-id' );
+
+                if ( undefined !== playerId && '' !== playerId ) {
+                    if ( jQuery( this ).hasClass( 'td-sp-video-play' ) ){
+                        tdVimeoPlayers.operatePlayer( playerId, 'play' );
+                    } else {
+                        tdVimeoPlayers.operatePlayer( playerId, 'pause' );
+                    }
+                }
+            });
+        },
 
 
-    /*
-     parram_array = array [
-     video_list,
-     current_video_id_playing
-     ]
-     */
-    td_playlist_choose_next_video: function td_playlist_choose_next_video(parram_array){
-        //alert('get next');
+        // create and add player to the vimeo list players
+        addPlayer: function( jqPlayerWrapper ) {
+            var playerId = tdVimeoPlayers.tdPlayerContainer + '_' + tdVimeoPlayers.players.length,
+                vimeoPlayer = tdVimeoPlayers.createPlayer(  playerId, jqPlayerWrapper );
 
-        var video_list = parram_array[0];
-        var current_video_id_playing = 'td_' + parram_array[1];
+            jqPlayerWrapper.parent().find( '.td_vimeo_control').data( 'player-id', playerId );
 
-        //get next video id
-        var next_video_id = '';
-        var found_current = '';
-        for(var video in video_list){
-            if(found_current == 'found') {
-                next_video_id = video;
-                found_current = '';
-                break;//found , now exit
-            }
-            if(video == current_video_id_playing) {
-                found_current = 'found';
-            }
-        }
+            var vimeoVideoElements = jqPlayerWrapper.parent().find( '.td_click_video_vimeo');
+            for ( var j = 0; j < vimeoVideoElements.length; j++ ) {
+                jQuery( vimeoVideoElements[ j ] ).data( 'player-id', playerId );
 
-        //play the next video
-        if(next_video_id != '') {
-
-            //remove 'td_' from the beginning of the string if necessary
-            if(next_video_id.substring(0, 3) == 'td_') {
-                next_video_id = next_video_id.substring(3);
+                if ( j + 1 < vimeoVideoElements.length ) {
+                    jQuery( vimeoVideoElements[ j ] ).data( 'next-video-id', jQuery( vimeoVideoElements[ j + 1 ] ).data( 'video-id' ) );
+                } else {
+                    jQuery( vimeoVideoElements[ j ] ).data( 'next-video-id', jQuery( vimeoVideoElements[ 0 ] ).data( 'video-id' ) );
+                }
             }
 
-            return next_video_id;
+            if ( '1' == jqPlayerWrapper.data( 'autoplay' ) ) {
+                vimeoPlayer.autoplay = 1;
+            }
+
+            var firstVideo = jqPlayerWrapper.data( 'first-video' );
+
+            if ( undefined !== firstVideo && '' !== firstVideo ) {
+                vimeoPlayer.createPlayer( firstVideo );
+            }
+
+            tdVimeoPlayers.players.push( vimeoPlayer );
+
+            return vimeoPlayer;
+        },
+
+
+        // play or pause a video or the current (first) video
+        operatePlayer: function( playerId, option, videoId ) {
+            for ( var i = 0; i < tdVimeoPlayers.players.length; i++ ) {
+
+                if ( tdVimeoPlayers.players[ i ].playerId == playerId ) {
+
+                    var vimeoPlayer = tdVimeoPlayers.players[ i ];
+
+                    if ( 'play' === option ) {
+
+                        vimeoPlayer.autoplay = 1;
+
+                        if ( undefined !== videoId ) {
+
+                            // the existing autoplay is reset to allow autoplay when we have videoId (a video from the playlist was clicked)
+                            tdVimeoPlayers.existingAutoplay = false;
+
+                            vimeoPlayer.createPlayer( videoId );
+                        } else {
+                            vimeoPlayer.playerPlay();
+                        }
+
+                    } else if ( 'pause' === option ) {
+                        vimeoPlayer.playerPause();
+                    }
+
+                    break;
+                }
+            }
+        },
+
+
+        // create and return the vimeo player object
+        createPlayer: function( playerId, jqPlayerWrapper ) {
+
+            var vimeoPlayer = {
+
+                playerId: playerId,
+
+                // the jq td playlist wrapper ( the player and the playlist)
+                jqTDWrapperVideoPlaylist: jqPlayerWrapper.closest( '.td_wrapper_video_playlist' ),
+
+                // the jq player wrapper
+                jqPlayerWrapper: jqPlayerWrapper,
+
+                currentVideoPlaying : '', // not used for the moment
+
+                player: '',//a copy of the vimeo player : needed when playing or pausing the vimeo pleyer from the playlist control
+
+                // main control button of the player
+                jqControlPlayer: '',
+
+                autoplay: 0,//autoplay
+
+                createPlayer: function ( videoId ) {
+                    if ( '' !== videoId ) {
+
+                        this.currentVideoPlaying = videoId;
+
+                        var autoplay = '',
+                            current_video_name = window.td_vimeo_list_ids['td_' + videoId]['title'],
+                            current_video_time = window.td_vimeo_list_ids['td_' + videoId]['time'];
+
+                        //remove focus from all videos from playlist
+                        vimeoPlayer.jqTDWrapperVideoPlaylist.find( '.td_click_video_vimeo' ).removeClass( 'td_video_currently_playing' );
+
+                        //add focus class on current playing video
+                        vimeoPlayer.jqTDWrapperVideoPlaylist.find( '.td_' + videoId ).addClass( 'td_video_currently_playing' );
+
+                        //ading the current video playing title and time to the control area
+                        vimeoPlayer.jqTDWrapperVideoPlaylist.find( '.td_current_video_play_title_vimeo' ).html( current_video_name );
+                        vimeoPlayer.jqTDWrapperVideoPlaylist.find( '.td_current_video_play_time_vimeo' ).html( current_video_time );
+
+                        vimeoPlayer.jqControlPlayer = vimeoPlayer.jqTDWrapperVideoPlaylist.find( '.td_vimeo_control' );
+
+                        //check autoplay
+                        if ( !tdVimeoPlayers.existingAutoplay && 0 !== vimeoPlayer.autoplay ) {
+                            autoplay = '&autoplay=1';
+
+                            if ( tdDetect.isMobileDevice ) {
+                                vimeoPlayer.playStatus();
+                            } else {
+                                vimeoPlayer.pauseStatus();
+                            }
+                        } else {
+                            vimeoPlayer.playStatus();
+                        }
+                        vimeoPlayer.jqPlayerWrapper.html( '<iframe id="' + vimeoPlayer.playerId + '" src="https://player.vimeo.com/video/' + videoId + '?api=1&player_id=' + vimeoPlayer.playerId + '' + autoplay + '"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>' );
+                        vimeoPlayer.createVimeoObjectPlayer( jQuery );
+                    }
+                },
+
+                createVimeoObjectPlayer : function( $ ) {
+                    var player = '',
+                        iframe = $( '#' + vimeoPlayer.playerId );
+
+                    if ( iframe.length ) {
+                        player = $f( iframe[0] );
+
+                        //a copy of the vimeo player : needed when playing or pausing the vimeo pleyer from the playlist control
+                        vimeoPlayer.player = player;
+
+                        // When the player is ready, add listeners for pause, finish, and playProgress
+                        player.addEvent( 'ready', function() {
+
+                            player.addEvent( 'play', function( data ) {
+                                vimeoPlayer.pauseStatus();
+                                vimeoPlayer.autoplay = 1;
+                            });
+
+                            player.addEvent( 'pause', function( data ) {
+                                vimeoPlayer.playStatus();
+                            });
+
+                            player.addEvent( 'finish', function( data ) {
+
+                                var nextVideoId = '',
+                                    tdVideoCurrentlyPlaying = vimeoPlayer.jqTDWrapperVideoPlaylist.find( '.td_video_currently_playing' );
+
+                                if ( tdVideoCurrentlyPlaying.length ) {
+                                    var nextSibling = jQuery( tdVideoCurrentlyPlaying ).next( '.td_click_video_vimeo' );
+                                    if ( nextSibling.length ) {
+                                        nextVideoId = jQuery( nextSibling ).data( 'video-id' );
+                                    }
+                                }
+
+                                if ( '' !== nextVideoId ) {
+                                    vimeoPlayer.createPlayer( nextVideoId );
+
+                                    if ( tdDetect.isMobileDevice ) {
+                                        vimeoPlayer.playStatus();
+                                    } else {
+                                        vimeoPlayer.pauseStatus();
+                                    }
+                                } else {
+                                    vimeoPlayer.playStatus();
+                                }
+                            });
+                        });
+                    }
+                },
+
+                // play the current video
+                playerPlay: function () {
+                    vimeoPlayer.autoplay = 1;
+                    vimeoPlayer.player.api( 'play' );
+                },
+
+                // pause the current video
+                playerPause: function () {
+                    vimeoPlayer.player.api( 'pause' );
+                },
+
+                // change status to 'play'
+                playStatus: function() {
+                    vimeoPlayer.jqControlPlayer.removeClass( 'td-sp-video-pause' ).addClass( 'td-sp-video-play' );
+                },
+
+                // change status to 'pause'
+                pauseStatus: function() {
+                    vimeoPlayer.jqControlPlayer.removeClass( 'td-sp-video-play' ).addClass( 'td-sp-video-pause' );
+                }
+            };
+
+            return vimeoPlayer;
         }
+    };
 
-        return '';
-    },
-
-
-
-    //add pause button playlist control
-    td_playlist_add_pause_control: function td_playlist_add_pause_control(wrapper_class){
-        jQuery(wrapper_class).removeClass('td-sp-video-play').addClass('td-sp-video-pause');
-    },
-
-    //add play button playlist control
-    td_playlist_add_play_control: function td_playlist_add_play_control(wrapper_class){
-        jQuery(wrapper_class).removeClass('td-sp-video-pause').addClass('td-sp-video-play');
-    }
-};
+})();
 /*
  td_slide.js
  */
@@ -6356,678 +7868,716 @@ function td_resize_normal_slide_and_update(args) {
  */
 
 
-"use strict";
+/* global tdViewport:{} */
+/* global jQuery:{} */
 
+var tdPullDown = {};
 
-var td_pulldown = {
+( function(){
 
+    'use strict';
 
-    // - keeps internally the current interval index
-    // - it's set at init()
-    _view_port_interval_index : td_viewport.INTERVAL_INITIAL_INDEX,
+    tdPullDown = {
 
 
+        // - keeps internally the current interval index
+        // - it's set at init()
+        _view_port_interval_index : tdViewport.INTERVAL_INITIAL_INDEX,
 
-    // this flag mark that the td_pulldown.items must be reinitialized at the changing view port size
-    reinitialize_items_at_change_view_port: false,
 
 
+        // this flag mark that the tdPullDown.items must be reinitialized at the changing view port size
+        reinitialize_items_at_change_view_port: false,
 
-    // - the list of items
-    items: [],
 
 
+        // - the list of items
+        items: [],
 
-    // - the item represents a pair of lists (a horizontal and a vertical one)
-    // - to be initialized, every property with 'IT MUST BE SPECIFIED' is mandatory
-    item: function item() {
 
-        // - the jquery object of the horizontal list.
-        // IT MUST BE SPECIFIED.
-        this.horizontal_jquery_obj = '';
 
-        // - the jquery object of the vertical list.
-        // IT MUST BE SPECIFIED
-        this.vertical_jquery_obj = '';
+        // - the item represents a pair of lists (a horizontal and a vertical one)
+        // - to be initialized, every property with 'IT MUST BE SPECIFIED' is mandatory
+        item: function item() {
 
-        // - the jquery container object.
-        // - it contains the horizontal and the vertical jquery objects
-        // IT MUST BE SPECIFIED.
-        this.container_jquery_obj = '';
 
-        // - the css class of an horizontal element.
-        // IT MUST BE SPECIFIED
-        this.horizontal_element_css_class = '';
+            // OPTIONAL - here we store the block Unique ID. This enables us to delete the item via this id @see tdPullDown.deleteItem
+            this.blockUid = '';
 
+            // - the jquery object of the horizontal list.
+            // IT MUST BE SPECIFIED.
+            this.horizontal_jquery_obj = '';
 
+            // - the jquery object of the vertical list.
+            // IT MUST BE SPECIFIED
+            this.vertical_jquery_obj = '';
 
-        // the minimum no. of elements to be shown by the horizontal list
-        // - IT CAN BE SPECIFIED
-        this.minimum_elements = 2;
+            // - the jquery container object.
+            // - it contains the horizontal and the vertical jquery objects
+            // IT MUST BE SPECIFIED.
+            this.container_jquery_obj = '';
 
+            // - the css class of an horizontal element.
+            // IT MUST BE SPECIFIED
+            this.horizontal_element_css_class = '';
 
 
-        // - the array of jquery elements whose widths must be excluded from the width of the container object
-        // IT CAN BE SPECIFIED
-        this.excluded_jquery_elements = [];
 
-        // - the extra space of the horizontal jquery object occupied by the excluded jquery elements
-        // - it's not initialized with 0 because widths of the elements can not be integer values
-        // - now, it's set to 1px
-        this._horizontal_extra_space = 1;
+            // the minimum no. of elements to be shown by the horizontal list
+            // - IT CAN BE SPECIFIED
+            this.minimum_elements = 2;
 
 
 
-        // - the array of objects from the horizontal list
-        this._horizontal_elements = [];
+            // - the array of jquery elements whose widths must be excluded from the width of the container object
+            // IT CAN BE SPECIFIED
+            this.excluded_jquery_elements = [];
 
-        // - the array of objects from the vertical list
-        this._vertical_elements = [];
+            // - the extra space of the horizontal jquery object occupied by the excluded jquery elements
+            // - it's not initialized with 0 because widths of the elements can not be integer values
+            // - now, it's set to 1px
+            this._horizontal_extra_space = 1;
 
 
 
-        // - the jquery object of the first ul container in the vertical list
-        // - it is calculated as the first 'ul' of the vertical jquery object
-        this._vertical_ul_jquery_obj = '';
+            // - the array of objects from the horizontal list
+            this._horizontal_elements = [];
 
+            // - the array of objects from the vertical list
+            this._vertical_elements = [];
 
 
-        // - the outer width of the vertical top header (ex.'More')
-        // - it's used to calculate if the last vertical element has enough space in the horizontal list,
-        // without considering the vertical top header width
-        this._vertical_jquery_obj_outer_width = 0;
 
+            // - the jquery object of the first ul container in the vertical list
+            // - it is calculated as the first 'ul' of the vertical jquery object
+            this._vertical_ul_jquery_obj = '';
 
 
-        // flag used to mark the initialization item
-        this._is_initialized = false;
-    },
 
+            // - the outer width of the vertical top header (ex.'More')
+            // - it's used to calculate if the last vertical element has enough space in the horizontal list,
+            // without considering the vertical top header width
+            this._vertical_jquery_obj_outer_width = 0;
 
 
 
-    /**
-     * - function used to init the td_pulldown object
-     * - it must be called before any item adding
-     * - it initializes the _view_port_interval_index
-     * - the items list is initialized
-     */
-    init: function init() {
+            // flag used to mark the initialization item
+            this._is_initialized = false;
+        },
 
-        td_pulldown._view_port_interval_index = td_viewport.get_current_interval_index();
 
-        td_pulldown.items = [];
-    },
 
 
+        /**
+         * - function used to init the tdPullDown object
+         * - it must be called before any item adding
+         * - it initializes the _view_port_interval_index
+         * - the items list is initialized
+         */
+        init: function() {
 
+            tdPullDown._view_port_interval_index = tdViewport.getCurrentIntervalIndex();
 
-    /**
-     * - add an item to the item list and initialize it
-     *
-     * @param item The item to be added and initialized
-     */
-    add_item: function add_item(item) {
+            tdPullDown.items = [];
+        },
 
-        // the item is added in the item list
-        td_pulldown.items.push(item);
 
-        // the item is initialized only once when it is added
-        td_pulldown._initialize_item(item);
 
-        //  the item is ready to be computed
-        td_pulldown._compute_item(item);
-    },
 
+        /**
+         * - add an item to the item list and initialize it
+         *
+         * @param item The item to be added and initialized
+         */
+        add_item: function( item ) {
 
-
-
-    /**
-     * - internal utility function used to initialize an item
-     * - an item must be initialized only once
-     * - every element having a specified css class is added in the horizontal list
-     *
-     * @param item {td_pulldown.item} The item to be initialized
-     * @private
-     */
-    _initialize_item: function _initialize_item(item) {
-
-        // an item must be initialized only once
-        if (item._is_initialized === true) {
-            return;
-        }
-
-
-        // the mandatory item properties are verified
-        if ((item.horizontal_jquery_obj == '') ||
-            (item.vertical_jquery_obj == '') ||
-            (item.container_jquery_obj == '') ||
-            (item.horizontal_element_css_class == '')) {
-
-            td_pulldown.log('Item can\' be initialized. It doesn\'t have all the mandatory properties');
-            return;
-        }
-
-
-        // the jquery object of the first ul container in the vertical list is initialized
-        item._vertical_ul_jquery_obj = item.vertical_jquery_obj.find('ul:first');
-
-        if (item._vertical_ul_jquery_obj.length == 0) {
-
-            td_pulldown.log('Item can\' be initialized. The vertical list doesn\'t have an \'ul\' container');
-            return;
-        }
-
-
-        // the elements of the horizontal jquery object, having a specified css class
-        var elements = item.horizontal_jquery_obj.find('.' + item.horizontal_element_css_class);
-
-        var local_jquery_element = null;
-        var local_object = null;
-
-        // for each element an object is added in the horizontal list
-        elements.each(function (index, element) {
-
-            local_jquery_element = jQuery(element);
-
-            // @todo here we need a css class
-            local_jquery_element.css('-webkit-transition', 'opacity 0.2s');
-            local_jquery_element.css('-moz-transition', 'opacity 0.2s');
-            local_jquery_element.css('-o-transition', 'opacity 0.2s');
-            local_jquery_element.css('transition', 'opacity 0.2s');
-
-            local_jquery_element.css('opacity', '1');
-
-
-            // the cached object used to keep the jquery object and its outerWidth
-            local_object = {
-
-                // the jquery element
-                jquery_object: local_jquery_element,
-
-                // the outer width including border
-                calculated_width: local_jquery_element.outerWidth(true)
-            };
-
-            // the horizontal list is populated
-            item._horizontal_elements.push(local_object);
-        });
-
-
-        // the outer width of the vertical top header (ex.'More') is initialized
-        item._vertical_jquery_obj_outer_width = item.vertical_jquery_obj.outerWidth(true);
-
-
-        // by default, the vertical jquery object is hidden, being shown when at least one element is moved in it
-        item.vertical_jquery_obj.css('display', 'none');
-
-
-
-        // the the extra space occupied by the horizontal jquery object is calculated
-
-        var horizontal_jquery_obj_padding_left = item.horizontal_jquery_obj.css('padding-left');
-        if ((horizontal_jquery_obj_padding_left != undefined) && (horizontal_jquery_obj_padding_left != '')) {
-            item._horizontal_extra_space += parseInt(horizontal_jquery_obj_padding_left.replace('px', ''));
-        }
-
-        var horizontal_jquery_obj_padding_right = item.horizontal_jquery_obj.css('padding-right');
-        if ((horizontal_jquery_obj_padding_right != undefined) && (horizontal_jquery_obj_padding_right != '')) {
-            item._horizontal_extra_space += parseInt(horizontal_jquery_obj_padding_right.replace('px', ''));
-        }
-
-
-        var horizontal_jquery_obj_margin_left = item.horizontal_jquery_obj.css('margin-left');
-        if ((horizontal_jquery_obj_margin_left != undefined) && (horizontal_jquery_obj_margin_left != '')) {
-            item._horizontal_extra_space += parseInt(horizontal_jquery_obj_margin_left.replace('px', ''));
-        }
-
-        var horizontal_jquery_obj_margin_right = item.horizontal_jquery_obj.css('margin-right');
-        if ((horizontal_jquery_obj_margin_right != undefined) && (horizontal_jquery_obj_margin_right != '')) {
-            item._horizontal_extra_space += parseInt(horizontal_jquery_obj_margin_right.replace('px', ''));
-        }
-
-
-        var horizontal_jquery_obj_border_left = item.horizontal_jquery_obj.css('border-left');
-        if ((horizontal_jquery_obj_border_left != undefined) && (horizontal_jquery_obj_border_left != '')) {
-            item._horizontal_extra_space += parseInt(horizontal_jquery_obj_border_left.replace('px', ''));
-        }
-
-        var horizontal_jquery_obj_border_right = item.horizontal_jquery_obj.css('border-right');
-        if ((horizontal_jquery_obj_border_right != undefined) && (horizontal_jquery_obj_border_right != '')) {
-            item._horizontal_extra_space += parseInt(horizontal_jquery_obj_border_right.replace('px', ''));
-        }
-
-
-        // the item is marked as initialized, being ready to be computed
-        item._is_initialized = true;
-    },
-
-
-
-
-    /**
-     * - internal utility function used to summarize width of the horizontal elements
-     *
-     * @param item {td_pulldown.item} The item whose horizontal list is processed
-     * @returns {number}
-     * @private
-     */
-    _get_horizontal_elements_width: function _get_horizontal_elements_width(item) {
-
-        var sum_width = 0;
-
-        for (var i = item._horizontal_elements.length - 1; i >= 0; i--) {
-            sum_width += item._horizontal_elements[i].calculated_width;
-        }
-        return sum_width;
-    },
-
-
-
-
-    /**
-     * - internal utility function used to reinitialize all items at the view resolution changing
-     */
-    _reinitialize_all_items: function _reinitialize_all_items() {
-
-        for (var i = td_pulldown.items.length - 1; i >= 0; i--) {
-            td_pulldown._reinitialize_item(td_pulldown.items[i]);
-        }
-    },
-
-
-
-
-    /**
-     * - internal utility function used to reinitialize an item at the view resolution changing
-     *
-     * @param item The item being reinitialized
-     */
-    _reinitialize_item: function _reinitialize_item(item) {
-
-        // a not initialized item can't be reinitialized
-        if (item._is_initialized === false) {
-            return;
-        }
-
-        //  the flag is marked, so any further operation on this item is stopped
-        item._is_initialized = false;
-
-        // the html elements of the vertical list are all moved into the horizontal jquery object
-        item.horizontal_jquery_obj.html(item.horizontal_jquery_obj.html() + item._vertical_ul_jquery_obj.html());
-
-        // the html content of the vertical list is cleared
-        item._vertical_ul_jquery_obj.html('');
-
-        // the horizontal list is empty initialized
-        item._horizontal_elements = [];
-
-        // the vertical list is empty initialized
-        item._vertical_elements = [];
-
-        // the extra space is initialized
-        item._horizontal_extra_space = 1;
-
-        // the item is ready to be initialized again
-        td_pulldown._initialize_item(item);
-    },
-
-
-
-
-    /**
-     * - an internal function used to move elements from the horizontal to the vertical list and vice versa, in according with
-     * the space for horizontal elements.
-     * - it's called every time at the viewport resize, when the space for horizontal elements is modified
-     *
-     * @param item - the item being computed
-     * @private
-     */
-    _compute_item: function _compute_item(item) {
-
-        // the item must be initialized first
-        if (item._is_initialized === false) {
-            return;
-        }
-
-
-
-        // the horizontal header margin is set 0 and the horizontal space is computing without its margin
-        // @see td_pulldown._prepare_horizontal_header
-        td_pulldown._prepare_horizontal_header(item, true);
-
-
-
-        // - the space where horizontal elements lie
-        // - it is the container width minus any extra horizontal space
-        var space_for_horizontal_elements = 0;
-
-        // the object container width
-        var container_jquery_width = item.container_jquery_obj.css('width');
-
-        if ((container_jquery_width != undefined) && (container_jquery_width != '')) {
-
-            // the space for new horizontal elements is initialized by the container width
-            space_for_horizontal_elements = container_jquery_width.replace('px', '');
-
-            // then this space is reduced by the widths of the excluded elements
-            for (var i = item.excluded_jquery_elements.length - 1; i >= 0; i--) {
-                space_for_horizontal_elements -= item.excluded_jquery_elements[i].contents().outerWidth(true);
+            // check to see if the item is ok
+            if (item.vertical_jquery_obj.length !== 1) {
+                throw 'item.vertical_jquery_obj is more or less than one!';
             }
-        }
+            if (item.horizontal_jquery_obj.length !== 1) {
+                throw 'item.horizontal_jquery_obj is more or less than one!';
+            }
+            if (item.container_jquery_obj.length !== 1) {
+                throw 'item.container_jquery_obj is more or less than one!';
+            }
+            if (item.horizontal_element_css_class === '') {
+                throw 'item.horizontal_element_css_class is empty';
+            }
+
+            // the item is added in the item list
+            tdPullDown.items.push( item );
+
+            // the item is initialized only once when it is added
+            tdPullDown._initialize_item( item );
+
+            //  the item is ready to be computed
+            tdPullDown._compute_item( item );
+        },
 
 
-        // if the vertical list is empty, the space for horizontal elements does not contain the width of the vertical head list
-        if (item._vertical_elements.length > 0) {
-            space_for_horizontal_elements -= item._vertical_jquery_obj_outer_width;
-        }
-
-        // the space occupied by the horizontal elements is removed
-        space_for_horizontal_elements -= td_pulldown._get_horizontal_elements_width(item);
-
-        // the horizontal extra space is used to add an extra gap when the width of one element or a js math computation does a not integer value
-        space_for_horizontal_elements -= item._horizontal_extra_space;
-
-
-        // the current element being moved between the lists
-        var local_current_element;
-
-
-        // if there's not enough space for the horizontal elements, then the last of them are moved to the vertical list
-        while (space_for_horizontal_elements < 0) {
-
-            // if there's specified a minimum number of horizontal elements, this must be considered
-            if ((item.minimum_elements != 0) && (item._horizontal_elements.length <= item.minimum_elements)) {
-
-                // all elements are moved to the vertical list
-                td_pulldown._make_all_elements_vertical(item);
-
-
-
-
-                // the horizontal header margin is set before return
-                td_pulldown._prepare_horizontal_header(item);
-
-
-
-                // the following checks are not more eligible to do
-                return;
-
-            } else {
-
-                // If the vertical list does not contain any elements yet,
-                // the space for horizontal elements is minimized by the vertical top header width
-                if (item._vertical_elements.length == 0) {
-                    space_for_horizontal_elements -= item._vertical_jquery_obj_outer_width;
+        /**
+         * Deletes an item base on blockUid. Note that blockUid is optional (this library is also used outside of blocks)!
+         * Make sure that you add blockUid to items that you expect to be deleted
+         * @param blockUid
+         */
+        deleteItem: function(blockUid) {
+            for (var cnt = 0; cnt < tdPullDown.items.length; cnt++) {
+                if (tdPullDown.items[cnt].blockUid === blockUid) {
+                    tdPullDown.items.splice(cnt, 1); // remove the item from the "array"
+                    return true;
                 }
-
-                local_current_element = td_pulldown._make_element_vertical(item);
-                space_for_horizontal_elements += local_current_element.calculated_width;
             }
-        }
+            return false;
+        },
 
 
 
-        // This is the case when there's specified a no. of minimum horizontal elements and the horizontal list is empty.
-        // If the following conditions are accomplished the horizontal list is refilled with elements from the vertical list
-        //
-        //  - if there's specified a no. of minimum horizontal elements
-        //  - if there is no horizontal elements
-        //  - if there are vertical elements
-        //  - if there's enough horizontal space for the first vertical element
 
-        if ((item.minimum_elements != 0)
-            && (item._horizontal_elements.length == 0)
-            && (item._vertical_elements.length > 0)
-            && (space_for_horizontal_elements >= item._vertical_elements[0].calculated_width)) {
+        /**
+         * - internal utility function used to initialize an item
+         * - an item must be initialized only once
+         * - every element having a specified css class is added in the horizontal list
+         *
+         * @param item {tdPullDown.item} The item to be initialized
+         * @private
+         */
+        _initialize_item: function( item ) {
 
-            // the necessary space needed for the minimum no. of horizontal elements
-            var local_necessary_space = 0;
-
-            for (var i = 0; (i < item.minimum_elements) && (i < item._vertical_elements.length); i++) {
-                local_necessary_space += item._vertical_elements[i].calculated_width;
+            // an item must be initialized only once
+            if ( true === item._is_initialized ) {
+                return;
             }
 
-            // the necessary space really occupied by the minimum no. of horizontal elements
-            var local_space = 0;
-            var local_minimum_elements = item.minimum_elements;
 
-            while ((local_minimum_elements > 0)
-                && (item._vertical_elements.length > 0)
-                && (space_for_horizontal_elements >= local_necessary_space)) {
+            //// the mandatory item properties are verified
+            // @20/4/2016 - i've moved all the checks to add_item -ra
+            //if ( ( '' === item.horizontal_jquery_obj ) ||
+            //    ( '' === item.vertical_jquery_obj ) ||
+            //    ( '' === item.container_jquery_obj ) ||
+            //    ( '' === item.horizontal_element_css_class ) ) {
+            //
+            //    tdPullDown.log( 'Item can\' be initialized. It doesn\'t have all the mandatory properties' );
+            //    return;
+            //}
 
-                local_current_element = td_pulldown._make_element_horizontal(item);
 
-                if (local_current_element != null) {
-                    local_space += local_current_element.calculated_width;
-                    local_minimum_elements--;
-                } else {
+            // the jquery object of the first ul container in the vertical list is initialized
+            item._vertical_ul_jquery_obj = item.vertical_jquery_obj.find( 'ul:first' );
+
+            if ( 0 === item._vertical_ul_jquery_obj.length ) {
+
+                tdPullDown.log( 'Item can\' be initialized. The vertical list doesn\'t have an \'ul\' container' );
+                return;
+            }
+
+
+            // the elements of the horizontal jquery object, having a specified css class
+            var elements = item.horizontal_jquery_obj.find( '.' + item.horizontal_element_css_class );
+
+            var local_jquery_element = null;
+            var local_object = null;
+
+            // for each element an object is added in the horizontal list
+            elements.each( function ( index, element ) {
+
+                local_jquery_element = jQuery( element );
+
+                // @todo here we need a css class
+                local_jquery_element.css( '-webkit-transition', 'opacity 0.2s' );
+                local_jquery_element.css( '-moz-transition', 'opacity 0.2s' );
+                local_jquery_element.css( '-o-transition', 'opacity 0.2s' );
+                local_jquery_element.css( 'transition', 'opacity 0.2s' );
+
+                local_jquery_element.css( 'opacity', '1' );
+
+
+                // the cached object used to keep the jquery object and its outerWidth
+                local_object = {
+
+                    // the jquery element
+                    jquery_object: local_jquery_element,
+
+                    // the outer width including border
+                    calculated_width: local_jquery_element.outerWidth( true )
+                };
+
+                // the horizontal list is populated
+                item._horizontal_elements.push( local_object );
+            });
+
+
+            // the outer width of the vertical top header (ex.'More') is initialized
+            item._vertical_jquery_obj_outer_width = item.vertical_jquery_obj.outerWidth( true );
+
+
+            // by default, the vertical jquery object is hidden, being shown when at least one element is moved in it
+            item.vertical_jquery_obj.css( 'display', 'none' );
+
+
+
+            // the the extra space occupied by the horizontal jquery object is calculated
+
+            var horizontal_jquery_obj_padding_left = item.horizontal_jquery_obj.css( 'padding-left' );
+            if ( ( undefined !== horizontal_jquery_obj_padding_left ) && ( '' !== horizontal_jquery_obj_padding_left ) ) {
+                item._horizontal_extra_space += parseInt( horizontal_jquery_obj_padding_left.replace( 'px', '' ) );
+            }
+
+            var horizontal_jquery_obj_padding_right = item.horizontal_jquery_obj.css( 'padding-right' );
+            if ( ( undefined !== horizontal_jquery_obj_padding_right ) && ( '' !== horizontal_jquery_obj_padding_right ) ) {
+                item._horizontal_extra_space += parseInt( horizontal_jquery_obj_padding_right.replace( 'px', '' ) );
+            }
+
+
+            var horizontal_jquery_obj_margin_left = item.horizontal_jquery_obj.css( 'margin-left' );
+            if ( ( undefined !== horizontal_jquery_obj_margin_left ) && ( '' !== horizontal_jquery_obj_margin_left ) ) {
+                item._horizontal_extra_space += parseInt( horizontal_jquery_obj_margin_left.replace( 'px', '' ) );
+            }
+
+            var horizontal_jquery_obj_margin_right = item.horizontal_jquery_obj.css( 'margin-right' );
+            if ( ( undefined !== horizontal_jquery_obj_margin_right ) && ( '' !== horizontal_jquery_obj_margin_right ) ) {
+                item._horizontal_extra_space += parseInt( horizontal_jquery_obj_margin_right.replace( 'px', '' ) );
+            }
+
+
+            var horizontal_jquery_obj_border_left = item.horizontal_jquery_obj.css( 'border-left' );
+            if ( ( undefined !== horizontal_jquery_obj_border_left ) && ( '' !== horizontal_jquery_obj_border_left ) ) {
+                item._horizontal_extra_space += parseInt( horizontal_jquery_obj_border_left.replace( 'px', '' ) );
+            }
+
+            var horizontal_jquery_obj_border_right = item.horizontal_jquery_obj.css( 'border-right' );
+            if ( ( undefined !== horizontal_jquery_obj_border_right ) && ( '' !== horizontal_jquery_obj_border_right ) ) {
+                item._horizontal_extra_space += parseInt( horizontal_jquery_obj_border_right.replace( 'px', '' ) );
+            }
+
+
+            // the item is marked as initialized, being ready to be computed
+            item._is_initialized = true;
+        },
+
+
+
+
+        /**
+         * - internal utility function used to summarize width of the horizontal elements
+         *
+         * @param item {tdPullDown.item} The item whose horizontal list is processed
+         * @returns {number}
+         * @private
+         */
+        _get_horizontal_elements_width: function( item ) {
+
+            var sum_width = 0;
+
+            for ( var i = item._horizontal_elements.length - 1; i >= 0; i-- ) {
+                sum_width += item._horizontal_elements[ i ].calculated_width;
+            }
+            return sum_width;
+        },
+
+
+
+
+        /**
+         * - internal utility function used to reinitialize all items at the view resolution changing
+         */
+        _reinitialize_all_items: function() {
+
+            for ( var i = tdPullDown.items.length - 1; i >= 0; i-- ) {
+                tdPullDown._reinitialize_item( tdPullDown.items[ i ] );
+            }
+        },
+
+
+
+
+        /**
+         * - internal utility function used to reinitialize an item at the view resolution changing
+         *
+         * @param item The item being reinitialized
+         */
+        _reinitialize_item: function( item ) {
+
+            // a not initialized item can't be reinitialized
+            if ( false === item._is_initialized ) {
+                return;
+            }
+
+            //  the flag is marked, so any further operation on this item is stopped
+            item._is_initialized = false;
+
+            // the html elements of the vertical list are all moved into the horizontal jquery object
+            item.horizontal_jquery_obj.html( item.horizontal_jquery_obj.html() + item._vertical_ul_jquery_obj.html() );
+
+            // the html content of the vertical list is cleared
+            item._vertical_ul_jquery_obj.html( '' );
+
+            // the horizontal list is empty initialized
+            item._horizontal_elements = [];
+
+            // the vertical list is empty initialized
+            item._vertical_elements = [];
+
+            // the extra space is initialized
+            item._horizontal_extra_space = 1;
+
+            // the item is ready to be initialized again
+            tdPullDown._initialize_item( item );
+        },
+
+
+
+
+        /**
+         * - an internal function used to move elements from the horizontal to the vertical list and vice versa, in according with
+         * the space for horizontal elements.
+         * - it's called every time at the viewport resize, when the space for horizontal elements is modified
+         *
+         * @param item - the item being computed
+         * @private
+         */
+        _compute_item: function( item ) {
+
+            // the item must be initialized first
+            if ( false === item._is_initialized ) {
+                return;
+            }
+
+
+
+            // the horizontal header margin is set 0 and the horizontal space is computing without its margin
+            // @see tdPullDown._prepare_horizontal_header
+            tdPullDown._prepare_horizontal_header( item, true );
+
+
+
+            // - the space where horizontal elements lie
+            // - it is the container width minus any extra horizontal space
+            var space_for_horizontal_elements = 0;
+
+            // the object container width
+            var container_jquery_width = item.container_jquery_obj.css( 'width' );
+
+            if ( ( undefined !== container_jquery_width ) && ( '' !== container_jquery_width ) ) {
+
+                // the space for new horizontal elements is initialized by the container width
+                space_for_horizontal_elements = container_jquery_width.replace( 'px', '' );
+
+                // then this space is reduced by the widths of the excluded elements
+                for ( var i = item.excluded_jquery_elements.length - 1; i >= 0; i-- ) {
+                    space_for_horizontal_elements -= item.excluded_jquery_elements[ i ].contents().outerWidth( true );
+                }
+            }
+
+
+            // if the vertical list is empty, the space for horizontal elements does not contain the width of the vertical head list
+            if ( item._vertical_elements.length > 0 ) {
+                space_for_horizontal_elements -= item._vertical_jquery_obj_outer_width;
+            }
+
+            // the space occupied by the horizontal elements is removed
+            space_for_horizontal_elements -= tdPullDown._get_horizontal_elements_width( item );
+
+            // the horizontal extra space is used to add an extra gap when the width of one element or a js math computation does a not integer value
+            space_for_horizontal_elements -= item._horizontal_extra_space;
+
+
+            // the current element being moved between the lists
+            var local_current_element;
+
+
+            // if there's not enough space for the horizontal elements, then the last of them are moved to the vertical list
+            while ( space_for_horizontal_elements < 0 ) {
+
+                // if there's specified a minimum number of horizontal elements, this must be considered
+                if ( ( item.minimum_elements !== 0 ) && ( item._horizontal_elements.length <= item.minimum_elements ) ) {
+
+                    // all elements are moved to the vertical list
+                    tdPullDown._make_all_elements_vertical( item );
+
 
 
 
                     // the horizontal header margin is set before return
-                    td_pulldown._prepare_horizontal_header(item);
+                    tdPullDown._prepare_horizontal_header( item );
 
+
+
+                    // the following checks are not more eligible to do
+                    return;
+
+                } else {
+
+                    // If the vertical list does not contain any elements yet,
+                    // the space for horizontal elements is minimized by the vertical top header width
+                    if ( 0 === item._vertical_elements.length ) {
+                        space_for_horizontal_elements -= item._vertical_jquery_obj_outer_width;
+                    }
+
+                    local_current_element = tdPullDown._make_element_vertical( item );
+                    space_for_horizontal_elements += local_current_element.calculated_width;
+                }
+            }
+
+
+
+            // This is the case when there's specified a no. of minimum horizontal elements and the horizontal list is empty.
+            // If the following conditions are accomplished the horizontal list is refilled with elements from the vertical list
+            //
+            //  - if there's specified a no. of minimum horizontal elements
+            //  - if there is no horizontal elements
+            //  - if there are vertical elements
+            //  - if there's enough horizontal space for the first vertical element
+
+            if ( ( 0 !== item.minimum_elements ) &&
+                ( 0 === item._horizontal_elements.length ) &&
+                ( item._vertical_elements.length > 0 ) &&
+                ( space_for_horizontal_elements >= item._vertical_elements[ 0 ].calculated_width ) ) {
+
+                // the necessary space needed for the minimum no. of horizontal elements
+                var local_necessary_space = 0;
+
+                for ( var j = 0; ( j < item.minimum_elements ) && ( j < item._vertical_elements.length ); j++ ) {
+                    local_necessary_space += item._vertical_elements[ j ].calculated_width;
+                }
+
+                // the necessary space really occupied by the minimum no. of horizontal elements
+                var local_space = 0;
+                var local_minimum_elements = item.minimum_elements;
+
+                while ( ( local_minimum_elements > 0 ) &&
+                    ( item._vertical_elements.length > 0 ) &&
+                    ( space_for_horizontal_elements >= local_necessary_space ) ) {
+
+                    local_current_element = tdPullDown._make_element_horizontal( item );
+
+                    if ( null !== local_current_element ) {
+                        local_space += local_current_element.calculated_width;
+                        local_minimum_elements--;
+                    } else {
+
+                        // the horizontal header margin is set before return
+                        tdPullDown._prepare_horizontal_header( item );
+
+                        return;
+                    }
+
+                }
+                space_for_horizontal_elements -= local_space;
+            }
+
+
+
+            // It's the case when there isn't specified a no. of minimum horizontal elements or it is specified and the
+            // horizontal list is not empty, and in the same time there's enough horizontal space for more elements
+            while ( ( ( item._horizontal_elements.length > 0 ) || ( 0 === item._horizontal_elements.length && 0 === item.minimum_elements ) ) &&
+                ( item._vertical_elements.length > 0 ) &&
+                ( space_for_horizontal_elements >= item._vertical_elements[ 0 ].calculated_width ) ) {
+
+                local_current_element = tdPullDown._make_element_horizontal( item );
+
+                if ( null !== local_current_element ) {
+                    space_for_horizontal_elements -= local_current_element.calculated_width;
+                } else {
+
+                    // the horizontal header margin is set before return
+                    tdPullDown._prepare_horizontal_header( item );
 
                     return;
                 }
-
             }
-            space_for_horizontal_elements -= local_space;
-        }
 
 
 
-        // It's the case when there isn't specified a no. of minimum horizontal elements or it is specified and the
-        // horizontal list is not empty, and in the same time there's enough horizontal space for more elements
-        while (((item._horizontal_elements.length > 0) || (item._horizontal_elements.length == 0 && item.minimum_elements == 0))
-            && (item._vertical_elements.length > 0)
-            && (space_for_horizontal_elements >= item._vertical_elements[0].calculated_width)) {
-
-            local_current_element = td_pulldown._make_element_horizontal(item);
-
-            if (local_current_element != null) {
-                space_for_horizontal_elements -= local_current_element.calculated_width;
-            } else {
-
-
-                // the horizontal header margin is set before return
-                td_pulldown._prepare_horizontal_header(item);
-
-
-                return;
+            // if the vertical list contains just one element, the horizontal space for it must be calculated without considering the vertical top header width (ex.'More')
+            if ( ( 1 === item._vertical_elements.length ) &&
+                ( space_for_horizontal_elements + item._vertical_jquery_obj_outer_width >= item._vertical_elements[ 0 ].calculated_width ) ) {
+                tdPullDown._make_element_horizontal( item );
             }
-        }
 
 
-
-        // if the vertical list contains just one element, the horizontal space for it must be calculated without considering the vertical top header width (ex.'More')
-        if ((item._vertical_elements.length == 1)
-            && (space_for_horizontal_elements + item._vertical_jquery_obj_outer_width >= item._vertical_elements[0].calculated_width)) {
-            td_pulldown._make_element_horizontal(item);
-        }
+            // the horizontal header margin is set before return
+            tdPullDown._prepare_horizontal_header( item );
+        },
 
 
-        // the horizontal header margin is set before return
-        td_pulldown._prepare_horizontal_header(item);
-    },
+        /**
+         * - add margin to the element with '.block-title' css class, to keep the vertical_jquery_obj not overlapping over it when
+         * there are no horizontal elements and it is too wide [more strings in name]
+         * @param item tdPullDown.item
+         * @param clear_margin boolean True to just clear margin, or false to check the horizontal elements length and then set the margin
+         * @private
+         */
+        _prepare_horizontal_header: function _prepare_horizontal_header( item, clear_margin ) {
+            var block_title_jquery_obj = item.horizontal_jquery_obj.parent().siblings( '.block-title:first' );
 
+            if ( 1 === block_title_jquery_obj.length ) {
+                var content_element = block_title_jquery_obj.find( 'span:first' );
 
-    /**
-     * - add margin to the element with '.block-title' css class, to keep the vertical_jquery_obj not overlapping over it when
-     * there are no horizontal elements and it is too wide [more strings in name]
-     * @param item td_pulldown.item
-     * @param clear_margin boolean True to just clear margin, or false to check the horizontal elements length and then set the margin
-     * @private
-     */
-    _prepare_horizontal_header: function _prepare_horizontal_header(item, clear_margin) {
-        var block_title_jquery_obj = item.horizontal_jquery_obj.parent().siblings('.block-title:first');
+                if ( 1 === content_element.length ) {
 
-        if (block_title_jquery_obj.length) {
-            var content_element = block_title_jquery_obj.find('span:first');
-
-            if (content_element.length) {
-
-                if ('undefined' !== typeof(clear_margin) && clear_margin == true) {
-                    content_element.css('margin-right', 0);
-                } else {
-                    if (item._horizontal_elements.length == 0) {
-                        content_element.css('margin-right', item._vertical_jquery_obj_outer_width + 'px');
+                    if ( 'undefined' !== typeof( clear_margin ) && true === clear_margin ) {
+                        content_element.css( 'margin-right', 0 );
                     } else {
-                        content_element.css('margin-right', 0);
+                        if ( 0 === item._horizontal_elements.length ) {
+                            content_element.css( 'margin-right', item._vertical_jquery_obj_outer_width + 'px' );
+                        } else {
+                            content_element.css( 'margin-right', 0 );
+                        }
                     }
                 }
             }
-        }
-    },
+        },
 
 
 
 
-    /**
-     * - function used to compute all items in the item list
-     *
-     * @private
-     */
-    _compute_all_items: function _compute_all_items() {
-        for (var i = td_pulldown.items.length - 1; i >= 0; i--) {
+        /**
+         * - function used to compute all items in the item list
+         *
+         * @private
+         */
+        _compute_all_items: function() {
+            for ( var i = tdPullDown.items.length - 1; i >= 0; i-- ) {
 
-            // a type check is done for every item in the item list
-            if (td_pulldown.items[i].constructor === td_pulldown.item) {
-                td_pulldown._compute_item(td_pulldown.items[i]);
+                // a type check is done for every item in the item list
+                if ( tdPullDown.items[ i ].constructor === tdPullDown.item ) {
+                    tdPullDown._compute_item( tdPullDown.items[ i ] );
+                }
             }
+        },
+
+
+
+
+        /**
+         * - function used to move one element from the vertical list to the horizontal one
+         * - the function returns the element that has been moved, otherwise null
+         * - the last element moving hides the vertical top header
+         *
+         * @param item - the item whose element is moved
+         * @returns {T} - the moved element
+         * @private
+         */
+        _make_element_horizontal: function( item ) {
+
+            // the item must be initialized and the vertical list must contain at least an element
+            if ( false === item._is_initialized || 0 === item._vertical_elements.length ) {
+                return null;
+            }
+
+            // the first element of the vertical list is shifted
+            var local_element = item._vertical_elements.shift();
+
+            // the vertical list is shown when there's at least one vertical element
+            if ( 0 === item._vertical_elements.length ) {
+                item.vertical_jquery_obj.css( 'display', 'none' );
+            }
+
+            // the element is added on the last position in the horizontal list
+            item._horizontal_elements.push( local_element );
+
+            local_element.jquery_object.css( 'opacity', '0' );
+
+            // the DOM is changing
+            local_element.jquery_object.detach().appendTo( item.horizontal_jquery_obj );
+
+            setTimeout( function() {
+                local_element.jquery_object.css( 'opacity', '1' );
+            }, 50);
+
+            //tdPullDown.log('horizontal');
+
+            return local_element;
+        },
+
+
+
+
+        /**
+         * - function used to move one element from the horizontal list to the vertical one
+         * - the function returns the element that has been moved, otherwise null
+         * - the first element moving shows the vertical top header
+         *
+         * @param item - the item whose element is moved
+         * @returns {T} - the moved element
+         * @private
+         */
+        _make_element_vertical: function( item ) {
+
+            // the item must be initialized and the horizontal list must contain at least an element
+            if ( false === item._is_initialized || 0 === item._horizontal_elements.length ) {
+                return null;
+            }
+
+            // the last element of the horizontal list is popped out
+            var local_element = item._horizontal_elements.pop();
+
+            // the vertical list is hidden when there are no vertical elements
+            if ( 0 === item._vertical_elements.length ) {
+                item.vertical_jquery_obj.css( 'display', '' );
+            }
+
+            //the element is added on the first position into the vertical list
+            item._vertical_elements.unshift( local_element );
+
+            // the DOM is changed
+            local_element.jquery_object.detach().prependTo( item._vertical_ul_jquery_obj );
+
+            //tdPullDown.log('vertical');
+
+            return local_element;
+        },
+
+
+
+
+        /**
+         * - function used to move all elements to the vertical list
+         * - it's used when the minimum horizontal elements is greater than 0
+         *
+         * @param item - the item whose elements are moved
+         * @private
+         */
+        _make_all_elements_vertical: function( item ) {
+            while ( item._horizontal_elements.length > 0 ) {
+                tdPullDown._make_element_vertical( item );
+            }
+        },
+
+
+
+
+
+
+        /**
+         * - function necessary to be called when the window is being resized
+         */
+        td_events_resize: function() {
+
+            if ( 0 === tdPullDown.items.length ) {
+                return;
+            }
+
+            if ( true === tdPullDown.reinitialize_items_at_change_view_port && tdPullDown._view_port_interval_index !== tdViewport.getCurrentIntervalIndex() ) {
+                tdPullDown._reinitialize_all_items();
+            }
+
+            tdPullDown._compute_all_items();
+        },
+
+
+
+
+        log: function log( msg ) {
+            //console.log(msg);
         }
-    },
+    };
 
 
+    tdPullDown.init();
 
-
-    /**
-     * - function used to move one element from the vertical list to the horizontal one
-     * - the function returns the element that has been moved, otherwise null
-     * - the last element moving hides the vertical top header
-     *
-     * @param item - the item whose element is moved
-     * @returns {T} - the moved element
-     * @private
-     */
-    _make_element_horizontal: function _make_element_horizontal(item) {
-
-        // the item must be initialized and the vertical list must contain at least an element
-        if (item._is_initialized === false || item._vertical_elements.length == 0) {
-            return null;
-        }
-
-        // the first element of the vertical list is shifted
-        var local_element = item._vertical_elements.shift();
-
-        // the vertical list is shown when there's at least one vertical element
-        if (item._vertical_elements.length == 0) {
-            item.vertical_jquery_obj.css('display', 'none');
-        }
-
-        // the element is added on the last position in the horizontal list
-        item._horizontal_elements.push(local_element);
-
-        local_element.jquery_object.css('opacity', '0');
-
-        // the DOM is changing
-        local_element.jquery_object.detach().appendTo(item.horizontal_jquery_obj);
-
-        setTimeout(function() {
-            local_element.jquery_object.css('opacity', '1');
-        }, 50);
-
-        //td_pulldown.log('horizontal');
-
-        return local_element;
-    },
-
-
-
-
-    /**
-     * - function used to move one element from the horizontal list to the vertical one
-     * - the function returns the element that has been moved, otherwise null
-     * - the first element moving shows the vertical top header
-     *
-     * @param item - the item whose element is moved
-     * @returns {T} - the moved element
-     * @private
-     */
-    _make_element_vertical: function _make_element_vertical(item) {
-
-        // the item must be initialized and the horizontal list must contain at least an element
-        if (item._is_initialized === false || item._horizontal_elements.length == 0) {
-            return null;
-        }
-
-        // the last element of the horizontal list is popped out
-        var local_element = item._horizontal_elements.pop();
-
-        // the vertical list is hidden when there are no vertical elements
-        if (item._vertical_elements.length == 0) {
-            item.vertical_jquery_obj.css('display', '');
-        }
-
-        //the element is added on the first position into the vertical list
-        item._vertical_elements.unshift(local_element);
-
-        // the DOM is changed
-        local_element.jquery_object.detach().prependTo(item._vertical_ul_jquery_obj);
-
-        //td_pulldown.log('vertical');
-
-        return local_element;
-    },
-
-
-
-
-    /**
-     * - function used to move all elements to the vertical list
-     * - it's used when the minimum horizontal elements is greater than 0
-     *
-     * @param item - the item whose elements are moved
-     * @private
-     */
-    _make_all_elements_vertical: function _make_all_elements_vertical(item) {
-        while (item._horizontal_elements.length > 0) {
-            td_pulldown._make_element_vertical(item);
-        }
-    },
-
-
-
-
-
-
-    /**
-     * - function necessary to be called when the window is being resized
-     */
-    td_events_resize: function td_events_resize() {
-
-        if (td_pulldown.items.length == 0) {
-            return;
-        }
-
-        if (td_pulldown.reinitialize_items_at_change_view_port === true && (td_pulldown._view_port_interval_index != td_viewport.get_current_interval_index())) {
-            td_pulldown._reinitialize_all_items();
-        }
-
-        td_pulldown._compute_all_items();
-    },
-
-
-
-
-    log: function log(msg) {
-        //console.log(msg);
-    }
-};
-
-
-td_pulldown.init();
+})();
 
 
 
@@ -7099,193 +8649,171 @@ var td_fps = {
  * Created by tagdiv on 16.02.2015.
  */
 
-"use strict";
+/* global jQuery: {} */
+/* global tdEvents: {} */
 
-var td_animation_scroll = {
+var tdAnimationScroll = {};
 
+(function() {
 
-    // the bunch of td_animation_scroll items
-    items: [],
+    'use strict';
 
-
-
-    // the current request animation frame id
-    rAFIndex: 0,
+    tdAnimationScroll = {
 
 
-
-    // flag used to not call 'requestAnimationFrame' when it's steel running
-    animation_running: false,
+        // the bunch of tdAnimationScroll items
+        items: [],
 
 
 
-    item: function item() {
-
-        // the computed percent value of the jquery object in the viewport
-        // - 0 when the top of object enters into the viewport
-        // - 100 when the bottom of the object goes outside of the viewport
-        this.percent_value = 0;
-
-        // the animation callback function
-        this.animation_callback = null;
-
-        // the jquery object of the td_animation_scroll.item
-        this.jqueryObj = '';
-
-        // optional - a jquery object that wraps the current item. Used in callback
-        this.wrapper_jquery_obj;
-
-        // a jquery span obj added dynamically added at the top of jqueryObj
-        this.top_marker_jquery_obj = '';
-
-        // the full outer height of the item
-        this.full_height;
-
-        // the offset top of the top_marker_jquery_obj
-        this.offset_top = '';
-
-        // the offset top of the top_marker_jquery_obj and the full_height
-        this.offset_bottom_top = '';
-
-        // the properties registered with the item
-        this.properties = {};
-
-        // the computed properties that probably will be applied by animation callback function over the jquery object
-        this.computed_item_properties = {};
-
-        // flag made 'true' for items having at least one computed property
-        this.redraw = false;
-
-        // top is out of screen
-        this.top_is_out = false;
-
-        // flag used to mark the initialization item
-        this._is_initialized = false;
-
-        // flag used to stop an item to be computed
-        this.computation_stopped = false;
+        // the current request animation frame id
+        rAFIndex: 0,
 
 
 
+        // flag used to not call 'requestAnimationFrame' when it's steel running
+        animation_running: false,
 
-        /**
-         * - when a new item property is added, it's added as a real property in the item.properties object.
-         * - if it's already added, the settings of the property are appended
-         * - the settings for an item property must be added in order of the percents
-         * - the percent intervals must not be overloaded (ex. 10-30 and 20-40)
-         * - it doesn't matter how many settings are added to an item property
-         * - after an adding the space of percentage is full, that means after adding
-         * ex: add_item_property('opacity', 10, 30, 0, 1, easing)
-         *
-         * item.properties.opacity.settings :
-         * [
-         *  [0, 10, 0, 0, '']
-         *  [10, 30, 0, 1, easing] - property added
-         *  [30, 100, 1, 1, '']
-         * ]
-         *
-         * ex: add_item_property('opacity', 40, 50, 1, 0)
-         *
-         * item.properties.opacity.settings :
-         * [
-         *  [0, 10, 0, 0, '']
-         *  [10, 30, 0, 1, easing] - property added
-         *  [30, 40, 1, 1, '']
-         *  [40, 50, 1, 0, easing] - property added
-         *  [50, 100, 0, 0, '']
-         * ]
-         *
-         * - callable jQuery easing functions:
-         * swing
-         * easeInQuad
-         * easeOutQuad
-         * easeInOutQuad
-         * easeInCubic
-         * easeOutCubic
-         * easeInOutCubic
-         * easeInQuart
-         * easeOutQuart
-         * easeInOutQuart
-         * easeInQuint
-         * easeOutQuint
-         * easeInOutQuint
-         * easeInSine
-         * easeOutSine
-         * easeInOutSine
-         * easeInExpo
-         * easeOutExpo
-         * easeInOutExpo
-         * easeInCirc
-         * easeOutCirc
-         * easeInOutCirc
-         * easeInElastic
-         * easeOutElastic
-         * easeInOutElastic
-         * easeInBack
-         * easeOutBack
-         * easeInOutBack
-         * easeInBounce
-         * easeOutBounce
-         * easeInOutBounce
-         *
-         * @param name string
-         * @param start_percent numeric
-         * @param end_percent numeric
-         * @param start_value numeric
-         * @param end_value numeric
-         * @param easing string [optional]
-         */
-        this.add_item_property = function add_item_property(name, start_percent, end_percent, start_value, end_value, easing) {
 
-            if (start_percent >= end_percent) {
-                return;
-            }
 
-            if (this.properties[name] === undefined) {
+        item: function item() {
 
-                this.properties[name] = {
-                    computed_value: '',
-                    settings: []
-                };
+            // the computed percent value of the jquery object in the viewport
+            // - 0 when the top of object enters into the viewport
+            // - 100 when the bottom of the object goes outside of the viewport
+            this.percent_value = 0;
 
-                if (start_percent != 0) {
-                    this.properties[name].settings[this.properties[name].settings.length] = {
-                        start_percent: 0,
-                        end_percent: start_percent,
-                        start_value: start_value,
-                        end_value: start_value,
-                        easing: ''
-                    };
+            // the animation callback function
+            this.animation_callback = null;
+
+            // the jquery object of the tdAnimationScroll.item
+            this.jqueryObj = '';
+
+            // optional - a jquery object that wraps the current item. Used in callback
+            this.wrapper_jquery_obj = undefined;
+
+            // a jquery span obj added dynamically added at the top of jqueryObj
+            this.top_marker_jquery_obj = '';
+
+            // the full outer height of the item
+            this.full_height = 0;
+
+            // the offset top of the top_marker_jquery_obj
+            this.offset_top = '';
+
+            // the offset top of the top_marker_jquery_obj and the full_height
+            this.offset_bottom_top = '';
+
+            // the properties registered with the item
+            this.properties = {};
+
+            // the computed properties that probably will be applied by animation callback function over the jquery object
+            this.computed_item_properties = {};
+
+            // flag made 'true' for items having at least one computed property
+            this.redraw = false;
+
+            // top is out of screen
+            this.top_is_out = false;
+
+            // flag used to mark the initialization item
+            this._is_initialized = false;
+
+            // flag used to stop an item to be computed
+            this.computation_stopped = false;
+
+
+
+
+            /**
+             * - when a new item property is added, it's added as a real property in the item.properties object.
+             * - if it's already added, the settings of the property are appended
+             * - the settings for an item property must be added in order of the percents
+             * - the percent intervals must not be overloaded (ex. 10-30 and 20-40)
+             * - it doesn't matter how many settings are added to an item property
+             * - after an adding the space of percentage is full, that means after adding
+             * ex: add_item_property('opacity', 10, 30, 0, 1, easing)
+             *
+             * item.properties.opacity.settings :
+             * [
+             *  [0, 10, 0, 0, '']
+             *  [10, 30, 0, 1, easing] - property added
+             *  [30, 100, 1, 1, '']
+             * ]
+             *
+             * ex: add_item_property('opacity', 40, 50, 1, 0)
+             *
+             * item.properties.opacity.settings :
+             * [
+             *  [0, 10, 0, 0, '']
+             *  [10, 30, 0, 1, easing] - property added
+             *  [30, 40, 1, 1, '']
+             *  [40, 50, 1, 0, easing] - property added
+             *  [50, 100, 0, 0, '']
+             * ]
+             *
+             * - callable jQuery easing functions:
+             * swing
+             * easeInQuad
+             * easeOutQuad
+             * easeInOutQuad
+             * easeInCubic
+             * easeOutCubic
+             * easeInOutCubic
+             * easeInQuart
+             * easeOutQuart
+             * easeInOutQuart
+             * easeInQuint
+             * easeOutQuint
+             * easeInOutQuint
+             * easeInSine
+             * easeOutSine
+             * easeInOutSine
+             * easeInExpo
+             * easeOutExpo
+             * easeInOutExpo
+             * easeInCirc
+             * easeOutCirc
+             * easeInOutCirc
+             * easeInElastic
+             * easeOutElastic
+             * easeInOutElastic
+             * easeInBack
+             * easeOutBack
+             * easeInOutBack
+             * easeInBounce
+             * easeOutBounce
+             * easeInOutBounce
+             *
+             * @param name string
+             * @param start_percent numeric
+             * @param end_percent numeric
+             * @param start_value numeric
+             * @param end_value numeric
+             * @param easing string [optional]
+             */
+            this.add_item_property = function add_item_property(name, start_percent, end_percent, start_value, end_value, easing) {
+
+                if (start_percent >= end_percent) {
+                    return;
                 }
 
-                this.properties[name].settings[this.properties[name].settings.length] = {
-                    start_percent: start_percent,
-                    end_percent: end_percent,
-                    start_value: start_value,
-                    end_value: end_value,
-                    easing: easing
-                };
+                if (undefined === this.properties[name]) {
 
-                this.properties[name].settings[this.properties[name].settings.length] = {
-                    start_percent: end_percent,
-                    end_percent: 100,
-                    start_value: end_value,
-                    end_value: end_value,
-                    easing: ''
-                };
-
-            } else {
-
-                var last_setting = this.properties[name].settings[this.properties[name].settings.length - 1];
-
-                if (last_setting.start_percent != start_percent) {
-                    this.properties[name].settings[this.properties[name].settings.length - 1] = {
-                        start_percent: last_setting.start_percent,
-                        end_percent: start_percent,
-                        start_value: last_setting.end_value,
-                        end_value: last_setting.end_value,
-                        easing: ''
+                    this.properties[name] = {
+                        computed_value: '',
+                        settings: []
                     };
+
+                    if (0 !== start_percent) {
+                        this.properties[name].settings[this.properties[name].settings.length] = {
+                            start_percent: 0,
+                            end_percent: start_percent,
+                            start_value: start_value,
+                            end_value: start_value,
+                            easing: ''
+                        };
+                    }
 
                     this.properties[name].settings[this.properties[name].settings.length] = {
                         start_percent: start_percent,
@@ -7294,17 +8822,7 @@ var td_animation_scroll = {
                         end_value: end_value,
                         easing: easing
                     };
-                } else {
-                    this.properties[name].settings[this.properties[name].settings.length - 1] = {
-                        start_percent: start_percent,
-                        end_percent: end_percent,
-                        start_value: start_value,
-                        end_value: end_value,
-                        easing: easing
-                    };
-                }
 
-                if (end_percent != 100) {
                     this.properties[name].settings[this.properties[name].settings.length] = {
                         start_percent: end_percent,
                         end_percent: 100,
@@ -7312,572 +8830,719 @@ var td_animation_scroll = {
                         end_value: end_value,
                         easing: ''
                     };
+
+                } else {
+
+                    var last_setting = this.properties[name].settings[this.properties[name].settings.length - 1];
+
+                    if (last_setting.start_percent !== start_percent) {
+                        this.properties[name].settings[this.properties[name].settings.length - 1] = {
+                            start_percent: last_setting.start_percent,
+                            end_percent: start_percent,
+                            start_value: last_setting.end_value,
+                            end_value: last_setting.end_value,
+                            easing: ''
+                        };
+
+                        this.properties[name].settings[this.properties[name].settings.length] = {
+                            start_percent: start_percent,
+                            end_percent: end_percent,
+                            start_value: start_value,
+                            end_value: end_value,
+                            easing: easing
+                        };
+                    } else {
+                        this.properties[name].settings[this.properties[name].settings.length - 1] = {
+                            start_percent: start_percent,
+                            end_percent: end_percent,
+                            start_value: start_value,
+                            end_value: end_value,
+                            easing: easing
+                        };
+                    }
+
+                    if (100 !== end_percent) {
+                        this.properties[name].settings[this.properties[name].settings.length] = {
+                            start_percent: end_percent,
+                            end_percent: 100,
+                            start_value: end_value,
+                            end_value: end_value,
+                            easing: ''
+                        };
+                    }
                 }
-            }
-        };
+            };
+
+
+            /**
+             * remove an item property
+             *
+             * @param name {String} The name of the property
+             * @returns {boolean}
+             */
+            this.remove_item_property = function remove_item_property(name) {
+                if (undefined === this.properties[name]) {
+                    return false;
+                }
+
+                delete this.properties[name];
+
+                return true;
+            };
+        },
+
+
 
 
         /**
-         * remove an item property
+        * - function used to init the tdAnimationScroll object
+        * - it must be called before adding any item
+        * - the _view_port_interval_index flag is initialized
+        * - the items list is empty initialized
+        */
+        init: function init() {
+
+            tdAnimationScroll.items = [];
+        },
+
+
+
+
+        /**
+         * - used to add an item to the item list and initialize it
          *
-         * @param name {String} The name of the property
-         * @returns {boolean}
+         * @param item The item to be added and initialized
          */
-        this.remove_item_property = function remove_item_property(name) {
-            if (this.properties[name] === undefined) {
-                return false;
+        add_item: function add_item(item) {
+
+            if (item.constructor !== tdAnimationScroll.item) {
+                return;
             }
 
-            delete this.properties[name];
+            // the item is added in the item list
+            tdAnimationScroll.items.push(item);
 
-            return true;
-        };
-    },
+            // the item is initialized only once when it is added
+            tdAnimationScroll._initialize_item(item);
 
-
-
-
-    /**
-    * - function used to init the td_animation_scroll object
-    * - it must be called before adding any item
-    * - the _view_port_interval_index flag is initialized
-    * - the items list is empty initialized
-    */
-    init: function init() {
-
-        td_animation_scroll.items = [];
-    },
+            // for efficiently rendering all items are computed at once, so do not compute item individually
+        },
 
 
 
 
-    /**
-     * - used to add an item to the item list and initialize it
-     *
-     * @param item The item to be added and initialized
-     */
-    add_item: function add_item(item) {
+        /**
+         * - used to initialize an item
+         * - an item must be initialized only once
+         *
+         * @param item
+         * @private
+         */
+        _initialize_item: function _initialize_item(item) {
 
-        if (item.constructor != td_animation_scroll.item) {
-            return;
-        }
+            // an item must be initialized only once
+            if (true === item._is_initialized) {
+                return;
+            }
 
-        // the item is added in the item list
-        td_animation_scroll.items.push(item);
-
-        // the item is initialized only once when it is added
-        td_animation_scroll._initialize_item(item);
-
-        // for efficiently rendering all items are computed at once, so do not compute item individually
-    },
-
-
-
-
-    /**
-     * - used to initialize an item
-     * - an item must be initialized only once
-     *
-     * @param item
-     * @private
-     */
-    _initialize_item: function _initialize_item(item) {
-
-        // an item must be initialized only once
-        if (item._is_initialized === true) {
-            return;
-        }
-
-        // the item full height is computed
-        if (item.wrapper_jquery_obj != undefined) {
-            item.full_height = item.wrapper_jquery_obj.height();
-        } else {
-            item.full_height = item.jqueryObj.outerHeight(true);
-        }
-
-        if (item.full_height == 0) {
-            return;
-        }
-
-        var new_jquery_obj_reference = jQuery('<div class="td_marker_animation" style="height: 0; width: 0">');
-
-        new_jquery_obj_reference.insertBefore(item.jqueryObj);
-
-        item.top_marker_jquery_obj = new_jquery_obj_reference;
-
-        item.offset_top = item.top_marker_jquery_obj.offset().top;
-
-        //console.log("initializare " + td_animation_scroll.items.length + " : " + item.top_marker_jquery_obj.offset().top);
-
-        item.offset_bottom_top = item.offset_top + item.full_height;
-
-        item.top_is_out = td_events.window_pageYOffset > item.offset_top;
-
-        // the item is marked as initialized, being ready to be computed
-        // for efficiently rendering all items are computed at once
-        item._is_initialized = true;
-
-
-        // maybe it's better to try a request animation frame after every initialization, for computing the already added items
-        //td_animation_scroll.compute_all_items();
-    },
-
-
-
-
-    /**
-     * - used to reinitialize all items at the view resolution changing
-     *
-     * @param recompute_height boolean True if it's necessary to recompute the item's height [when view port changes]
-     */
-    reinitialize_all_items: function reinitialize_all_items(recompute_height) {
-
-        for (var i = td_animation_scroll.items.length - 1; i >= 0; i--) {
-            td_animation_scroll.reinitialize_item(td_animation_scroll.items[i], recompute_height);
-        }
-    },
-
-
-
-
-
-
-    /**
-     * - used to reinitialize an item at the view resolution changing
-     *
-     * @param item td_animation_scroll.item
-     * @param recompute_height boolean True if it's necessary to recompute the item height [when view port changes]
-     * @private
-     */
-    reinitialize_item: function reinitialize_item(item, recompute_height) {
-
-        // a not initialized item can't be reinitialized
-        if (item._is_initialized === false) {
-            return;
-        }
-
-        // prevent the following item computing, till the reinitialization is finished
-        item._is_initialized = false;
-
-        item.offset_top = item.top_marker_jquery_obj.offset().top;
-
-        //console.log("reinitializare " + td_animation_scroll.items.length + " : " + item.top_marker_jquery_obj.offset().top);
-
-        if (recompute_height === true) {
-            if (item.wrapper_jquery_obj != undefined) {
-                item.full_height = item.wrapper_jquery_obj.height();
-            } else {
+            // the item full height is computed
+            if (undefined === item.wrapper_jquery_obj) {
                 item.full_height = item.jqueryObj.outerHeight(true);
+            } else {
+                item.full_height = item.wrapper_jquery_obj.height();
             }
 
-            if (item.full_height == 0) {
+            if (0 === item.full_height) {
                 return;
             }
-        }
 
-        item.offset_bottom_top = item.offset_top + item.full_height;
+            var new_jquery_obj_reference = jQuery('<div class="td_marker_animation" style="height: 0; width: 0">');
 
-        item._is_initialized = true;
-    },
+            new_jquery_obj_reference.insertBefore(item.jqueryObj);
+
+            item.top_marker_jquery_obj = new_jquery_obj_reference;
+
+            item.offset_top = item.top_marker_jquery_obj.offset().top;
+
+            //console.log("initializare " + tdAnimationScroll.items.length + " : " + item.top_marker_jquery_obj.offset().top);
+
+            item.offset_bottom_top = item.offset_top + item.full_height;
+
+            item.top_is_out = tdEvents.window_pageYOffset > item.offset_top;
+
+            // the item is marked as initialized, being ready to be computed
+            // for efficiently rendering all items are computed at once
+            item._is_initialized = true;
+
+
+            // maybe it's better to try a request animation frame after every initialization, for computing the already added items
+            //tdAnimationScroll.compute_all_items();
+        },
 
 
 
 
-    /**
-     * - used for computing item properties
-     *
-     * @param item The item whose properties are computed
-     * @private
-     */
-    _compute_item_properties: function _compute_item_properties(item) {
+        /**
+         * - used to reinitialize all items at the view resolution changing
+         *
+         * @param recompute_height boolean True if it's necessary to recompute the item's height [when view port changes]
+         */
+        reinitialize_all_items: function reinitialize_all_items(recompute_height) {
 
-        var computed_properties = {},
-            current_item_property;
+            for (var i = tdAnimationScroll.items.length - 1; i >= 0; i--) {
+                tdAnimationScroll.reinitialize_item(tdAnimationScroll.items[i], recompute_height);
+            }
+        },
 
-        for (var property in item.properties) {
 
-            if (item.properties.hasOwnProperty(property) === false) {
+
+
+
+
+        /**
+         * - used to reinitialize an item at the view resolution changing
+         *
+         * @param item tdAnimationScroll.item
+         * @param recompute_height boolean True if it's necessary to recompute the item height [when view port changes]
+         * @private
+         */
+        reinitialize_item: function reinitialize_item(item, recompute_height) {
+
+            // a not initialized item can't be reinitialized
+            if (false === item._is_initialized) {
                 return;
             }
-            current_item_property = item.properties[property];
 
-            var current_setting,
-                new_computed_value,
-                local_computed_value,
-                easing_step,
-                easing_computed_value,
-                easing_division_interval = 1000;
+            // prevent the following item computing, till the reinitialization is finished
+            item._is_initialized = false;
 
-            for (var i = 0; i < current_item_property.settings.length; i++) {
+            item.offset_top = item.top_marker_jquery_obj.offset().top;
 
-                current_setting = current_item_property.settings[i];
+            //console.log("reinitializare " + tdAnimationScroll.items.length + " : " + item.top_marker_jquery_obj.offset().top);
 
-                // the check is done using this form [...) of the interval or the last position 100%
-                if ((current_setting.start_percent <= item.percent_value && item.percent_value < current_setting.end_percent)
-                    || (item.percent_value == current_setting.end_percent && item.percent_value == 100)) {
+            if (true === recompute_height) {
+                if (undefined === item.wrapper_jquery_obj) {
+                    item.full_height = item.jqueryObj.outerHeight(true);
+                } else {
+                    item.full_height = item.wrapper_jquery_obj.height();
+                }
 
-                    if (current_setting.start_value != current_setting.end_value) {
+                if (0 === item.full_height) {
+                    return;
+                }
+            }
 
-                        // local computed value can have a positive value or a negative value, it depends of the difference end_value - start_value
-                        // for a linear easing function, the new computed value is the start_value + local_computed_value
-                        // if start_value < end_value, the variable local_computed_value is positive
-                        // if start_value > end_value, the variable local_computed_value is negative
-                        local_computed_value = (item.percent_value - current_setting.start_percent) / (current_setting.end_percent - current_setting.start_percent) * (current_setting.end_value - current_setting.start_value);
+            item.offset_bottom_top = item.offset_top + item.full_height;
+
+            item._is_initialized = true;
+        },
 
 
-                        // if there's specified an easing function, it's applied over the computed_value
-                        if ((current_setting.easing == undefined) || (current_setting.easing == '')) {
 
-                            // linear easing function
 
-                            new_computed_value = current_setting.start_value + local_computed_value;
+        /**
+         * - used for computing item properties
+         *
+         * @param item The item whose properties are computed
+         * @private
+         */
+        _compute_item_properties: function _compute_item_properties(item) {
 
-                        } else {
+            var computed_properties = {},
+                current_item_property;
 
-                            // specifying an easing function
+            for (var property in item.properties) {
 
-                            easing_step = Math.abs(current_setting.start_value - current_setting.end_value) / easing_division_interval;
+                if (true === item.properties.hasOwnProperty(property)) {
 
-                            if (current_setting.start_value < current_setting.end_value) {
+                    current_item_property = item.properties[property];
 
-                                easing_computed_value = current_setting.start_value + jQuery.easing[current_setting.easing](
-                                    null,
-                                    local_computed_value,
-                                    0,
-                                    easing_step,
-                                    current_setting.end_value - current_setting.start_value) * easing_division_interval;
+                    var current_setting,
+                        new_computed_value,
+                        local_computed_value,
+                        easing_step,
+                        easing_computed_value,
+                        easing_division_interval = 1000;
+
+                    for (var i = 0; i < current_item_property.settings.length; i++) {
+
+                        current_setting = current_item_property.settings[i];
+
+                        // the check is done using this form [...) of the interval or the last position 100%
+                        if ((current_setting.start_percent <= item.percent_value && item.percent_value < current_setting.end_percent) ||
+                            (item.percent_value === current_setting.end_percent && 100 === item.percent_value)) {
+
+                            if (current_setting.start_value === current_setting.end_value) {
+
+                                new_computed_value = current_setting.start_value;
 
                             } else {
 
-                                easing_computed_value = current_setting.start_value - jQuery.easing[current_setting.easing](
-                                    null,
-                                    -local_computed_value,
-                                    0,
-                                    easing_step,
-                                    current_setting.start_value - current_setting.end_value) * easing_division_interval;
+                                // local computed value can have a positive value or a negative value, it depends of the difference end_value - start_value
+                                // for a linear easing function, the new computed value is the start_value + local_computed_value
+                                // if start_value < end_value, the variable local_computed_value is positive
+                                // if start_value > end_value, the variable local_computed_value is negative
+                                local_computed_value = (item.percent_value - current_setting.start_percent) / (current_setting.end_percent - current_setting.start_percent) * (current_setting.end_value - current_setting.start_value);
+
+
+                                // if there's specified an easing function, it's applied over the computed_value
+                                if ((undefined === current_setting.easing) || ('' === current_setting.easing)) {
+
+                                    // linear easing function
+
+                                    new_computed_value = current_setting.start_value + local_computed_value;
+
+                                } else {
+
+                                    // specifying an easing function
+
+                                    easing_step = Math.abs(current_setting.start_value - current_setting.end_value) / easing_division_interval;
+
+                                    if (current_setting.start_value < current_setting.end_value) {
+
+                                        easing_computed_value = current_setting.start_value + jQuery.easing[current_setting.easing](
+                                            null,
+                                            local_computed_value,
+                                            0,
+                                            easing_step,
+                                            current_setting.end_value - current_setting.start_value) * easing_division_interval;
+
+                                    } else {
+
+                                        easing_computed_value = current_setting.start_value - jQuery.easing[current_setting.easing](
+                                            null,
+                                            -local_computed_value,
+                                            0,
+                                            easing_step,
+                                            current_setting.start_value - current_setting.end_value) * easing_division_interval;
+                                    }
+
+                                    new_computed_value = easing_computed_value;
+
+                                    //console.log(current_setting.easing + ' : ' + easing_step + ' ~ ' + easing_computed_value + ' ~ ' + (current_setting.start_value + computed_value) + ' & ' + current_setting.start_value + ' $ ' + current_setting.end_value);
+                                }
                             }
 
-                            new_computed_value = easing_computed_value;
+                            // if the existing computed value is different, the new computed value is cached
+                            if (current_item_property.computed_value !== new_computed_value) {
+                                current_item_property.computed_value = new_computed_value;
+                                computed_properties[property] = new_computed_value;
 
-                            //console.log(current_setting.easing + ' : ' + easing_step + ' ~ ' + easing_computed_value + ' ~ ' + (current_setting.start_value + computed_value) + ' & ' + current_setting.start_value + ' $ ' + current_setting.end_value);
+                                // the item is marked that it has at least one property that need to be redraw
+                                // the animation callback functions are called just for the marked items
+                                item.redraw = true;
+                            }
+                            break;
                         }
-
-                    } else {
-                        new_computed_value = current_setting.start_value;
                     }
-
-                    // if the existing computed value is different, the new computed value is cached
-                    if (current_item_property.computed_value !== new_computed_value) {
-                        current_item_property.computed_value = new_computed_value;
-                        computed_properties[property] = new_computed_value;
-
-                        // the item is marked that it has at least one property that need to be redraw
-                        // the animation callback functions are called just for the marked items
-                        item.redraw = true;
-                    }
-                    break;
                 }
             }
-        }
 
-        // a plain javascript object is added if there is no computed property
-        item.computed_item_properties = computed_properties;
-    },
-
+            // a plain javascript object is added if there is no computed property
+            item.computed_item_properties = computed_properties;
+        },
 
 
 
-    /**
-     * - used for computing item
-     * - the item properties are computed only when the item is in the view port and it is moving
-     *
-     * @param item The td_animation_scroll.item to be computed
-     */
-    compute_item: function compute_item(item) {
-        //console.clear();
 
-        // the item must be initialized first
-        if (item._is_initialized === false) {
-            return;
-        }
+        /**
+         * - used for computing item
+         * - the item properties are computed only when the item is in the view port and it is moving
+         *
+         * @param item The tdAnimationScroll.item to be computed
+         */
+        compute_item: function compute_item(item) {
+            //console.clear();
 
-        var percent_display_value = 0;
-
-        if (td_events.window_pageYOffset + td_events.window_innerHeight >= item.offset_top) {
-
-            if (td_events.window_pageYOffset > item.offset_bottom_top) {
-                percent_display_value = 100;
-            } else {
-                percent_display_value = (td_events.window_pageYOffset + td_events.window_innerHeight - item.offset_top) * 100 / (td_events.window_innerHeight + item.full_height);
+            // the item must be initialized first
+            if (false === item._is_initialized) {
+                return;
             }
-        }
 
-        //console.log(window.pageYOffset + ' : ' + item.offset_top + ' : ' + item.offset_bottom_top);
+            var percent_display_value = 0;
 
-        if (item.percent_value != percent_display_value) {
-            item.percent_value = percent_display_value;
-            td_animation_scroll._compute_item_properties(item);
-        }
+            if (tdEvents.window_pageYOffset + tdEvents.window_innerHeight >= item.offset_top) {
 
-        item.top_is_out = td_events.window_pageYOffset > item.offset_top;
-
-
-        //console.log(percent_display_value);
-    },
-
-
-
-
-    /**
-     * - used to request an animation frame for computing all items
-     * - the flag animation_running is set to false by the last requestAnimationFrame callback (the last animation call),
-     * so a new call to requestAnimationFrame can be done
-     */
-    compute_all_items: function compute_all_items() {
-        //td_animation_scroll.animate();
-
-        if (td_animation_scroll.animation_running === false) {
-            td_animation_scroll.rAFIndex = window.requestAnimationFrame(td_animation_scroll._animate_all_items);
-        }
-
-        td_animation_scroll.animation_running = true;
-    },
-
-
-
-
-    /**
-     * - used to call the existing callback animate functions
-     *
-     * @private
-     */
-    _animate_all_items: function _animate_all_items() {
-        //var start_time = Date.now();
-
-        for (var i = 0; i < td_animation_scroll.items.length; i++) {
-            if (td_animation_scroll.items[i].computation_stopped === false) {
-                td_animation_scroll.compute_item(td_animation_scroll.items[i]);
+                if (tdEvents.window_pageYOffset > item.offset_bottom_top) {
+                    percent_display_value = 100;
+                } else {
+                    percent_display_value = (tdEvents.window_pageYOffset + tdEvents.window_innerHeight - item.offset_top) * 100 / (tdEvents.window_innerHeight + item.full_height);
+                }
             }
-        }
 
-        for (var i = 0; i < td_animation_scroll.items.length; i++) {
-            if (td_animation_scroll.items[i].redraw === true) {
-                td_animation_scroll.items[i].animation_callback();
+            //console.log(window.pageYOffset + ' : ' + item.offset_top + ' : ' + item.offset_bottom_top);
+
+            if (item.percent_value !== percent_display_value) {
+                item.percent_value = percent_display_value;
+                tdAnimationScroll._compute_item_properties(item);
             }
+
+            item.top_is_out = tdEvents.window_pageYOffset > item.offset_top;
+
+
+            //console.log(percent_display_value);
+        },
+
+
+
+
+        /**
+         * - used to request an animation frame for computing all items
+         * - the flag animation_running is set to false by the last requestAnimationFrame callback (the last animation call),
+         * so a new call to requestAnimationFrame can be done
+         */
+        compute_all_items: function compute_all_items() {
+            //tdAnimationScroll.animate();
+
+            if (false === tdAnimationScroll.animation_running) {
+                tdAnimationScroll.rAFIndex = window.requestAnimationFrame( tdAnimationScroll._animate_all_items );
+            }
+
+            tdAnimationScroll.animation_running = true;
+        },
+
+
+
+
+        /**
+         * - used to call the existing callback animate functions
+         *
+         * @private
+         */
+        _animate_all_items: function _animate_all_items() {
+            //var start_time = Date.now();
+
+            for (var i = 0; i < tdAnimationScroll.items.length; i++) {
+                if ( false === tdAnimationScroll.items[i].computation_stopped) {
+                    tdAnimationScroll.compute_item(tdAnimationScroll.items[i]);
+                }
+            }
+
+            for (var j = 0; j < tdAnimationScroll.items.length; j++) {
+                if (true === tdAnimationScroll.items[j].redraw) {
+                    tdAnimationScroll.items[j].animation_callback();
+                }
+            }
+
+            tdAnimationScroll.animation_running = false;
+
+            //var end_time = Date.now();
+            //
+            //var debug_table = jQuery("#debug_table");
+            //debug_table.html((end_time - start_time) + ' ms');
+        },
+
+
+
+
+
+        /** @todo we'll see if it's necessary to make reinitialization just at the view port changing. Now, it's not
+         * - necessary to be called when the window is being resized
+         */
+        td_events_resize: function td_events_resize() {
+
+            if (0 === tdAnimationScroll.items.length) {
+                return;
+            }
+
+            // this will be applied if it depends just by view port changing
+
+            //if (tdAnimationScroll._changed_view_port_width()) {
+            //    tdAnimationScroll.reinitialize_all_items();
+            //}
+
+            tdAnimationScroll.reinitialize_all_items(false);
+
+            tdAnimationScroll.compute_all_items();
+        },
+
+
+
+
+
+
+        log: function log(msg) {
+            //console.log(msg);
         }
+    };
 
-        td_animation_scroll.animation_running = false;
+    tdAnimationScroll.init();
 
-        //var end_time = Date.now();
-        //
-        //var debug_table = jQuery("#debug_table");
-        //debug_table.html((end_time - start_time) + ' ms');
-    },
+})();
 
 
 
+/**
+ * Created by tagdiv on 30.05.2016.
+ */
+
+/* global jQuery: {} */
+
+var tdHomepageFull = {};
+
+(function( jQuery, undefined ) {
+
+    'use strict';
+
+    tdHomepageFull = {
+
+        items: [],
+
+        item: function() {
+
+            // OPTIONAL - here we store the block Unique ID. This enables us to delete the item via this id @see tdHomepageFull.deleteItem
+            this.blockUid = '';
+
+            this.$tmplBlock = undefined;
+        },
+
+        /**
+         *
+         * @param item tdHomepageFull.item
+         */
+        addItem: function( item ) {
+            if ( tdHomepageFull.items.length ) {
+                return;
+            }
+
+            // The block template script
+            item.$tmplBlock = jQuery( '#' + item.blockUid + '_tmpl' );
+
+            // add the template
+            jQuery( '.td-header-wrap' ).after( item.$tmplBlock.html() );
+
+            // make the wrapper and the image -> and add the image inside
+            var td_homepage_full_bg_image_wrapper = jQuery( '<div class="backstretch"></div>' );
+            var td_homepage_full_bg_image = jQuery( '<img class="td-backstretch not-parallax" src="' + item.postFeaturedImage + '"/>' );
+            td_homepage_full_bg_image_wrapper.append( td_homepage_full_bg_image );
+
+            // add to body
+            jQuery( 'body' ).prepend( td_homepage_full_bg_image_wrapper );
+
+            // run the backstracher
+            var td_backstr_item = new tdBackstr.item();
+            td_backstr_item.wrapper_image_jquery_obj = td_homepage_full_bg_image_wrapper;
+            td_backstr_item.image_jquery_obj = td_homepage_full_bg_image;
+            tdBackstr.add_item( td_backstr_item );
 
 
-    /** @todo we'll see if it's necessary to make reinitialization just at the view port changing. Now, it's not
-     * - necessary to be called when the window is being resized
-     */
-    td_events_resize: function td_events_resize() {
+            // The DOM article reference (article has already been inserted)
+            item.$article = jQuery( '#post-' + item.postId );
 
-        if (td_animation_scroll.items.length == 0) {
-            return;
+            // The background image
+            item.$bgImageWrapper = td_homepage_full_bg_image_wrapper;
+
+            // The backstretch item
+            item.backstrItem = td_backstr_item;
+
+            tdHomepageFull.items.push( item );
+        },
+
+
+        deleteItem: function( blockUid ) {
+
+            for (var i = 0; i < tdHomepageFull.items.length; i++) {
+
+                var currentItem = tdHomepageFull.items[ i ];
+
+                if ( currentItem.blockUid === blockUid ) {
+
+                    // Remove the block template script
+                    currentItem.$tmplBlock.remove();
+
+                    // Remove the article
+                    currentItem.$article.remove();
+
+                    // Remove the backgroun image
+                    currentItem.$bgImageWrapper.remove();
+
+                    tdHomepageFull.items.splice(i, 1); // remove the item from the "array"
+
+                    if ( tdBackstr.deleteItem( blockUid ) ) {
+
+                        item.backstrItem = undefined;
+                    }
+                }
+            }
+            return false;
         }
+    };
 
-        // this will be applied if it depends just by view port changing
-
-        //if (td_animation_scroll._changed_view_port_width()) {
-        //    td_animation_scroll.reinitialize_all_items();
-        //}
-
-        td_animation_scroll.reinitialize_all_items(false);
-
-        td_animation_scroll.compute_all_items();
-    },
-
-
-
-
-
-
-    log: function log(msg) {
-        //console.log(msg);
-    }
-};
-
-
-
-
-td_animation_scroll.init();
-
-
+})( jQuery );
 
 /**
  * Created by tagdiv on 23.02.2015.
  */
 
-"use strict";
+var tdBackstr = {};
 
-var td_backstr = {
+(function(){
 
+    'use strict';
 
-
-    items: [],
-
-
-
-    item: function item() {
-
-        // check if is necessary to apply modification (css)
-        this.previous_value = 0;
-
-        // the image aspect ratio
-        this.image_aspect_rate = 0;
-
-        // the wrapper jquery object
-        this.wrapper_image_jquery_obj = '';
-
-        // the image jquery object
-        this.image_jquery_obj = '';
-    },
+    tdBackstr = {
 
 
+        items: [],
 
 
-    /**
-     *
-     * @param item
-     */
-    add_item: function add_item(item) {
+        item: function() {
 
-        if (item.constructor != td_backstr.item) {
-            return;
-        }
+            // OPTIONAL - here we store the block Unique ID. This enables us to delete the item via this id @see tdBackstr.deleteItem
+            this.blockUid = '';
 
-        //if ((item.image_jquery_obj.complete)
-        //
-        //    // this is a case when the image is still not loaded but the height() and width() return both 24px
-        //    // @todo it must be modified. It's used because for backstretch are usually used large images
-        //    && ((item.image_jquery_obj.height() != 24) && (item.image_jquery_obj.width() != 24))
-        //)
+            // check if is necessary to apply modification (css)
+            this.previous_value = 0;
 
-        if (item.image_jquery_obj.get(0).complete) {
-            td_backstr._load_item_image(item);
-        } else {
+            // the image aspect ratio
+            this.image_aspect_rate = 0;
 
-            item.image_jquery_obj.on('load', function() {
+            // the wrapper jquery object
+            this.wrapper_image_jquery_obj = '';
 
-                td_backstr._load_item_image(item);
-            });
+            // the image jquery object
+            this.image_jquery_obj = '';
+        },
 
 
-            //var currentTimeStart = Date.now();
-            //
-            //var loaded_image_jquery_ojb = false;
-            //
-            //item.image_jquery_obj.on('load', function() {
-            //
-            //    loaded_image_jquery_ojb = true;
-            //
-            //
-            //    td_backstr._load_item_image(item);
-            //    console.log('backstr tarziu ' + item.image_jquery_obj.height() + ' > timp : ' + (Date.now() - currentTimeStart));
-            //});
-            //
-            //
-            //var indexInterval = setInterval(function() {
-            //    if (loaded_image_jquery_ojb) {
-            //        clearInterval(indexInterval);
-            //        console.log('imagine incarcata ' + item.image_jquery_obj.height() + ' > timp : ' + (Date.now() - currentTimeStart));
-            //    }
-            //}, 0);
-        }
-    },
+        /**
+         *
+         * @param item
+         */
+        add_item: function( item ) {
 
-
-
-
-    _load_item_image: function _load_item_image(item) {
-        item.image_aspect_rate = item.image_jquery_obj.width() / item.image_jquery_obj.height();
-        td_backstr.items.push(item);
-        td_backstr._compute_item(item);
-
-        item.image_jquery_obj.css('opacity', '1');
-    },
-
-
-
-
-    /**
-     *
-     * @param item
-     * @private
-     */
-    _compute_item: function _compute_item(item) {
-
-        // the wrapper aspect ratio can vary, so it's recomputed at computing item
-        var wrapper_aspect_rate = item.wrapper_image_jquery_obj.width() / item.wrapper_image_jquery_obj.height();
-
-        var current_value = 0;
-
-        if (wrapper_aspect_rate < item.image_aspect_rate) {
-
-            current_value = 1;
-
-            if (item.previous_value != current_value) {
-                item.image_jquery_obj.removeClass('td-stretch-width');
-                item.image_jquery_obj.addClass('td-stretch-height');
-
-                item.previous_value = current_value;
+            if ( item.constructor !== tdBackstr.item ) {
+                return;
             }
-        } else {
 
-            current_value = 2;
+            //if ((item.image_jquery_obj.complete)
+            //
+            //    // this is a case when the image is still not loaded but the height() and width() return both 24px
+            //    // @todo it must be modified. It's used because for backstretch are usually used large images
+            //    && ((item.image_jquery_obj.height() != 24) && (item.image_jquery_obj.width() != 24))
+            //)
 
-            if (item.previous_value != current_value) {
-                item.image_jquery_obj.removeClass('td-stretch-height');
-                item.image_jquery_obj.addClass('td-stretch-width');
+            if ( item.image_jquery_obj.get( 0 ).complete ) {
+                tdBackstr._load_item_image( item );
 
-                item.previous_value = current_value;
+            } else {
+
+                item.image_jquery_obj.on( 'load', function() {
+                    tdBackstr._load_item_image( item );
+                });
+
+
+                //var currentTimeStart = Date.now();
+                //
+                //var loaded_image_jquery_ojb = false;
+                //
+                //item.image_jquery_obj.on('load', function() {
+                //
+                //    loaded_image_jquery_ojb = true;
+                //
+                //
+                //    tdBackstr._load_item_image(item);
+                //    console.log('backstr tarziu ' + item.image_jquery_obj.height() + ' > timp : ' + (Date.now() - currentTimeStart));
+                //});
+                //
+                //
+                //var indexInterval = setInterval(function() {
+                //    if (loaded_image_jquery_ojb) {
+                //        clearInterval(indexInterval);
+                //        console.log('imagine incarcata ' + item.image_jquery_obj.height() + ' > timp : ' + (Date.now() - currentTimeStart));
+                //    }
+                //}, 0);
             }
+        },
+
+
+        deleteItem: function( blockUid ) {
+            for (var i = 0; i < tdBackstr.items.length; i++) {
+                if ( tdBackstr.items[ i ].blockUid === blockUid ) {
+                    tdBackstr.items.splice(i, 1); // remove the item from the "array"
+                    return true;
+                }
+            }
+            return false;
+        },
+
+
+        _load_item_image: function( item ) {
+            item.image_aspect_rate = item.image_jquery_obj.width() / item.image_jquery_obj.height();
+            tdBackstr.items.push( item );
+            tdBackstr._compute_item( item );
+
+            item.image_jquery_obj.css( 'opacity', '1' );
+        },
+
+
+        /**
+         *
+         * @param item
+         * @private
+         */
+        _compute_item: function( item ) {
+
+            // the wrapper aspect ratio can vary, so it's recomputed at computing item
+            var wrapper_aspect_rate = item.wrapper_image_jquery_obj.width() / item.wrapper_image_jquery_obj.height();
+
+            var current_value = 0;
+
+            if ( wrapper_aspect_rate < item.image_aspect_rate ) {
+
+                current_value = 1;
+
+                if ( item.previous_value !== current_value ) {
+                    item.image_jquery_obj.removeClass( 'td-stretch-width' );
+                    item.image_jquery_obj.addClass( 'td-stretch-height' );
+
+                    item.previous_value = current_value;
+                }
+            } else {
+
+                current_value = 2;
+
+                if ( item.previous_value !== current_value ) {
+                    item.image_jquery_obj.removeClass( 'td-stretch-height' );
+                    item.image_jquery_obj.addClass( 'td-stretch-width' );
+
+                    item.previous_value = current_value;
+                }
+            }
+        },
+
+
+        /**
+         *
+         * @private
+         */
+        _compute_all_items: function() {
+            for ( var i = 0; i < tdBackstr.items.length; i++ ) {
+                tdBackstr._compute_item( tdBackstr.items[ i ] );
+            }
+        },
+
+
+        td_events_resize: function() {
+
+            if ( 0 === tdBackstr.items.length ) {
+                return;
+            }
+
+            tdBackstr._compute_all_items();
+        },
+
+
+
+
+        log: function( msg ) {
+            window.console.log( msg );
         }
-    },
+    };
 
 
+})();
 
-
-    /**
-     *
-     * @private
-     */
-    _compute_all_items: function _compute_all_items() {
-        for (var i = 0; i < td_backstr.items.length; i++) {
-            td_backstr._compute_item(td_backstr.items[i]);
-        }
-    },
-
-
-
-
-    td_events_resize: function td_events_resize() {
-
-        if (td_backstr.items.length == 0) {
-            return;
-        }
-
-        td_backstr._compute_all_items();
-    },
-
-
-
-
-    log: function log(msg) {
-        console.log(msg);
-    }
-};
 
 
 
@@ -7899,596 +9564,563 @@ var td_backstr = {
 
 /* global jQuery:false */
 /* global tdDetect:false */
-/* global td_events:false */
+/* global tdEvents:{} */
 
-"use strict";
+var tdAnimationStack = {};
 
-var td_animation_stack = {
+( function() {
 
-    /*
-        Important:
-        1. The first animation step is produced by the the body selector @see animation-stack.less
-        2. The second animation step can be applied by the animation_css_class1
-        3. The final (the main) animation step is applied by the animation_css_class2
-     */
+    "use strict";
 
+    tdAnimationStack = {
 
-
-
-    // - flag css class used by the non 'type0' animation effect
-    // - flag used just to look for not yet computed item
-    // - it's set by ready_init (on ready)
-    // - all dom components that need to be animated will be marked with this css class in ready_init
-    // - it can be used for a precomputed style, but carefully, because it's applied at ready_init (on ready)
-    _animation_css_class1: '',
-
-
-
-    // - flag css class used by the non 'type0' animation effect
-    // - flag css class used to animate custom
-    // - this css class applies the final animation
-    _animation_css_class2: '',
-
-
-
-    // - the default animation effect 'type0' is applied if the global window.td_animation_stack_effect is the empty string
-    // - it's used for consistency of animation effects presented into the animation-stack.less [all types have a name (...type...)]
-    _animation_default_effect: 'type0',
-
-
-
-    // - td_animation_stack runs just only when this flag is true
-    // - it's done true by the init function
-    activated: false,
-
-
-
-    // flag checked by the major animation operations
-    _ready_for_initialization: true,
-
-    // interval used by ready_init to check td_animation_stack state
-    _ready_init_timeout: undefined,
-
-
-    // max time[ms] interval waiting for first td_animation_stack.init call
-    max_waiting_for_init: 3000,
-
-
-
-    // the specific selectors are used to look for new elements inside of the specific sections
-    _specific_selectors: '',
-
-    // the general selectors are used to look for elements over extend areas in DOM
-    _general_selectors: '',
+        /*
+            Important:
+            1. The first animation step is produced by the the body selector @see animation-stack.less
+            2. The second animation step can be applied by the animation_css_class1
+            3. The final (the main) animation step is applied by the animation_css_class2
+         */
 
 
 
 
+        // - flag css class used by the non 'type0' animation effect
+        // - flag used just to look for not yet computed item
+        // - it's set by ready_init (on ready)
+        // - all dom components that need to be animated will be marked with this css class in ready_init
+        // - it can be used for a precomputed style, but carefully, because it's applied at ready_init (on ready)
+        _animation_css_class1: '',
 
 
-    /**
-     * - wait for td_animation_stack.init() for max_waiting_for_init time
-     * - if time is elapsed, the animation is canceled
-     * - the ready_init is canceled by a fast td_animation_stack.init call
-     */
-    ready_init: function ready_init() {
 
-        // - special case for IE8 and IE9
-        // - the animation is forced removed and the altered css body is cleaned
-        if (tdDetect.isIe8 || tdDetect.isIe9) {
-            td_animation_stack._ready_for_initialization = false;
+        // - flag css class used by the non 'type0' animation effect
+        // - flag css class used to animate custom
+        // - this css class applies the final animation
+        _animation_css_class2: '',
 
-            if (window.td_animation_stack_effect != undefined) {
-                if (window.td_animation_stack_effect == '') {
-                    window.td_animation_stack_effect = td_animation_stack._animation_default_effect;
+
+
+        // - the default animation effect 'type0' is applied if the global window.td_animation_stack_effect is the empty string
+        // - it's used for consistency of animation effects presented into the animation-stack.less [all types have a name (...type...)]
+        _animation_default_effect: 'type0',
+
+
+
+        // - tdAnimationStack runs just only when this flag is true
+        // - it's done true by the init function
+        activated: false,
+
+
+
+        // flag checked by the major animation operations
+        _ready_for_initialization: true,
+
+        // interval used by ready_init to check tdAnimationStack state
+        _ready_init_timeout: undefined,
+
+
+        // max time[ms] interval waiting for first tdAnimationStack.init call
+        max_waiting_for_init: 3000,
+
+
+
+        // the specific selectors are used to look for new elements inside of the specific sections
+        _specific_selectors: '',
+
+        // the general selectors are used to look for elements over extend areas in DOM
+        _general_selectors: '',
+
+
+
+
+
+
+        /**
+         * - wait for tdAnimationStack.init() for max_waiting_for_init time
+         * - if time is elapsed, the animation is canceled
+         * - the ready_init is canceled by a fast tdAnimationStack.init call
+         */
+        ready_init: function() {
+
+            // - special case for IE8 and IE9 (and if Visual Composer image carousel exists)
+            // Important! The Visual Compose images carousel has hidden elements (images) that does not allow for computing the real position of the other DOM elements in the viewport
+            // - the animation is forced removed and the altered css body is cleaned
+            if ( tdDetect.isIe8 || tdDetect.isIe9 || ( jQuery( '.vc_images_carousel' ).length > 0 ) ) {
+                tdAnimationStack._ready_for_initialization = false;
+
+                if ( undefined !== window.td_animation_stack_effect ) {
+                    if ( '' === window.td_animation_stack_effect ) {
+                        window.td_animation_stack_effect = tdAnimationStack._animation_default_effect;
+                    }
+                    jQuery( 'body' ).removeClass( 'td-animation-stack-' + window.td_animation_stack_effect );
                 }
-                jQuery('body').removeClass('td-animation-stack-' + window.td_animation_stack_effect);
-            }
-            return;
-        }
-
-
-        if (window.tds_animation_stack != undefined && window.td_animation_stack_effect != undefined) {
-
-            // the td_animation_stack._specific_selectors is set by the global variable window.td_animation_stack_specific_selectors
-            if (window.td_animation_stack_specific_selectors != undefined) {
-                td_animation_stack._specific_selectors = window.td_animation_stack_specific_selectors;
+                return;
             }
 
 
-            // if the global variable window.td_animation_stack_effect has the empty string value, the 'full fade' (type0) effect is prepared to be applied
-            if (window.td_animation_stack_effect == '') {
-                window.td_animation_stack_effect = td_animation_stack._animation_default_effect;
-            }
-
-            td_animation_stack._animation_css_class1 = 'td-animation-stack-' + window.td_animation_stack_effect + '-1';
-            td_animation_stack._animation_css_class2 = 'td-animation-stack-' + window.td_animation_stack_effect + '-2';
-
-
-            // - the td_animation_stack._general_selectors is set by the global variable window.td_animation_stack_general_selectors
-            if (window.td_animation_stack_general_selectors != undefined) {
-                td_animation_stack._general_selectors = window.td_animation_stack_general_selectors;
-            }
-
-            // the td_animation_stack._animation_css_class1 css class is applied for all elements need to be animated later
-            jQuery(td_animation_stack._general_selectors).addClass(td_animation_stack._animation_css_class1);
-
-
-            // - timeout used by the ready_init function, to cut down td_animation_stack.init calling at loading page, when the call comes too late
-            // - if td_animation_stack.init comes earlier, it does a clearTimeout call over the td_animation_stack._ready_init_timeout variable
-            td_animation_stack._ready_init_timeout = setTimeout(function() {
-
-                // if td_animation_stack is activated, do nothing
-                if (td_animation_stack.activated === true) {
-                    return;
-                }
+            if ( undefined === window.tds_animation_stack || undefined === window.td_animation_stack_effect ) {
 
                 // lock any further operation using the _ready_for_initialization flag
-                td_animation_stack._ready_for_initialization = false;
+                tdAnimationStack._ready_for_initialization = false;
 
-                // remove the loading animation css class effect from the body
-                // this class is applied from the theme settings
-                if (window.td_animation_stack_effect != undefined) {
-                    jQuery('body').removeClass('td-animation-stack-' + window.td_animation_stack_effect);
+            } else {
+
+                // the tdAnimationStack._specific_selectors is set by the global variable window.td_animation_stack_specific_selectors
+                if ( undefined !== window.td_animation_stack_specific_selectors ) {
+                    tdAnimationStack._specific_selectors = window.td_animation_stack_specific_selectors;
                 }
 
-            }, td_animation_stack.max_waiting_for_init);
 
-        } else {
-            // lock any further operation using the _ready_for_initialization flag
-            td_animation_stack._ready_for_initialization = false;
-        }
-    },
-
-
-    // flag marks items where they are
-    _ITEM_TO_VIEW_PORT: {
-
-        ITEM_ABOVE_VIEW_PORT: 0,
-
-        ITEM_IN_VIEW_PORT: 1,
-
-        ITEM_UNDER_VIEW_PORT: 2
-    },
-
-
-    // predefined sorting methods
-    SORTED_METHOD: {
-
-        sort_left_to_right: function sort_left_to_right(item1, item2) {
-            if (item1.offset_top > item2.offset_top) {
-                return 1;
-            } else if (item1.offset_top < item2.offset_top) {
-                return -1;
-            } else if (item1._order > item2._order) {
-                return 1;
-            } else if (item1._order < item2._order) {
-                return -1;
-            }
-            return 0;
-        },
-
-
-        sort_right_to_left: function sort_right_to_left(item1, item2) {
-            if (item1.offset_top > item2.offset_top) {
-                return 1;
-            } else if (item1.offset_top < item2.offset_top) {
-                return -1;
-            } else if (item1._order > item2._order) {
-                return -1;
-            } else if (item1._order < item2._order) {
-                return 1;
-            }
-            return -1;
-        }
-    },
-
-
-    // keeps the DOM reading order, used in the sorting methods
-    _order: 0,
-
-
-    // interval divided to animate items
-    // ex. interval 100 and 2 items => one item at 100 / 2 and one item at 100 / 1, but not lower than min_interval and not higher than max_interval
-    interval: 70,
-
-    // min interval of a set timer
-    min_interval: 17,
-
-    // max interval of a set timer
-    max_interval: 40,
-
-
-
-    // keep current setInterval
-    _current_interval: undefined,
-
-    // items in view port are moved here
-    _items_in_view_port: [],
-
-    // items above the view port are moved here
-    _items_above_view_port: [],
-
-    // all items that will be processed
-    items: [],
-
-
-
-
-
-
-
-
-    /**
-     * - td_animation_stack.item
-     */
-    item: function item() {
-        // offset from the top of the item, to the top
-        // it's set at the initialization item
-        this.offset_top = undefined;
-
-
-        // offset from the bottom of the item, to the top
-        // it's set at the initialization item
-        this.offset_bottom_to_top = undefined;
-
-
-        // jquery object reference
-        // it's set before the initialization of the item
-        this.jqueryObj = undefined;
-
-
-        // the reading order from DOM
-        // it's set at the initialization item
-        this._order = undefined;
-    },
-
-
-
-
-    /**
-     * - initialize a td_animation_stack.item and add it in td_animation_stack.items
-     * @param item td_animation_stack.item
-     */
-    //add_item: function add_item(item) {
-    //
-    //    if (item.constructor != td_animation_stack.item) {
-    //        return;
-    //    }
-    //
-    //    td_animation_stack.items.push(item);
-    //},
-
-
-
-    /**
-     * - initialize the offset top of the td_animation_stack.item parameter
-     * @param item td_animation_stack.item
-     * @private
-     */
-    _initialize_item: function _initialize_item(item) {
-        item._order = td_animation_stack._order++;
-
-        item.offset_top = item.jqueryObj.offset().top;
-        //item.offset_relative = Math.sqrt(Math.pow(item.jqueryObj.offset().top, 2) + Math.pow(item.jqueryObj.offset().left, 2));
-
-        item.offset_bottom_to_top = item.offset_top + item.jqueryObj.height();
-
-        //item.jqueryObj.parent().prepend('<div class="debug_item" style="position: absolute; width: 100%; height: 20px; border: 1px solid red; background-color: white">' + item.offset_top + '</div>');
-    },
-
-
-    /**
-     * - dynamically search for new elements to create new td_animation_stack.item
-     * - the items are added in the td_animation_stack._items_in_view_port, that means they are ready to be animated,
-     * or in the td_animation_stack.items to be computed later (checked if they are in the view port and animated)
-     * @param selector {string} - jQuery selector
-     * @param sort_type {td_animation_stack.SORTED_METHOD} - a preferred td_animation_stack.SORTED_METHOD
-     * @param in_view_port {boolean} - add an item in the td_animation_stack._items_in_view_port or in the td_animation_stack.items
-     */
-    check_for_new_items: function(selector, sort_type, in_view_port) {
-
-        // td_animation_stack must be activated and not stopped for initialization by the ready_init checker
-        if ((td_animation_stack.activated === false) || (td_animation_stack._ready_for_initialization === false)) {
-            return;
-        }
-
-
-        if (selector === undefined) {
-            selector = '';
-        }
-
-
-
-        // the local stack of searched items
-        var local_stack = [];
-
-
-
-        //if (window.td_animation_stack_effect === 'type0') {
-        //    // for every founded element there's an instantiated td_animation_stack.item, then initialized and added to the local stack
-        //    var founded_elements = jQuery(selector + ', .post').find(td_animation_stack._specific_selectors).filter(function() {
-        //        return jQuery(this).css('opacity') === '0';
-        //    });
-        //
-        //} else {
-            jQuery(td_animation_stack._general_selectors).not('.' + td_animation_stack._animation_css_class2).addClass(td_animation_stack._animation_css_class1);
-
-            // for every founded element there's an instantiated td_animation_stack.item, then initialized and added to the local stack
-            var founded_elements = jQuery(selector + ', .post').find(td_animation_stack._specific_selectors).filter(function() {
-                return jQuery(this).hasClass(td_animation_stack._animation_css_class1);
-            });
-        //}
-
-
-
-        founded_elements.each(function(index, element) {
-
-            var item_animation_stack = new td_animation_stack.item();
-
-            item_animation_stack.jqueryObj = jQuery(element);
-
-            td_animation_stack.log(index);
-
-            td_animation_stack._initialize_item(item_animation_stack);
-
-            local_stack.push(item_animation_stack);
-        });
-
-
-
-        // new scope having its own timer used for checking not yet loaded images
-        (function(){
-
-            var images_loaded = true;
-
-            for (var i = 0; i < local_stack.length; i++) {
-
-                // for every image element the 'complete' property is checked
-                // "If the image is finished loading, the complete property returns true"
-                // when td_animation_stack.init is called on load, as normally, it calls td_animation_stack.check_for_new_items and all these element has 'complete' property true
-                // when td_animation_stack.check_for_new_items is called by block's ajax response, the next timer is used to wait for all elements being loaded
-                if (founded_elements[i].complete == false) {
-                    images_loaded = false;
-                    break;
+                // if the global variable window.td_animation_stack_effect has the empty string value, the 'full fade' (type0) effect is prepared to be applied
+                if ( '' === window.td_animation_stack_effect ) {
+                    window.td_animation_stack_effect = tdAnimationStack._animation_default_effect;
                 }
-            }
 
-            // if there's at least one element not loaded, a timer is started to wait for
-            if (images_loaded === false) {
-
-                var date = new Date();
-                var start_time = date.getTime();
+                tdAnimationStack._animation_css_class1 = 'td-animation-stack-' + window.td_animation_stack_effect + '-1';
+                tdAnimationStack._animation_css_class2 = 'td-animation-stack-' + window.td_animation_stack_effect + '-2';
 
 
-                td_animation_stack.log('TIMER - started');
+                // - the tdAnimationStack._general_selectors is set by the global variable window.td_animation_stack_general_selectors
+                if ( undefined !== window.td_animation_stack_general_selectors ) {
+                    tdAnimationStack._general_selectors = window.td_animation_stack_general_selectors;
+                }
+
+                // the tdAnimationStack._animation_css_class1 css class is applied for all elements need to be animated later
+                jQuery( tdAnimationStack._general_selectors ).addClass( tdAnimationStack._animation_css_class1 );
 
 
-                // the timer is started
-                var interval_check_loading_image = setInterval(function() {
+                // - timeout used by the ready_init function, to cut down tdAnimationStack.init calling at loading page, when the call comes too late
+                // - if tdAnimationStack.init comes earlier, it does a clearTimeout call over the tdAnimationStack._ready_init_timeout variable
+                tdAnimationStack._ready_init_timeout = setTimeout( function() {
 
-                    // if there's too much time waiting for image loading, they are made visible
-                    var date = new Date();
-
-                    var i = 0;
-
-                    if ((date.getTime() - start_time) > td_animation_stack.max_waiting_for_init) {
-
-                        clearInterval(interval_check_loading_image);
-
-                        for (i = 0; i < local_stack.length; i++) {
-
-
-
-
-                            //if (window.td_animation_stack_effect === 'type0') {
-                            //    local_stack[i].jqueryObj.css('opacity', 1);
-                            //} else {
-                                local_stack[i].jqueryObj.removeClass(td_animation_stack._animation_css_class1);
-                                local_stack[i].jqueryObj.addClass(td_animation_stack._animation_css_class2);
-                            //}
-
-
-
-
-
-
-                        }
+                    // if tdAnimationStack is activated, do nothing
+                    if ( true === tdAnimationStack.activated ) {
                         return;
                     }
 
+                    // lock any further operation using the _ready_for_initialization flag
+                    tdAnimationStack._ready_for_initialization = false;
 
-                    // at every interval step, the element's 'complete' property is checked again
-                    images_loaded = true;
-
-                    for (i = 0; i < local_stack.length; i++) {
-
-                        if (founded_elements[i].complete == false) {
-                            images_loaded = false;
-                            break;
-                        }
+                    // remove the loading animation css class effect from the body
+                    // this class is applied from the theme settings
+                    if ( undefined !== window.td_animation_stack_effect ) {
+                        jQuery( 'body' ).removeClass( 'td-animation-stack-' + window.td_animation_stack_effect );
                     }
 
-                    if (images_loaded === true) {
+                }, tdAnimationStack.max_waiting_for_init );
+            }
+        },
 
-                        clearInterval(interval_check_loading_image);
 
-                        td_animation_stack.log('TIMER - stopped');
+        // flag marks items where they are
+        _ITEM_TO_VIEW_PORT: {
 
-                        td_animation_stack._precompute_items(local_stack, sort_type, in_view_port);
-                        td_animation_stack.compute_items();
-                    }
+            ITEM_ABOVE_VIEW_PORT: 0,
 
-                }, 100);
+            ITEM_IN_VIEW_PORT: 1,
 
-            } else {
-                td_animation_stack._precompute_items(local_stack, sort_type, in_view_port);
-                td_animation_stack.compute_items();
+            ITEM_UNDER_VIEW_PORT: 2
+        },
+
+
+        // predefined sorting methods
+        SORTED_METHOD: {
+
+            sort_left_to_right: function sort_left_to_right( item1, item2 ) {
+                if ( item1.offset_top > item2.offset_top ) {
+                    return 1;
+                } else if ( item1.offset_top < item2.offset_top ) {
+                    return -1;
+                } else if ( item1._order > item2._order ) {
+                    return 1;
+                } else if ( item1._order < item2._order ) {
+                    return -1;
+                }
+                return 0;
+            },
+
+
+            sort_right_to_left: function sort_right_to_left( item1, item2 ) {
+                if ( item1.offset_top > item2.offset_top ) {
+                    return 1;
+                } else if ( item1.offset_top < item2.offset_top ) {
+                    return -1;
+                } else if ( item1._order > item2._order ) {
+                    return -1;
+                } else if ( item1._order < item2._order ) {
+                    return 1;
+                }
+                return -1;
+            }
+        },
+
+
+        // keeps the DOM reading order, used in the sorting methods
+        _order: 0,
+
+
+        // interval divided to animate items
+        // ex. interval 100 and 2 items => one item at 100 / 2 and one item at 100 / 1, but not lower than min_interval and not higher than max_interval
+        interval: 70,
+
+        // min interval of a set timer
+        min_interval: 17,
+
+        // max interval of a set timer
+        max_interval: 40,
+
+
+
+        // keep current setInterval
+        _current_interval: undefined,
+
+        // items in view port are moved here
+        _items_in_view_port: [],
+
+        // items above the view port are moved here
+        _items_above_view_port: [],
+
+        // all items that will be processed
+        items: [],
+
+
+
+
+
+
+
+
+        /**
+         * - tdAnimationStack.item
+         */
+        item: function() {
+            // offset from the top of the item, to the top
+            // it's set at the initialization item
+            this.offset_top = undefined;
+
+
+            // offset from the bottom of the item, to the top
+            // it's set at the initialization item
+            this.offset_bottom_to_top = undefined;
+
+
+            // jquery object reference
+            // it's set before the initialization of the item
+            this.jqueryObj = undefined;
+
+
+            // the reading order from DOM
+            // it's set at the initialization item
+            this._order = undefined;
+        },
+
+
+
+
+        /**
+         * - initialize a tdAnimationStack.item and add it in tdAnimationStack.items
+         * @param item tdAnimationStack.item
+         */
+        //add_item: function add_item(item) {
+        //
+        //    if (item.constructor != tdAnimationStack.item) {
+        //        return;
+        //    }
+        //
+        //    tdAnimationStack.items.push(item);
+        //},
+
+
+
+        /**
+         * - initialize the offset top of the tdAnimationStack.item parameter
+         * @param item tdAnimationStack.item
+         * @private
+         */
+        _initialize_item: function( item ) {
+            item._order = tdAnimationStack._order++;
+
+            item.offset_top = item.jqueryObj.offset().top;
+            //item.offset_relative = Math.sqrt(Math.pow(item.jqueryObj.offset().top, 2) + Math.pow(item.jqueryObj.offset().left, 2));
+
+            item.offset_bottom_to_top = item.offset_top + item.jqueryObj.height();
+
+            //item.jqueryObj.parent().prepend('<div class="debug_item" style="position: absolute; width: 100%; height: 20px; border: 1px solid red; background-color: white">' + item.offset_top + '</div>');
+        },
+
+
+        /**
+         * - dynamically search for new elements to create new tdAnimationStack.item
+         * - the items are added in the tdAnimationStack._items_in_view_port, that means they are ready to be animated,
+         * or in the tdAnimationStack.items to be computed later (checked if they are in the view port and animated)
+         * @param selector {string} - jQuery selector
+         * @param sort_type {tdAnimationStack.SORTED_METHOD} - a preferred tdAnimationStack.SORTED_METHOD
+         * @param in_view_port {boolean} - add an item in the tdAnimationStack._items_in_view_port or in the tdAnimationStack.items
+         */
+        check_for_new_items: function( selector, sort_type, in_view_port ) {
+
+            // tdAnimationStack must be activated and not stopped for initialization by the ready_init checker
+            if ( ( false === tdAnimationStack.activated ) || ( false === tdAnimationStack._ready_for_initialization ) ) {
+                return;
             }
 
-        })();
 
-        td_animation_stack.log('checked for new items finished');
-    },
-
-
-    /**
-     * - _precompute_items sorts and adds items in the td_animation_stack.items array or even in the
-     * td_animation_stack._items_in_view_port array
-     * - this function is necessary because at scroll just the td_animation_stack.compute_items function is called
-     *
-     * @param stack_items {[]} founded items
-     * @param sort_type {function} sorting method
-     * @param in_view_port {boolean} add in view port to be already computed, or in the general items array
-     * @private
-     */
-    _precompute_items: function _precompute_items(stack_items, sort_type, in_view_port) {
-
-        stack_items.sort(sort_type);
-
-        if (in_view_port === true) {
-
-            while (stack_items.length > 0) {
-                td_animation_stack.log('add item 1 : ' + stack_items.length);
-                td_animation_stack._items_in_view_port.push(stack_items.shift());
+            if ( undefined === selector ) {
+                selector = '';
             }
 
-        } else {
-
-            while (stack_items.length > 0) {
-                td_animation_stack.log('add item 2 : ' + stack_items.length);
-                td_animation_stack.items.push(stack_items.shift());
-            }
-        }
-    },
 
 
-
-    /**
-     * - IT'S CALLED ON PAGE LOAD [actually in td_last_init.js]
-     * - the general init function
-     * - the items are added to the td_animation_stack.items using check_for_new_items method, and then computed
-     * - the arrays are cleared to be prepared for a reinitialization
-     */
-    init: function init() {
-        if (window.tds_animation_stack === undefined) {
-            return;
-        }
-
-        // td_animation_stack must not be already stopped for initialization by a pre_init checker
-        if (td_animation_stack._ready_for_initialization === false) {
-            return;
-        }
-
-        // clear the _ready_init_timeout, to stop it doing more checking
-        clearTimeout(td_animation_stack._ready_init_timeout);
-
-        // the td_animation_stack is activated
-        td_animation_stack.activated = true;
-
-        td_animation_stack.check_for_new_items('.td-animation-stack', td_animation_stack.SORTED_METHOD.sort_left_to_right, false);
-    },
-
-
-    /**
-     * - the arrays are cleared to be prepared for a reinitialization
-     * - the init call is done
-     */
-    reinit: function reinit() {
-
-        // td_animation_stack must not be already stopped for initialization by a pre_init checker
-        if (td_animation_stack._ready_for_initialization === false) {
-            return;
-        }
-
-        td_animation_stack.items = [];
-        td_animation_stack._items_in_view_port = [];
-        td_animation_stack._items_above_view_port = [];
-
-        td_animation_stack.init();
-    },
-
-
-    /**
-     * - compute all items
-     */
-    compute_items: function compute_items() {
-
-        // td_animation_stack must be activated and not stopped for initialization by the ready_init checker
-        if ((td_animation_stack.activated === false) || (td_animation_stack._ready_for_initialization === false)) {
-            return;
-        }
-
-        // the td_animation_stack.items are processed
-        td_animation_stack._separate_items();
-
-        // the items above the port view are animated
-        while (td_animation_stack._items_above_view_port.length > 0) {
-            td_animation_stack.log('animation - above the view port');
-
-            var item_above_view_port = td_animation_stack._items_above_view_port.shift();
+            // the local stack of searched items
+            var local_stack = [];
 
 
 
             //if (window.td_animation_stack_effect === 'type0') {
-            //    item_above_view_port.jqueryObj.css('opacity', 1);
+            //    // for every founded element there's an instantiated tdAnimationStack.item, then initialized and added to the local stack
+            //    var founded_elements = jQuery(selector + ', .post').find(tdAnimationStack._specific_selectors).filter(function() {
+            //        return jQuery(this).css('opacity') === '0';
+            //    });
+            //
             //} else {
-                item_above_view_port.jqueryObj.removeClass(td_animation_stack._animation_css_class1);
-                item_above_view_port.jqueryObj.addClass(td_animation_stack._animation_css_class2);
+                jQuery( tdAnimationStack._general_selectors).not( '.' + tdAnimationStack._animation_css_class2 ).addClass( tdAnimationStack._animation_css_class1 );
+
+                // for every founded element there's an instantiated tdAnimationStack.item, then initialized and added to the local stack
+                var founded_elements = jQuery( selector + ', .post' ).find( tdAnimationStack._specific_selectors ).filter( function() {
+                    return jQuery( this ).hasClass( tdAnimationStack._animation_css_class1 );
+                });
             //}
 
 
 
+            founded_elements.each( function( index, element ) {
 
-        }
+                var item_animation_stack = new tdAnimationStack.item();
 
+                item_animation_stack.jqueryObj = jQuery( element );
 
-        // the items in the port view are prepared to be animated
-        if (td_animation_stack._items_in_view_port.length > 0) {
+                tdAnimationStack.log( index );
 
-            // clear any opened interval by a previous compute_items call
-            clearInterval(td_animation_stack._current_interval);
+                tdAnimationStack._initialize_item( item_animation_stack );
 
-            var current_animation_item = td_animation_stack._get_item_from_view_port();
-
-
-
-
-            //if (window.td_animation_stack_effect === 'type0') {
-            //    current_animation_item.jqueryObj.css('opacity', 1);
-            //} else {
-                current_animation_item.jqueryObj.removeClass(td_animation_stack._animation_css_class1);
-                current_animation_item.jqueryObj.addClass(td_animation_stack._animation_css_class2);
-//            }
+                local_stack.push( item_animation_stack );
+            });
 
 
 
+            // new scope having its own timer used for checking not yet loaded images
+            ( function(){
+
+                var images_loaded = true;
+
+                for ( var i = 0; i < local_stack.length; i++ ) {
+
+                    // for every image element the 'complete' property is checked
+                    // "If the image is finished loading, the complete property returns true"
+                    // when tdAnimationStack.init is called on load, as normally, it calls tdAnimationStack.check_for_new_items and all these element has 'complete' property true
+                    // when tdAnimationStack.check_for_new_items is called by block's ajax response, the next timer is used to wait for all elements being loaded
+                    if ( false === founded_elements[ i ].complete ) {
+                        images_loaded = false;
+                        break;
+                    }
+                }
+
+                // if there's at least one element not loaded, a timer is started to wait for
+                if ( false === images_loaded ) {
+
+                    var date = new Date();
+                    var start_time = date.getTime();
 
 
-            if (td_animation_stack._items_in_view_port.length > 0) {
+                    tdAnimationStack.log( 'TIMER - started' );
 
-                td_animation_stack.log('start animation timer');
 
-                td_animation_stack._to_timer(td_animation_stack._get_right_interval(td_animation_stack.interval * (1 / td_animation_stack._items_in_view_port.length)));
+                    // the timer is started
+                    var interval_check_loading_image = setInterval( function() {
+
+                        // if there's too much time waiting for image loading, they are made visible
+                        var date = new Date();
+
+                        var i = 0;
+
+                        if ( ( date.getTime() - start_time ) > tdAnimationStack.max_waiting_for_init ) {
+
+                            clearInterval( interval_check_loading_image );
+
+                            for ( i = 0; i < local_stack.length; i++ ) {
+
+
+
+
+                                //if (window.td_animation_stack_effect === 'type0') {
+                                //    local_stack[i].jqueryObj.css('opacity', 1);
+                                //} else {
+                                    local_stack[ i ].jqueryObj.removeClass( tdAnimationStack._animation_css_class1 );
+                                    local_stack[ i ].jqueryObj.addClass( tdAnimationStack._animation_css_class2 );
+                                //}
+
+
+
+
+
+
+                            }
+                            return;
+                        }
+
+
+                        // at every interval step, the element's 'complete' property is checked again
+                        images_loaded = true;
+
+                        for ( i = 0; i < local_stack.length; i++ ) {
+
+                            if ( false === founded_elements[ i ].complete ) {
+                                images_loaded = false;
+                                break;
+                            }
+                        }
+
+                        if ( true === images_loaded ) {
+
+                            clearInterval( interval_check_loading_image );
+
+                            tdAnimationStack.log( 'TIMER - stopped' );
+
+                            tdAnimationStack._precompute_items( local_stack, sort_type, in_view_port );
+                            tdAnimationStack.compute_items();
+                        }
+
+                    }, 100);
+
+                } else {
+                    tdAnimationStack._precompute_items( local_stack, sort_type, in_view_port );
+                    tdAnimationStack.compute_items();
+                }
+
+            })();
+
+            tdAnimationStack.log( 'checked for new items finished' );
+        },
+
+
+        /**
+         * - _precompute_items sorts and adds items in the tdAnimationStack.items array or even in the
+         * tdAnimationStack._items_in_view_port array
+         * - this function is necessary because at scroll just the tdAnimationStack.compute_items function is called
+         *
+         * @param stack_items {[]} founded items
+         * @param sort_type {function} sorting method
+         * @param in_view_port {boolean} add in view port to be already computed, or in the general items array
+         * @private
+         */
+        _precompute_items: function( stack_items, sort_type, in_view_port ) {
+
+            stack_items.sort( sort_type );
+
+            if ( true === in_view_port ) {
+
+                while ( stack_items.length > 0 ) {
+                    tdAnimationStack.log( 'add item 1 : ' + stack_items.length );
+                    tdAnimationStack._items_in_view_port.push( stack_items.shift() );
+                }
+
+            } else {
+
+                while (stack_items.length > 0) {
+                    tdAnimationStack.log( 'add item 2 : ' + stack_items.length );
+                    tdAnimationStack.items.push( stack_items.shift() );
+                }
             }
-        }
-    },
+        },
 
 
-    /**
-     * - timer function initially called by a td_animation_stack.compute_items function, and then it's auto called
-     * - it calls a setInterval using the interval parameter
-     * @param interval {int} - interval ms
-     */
-    _to_timer: function _to_timer(interval) {
 
-        td_animation_stack._current_interval = setInterval(function () {
+        /**
+         * - IT'S CALLED ON PAGE LOAD [actually in tdLastInit.js]
+         * - the general init function
+         * - the items are added to the tdAnimationStack.items using check_for_new_items method, and then computed
+         * - the arrays are cleared to be prepared for a reinitialization
+         */
+        init: function() {
+            if ( undefined === window.tds_animation_stack ) {
+                return;
+            }
 
-            if (td_animation_stack._items_in_view_port.length > 0) {
+            // tdAnimationStack must not be already stopped for initialization by a pre_init checker
+            if ( false === tdAnimationStack._ready_for_initialization ) {
+                return;
+            }
 
-                var current_animation_item = td_animation_stack._get_item_from_view_port();
+            // clear the _ready_init_timeout, to stop it doing more checking
+            clearTimeout( tdAnimationStack._ready_init_timeout );
 
-                td_animation_stack.log('animation at interval: ' + interval);
+            // the tdAnimationStack is activated
+            tdAnimationStack.activated = true;
+
+            tdAnimationStack.check_for_new_items( '.td-animation-stack', tdAnimationStack.SORTED_METHOD.sort_left_to_right, false );
+        },
+
+
+        /**
+         * - the arrays are cleared to be prepared for a reinitialization
+         * - the init call is done
+         */
+        reinit: function() {
+
+            // tdAnimationStack must not be already stopped for initialization by a pre_init checker
+            if ( false === tdAnimationStack._ready_for_initialization ) {
+                return;
+            }
+
+            tdAnimationStack.items = [];
+            tdAnimationStack._items_in_view_port = [];
+            tdAnimationStack._items_above_view_port = [];
+
+            tdAnimationStack.init();
+        },
+
+
+        /**
+         * - compute all items
+         */
+        compute_items: function() {
+
+            // tdAnimationStack must be activated and not stopped for initialization by the ready_init checker
+            if ( ( false === tdAnimationStack.activated ) || ( false === tdAnimationStack._ready_for_initialization ) ) {
+                return;
+            }
+
+            // the tdAnimationStack.items are processed
+            tdAnimationStack._separate_items();
+
+            // the items above the port view are animated
+            while ( tdAnimationStack._items_above_view_port.length > 0 ) {
+                tdAnimationStack.log( 'animation - above the view port' );
+
+                var item_above_view_port = tdAnimationStack._items_above_view_port.shift();
+
+
+
+                //if (window.td_animation_stack_effect === 'type0') {
+                //    item_above_view_port.jqueryObj.css('opacity', 1);
+                //} else {
+                    item_above_view_port.jqueryObj.removeClass( tdAnimationStack._animation_css_class1 );
+                    item_above_view_port.jqueryObj.addClass( tdAnimationStack._animation_css_class2 );
+                //}
+
+
+
+
+            }
+
+
+            // the items in the port view are prepared to be animated
+            if ( tdAnimationStack._items_in_view_port.length > 0 ) {
+
+                // clear any opened interval by a previous compute_items call
+                clearInterval( tdAnimationStack._current_interval );
+
+                var current_animation_item = tdAnimationStack._get_item_from_view_port();
 
 
 
@@ -8496,136 +10128,188 @@ var td_animation_stack = {
                 //if (window.td_animation_stack_effect === 'type0') {
                 //    current_animation_item.jqueryObj.css('opacity', 1);
                 //} else {
-                    current_animation_item.jqueryObj.removeClass(td_animation_stack._animation_css_class1);
-                    current_animation_item.jqueryObj.addClass(td_animation_stack._animation_css_class2);
-                //}
+                    current_animation_item.jqueryObj.removeClass( tdAnimationStack._animation_css_class1 );
+                    current_animation_item.jqueryObj.addClass( tdAnimationStack._animation_css_class2 );
+    //            }
 
 
 
 
-                clearInterval(td_animation_stack._current_interval);
 
-                if (td_animation_stack._items_in_view_port.length > 0) {
-                    td_animation_stack._to_timer(td_animation_stack._get_right_interval(td_animation_stack.interval * (1 / td_animation_stack._items_in_view_port.length)));
+                if ( tdAnimationStack._items_in_view_port.length > 0 ) {
+
+                    tdAnimationStack.log( 'start animation timer' );
+
+                    tdAnimationStack._to_timer( tdAnimationStack._get_right_interval( tdAnimationStack.interval * ( 1 / tdAnimationStack._items_in_view_port.length ) ) );
                 }
             }
-        }, interval);
-    },
+        },
 
 
-    /**
-     * - get an item from the td_animation_stack._items_in_view_port array
-     * @returns {td_animation_stack.item}
-     * @private
-     */
-    _get_item_from_view_port: function _get_item_from_view_port() {
+        /**
+         * - timer function initially called by a tdAnimationStack.compute_items function, and then it's auto called
+         * - it calls a setInterval using the interval parameter
+         * @param interval {int} - interval ms
+         */
+        _to_timer: function( interval ) {
 
-        return td_animation_stack._items_in_view_port.shift();
-    },
+            tdAnimationStack._current_interval = setInterval( function () {
 
+                if ( tdAnimationStack._items_in_view_port.length > 0 ) {
 
+                    var current_animation_item = tdAnimationStack._get_item_from_view_port();
 
-    /**
-     * - get the interval considering td_animation_stack.min_interval and td_animation_stack.max_interval
-     * @param interval {int} - the checked interval value
-     * @returns {int} - the result interval value
-     * @private
-     */
-    _get_right_interval: function _get_right_interval(interval) {
-
-        if (interval < td_animation_stack.min_interval) {
-            return td_animation_stack.min_interval;
-
-        } else if (interval > td_animation_stack.max_interval) {
-            return td_animation_stack.max_interval;
-        }
-        return interval;
-    },
+                    tdAnimationStack.log( 'animation at interval: ' + interval );
 
 
-    /**
-     * - check where the item is to the view port
-     * @param item {td_animation_stack.item}
-     * @returns {number} _ITEM_TO_VIEW_PORT value
-     * @private
-     */
-    _item_to_view_port: function _item_to_view_port(item) {
-
-        if (td_events.window_pageYOffset + td_events.window_innerHeight < item.offset_top) {
-            return td_animation_stack._ITEM_TO_VIEW_PORT.ITEM_UNDER_VIEW_PORT;
-
-        } else if ((td_events.window_pageYOffset + td_events.window_innerHeight >= item.offset_top) && (td_events.window_pageYOffset <= item.offset_bottom_to_top)) {
-            return td_animation_stack._ITEM_TO_VIEW_PORT.ITEM_IN_VIEW_PORT;
-
-        }
-        return td_animation_stack._ITEM_TO_VIEW_PORT.ITEM_ABOVE_VIEW_PORT;
-    },
 
 
-    /**
-     * - check the sorted td_animation_stack.items and move them into the _items_above_view_port array or into the _items_in_view_port
-     * - the remaining items are kept by the td_animation_stack.items for next processing
-     * @private
-     */
-    _separate_items: function _separate_items() {
-        if (td_animation_stack.items.length == 0) {
-            return;
-        }
+                    //if (window.td_animation_stack_effect === 'type0') {
+                    //    current_animation_item.jqueryObj.css('opacity', 1);
+                    //} else {
+                        current_animation_item.jqueryObj.removeClass( tdAnimationStack._animation_css_class1 );
+                        current_animation_item.jqueryObj.addClass( tdAnimationStack._animation_css_class2 );
+                    //}
 
-        while (td_animation_stack.items.length > 0) {
-            var item_to_view_port = td_animation_stack._item_to_view_port(td_animation_stack.items[0]);
 
-            switch (item_to_view_port) {
-                case td_animation_stack._ITEM_TO_VIEW_PORT.ITEM_ABOVE_VIEW_PORT :
-                    td_animation_stack._items_above_view_port.push(td_animation_stack.items.shift());
-                    break;
 
-                case td_animation_stack._ITEM_TO_VIEW_PORT.ITEM_IN_VIEW_PORT :
-                    td_animation_stack._items_in_view_port.push(td_animation_stack.items.shift());
-                    break;
 
-                case td_animation_stack._ITEM_TO_VIEW_PORT.ITEM_UNDER_VIEW_PORT : return;
+                    clearInterval( tdAnimationStack._current_interval );
+
+                    if ( tdAnimationStack._items_in_view_port.length > 0 ) {
+                        tdAnimationStack._to_timer( tdAnimationStack._get_right_interval( tdAnimationStack.interval * ( 1 / tdAnimationStack._items_in_view_port.length ) ) );
+                    }
+                }
+            }, interval );
+        },
+
+
+        /**
+         * - get an item from the tdAnimationStack._items_in_view_port array
+         * @returns {tdAnimationStack.item}
+         * @private
+         */
+        _get_item_from_view_port: function() {
+
+            return tdAnimationStack._items_in_view_port.shift();
+        },
+
+
+
+        /**
+         * - get the interval considering tdAnimationStack.min_interval and tdAnimationStack.max_interval
+         * @param interval {int} - the checked interval value
+         * @returns {int} - the result interval value
+         * @private
+         */
+        _get_right_interval: function( interval ) {
+
+            if ( interval < tdAnimationStack.min_interval ) {
+                return tdAnimationStack.min_interval;
+
+            } else if ( interval > tdAnimationStack.max_interval ) {
+                return tdAnimationStack.max_interval;
             }
+            return interval;
+        },
+
+
+        /**
+         * - check where the item is to the view port
+         * @param item {tdAnimationStack.item}
+         * @returns {number} _ITEM_TO_VIEW_PORT value
+         * @private
+         */
+        _item_to_view_port: function( item ) {
+
+            tdAnimationStack.log( 'position item relative to the view port >> ' + tdEvents.window_pageYOffset + tdEvents.window_innerHeight + ' : ' + item.offset_top );
+
+            if ( tdEvents.window_pageYOffset + tdEvents.window_innerHeight < item.offset_top ) {
+                return tdAnimationStack._ITEM_TO_VIEW_PORT.ITEM_UNDER_VIEW_PORT;
+
+            } else if ( ( tdEvents.window_pageYOffset + tdEvents.window_innerHeight >= item.offset_top ) && ( tdEvents.window_pageYOffset <= item.offset_bottom_to_top ) ) {
+                return tdAnimationStack._ITEM_TO_VIEW_PORT.ITEM_IN_VIEW_PORT;
+
+            }
+            return tdAnimationStack._ITEM_TO_VIEW_PORT.ITEM_ABOVE_VIEW_PORT;
+        },
+
+
+        /**
+         * - check the sorted tdAnimationStack.items and move them into the _items_above_view_port array or into the _items_in_view_port
+         * - the remaining items are kept by the tdAnimationStack.items for next processing
+         * @private
+         */
+        _separate_items: function() {
+            if ( 0 === tdAnimationStack.items.length ) {
+                return;
+            }
+
+            while ( tdAnimationStack.items.length > 0 ) {
+                var item_to_view_port = tdAnimationStack._item_to_view_port( tdAnimationStack.items[ 0 ] );
+
+                switch ( item_to_view_port ) {
+                    case tdAnimationStack._ITEM_TO_VIEW_PORT.ITEM_ABOVE_VIEW_PORT :
+                        tdAnimationStack._items_above_view_port.push( tdAnimationStack.items.shift() );
+                        break;
+
+                    case tdAnimationStack._ITEM_TO_VIEW_PORT.ITEM_IN_VIEW_PORT :
+                        tdAnimationStack._items_in_view_port.push( tdAnimationStack.items.shift() );
+                        break;
+
+                    case tdAnimationStack._ITEM_TO_VIEW_PORT.ITEM_UNDER_VIEW_PORT :
+                        tdAnimationStack.log( 'after separation items >> above: ' + tdAnimationStack._items_above_view_port.length + ' in: ' + tdAnimationStack._items_in_view_port.length + ' under: ' + tdAnimationStack.items.length );
+                        return;
+                }
+            }
+        },
+
+
+        /**
+         * - scroll event usually called by tdCustomEvents
+         */
+        td_events_scroll: function() {
+            tdAnimationStack.compute_items();
+        },
+
+
+
+        /**
+         * - resize event usually called by tdCustomEvents
+         */
+        td_events_resize: function() {
+            // clear an existing interval
+            clearInterval( tdAnimationStack._current_interval );
+
+            // reinitialize tdAnimationStack searching in page for not already animated items [which were already repositioned by resize]
+            tdAnimationStack.reinit();
+        },
+
+
+
+        log: function( msg ) {
+            //console.log(msg);
         }
-    },
 
+    };
+})();
 
-    /**
-     * - scroll event usually called by td_custom_events
-     */
-    td_events_scroll: function td_events_scroll() {
-        td_animation_stack.compute_items();
-    },
+/* global jQuery:{} */
+/* global tdSmartSidebar:{} */
+/* global tdUtil:{} */
+/* global tdDetect:{} */
+/* global tdPullDown:{} */
+/* global tdAnimationScroll:{} */
+/* global tdAnimationStack:{} */
+/* global tdEvents:{} */
+/* global tdAffix:{} */
 
-
-
-    /**
-     * - resize event usually called by td_custom_events
-     */
-    td_events_resize: function td_events_resize() {
-        // clear an existing interval
-        clearInterval(td_animation_stack._current_interval);
-
-        // reinitialize td_animation_stack searching in page for not already animated items [which were already repositioned by resize]
-        td_animation_stack.reinit();
-    },
-
-
-
-    log: function log(msg) {
-        //console.log(msg);
-    }
-
-};
-
-"use strict";
-
-
+'use strict';
 
 /**
  * affix menu
  */
-td_affix.init({
+tdAffix.init({
     menu_selector: '.td-header-menu-wrap',
     menu_wrap_selector: '.td-header-menu-wrap-full',
     tds_snap_menu: tdUtil.getBackendVar('tds_snap_menu'),
@@ -8634,17 +10318,6 @@ td_affix.init({
     menu_affix_height_on_mobile: 54
 });
 
-
-/**
- * smooth scroll init
- */
-/*
-jQuery().ready(function () {
-    if (tdDetect.isChrome === true && tdDetect.isOsx === false) {
-        td_smooth_scroll();
-    }
-});
-*/
 
 
 /**
@@ -8655,23 +10328,23 @@ if (tdUtil.getBackendVar('tds_smart_sidebar') == 'enabled' && tdDetect.isIos ===
         // find the rows and the sidebars objects and add them to the magic sidebar object array
         jQuery('.td-ss-row').each(function () {
             //@todo check to see if the sidebar + content is pressent
-            var td_smart_sidebar_item = new td_smart_sidebar.item();
-            td_smart_sidebar_item.sidebar_jquery_obj = jQuery(this).children('.td-pb-span4').children('.wpb_wrapper');
-            td_smart_sidebar_item.content_jquery_obj = jQuery(this).children('.td-pb-span8').children('.wpb_wrapper');
-            td_smart_sidebar.add_item(td_smart_sidebar_item);
+            var td_smart_sidebar_item = new tdSmartSidebar.item();
+            td_smart_sidebar_item.sidebar_jquery_obj = jQuery(this).children('.td-pb-span4').find('.wpb_wrapper:first');
+            td_smart_sidebar_item.content_jquery_obj = jQuery(this).children('.td-pb-span8').find('.wpb_wrapper:first');
+            tdSmartSidebar.add_item(td_smart_sidebar_item);
         });
 
 
 
         // check the page to see if we have smart sidebar classes (.td-ss-main-content and .td-ss-main-sidebar)
         if (jQuery('.td-ss-main-content').length > 0 && jQuery('.td-ss-main-sidebar').length > 0) {
-            var td_smart_sidebar_item = new td_smart_sidebar.item();
+            var td_smart_sidebar_item = new tdSmartSidebar.item();
             td_smart_sidebar_item.sidebar_jquery_obj = jQuery('.td-ss-main-sidebar');
             td_smart_sidebar_item.content_jquery_obj = jQuery('.td-ss-main-content');
-            td_smart_sidebar.add_item(td_smart_sidebar_item);
+            tdSmartSidebar.add_item(td_smart_sidebar_item);
         }
 
-        td_smart_sidebar.td_events_resize();
+        tdSmartSidebar.td_events_resize();
     });
 }
 
@@ -8681,41 +10354,34 @@ if (tdUtil.getBackendVar('tds_smart_sidebar') == 'enabled' && tdDetect.isIos ===
  *
  */
 
+// block subcategory ajax filters!
 jQuery('.td-subcat-filter').each(function(index, element) {
     var jquery_object_container = jQuery(element);
     var horizontal_jquery_obj = jquery_object_container.find('.td-subcat-list:first');
-    var vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
 
-    if (horizontal_jquery_obj.length == 1 && vertical_jquery_obj.length == 1) {
-
-        var pulldown_item_obj = new td_pulldown.item();
-
-        pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
-        pulldown_item_obj.vertical_jquery_obj = vertical_jquery_obj;
-        pulldown_item_obj.horizontal_element_css_class = 'td-subcat-item';
-        pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td_block_wrap:first');
-        pulldown_item_obj.excluded_jquery_elements = [horizontal_jquery_obj.parent().siblings('.block-title:first')];
-
-        td_pulldown.add_item(pulldown_item_obj);
-    }
+    var pulldown_item_obj = new tdPullDown.item();
+    pulldown_item_obj.blockUid = jquery_object_container.parent().data('td-block-uid'); // get the block UID
+    pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
+    pulldown_item_obj.vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
+    pulldown_item_obj.horizontal_element_css_class = 'td-subcat-item';
+    pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td_block_wrap:first');
+    pulldown_item_obj.excluded_jquery_elements = [horizontal_jquery_obj.parent().siblings('.block-title:first')];
+    tdPullDown.add_item(pulldown_item_obj);
 });
 
+
+// on category pages
 jQuery('.td-category-siblings').each(function(index, element) {
     var jquery_object_container = jQuery(element);
     var horizontal_jquery_obj = jquery_object_container.find('.td-category:first');
-    var vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
 
-    if (horizontal_jquery_obj.length == 1 && vertical_jquery_obj.length == 1) {
+    var pulldown_item_obj = new tdPullDown.item();
+    pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
+    pulldown_item_obj.vertical_jquery_obj = jquery_object_container.find('.td-subcat-dropdown:first');
+    pulldown_item_obj.horizontal_element_css_class = 'entry-category';
+    pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td-category-siblings:first');
+    tdPullDown.add_item(pulldown_item_obj);
 
-        var pulldown_item_obj = new td_pulldown.item();
-
-        pulldown_item_obj.horizontal_jquery_obj = horizontal_jquery_obj;
-        pulldown_item_obj.vertical_jquery_obj = vertical_jquery_obj;
-        pulldown_item_obj.horizontal_element_css_class = 'entry-category';
-        pulldown_item_obj.container_jquery_obj = horizontal_jquery_obj.parents('.td-category-siblings:first');
-
-        td_pulldown.add_item(pulldown_item_obj);
-    }
 });
 
 
@@ -8726,7 +10392,7 @@ jQuery('.td-category-siblings').each(function(index, element) {
  * parallax effect
  */
 
-// array keeping the td_animation_scroll.item items used for backstretch
+// array keeping the tdAnimationScroll.item items used for backstretch
 var td_backstretch_items = [];
 
 
@@ -8736,7 +10402,7 @@ jQuery(window).ready(function() {
 
         if (!jQuery(element).hasClass('not-parallax')) {
 
-            var item = new td_animation_scroll.item();
+            var item = new tdAnimationScroll.item();
             item.jqueryObj = jQuery(element);
             item.wrapper_jquery_obj = item.jqueryObj.parent();
 
@@ -8744,9 +10410,9 @@ jQuery(window).ready(function() {
             // is also already translated at the top of the view port
             // - the start_value should be item.wrapper_jquery_obj.offset().top + how much the jqueryObj was translated
 
-            td_animation_scroll.add_item(item);
+            tdAnimationScroll.add_item(item);
 
-            // we keep the td_animation_scroll.item to change operation settings when the viewport is changing
+            // we keep the tdAnimationScroll.item to change operation settings when the viewport is changing
             td_backstretch_items.push(item);
 
             td_compute_backstretch_item(item);
@@ -8756,7 +10422,7 @@ jQuery(window).ready(function() {
 
     jQuery('.td-parallax-header').each(function (index, element) {
 
-        var item = new td_animation_scroll.item();
+        var item = new tdAnimationScroll.item();
         item.jqueryObj = jQuery(element);
 
         item.add_item_property('move_y', 50, 100, 0, 100, '');
@@ -8779,17 +10445,17 @@ jQuery(window).ready(function() {
             item.redraw = false;
         }
 
-        td_animation_scroll.add_item(item);
+        tdAnimationScroll.add_item(item);
     });
 
 
-    td_animation_scroll.compute_all_items();
+    tdAnimationScroll.compute_all_items();
 
 
 
 
     // load animation stack
-    td_animation_stack.ready_init();
+    tdAnimationStack.ready_init();
 });
 
 
@@ -8800,7 +10466,7 @@ jQuery(window).ready(function() {
  * It scales the object image and translate it. At first it is translated so its bottom is at the bottom of the viewport,
  * but considering the backstretch css classes applied
  *
- * @param item td_animation_scroll.item
+ * @param item tdAnimationScroll.item
  */
 function td_compute_backstretch_item(item) {
 
@@ -8808,10 +10474,10 @@ function td_compute_backstretch_item(item) {
 
         // percent when the object is in initial position
         // Important! It doesn't matter if the document is scrolled
-        var initial_percent = (td_events.window_innerHeight - item.offset_top) * 100 / (td_events.window_innerHeight + item.full_height);
+        var initial_percent = (tdEvents.window_innerHeight - item.offset_top) * 100 / (tdEvents.window_innerHeight + item.full_height);
 
         // percent when the object has its top at the top of the window
-        var intermediary_top_percent =  (td_events.window_innerHeight) * 100 / (td_events.window_innerHeight + item.full_height);
+        var intermediary_top_percent =  (tdEvents.window_innerHeight) * 100 / (tdEvents.window_innerHeight + item.full_height);
 
 
         // IMPORTANT! We suppose the item.offset_top is positive
@@ -8870,7 +10536,7 @@ function td_compute_backstretch_item(item) {
             });
 
             item.redraw = false;
-        }
+        };
 }
 
 /**
@@ -8879,8 +10545,11 @@ function td_compute_backstretch_item(item) {
 
 /* global jQuery:false */
 /* global tdInfiniteLoader:false */
-/* global td_animation_stack:false */
-/* global td_smart_sidebar:false */
+/* global tdAnimationStack:{} */
+/* global tdSmartSidebar:false */
+/* global tdLoadingBox:{} */
+/* global tds_theme_color_site_wide:string */
+
 
 /* global td_ajax_url:false */
 
@@ -8962,7 +10631,7 @@ var tdAjaxLoop = {};
             tdAjaxLoop.loopState.server_reply_html_data = '';
 
             // check here to avoid making an unnecessary ajax request when using infinite loading without button
-            if ( tdAjaxLoop.loopState.currentPage >= tdAjaxLoop.loopState.max_num_pages ) {
+            if ( tdAjaxLoop.loopState.currentPage > tdAjaxLoop.loopState.max_num_pages ) {
                 //console.log('END' + tdAjaxLoop.loopState.currentPage + ' max: ' + tdAjaxLoop.loopState.max_num_pages);
                 return;
             }
@@ -9024,7 +10693,7 @@ var tdAjaxLoop = {};
             //console.log('reply:');
             //console.log(dataObj);
 
-            if ( parseInt( dataObj.currentPage )  + 1 >= parseInt(dataObj.max_num_pages) ) {
+            if ( parseInt( dataObj.currentPage ) >= parseInt(dataObj.max_num_pages) ) {
                 jQuery('.td-load-more-infinite-wrap').css('visibility', 'hidden');
             } else {
                 if ( true === isLoadMoreButton ) {
@@ -9033,8 +10702,8 @@ var tdAjaxLoop = {};
             }
 
             setTimeout( function () {
-                td_animation_stack.check_for_new_items('.td-main-content' + ' .td-animation-stack', td_animation_stack.SORTED_METHOD.sort_left_to_right, true);
-                //td_smart_sidebar.compute();
+                tdAnimationStack.check_for_new_items('.td-main-content' + ' .td-animation-stack', tdAnimationStack.SORTED_METHOD.sort_left_to_right, true);
+                //tdSmartSidebar.compute();
             }, 200);
 
 
@@ -9047,7 +10716,7 @@ var tdAjaxLoop = {};
                 //refresh waypoints for infinit scroll tdInfiniteLoader
                 tdInfiniteLoader.computeTopDistances();
                 tdInfiniteLoader.enable_is_visible_callback('tdAjaxLoop');
-                //td_smart_sidebar.compute();
+                //tdSmartSidebar.compute();
             }, 500);
 
 
@@ -9063,30 +10732,1342 @@ var tdAjaxLoop = {};
     };
 
 })();
+/**
+ * Created by ra on 9/30/2015.
+ */
 
-jQuery(window).load(function() {
-    jQuery('body').addClass('td-js-loaded');
+/*
+ tdWeather.js
+ v1.0
+ */
+/* global jQuery:false */
+/* global tdDetect:false */
+/* global tdUtil:false */
+/* global alert:false */
+/* global tdLocalCache:false */
 
-    window.td_animation_stack.init();
+
+
+
+var tdWeather = {};
+
+( function(){
+    "use strict";
+
+    tdWeather = {
+
+        // used to translate the OWM code to icon
+        _icons: {
+            // day
+            '01d' : 'clear-sky-d',
+            '02d' : 'few-clouds-d',
+            '03d' : 'scattered-clouds-d',
+            '04d' : 'broken-clouds-d',
+            '09d' : 'shower-rain-d',   // ploaie hardcore
+            '10d' : 'rain-d',          // ploaie light
+            '11d' : 'thunderstorm-d',
+            '13d' : 'snow-d',
+            '50d' : 'mist-d',
+
+            //night:
+            '01n' : 'clear-sky-n',
+            '02n' : 'few-clouds-n',
+            '03n' : 'scattered-clouds-n',
+            '04n' : 'broken-clouds-n',
+            '09n' : 'shower-rain-n',   // ploaie hardcore
+            '10n' : 'rain-n',          // ploaie light
+            '11n' : 'thunderstorm-n',
+            '13n' : 'snow-n',
+            '50n' : 'mist-n'
+        },
+
+        _currentRequestInProgress: false, // prevent multiple parallel requests
+        _currentItem: '',  // current weather object, it is set on click and after we modify it, it will be displayed
+
+        // latitude and longitude position, used in callback hell
+        _currentLatitude: 0,
+        _currentLongitude: 0,
+        _currentPositionCacheKey: '',
+        _currentLocationCacheKey: '',
+
+        //location
+        _currentLocation: '',
+
+        // all the weather items
+        items: [],  /** an item is json encoded from this in PHP: @see td_weather::$weather_data */
+
+        // location set filed open
+        _is_location_open: false,
+
+
+
+        /**
+         * Init the class, we hook the click event
+         */
+        init: function () {
+
+            // weather location button click
+            jQuery('.td-icons-location').click(function() {
+                if (tdWeather._currentRequestInProgress === true) {
+                    return;
+                }
+                tdWeather._currentRequestInProgress = true;
+
+                // get the block id
+                tdWeather._currentItem = tdWeather._getItemByBlockID(jQuery(this).data('block-uid'));
+
+                // get the position + callback
+                var timeoutVal = 10 * 1000 * 1000;
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(
+                        tdWeather._updateLocationCallback,
+                        tdWeather._displayLocationApiError,
+                        {enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 600000});
+                }
+
+                tdWeather._currentRequestInProgress = false;
+
+            });
+
+            jQuery('.td-weather-now').click(function(){
+                if (tdWeather._currentRequestInProgress === true) {
+                    return;
+                }
+                tdWeather._currentRequestInProgress = true;
+
+                // get the block id
+                tdWeather._currentItem = tdWeather._getItemByBlockID(jQuery(this).data('block-uid'));
+
+                if (tdWeather._currentItem.current_unit === 1) {
+                    tdWeather._currentItem.current_unit = 0;
+                } else {
+                    tdWeather._currentItem.current_unit = 1;
+                }
+                tdWeather._renderCurrentItem();
+            });
+
+            /**
+             *  set manual location
+             *  */
+
+            jQuery('.td-manual-location-form').submit( function(event){
+                event.preventDefault();
+
+                if (tdWeather._currentRequestInProgress === true) {
+                    return;
+                }
+
+                tdWeather._currentRequestInProgress = true;
+
+                tdWeather._currentItem = tdWeather._getItemByBlockID(jQuery(this).data('block-uid'));
+                //console.debug(this);
+
+                tdWeather._currentLocation = jQuery('input#' + jQuery(this).data('block-uid')).val();
+
+                tdWeather._updateLocationCallback2(tdWeather._currentLocation);
+
+                tdWeather._currentRequestInProgress = false;
+                tdWeather._hide_manual_location_form();
+            });
+
+
+            jQuery(document).click(function(ev) {
+
+                if ( tdWeather._is_location_open === true
+                    && jQuery(ev.target).hasClass('td-location-set-input') !== true
+                    && jQuery(ev.target).hasClass('td-location-set-button') !== true ) {
+                    tdWeather._hide_manual_location_form();
+                }
+
+            });
+        },
+
+
+        /**
+         * adds a new weather item
+         * item.block_uid is REQUIERED, based on that id, we delete the item from the array *as of 27.4.2016 the id is not used
+         * @param item object - an item is json encoded from this in PHP: @see td_weather::$weather_data
+         */
+        addItem: function (item) {
+            tdWeather.items.push(item);
+        },
+
+        ///
+        // For now it's not needed because td_weater.php does not add js if it detects td-composer
+        // **
+        // * Deletes an item base on blockUid.
+        // * Make sure that you add block_uid to items that you expect to be deleted
+        // * @param blockUid
+        // */
+        //deleteItem: function(blockUid) {
+        //    for (var cnt = 0; cnt < tdWeather.items.length; cnt++) {
+        //        if (tdWeather.items[cnt].block_uid === blockUid) {
+        //            tdWeather.items.splice(cnt, 1); // remove the item from the "array"
+        //            return true;
+        //        }
+        //    }
+        //    return false;
+        //},
+
+
+        /**
+         * 1. LOCATION api - position callback
+         * @param position
+         * @private
+         */
+        _updateLocationCallback: function(position) {
+            tdWeather._currentLatitude = position.coords.latitude;
+            tdWeather._currentLongitude = position.coords.longitude;
+            tdWeather._currentPositionCacheKey = position.coords.latitude + '_' + position.coords.longitude; //  update the cache key for current position
+
+            // check the cache first and avoid doing the same ajax request again
+            if (tdLocalCache.exist(tdWeather._currentPositionCacheKey + '_today')) {
+                tdWeather._owmGetTodayDataCallback(tdLocalCache.get(tdWeather._currentPositionCacheKey + '_today'));
+            } else {
+                var weather = 'http://api.openweathermap.org/data/2.5/weather?lat=' + tdWeather._currentLatitude + '&lon=' + tdWeather._currentLongitude + '&units=metric&lang=' + tdWeather._currentItem.api_language + '&appid=' + tdWeather._currentItem.api_key;
+                jQuery.ajax({
+                    dataType: "jsonp",
+                    url: weather,
+                    success: tdWeather._owmGetTodayDataCallback,
+                    cache: true
+                });
+            }
+
+            //alert(position.coords.latitude + ' ' + position.coords.longitude);
+
+        },
+
+
+        /**
+         * 2. AJAX callback for today forecast, this also makes a call to ajax 5 days forecast
+         * @param data - OWM api response - NOTICE: We don't check anything if it's correct :)
+         * @private
+         */
+        _owmGetTodayDataCallback: function (data) {
+            // save the data to localCache
+            tdLocalCache.set(tdWeather._currentPositionCacheKey + '_today', data);
+
+
+            // prepare the tdWeather._currentItem object, notice that tdWeather._currentItem is a reference to an object stored in tdWeather.items
+            tdWeather._currentItem.api_location = data.name;
+            tdWeather._currentItem.today_clouds = tdUtil.round(data.clouds.all);
+            tdWeather._currentItem.today_humidity = tdUtil.round(data.main.humidity);
+            tdWeather._currentItem.today_icon = tdWeather._icons[data.weather[0].icon];
+            tdWeather._currentItem.today_icon_text = data.weather[0].description;
+            tdWeather._currentItem.today_max[0] = tdUtil.round(data.main.temp_max, 1);                                  //celsius
+            tdWeather._currentItem.today_max[1] = tdWeather._celsiusToFahrenheit(data.main.temp_max);                   //imperial
+            tdWeather._currentItem.today_min[0] = tdUtil.round(data.main.temp_min, 1);                                  //celsius
+            tdWeather._currentItem.today_min[1] = tdWeather._celsiusToFahrenheit(data.main.temp_min);                   //imperial
+            tdWeather._currentItem.today_temp[0] = tdUtil.round(data.main.temp, 1);                                     //celsius
+            tdWeather._currentItem.today_temp[1] = tdWeather._celsiusToFahrenheit(data.main.temp);                      //imperial
+            tdWeather._currentItem.today_wind_speed[0] = tdUtil.round(data.wind.speed, 1);                              //metric
+            tdWeather._currentItem.today_wind_speed[1] = tdWeather._kmphToMph(data.wind.speed);                         //imperial
+
+            //console.log(tdWeather._currentItem);
+            //console.log(data);
+
+            // check the cache first and avoid doing the same ajax request again
+            if (tdLocalCache.exist(tdWeather._currentPositionCacheKey)) {
+                tdWeather._owmGetFiveDaysData(tdLocalCache.get(tdWeather._currentPositionCacheKey));
+            } else {
+                var weather = 'http://api.openweathermap.org/data/2.5/forecast/daily?lat=' + tdWeather._currentLatitude + '&lon=' + tdWeather._currentLongitude + '&units=metric&lang=' + tdWeather._currentItem.api_language + '&appid=' + tdWeather._currentItem.api_key;
+                //console.log('forecast: ' + weather);
+                jQuery.ajax({
+                    dataType: "jsonp",
+                    url: weather,
+                    success: tdWeather._owmGetFiveDaysData,
+                    cache:true
+                });
+            }
+
+        },
+
+
+        /**
+         * 3. AJAX callback for the 5 days forecast
+         * @param data - OWM api response NOTICE: We don't check anything if it's correct :)
+         * @private
+         */
+        _owmGetFiveDaysData: function (data) {
+            // save the data to localCache
+            tdLocalCache.set(tdWeather._currentPositionCacheKey, data);
+
+            // process the data
+            for (var item_index = 0; item_index < tdWeather._currentItem.forecast.length ; item_index++) {
+                var current_forecast = tdWeather._currentItem.forecast[item_index];
+                current_forecast.day_temp[0] = tdUtil.round(data.list[current_forecast.owm_day_index].temp.day);        //celsius
+                current_forecast.day_temp[1] = tdWeather._celsiusToFahrenheit(current_forecast.day_temp[0]);            //imperial
+            }
+            tdWeather._renderCurrentItem();
+        },
+
+
+        /**
+         * 4. Here we render the global tdWeather._currentItem object to the screen. The object already contains all the needed information
+         * about where and what we have to render.
+         * @private
+         */
+        _renderCurrentItem: function () {
+
+            //console.log('.' + tdWeather._currentItem.block_uid + ' .td-weather-city');
+
+            var blockInner = jQuery('#' + tdWeather._currentItem.block_uid);
+
+            var currentLatitude = tdWeather._currentLatitude;
+            var currentLongitude = tdWeather._currentLongitude;
+            var currentLocation = tdWeather._currentLocation;
+
+            // city
+            blockInner.find('.td-weather-city').html(tdWeather._currentItem.api_location);
+
+            if (currentLocation === '' && ( currentLatitude === 0 && currentLongitude === 0)){
+                blockInner.find('.td-weather-city').html(tdWeather._currentItem.location);
+            }
+
+            // conditions
+            blockInner.find('.td-weather-condition').html(tdWeather._currentItem.today_icon_text);
+
+            // animation
+            // we remove all the classes! including the animation ones
+            var icon_el = blockInner.find('.td-w-today-icon');
+            icon_el.removeClass();
+            icon_el.addClass('td-w-today-icon');
+            icon_el.addClass(tdWeather._currentItem.today_icon);
+
+            var currentTempUnit = tdWeather._currentItem.current_unit;
+            var currentSpeedLabel = 'kmh';
+            var currentTempLabel = 'C';
+
+            // preapare the labels
+            if (currentTempUnit === 1) {
+                currentSpeedLabel = 'mph';
+                currentTempLabel = 'F';
+            }
+
+
+            // main temp
+            blockInner.find('.td-big-degrees').html(tdWeather._currentItem.today_temp[currentTempUnit]);
+
+            // main temp units
+            blockInner.find('.td-weather-unit').html(currentTempLabel);
+
+
+            // high
+            blockInner.find('.td-w-high-temp').html(tdWeather._currentItem.today_max[currentTempUnit]);
+
+            // low
+            blockInner.find('.td-w-low-temp').html(tdWeather._currentItem.today_min[currentTempUnit]);
+
+            // humidity
+            blockInner.find('.td-w-today-humidity').html(tdWeather._currentItem.today_humidity + '%');
+
+            // wind speed
+            blockInner.find('.td-w-today-wind-speed').html(tdWeather._currentItem.today_wind_speed[currentTempUnit] + currentSpeedLabel);
+
+            // clouds
+            blockInner.find('.td-w-today-clouds').html(tdWeather._currentItem.today_clouds + '%');
+
+            // full list of items! - just the temperature
+            for (var item_index = 0; item_index < tdWeather._currentItem.forecast.length ; item_index++) {
+                blockInner.find('.td-degrees-' + item_index).html(tdWeather._currentItem.forecast[item_index].day_temp[currentTempUnit]);
+            }
+
+
+            tdWeather._currentRequestInProgress = false; // allow other requests to take place
+        },
+
+
+        /**
+         * gets a weather item based on block_uid
+         * @param block_uid
+         * @returns {*}
+         * @private
+         */
+        _getItemByBlockID: function (block_uid) {
+            for (var item_index = 0; item_index < tdWeather.items.length; item_index++) {
+                if (tdWeather.items[item_index].block_uid === block_uid) {
+                    return tdWeather.items[item_index];
+                }
+            }
+            return false;
+        },
+
+
+        /**
+         * Displays a friendly error when the location api fails
+         * @param error - a location api error object?
+         * @private
+         */
+        _displayLocationApiError: function (error) {
+
+            if (error.code === 1) {
+                if (tdDetect.isAndroid) {
+
+                    //show manual location form
+                    tdWeather._show_manual_location_form();
+
+                    //alert('Please enable your gps and reload the page.');
+                }
+
+                else if (tdDetect.isIos) {
+                    alert("Please enable Location services for Safari Websites and reload the page. \n ---------------------- \nSettings > Privacy > Location Services");
+                    return;
+                }
+
+                //alert("Permission denied. Enable GPS or Location services and reload the page");
+                //show manual location form
+                tdWeather._show_manual_location_form();
+            }
+
+            //show manual location form
+            tdWeather._show_manual_location_form();
+        },
+
+
+        /**
+         * C to F converter. It rounds on big F numbers because we don't have space on the UI.
+         * @param celsiusDegrees
+         * @returns {*}
+         * @private
+         */
+        _celsiusToFahrenheit: function (celsiusDegrees) {
+            var f_degrees = celsiusDegrees * 9 / 5 + 32;
+
+            var rounded_val = tdUtil.round(f_degrees, 1);
+            if (rounded_val > 99.9) {  // if the value is bigger than 100, round it
+                return tdUtil.round(f_degrees);
+            }
+
+            return rounded_val;
+        },
+
+        /**
+         * converter for KMH -> MPH  ex: 2.3
+         * @param $kmph
+         * @returns {*}
+         * @private
+         */
+        _kmphToMph: function ($kmph) {
+            return tdUtil.round($kmph * 0.621371192, 1);
+        },
+
+        /**
+         * *************************************************************************************************************
+         *      set manual location for weather widget
+         * *************************************************************************************************************
+         */
+
+        /**
+         * shows the manual location form
+         */
+
+        _show_manual_location_form: function (){
+
+            tdWeather._currentItem = tdWeather._getItemByBlockID(tdWeather._currentItem.block_uid);
+
+            jQuery('#' + tdWeather._currentItem.block_uid).find('.td-weather-set-location').addClass( 'td-show-location' );
+            jQuery('.td-manual-location-form input').focus();
+
+            tdWeather._is_location_open = true;
+
+        },
+
+        /**
+         * hides the manual location form
+         */
+
+        _hide_manual_location_form: function (){
+
+            jQuery('#' + tdWeather._currentItem.block_uid).find('.td-weather-set-location').removeClass('td-show-location');
+
+            tdWeather._is_location_open = false;
+        },
+
+        /**
+         *  Location API - position callback 2 - used on chrome or other browsers that do not allow current position retrieving
+         * @param location
+         */
+
+        _updateLocationCallback2: function(location){
+
+            tdWeather._currentLocationCacheKey = location;
+
+            // check the cache first and avoid doing the same ajax request again
+            if (tdLocalCache.exist(tdWeather._currentLocationCacheKey + '_today')) {
+                tdWeather._owmGetTodayDataCallback2(tdLocalCache.get(tdWeather._currentLocationCacheKey + '_today'));
+
+            } else {
+
+                //console.log('city weather api request!');
+                var weather = 'http://api.openweathermap.org/data/2.5/weather?q=' + encodeURIComponent(location) + '&lang=' + tdWeather._currentItem.api_language + '&units=metric&appid=' + tdWeather._currentItem.api_key;
+
+                //console.log('city api request url: ' + weather);
+
+                jQuery.ajax({
+                    dataType: "jsonp",
+                    url: weather,
+                    success: tdWeather._owmGetTodayDataCallback2,
+                    cache: true
+                });
+            }
+        },
+
+
+        /**
+         * AJAX callback for today forecast on manual city location api request
+         * @param data - OWM api response
+         *
+         */
+
+        _owmGetTodayDataCallback2: function (data) {
+            // save the data to localCache
+            tdLocalCache.set(tdWeather._currentLocationCacheKey + '_today', data);
+
+
+            // prepare the tdWeather._currentItem object, notice that tdWeather._currentItem is a reference to an object stored in tdWeather.items
+            tdWeather._currentItem.api_location = data.name;
+            tdWeather._currentItem.today_clouds = tdUtil.round(data.clouds.all);
+            tdWeather._currentItem.today_humidity = tdUtil.round(data.main.humidity);
+            tdWeather._currentItem.today_icon = tdWeather._icons[data.weather[0].icon];
+            tdWeather._currentItem.today_icon_text = data.weather[0].description;
+            tdWeather._currentItem.today_max[0] = tdUtil.round(data.main.temp_max, 1);                                  //celsius
+            tdWeather._currentItem.today_max[1] = tdWeather._celsiusToFahrenheit(data.main.temp_max);                   //imperial
+            tdWeather._currentItem.today_min[0] = tdUtil.round(data.main.temp_min, 1);                                  //celsius
+            tdWeather._currentItem.today_min[1] = tdWeather._celsiusToFahrenheit(data.main.temp_min);                   //imperial
+            tdWeather._currentItem.today_temp[0] = tdUtil.round(data.main.temp, 1);                                     //celsius
+            tdWeather._currentItem.today_temp[1] = tdWeather._celsiusToFahrenheit(data.main.temp);                      //imperial
+            tdWeather._currentItem.today_wind_speed[0] = tdUtil.round(data.wind.speed, 1);                              //metric
+            tdWeather._currentItem.today_wind_speed[1] = tdWeather._kmphToMph(data.wind.speed);                         //imperial
+
+
+            // check the cache first and avoid doing the same ajax request again
+            if (tdLocalCache.exist(tdWeather._currentLocationCacheKey)) {
+                tdWeather._owmGetFiveDaysData2(tdLocalCache.get(tdWeather._currentLocationCacheKey));
+
+            } else {
+
+                //console.log('api forecast request!');
+
+                var weather = 'http://api.openweathermap.org/data/2.5/forecast/daily?q=' + tdWeather._currentItem.api_location + '&lang=' + tdWeather._currentItem.api_language + '&units=metric&cnt=7&appid=' + tdWeather._currentItem.api_key;
+
+                //console.log('city forecast api request url: ' + weather);
+
+                jQuery.ajax({
+                    dataType: "jsonp",
+                    url: weather,
+                    success: tdWeather._owmGetFiveDaysData2,
+                    cache:true
+                });
+            }
+
+        },
+
+
+        /**
+         * AJAX callback for 5 days forecast on manual city location api request
+         * @param data - OWM api response
+         *
+         */
+
+        _owmGetFiveDaysData2: function (data) {
+            // save the data to localCache
+            tdLocalCache.set(tdWeather._currentLocationCacheKey, data);
+
+            /**
+             * ---------------------------------------------------------------------------------------------------
+             * go through the api data list and increment the counter when we find a past day or the same as today
+             * ---------------------------------------------------------------------------------------------------
+             */
+            var counter = 0;
+            for (var list_item_index = 0; list_item_index <  data.list.length ; list_item_index++) {
+
+                var timestamp = data.list[list_item_index].dt;
+                //console.log(timestamp);
+
+                //the forecast day in a 'easy to read' format - for testing purposes
+                var forecast_day_format = td_date_i18n('Y m d, H:i a, T', timestamp);
+                //console.log(forecast_day_format);
+
+                var today_date = td_date_i18n('Ymd');
+                var forecast_day = td_date_i18n('Ymd', timestamp);
+
+                // compare today with the forecast date in the format 20150210, today must be smaller
+                if (today_date >= forecast_day){
+                    counter = counter + 1;
+                }
+
+            }
+
+            /**
+             * --------------------------------------------------------------------------------------------------
+             * check the data and set the current forecast day index accordingly
+             * --------------------------------------------------------------------------------------------------
+             */
+            for (var item_index = 0; item_index < tdWeather._currentItem.forecast.length ; item_index++) {
+                var current_forecast = tdWeather._currentItem.forecast[item_index];
+
+                //daca indexul ii pe 1 si trebuie trecut pe 2
+                if (item_index === 0 && counter > 1 && current_forecast.owm_day_index < 2){
+                    var current_forecast_owm_day_index_update_status_2 = true;
+                }
+
+                //daca trebuie setat pe 2 actulizeaza indexul curent
+                if (current_forecast_owm_day_index_update_status_2) {
+                    current_forecast.owm_day_index = current_forecast.owm_day_index + 1;
+                }
+
+                //daca e pe 2 si trebuie trecut pe 1
+                if (item_index === 0 && counter < 2 && current_forecast.owm_day_index > 1){
+                    var current_forecast_owm_day_index_update_status_1 = true;
+                }
+
+                //daca trebuie setat pe 1 actulizeaza indexul curent
+                if (current_forecast_owm_day_index_update_status_1) {
+                    current_forecast.owm_day_index = current_forecast.owm_day_index - 1;
+                }
+
+                current_forecast.day_temp[0] = tdUtil.round(data.list[current_forecast.owm_day_index].temp.day);        //celsius
+                current_forecast.day_temp[1] = tdWeather._celsiusToFahrenheit(current_forecast.day_temp[0]);            //imperial
+            }
+            tdWeather._renderCurrentItem();
+        }
+
+    };  // end tdWeather
+})();
+
+tdWeather.init(); //init the class
+/* global jQuery:{} */
+/* global tdUtil:{} */
+/* global tdTrendingNow:{} */
+
+jQuery( window ).load(function() {
+
+    'use strict';
+
+    jQuery( 'body' ).addClass( 'td-js-loaded' );
+
+    window.tdAnimationStack.init();
 });
 
-jQuery(window).ready(function() {
+jQuery( window ).ready(function() {
+
+    'use strict';
+
     /*
      - code used to allow external links from td_smart_list, when the Google Yoast "Track outbound click and downloads" is checked
      - internal links ("#with-hash") are allowed too
+     - test the links on incognito, by default Google analytics by yoast ignores the Administrator and Editor users
      */
 
-    jQuery('.td_smart_list_1 a, .td_smart_list_3 a').click(function(event) {
-
-        if (event.target == event.currentTarget) {
-            var current_url = jQuery(this).attr('href');
-
-            if ((window.location.href != current_url) && tdUtil.isValidUrl(current_url)) {
-                window.location.href = current_url;
+    jQuery( '.td_smart_list_1 a, .td_smart_list_3 a').click(function( event ) {
+        if ( event.target === event.currentTarget ) {
+            var targetAttributeContent = jQuery( this ).attr( 'target' );
+            var donwloadAttributeIsSet = jQuery( this )[0].hasAttribute( 'download' );
+            var currentUrl = jQuery( this ).attr( 'href' );
+            //if target is _blank open the link in a new window
+            if (donwloadAttributeIsSet) {
+                //link contains download attribute - do nothing, let it download
+            } else if (targetAttributeContent == '_blank') {
+                event.preventDefault();
+                window.open(currentUrl);
+            } else {
+            //regular links
+                if (( window.location.href !== currentUrl ) && tdUtil.isValidUrl(currentUrl)) {
+                    window.location.href = currentUrl;
+                }
             }
         }
+    });
+
+    //trending now
+    jQuery('.td_block_trending_now').each(function(){
+        var item = new tdTrendingNow.item(),
+            wrapper = jQuery(this).find('.td-trending-now-wrapper'),
+            autoStart = wrapper.data('start'),
+            iCont = 0;
+
+        //block unique ID
+        item.blockUid = jQuery(this).data('td-block-uid');
+
+        //set trendingNowAutostart
+        if (autoStart !== 'manual') {
+            item.trendingNowAutostart = autoStart;
+        }
+
+        //take the text from each post from current trending-now-wrapper
+        jQuery('#' + item.blockUid + ' .td-trending-now-post').each(function() {
+            //trending_list_posts[i_cont] = jQuery(this)[0].outerHTML;
+            item.trendingNowPosts[iCont] = jQuery(this);
+            //increment the counter
+            iCont++;
+        });
+        //add the item
+        tdTrendingNow.addItem(item);
 
     });
+    jQuery('.td-trending-now-nav-left').on('click', function(event) {
+        event.preventDefault();
+        var blockUid = jQuery(this).data('block-id');
+        tdTrendingNow.itemPrev(blockUid);
+    });
+    jQuery('.td-trending-now-nav-right').on('click', function(event) {
+        event.preventDefault();
+        var blockUid = jQuery(this).data('block-id');
+        tdTrendingNow.itemNext(blockUid);
+
+    });
+
+    //trending now
+    //tdTrendingNowObj.tdTrendingNow();
+
+    //call to trending now function to start auto scroll
+    //tdTrendingNowObj.tdTrendingNowAutoStart();
 });
 
+/**
+ * Created by tagdiv on 29.09.2015.
+ */
 
+/* global jQuery:{} */
+
+var tdAnimationSprite = {};
+
+(function(){
+    'use strict';
+
+    tdAnimationSprite = {
+
+        items: [],
+
+        // flag used to not call requestAnimationFrame until the previous requestAnimationFrame callback runs
+        isInRequestAnimation: false,
+
+
+        // The item that needs animation
+        item: function item() {
+
+
+
+            // here we store the block Unique ID. This enables us to delete the item via this id @see tdPullDown.deleteItem
+            this.blockUid = '';
+
+            // boolean - an item must be initialized only once
+            this._isInitialized = false;
+
+            // boolean - an item can be paused and restarted
+            this.paused = false;
+
+            // boolean - the animation automatically starts at the computing item
+            this.automatStart = true;
+
+            // object - css properties that will be changed (key - value; ex: 'color' : '#00FFCC')
+            this.properties = [];
+
+            // boolean - flag used by the requestAnimationFrame callback to know which items have properties to apply
+            this.readyToAnimate = false;
+
+            // the index of the current frame
+            this.nextFrame = 1;
+
+            // number - the current interval id set for the animation
+            this.interval = undefined;
+
+            // the jquery obj whose background will be animated
+            this.jqueryObj = undefined;
+
+            // the css class selector of the jqueryObj
+            this.animationSpriteClass = undefined;
+
+            // string - default direction for parsing the sprite img
+            this._currentDirection = 'right';
+
+            // number - the executed loops
+            this._executedLoops = 0;
+
+
+            // string - css background position
+            this._prop_background_position = undefined;
+
+
+            // The followings will be set from the class selector
+
+            // int - number of frames (it must be greater than 1 to allow animation)
+            this.frames = undefined;
+
+            // the width(px) of a frame
+            this.frameWidth = undefined;
+
+            // int - the interval time (ms) the animation runs
+            this.velocity = undefined;
+
+            // boolean - to the right and vice versa
+            this.reverse = undefined;
+
+            // number - number of loops to animate
+            this.loops = undefined;
+
+
+            // Function actually compute the params for animation, prepare the params for next animation and calls t
+            // he requestAnimationFrame with a callback function to animate all items ready for animation
+            this.animate = function() {
+
+                this._prop_background_position = ( -1 * this.nextFrame * this.frameWidth ) + 'px 0';
+                this.readyToAnimate = true;
+
+
+                // The nextFrame value is computed for next frame
+                if ( true === this.reverse) {
+
+                    if ( 'right' === this._currentDirection ) {
+
+                        if ( this.nextFrame === this.frames - 1 ) {
+                            this._currentDirection = 'left';
+                            this.nextFrame--;
+                        } else {
+                            this.nextFrame++;
+                        }
+
+                    } else if ( 'left' === this._currentDirection ) {
+                        if ( 0 === this.nextFrame ) {
+
+                            this._currentDirection = 'right';
+                            this.nextFrame++;
+                            this._executedLoops++;
+
+                            if ( ( 0 !== this.loops ) && ( this._executedLoops === this.loops ) ) {
+                                clearInterval( this.interval );
+                            }
+                        } else {
+                            this.nextFrame--;
+                        }
+                    }
+
+                } else {
+
+                    if ( this.nextFrame === this.frames - 1 ) {
+
+                        this._executedLoops++;
+
+                        // complete tour ( once to the right ), so we stop
+                        if ( ( 0 !== this.loops ) && ( this._executedLoops === this.loops ) ) {
+                            clearInterval( this.interval );
+                        }
+
+                        this.nextFrame = 0;
+                    } else {
+                        this.nextFrame++;
+                    }
+                }
+
+
+                //this.jqueryObj.css('background-position', horizontalPosition + 'px 0');
+
+                // Any calls to requestAnimationFrame are stopped. Anyway, the settings of the current item are ready,
+                // so the callback will consider it.
+                if ( false === tdAnimationSprite.isInRequestAnimation ) {
+                    tdAnimationSprite.isInRequestAnimation = true;
+                    window.requestAnimationFrame( tdAnimationSprite.animateAllItems );
+                }
+            };
+        },
+
+        /**
+         * The css class selector must be some like this 'td_animation_sprite-10-50-500-0-1-1'
+         * It must start with 'td_animation_sprite'
+         * Fields order:
+         * - number of frames
+         * - width of a frame
+         * - velocity in ms
+         * - loops (number) : reload the animation cycle at infinity or specify the number of loops
+         * - reverse (0 or 1) : the loop include, or not, the reverse path
+         * - automatstart (0 or 1) : the item animation starts, or not, automatically
+         *
+         * @param item
+         * @private
+         */
+        _initializeItem: function( item ) {
+            if ( ( true === item._isInitialized ) ) {
+                return;
+            }
+
+            // get all strings containing 'td_animation_sprite'
+            var regex = /(td_animation_sprite\S*)/gi;
+
+            // resultMatch is an array of matches, or null if there's no matching
+            var resultMatch = item.jqueryObj.attr( 'class' ).match( regex );
+
+            if ( null !== resultMatch ) {
+
+                item.offsetTop = item.jqueryObj.offset().top;
+                item.offsetBottomToTop = item.offsetTop + item.jqueryObj.height();
+
+                // the last matching is considered, because new css classes that matches, can be added before recomputing an item
+                item.animationSpriteClass = resultMatch[ resultMatch.length - 1 ];
+
+                var sceneParams = item.animationSpriteClass.split( '-' );
+
+                if ( 7 === sceneParams.length ) {
+
+                    item.frames = parseInt( sceneParams[1] );
+                    item.frameWidth = parseInt( sceneParams[2] );
+                    item.velocity = parseInt( sceneParams[3] );
+                    item.loops = parseInt( sceneParams[4] );
+
+                    if ( 1 === parseInt( sceneParams[5] ) ) {
+                        item.reverse = true;
+                    } else {
+                        item.reverse = false;
+                    }
+
+                    if ( 1 === parseInt( sceneParams[6] ) ) {
+                        item.automatStart = true;
+                    } else {
+                        item.automatStart = false;
+                    }
+
+                    item._isInitialized = true;
+                }
+            }
+        },
+
+
+
+        addItem: function( item ) {
+
+            if ( item.constructor === tdAnimationSprite.item ) {
+                tdAnimationSprite.items.push( item );
+                tdAnimationSprite._initializeItem( item );
+
+                if ( true === item.automatStart ) {
+                    tdAnimationSprite.computeItem( item );
+                }
+            }
+        },
+
+
+        /**
+         * Deletes an item base on blockUid.
+         * Make sure that you add blockUid to items that you expect to be deleted
+         * @param blockUid
+         */
+        deleteItem: function(blockUid) {
+            for (var cnt = 0; cnt < tdAnimationSprite.items.length; cnt++) {
+                if (tdAnimationSprite.items[cnt].blockUid === blockUid) {
+                    tdAnimationSprite.items.splice(cnt, 1); // remove the item from the "array"
+                    return true;
+                }
+            }
+            return false;
+        },
+
+        computeItem: function( item ) {
+
+            // set interval just for frames greater than 1
+            if ( item.frames > 1 ) {
+
+                // Check the item interval to not be set
+                if ( undefined !== item.interval ) {
+                    return;
+                }
+
+                item.interval = setInterval(function(){
+
+                    if ( false === item.paused ) {
+                        item.animate();
+                    }
+
+                }, item.velocity );
+            }
+        },
+
+        // At recomputing, an item will check again its last css class selector and it is reinitialized. So, if a new
+        // css class selector is added, it will use it. This way the animation can be modified
+        recomputeItem: function( item ) {
+
+            // stop any animation
+            clearInterval( item.interval );
+
+            // reset the item interval
+            item.interval = undefined;
+
+            // reset the _isInitialized flag
+            item._isInitialized = false;
+
+            // reinitialize item
+            tdAnimationSprite._initializeItem( item );
+
+            // compute the item again
+            tdAnimationSprite.computeItem( item );
+        },
+
+        // Clear the interval set for an item.
+        stopItem: function( item ) {
+            if ( ( item.constructor === tdAnimationSprite.item ) && ( true === item._isInitialized ) ) {
+                clearInterval( item.interval );
+
+                // reset the item interval
+                item.interval = undefined;
+            }
+        },
+
+        // Start animation of a paused item
+        startItem: function( item ) {
+            if ( ( item.constructor === tdAnimationSprite.item ) && ( true === item._isInitialized ) ) {
+                item.paused = false;
+            }
+        },
+
+        // Pause animation of an item
+        pauseItem: function( item ) {
+            if ( ( item.constructor === tdAnimationSprite.item ) && ( true === item._isInitialized ) ) {
+                item.paused = true;
+            }
+        },
+
+
+
+
+        computeAllItems: function() {
+            for ( var i = 0; i < tdAnimationSprite.items.length; i++ ) {
+                tdAnimationSprite.computeItem( tdAnimationSprite.items[i] );
+            }
+        },
+
+        recomputeAllItems: function() {
+            for ( var i = 0; i < tdAnimationSprite.items.length; i++ ) {
+                tdAnimationSprite.recomputeItem( tdAnimationSprite.items[i] );
+            }
+        },
+
+        stopAllItems: function() {
+            for ( var i = 0; i < tdAnimationSprite.items.length; i++ ) {
+                tdAnimationSprite.stopItem( tdAnimationSprite.items[i] );
+            }
+        },
+
+        pauseAllItems: function() {
+            for ( var i = 0; i < tdAnimationSprite.items.length; i++ ) {
+                tdAnimationSprite.pauseItem( tdAnimationSprite.items[i] );
+            }
+        },
+
+        startAllItems: function() {
+            for ( var i = 0; i < tdAnimationSprite.items.length; i++ ) {
+                tdAnimationSprite.startItem( tdAnimationSprite.items[i] );
+            }
+        },
+
+
+        // The requestAnimationFrame callback function.
+        // The 'background-position' is set and then the 'readyToAnimate' flag is set to false
+        animateAllItems: function() {
+            var currentItem;
+
+            for ( var i = 0; i < tdAnimationSprite.items.length; i++ ) {
+                currentItem = tdAnimationSprite.items[i];
+                if ( true === currentItem.readyToAnimate ) {
+                    currentItem.jqueryObj.css( 'background-position', currentItem._prop_background_position );
+                    currentItem.readyToAnimate = false;
+                }
+            }
+            tdAnimationSprite.isInRequestAnimation = false;
+        }
+    };
+
+    /*
+     <div class="td_animation_sprite-a-b-c-d-e-f"></div>
+
+    @note - we should have used the data- html attribute here!
+
+     a - number of frames
+     b - width(px) of a frame
+     c - velocity
+     d - loops number (0 for infinity)
+     e - loop include reverse
+     f - animation start automatically
+     */
+
+    var tdAnimationSpriteElements = jQuery( 'span[class^="td_animation_sprite"]' );
+
+    for ( var i = 0; i < tdAnimationSpriteElements.length; i++ ) {
+        var tdAnimationSpriteItem = new tdAnimationSprite.item();
+
+
+        tdAnimationSpriteItem.jqueryObj = jQuery( tdAnimationSpriteElements[i] );
+        tdAnimationSpriteItem.blockUid = tdAnimationSpriteItem.jqueryObj.data('td-block-uid');   // the block uid is used on the front end editor when we want to delete this item via it's blockuid
+        tdAnimationSprite.addItem( tdAnimationSpriteItem );
+    }
+})();
+
+function td_date_i18n(format, timestamp) {
+    // http://kevin.vanzonneveld.net
+    // +   original by: Carlos R. L. Rodrigues (http://www.jsfromhell.com)
+    // +      parts by: Peter-Paul Koch (http://www.quirksmode.org/js/beat.html)
+    // +   improved by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +   improved by: MeEtc (http://yass.meetcweb.com)
+    // +   improved by: Brad Touesnard
+    // +   improved by: Tim Wiel
+    // +   improved by: Bryan Elliott
+    // +   improved by: David Randall
+    // +      input by: Brett Zamir (http://brett-zamir.me)
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +   improved by: Theriault
+    // +  derived from: gettimeofday
+    // +      input by: majak
+    // +   bugfixed by: majak
+    // +   bugfixed by: Kevin van Zonneveld (http://kevin.vanzonneveld.net)
+    // +      input by: Alex
+    // +   bugfixed by: Brett Zamir (http://brett-zamir.me)
+    // +   improved by: Theriault
+    // +   improved by: Brett Zamir (http://brett-zamir.me)
+    // +   improved by: Theriault
+    // +   improved by: Thomas Beaucourt (http://www.webapp.fr)
+    // +   improved by: JT
+    // +   improved by: Theriault
+    // +   improved by: Rafał Kukawski (http://blog.kukawski.pl)
+    // +   bugfixed by: omid (http://phpjs.org/functions/380:380#comment_137122)
+    // +      input by: Martin
+    // +      input by: Alex Wilson
+    // +      input by: Haravikk
+    // +   improved by: Theriault
+    // +   bugfixed by: Chris (http://www.devotis.nl/)
+    // +   improved by: Jari Pennanen (https://github.com/ciantic/) - date_i18n from WordPress
+    // %        note 1: Uses global: php_js to store the default timezone
+    // %        note 2: Although the function potentially allows timezone info (see notes), it currently does not set
+    // %        note 2: per a timezone specified by date_default_timezone_set(). Implementers might use
+    // %        note 2: this.php_js.currentTimezoneOffset and this.php_js.currentTimezoneDST set by that function
+    // %        note 2: in order to adjust the dates in this function (or our other date functions!) accordingly
+    // *     example 1: date('H:m:s \\m \\i\\s \\m\\o\\n\\t\\h', 1062402400);
+    // *     returns 1: '09:09:40 m is month'
+    // *     example 2: date('F j, Y, g:i a', 1062462400);
+    // *     returns 2: 'September 2, 2003, 2:26 am'
+    // *     example 3: date('Y W o', 1062462400);
+    // *     returns 3: '2003 36 2003'
+    // *     example 4: x = date('Y m d', (new Date()).getTime()/1000);
+    // *     example 4: (x+'').length == 10 // 2009 01 09
+    // *     returns 4: true
+    // *     example 5: date('W', 1104534000);
+    // *     returns 5: '53'
+    // *     example 6: date('B t', 1104534000);
+    // *     returns 6: '999 31'
+    // *     example 7: date('W U', 1293750000.82); // 2010-12-31
+    // *     returns 7: '52 1293750000'
+    // *     example 8: date('W', 1293836400); // 2011-01-01
+    // *     returns 8: '52'
+    // *     example 9: date('W Y-m-d', 1293974054); // 2011-01-02
+    // *     returns 9: '52 2011-01-02'
+    var that = this,
+        jsdate,
+        f,
+    // Keep this here (works, but for code commented-out
+    // below for file size reasons)
+    //, tal= [],
+    // trailing backslash -> (dropped)
+    // a backslash followed by any character (including backslash) -> the character
+    // empty string -> empty string
+        formatChr = /\\?(.?)/gi,
+        formatChrCb = function (t, s) {
+            return f[t] ? f[t]() : s;
+        },
+        _pad = function (n, c) {
+            n = String(n);
+            while (n.length < c) {
+                n = '0' + n;
+            }
+            return n;
+        };
+    f = {
+        // Day
+        d: function () { // Day of month w/leading 0; 01..31
+            return _pad(f.j(), 2);
+        },
+        D: function () { // Shorthand day name; Mon...Sun
+            return tdDateNamesI18n.day_names_short[f.w()];
+        },
+        j: function () { // Day of month; 1..31
+            return jsdate.getDate();
+        },
+        l: function () { // Full day name; Monday...Sunday
+            return tdDateNamesI18n.day_names[f.w()];
+        },
+        N: function () { // ISO-8601 day of week; 1[Mon]..7[Sun]
+            return f.w() || 7;
+        },
+        S: function(){ // Ordinal suffix for day of month; st, nd, rd, th
+            var j = f.j(),
+                i = j%10;
+            if (i <= 3 && parseInt((j%100)/10, 10) == 1) {
+                i = 0;
+            }
+            return ['st', 'nd', 'rd'][i - 1] || 'th';
+        },
+        w: function () { // Day of week; 0[Sun]..6[Sat]
+            return jsdate.getDay();
+        },
+        z: function () { // Day of year; 0..365
+            var a = new Date(f.Y(), f.n() - 1, f.j()),
+                b = new Date(f.Y(), 0, 1);
+            return Math.round((a - b) / 864e5);
+        },
+
+        // Week
+        W: function () { // ISO-8601 week number
+            var a = new Date(f.Y(), f.n() - 1, f.j() - f.N() + 3),
+                b = new Date(a.getFullYear(), 0, 4);
+            return _pad(1 + Math.round((a - b) / 864e5 / 7), 2);
+        },
+
+        // Month
+        F: function () { // Full month name; January...December
+            return tdDateNamesI18n.month_names[f.n() - 1];
+        },
+        m: function () { // Month w/leading 0; 01...12
+            return _pad(f.n(), 2);
+        },
+        M: function () { // Shorthand month name; Jan...Dec
+            return tdDateNamesI18n.month_names_short[f.n() - 1];
+        },
+        n: function () { // Month; 1...12
+            return jsdate.getMonth() + 1;
+        },
+        t: function () { // Days in month; 28...31
+            return (new Date(f.Y(), f.n(), 0)).getDate();
+        },
+
+        // Year
+        L: function () { // Is leap year?; 0 or 1
+            var j = f.Y();
+            return j % 4 === 0 & j % 100 !== 0 | j % 400 === 0;
+        },
+        o: function () { // ISO-8601 year
+            var n = f.n(),
+                W = f.W(),
+                Y = f.Y();
+            return Y + (n === 12 && W < 9 ? 1 : n === 1 && W > 9 ? -1 : 0);
+        },
+        Y: function () { // Full year; e.g. 1980...2010
+            return jsdate.getFullYear();
+        },
+        y: function () { // Last two digits of year; 00...99
+            return f.Y().toString().slice(-2);
+        },
+
+        // Time
+        a: function () { // am or pm
+            return jsdate.getHours() > 11 ? "pm" : "am";
+        },
+        A: function () { // AM or PM
+            return f.a().toUpperCase();
+        },
+        B: function () { // Swatch Internet time; 000..999
+            var H = jsdate.getUTCHours() * 36e2,
+            // Hours
+                i = jsdate.getUTCMinutes() * 60,
+            // Minutes
+                s = jsdate.getUTCSeconds(); // Seconds
+            return _pad(Math.floor((H + i + s + 36e2) / 86.4) % 1e3, 3);
+        },
+        g: function () { // 12-Hours; 1..12
+            return f.G() % 12 || 12;
+        },
+        G: function () { // 24-Hours; 0..23
+            return jsdate.getHours();
+        },
+        h: function () { // 12-Hours w/leading 0; 01..12
+            return _pad(f.g(), 2);
+        },
+        H: function () { // 24-Hours w/leading 0; 00..23
+            return _pad(f.G(), 2);
+        },
+        i: function () { // Minutes w/leading 0; 00..59
+            return _pad(jsdate.getMinutes(), 2);
+        },
+        s: function () { // Seconds w/leading 0; 00..59
+            return _pad(jsdate.getSeconds(), 2);
+        },
+        u: function () { // Microseconds; 000000-999000
+            return _pad(jsdate.getMilliseconds() * 1000, 6);
+        },
+
+        // Timezone
+        e: function () { // Timezone identifier; e.g. Atlantic/Azores, ...
+            // The following works, but requires inclusion of the very large
+            // timezone_abbreviations_list() function.
+            /*              return that.date_default_timezone_get();
+             */
+            throw 'Not supported (see source code of date() for timezone on how to add support)';
+        },
+        I: function () { // DST observed?; 0 or 1
+            // Compares Jan 1 minus Jan 1 UTC to Jul 1 minus Jul 1 UTC.
+            // If they are not equal, then DST is observed.
+            var a = new Date(f.Y(), 0),
+            // Jan 1
+                c = Date.UTC(f.Y(), 0),
+            // Jan 1 UTC
+                b = new Date(f.Y(), 6),
+            // Jul 1
+                d = Date.UTC(f.Y(), 6); // Jul 1 UTC
+            return ((a - c) !== (b - d)) ? 1 : 0;
+        },
+        O: function () { // Difference to GMT in hour format; e.g. +0200
+            var tzo = jsdate.getTimezoneOffset(),
+                a = Math.abs(tzo);
+            return (tzo > 0 ? "-" : "+") + _pad(Math.floor(a / 60) * 100 + a % 60, 4);
+        },
+        P: function () { // Difference to GMT w/colon; e.g. +02:00
+            var O = f.O();
+            return (O.substr(0, 3) + ":" + O.substr(3, 2));
+        },
+        T: function () { // Timezone abbreviation; e.g. EST, MDT, ...
+            // The following works, but requires inclusion of the very
+            // large timezone_abbreviations_list() function.
+            /*              var abbr = '', i = 0, os = 0, default = 0;
+             if (!tal.length) {
+             tal = that.timezone_abbreviations_list();
+             }
+             if (that.php_js && that.php_js.default_timezone) {
+             default = that.php_js.default_timezone;
+             for (abbr in tal) {
+             for (i=0; i < tal[abbr].length; i++) {
+             if (tal[abbr][i].timezone_id === default) {
+             return abbr.toUpperCase();
+             }
+             }
+             }
+             }
+             for (abbr in tal) {
+             for (i = 0; i < tal[abbr].length; i++) {
+             os = -jsdate.getTimezoneOffset() * 60;
+             if (tal[abbr][i].offset === os) {
+             return abbr.toUpperCase();
+             }
+             }
+             }
+             */
+            return 'UTC';
+        },
+        Z: function () { // Timezone offset in seconds (-43200...50400)
+            return -jsdate.getTimezoneOffset() * 60;
+        },
+
+        // Full Date/Time
+        c: function () { // ISO-8601 date.
+            return 'Y-m-d\\TH:i:sP'.replace(formatChr, formatChrCb);
+        },
+        r: function () { // RFC 2822
+            return 'D, d M Y H:i:s O'.replace(formatChr, formatChrCb);
+        },
+        U: function () { // Seconds since UNIX epoch
+            return jsdate / 1000 | 0;
+        }
+    };
+    this.date = function (format, timestamp) {
+        that = this;
+        jsdate = (timestamp === undefined ? new Date() : // Not provided
+            (timestamp instanceof Date) ? new Date(timestamp) : // JS Date()
+                new Date(timestamp * 1000) // UNIX timestamp (auto-convert to int)
+        );
+        return format.replace(formatChr, formatChrCb);
+    };
+    return this.date(format, timestamp);
+}

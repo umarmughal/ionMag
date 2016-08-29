@@ -3,7 +3,7 @@
  * This is the config file for the theme.
  */
 
-define("TD_THEME_NAME", "Ionmag");
+define("TD_THEME_NAME", "IonMag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
 define("TD_THEME_FORUM_URL", "http://support.wpion.com/");
 define("TD_THEME_DOC_URL", "http://forum.tagdiv.com/whats-included/");
