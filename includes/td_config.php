@@ -2395,6 +2395,19 @@ class td_config {
 
 
             td_global::$theme_plugins_list = array(
+	            array(
+		            'name' => 'tagDiv Composer', // The plugin name
+		            'slug' => 'td-composer', // The plugin slug (typically the folder name)
+		            'source' => td_global::$get_template_directory_uri . '/includes/plugins/td-composer.zip', // The plugin source
+		            'required' => true, // If false, the plugin is only 'recommended' instead of required
+		            'version' => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
+		            'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
+		            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
+		            'external_url' => '', // If set, overrides default API URL and points to an external URL
+		            'img' => td_global::$get_template_directory_uri . '/includes/wp_booster/wp-admin/images/plugins/social.png',
+		            'text' => 'Required plugin',
+		            'required_label' => 'required' //the text for required/recommended label - used also as a class for label bg color
+	            ),
                 array(
                     'name' => 'tagDiv social counter', // The plugin name
                     'slug' => 'td-social-counter', // The plugin slug (typically the folder name)
