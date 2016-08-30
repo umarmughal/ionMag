@@ -1,5 +1,5 @@
 <?php
-//get current logd in user data
+//get current logged in user data
 global $current_user;
 
 echo '

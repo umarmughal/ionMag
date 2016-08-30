@@ -5,11 +5,8 @@
 
 define("TD_THEME_NAME", "IonMag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
-define("TD_THEME_FORUM_URL", "http://support.wpion.com/");
-define("TD_THEME_DOC_URL", "http://forum.tagdiv.com/whats-included/");
 define("TD_THEME_DEMO_URL", "http://demo.tagdiv.com/" . strtolower(TD_THEME_NAME));
 define("TD_THEME_DEMO_DOC_URL", 'http://forum.tagdiv.com/introduction/');  //the url to the demo documentation
-define("TD_THEME_VIDEO_TUTORIALS_URL", "https://www.youtube.com/watch?v=8hAwUt8-G34&list=PL6CsDkMaejhrfEuAth6JVYLPmFwFzNFwY");
 define("TD_FEATURED_CAT", "Featured"); //featured cat name
 define("TD_FEATURED_CAT_SLUG", "featured"); //featured cat slug
 define("TD_THEME_OPTIONS_NAME", "td_012"); //where to store our options
@@ -2365,8 +2362,8 @@ class td_config {
 			* the list with custom texts of the theme. admin texts
 			*/
 	        td_api_text::set('text_featured_video', '
-	                <div class="td-wpa-info">Paste a link from Vimeo or Youtube, it will be embedded in the post and the thumb used as the featured image of this post. <br/>You need to choose <strong>Video Format</strong> from above to use Featured Video.</div>
-	                <div class="td-wpa-info"><strong>Notice:</strong> Use only with those post templates:
+	                <div class="td-wpa-info">Paste a link from Youtube, Vimeo, Dailymotion, Facebook or Twitter, it will be embedded in the post and the thumb used as the featured image of this post. <br/>You need to choose <strong>Video Format</strong> from above to use Featured Video.</div>
+	                <div class="td-wpa-info"><strong>Notice:</strong> Use only with these post templates:
 	                    <ul>
 	                        <li>Post style default</li>
 	                    </ul>
@@ -2377,12 +2374,32 @@ class td_config {
 	        td_api_text::set('text_header_logo_mobile', '-');
 	        td_api_text::set('text_header_logo_mobile_image', '160 x 40px');
 	        td_api_text::set('text_header_logo_mobile_image_retina', '320 x 80px');
-	        td_api_text::set('text_smart_sidebar_widget_support', '
-                <ul>
-                    <li>[tagDiv] Trending now</li>
-                </ul>
-            ');
+	        td_api_text::set('text_smart_sidebar_widget_support', '<p>From here you can enable and disable the smart sidebar on all the templates. The smart sidebar is an affix (sticky) sidebar that has auto resize and it scrolls with the content. The smart sidebar reverts back to a normal sidebar on iOS (iPad) and on mobile devices.</p>');
 	        td_api_text::set('welcome_fast_start', 'Install tagDiv composer plugin and also install the social counter plugin if you want to add the counters on your sidebar - from our <a href="admin.php?page=td_theme_plugins">plugins panel</a>');
+
+            td_api_text::set('welcome_support_forum', '
+            <h2>Support forum</h2>
+            <p>We offer outstanding support through our forum. To get support first you need to register (create an account) and open a thread in the ' . TD_THEME_NAME . ' Section.</p>
+            <a class="button button-primary" href="#">Coming soon!</a>'
+            );
+
+            td_api_text::set('welcome_docs', '
+            <h2>Docs and learning</h2>
+            <p>Our online documentation will give you important information about the theme. This is a exceptional resource to start discovering the theme’s true potential.</p>
+            <a class="button button-primary" href="#">Coming soon!</a>'
+            );
+
+            td_api_text::set('welcome_video_tutorials', '
+            <h2>Video tutorials</h2>
+            <p>We believe that the easiest way to learn is watching a video tutorial. We have a growing library of narrated video tutorials to help you do just that.</p>
+            <a class="button button-primary" href="#">Coming soon!</a>'
+            );
+
+            td_api_text::set('supported_plugins_list', '
+				<div class="td-supported-plugin">WooCommerce <span>- eCommerce solution</span></div>
+				<div class="td-supported-plugin">WordPress SEO <span> - SEO plugin</span></div>'
+            );
+
 
             /*
 	         * the list with sections from backend to hide or show them
