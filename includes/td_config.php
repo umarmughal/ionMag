@@ -2209,7 +2209,8 @@ class td_config {
 			    'folder' => td_global::$get_template_directory . '/includes/demos/default/',
 			    'img' => td_global::$get_template_directory_uri . '/includes/demos/default/screenshot.png',
 			    'demo_url' => 'http://demo.tagdiv.com/newspaper/',
-			    'td_css_generator_demo' => false
+			    'td_css_generator_demo' => false,
+			    'uses_custom_style_css' => false
 		    )
 	    );
 
