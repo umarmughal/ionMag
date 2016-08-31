@@ -5793,7 +5793,7 @@ blockquote.pull-right:after {
   color: #000;
 }
 /*
-  Font sizes
+  Font for MX modules
 */
 .td-mx-15 .td-post-category {
   margin-bottom: 10px;
@@ -5840,8 +5840,8 @@ blockquote.pull-right:after {
 }
 @media (max-width: 1018px) {
   .td-mx-19 .entry-title {
-    font-size: 15px !important;
-    line-height: 20px !important;
+    font-size: 17px !important;
+    line-height: 22px !important;
   }
 }
 .td-mx-19.td-has-date .entry-title {
@@ -6043,10 +6043,7 @@ blockquote.pull-right:after {
   z-index: 1;
 }
 /*
-
-  scroll bar
-
-
+  Scroll bar
 */
 .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll {
   /* responsive portrait phone */
@@ -6084,13 +6081,47 @@ blockquote.pull-right:after {
     height: 170px;
   }
 }
-.td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll.td-scroll-full .td-big-grid-post {
+.td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-post-category {
+  /* responsive tablet + phone */
+}
+@media (max-width: 1018px) {
+  .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-post-category {
+    margin-bottom: 13px;
+  }
+}
+.td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .entry-title {
+  /* responsive portrait tablet + phone */
+}
+@media (max-width: 1018px) {
+  .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .entry-title {
+    font-size: 17px !important;
+    line-height: 22px !important;
+  }
+}
+.td-big-grids-scroll .td-big-grid-post-0 {
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll.td-scroll-full .td-big-grid-post {
-    width: 100%;
-    float: none;
+  .td-big-grids-scroll .td-big-grid-post-0 {
+    width: 100% !important;
+    float: none !important;
+  }
+}
+.td-big-grids-scroll .td-big-grid-post-0 .td-post-category {
+  /* responsive tablet + phone */
+}
+@media (max-width: 1018px) {
+  .td-big-grids-scroll .td-big-grid-post-0 .td-post-category {
+    margin-bottom: 12px !important;
+  }
+}
+.td-big-grids-scroll .td-big-grid-post-0 .entry-title {
+  /* responsive portrait tablet + phone */
+}
+@media (max-width: 1018px) {
+  .td-big-grids-scroll .td-big-grid-post-0 .entry-title {
+    font-size: 23px !important;
+    line-height: 30px !important;
   }
 }
 /*
