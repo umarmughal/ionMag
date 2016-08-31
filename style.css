@@ -6371,6 +6371,9 @@ blockquote.pull-right:after {
 .td_block_big_grid_2 .td-module-thumb a:last-child:before {
   display: none;
 }
+.td_block_big_grid_2 .td-post-category {
+  margin-bottom: 0;
+}
 .td_block_big_grid_2 .entry-title {
   margin-bottom: 11px;
   /* responsive portrait tablet */
@@ -6473,6 +6476,9 @@ blockquote.pull-right:after {
 }
 .td_block_big_grid_3 .td-module-thumb a:last-child:before {
   display: none;
+}
+.td_block_big_grid_3 .td-post-category {
+  margin-bottom: 0;
 }
 .td_block_big_grid_3 .td-meta-align {
   pointer-events: auto;
