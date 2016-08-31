@@ -12,19 +12,7 @@
     td-demo-footer-menu
 */
 
-
-//contact page needed in header menu
 //homepage
-$td_contactpage_id = td_demo_content::add_page(array(
-    'title' => 'Contact',
-    'file' => td_global::$get_template_directory . '/includes/demos/default/pages/contact.txt',
-    'template' => 'page-pagebuilder-title.php',   // the page template full file name with .php
-    'td_layout' => '',
-    'sidebar_position' => 'no_sidebar',
-    'homepage' => false
-));
-
-
 /*  ----------------------------------------------------------------------------
     menu
  */
@@ -37,11 +25,10 @@ td_demo_menus::add_link(array(
     'parent_id' => ''
 ));
 
-//add the contact-page to the menu
-td_demo_menus::add_page(array(
+td_demo_menus::add_link(array(
     'title' => 'Contact',
     'add_to_menu_id' => $td_demo_top_menu_id,
-    'page_id' => $td_contactpage_id,
+    'url' => '#',
     'parent_id' => ''
 ));
 
@@ -63,10 +50,10 @@ td_demo_menus::add_link(array(
     'url' => '#',
     'parent_id' => ''
 ));
-td_demo_menus::add_page(array(
-    'title' => 'Contact',
-    'add_to_menu_id' => $td_demo_top_menu_id,
-    'page_id' => $td_contactpage_id,
+td_demo_menus::add_link(array(
+    'title' => 'contact',
+    'add_to_menu_id' => $td_demo_footer_menu,
+    'url' => '#',
     'parent_id' => ''
 ));
 
@@ -110,7 +97,6 @@ td_demo_misc::update_footer_logo(array(
 td_demo_misc::add_social_buttons(array(
     'facebook' => '#',
     'twitter' => '#',
-    'google' => '#',
     'instagram' => '#',
     'youtube' => '#'
 ));
@@ -371,7 +357,7 @@ $td_homepage_sport_id = td_demo_content::add_page(array(
     'td_layout' => '2',
     'homepage' => false,
     'list_custom_title_show' => 'hide_title',
-    'limit' => '9',
+    'limit' => '10',
     'sidebar_id' => ''
 ));
 
