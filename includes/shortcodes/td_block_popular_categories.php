@@ -38,7 +38,7 @@ class td_block_popular_categories extends td_block {
 
         // exclude categories from the demo
         if (TD_DEPLOY_MODE == 'demo' or TD_DEPLOY_MODE == 'dev') {
-            $cat_args['exclude'] = '153, 154, 155, 156, 157, 158, 159, 90, 91, 92, 93 , 94, 95, 96, 97, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 82, 83, 84, 85, 86, 87, 88, 89, 98, ' . get_cat_ID(TD_FEATURED_CAT);
+            $cat_args['exclude'] = '19, 20, 21, 22, 23, 24, 25, 26, 27, ' . get_cat_ID(TD_FEATURED_CAT);
         }
 
         $categories = get_categories($cat_args); // has a limit of 6 by default
