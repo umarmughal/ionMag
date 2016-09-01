@@ -1821,7 +1821,7 @@ class td_config {
 
             )
         );
-        
+
         td_api_footer_template::add('td_footer_template_2',
             array(
                 'img' => td_global::$get_template_directory_uri . '/images/panel/footer_templates/icon-footer-2.png',
@@ -2215,8 +2215,12 @@ class td_config {
 	    );
 
 
-
-
+        /*
+         * the list with sections from backend & frontend, to hide or show them
+         */
+        td_api_features::set('require_vc', false);
+        td_api_features::set('require_activation', false);
+        td_api_features::set('page_mega_menu', false);
 
 
         if (is_admin()) {
@@ -2401,12 +2405,6 @@ class td_config {
 				<div class="td-supported-plugin">WordPress SEO <span> - SEO plugin</span></div>'
             );
 
-
-            /*
-	         * the list with sections from backend to hide or show them
-	         */
-            td_api_features::set('require_vc', false);
-	        td_api_features::set('require_activation', false);
 
 
 
