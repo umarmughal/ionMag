@@ -62,7 +62,7 @@ class td_block_list_menu extends td_block {
 			$buffy .= '<ul>';
 
 			foreach ($posts as $post) {
-				$buffy .= '<li>' . $post->title . '</li>';
+				$buffy .= '<li><a href="#">' . $post->title . '</a></li>';
 			}
 
 			$buffy .= '</ul>';
