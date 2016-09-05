@@ -5765,6 +5765,12 @@ body .dropcap3 {
   color: #000;
 }
 /*  ----------------------------------------------------------------------------
+    Empty space
+*/
+.vc_empty_space {
+  margin-bottom: 0;
+}
+/*  ----------------------------------------------------------------------------
     Block list menu
 */
 .td_block_list_menu {
@@ -7982,7 +7988,7 @@ body .dropcap3 {
 }
 .td-attachment-prev {
   display: inline-block;
-  margin: 10px 0 21px 0;
+  margin: 10px 0 21px;
 }
 .td-attachment-prev img {
   width: 100px;
@@ -7990,7 +7996,7 @@ body .dropcap3 {
 }
 .td-attachment-next {
   float: right;
-  margin: 10px 0 21px 0;
+  margin: 10px 0 21px;
 }
 .td-attachment-next img {
   width: 100px;
@@ -10454,14 +10460,6 @@ input.search-submit:hover {
 .td-social-list .td_social_type:last-child {
   margin-bottom: 0;
 }
-.td_social_info_name {
-  /* responsive portrait tablet */
-}
-@media (min-width: 768px) and (max-width: 1018px) {
-  .td_social_info_name {
-    display: none;
-  }
-}
 .td_social_type {
   position: relative;
   width: 100%;
@@ -10527,6 +10525,14 @@ input.search-submit:hover {
   display: block;
   width: 100%;
   height: 100%;
+}
+.td_social_type .td_social_info_name {
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_social_type .td_social_info_name {
+    display: none;
+  }
 }
 .td_social_facebook .td-sp:before {
   content: '\e818';
@@ -11188,7 +11194,7 @@ input.search-submit:hover {
   color: #fff;
 }
 .td-footer-wrapper {
-  padding: 24px 0 12px 0;
+  padding: 22px 0;
 }
 .footer-social-wrap:after,
 .td-subfooter-menu:after {
@@ -11229,9 +11235,6 @@ input.search-submit:hover {
   vertical-align: middle;
 }
 /* Logo */
-.footer-logo-wrap {
-  margin-bottom: 30px;
-}
 .footer-logo-wrap img {
   display: inline-block;
   margin-right: auto;
@@ -11239,7 +11242,7 @@ input.search-submit:hover {
 }
 .footer-text-wrap {
   width: 80%;
-  margin: 0 auto 12px auto;
+  margin: 12px auto;
   padding: 8px 0;
   font-family: 'Work Sans', sans-serif;
   font-size: 13px;
