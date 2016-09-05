@@ -6,4 +6,4 @@ The simple yet potent trick the researchers employed is known as verbal cueing, 
 (899) 123-9465 (main number)
 (899) 123-1568 (fax)
 
-Email: <strong><a href="mailto:contact@yoursite.com" target="_blank">contact@yoursite.com</a></strong>
+Email: <strong><a href="mailto:contact@your-site.com" target="_blank">contact@yoursite.com</a></strong>
