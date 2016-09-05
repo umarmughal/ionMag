@@ -1010,3 +1010,56 @@
     }
   }
 }
+
+
+/*  ----------------------------------------------------------------------------
+    Block list menu
+*/
+.td_block_list_menu {
+  padding: 0 60px;
+
+  /* responsive portrait tablet */
+  @media (max-width: @responsive_p_tablet_max) {
+    padding: 0;
+  }
+
+  ul {
+    text-align: center;
+
+    li {
+      display: inline-block;
+      margin-bottom: 8px;
+      margin-left: 0;
+      margin-right: 7px;
+
+      a {
+        border: 1px solid #eaeaea;
+        padding: 0 12px;
+        font-family: @font2;
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 31px;
+        color: #000;
+        display: block;
+
+        &:hover {
+          background-color: #111;
+          color: #fff;
+          border-color: #111;
+        }
+      }
+    }
+  }
+
+  .active {
+    a {
+      border-color: @td_theme_color;
+      background-color: @td_theme_color;
+      color: #fff;
+
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
