@@ -5792,6 +5792,50 @@ blockquote.pull-right:after {
   background-color: #fff;
   color: #000;
 }
+/*  ----------------------------------------------------------------------------
+    Block list menu
+*/
+.td_block_list_menu {
+  padding: 0 60px;
+  /* responsive portrait tablet */
+}
+@media (max-width: 1018px) {
+  .td_block_list_menu {
+    padding: 0;
+  }
+}
+.td_block_list_menu ul {
+  text-align: center;
+}
+.td_block_list_menu ul li {
+  display: inline-block;
+  margin-bottom: 8px;
+  margin-left: 0;
+  margin-right: 7px;
+}
+.td_block_list_menu ul li a {
+  border: 1px solid #eaeaea;
+  padding: 0 12px;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 31px;
+  color: #000;
+  display: block;
+}
+.td_block_list_menu ul li a:hover {
+  background-color: #111;
+  color: #fff;
+  border-color: #111;
+}
+.td_block_list_menu .active a {
+  border-color: #42bdcd;
+  background-color: #42bdcd;
+  color: #fff;
+}
+.td_block_list_menu .active a:hover {
+  color: #fff;
+}
 /*
   Font for MX modules
 */
@@ -5816,12 +5860,11 @@ blockquote.pull-right:after {
   }
 }
 .td-mx-15 .td-has-date .entry-title {
-  margin-bottom: 11px;
-  /* responsive portrait phone */
+  /* desktop + tablet */
 }
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   .td-mx-15 .td-has-date .entry-title {
-    margin-bottom: 0;
+    margin-bottom: 11px;
   }
 }
 .td-mx-19 .td-post-category {
@@ -5845,12 +5888,11 @@ blockquote.pull-right:after {
   }
 }
 .td-mx-19.td-has-date .entry-title {
-  margin-bottom: 12px;
-  /* responsive portrait phone */
+  /* desktop + tablet */
 }
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   .td-mx-19.td-has-date .entry-title {
-    margin-bottom: 0;
+    margin-bottom: 12px;
   }
 }
 .td-mx-23 .td-post-category {
@@ -5874,12 +5916,11 @@ blockquote.pull-right:after {
   }
 }
 .td-mx-23.td-has-date .entry-title {
-  margin-bottom: 8px;
-  /* responsive portrait phone */
+  /* desktop + tablet */
 }
-@media (max-width: 767px) {
+@media (min-width: 767px) {
   .td-mx-23.td-has-date .entry-title {
-    margin-bottom: 0;
+    margin-bottom: 8px;
   }
 }
 /*
