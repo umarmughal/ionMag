@@ -6,7 +6,7 @@
 define("TD_THEME_NAME", "IonMag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
 define("TD_THEME_DEMO_URL", "http://demo.tagdiv.com/" . strtolower(TD_THEME_NAME));
-define("TD_THEME_DEMO_DOC_URL", 'http://forum.tagdiv.com/introduction/');  //the url to the demo documentation
+define("TD_THEME_DEMO_DOC_URL", 'http://forum.wpion.com/installing-demo/');  //the url to the demo documentation
 define("TD_FEATURED_CAT", "Featured"); //featured cat name
 define("TD_FEATURED_CAT_SLUG", "featured"); //featured cat slug
 define("TD_THEME_OPTIONS_NAME", "td_012"); //where to store our options
@@ -2401,8 +2401,16 @@ class td_config {
             );
 
             td_api_text::set('supported_plugins_list', '
+				<div class="td-supported-plugin">WP Super Cache <span> - caching plugin</span></div>
+				<div class="td-supported-plugin">Contact form 7 <span>- used to make contact forms</span></div>
+				<div class="td-supported-plugin">bbPress <span>- forum plugin</span></div>
+				<div class="td-supported-plugin">BuddyPress<span>- social network plugin</span></div>
+				<div class="td-supported-plugin">Font Awesome 4 Menus<span>- icon pack, supported in the theme menus</span></div>
+				<div class="td-supported-plugin">Jetpack  <span>- plugin with lots of features *it may slow down your site</span></div>
 				<div class="td-supported-plugin">WooCommerce <span>- eCommerce solution</span></div>
-				<div class="td-supported-plugin">WordPress SEO <span> - SEO plugin</span></div>'
+				<div class="td-supported-plugin">WordPress SEO <span> - SEO plugin</span></div>
+				<div class="td-supported-plugin">Wp User Avatar <span> - Change users avatars</span></div>
+				<div class="td-supported-plugin">Slider Revolution <span> - responsive WordPress Slider Plugin</span></div>'
             );
 
 
@@ -2421,7 +2429,7 @@ class td_config {
 		            'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
 		            'external_url' => '', // If set, overrides default API URL and points to an external URL
 		            'img' => td_global::$get_template_directory_uri . '/includes/wp_booster/wp-admin/images/plugins/td-composer.png',
-		            'text' => 'Required plugin',
+		            'text' => 'Required plugin - <a href="http://forum.wpion.com/tagdiv-composer-overview/" target="_blank">Read more</a>',
 		            'required_label' => 'required' //the text for required/recommended label - used also as a class for label bg color
 	            ),
                 array(
@@ -2434,7 +2442,7 @@ class td_config {
                     'force_deactivation' => false, // If true, plugin is deactivated upon theme switch, useful for theme-specific plugins
                     'external_url' => '', // If set, overrides default API URL and points to an external URL
                     'img' => td_global::$get_template_directory_uri . '/includes/wp_booster/wp-admin/images/plugins/social.png',
-                    'text' => '<a href="http://forum.tagdiv.com/tagdiv-social-counter-tutorial/" target="_blank">Read more</a>',
+                    'text' => '<a href="http://forum.wpion.com/social-counter/" target="_blank">Read more</a>',
                     'required_label' => 'optional' //the text for required/recommended label - used also as a class for label bg color
                 )
             );
