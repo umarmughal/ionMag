@@ -33,7 +33,7 @@
 
                 echo td_global_blocks::get_instance('td_block_popular_categories')->render(array(
                     'custom_title' => __td('POPULAR CATEGORY', TD_THEME_NAME),
-                    'limit' => 6
+                    'limit' => 5
                 ));
                 ?>
                 <?php dynamic_sidebar('Footer 3'); ?>
