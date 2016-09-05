@@ -4030,14 +4030,7 @@ blockquote.pull-right:after {
 /*  ----------------------------------------------------------------------------
     dropcaps
 */
-.td-page-content .dropcap,
-.td-post-content .dropcap,
-.wpb_text_column .dropcap,
-.td_block_text_with_title .dropcap,
-.bbpress .dropcap,
-.woocommerce #tab-description .dropcap,
-.mce-content-body .dropcap,
-.comment-content .dropcap {
+body .dropcap {
   float: left;
   display: block;
   font-size: 50px;
@@ -4052,28 +4045,14 @@ blockquote.pull-right:after {
   min-width: 62px;
   min-height: 62px;
 }
-.td-page-content .dropcap1,
-.td-post-content .dropcap1,
-.wpb_text_column .dropcap1,
-.td_block_text_with_title .dropcap1,
-.bbpress .dropcap1,
-.woocommerce #tab-description .dropcap1,
-.mce-content-body .dropcap1,
-.comment-content .dropcap1 {
+body .dropcap1 {
   -webkit-border-radius: 70px;
   -moz-border-radius: 70px;
   border-radius: 70px;
   font-size: 40px;
   padding: 2px 14px 4px;
 }
-.td-page-content .dropcap2,
-.td-post-content .dropcap2,
-.wpb_text_column .dropcap2,
-.td_block_text_with_title .dropcap2,
-.bbpress .dropcap2,
-.woocommerce #tab-description .dropcap2,
-.mce-content-body .dropcap2,
-.comment-content .dropcap2 {
+body .dropcap2 {
   background-color: transparent !important;
   color: #4B4B4B;
   font-size: 79px;
@@ -4081,14 +4060,7 @@ blockquote.pull-right:after {
   margin: 0 9px 0 0;
   padding: 0 13px 0 0;
 }
-.td-page-content .dropcap3,
-.td-post-content .dropcap3,
-.wpb_text_column .dropcap3,
-.td_block_text_with_title .dropcap3,
-.bbpress .dropcap3,
-.woocommerce #tab-description .dropcap3,
-.mce-content-body .dropcap3,
-.comment-content .dropcap3 {
+body .dropcap3 {
   background-color: transparent !important;
   color: #4B4B4B;
   font-weight: bold;
@@ -7455,6 +7427,9 @@ blockquote.pull-right:after {
   left: 0;
   text-align: left;
 }
+.wpb_video_wrapper {
+  margin-bottom: 21px;
+}
 /*  ----------------------------------------------------------------------------
     wordpress default galleries
 */
@@ -7995,6 +7970,31 @@ blockquote.pull-right:after {
   opacity: 0.06;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='6')";
   filter: alpha(opacity=6);
+}
+/*  ----------------------------------------------------------------------------
+    Attachment page
+*/
+.td-attachment-page-content p {
+  color: #444;
+  font-size: 11px;
+  font-style: italic;
+  line-height: 17px;
+}
+.td-attachment-prev {
+  display: inline-block;
+  margin: 10px 0 21px 0;
+}
+.td-attachment-prev img {
+  width: 100px;
+  height: 100px;
+}
+.td-attachment-next {
+  float: right;
+  margin: 10px 0 21px 0;
+}
+.td-attachment-next img {
+  width: 100px;
+  height: 100px;
 }
 /*  ----------------------------------------------------------------------------
     Search page
@@ -10454,6 +10454,14 @@ input.search-submit:hover {
 .td-social-list .td_social_type:last-child {
   margin-bottom: 0;
 }
+.td_social_info_name {
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_social_info_name {
+    display: none;
+  }
+}
 .td_social_type {
   position: relative;
   width: 100%;
@@ -11225,7 +11233,7 @@ input.search-submit:hover {
   margin-bottom: 30px;
 }
 .footer-logo-wrap img {
-  display: block;
+  display: inline-block;
   margin-right: auto;
   margin-left: auto;
 }
