@@ -60,8 +60,10 @@ class td_block_list_menu extends td_block {
 		if (!empty($posts)) {
 			$buffy .= '<ul>';
 
+			_wp_menu_item_classes_by_context( $posts );
+
 			foreach ($posts as $post) {
-				$buffy .= '<li><a href="#">' . $post->title . '</a></li>';
+				$buffy .= '<li class="' . join( ' ', $post->classes ) . '"><a href="' . $post->url . '">' . $post->title . '</a></li>';
 			}
 
 			$buffy .= '</ul>';
