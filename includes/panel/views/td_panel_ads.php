@@ -599,9 +599,9 @@ echo td_panel_generator::box_start('Header ad', false);?>
                 'ds' => 'td_option',
                 'option_id' => 'tds_inline_ad_align',
                 'values' => array(
-                    array('text' => '', 'title' => '', 'val' => 'left', 'img' => get_template_directory_uri() . '/includes/wp_booster/wp-admin/images/panel/rec-left.png'),
-                    array('text' => '', 'title' => '', 'val' => '', 'img' => get_template_directory_uri() . '/includes/wp_booster/wp-admin/images/panel/rec-center.png'),
-                    array('text' => '', 'title' => '', 'val' => 'right', 'img' => get_template_directory_uri() . '/includes/wp_booster/wp-admin/images/panel/rec-right.png')
+                    array('text' => '', 'title' => '', 'val' => 'left', 'img' => get_template_directory_uri() . '/images/panel/ads/rec-left.png'),
+                    array('text' => '', 'title' => '', 'val' => '', 'img' => get_template_directory_uri() . '/images/panel/ads/rec-center.png'),
+                    array('text' => '', 'title' => '', 'val' => 'right', 'img' => get_template_directory_uri() . '/images/panel/ads/rec-right.png')
                 )
             ));
             ?>
