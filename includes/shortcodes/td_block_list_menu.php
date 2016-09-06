@@ -38,7 +38,8 @@ class td_block_list_menu extends td_block {
 		$buffy .= '</div>';
 
 		$buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
-		$buffy .= $this->inner(wp_get_nav_menu_items($atts['menu_id']));  //inner content of the block
+
+		$buffy .= $this->inner(wp_get_nav_menu_items($this->atts['menu_id']));  //inner content of the block
 		$buffy .= '</div>';
 
 		//get the ajax pagination for this block
