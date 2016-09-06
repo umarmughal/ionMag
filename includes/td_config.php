@@ -2461,6 +2461,8 @@ class td_config {
 				<div class="td-supported-plugin">Slider Revolution <span> - responsive WordPress Slider Plugin</span></div>'
             );
 
+            td_api_text::set('panel_existing_content_url', '<a href="http://forum.wpion.com/using-the-theme-with-existing-content/" target="_blank">read more</a>');
+
 
 
 
