@@ -21,6 +21,11 @@ class td_block_list_menu extends td_block {
 				'menu_id' => ''
 			), $atts);
 
+		// For tagDiv composer add a placeholder element
+		if ((td_util::tdc_is_live_editor_iframe() || td_util::tdc_is_live_editor_ajax()) && empty($this->atts['menu_id'])) {
+			return  '<div class="td_block_wrap td_block_list_menu" ' . $this->get_block_html_atts() . '><div class="tdc-placeholder-title"></div></div>';
+		}
+
 		$buffy = ''; //output buffer
 
 
@@ -38,7 +43,8 @@ class td_block_list_menu extends td_block {
 		$buffy .= '</div>';
 
 		$buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
-		$buffy .= $this->inner(wp_get_nav_menu_items($atts['menu_id']));  //inner content of the block
+
+		$buffy .= $this->inner(wp_get_nav_menu_items($this->atts['menu_id']));  //inner content of the block
 		$buffy .= '</div>';
 
 		//get the ajax pagination for this block
@@ -54,8 +60,10 @@ class td_block_list_menu extends td_block {
 		if (!empty($posts)) {
 			$buffy .= '<ul>';
 
+			_wp_menu_item_classes_by_context( $posts );
+
 			foreach ($posts as $post) {
-				$buffy .= '<li><a href="#">' . $post->title . '</a></li>';
+				$buffy .= '<li class="' . join( ' ', $post->classes ) . '"><a href="' . $post->url . '">' . $post->title . '</a></li>';
 			}
 
 			$buffy .= '</ul>';
