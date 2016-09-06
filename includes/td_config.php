@@ -5,7 +5,7 @@
 
 define("TD_THEME_NAME", "IonMag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
-define("TD_THEME_DEMO_URL", "http://demo.tagdiv.com/" . strtolower(TD_THEME_NAME));
+define("TD_THEME_DEMO_URL", "http://demo.wpion.com/" . strtolower(TD_THEME_NAME));
 define("TD_THEME_DEMO_DOC_URL", 'http://forum.wpion.com/installing-demo/');  //the url to the demo documentation
 define("TD_FEATURED_CAT", "Featured"); //featured cat name
 define("TD_FEATURED_CAT_SLUG", "featured"); //featured cat slug
@@ -2205,10 +2205,10 @@ class td_config {
 	     */
 	    td_global::$demo_list = array (
 		    'default' => array(
-			    'text' => 'Default demo',
+			    'text' => 'Default Demo',
 			    'folder' => td_global::$get_template_directory . '/includes/demos/default/',
 			    'img' => td_global::$get_template_directory_uri . '/includes/demos/default/screenshot.png',
-			    'demo_url' => 'http://demo.tagdiv.com/newspaper/',
+			    'demo_url' => 'http://demo.wpion.com/ionmag/',
 			    'td_css_generator_demo' => false,
 			    'uses_custom_style_css' => false
 		    )

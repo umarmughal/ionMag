@@ -9,7 +9,7 @@ $ad_spot_id = td_util::get_http_post_val('ad_spot_id');
 <div class="td-box-row">
     <div class="td-box-description">
         <span class="td-box-title">YOUR AD CODE</span>
-        <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads, <br> <a target="_blank" href="http://forum.tagdiv.com/using-other-ads/">click here</a></p>
+        <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a></p>
     </div>
     <div class="td-box-control-full">
         <?php
@@ -55,7 +55,7 @@ if (!in_array($ad_spot_id, $custom_ads_ids_array)){ ?>
 <div class="td-box-row">
     <div class="td-box-description td-box-full">
         <span class="td-box-title">Advance usage:</span>
-        <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.tagdiv.com/header-ad/" target="_blank">link</a></p>
+        <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a></p>
     </div>
     <div class="td-box-row-margin-bottom"></div>
 </div>

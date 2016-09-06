@@ -5,7 +5,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description">
             <span class="td-box-title">YOUR HEADER AD</span>
-            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads, <br> <a target="_blank" href="http://forum.tagdiv.com/using-other-ads/">click here</a></p>
+            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a></p>
         </div>
         <div class="td-box-control-full">
             <?php
@@ -21,7 +21,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">Advance usage:</span>
-            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.tagdiv.com/header-ad/" target="_blank">link</a></p>
+            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a></p>
         </div>
         <div class="td-box-row-margin-bottom"></div>
     </div>
@@ -181,7 +181,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description">
             <span class="td-box-title">YOUR SIDEBAR AD</span>
-            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads, <br> <a target="_blank" href="http://forum.tagdiv.com/using-other-ads/">click here</a> (last paragraph)</p>
+            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)</p>
         </div>
         <div class="td-box-control-full">
             <?php
@@ -198,7 +198,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">Advance usage:</span>
-            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.tagdiv.com/header-ad/" target="_blank">link</a></p>
+            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a></p>
         </div>
         <div class="td-box-row-margin-bottom"></div>
     </div>
@@ -354,7 +354,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description">
             <span class="td-box-title">YOUR ARTICLE TOP AD</span>
-            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads, <br> <a target="_blank" href="http://forum.tagdiv.com/using-other-ads/">click here</a> (last paragraph)</p>
+            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)</p>
         </div>
         <div class="td-box-control-full">
             <?php
@@ -387,7 +387,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">Advance usage:</span>
-            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.tagdiv.com/header-ad/" target="_blank">link</a></p>
+            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a></p>
         </div>
         <div class="td-box-row-margin-bottom"></div>
     </div>
@@ -542,7 +542,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description">
             <span class="td-box-title">YOUR ARTICLE INLINE AD</span>
-            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads, <br> <a target="_blank" href="http://forum.tagdiv.com/using-other-ads/">click here</a> (last paragraph)</p>
+            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)</p>
         </div>
         <div class="td-box-control-full">
             <?php
@@ -612,7 +612,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">Advance usage:</span>
-            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.tagdiv.com/header-ad/" target="_blank">link</a></p>
+            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a></p>
         </div>
         <div class="td-box-row-margin-bottom"></div>
     </div>
@@ -766,7 +766,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description">
             <span class="td-box-title">YOUR ARTICLE BOTTOM AD</span>
-            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads, <br> <a target="_blank" href="http://forum.tagdiv.com/using-other-ads/">click here</a> (last paragraph)</p>
+            <p>Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)</p>
         </div>
         <div class="td-box-control-full">
             <?php
@@ -798,7 +798,7 @@ echo td_panel_generator::box_start('Header ad', false);?>
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">Advance usage:</span>
-            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.tagdiv.com/header-ad/" target="_blank">link</a></p>
+            <p>If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a></p>
         </div>
         <div class="td-box-row-margin-bottom"></div>
     </div>

@@ -17,7 +17,7 @@
     <div class="td-box-row">
         <div class="td-box-description td-box-full">
             <span class="td-box-title">More information:</span>
-            <p>From here you can show or hide the category tag from modules. <a target="_blank" href="http://forum.tagdiv.com/theme-thumbs/" >Read more about modules</a></p>
+            <p>From here you can show or hide the category tag from modules.</p>
         </div>
         <div class="td-box-row-margin-bottom"></div>
     </div>
