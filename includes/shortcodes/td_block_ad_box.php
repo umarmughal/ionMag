@@ -40,9 +40,9 @@ class td_block_ad_box extends td_block {
 	        }
 
             // 'td_block_wrap' is to identify a tagDiv composer element at binding
-            // 'tdc-add-block' is to style de placeholder
+            // 'tdc-placeholder-title' is to style de placeholder
             // block_uid is necessary to have a unique html template returned to the composer (without it the html change event doesn't trigger, and because of this the loader image is still preset)
-            return  '<div class="td_block_wrap td-a-rec-id-' . $spot_id . ' ' . $this->block_uid . '_rand">' . $this->get_block_css() . $rec_title . '<div class="tdc-add-block"></div></div>';
+            return  '<div class="td_block_wrap td-a-rec-id-' . $spot_id . ' ' . $this->block_uid . '_rand">' . $this->get_block_css() . $rec_title . '<div class="tdc-placeholder-title"></div></div>';
         }
 
         if (empty($spot_id)) {
