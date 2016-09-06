@@ -3568,7 +3568,8 @@ figure.aligncenter {
 .bbpress blockquote,
 .woocommerce #tab-description blockquote,
 .mce-content-body blockquote,
-.comment-content blockquote {
+.comment-content blockquote,
+.vc_raw_html blockquote {
   padding: 0;
   position: relative;
   border-left: none;
@@ -3583,7 +3584,8 @@ figure.aligncenter {
   .bbpress blockquote,
   .woocommerce #tab-description blockquote,
   .mce-content-body blockquote,
-  .comment-content blockquote {
+  .comment-content blockquote,
+  .vc_raw_html blockquote {
     margin: 20px 3% 18px 3%;
   }
 }
@@ -3594,7 +3596,8 @@ figure.aligncenter {
 .bbpress blockquote p,
 .woocommerce #tab-description blockquote p,
 .mce-content-body blockquote p,
-.comment-content blockquote p {
+.comment-content blockquote p,
+.vc_raw_html blockquote p {
   font-family: 'Work Sans', sans-serif;
   font-size: 31px;
   line-height: 36px;
@@ -3615,7 +3618,8 @@ figure.aligncenter {
   .bbpress blockquote p,
   .woocommerce #tab-description blockquote p,
   .mce-content-body blockquote p,
-  .comment-content blockquote p {
+  .comment-content blockquote p,
+  .vc_raw_html blockquote p {
     font-size: 24px;
     line-height: 32px;
   }
@@ -3628,7 +3632,8 @@ figure.aligncenter {
   .bbpress blockquote p,
   .woocommerce #tab-description blockquote p,
   .mce-content-body blockquote p,
-  .comment-content blockquote p {
+  .comment-content blockquote p,
+  .vc_raw_html blockquote p {
     font-size: 22px;
     line-height: 30px;
   }
@@ -3640,7 +3645,8 @@ figure.aligncenter {
 .bbpress .twitter-tweet p,
 .woocommerce #tab-description .twitter-tweet p,
 .mce-content-body .twitter-tweet p,
-.comment-content .twitter-tweet p {
+.comment-content .twitter-tweet p,
+.vc_raw_html .twitter-tweet p {
   font-family: initial;
   font-size: initial;
   line-height: initial;
@@ -3657,7 +3663,8 @@ figure.aligncenter {
 .bbpress .td_quote_right,
 .woocommerce #tab-description .td_quote_right,
 .mce-content-body .td_quote_right,
-.comment-content .td_quote_right {
+.comment-content .td_quote_right,
+.vc_raw_html .td_quote_right {
   float: right;
   width: 50%;
   margin: 21px 0 21px 21px;
@@ -3671,7 +3678,8 @@ figure.aligncenter {
   .bbpress .td_quote_right,
   .woocommerce #tab-description .td_quote_right,
   .mce-content-body .td_quote_right,
-  .comment-content .td_quote_right {
+  .comment-content .td_quote_right,
+  .vc_raw_html .td_quote_right {
     float: none;
     width: auto;
     margin-right: 5%;
@@ -3685,7 +3693,8 @@ figure.aligncenter {
 .bbpress .td_quote_left,
 .woocommerce #tab-description .td_quote_left,
 .mce-content-body .td_quote_left,
-.comment-content .td_quote_left {
+.comment-content .td_quote_left,
+.vc_raw_html .td_quote_left {
   float: left;
   width: 50%;
   margin: 18px 18px 18px 0;
@@ -3699,7 +3708,8 @@ figure.aligncenter {
   .bbpress .td_quote_left,
   .woocommerce #tab-description .td_quote_left,
   .mce-content-body .td_quote_left,
-  .comment-content .td_quote_left {
+  .comment-content .td_quote_left,
+  .vc_raw_html .td_quote_left {
     float: none;
     width: auto;
     margin-right: 5%;
@@ -3713,7 +3723,8 @@ figure.aligncenter {
 .bbpress .td_quote_left p,
 .woocommerce #tab-description .td_quote_left p,
 .mce-content-body .td_quote_left p,
-.comment-content .td_quote_left p {
+.comment-content .td_quote_left p,
+.vc_raw_html .td_quote_left p {
   text-align: left;
   /* responsive portrait phone */
 }
@@ -3725,7 +3736,8 @@ figure.aligncenter {
   .bbpress .td_quote_left p,
   .woocommerce #tab-description .td_quote_left p,
   .mce-content-body .td_quote_left p,
-  .comment-content .td_quote_left p {
+  .comment-content .td_quote_left p,
+  .vc_raw_html .td_quote_left p {
     text-align: center;
   }
 }
@@ -3736,7 +3748,8 @@ figure.aligncenter {
 .bbpress .td_quote_box,
 .woocommerce #tab-description .td_quote_box,
 .mce-content-body .td_quote_box,
-.comment-content .td_quote_box {
+.comment-content .td_quote_box,
+.vc_raw_html .td_quote_box {
   margin: 0;
   background-color: #FCFCFC;
   border-left: 2px solid #42bdcd;
@@ -3752,7 +3765,8 @@ figure.aligncenter {
 .bbpress .td_quote_box p,
 .woocommerce #tab-description .td_quote_box p,
 .mce-content-body .td_quote_box p,
-.comment-content .td_quote_box p {
+.comment-content .td_quote_box p,
+.vc_raw_html .td_quote_box p {
   font-family: 'Source Sans Pro', sans-serif;
   color: #777777;
   font-size: 14px;
@@ -3768,7 +3782,8 @@ figure.aligncenter {
 .bbpress .td_box_left,
 .woocommerce #tab-description .td_box_left,
 .mce-content-body .td_box_left,
-.comment-content .td_box_left {
+.comment-content .td_box_left,
+.vc_raw_html .td_box_left {
   width: 40%;
   float: left;
   margin: 0 34px 20px 0;
@@ -3782,7 +3797,8 @@ figure.aligncenter {
   .bbpress .td_box_left,
   .woocommerce #tab-description .td_box_left,
   .mce-content-body .td_box_left,
-  .comment-content .td_box_left {
+  .comment-content .td_box_left,
+  .vc_raw_html .td_box_left {
     float: none;
     margin: 0 0 36px 0;
     width: auto;
@@ -3795,7 +3811,8 @@ figure.aligncenter {
 .bbpress .td_box_left p,
 .woocommerce #tab-description .td_box_left p,
 .mce-content-body .td_box_left p,
-.comment-content .td_box_left p {
+.comment-content .td_box_left p,
+.vc_raw_html .td_box_left p {
   text-align: left;
 }
 .td-page-content .td_box_right,
@@ -3805,7 +3822,8 @@ figure.aligncenter {
 .bbpress .td_box_right,
 .woocommerce #tab-description .td_box_right,
 .mce-content-body .td_box_right,
-.comment-content .td_box_right {
+.comment-content .td_box_right,
+.vc_raw_html .td_box_right {
   width: 30%;
   float: right;
   margin: 0 0 20px 34px;
@@ -3819,7 +3837,8 @@ figure.aligncenter {
   .bbpress .td_box_right,
   .woocommerce #tab-description .td_box_right,
   .mce-content-body .td_box_right,
-  .comment-content .td_box_right {
+  .comment-content .td_box_right,
+  .vc_raw_html .td_box_right {
     float: none;
     margin: 0 0 36px 0;
     width: auto;
@@ -3832,7 +3851,8 @@ figure.aligncenter {
 .bbpress .td_box_right p,
 .woocommerce #tab-description .td_box_right p,
 .mce-content-body .td_box_right p,
-.comment-content .td_box_right p {
+.comment-content .td_box_right p,
+.vc_raw_html .td_box_right p {
   text-align: left;
 }
 .td-page-content .td_box_center,
@@ -3842,7 +3862,8 @@ figure.aligncenter {
 .bbpress .td_box_center,
 .woocommerce #tab-description .td_box_center,
 .mce-content-body .td_box_center,
-.comment-content .td_box_center {
+.comment-content .td_box_center,
+.vc_raw_html .td_box_center {
   margin: 0 0 29px 0;
   /* responsive portrait phone */
 }
@@ -3854,7 +3875,8 @@ figure.aligncenter {
   .bbpress .td_box_center,
   .woocommerce #tab-description .td_box_center,
   .mce-content-body .td_box_center,
-  .comment-content .td_box_center {
+  .comment-content .td_box_center,
+  .vc_raw_html .td_box_center {
     margin-bottom: 36px;
   }
 }
@@ -3865,7 +3887,8 @@ figure.aligncenter {
 .bbpress .td_pull_quote,
 .woocommerce #tab-description .td_pull_quote,
 .mce-content-body .td_pull_quote,
-.comment-content .td_pull_quote {
+.comment-content .td_pull_quote,
+.vc_raw_html .td_pull_quote {
   padding: 18px 25px;
   margin: 0;
   clear: both;
@@ -3877,7 +3900,8 @@ figure.aligncenter {
 .bbpress .td_pull_quote p,
 .woocommerce #tab-description .td_pull_quote p,
 .mce-content-body .td_pull_quote p,
-.comment-content .td_pull_quote p {
+.comment-content .td_pull_quote p,
+.vc_raw_html .td_pull_quote p {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: 20px;
@@ -3893,7 +3917,8 @@ figure.aligncenter {
 .bbpress .td_pull_quote p:first-child:before,
 .woocommerce #tab-description .td_pull_quote p:first-child:before,
 .mce-content-body .td_pull_quote p:first-child:before,
-.comment-content .td_pull_quote p:first-child:before {
+.comment-content .td_pull_quote p:first-child:before,
+.vc_raw_html .td_pull_quote p:first-child:before {
   position: absolute;
   background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAALBAMAAABSacpvAAAALVBMVEUAAAC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLRK0HxpAAAADnRSTlMAd+67mWZR3SKqMxGIzB8/1rAAAABlSURBVAjXFcexDQEBAAXQd+KCRm4CDZURFGICMYFadTHBxQQmEDHCzWAI9XGJ8s/ANS95FBvccKwYr5kuUQ/5omm5dpQ9Fu+H2efEPX07Sg62f+bJ2T6pJkmnTi5FslM2L56r9geMACBhjTsodgAAAABJRU5ErkJggg==') no-repeat;
   left: 0;
@@ -3912,7 +3937,8 @@ figure.aligncenter {
 .bbpress .td_pull_quote p:after,
 .woocommerce #tab-description .td_pull_quote p:after,
 .mce-content-body .td_pull_quote p:after,
-.comment-content .td_pull_quote p:after {
+.comment-content .td_pull_quote p:after,
+.vc_raw_html .td_pull_quote p:after {
   position: absolute;
   bottom: 10px;
   right: 0;
@@ -3932,7 +3958,8 @@ figure.aligncenter {
 .bbpress .td_pull_left,
 .woocommerce #tab-description .td_pull_left,
 .mce-content-body .td_pull_left,
-.comment-content .td_pull_left {
+.comment-content .td_pull_left,
+.vc_raw_html .td_pull_left {
   width: 40%;
   float: left;
   margin-right: 34px;
@@ -3946,7 +3973,8 @@ figure.aligncenter {
   .bbpress .td_pull_left,
   .woocommerce #tab-description .td_pull_left,
   .mce-content-body .td_pull_left,
-  .comment-content .td_pull_left {
+  .comment-content .td_pull_left,
+  .vc_raw_html .td_pull_left {
     float: none;
     margin: 0 0 30px 0;
     width: auto;
@@ -3959,7 +3987,8 @@ figure.aligncenter {
 .bbpress .td_pull_right,
 .woocommerce #tab-description .td_pull_right,
 .mce-content-body .td_pull_right,
-.comment-content .td_pull_right {
+.comment-content .td_pull_right,
+.vc_raw_html .td_pull_right {
   width: 40%;
   float: right;
   margin-left: 34px;
@@ -3973,7 +4002,8 @@ figure.aligncenter {
   .bbpress .td_pull_right,
   .woocommerce #tab-description .td_pull_right,
   .mce-content-body .td_pull_right,
-  .comment-content .td_pull_right {
+  .comment-content .td_pull_right,
+  .vc_raw_html .td_pull_right {
     float: none;
     margin: 0 0 30px 0;
     width: auto;
@@ -3986,7 +4016,8 @@ figure.aligncenter {
 .bbpress .td_pull_center,
 .woocommerce #tab-description .td_pull_center,
 .mce-content-body .td_pull_center,
-.comment-content .td_pull_center {
+.comment-content .td_pull_center,
+.vc_raw_html .td_pull_center {
   margin: 17px 0;
   padding: 15px 50px;
   /* responsive portrait phone */
@@ -3999,7 +4030,8 @@ figure.aligncenter {
   .bbpress .td_pull_center,
   .woocommerce #tab-description .td_pull_center,
   .mce-content-body .td_pull_center,
-  .comment-content .td_pull_center {
+  .comment-content .td_pull_center,
+  .vc_raw_html .td_pull_center {
     padding: 15px 20px;
   }
 }
