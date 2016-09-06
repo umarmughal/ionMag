@@ -5837,10 +5837,7 @@ body .dropcap3 {
 .td-list-menu-inline .current-menu-item a {
   border-color: #42bdcd;
   background-color: #42bdcd;
-  color: #fff;
-}
-.td-list-menu-inline .current-menu-item a:hover {
-  color: #fff;
+  color: #fff !important;
 }
 /*
   Font for MX modules
@@ -6405,14 +6402,12 @@ body .dropcap3 {
 @media (min-width: 768px) and (max-width: 1018px) {
   .td_block_big_grid_2 .td-module-thumb {
     height: 174px;
-    margin-bottom: 8px;
   }
 }
 @media (max-width: 767px) {
   .td_block_big_grid_2 .td-module-thumb {
     height: auto;
     max-height: 360px;
-    margin-bottom: 10px;
   }
 }
 .td_block_big_grid_2 .td-module-thumb a:last-child:before {
