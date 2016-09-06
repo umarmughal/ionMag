@@ -79,7 +79,8 @@ function td_css_generator() {
     .td-footer-outer-wrapper a:hover,
     .td_block_authors .td_authors_wrap:hover .td-authors-name a,
     .td_block_authors .td_authors_wrap.td-active .td-authors-name a,
-    .td_block_authors .td-authors-url a:hover {
+    .td_block_authors .td-authors-url a:hover,
+    .widget .current-menu-item a {
       color: @theme_color;
     }
 
