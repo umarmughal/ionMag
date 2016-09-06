@@ -24,7 +24,7 @@ class td_block_list_menu extends td_block {
 		$buffy = ''; //output buffer
 
 
-		$buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
+		$buffy .= '<div class="' . $this->get_block_classes() . ' widget" ' . $this->get_block_html_atts() . '>';
 
 		//get the block js
 		$buffy .= $this->get_block_css();
@@ -34,8 +34,7 @@ class td_block_list_menu extends td_block {
 
 		// block title wrap
 		$buffy .= '<div class="td-block-title-wrap">';
-		$buffy .= $this->get_block_title(); //get the block title
-		$buffy .= $this->get_pull_down_filter(); //get the sub category filter for this block
+			$buffy .= $this->get_block_title(); //get the block title
 		$buffy .= '</div>';
 
 		$buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
@@ -52,12 +51,6 @@ class td_block_list_menu extends td_block {
 		$buffy = '';
 
 		$td_block_layout = new td_block_layout();
-//		if (empty($td_column_number)) {
-//			$td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
-//		}
-//
-//		$td_post_count = 1; // the number of items rendered
-
 		if (!empty($posts)) {
 			$buffy .= '<ul>';
 
