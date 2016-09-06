@@ -1687,7 +1687,7 @@ class td_config {
 			    "class" => "",
 			    "controls" => "full",
 			    "category" => 'Blocks',
-			    'icon' => 'icon-pagebuilder-td_block_authors',
+			    'icon' => 'icon-pagebuilder-td_block_list_menu',
 			    'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_list_menu.php',
 			    'params' => array(
                     array(

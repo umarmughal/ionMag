@@ -5767,34 +5767,6 @@ body .dropcap3 {
 /*  ----------------------------------------------------------------------------
     Block list menu
 */
-.td_block_list_menu {
-  font-size: 13px;
-  font-family: 'Work Sans', sans-serif;
-}
-.td_block_list_menu a {
-  color: #111;
-}
-.td_block_list_menu a:hover {
-  color: #42bdcd;
-}
-.td_block_list_menu ul {
-  list-style: none;
-  box-shadow: none;
-  margin: 0;
-}
-.td_block_list_menu li {
-  line-height: 1;
-  list-style: none;
-  margin-left: 0;
-}
-.td_block_list_menu li a {
-  padding: 9px 0;
-  display: inline-block;
-}
-.td_block_list_menu li li {
-  margin-left: 21px;
-  font-size: 12px;
-}
 .td-list-menu-inline {
   padding: 0 60px;
   /* responsive portrait tablet */
