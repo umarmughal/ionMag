@@ -1729,7 +1729,7 @@ ul.sf-menu li li.sfHover li ul {
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .sf-menu > li > a {
-    padding-right: 22px;
+    padding-right: 17px;
     font-size: 11px;
   }
 }
@@ -1872,15 +1872,6 @@ ul.sf-menu li li.sfHover li ul {
 @media (max-width: 767px) {
   .td-menu-badge {
     display: none;
-  }
-}
-.sf-menu a.sf-with-ul {
-  min-width: 1px;
-  /* trigger IE7 hasLayout so spans position accurately */
-}
-@media (min-width: 768px) and (max-width: 1018px) {
-  .sf-menu a.sf-with-ul {
-    padding-right: 22px;
   }
 }
 /* arrow for all items in the menues */
@@ -3966,7 +3957,7 @@ figure.aligncenter {
 .woocommerce #tab-description .td_pull_right,
 .mce-content-body .td_pull_right,
 .comment-content .td_pull_right {
-  width: 30%;
+  width: 40%;
   float: right;
   margin-left: 34px;
   /* responsive portrait phone */
@@ -7985,6 +7976,9 @@ body .dropcap3 {
   font-size: 11px;
   font-style: italic;
   line-height: 17px;
+}
+.td-attachment-page-image {
+  display: block;
 }
 .td-attachment-prev {
   display: inline-block;
