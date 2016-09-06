@@ -23,7 +23,7 @@ class td_block_list_menu extends td_block {
 
 		// For tagDiv composer add a placeholder element
 		if ((td_util::tdc_is_live_editor_iframe() || td_util::tdc_is_live_editor_ajax()) && empty($this->atts['menu_id'])) {
-			return  '<div class="td_block_wrap td_block_list_menu"><div class="tdc-placeholder-title"></div></div>';
+			return  '<div class="td_block_wrap td_block_list_menu" ' . $this->get_block_html_atts() . '><div class="tdc-placeholder-title"></div></div>';
 		}
 
 		$buffy = ''; //output buffer
