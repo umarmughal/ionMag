@@ -81,9 +81,7 @@ if (!empty($post->ID)) {
                 if (have_posts()) { ?>
                     <?php while ( have_posts() ) : the_post(); ?>
 
-                        <div class="td-container tdc-content-wrap">
                             <?php the_content(); ?>
-                        </div>
 
                     <?php endwhile; ?>
                 <?php }

@@ -79,7 +79,9 @@ function td_css_generator() {
     .td-footer-outer-wrapper a:hover,
     .td_block_authors .td_authors_wrap:hover .td-authors-name a,
     .td_block_authors .td_authors_wrap.td-active .td-authors-name a,
-    .td_block_authors .td-authors-url a:hover {
+    .td_block_authors .td-authors-url a:hover,
+    .widget .current-menu-item a,
+    .td-tags span {
       color: @theme_color;
     }
 
@@ -115,7 +117,8 @@ function td_css_generator() {
     }
     
     .td-theme-wrap .td_quote_box,
-    .widget_calendar #today {
+    .widget_calendar #today,
+    .td-tags span {
       border-color: @theme_color;
     }
     
