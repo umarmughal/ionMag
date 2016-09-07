@@ -119,7 +119,12 @@
 <!-- text -->
 <div class="td-box-row">
 	<div class="td-box-description td-box-full">
-		<p>When you enable this option a new sorting option will work and it will be selectable on each block (7 days popular). This sorting option will pick posts that are popular in the last 7 days, ordered by page views. This option comes with a small performance penalty and it does not work well with caching plugins yet. When caching is enabled the sorting will be an estimation of the popularity in the last 7 days.</p>
+        <ul>
+            <li>When enabled, this option will enable the <strong>7 days popular sorting option</strong> functionality on blocks. </li>
+            <li>This sorting option will pick posts that are popular in the last 7 days, ordered by page views.</li>
+            <li>This option comes with a small performance penalty and it does not work well with caching plugins yet.</li>
+            <li>When caching is enabled the sorting will be an estimation of the popularity in the last 7 days.</li>
+        </ul>
 	</div>
 	<div class="td-box-row-margin-bottom"></div>
 </div>

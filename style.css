@@ -7143,10 +7143,11 @@ body .dropcap3 {
   display: inline-block;
   margin: 0 5px 0 0;
 }
-.td-tags li:first-of-type {
+.td-tags li:first-of-type span:after {
   display: none;
 }
-.td-tags a {
+.td-tags a,
+.td-tags span {
   display: block;
   padding: 0 10px;
   font-size: 10px;
@@ -7155,6 +7156,12 @@ body .dropcap3 {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+}
+.td-tags span {
+  float: none;
+  margin-right: 0;
+  color: #42bdcd;
+  border-color: #42bdcd;
 }
 /*  ----------------------------------------------------------------------------
     Next / Prev article
