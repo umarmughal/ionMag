@@ -469,18 +469,26 @@
     display: inline-block;
     margin: 0 5px 0 0;
 
-    &:first-of-type {
+    &:first-of-type span:after {
       display: none;
     }
   }
 
-  a {
+  a,
+  span {
     display: block;
     padding: 0 10px;
     font-size: 10px;
     line-height: 20px;
     border: 1px solid #ebebeb;
     .border-radius(10px);
+  }
+
+  span {
+    float: none;
+    margin-right: 0;
+    color: @td_theme_color;
+    border-color: @td_theme_color;
   }
 }
 
