@@ -2283,6 +2283,7 @@ class td_config {
         td_api_features::set('require_activation', false);
         td_api_features::set('page_mega_menu', false);
         td_api_features::set('video_playlists', false);
+        td_api_features::set('tagdiv_slide_gallery', false);
 
 
         if (is_admin()) {
