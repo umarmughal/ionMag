@@ -11275,6 +11275,12 @@ input.search-submit:hover {
   display: inline-block;
   margin-right: auto;
   margin-left: auto;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .footer-logo-wrap img {
+    max-width: 70%;
+  }
 }
 .footer-text-wrap {
   width: 80%;
@@ -11638,9 +11644,16 @@ body.td-animation-stack-type2 .post a.td-sml-link-to-image > img {
 .td-md-is-firefox .td-header-menu-search #td-header-search-button .td-icon-search:before {
   top: 1px;
 }
+.td-md-is-firefox .td-pulldown-filter-display-option i {
+  vertical-align: baseline;
+}
 .td-md-is-firefox .td-post-category {
   padding-top: 3px;
   padding-bottom: 5px;
+}
+.td-md-is-firefox .td-post-category-small .td-post-category {
+  padding-top: 4px;
+  padding-bottom: 4px;
 }
 .td-md-is-firefox .td_block_big_grid_2 .td-big-grid-post .td-post-category-wrap {
   bottom: -3px;
