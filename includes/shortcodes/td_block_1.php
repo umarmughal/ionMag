@@ -11,7 +11,7 @@ class td_block_1 extends td_block {
         
         $buffy .= '<div class="' . $this->get_block_classes() . ' td-column-' . $td_column_number . '" ' . $this->get_block_html_atts() . '>';
 
-        //get the block js
+        //get the block css
         $buffy .= $this->get_block_css();
 
         //get the js for this block

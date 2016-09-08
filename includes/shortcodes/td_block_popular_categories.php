@@ -45,7 +45,7 @@ class td_block_popular_categories extends td_block {
 
         $buffy .= '<div class="' . $this->get_block_classes(array('widget', 'widget_categories')) . '" ' . $this->get_block_html_atts() . '>';
 
-        //get the block js
+        //get the block css
         $buffy .= $this->get_block_css();
 
         $buffy .= $this->get_block_title();

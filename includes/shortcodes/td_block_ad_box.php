@@ -485,7 +485,7 @@ class td_block_ad_box extends td_block {
 
         $buffy .= '<div class="td-g-rec td-g-rec-id-' . $spot_id . $align . ' ' . $this->get_block_classes() . ' ' . $el_class . '">' . "\n";
 
-            //get the block js
+            //get the block css
             $buffy .= $this->get_block_css();
 
             $buffy .= '<script type="text/javascript">' . "\n";
@@ -597,7 +597,7 @@ class td_block_ad_box extends td_block {
             . ((!empty($ad_array['disable_p'])) ? ' td-rec-hide-on-p' : '')
             . ' ' . $this->get_block_classes() . ' ' . $el_class . '">';
 
-            //get the block js
+            //get the block css
             $buffy .= $this->get_block_css();
 
             $buffy .= $rec_title;

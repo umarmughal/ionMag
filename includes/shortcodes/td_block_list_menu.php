@@ -31,7 +31,7 @@ class td_block_list_menu extends td_block {
 
 		$buffy .= '<div class="' . $this->get_block_classes() . ' widget" ' . $this->get_block_html_atts() . '>';
 
-		//get the block js
+		//get the block css
 		$buffy .= $this->get_block_css();
 
 		//get the js for this block

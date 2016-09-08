@@ -25,6 +25,10 @@ class td_block_big_grid_2 extends td_block {
 	    $buffy = '';
 
         $buffy .= '<div class="' . $this->get_block_classes(array($td_grid_style, 'td-hover-1 td-big-grids')) . '" ' . $this->get_block_html_atts() . '>';
+
+            //get the block css
+            $buffy .= $this->get_block_css();
+
             $buffy .= '<div id=' . $this->block_uid . ' class="td_block_inner">';
                 $buffy .= $this->inner($this->td_query->posts); //inner content of the block
             $buffy .= '</div>';

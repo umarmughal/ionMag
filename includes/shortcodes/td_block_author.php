@@ -43,7 +43,7 @@ class td_block_author extends td_block {
         $buffy .= '<div class="' . $this->get_block_classes() . '" ' . $this->get_block_html_atts() . '>';
 
 
-        //get the block js
+        //get the block css
         $buffy .= $this->get_block_css();
 
         // block title wrap
