@@ -377,12 +377,9 @@ $td_homepage_tech_id = td_demo_content::add_page(array(
 $td_homepage_travel_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Travel',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_travel.txt',
-    'template' => 'page-pagebuilder-latest.php',   // the page template full file name with .php
-    'td_layout' => '3',
-    'homepage' => false,
-    'list_custom_title_show' => 'hide_title',
-    'limit' => '12',
-    'sidebar_id' => ''
+    'template' => 'page.php',   // the page template full file name with .php
+    'td_layout' => '',
+    'homepage' => false
 ));
 
 /*  ----------------------------------------------------------------------------
