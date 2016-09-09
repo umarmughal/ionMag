@@ -10304,7 +10304,13 @@ input.search-submit:hover {
 }
 .widget_categories li {
   line-height: 1;
-  margin-right: 40px;
+  padding-right: 40px;
+}
+.widget_categories li:hover a span:before {
+  border-color: #42bdcd;
+}
+.widget_categories li:hover a {
+  color: #42bdcd;
 }
 .widget_categories li li {
   margin-right: 0;
@@ -11257,7 +11263,8 @@ input.search-submit:hover {
   display: inline-block;
   margin: 0 26px;
 }
-.footer-social-wrap .td-social-icon-wrap a {
+.footer-social-wrap .td-social-icon-wrap a,
+.footer-social-wrap .td-social-icon-wrap a span {
   color: #fff;
 }
 .footer-social-wrap .td-icon-font {

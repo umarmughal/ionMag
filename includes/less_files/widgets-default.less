@@ -192,7 +192,17 @@ input.search-submit {
 .widget_categories {
   li {
     line-height: 1;
-    margin-right: 40px;
+    padding-right: 40px;
+
+    &:hover {
+      a span:before {
+        border-color: @td_theme_color;
+      }
+
+      a {
+        color: @td_theme_color;
+      }
+    }
 
     li {
       margin-right: 0;
