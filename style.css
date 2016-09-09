@@ -7035,7 +7035,7 @@ body .dropcap3 {
 @media (max-width: 580px) {
   .td-classic-sharing {
     width: 100%;
-    margin: 20px;
+    margin: 20px 0 0;
   }
 }
 .td-classic-twitter {
