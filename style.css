@@ -6782,6 +6782,7 @@ body .dropcap3 {
   font-family: 'Work Sans', sans-serif;
   font-size: 10px;
   margin: 0 0 11px 0;
+  line-height: 1;
 }
 .td-category li {
   display: inline-block;
@@ -7856,7 +7857,7 @@ body .dropcap3 {
 .td-crumb-container {
   min-height: 33px;
   margin-bottom: 10px;
-  padding-top: 25px;
+  padding-top: 23px;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
