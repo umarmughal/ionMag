@@ -81,7 +81,8 @@ function td_css_generator() {
     .td_block_authors .td_authors_wrap.td-active .td-authors-name a,
     .td_block_authors .td-authors-url a:hover,
     .widget .current-menu-item a,
-    .td-tags span {
+    .td-tags span,
+    .widget_categories li:hover a {
       color: @theme_color;
     }
 
@@ -118,7 +119,8 @@ function td_css_generator() {
     
     .td-theme-wrap .td_quote_box,
     .widget_calendar #today,
-    .td-tags span {
+    .td-tags span,
+    .widget_categories li:hover a span:before {
       border-color: @theme_color;
     }
     
@@ -545,6 +547,7 @@ function td_css_generator() {
     .td-footer-wrapper cite,
     .td-footer-outer-wrapper a,
     .footer-social-wrap .td-social-icon-wrap a,
+    .footer-social-wrap .td-social-icon-wrap a span,
     .td-sub-footer-copy {
       color: @footer_text_color;
     }
@@ -994,7 +997,7 @@ function td_css_generator() {
     .widget_display_topics a,
     .widget_display_views a,
     .widget_display_stats,
-     .widget_categories li span {
+    .widget_categories li span {
     	@default_widgets
     }
     /* @default_buttons */
