@@ -465,6 +465,12 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
   width: 100%;
   padding-bottom: 0 !important;
   margin-bottom: 0 !important;
+  min-height: 286px;
+
+  /* responsive portrait tablet */
+  @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+    min-height: 225px;
+  }
 
   .td_block_inner {
     margin-left: 200px;
@@ -566,7 +572,12 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 
   .td-item-details {
     display: block;
-    margin-bottom: 23px;
+    margin-bottom: 16px;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      margin-bottom: 8px;
+    }
 
     & > span,
     & > div {
