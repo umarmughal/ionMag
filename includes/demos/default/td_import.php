@@ -307,7 +307,7 @@ $demo_cat_13_id =td_demo_category::add_category(array(
 /*  ----------------------------------------------------------------------------
     pages
  */
-//homepage
+// homepage
 $td_homepage_id = td_demo_content::add_page(array(
     'title' => 'Home',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage.txt',
@@ -316,31 +316,28 @@ $td_homepage_id = td_demo_content::add_page(array(
     'homepage' => true
 ));
 
-//menu dropdown homepages
+// homepage - blog
 $td_homepage_blog_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Blog',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_blog.txt',
     'template' => 'page-pagebuilder-latest.php',   // the page template full file name with .php
     'td_layout' => '4',
     'homepage' => false,
-    'list_custom_title_show' => 'hide_title',
+    'list_custom_title_show' => '',
     'limit' => '5',
     'sidebar_id' => ''
 ));
 
-//menu dropdown homepages
+// homepage - fashion
 $td_homepage_fashion_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Fashion',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_fashion.txt',
-    'template' => 'page-pagebuilder-latest.php',   // the page template full file name with .php
-    'td_layout' => '1',
-    'homepage' => false,
-    'list_custom_title_show' => 'hide_title',
-    'limit' => '8',
-    'sidebar_id' => ''
+    'template' => 'page.php',   // the page template full file name with .php
+    'td_layout' => '',
+    'homepage' => false
 ));
 
-//menu dropdown homepages
+// homepage - infinite scroll
 $td_homepage_infinite_scroll_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Infinite Scroll',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_infinite_scroll.txt',
@@ -349,37 +346,39 @@ $td_homepage_infinite_scroll_id = td_demo_content::add_page(array(
     'homepage' => false
 ));
 
-//menu dropdown homepages
+// homepage - sport
 $td_homepage_sport_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Sport',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_sport.txt',
     'template' => 'page-pagebuilder-latest.php',   // the page template full file name with .php
     'td_layout' => '2',
     'homepage' => false,
-    'list_custom_title_show' => 'hide_title',
-    'limit' => '10',
-    'sidebar_id' => ''
+    'list_custom_title_show' => '',
+    'limit' => '9',
+    'sidebar_position' => 'no_sidebar'
 ));
 
-//menu dropdown homepages
+// homepage - tech
 $td_homepage_tech_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Tech',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_tech.txt',
     'template' => 'page-pagebuilder-latest.php',   // the page template full file name with .php
     'td_layout' => '1',
     'homepage' => false,
-    'list_custom_title_show' => 'hide_title',
-    'limit' => '10',
-    'sidebar_id' => ''
+    'list_custom_title_show' => '',
+    'limit' => '10'
 ));
 
-//menu dropdown homepages
+// homepage - travel
 $td_homepage_travel_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Travel',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_travel.txt',
-    'template' => 'page.php',   // the page template full file name with .php
-    'td_layout' => '',
-    'homepage' => false
+    'template' => 'page-pagebuilder-latest.php',   // the page template full file name with .php
+    'td_layout' => '3',
+    'homepage' => false,
+    'list_custom_title_show' => '',
+    'limit' => '12',
+    'sidebar_position' => 'no_sidebar'
 ));
 
 /*  ----------------------------------------------------------------------------
