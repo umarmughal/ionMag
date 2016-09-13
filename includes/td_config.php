@@ -2444,7 +2444,7 @@ class td_config {
 	        td_api_text::set('text_header_logo_mobile_image', '160 x 40px');
 	        td_api_text::set('text_header_logo_mobile_image_retina', '320 x 80px');
 	        td_api_text::set('text_smart_sidebar_widget_support', '<p>From here you can enable and disable the smart sidebar on all the templates. The smart sidebar is an affix (sticky) sidebar that has auto resize and it scrolls with the content. The smart sidebar reverts back to a normal sidebar on iOS (iPad) and on mobile devices.</p>');
-	        td_api_text::set('welcome_fast_start', 'Install tagDiv composer plugin and also install the social counter plugin if you want to add the counters on your sidebar - from our <a href="admin.php?page=td_theme_plugins">plugins panel</a>');
+	        td_api_text::set('welcome_fast_start', 'Install <strong>tagDiv Composer</strong> plugin and also install the <strong>Social Counter</strong> plugin if you want to add the counters on your sidebar - from our <a href="admin.php?page=td_theme_plugins">plugins panel</a>');
 
             td_api_text::set('welcome_support_forum', '
             <h2>Support forum</h2>
