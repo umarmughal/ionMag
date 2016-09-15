@@ -5875,11 +5875,11 @@ body .dropcap3 {
     line-height: 18px !important;
   }
 }
-.td-mx-15 .td-has-date .entry-title {
+.td-mx-15.td-has-date .entry-title {
   /* desktop + tablet */
 }
-@media (min-width: 767px) {
-  .td-mx-15 .td-has-date .entry-title {
+@media (min-width: 1018px) {
+  .td-mx-15.td-has-date .entry-title {
     margin-bottom: 11px;
   }
 }
@@ -5906,7 +5906,7 @@ body .dropcap3 {
 .td-mx-19.td-has-date .entry-title {
   /* desktop + tablet */
 }
-@media (min-width: 767px) {
+@media (min-width: 1018px) {
   .td-mx-19.td-has-date .entry-title {
     margin-bottom: 12px;
   }
@@ -5934,7 +5934,7 @@ body .dropcap3 {
 .td-mx-23.td-has-date .entry-title {
   /* desktop + tablet */
 }
-@media (min-width: 767px) {
+@media (min-width: 1018px) {
   .td-mx-23.td-has-date .entry-title {
     margin-bottom: 8px;
   }
