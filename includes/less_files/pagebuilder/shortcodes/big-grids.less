@@ -194,6 +194,11 @@
       height: 170px;
     }
 
+    /* responsive smaller portrait phone */
+    @media (max-width: 320px) {
+      height: 130px;
+    }
+
     .td-post-category {
       /* responsive tablet + phone */
       @media (max-width: @responsive_p_tablet_max) {
@@ -215,7 +220,13 @@
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100% !important;
+      height: 300px;
       float: none !important;
+    }
+
+    /* responsive smaller portrait phone */
+    @media (max-width: 320px) {
+      height: 200px;
     }
 
     .td-post-category {
