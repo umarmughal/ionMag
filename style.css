@@ -4340,6 +4340,11 @@ body .dropcap3 {
   width: 100%;
   display: block;
 }
+.td-thumb-css {
+  height: 100%;
+  background-position: center center;
+  background-size: cover;
+}
 .td-module-image {
   position: relative;
 }
@@ -5974,6 +5979,7 @@ body .dropcap3 {
 .td-big-grids .td-module-image {
   margin-bottom: 0;
   height: 100%;
+  overflow: hidden;
 }
 .td-big-grid-post {
   position: relative;
