@@ -6117,13 +6117,13 @@ body .dropcap3 {
     white-space: nowrap;
     font-size: 0;
     overflow-y: hidden;
-    padding-top: 3px;
+    padding-top: 4px;
     z-index: 0;
     -webkit-overflow-scrolling: touch;
     transform: translate3d(0, 0, 0);
   }
   .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post {
-    margin-left: 3px;
+    margin-left: 4px;
     margin-right: 0;
     margin-bottom: 0;
   }
@@ -6151,20 +6151,20 @@ body .dropcap3 {
   }
 }
 .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-post-category {
-  /* responsive tablet + phone */
+  /* responsive portrait phone */
 }
-@media (max-width: 1018px) {
+@media (max-width: 767px) {
   .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-post-category {
     margin-bottom: 13px;
   }
 }
 .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .entry-title {
-  /* responsive portrait tablet + phone */
+  /* responsive portrait phone */
 }
-@media (max-width: 1018px) {
+@media (max-width: 767px) {
   .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .entry-title {
-    font-size: 17px !important;
-    line-height: 22px !important;
+    font-size: 13px !important;
+    line-height: 18px !important;
   }
 }
 .td-big-grids-scroll .td-big-grid-post-0 {
@@ -6184,20 +6184,20 @@ body .dropcap3 {
   }
 }
 .td-big-grids-scroll .td-big-grid-post-0 .td-post-category {
-  /* responsive tablet + phone */
+  /* responsive portrait phone */
 }
-@media (max-width: 1018px) {
+@media (max-width: 767px) {
   .td-big-grids-scroll .td-big-grid-post-0 .td-post-category {
     margin-bottom: 12px !important;
   }
 }
 .td-big-grids-scroll .td-big-grid-post-0 .entry-title {
-  /* responsive portrait tablet + phone */
+  /* responsive portrait phone */
 }
-@media (max-width: 1018px) {
+@media (max-width: 767px) {
   .td-big-grids-scroll .td-big-grid-post-0 .entry-title {
-    font-size: 23px !important;
-    line-height: 30px !important;
+    font-size: 19px !important;
+    line-height: 24px !important;
   }
 }
 /*
