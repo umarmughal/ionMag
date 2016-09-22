@@ -10756,24 +10756,29 @@ input.search-submit:hover {
   margin-bottom: 26px;
 }
 .td-smart-list-button {
+  display: inline-block;
+  background-color: #000;
+  margin: 0;
+  padding: 0 19px;
   font-family: 'Work Sans', sans-serif;
+  font-size: 13px;
   line-height: 40px;
-  background-color: #222;
   color: #fff;
-  padding: 11px 24px;
-  font-size: 16px;
-  font-style: normal;
-  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 0px 0px #a6a6a6;
+  -moz-box-shadow: 0px 2px 0px 0px #a6a6a6;
+  box-shadow: 0px 2px 0px 0px #a6a6a6;
   -webkit-transition: background-color 0.2s ease 0s;
   -moz-transition: background-color 0.2s ease 0s;
   -o-transition: background-color 0.2s ease 0s;
   transition: background-color 0.2s ease 0s;
   cursor: pointer;
-  margin: 0 10px;
 }
 .td-smart-list-button:hover {
-  text-decoration: none !important;
   background-color: #42bdcd;
+  text-decoration: none !important;
 }
 .td-smart-list-button .td-icon-left {
   font-size: 14px;
@@ -10806,14 +10811,14 @@ input.search-submit:hover {
 }
 .td-smart-list-dropdown-wrap {
   text-align: center;
-  border: 1px solid #ededed;
-  margin-bottom: 26px;
+  border: 1px solid #ebebeb;
+  margin-bottom: 29px;
   clear: both;
 }
 .td-smart-list-dropdown-wrap .td-smart-list-dropdown {
   height: 30px;
-  padding: 0 35px 0 10px;
-  margin: 10px 0;
+  padding: 0 45px 0 20px;
+  margin: 6px 0;
   overflow: hidden;
   background-color: #fff;
   border: none;
@@ -10823,7 +10828,8 @@ input.search-submit:hover {
   -o-appearance: none;
   appearance: none;
   outline: none;
-  font-family: 'wpion', sans-serif;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 15px;
   max-width: 40%;
   text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
@@ -10851,10 +10857,18 @@ input.search-submit:hover {
   pointer-events: none;
 }
 .td-smart-list-dropdown-wrap .td-smart-list-button {
-  padding: 2px 18px;
+  padding: 0 19px;
   margin: 0;
   background-color: transparent !important;
+  font-size: 15px;
+  line-height: 24px;
   color: inherit;
+  -webkit-box-shadow: 0px 0px 0px 0px #a6a6a6;
+  -moz-box-shadow: 0px 0px 0px 0px #a6a6a6;
+  box-shadow: 0px 0px 0px 0px #a6a6a6;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
 }
 .td-smart-list-dropdown-wrap .td-smart-list-button i {
   display: none;
@@ -10868,11 +10882,9 @@ input.search-submit:hover {
 }
 .td-smart-list-dropdown-wrap .td-smart-next {
   border-left: 1px solid #ededed;
-  margin-left: 3px;
 }
 .td-smart-list-dropdown-wrap .td-smart-back {
   border-right: 1px solid #ededed;
-  margin-right: 3px;
 }
 /*  ----------------------------------------------------------------------------
     Smart list 1
@@ -10887,7 +10899,7 @@ input.search-submit:hover {
   }
 }
 .td_smart_list_1 .td-item {
-  margin-bottom: 50px;
+  margin-bottom: 54px;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -10899,7 +10911,6 @@ input.search-submit:hover {
   margin-bottom: 0;
 }
 .td_smart_list_1 .td-item h2 {
-  line-height: 30px;
   margin-bottom: 0;
   /* responsive portrait phone */
 }
@@ -10913,7 +10924,7 @@ input.search-submit:hover {
   width: 100%;
   min-height: 40px;
   position: relative;
-  padding: 0 0 21px 0;
+  padding: 0 0 30px 0;
   font-family: 'Work Sans', sans-serif;
   text-align: left;
   /* responsive portrait phone */
@@ -10929,12 +10940,18 @@ input.search-submit:hover {
   left: 0;
   background-color: #000;
   margin-right: 20px;
-  font-size: 23px;
+  font-size: 21px;
   line-height: 40px;
   font-weight: 500;
   color: #fff;
   min-width: 40px;
   text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0px 2px 0px 0px #a6a6a6;
+  -moz-box-shadow: 0px 2px 0px 0px #a6a6a6;
+  box-shadow: 0px 2px 0px 0px #a6a6a6;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -10946,9 +10963,10 @@ input.search-submit:hover {
 }
 .td_smart_list_1 .td-sml-current-item-title {
   display: inline-block;
-  padding: 4px 0 0 61px;
-  font-size: 23px;
-  font-weight: 500;
+  padding: 5px 0 0 59px;
+  font-size: 21px;
+  line-height: 26px;
+  font-weight: 600;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -10963,7 +10981,7 @@ input.search-submit:hover {
   margin-top: 0;
 }
 .td_smart_list_1 .td-slide-smart-list-figure {
-  margin: 0 0 24px 0;
+  margin: 0 0 29px 0;
 }
 .td_smart_list_1 .td-slide-smart-list-figure img {
   display: block;
