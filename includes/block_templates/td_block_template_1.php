@@ -53,7 +53,8 @@ class td_block_template_1 {
             .$unique_block_class .td-authors-url a:hover,
             .$unique_block_class .td_authors_wrap:hover .td-authors-name a,
             .$unique_block_class .td_authors_wrap.td-active .td-authors-name a,
-            .$unique_block_class .td-authors-url a:hover {
+            .$unique_block_class .td-authors-url a:hover,
+            .$unique_block_class .td-instagram-user a {
                 color: @header_text_color;
             }
 
@@ -95,7 +96,8 @@ class td_block_template_1 {
             .$unique_block_class .td-authors-url a:hover,
             .$unique_block_class .td_authors_wrap:hover .td-authors-name a,
             .$unique_block_class .td_authors_wrap.td-active .td-authors-name a,
-            .$unique_block_class .td-authors-url a:hover {
+            .$unique_block_class .td-authors-url a:hover,
+            .$unique_block_class .td-instagram-user a {
                 color: @header_color;
             }
 
