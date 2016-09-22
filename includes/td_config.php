@@ -3,7 +3,7 @@
  * This is the config file for the theme.
  */
 
-define("TD_THEME_NAME", "IonMag");
+define("TD_THEME_NAME", "ionMag");
 define("TD_THEME_VERSION", "__td_deploy_version__");
 define("TD_THEME_DEMO_URL", "http://demo.wpion.com/" . strtolower(TD_THEME_NAME));
 define("TD_THEME_DEMO_DOC_URL", 'http://forum.wpion.com/installing-demo/');  //the url to the demo documentation
