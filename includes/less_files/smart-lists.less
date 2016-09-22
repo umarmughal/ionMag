@@ -9,21 +9,22 @@
 }
 
 .td-smart-list-button {
+  display: inline-block;
+  background-color: #000;
+  margin: 0;
+  padding: 0 19px;
   font-family: @font2;
+  font-size: 13px;
   line-height: 40px;
-  background-color: #222;
   color: #fff;
-  padding: 11px 24px;
-  font-size: 16px;
-  font-style: normal;
-  text-align: center;
+  .border-radius(3px);
+  .box-shadow(0px 2px 0px 0px rgba(166,166,166,1));
   .transition(background-color 0.2s ease 0s);
   cursor: pointer;
-  margin: 0 10px;
 
   &:hover {
-    text-decoration: none !important;
     background-color: @td_theme_color;
+    text-decoration: none !important;
   }
 
   .td-icon-left {
@@ -58,14 +59,14 @@
 // dropdown pagination
 .td-smart-list-dropdown-wrap {
   text-align: center;
-  border: 1px solid #ededed;
-  margin-bottom: 26px;
+  border: 1px solid #ebebeb;
+  margin-bottom: 29px;
   clear: both;
 
   .td-smart-list-dropdown {
     height: 30px;
-    padding: 0 35px 0 10px;
-    margin: 10px 0;
+    padding: 0 45px 0 20px;
+    margin: 6px 0;
     overflow: hidden;
     background-color: #fff;
     border: none;
@@ -75,7 +76,8 @@
     -o-appearance:none;
     appearance:none;
     outline: none;
-    font-family: @font3;
+    font-family: @font2;
+    font-size: 15px;
     max-width: 40%;
     text-overflow: ellipsis;
     -o-text-overflow: ellipsis;
@@ -107,10 +109,14 @@
   }
 
   .td-smart-list-button {
-    padding: 2px 18px;
+    padding: 0 19px;
     margin: 0;
     background-color: transparent !important;
+    font-size: 15px;
+    line-height: 24px;
     color: inherit;
+    .box-shadow(0px 0px 0px 0px rgba(166,166,166,1));
+    .border-radius(0);
 
     i {
       display: none;
@@ -130,12 +136,10 @@
 
   .td-smart-next {
     border-left: 1px solid #ededed;
-    margin-left: 3px;
   }
 
   .td-smart-back {
     border-right: 1px solid #ededed;
-    margin-right: 3px;
   }
 }
 
@@ -151,7 +155,7 @@
   }
 
   .td-item {
-    margin-bottom: 50px;
+    margin-bottom: 54px;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
@@ -163,7 +167,6 @@
     }
 
     h2 {
-      line-height: 30px;
       margin-bottom: 0;
 
       /* responsive portrait phone */
@@ -178,7 +181,7 @@
     width: 100%;
     min-height: 40px;
     position: relative;
-    padding: 0 0 21px 0;
+    padding: 0 0 30px 0;
     font-family: @font2;
     text-align: left;
 
@@ -194,12 +197,14 @@
     left: 0;
     background-color: #000;
     margin-right: 20px;
-    font-size: 23px;
+    font-size: 21px;
     line-height: 40px;
     font-weight: 500;
     color: #fff;
     min-width: 40px;
     text-align: center;
+    .border-radius(3px);
+    .box-shadow(0px 2px 0px 0px rgba(166,166,166,1));
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
@@ -211,9 +216,10 @@
 
   .td-sml-current-item-title {
     display: inline-block;
-    padding: 4px 0 0 61px;
-    font-size: 23px;
-    font-weight: 500;
+    padding: 5px 0 0 59px;
+    font-size: 21px;
+    line-height: 26px;
+    font-weight: 600;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
@@ -229,7 +235,7 @@
   }
 
   .td-slide-smart-list-figure {
-    margin: 0 0 24px 0;
+    margin: 0 0 29px 0;
 
     img {
       display: block;
