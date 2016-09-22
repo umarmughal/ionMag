@@ -11286,6 +11286,9 @@ input.search-submit:hover {
 .td-footer-outer-wrapper cite {
   color: #fff;
 }
+.td-footer-outer-wrapper .td-admin-edit:hover {
+  color: #fff;
+}
 .td-footer-wrapper {
   padding: 22px 0;
 }
