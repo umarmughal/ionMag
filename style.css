@@ -10311,6 +10311,9 @@ input.search-submit:hover {
 .widget_search .search-field {
   padding: 0;
 }
+.widget_search input[type=submit]:hover {
+  background-color: transparent;
+}
 .widget_calendar {
   margin-bottom: 36px;
 }

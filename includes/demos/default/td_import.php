@@ -332,7 +332,7 @@ $td_homepage_blog_id = td_demo_content::add_page(array(
 $td_homepage_fashion_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Fashion',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_fashion.txt',
-    'template' => 'page.php',   // the page template full file name with .php
+    'template' => 'default',   // the page template full file name with .php or 'default'
     'td_layout' => '',
     'homepage' => false
 ));
@@ -341,7 +341,7 @@ $td_homepage_fashion_id = td_demo_content::add_page(array(
 $td_homepage_infinite_scroll_id = td_demo_content::add_page(array(
     'title' => 'Homepage - Infinite Scroll',
     'file' => td_global::$get_template_directory . '/includes/demos/default/pages/homepage_infinite_scroll.txt',
-    'template' => 'page.php',   // the page template full file name with .php
+    'template' => 'default',   // the page template full file name with .php or 'default'
     'td_layout' => '',
     'homepage' => false
 ));
