@@ -57,4 +57,27 @@
       }
     }
   }
+
+  &.td-module-no-sidebar {
+    .td-module-thumb {
+      max-height: 300px;
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        max-height: 220px;
+      }
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        max-height: none;
+      }
+    }
+
+    .td-module-title {
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        font-size: 19px;
+        line-height: 23px;
+      }
+    }
+  }
 }

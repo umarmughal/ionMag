@@ -408,6 +408,28 @@
     margin-bottom: -3px;
   }
 
+  &.td-column-3 {
+    .td-module-thumb {
+      max-height: 300px;
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        max-height: 220px;
+      }
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        max-height: none;
+      }
+    }
+    .td-module-title {
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        font-size: 19px;
+        line-height: 23px;
+      }
+    }
+  }
+
   // load more - next/back alignment
   .td-next-prev-wrap,
   .td-load-more-wrap {
@@ -573,6 +595,28 @@
     .td-load-more-wrap {
       margin-top: 40px;
     }
+    .td_module_4 {
+      .td-module-thumb {
+        max-height: 300px;
+
+        /* responsive portrait tablet */
+        @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+          max-height: 220px;
+        }
+        /* responsive portrait phone */
+        @media (max-width: @responsive_p_phone_max) {
+          max-height: none;
+        }
+      }
+
+      .td-module-title {
+        /* responsive portrait tablet */
+        @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+          font-size: 19px;
+          line-height: 23px;
+        }
+      }
+    }
   }
 
   // 1 column
@@ -682,6 +726,27 @@
       /* responsive portrait tablet */
       @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
         padding-bottom: 27px;
+      }
+
+      .td-module-thumb {
+        max-height: 300px;
+
+        /* responsive portrait tablet */
+        @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+          max-height: 220px;
+        }
+        /* responsive portrait phone */
+        @media (max-width: @responsive_p_phone_max) {
+          max-height: none;
+        }
+      }
+
+      .td-module-title {
+        /* responsive portrait tablet */
+        @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+          font-size: 19px;
+          line-height: 23px;
+        }
       }
     }
     .td_module_5 {
