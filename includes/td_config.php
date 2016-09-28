@@ -1894,6 +1894,165 @@ class td_config {
 
 
 
+	    /**
+	     * the td_api_ad
+	     */
+	    td_api_ad::add('header',
+		    array(
+			    'text' => 'Header ad',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_code' => array(
+					    'title' => 'YOUR HEADER AD',
+					    'desc' => 'Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a>',
+				    ),
+				    'ad_field_title' => false,
+				    'ad_field_advantage_usage' => 'If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a>',
+				    'ad_field_phone' => array(
+					    'desc' => '<p>Google adsense requiers that you do not use big header ads on mobiles!</p>',
+				    ),
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    )
+		    )
+	    );
+
+	    td_api_ad::add('sidebar',
+		    array(
+			    'text' => 'Sidebar ad',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_notice' => 'To show the ads on the sidebar, please drag the "[taDiv] Ad box" widget to the desired sidebar.',
+				    'ad_field_code' => array(
+					    'title' => 'YOUR SIDEBAR AD',
+					    'desc' => 'Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)'
+				    ),
+				    'ad_field_title' => false,
+				    'ad_field_advantage_usage' => 'If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a>',
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    )
+		    )
+	    );
+
+	    td_api_ad::add('content_top',
+		    array(
+			    'text' => 'Article top ad',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_code' => array(
+					    'title' => 'YOUR ARTICLE TOP AD',
+					    'desc' => 'Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)'
+				    ),
+				    'ad_field_advantage_usage' => 'If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a>',
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    )
+		    )
+	    );
+
+	    td_api_ad::add('content_inline',
+		    array(
+			    'text' => 'Article inline ad',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_code' => array(
+					    'title' => 'YOUR ARTICLE INLINE AD',
+					    'desc' => 'Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)'
+				    ),
+				    'ad_field_advantage_usage' => 'If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a>',
+			    )
+		    )
+	    );
+
+	    td_api_ad::add('content_bottom',
+		    array(
+			    'text' => 'Article bottom ad',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_code' => array(
+					    'title' => 'YOUR ARTICLE BOTTOM AD',
+					    'desc' => 'Paste your ad code here. Google adsense will be made responsive automatically. <br><br> To add non adsense responsive ads <br> <a target="_blank" href="http://forum.wpion.com/using-other-ads-non-adsense-ads/">click here</a> (last paragraph)'
+				    ),
+				    'ad_field_advantage_usage' => 'If you leave the AdSense size boxes on Auto, the theme will automatically resize the <strong>google ads</strong>. For more info follow this <a href="http://forum.wpion.com/header-ads/" target="_blank">link</a>',
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    )
+		    )
+	    );
+
+	    td_api_ad::add('footer_top',
+		    array(
+			    'text' => 'Footer top',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    ),
+		    )
+	    );
+
+	    td_api_ad::add('custom_ad_1',
+		    array(
+			    'text' => 'Custom ad 1',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_title' => false,
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    ),
+		    )
+	    );
+
+	    td_api_ad::add('custom_ad_2',
+		    array(
+			    'text' => 'Custom ad 2',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_title' => false,
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    ),
+		    )
+	    );
+
+	    td_api_ad::add('custom_ad_3',
+		    array(
+			    'text' => 'Custom ad 3',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_title' => false,
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    ),
+		    )
+	    );
+
+	    td_api_ad::add('custom_ad_4',
+		    array(
+			    'text' => 'Custom ad 4',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_title' => false,
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    ),
+		    )
+	    );
+
+	    td_api_ad::add('custom_ad_5',
+		    array(
+			    'text' => 'Custom ad 5',
+			    'ad_type' => 'ajax',
+			    'fields' => array(
+				    'ad_field_title' => false,
+				    'ad_field_position_content' => false,
+				    'ad_field_after_paragraph' => false,
+			    ),
+		    )
+	    );
+
+
         /**
          * set the custom css fields for the panel @see td_panel_custom_css.php
          * and also for the wp_footer hook @see td_bottom_code()
