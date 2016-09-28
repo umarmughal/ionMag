@@ -8470,22 +8470,38 @@ body .dropcap3 {
   padding-bottom: 17px;
   font-size: 25px;
   line-height: 24px;
-  text-align: center;
   text-transform: uppercase;
 }
 .td-category-header .entry-title:after {
   display: block;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
   width: 80px;
 }
+.td-category-header .td-category-siblings {
+  margin: -6px 0 30px 0;
+}
+.td-category-header .td-pulldown-filter-list {
+  margin: 0;
+}
+.td-category-header .entry-category {
+  list-style: none;
+  display: inline-block;
+  margin: 0 5px 0 0;
+}
 .td-category-header .entry-category a {
-  font-size: 11px;
-  padding: 4px 8px 5px 8px;
+  display: inline-block;
+  font-family: 'Work Sans', sans-serif;
+  padding: 3px 6px;
+  background-color: rgba(0, 0, 0, 0.8);
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 1;
+  color: #fff;
+}
+.td-category-header .entry-category a:hover {
+  background-color: #42bdcd;
 }
 .td-category-crumb-filter {
-  margin-bottom: 18px;
+  margin-bottom: 6px;
   padding-top: 22px;
   *zoom: 1;
 }
@@ -8523,15 +8539,7 @@ body .dropcap3 {
   display: none;
 }
 .td-category-description {
-  width: 80%;
-  margin: 22px auto 33px;
-  text-align: center;
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  .td-category-description {
-    width: 100%;
-  }
+  display: table;
 }
 .td-category-description p {
   font-style: italic;
@@ -8542,6 +8550,31 @@ body .dropcap3 {
 }
 .td-category-grid .td_block_wrap {
   margin-bottom: 40px;
+}
+/*  ----------------------------------------------------------------------------
+    Category template 1
+*/
+.td_category_template_1 .td-category-header .entry-title {
+  text-align: center;
+}
+.td_category_template_1 .td-category-header .entry-title:after {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+.td_category_template_1 .td-category-crumb-filter {
+  margin-bottom: 12px;
+}
+.td_category_template_1 .td-category-description {
+  width: 80%;
+  margin: 22px auto 33px;
+  text-align: center;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_category_template_1 .td-category-description {
+    width: 100%;
+  }
 }
 /**
 * More stories box
