@@ -4801,6 +4801,14 @@ body .dropcap3 {
     line-height: 16px;
   }
 }
+.td_module_5 .td-video-play-ico img {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_module_5 .td-video-play-ico img {
+    width: 28px;
+  }
+}
 .td-module-number5 .td_module_wrap:last-child:before {
   display: none;
 }
