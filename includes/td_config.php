@@ -510,7 +510,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module 3', 'Block 3, 5, 7, 8'
+                    'Module 3', 'Block 3 &middot; 5 &middot; 7 &middot; 8'
                 )
             )
         );
@@ -549,7 +549,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Mega menu', 'Module 5', 'Block 5, 8'
+                    'Mega menu', 'Module 5', 'Block 5 &middot; 8'
                 )
             )
         );
@@ -562,7 +562,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module 1, 2', 'Block 1, 2, 4, 7, 8'
+                    'Module 1 &middot; 2', 'Block 1 &middot; 2 &middot; 4 &middot; 7 &middot; 8'
                 )
             )
         );
@@ -575,7 +575,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module MX 1, 4, 5', 'Big grid 1, 2, 3'
+                    'Big grid 1 &middot; 2 &middot; 3'
                 )
             )
         );
@@ -588,7 +588,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Post template default', 'Smart list 1', 'Module 4', 'Block 4, 7, 8'
+                    'Post template default', 'Smart list 1', 'Module 4', 'Block 4 &middot; 7 &middot; 8'
                 )
             )
         );
@@ -601,7 +601,7 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module MX 3', 'Big grid 1'
+                    'Big grid 1'
                 )
             )
         );
