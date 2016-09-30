@@ -1,16 +1,10 @@
 /*
   Font for MX modules
 */
+
 // Font size 15
 .td-mx-15 {
-  .td-post-category {
-    margin-bottom: 10px;
-
-    /* responsive tablet + phone */
-    @media (max-width: @responsive_p_tablet_max) {
-      margin-bottom: 8px;
-    }
-  }
+  // font-size
   .entry-title {
     font-size: 15px;
     line-height: 20px;
@@ -20,26 +14,35 @@
       line-height: 18px !important;
     }
   }
-  &.td-has-date {
-    .entry-title {
-      /* desktop + tablet */
-      @media (min-width: @responsive_p_tablet_max) {
-        margin-bottom: 11px;
-      }
+
+  // category
+  .td-post-category {
+    margin-bottom: 10px;
+  }
+
+  // date
+  .td-module-meta-info {
+    margin-top: 6px;
+  }
+
+  // meta container
+  .td-meta-info-container {
+    padding: 0 10px 18px;
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      padding-bottom: 11px;
+    }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding-bottom: 11px;
     }
   }
 }
 
+
 // Font size 19
 .td-mx-19 {
-  .td-post-category {
-    margin-bottom: 15px;
-
-    /* responsive tablet + phone */
-    @media (max-width: @responsive_p_tablet_max) {
-      margin-bottom: 13px;
-    }
-  }
+  // font-size
   .entry-title {
     font-size: 19px;
     line-height: 24px;
@@ -50,26 +53,12 @@
       line-height: 22px !important;
     }
   }
-  &.td-has-date {
-    .entry-title {
-      /* desktop + tablet */
-      @media (min-width: @responsive_p_tablet_max) {
-        margin-bottom: 12px;
-      }
-    }
-  }
 }
+
 
 // Font size 23
 .td-mx-23 {
-  .td-post-category {
-    margin-bottom: 14px;
-
-    /* responsive tablet + phone */
-    @media (max-width: @responsive_p_tablet_max) {
-      margin-bottom: 12px;
-    }
-  }
+  // font-size
   .entry-title {
     font-size: 23px;
     line-height: 30px;
@@ -79,12 +68,29 @@
       line-height: 24px !important;
     }
   }
-  &.td-has-date {
-    .entry-title {
-      /* desktop + tablet */
-      @media (min-width: @responsive_p_tablet_max) {
-        margin-bottom: 8px;
-      }
+
+  // category
+  .td-post-category {
+    margin-bottom: 14px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 10px;
+    }
+  }
+
+  // date
+  .td-module-meta-info {
+    margin-top: 8px;
+  }
+
+  // meta container
+  .td-meta-info-container {
+    padding: 0 8% 20px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding: 0 15px 14px;
     }
   }
 }

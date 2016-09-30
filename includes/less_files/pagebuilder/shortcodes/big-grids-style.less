@@ -15,15 +15,36 @@
   /*
       Big grids custom css
   */
-  // big grid 2
-  &.td_block_big_grid_2 {
+  // Font size 15
+  .td-mx-15 {
+    // meta container
     .td-meta-info-container {
-      padding-left: 0;
+      padding: 0 17px 16px;
 
-      /* responsive portrait phone */
-      @media (max-width: @responsive_p_phone_max) {
-        padding-left: 10px;
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        padding: 0 13px 9px;
       }
     }
   }
+
+  // Font size 19
+  .td-mx-19 {
+
+  }
+
+  // Font size 23
+  .td-mx-23 {
+    // meta container
+    .td-meta-info-container {
+      padding: 0 25px 23px;
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        padding: 0 13px 9px;
+      }
+    }
+  }
+
+  // Individual Big Grids
 }
