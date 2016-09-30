@@ -8420,6 +8420,7 @@ body .dropcap3 {
   list-style: none;
   display: inline-block;
   margin: 0 5px 0 0;
+  line-height: 0;
 }
 .td-category-header .entry-category a {
   display: inline-block;
