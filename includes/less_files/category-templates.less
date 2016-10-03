@@ -58,6 +58,11 @@
   padding-top: 22px;
   .clearfix();
 
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    padding-top: 12px;
+  }
+
   .entry-crumbs {
     padding-top: 3px;
     float: left;
@@ -94,6 +99,11 @@
   .td_block_wrap {
     margin-bottom: 40px;
   }
+
+  .td_block_big_grid_2,
+  .td_block_big_grid_3 {
+    margin-bottom: 50px;
+  }
 }
 
 
@@ -115,6 +125,10 @@
 
   .td-category-crumb-filter {
     margin-bottom: 12px;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 16px;
+    }
   }
 
   .td-category-description {
@@ -125,6 +139,7 @@
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100%;
+      margin-bottom: 22px;
     }
   }
 }
