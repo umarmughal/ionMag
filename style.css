@@ -8503,6 +8503,7 @@ body .dropcap3 {
   list-style: none;
   display: inline-block;
   margin: 0 5px 0 0;
+  line-height: 0;
 }
 .td-category-header .entry-category a {
   display: inline-block;
@@ -11368,6 +11369,16 @@ input.search-submit:hover {
 }
 .td-footer-outer-wrapper .td-admin-edit:hover {
   color: #fff;
+}
+.td-footer-outer-wrapper .search-field {
+  background-color: transparent;
+  color: #fff;
+}
+.td-footer-outer-wrapper input.search-submit {
+  color: #fff;
+}
+.td-footer-outer-wrapper input.search-submit:hover {
+  color: #42bdcd;
 }
 .td-footer-wrapper {
   padding: 22px 0;
