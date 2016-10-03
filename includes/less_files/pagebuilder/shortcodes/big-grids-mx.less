@@ -47,10 +47,39 @@
     font-size: 19px;
     line-height: 24px;
 
-    /* responsive portrait tablet + phone */
-    @media (max-width: @responsive_p_tablet_max) {
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
       font-size: 17px !important;
       line-height: 22px !important;
+    }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      font-size: 19px !important;
+      line-height: 24px !important;
+    }
+  }
+
+  // category
+  .td-post-category {
+    margin-bottom: 10px;
+  }
+
+  // date
+  .td-module-meta-info {
+    margin-top: 8px;
+  }
+
+  // meta container
+  .td-meta-info-container {
+    padding: 0 10px 18px;
+
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      padding-bottom: 15px;
+    }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding: 0 15px 14px;
     }
   }
 }
