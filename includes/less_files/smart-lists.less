@@ -143,12 +143,29 @@
   }
 }
 
+.td-sml-caption {
+  font-family: @font1;
+  text-align: left;
+  margin: 6px 0 26px 0;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 17px;
+  color: #444;
+  //font-family: @font1;
+  //font-style: italic;
+  //font-size: 14px;
+  //line-height: 17px;
+  //margin-top: 5px;
+  //margin-bottom: 21px;
+}
+
 
 /*  ----------------------------------------------------------------------------
     Smart list 1
 */
 .td_smart_list_1 {
-  margin-top: 38px;
+  margin-top: 30px;
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
     margin-top: 20px;
@@ -165,15 +182,16 @@
     &:last-child {
       margin-bottom: 0;
     }
+  }
 
-    h2 {
-      margin-bottom: 0;
+  .td-title-smart {
+    line-height: 40px;
+    margin-bottom: 0;
 
-      /* responsive portrait phone */
-      @media (max-width: @responsive_p_phone_max) {
-        text-align: center;
-        margin-top: 0;
-      }
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      text-align: center;
+      margin-top: 0;
     }
   }
 
@@ -181,7 +199,7 @@
     width: 100%;
     min-height: 40px;
     position: relative;
-    padding: 0 0 30px 0;
+    padding: 0 0 22px 0;
     font-family: @font2;
     text-align: left;
 
@@ -196,7 +214,7 @@
     top: 0;
     left: 0;
     background-color: #000;
-    margin-right: 20px;
+    padding: 0 10px;
     font-size: 21px;
     line-height: 40px;
     font-weight: 500;
@@ -210,16 +228,16 @@
     @media (max-width: @responsive_p_phone_max) {
       position: relative;
       display: inline-block;
-      margin: 0;
     }
   }
 
   .td-sml-current-item-title {
     display: inline-block;
-    padding: 5px 0 0 59px;
+    padding: 7px 0 0 59px;
     font-size: 21px;
     line-height: 26px;
     font-weight: 600;
+    vertical-align: top;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
