@@ -4,7 +4,7 @@
 
 get_header();
 
-
+td_global::$current_template = 'page-title-sidebar';
 //set the template id, used to get the template specific settings
 $template_id = 'page';
 
@@ -33,7 +33,6 @@ if($loop_sidebar_position == 'sidebar_left') {
  * detect the page builder
  */
 $td_use_page_builder = td_util::is_pagebuilder_content($post);
-
 
 
 

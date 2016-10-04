@@ -5,7 +5,7 @@ class td_block_2 extends td_block {
 
 
 	    if (empty($td_column_number)) {
-            $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
+            $td_column_number = td_global::vc_get_column_number(); // get the column width of the block from the page builder API
         }
 
         $buffy = ''; //output buffer
@@ -39,7 +39,7 @@ class td_block_2 extends td_block {
 
         $td_block_layout = new td_block_layout();
         if (empty($td_column_number)) {
-            $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
+            $td_column_number = td_global::vc_get_column_number(); // get the column width of the block from the page builder API
         }
 
         $td_post_count = 0; // the number of posts rendered
