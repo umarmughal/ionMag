@@ -7,7 +7,9 @@
   Style 2 - Left
 */
 .td-grid-style-2 {
-  // general
+  /*
+      General
+  */
   .td-big-grid-post {
     text-align: left;
   }
@@ -15,14 +17,77 @@
   /*
       Big grids custom css
   */
-  // big grid 2
-  &.td_block_big_grid_2 {
+  // Font size 15
+  .td-mx-15 {
+    // meta container
     .td-meta-info-container {
-      padding-left: 0;
+      padding: 0 17px 16px;
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        padding: 0 13px 9px;
+      }
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        padding: 0 13px 11px;
+      }
+    }
+  }
+
+  // Font size 19
+  .td-mx-19 {
+
+  }
+
+  // Font size 23
+  .td-mx-23 {
+    // meta container
+    .td-meta-info-container {
+      padding: 0 25px 23px;
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        padding: 0 15px 14px;
+      }
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        padding: 0 13px 14px;
+      }
+    }
+  }
+
+
+  /*
+      Individual Big Grids
+  */
+  // Big grid 2
+  &.td_block_big_grid_2 {
+    // meta container
+    .td-meta-info-container {
+      padding: 0 10px 0 0;
 
       /* responsive portrait phone */
       @media (max-width: @responsive_p_phone_max) {
-        padding-left: 10px;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  // Big grid 3
+  &.td_block_big_grid_3 {
+    .td-meta-align {
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        padding: 15px 15px 0;
+      }
+    }
+
+    .td-big-grid-post-1 {
+      .td-meta-align {
+        /* responsive tablet + desktop */
+        @media (min-width: @responsive_p_tablet_min) {
+          padding-left: 0;
+        }
       }
     }
   }

@@ -11,7 +11,6 @@
   .td-module-image {
     margin-bottom: 0;
     height: 100%;
-    //overflow: hidden; // used for css image
   }
 }
 
@@ -220,13 +219,7 @@
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100% !important;
-      height: 300px;
       float: none !important;
-    }
-
-    /* responsive smaller portrait phone */
-    @media (max-width: 320px) {
-      height: 200px;
     }
 
     .td-post-category {
@@ -309,29 +302,6 @@
       border-right: none;
       border-bottom: 4px solid transparent;
     }
-
-    .td-meta-info-container {
-      padding: 20px 5%;
-      /* responsive portrait tablet */
-      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-        padding: 20px 15px;
-      }
-      /* responsive portrait phone */
-      @media (max-width: @responsive_p_phone_max) {
-        padding: 10px;
-      }
-    }
-    .td-post-category {
-      margin-bottom: 14px;
-    }
-    .entry-title {
-      margin-bottom: 8px;
-
-      /* responsive portrait tablet */
-      @media (max-width: @responsive_p_tablet_max) {
-        margin-bottom: 0;
-      }
-    }
   }
 
   // small thumb
@@ -355,23 +325,7 @@
       height: 104px;
     }
 
-    .td-meta-info-container {
-      padding: 18px 5%;
-      /* responsive portrait tablet */
-      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-        padding: 5px 15px;
-      }
-      /* responsive portrait phone */
-      @media (max-width: @responsive_p_phone_max) {
-        padding: 5px 10px;
-      }
-    }
-    .td-post-category {
-      margin-bottom: 10px;
-    }
     .entry-title {
-      margin-bottom: 6px;
-
       /* responsive portrait phone */
       @media (max-width: @responsive_p_phone_max) {
         font-size: 12px !important;
@@ -433,12 +387,14 @@
     width: 33.33333333%;
     padding: 0 5px;
     float: left;
+    overflow: visible;
+
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100%;
       padding: 0;
       float: none;
-      margin-bottom: 30px;
+      margin-bottom: 35px;
     }
   }
   .entry-review-stars {
@@ -447,14 +403,23 @@
   .td-meta-info-container {
     pointer-events: auto;
     position: relative;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 0 10px;
+    margin-bottom: -2px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 0;
+    }
   }
   .td-meta-align {
     pointer-events: auto;
   }
   .td-module-image {
     margin-bottom: 15px;
+    /* responsive portrait tablet */
+    @media (max-width: @responsive_p_tablet_max) {
+      margin-bottom: 11px;
+    }
   }
   .td-module-thumb {
     height: 235px;
@@ -486,6 +451,8 @@
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       margin-bottom: 6px;
+      font-size: 15px !important;
+      line-height: 20px !important;
     }
   }
 
@@ -550,17 +517,19 @@
   .td-meta-info-container {
     position: relative;
     top: 100%;
-    background-color: #fff;
     width: 92%;
     margin-top: -36px;
     pointer-events: auto;
+    margin-bottom: -2px;
+    padding: 0;
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
-      margin-left: auto;
-      margin-right: auto;
+      width: 100%;
+      margin-bottom: 0;
     }
   }
+
   .td-module-thumb {
     height: 360px;
     /* responsive portrait tablet */
@@ -569,7 +538,7 @@
     }
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
-      height: 210px;
+      height: auto;
     }
 
     // hide black overlay
@@ -584,19 +553,19 @@
 
   .td-meta-align {
     pointer-events: auto;
-  }
+    background-color: #fff;
+    padding: 18px 20px 0;
 
-  .td-big-grid-meta {
-    padding: 18px 20px 10px;
-
-    /* responsive portrait tablet */
-    @media (max-width: @responsive_p_tablet_max) {
-      padding-top: 11px;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding: 15px 20px 0;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 
   .td-module-meta-info {
-    padding: 0 20px;
+    margin-top: 10px;
   }
 
   .td-post-category-wrap {

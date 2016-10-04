@@ -31,7 +31,7 @@ class td_smart_list_1 extends td_smart_list {
 
         //creating each slide
         $buffy .= '<div class="td-item">';
-        $buffy .= '<div class="td-number-and-title"><h2><span class="td-sml-current-item-nr">' . $current_item_number. '</span><span class="td-sml-current-item-title">' . $smart_list_1_title . '</span></h2></div>';
+        $buffy .= '<div class="td-number-and-title"><h2 class="td-title-smart"><span class="td-sml-current-item-nr">' . $current_item_number. '</span><span class="td-sml-current-item-title">' . $smart_list_1_title . '</span></h2></div>';
 
         //get image info
         $first_img_all_info = td_util::attachment_get_full_info($item_array['first_img_id']);

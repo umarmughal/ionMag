@@ -231,7 +231,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_1.php',
                 'text' => 'Module 1',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_1.png',
-                'used_on_blocks' => array('td_block_1', 'td_block_4', 'td_block_7', 'td_block_8'),
+                'used_on_blocks' => array('Block 1', 'Block 4', 'Block 7', 'Block 8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -248,7 +248,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_2.php',
                 'text' => 'Module 2',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_2.png',
-                'used_on_blocks' => array('td_block_2', 'td_block_7'),
+                'used_on_blocks' => array('Block 2', 'Block 7'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
                 'enabled_on_more_articles_box' => true,
@@ -265,7 +265,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_3.php',
                 'text' => 'Module 3',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_3.png',
-                'used_on_blocks' => array('td_block_3', 'td_block_5', 'td_block_7', 'td_block_8'),
+                'used_on_blocks' => array('Block 3', 'Block 5', 'Block 7', 'Block 8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -282,7 +282,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_4.php',
                 'text' => 'Module 4',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_4.png',
-                'used_on_blocks' => array('td_block_4', 'td_block_7', 'td_block_8'),
+                'used_on_blocks' => array('Block 4', 'Block 7', 'Block 8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '0',
                 'enabled_on_more_articles_box' => false,
@@ -299,7 +299,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_5.php',
                 'text' => 'Module 5',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_5.png',
-                'used_on_blocks' => array('td_block_5', 'td_block_8'),
+                'used_on_blocks' => array('Block 5', 'Block 8'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '25',
                 'enabled_on_more_articles_box' => false,
@@ -316,7 +316,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_6.php',
                 'text' => 'Module 6',
                 'img' => td_global::$get_template_directory_uri . '/images/panel/modules/td_module_6.png',
-                'used_on_blocks' => array('td_block_6'),
+                'used_on_blocks' => array('Block 6'),
                 'excerpt_title' => 12,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => true,
@@ -333,7 +333,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx_empty.php',
                 'text' => 'Module MX Empty',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_1', 'td_block_big_grid_2', 'td_block_big_grid_3'),
+                'used_on_blocks' => array('Big Grid 1', 'Big Grid 2', 'Big Grid 3'),
                 'excerpt_title' => '',
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -488,70 +488,6 @@ class td_config {
          * Thumb id => array parameters. Wp booster only cuts if the option is set from theme panel
          */
 
-        td_api_thumb::add('td_300x220',
-            array(
-                'name' => 'td_300x220',
-                'width' => 300,
-                'height' => 220,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Module 1', 'Module 2'
-                )
-            )
-        );
-
-        td_api_thumb::add('td_100x70',
-            array(
-                'name' => 'td_100x70',
-                'width' => 100,
-                'height' => 70,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Module 3'
-                )
-            )
-        );
-
-        td_api_thumb::add('td_640x400',
-            array(
-                'name' => 'td_640x400',
-                'width' => 640,
-                'height' => 400,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Module 4', 'Module MX3'
-                )
-            )
-        );
-
-        td_api_thumb::add('td_640x0',
-            array(
-                'name' => 'td_640x0',
-                'width' => 640,
-                'height' => 0,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Post template default', 'Smart list 1'
-                )
-            )
-        );
-
-        td_api_thumb::add('td_980x0',
-            array(
-                'name' => 'td_980x0',
-                'width' => 980,
-                'height' => 0,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Post template default', 'Smart list 1'
-                )
-            )
-        );
 
         td_api_thumb::add('td_80x60',
             array(
@@ -566,28 +502,15 @@ class td_config {
             )
         );
 
-        td_api_thumb::add('td_260x195',
+        td_api_thumb::add('td_100x70',
             array(
-                'name' => 'td_260x195',
-                'width' => 260,
-                'height' => 195,
+                'name' => 'td_100x70',
+                'width' => 100,
+                'height' => 70,
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module 5', 'Mega menu'
-                )
-            )
-        );
-
-        td_api_thumb::add('td_245x184',
-            array(
-                'name' => 'td_245x184',
-                'width' => 245,
-                'height' => 184,
-                'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'normal',
-                'used_on' => array(
-                    'Mega menu'
+                    'Module 3', 'Block 3 &middot; 5 &middot; 7 &middot; 8'
                 )
             )
         );
@@ -605,6 +528,45 @@ class td_config {
             )
         );
 
+        td_api_thumb::add('td_245x184',
+            array(
+                'name' => 'td_245x184',
+                'width' => 245,
+                'height' => 184,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'small',
+                'used_on' => array(
+                    'Mega menu'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_260x195',
+            array(
+                'name' => 'td_260x195',
+                'width' => 260,
+                'height' => 195,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Mega menu', 'Module 5', 'Block 5 &middot; 8'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_300x220',
+            array(
+                'name' => 'td_300x220',
+                'width' => 300,
+                'height' => 220,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Module 1 &middot; 2', 'Block 1 &middot; 2 &middot; 4 &middot; 7 &middot; 8'
+                )
+            )
+        );
+
         td_api_thumb::add('td_485x360',
             array(
                 'name' => 'td_485x360',
@@ -613,7 +575,46 @@ class td_config {
                 'crop' => array('center', 'top'),
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
-                    'Module MX1', 'Module MX4'
+                    'Big grid 1 &middot; 2 &middot; 3'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_640x0',
+            array(
+                'name' => 'td_640x0',
+                'width' => 640,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default', 'Smart list 1', 'Module 4', 'Block 4 &middot; 7 &middot; 8'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_640x400',
+            array(
+                'name' => 'td_640x400',
+                'width' => 640,
+                'height' => 400,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Big grid 1'
+                )
+            )
+        );
+
+        td_api_thumb::add('td_980x0',
+            array(
+                'name' => 'td_980x0',
+                'width' => 980,
+                'height' => 0,
+                'crop' => array('center', 'top'),
+                'post_format_icon_size' => 'normal',
+                'used_on' => array(
+                    'Post template default', 'Smart list 1'
                 )
             )
         );

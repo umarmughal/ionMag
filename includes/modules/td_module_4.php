@@ -13,7 +13,7 @@ class td_module_4 extends td_module {
 
         <div class="<?php echo $this->get_module_classes();?>" <?php echo $this->get_item_scope();?>>
             <div class="td-module-image">
-                <?php echo $this->get_image('td_640x400');?>
+                <?php echo $this->get_image('td_640x0');?>
                 <div class="td-post-category-wrap"><?php if (td_util::get_option('tds_category_module_4') == 'yes') { echo $this->get_category(); }?></div>
             </div>
 
