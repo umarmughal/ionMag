@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @var $offset
  * @var $content - shortcode content
  * Shortcode class
- * @var $this WPBakeryShortCode_VC_Column
+ * @var $this WPBakeryShortCode_VC_Column_Inner
  */
 $el_class = $width = $css = $offset = '';
 $output = '';
@@ -22,11 +22,11 @@ extract( $atts );
 
 // tagDiv Code
 if (empty($width)) {
-	td_global::set_column_width('1/1');
+	td_global::set_inner_column_width('1/1');
 } else {
-	td_global::set_column_width($width);
+	td_global::set_inner_column_width($width);
 }
-// tagDiv
+//tagDiv
 
 
 $width = wpb_translateColumnWidthToSpan( $width );
@@ -49,7 +49,7 @@ $css_class = preg_replace( '/\s+/', ' ', apply_filters( VC_SHORTCODE_CUSTOM_CSS_
 $wrapper_attributes[] = 'class="' . esc_attr( trim( $css_class ) ) . '"';
 
 $output .= '<div ' . implode( ' ', $wrapper_attributes ) . '>';
-$output .= '<div class="vc_column ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) ) . '">';
+$output .= '<div class="vc_column-inner ' . esc_attr( trim( vc_shortcode_custom_css_class( $css ) ) ) . '">';
 $output .= '<div class="wpb_wrapper">';
 $output .= wpb_js_remove_wpautop( $content );
 $output .= '</div>';

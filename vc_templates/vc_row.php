@@ -1,8 +1,6 @@
 <?php
 
-global $td_row_count;
-$td_row_count ++;
-
+td_global::set_in_row(true);
 
 /**
  * Shortcode attributes
@@ -150,5 +148,5 @@ $output .= $after_output;
 
 echo $output;
 
-$td_row_count--;
+td_global::set_in_row(false);
 
