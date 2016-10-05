@@ -6981,6 +6981,13 @@ body .dropcap3 {
   font-weight: 400;
   line-height: 37px;
   color: #000;
+  /* responsive portrait tablet */
+}
+@media (max-width: 1018px) {
+  .td-post-header .entry-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
 }
 .td-post-header .td-post-comments a:before {
   display: none;
@@ -7634,6 +7641,14 @@ body .dropcap3 {
 }
 .wpb_video_wrapper {
   margin-bottom: 21px;
+}
+.td-post-template-default .td-post-featured-image {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-post-template-default .td-post-featured-image {
+    margin: 0 -10px;
+  }
 }
 /*  ----------------------------------------------------------------------------
     wordpress default galleries
