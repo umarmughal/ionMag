@@ -7242,6 +7242,7 @@ body .dropcap3 {
 */
 .td-post-content {
   padding-bottom: 24px;
+  *zoom: 1;
 }
 .td-post-content input[type=submit] {
   position: relative;
@@ -7259,6 +7260,24 @@ body .dropcap3 {
 }
 .td-post-content p:empty {
   display: none;
+}
+.td-post-content:before,
+.td-post-content:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.td-post-content:after {
+  clear: both;
+}
+.td-post-content:before,
+.td-post-content:after {
+  display: table;
+  content: '';
+  line-height: 0;
+}
+.td-post-content:after {
+  clear: both;
 }
 /*  ----------------------------------------------------------------------------
     Source and Via
