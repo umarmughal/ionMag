@@ -1,5 +1,7 @@
 <?php
-
+if ( ! defined( 'ABSPATH' ) ) {
+	die( '-1' );
+}
 
 /**
  * Shortcode attributes
@@ -19,13 +21,12 @@ extract( $atts );
 
 
 // tagDiv Code
-global $td_column_count, $td_row_count;
 if (empty($width)) {
-	$td_column_count = '1/1';
+	td_global::set_column_width('1/1');
 } else {
-	$td_column_count = $width;
+	td_global::set_column_width($width);
 }
-// /tagDiv
+// tagDiv
 
 
 $width = wpb_translateColumnWidthToSpan( $width );

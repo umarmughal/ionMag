@@ -31,7 +31,7 @@ class td_smart_list_1 extends td_smart_list {
 
         //creating each slide
         $buffy .= '<div class="td-item">';
-        $buffy .= '<div class="td-number-and-title"><h2><span class="td-sml-current-item-nr">' . $current_item_number. '</span><span class="td-sml-current-item-title">' . $smart_list_1_title . '</span></h2></div>';
+        $buffy .= '<div class="td-number-and-title"><h2 class="td-title-smart"><span class="td-sml-current-item-nr">' . $current_item_number. '</span><span class="td-sml-current-item-title">' . $smart_list_1_title . '</span></h2></div>';
 
         //get image info
         $first_img_all_info = td_util::attachment_get_full_info($item_array['first_img_id']);
@@ -40,7 +40,10 @@ class td_smart_list_1 extends td_smart_list {
         $first_img_link_target = $item_array['first_img_link_target'];
 
         //image caption
-        $first_img_caption = $item_array['first_img_caption'];
+        $first_img_caption = '';
+        if(!empty($item_array['first_img_caption'])) {
+            $first_img_caption = '<div>' . $item_array['first_img_caption'] . '</div>';
+        }
 
         if(td_global::$cur_single_template_sidebar_pos == 'no_sidebar') {
             $first_img_info = wp_get_attachment_image_src($item_array['first_img_id'], 'td_980x0');
@@ -65,7 +68,7 @@ class td_smart_list_1 extends td_smart_list {
                                 <a class="td-sml-link-to-image" href="' . $first_img_all_info['src'] . '" data-caption="' . esc_attr($first_img_caption, ENT_QUOTES) . '" ' . $first_img_link_target .' >
                                     <img src="' . $first_img_info[0] . '"/>
                                 </a>
-                                <figcaption class="td-sml-caption"><div>' . $first_img_caption . '</div></figcaption>
+                                <figcaption class="td-sml-caption">' . $first_img_caption . '</figcaption>
                             </figure>';
         }
 

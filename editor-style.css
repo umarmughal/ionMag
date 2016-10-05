@@ -375,8 +375,6 @@ figure.aligncenter {
   float: left;
   margin-top: 6px;
   margin-right: 24px;
-  margin-bottom: 6px !important;
-  /* hack for tinyMCE / post content diffs*/
   margin-left: 0;
   /* responsive portrait tablet */
   /* responsive portrait phone - just a bit, after 500px we make it non float */

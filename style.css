@@ -3364,8 +3364,6 @@ figure.aligncenter {
   float: left;
   margin-top: 6px;
   margin-right: 24px;
-  margin-bottom: 6px !important;
-  /* hack for tinyMCE / post content diffs*/
   margin-left: 0;
   /* responsive portrait tablet */
   /* responsive portrait phone - just a bit, after 500px we make it non float */
@@ -9324,7 +9322,7 @@ button::-moz-focus-inner {
   color: #ccc;
   line-height: 18px;
   padding-right: 15px;
-  font-size: 11px;
+  font-size: 13px;
 }
 .mfp-arrow {
   font-family: 'wpion', sans-serif;
@@ -9473,7 +9471,7 @@ img.mfp-img {
   margin: 0;
 }
 .mfp-bottom-bar {
-  font-size: 11px;
+  font-size: 13px;
   line-height: 18px;
   margin-bottom: 50px;
   position: absolute;
@@ -10958,6 +10956,9 @@ input.search-submit:hover {
   text-align: center;
   margin-bottom: 26px;
 }
+.td-sml-link-to-image img {
+  display: block;
+}
 .td-smart-list-button {
   display: inline-block;
   background-color: #000;
@@ -11089,11 +11090,23 @@ input.search-submit:hover {
 .td-smart-list-dropdown-wrap .td-smart-back {
   border-right: 1px solid #ededed;
 }
+.td-sml-caption {
+  font-family: 'Source Sans Pro', sans-serif;
+  text-align: left;
+  font-size: 13px;
+  font-style: italic;
+  font-weight: normal;
+  line-height: 17px;
+  color: #444;
+}
+.td-sml-caption div {
+  margin: 6px 0 0 0;
+}
 /*  ----------------------------------------------------------------------------
     Smart list 1
 */
 .td_smart_list_1 {
-  margin-top: 38px;
+  margin-top: 30px;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
@@ -11113,12 +11126,13 @@ input.search-submit:hover {
 .td_smart_list_1 .td-item:last-child {
   margin-bottom: 0;
 }
-.td_smart_list_1 .td-item h2 {
+.td_smart_list_1 .td-title-smart {
+  line-height: 40px;
   margin-bottom: 0;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
-  .td_smart_list_1 .td-item h2 {
+  .td_smart_list_1 .td-title-smart {
     text-align: center;
     margin-top: 0;
   }
@@ -11127,7 +11141,7 @@ input.search-submit:hover {
   width: 100%;
   min-height: 40px;
   position: relative;
-  padding: 0 0 30px 0;
+  padding: 0 0 22px 0;
   font-family: 'Work Sans', sans-serif;
   text-align: left;
   /* responsive portrait phone */
@@ -11142,7 +11156,7 @@ input.search-submit:hover {
   top: 0;
   left: 0;
   background-color: #000;
-  margin-right: 20px;
+  padding: 0 7px;
   font-size: 21px;
   line-height: 40px;
   font-weight: 500;
@@ -11161,15 +11175,15 @@ input.search-submit:hover {
   .td_smart_list_1 .td-sml-current-item-nr {
     position: relative;
     display: inline-block;
-    margin: 0;
   }
 }
 .td_smart_list_1 .td-sml-current-item-title {
   display: inline-block;
-  padding: 5px 0 0 59px;
+  padding: 7px 0 0 59px;
   font-size: 21px;
   line-height: 26px;
   font-weight: 600;
+  vertical-align: top;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {

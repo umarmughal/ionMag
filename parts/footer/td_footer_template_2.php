@@ -3,7 +3,7 @@
         <div class="td-pb-row">
             <div class="td-pb-span4">
                 <?php
-                td_util::vc_set_column_number(1);
+                td_global::vc_set_custom_column_number(1);
 
                 echo td_global_blocks::get_instance('td_block_3')->render(array(
                     'custom_title' => __td('EDITOR PICKS', TD_THEME_NAME),
@@ -16,7 +16,7 @@
 
             <div class="td-pb-span4">
                 <?php
-                td_util::vc_set_column_number(1);
+                td_global::vc_set_custom_column_number(1);
 
                 echo td_global_blocks::get_instance('td_block_3')->render(array(
                     'custom_title' => __td('POPULAR POSTS', TD_THEME_NAME),
@@ -29,7 +29,7 @@
 
             <div class="td-pb-span4">
                 <?php
-                td_util::vc_set_column_number(1);
+                td_global::vc_set_custom_column_number(1);
 
                 echo td_global_blocks::get_instance('td_block_popular_categories')->render(array(
                     'custom_title' => __td('POPULAR CATEGORY', TD_THEME_NAME),

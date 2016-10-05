@@ -2445,7 +2445,7 @@ class td_config {
         td_api_features::set('video_playlists', false);
         td_api_features::set('tagdiv_slide_gallery', false);
         td_api_features::set('text_logo', false);
-
+	    td_api_features::set('check_for_updates', true);
 
         if (is_admin()) {
 
