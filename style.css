@@ -6324,6 +6324,14 @@ body .dropcap3 {
     height: 130px;
   }
 }
+.td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-meta-info-container {
+  /* responsive portrait tablet + phone */
+}
+@media (max-width: 1018px) {
+  .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-meta-info-container {
+    padding: 0 10px 11px !important;
+  }
+}
 .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-post-category {
   /* responsive portrait phone */
 }
