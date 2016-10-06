@@ -88,6 +88,11 @@
 }
 .no-results h2 {
   font-size: 25px;
+
+  /* responsive portrait phone */
+  @media (max-width: @responsive_p_phone_max) {
+    margin-top: 0;
+  }
 }
 
 
@@ -354,8 +359,13 @@
     color: @td_theme_color;
   }
 
-  input[type=text].td-widget-search-input {
+  .search-page-wrap {
     width: 300px;
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      width: 100%;
+      margin-bottom: 30px;
+    }
   }
 }
 
