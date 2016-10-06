@@ -2402,15 +2402,15 @@ class td_config {
          * the default fonts used by the theme. For a list of fonts ids @see td_fonts::$font_names_google_list
          */
         td_global::$default_google_fonts_list = array (
-            '438' => array(
+            '653' => array(
                 'css_style_id' => 'google_font_work_sans',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700'
             ),
-            '521' => array(
+            '582' => array(
                 'css_style_id' => 'google_font_source_sans_pro',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700'
             ),
-            '525' => array(
+            '182' => array(
                 'css_style_id' => 'google_font_droid_serif',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Droid+Serif:400,700'
             ),
