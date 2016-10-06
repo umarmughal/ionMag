@@ -11612,9 +11612,11 @@ input.search-submit:hover {
 .td-footer-outer-wrapper .search-field {
   background-color: transparent;
   color: #fff;
+  border-color: rgba(255, 255, 255, 0.11);
 }
 .td-footer-outer-wrapper input.search-submit {
   color: #fff;
+  border-color: rgba(255, 255, 255, 0.11);
 }
 .td-footer-outer-wrapper input.search-submit:hover {
   color: #42bdcd;
