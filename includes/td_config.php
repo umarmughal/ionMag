@@ -1796,6 +1796,17 @@ class td_config {
         /**
          * category top posts styles
          */
+        td_api_category_top_posts_style::add('td_category_top_posts_style_disable',
+            array (
+                'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_disable.php',
+                'posts_shown_in_the_loop' => 0,
+                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-disable.png',
+                'text' => 'Disable',
+                'td_block_name' => '',
+                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
+            )
+        );
+
         td_api_category_top_posts_style::add('td_category_top_posts_style_1',
             array (
                 'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_1.php',
@@ -1823,17 +1834,6 @@ class td_config {
                 'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-3.png',
                 'text' => 'Grid 3',
                 'td_block_name' => 'td_block_big_grid_3'
-            )
-        );
-
-        td_api_category_top_posts_style::add('td_category_top_posts_style_disable',
-            array (
-                'file' => td_global::$get_template_directory . '/includes/category_top_posts_styles/td_category_top_posts_style_disable.php',
-                'posts_shown_in_the_loop' => 0,
-                'img' => td_global::$get_template_directory_uri . '/images/panel/category_templates/icon-category-top-disable.png',
-                'text' => 'Disable',
-                'td_block_name' => '',
-                'group' => '' // '' - main theme, 'mob' - mobile theme, 'woo' - woo theme
             )
         );
 
