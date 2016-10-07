@@ -29,7 +29,9 @@ if (have_posts()) {
                     <?php echo $td_mod_single->get_comments();?>
                     <div class="td-post-views-wrap">
                         <?php echo $td_mod_single->get_views();?>
-                        <span class="td-post-views-text">views</span>
+                        <?php if (td_util::get_option('tds_p_show_views') != 'hide') {?>
+                            <span class="td-post-views-text"><?php echo __td('views', TD_THEME_NAME);?></span>
+                        <?php }?>
                     </div>
                 </div>
             </header>

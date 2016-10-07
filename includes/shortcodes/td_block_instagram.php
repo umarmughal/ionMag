@@ -16,7 +16,7 @@ class td_block_instagram extends td_block {
 
 
         if (empty($td_column_number)) {
-            $td_column_number = td_util::vc_get_column_number(); // get the column width of the block from the page builder API
+            $td_column_number = td_global::vc_get_column_number(); // get the column width of the block from the page builder API
         }
 
         $buffy = ''; //output buffer

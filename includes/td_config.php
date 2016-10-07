@@ -333,7 +333,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx_empty.php',
                 'text' => 'Module MX Empty',
                 'img' => '',
-                'used_on_blocks' => array('Big Grid 1', 'Big Grid 2', 'Big Grid 3'),
+                'used_on_blocks' => '',
                 'excerpt_title' => '',
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -367,7 +367,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mega_menu.php',
                 'text' => 'Mega menu module',
                 'img' => '',
-                'used_on_blocks' => array('td_block_mega_menu'),
+                'used_on_blocks' => array('Mega menu'),
                 'excerpt_title' => '12',
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -384,7 +384,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx1.php',
                 'text' => 'Module MX1',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_1'),
+                'used_on_blocks' => array('Big grid 1'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -401,7 +401,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx2.php',
                 'text' => 'Module MX2',
                 'img' => '',
-                'used_on_blocks' => array('Search live'),
+                'used_on_blocks' => array('Live search'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -418,7 +418,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx3.php',
                 'text' => 'Module MX3',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_1'),
+                'used_on_blocks' => array('Big grid 1'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -435,7 +435,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx4.php',
                 'text' => 'Module MX4',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_3'),
+                'used_on_blocks' => array('Big grid 3'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -452,7 +452,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_mx5.php',
                 'text' => 'Module MX5',
                 'img' => '',
-                'used_on_blocks' => array('td_block_big_grid_2'),
+                'used_on_blocks' => array('Big grid 2'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -469,7 +469,7 @@ class td_config {
                 'file' => td_global::$get_template_directory . '/includes/modules/td_module_related_posts.php',
                 'text' => 'Related posts module',
                 'img' => '',
-                'used_on_blocks' => array('td_block_related_posts'),
+                'used_on_blocks' => array('Related posts'),
                 'excerpt_title' => 25,
                 'excerpt_content' => '',
                 'enabled_on_more_articles_box' => false,
@@ -2402,15 +2402,15 @@ class td_config {
          * the default fonts used by the theme. For a list of fonts ids @see td_fonts::$font_names_google_list
          */
         td_global::$default_google_fonts_list = array (
-            '438' => array(
+            '653' => array(
                 'css_style_id' => 'google_font_work_sans',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700'
             ),
-            '521' => array(
+            '582' => array(
                 'css_style_id' => 'google_font_source_sans_pro',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,600,600italic,700'
             ),
-            '525' => array(
+            '182' => array(
                 'css_style_id' => 'google_font_droid_serif',
                 'url' => td_global::$http_or_https . '://fonts.googleapis.com/css?family=Droid+Serif:400,700'
             ),
@@ -2445,7 +2445,7 @@ class td_config {
         td_api_features::set('video_playlists', false);
         td_api_features::set('tagdiv_slide_gallery', false);
         td_api_features::set('text_logo', false);
-
+	    td_api_features::set('check_for_updates', true);
 
         if (is_admin()) {
 
