@@ -49,11 +49,17 @@
   }
 }
 
+.td-sml-current-item-nr {
+  vertical-align: top;
+}
+
 .td-sml-current-item-title {
+  vertical-align: top;
+
   /* responsive portrait phone */
   @media (max-width: @responsive_p_phone_max) {
-    font-size: 19px !important;
-    line-height: 25px !important;
+    font-size: 21px !important;
+    line-height: 26px !important;
   }
 }
 
@@ -106,12 +112,12 @@
 
     /* responsive portrait tablet */
     @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-      max-width: 50%;
+      max-width: 60%;
     }
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       text-align: center;
-      max-width: 60%;
+      max-width: 70%;
     }
 
     option {
@@ -150,6 +156,11 @@
     color: inherit;
     .box-shadow(0px 0px 0px 0px rgba(166,166,166,1));
     .border-radius(0);
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      padding: 0 6px;
+    }
 
     i {
       display: none;
@@ -223,17 +234,17 @@
 */
 .td_smart_list_1 {
   margin-top: 30px;
-  /* responsive portrait phone */
-  @media (max-width: @responsive_p_phone_max) {
-    margin-top: 20px;
-  }
 
   .td-item {
-    margin-bottom: 54px;
+    margin-bottom: 53px;
 
+    /* responsive portrait tablet */
+    @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+      margin-bottom: 43px;
+    }
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
-      margin-bottom: 30px;
+      margin-bottom: 33px;
     }
 
     &:last-child {
@@ -262,7 +273,7 @@
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
-      padding-bottom: 17px;
+      padding-bottom: 13px;
     }
   }
 
@@ -298,7 +309,7 @@
 
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
-      padding: 14px 0 0;
+      padding: 17px 0 0;
       width: 100%;
     }
   }
@@ -310,8 +321,27 @@
   .td-slide-smart-list-figure {
     margin: 0 0 29px 0;
 
+    /* responsive portrait tablet */
+    @media (max-width: @responsive_p_tablet_max) {
+      margin-bottom: 19px;
+    }
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-left: -10px;
+      margin-right: -10px;
+    }
+
     img {
       display: block;
+    }
+  }
+
+  .td-sml-caption {
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 }

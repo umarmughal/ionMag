@@ -1685,7 +1685,7 @@ html .mceContentBody:after {
   display: block;
   width: 12px;
   text-align: center;
-  word-break: break-all;
+  word-wrap: break-word;
 }
 html .mceContentBody .td-scroll-effect {
   background-color: rgba(255, 247, 112, 0.29);

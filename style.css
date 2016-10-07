@@ -4526,7 +4526,7 @@ body .dropcap3 {
   font-style: italic;
   line-height: 19px;
   color: #808080;
-  word-break: break-all;
+  word-wrap: break-word;
   /* responsive portrait tablet + mobile */
 }
 @media (max-width: 1018px) {
@@ -7211,7 +7211,7 @@ body .dropcap3 {
   box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
 }
 .td-post-content p {
-  word-break: break-all;
+  word-wrap: break-word;
 }
 .td-post-content p:empty {
   display: none;
@@ -10968,13 +10968,17 @@ input.search-submit:hover {
 .td-smart-list-button .td-icon-right {
   padding-left: 10px;
 }
+.td-sml-current-item-nr {
+  vertical-align: top;
+}
 .td-sml-current-item-title {
+  vertical-align: top;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
   .td-sml-current-item-title {
-    font-size: 19px !important;
-    line-height: 25px !important;
+    font-size: 21px !important;
+    line-height: 26px !important;
   }
 }
 .td-smart-disable {
@@ -11028,13 +11032,13 @@ input.search-submit:hover {
 }
 @media (min-width: 768px) and (max-width: 1018px) {
   .td-smart-list-dropdown-wrap .td-smart-list-dropdown {
-    max-width: 50%;
+    max-width: 60%;
   }
 }
 @media (max-width: 767px) {
   .td-smart-list-dropdown-wrap .td-smart-list-dropdown {
     text-align: center;
-    max-width: 60%;
+    max-width: 70%;
   }
 }
 .td-smart-list-dropdown-wrap .td-smart-list-dropdown option {
@@ -11075,6 +11079,12 @@ input.search-submit:hover {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-smart-list-dropdown-wrap .td-smart-list-button {
+    padding: 0 6px;
+  }
 }
 .td-smart-list-dropdown-wrap .td-smart-list-button i {
   display: none;
@@ -11141,20 +11151,20 @@ input.search-submit:hover {
 */
 .td_smart_list_1 {
   margin-top: 30px;
-  /* responsive portrait phone */
-}
-@media (max-width: 767px) {
-  .td_smart_list_1 {
-    margin-top: 20px;
-  }
 }
 .td_smart_list_1 .td-item {
-  margin-bottom: 54px;
+  margin-bottom: 53px;
+  /* responsive portrait tablet */
   /* responsive portrait phone */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_smart_list_1 .td-item {
+    margin-bottom: 43px;
+  }
 }
 @media (max-width: 767px) {
   .td_smart_list_1 .td-item {
-    margin-bottom: 30px;
+    margin-bottom: 33px;
   }
 }
 .td_smart_list_1 .td-item:last-child {
@@ -11182,7 +11192,7 @@ input.search-submit:hover {
 }
 @media (max-width: 767px) {
   .td_smart_list_1 .td-number-and-title {
-    padding-bottom: 17px;
+    padding-bottom: 13px;
   }
 }
 .td_smart_list_1 .td-sml-current-item-nr {
@@ -11222,7 +11232,7 @@ input.search-submit:hover {
 }
 @media (max-width: 767px) {
   .td_smart_list_1 .td-sml-current-item-title {
-    padding: 14px 0 0;
+    padding: 17px 0 0;
     width: 100%;
   }
 }
@@ -11231,9 +11241,31 @@ input.search-submit:hover {
 }
 .td_smart_list_1 .td-slide-smart-list-figure {
   margin: 0 0 29px 0;
+  /* responsive portrait tablet */
+  /* responsive portrait phone */
+}
+@media (max-width: 1018px) {
+  .td_smart_list_1 .td-slide-smart-list-figure {
+    margin-bottom: 19px;
+  }
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-slide-smart-list-figure {
+    margin-left: -10px;
+    margin-right: -10px;
+  }
 }
 .td_smart_list_1 .td-slide-smart-list-figure img {
   display: block;
+}
+.td_smart_list_1 .td-sml-caption {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_smart_list_1 .td-sml-caption {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }
 /*
     general
