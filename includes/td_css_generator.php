@@ -39,7 +39,6 @@ function td_css_generator() {
     .td_ajax_load_more:hover,
     .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
     .td-module-comments a:hover,
-    .td-post-comments a:hover,
     .td-wrapper-pulldown-filter .td-pulldown-filter-item .td-cur-simple-item,
     .td-wrapper-pulldown-filter .td-pulldown-filter-link:hover,
     .td-wrapper-pulldown-filter .td-pulldown-category-filter-link:hover,
@@ -51,8 +50,6 @@ function td_css_generator() {
     .td-post-next-prev-content a:hover,
     .td-author-name a:hover,
     .td-author-url a:hover,
-    .td-related-title a:hover,
-    .td-related-title .td-cur-simple-item,
     .logged-in-as a:hover,
     .comment-reply-link,
     #cancel-comment-reply-link:hover,
@@ -75,7 +72,6 @@ function td_css_generator() {
     .td-instagram-user a,
     .footer-email-wrap a,
     .td-sub-footer-copy i,
-    .td_mod_related_posts:hover .entry-title > a,
     .td-footer-outer-wrapper a:hover,
     .td_block_authors .td_authors_wrap:hover .td-authors-name a,
     .td_block_authors .td_authors_wrap.td-active .td-authors-name a,
@@ -85,6 +81,13 @@ function td_css_generator() {
     .widget_categories li:hover a,
     .widget_search input[type=submit]:hover {
       color: @theme_color;
+    }
+    
+    .td-post-comments a:hover,
+    .td-related-title a:hover,
+    .td-related-title .td-cur-simple-item,
+    .td_mod_related_posts:hover .entry-title > a {
+      color: @theme_color !important;   
     }
 
     input[type=submit]:hover,

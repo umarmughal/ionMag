@@ -4547,6 +4547,7 @@ body .dropcap3 {
   font-style: italic;
   line-height: 19px;
   color: #808080;
+  word-break: break-all;
   /* responsive portrait tablet + mobile */
 }
 @media (max-width: 1018px) {
@@ -7257,6 +7258,9 @@ body .dropcap3 {
   -webkit-box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
   -moz-box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
   box-shadow: 0 2px 0 0 rgba(166, 166, 166, 0.75);
+}
+.td-post-content p {
+  word-break: break-all;
 }
 .td-post-content p:empty {
   display: none;
