@@ -441,18 +441,6 @@ img {
   width: auto\9;
   height: auto;
 }
-.clearfix {
-  *zoom: 1;
-}
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.clearfix:after {
-  clear: both;
-}
 /*  ----------------------------------------------------------------------------
     container
 */
@@ -4276,15 +4264,6 @@ body .dropcap3 {
 .td-modules-container:after {
   clear: both;
 }
-.td-modules-container:before,
-.td-modules-container:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td-modules-container:after {
-  clear: both;
-}
 .td_module_wrap {
   position: relative;
   padding-bottom: 37px;
@@ -4918,15 +4897,6 @@ body .dropcap3 {
 .td-block-title-wrap {
   position: relative;
   *zoom: 1;
-}
-.td-block-title-wrap:before,
-.td-block-title-wrap:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td-block-title-wrap:after {
-  clear: both;
 }
 .td-block-title-wrap:before,
 .td-block-title-wrap:after {
@@ -5789,15 +5759,6 @@ body .dropcap3 {
 .td_block_image_box .td-image-box-row {
   margin: 0 -20px;
   *zoom: 1;
-}
-.td_block_image_box .td-image-box-row:before,
-.td_block_image_box .td-image-box-row:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td_block_image_box .td-image-box-row:after {
-  clear: both;
 }
 .td_block_image_box .td-image-box-row:before,
 .td_block_image_box .td-image-box-row:after {
@@ -6802,15 +6763,6 @@ body .dropcap3 {
 .td_block_authors .td_authors_wrap:after {
   clear: both;
 }
-.td_block_authors .td_authors_wrap:before,
-.td_block_authors .td_authors_wrap:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td_block_authors .td_authors_wrap:after {
-  clear: both;
-}
 .td_block_authors .td_authors_wrap:hover .td-authors-name a,
 .td_block_authors .td_authors_wrap.td-active .td-authors-name a {
   color: #42bdcd;
@@ -7243,7 +7195,6 @@ body .dropcap3 {
 */
 .td-post-content {
   padding-bottom: 24px;
-  *zoom: 1;
 }
 .td-post-content input[type=submit] {
   position: relative;
@@ -7265,16 +7216,6 @@ body .dropcap3 {
 .td-post-content p:empty {
   display: none;
 }
-.td-post-content:before,
-.td-post-content:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td-post-content:after {
-  clear: both;
-}
-.td-post-content:before,
 .td-post-content:after {
   display: table;
   content: '';
@@ -8135,6 +8076,12 @@ body .dropcap3 {
 }
 .no-results h2 {
   font-size: 25px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .no-results h2 {
+    margin-top: 0;
+  }
 }
 /*  ----------------------------------------------------------------------------
     Pagination
@@ -8145,15 +8092,6 @@ body .dropcap3 {
   margin-bottom: 48px;
   *zoom: 1;
   /* responsive portrait phone */
-}
-.page-nav:before,
-.page-nav:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.page-nav:after {
-  clear: both;
 }
 .page-nav:before,
 .page-nav:after {
@@ -8411,20 +8349,18 @@ body .dropcap3 {
 .td-search-header:after {
   clear: both;
 }
-.td-search-header:before,
-.td-search-header:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td-search-header:after {
-  clear: both;
-}
 .td-search-header .td-search-query {
   color: #42bdcd;
 }
-.td-search-header input[type=text].td-widget-search-input {
+.td-search-header .search-page-wrap {
   width: 300px;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-search-header .search-page-wrap {
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 /*  ----------------------------------------------------------------------------
     404 page
@@ -8689,15 +8625,6 @@ body .dropcap3 {
   padding-top: 22px;
   *zoom: 1;
   /* responsive portrait phone */
-}
-.td-category-crumb-filter:before,
-.td-category-crumb-filter:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td-category-crumb-filter:after {
-  clear: both;
 }
 .td-category-crumb-filter:before,
 .td-category-crumb-filter:after {
@@ -10489,6 +10416,13 @@ input.td-widget-search-input,
   color: #666;
   border: 0;
   border-bottom: 1px solid #ebebeb;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  input.td-widget-search-input,
+  .search-field {
+    font-size: 16px;
+  }
 }
 #searchsubmit,
 input.search-submit {
@@ -10760,15 +10694,6 @@ input.search-submit:hover {
 }
 .td-social-list {
   *zoom: 1;
-}
-.td-social-list:before,
-.td-social-list:after {
-  display: table;
-  content: '';
-  line-height: 0;
-}
-.td-social-list:after {
-  clear: both;
 }
 .td-social-list:before,
 .td-social-list:after {
