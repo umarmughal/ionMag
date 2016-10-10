@@ -66,6 +66,7 @@ td_demo_misc::update_background('');
 
 // mobile menu background
 td_demo_misc::update_background_mobile('td_pic_10');
+td_demo_misc::update_background_footer('td_pic_footer_bg');
 
 
 /*  ----------------------------------------------------------------------------
