@@ -103,7 +103,7 @@ class td_config {
             'tdAjaxCount' =>            '/includes/wp_booster/js_dev/tdAjaxCount.js',
             'tdVideoPlaylist' =>        '/includes/wp_booster/js_dev/tdVideoPlaylist.js',
             'td_slide' =>               '/includes/wp_booster/js_dev/td_slide.js',
-            'tdPullDown' =>             '/includes/wp_booster/js_dev/tdPullDown.js',
+            //'tdPullDown' =>             '/includes/wp_booster/js_dev/tdPullDown.js',
 
             //'td_main' =>              '/includes/js_files/td_main.js',
             'td_fps' =>                 '/includes/js_files/td_fps.js',
