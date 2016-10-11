@@ -186,6 +186,7 @@ function td_css_generator() {
     .td-header-top-menu a {
       color: @top_menu_text_color;
     }
+    .td-header-top-menu:before,
     .td-header-sp-top-widget .td-search-btns-wrap:before,
     .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
     .td-header-sp-top-widget .td-social-icon-wrap:after {
@@ -1023,22 +1024,6 @@ function td_css_generator() {
     	@body_text
     }
 
-    /* @white-top-bar */
-    .td-header-top-menu:before {
-    	content: '';
-    	position: absolute;
-    	bottom: -1px;
-    	left: 0;
-    	width: 100%;
-    	height: 1px;
-    	opacity: 0.07;
-    	background-color: #000;
-    }
-    .td-header-sp-top-widget .td-search-btns-wrap:before,
-    .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
-    .td-header-sp-top-widget .td-social-icon-wrap:after {
-        background-color: #000;
-    }
     </style>
     ";
 
