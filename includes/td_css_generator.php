@@ -186,6 +186,11 @@ function td_css_generator() {
     .td-header-top-menu a {
       color: @top_menu_text_color;
     }
+    .td-header-sp-top-widget .td-search-btns-wrap:before,
+    .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
+    .td-header-sp-top-widget .td-social-icon-wrap:after {
+        background-color: @top_menu_text_color;
+    }
     
     /* TOP MENU TEXT HOVER COLOR */
     /* @top_menu_text_hover_color */
@@ -1017,6 +1022,23 @@ function td_css_generator() {
     body, p {
     	@body_text
     }
+
+    /* @white-top-bar */
+    .td-header-top-menu:before {
+    	content: '';
+    	position: absolute;
+    	bottom: -1px;
+    	left: 0;
+    	width: 100%;
+    	height: 1px;
+    	opacity: 0.07;
+    	background-color: #000;
+    }
+    .td-header-sp-top-widget .td-search-btns-wrap:before,
+    .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
+    .td-header-sp-top-widget .td-social-icon-wrap:after {
+        background-color: #000;
+    }
     </style>
     ";
 
@@ -1142,6 +1164,13 @@ function td_css_generator() {
     $td_css_compiler->load_setting('login_background_size');
     $td_css_compiler->load_setting('login_background_position');
     $td_css_compiler->load_setting('login_background_opacity');
+
+    // if top bar background color is white
+    if (td_util::get_option('tds_top_menu_color') == '#ffffff' or
+        td_util::get_option('tds_top_menu_color') == 'ffffff' or
+        td_util::get_option('tds_top_menu_color') == '#fff') {
+        $td_css_compiler->load_setting_raw('white-top-bar', '#fff');
+    }
 
     /**
      * add td_fonts_css_buffer from database into the source of the page
