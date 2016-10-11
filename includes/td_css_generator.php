@@ -236,7 +236,7 @@ function td_css_generator() {
     /* MENU TEXT COLOR */
     /* @menu_text_color */
     .sf-menu > li > a,
-    .td-header-main-menu .td-search-btns-wrap .td-icon-search {
+    .td-header-menu-search #td-header-search-button .td-icon-search {
       color: @menu_text_color;
     }
     
@@ -896,7 +896,7 @@ function td_css_generator() {
         @post_next_prev_text
     }
     /* @post_next_prev */
-    .td_block_related_posts .entry-title {
+    .post .td-post-next-prev-content a {
         @post_next_prev
     }
     /* @box_author_name */
