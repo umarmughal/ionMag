@@ -1252,7 +1252,7 @@ class td_config {
 	                ),
 	                array(
                         "param_name" => "image_item0",
-                        "type" => "image",
+                        "type" => "attach_image",
                         "value" => '',
                         "heading" => "Image 1",
                         "description" => "",
@@ -1299,7 +1299,7 @@ class td_config {
 	                ),
                     array(
                         "param_name" => "image_item1",
-                        "type" => "image",
+                        "type" => "attach_image",
                         "value" => '',
                         "heading" => "Image 2",
                         "description" => "",
@@ -1346,7 +1346,7 @@ class td_config {
 	                ),
                     array(
                         "param_name" => "image_item2",
-                        "type" => "image",
+                        "type" => "attach_image",
                         "value" => '',
                         "heading" => "Image 3",
                         "description" => "",
@@ -1393,7 +1393,7 @@ class td_config {
 	                ),
                     array(
                         "param_name" => "image_item3",
-                        "type" => "image",
+                        "type" => "attach_image",
                         "value" => '',
                         "heading" => "Image 4",
                         "description" => "",
