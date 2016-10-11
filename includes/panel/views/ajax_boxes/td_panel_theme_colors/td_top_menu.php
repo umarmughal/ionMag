@@ -84,3 +84,20 @@
         ?>
     </div>
 </div>
+
+<!-- BORDER COLOR -->
+<div class="td-box-row">
+    <div class="td-box-description">
+        <span class="td-box-title td-title-on-row">BORDERS/LINES COLOR</span>
+        <p>Select borders/lines color</p>
+    </div>
+    <div class="td-box-control-full">
+        <?php
+        echo td_panel_generator::color_picker(array(
+            'ds' => 'td_option',
+            'option_id' => 'tds_top_border_color',
+            'default_color' => 'rgba(255, 255, 255, 0.07)'
+        ));
+        ?>
+    </div>
+</div>
