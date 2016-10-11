@@ -108,8 +108,8 @@ td_demo_misc::add_social_buttons(array(
  */
 td_demo_misc::clear_all_ads();
 td_demo_misc::add_ad_image('header', 'td_header_ad');
-td_demo_misc::add_ad_image('sidebar', 'td_big_ad');
-td_demo_misc::add_ad_image('custom_ad_1', 'td_sidebar_ad');
+td_demo_misc::add_ad_image('sidebar', 'td_sidebar_ad');
+td_demo_misc::add_ad_image('custom_ad_1', 'td_big_ad');
 td_demo_misc::add_ad_image('custom_ad_2', 'td_content_ad');
 
 
@@ -123,7 +123,7 @@ td_demo_widgets::remove_widgets_from_sidebar('default');
 td_demo_widgets::add_widget_to_sidebar('default', 'td_block_ad_box_widget',
     array (
         'spot_title' => '- Advertisement -',
-        'spot_id' => 'custom_ad_1'
+        'spot_id' => 'sidebar'
     )
 );
 
