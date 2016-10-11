@@ -39,10 +39,9 @@ if (have_posts()) {
         </div>
 
         <?php echo $td_mod_single->get_social_sharing_top();?>
-        
-        <div class="td-post-content">
 
-        <?php echo $td_mod_single->get_content();?>
+        <div class="td-post-content">
+            <?php echo $td_mod_single->get_content();?>
         </div>
 
         <footer>
