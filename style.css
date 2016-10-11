@@ -791,8 +791,6 @@ img {
 }
 .td-boxed-layout .td-container-wrap,
 .td-boxed-layout .td-header-menu-wrap.td-affix {
-  margin-left: auto;
-  margin-right: auto;
   width: 1060px;
 }
 @media (max-width: 1080px) {
@@ -803,6 +801,8 @@ img {
 }
 .td-container-wrap {
   background-color: #fff;
+  margin-left: auto;
+  margin-right: auto;
 }
 .backstretch {
   width: 100%;
