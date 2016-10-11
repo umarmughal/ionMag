@@ -203,89 +203,6 @@ class td_block_ad_box extends td_block {
                 'p_h' => '250'   // phone height
             ),
 
-            'post_style_1' => array (
-	            'm_w' => '300',  // big monitor - width
-	            'm_h' => '250',  // big monitor - height
-
-	            'tl_w' => '300', // tablet_landscape width
-	            'tl_h' => '250', // tablet_landscape height
-
-	            'tp_w' => '200', // tablet_portrait width
-	            'tp_h' => '200', // tablet_portrait height
-
-	            'p_w' => '300',  // phone width
-	            'p_h' => '250'   // phone height
-            ),
-
-            'post_style_11' => array (
-	            'm_w' => '300',  // big monitor - width
-	            'm_h' => '250',  // big monitor - height
-
-	            'tl_w' => '300', // tablet_landscape width
-	            'tl_h' => '250', // tablet_landscape height
-
-	            'tp_w' => '320', // tablet_portrait width
-	            'tp_h' => '50', // tablet_portrait height
-
-	            'p_w' => '300',  // phone width
-	            'p_h' => '250'   // phone height
-            ),
-
-            'post_style_12' => array (
-                'm_w' => '728',  // big monitor - width
-                'm_h' => '90',  // big monitor - height
-
-                'tl_w' => '728', // tablet_landscape width
-                'tl_h' => '90', // tablet_landscape height
-
-                'tp_w' => '728', // tablet_portrait width
-                'tp_h' => '90', // tablet_portrait height
-
-                'p_w' => '300',  // phone width
-                'p_h' => '250'   // phone height
-            ),
-
-            'smart_list_6' => array (
-                'm_w' => '468',  // big monitor - width
-                'm_h' => '60',  // big monitor - height
-
-                'tl_w' => '468', // tablet_landscape width
-                'tl_h' => '60', // tablet_landscape height
-
-                'tp_w' => '300', // tablet_portrait width
-                'tp_h' => '250', // tablet_portrait height
-
-                'p_w' => '300',  // phone width
-                'p_h' => '250'   // phone height
-            ),
-
-            'smart_list_7' => array (
-                'm_w' => '468',  // big monitor - width
-                'm_h' => '60',  // big monitor - height
-
-                'tl_w' => '468', // tablet_landscape width
-                'tl_h' => '60', // tablet_landscape height
-
-                'tp_w' => '300', // tablet_portrait width
-                'tp_h' => '250', // tablet_portrait height
-
-                'p_w' => '300',  // phone width
-                'p_h' => '250'   // phone height
-            ),
-
-            'smart_list_8' => array (
-                'm_w' => '468',  // big monitor - width
-                'm_h' => '60',  // big monitor - height
-
-                'tl_w' => '468', // tablet_landscape width
-                'tl_h' => '60', // tablet_landscape height
-
-                'tp_w' => '300', // tablet_portrait width
-                'tp_h' => '250', // tablet_portrait height
-
-                'p_w' => '300',  // phone width
-                'p_h' => '250'   // phone height
-            ),
 
             'footer_top' => array (
 	            'm_w' => '728',  // big monitor - width
@@ -369,6 +286,76 @@ class td_block_ad_box extends td_block {
 
 	            'p_w' => '300',  // phone width
 	            'p_h' => '250'   // phone height
+            ),
+
+            'smart_list_rd_3' => array (
+                'm_w' => '300',  // big monitor - width
+                'm_h' => '250',  // big monitor - height
+
+                'tl_w' => '300', // tablet_landscape width
+                'tl_h' => '250', // tablet_landscape height
+
+                'tp_w' => '200', // tablet_portrait width
+                'tp_h' => '200', // tablet_portrait height
+
+                'p_w' => '300',  // phone width
+                'p_h' => '250'   // phone height
+            ),
+
+            'smart_list_rd_4' => array (
+                'm_w' => '300',  // big monitor - width
+                'm_h' => '250',  // big monitor - height
+
+                'tl_w' => '300', // tablet_landscape width
+                'tl_h' => '250', // tablet_landscape height
+
+                'tp_w' => '200', // tablet_portrait width
+                'tp_h' => '200', // tablet_portrait height
+
+                'p_w' => '300',  // phone width
+                'p_h' => '250'   // phone height
+            ),
+
+            'smart_list_rd_5' => array (
+                'm_w' => '300',  // big monitor - width
+                'm_h' => '250',  // big monitor - height
+
+                'tl_w' => '300', // tablet_landscape width
+                'tl_h' => '250', // tablet_landscape height
+
+                'tp_w' => '200', // tablet_portrait width
+                'tp_h' => '200', // tablet_portrait height
+
+                'p_w' => '300',  // phone width
+                'p_h' => '250'   // phone height
+            ),
+
+            'smart_list_rd_6' => array (
+                'm_w' => '300',  // big monitor - width
+                'm_h' => '250',  // big monitor - height
+
+                'tl_w' => '300', // tablet_landscape width
+                'tl_h' => '250', // tablet_landscape height
+
+                'tp_w' => '200', // tablet_portrait width
+                'tp_h' => '200', // tablet_portrait height
+
+                'p_w' => '300',  // phone width
+                'p_h' => '250'   // phone height
+            ),
+
+            'smart_list_rd_7' => array (
+                'm_w' => '300',  // big monitor - width
+                'm_h' => '250',  // big monitor - height
+
+                'tl_w' => '300', // tablet_landscape width
+                'tl_h' => '250', // tablet_landscape height
+
+                'tp_w' => '200', // tablet_portrait width
+                'tp_h' => '200', // tablet_portrait height
+
+                'p_w' => '300',  // phone width
+                'p_h' => '250'   // phone height
             )
         );
 

@@ -215,7 +215,7 @@ function td_css_generator() {
     
     /* MENU BACKGROUND COLOR */
     /* @menu_color */
-    .td-theme-wrap .td-header-menu-wrap {
+    .td-theme-wrap .td-header-menu-wrap-full {
       background-color: @menu_color;
     }
     .td-header-menu-wrap:before,
