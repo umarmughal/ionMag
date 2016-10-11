@@ -102,7 +102,6 @@ class td_block_image_box extends td_block {
 			$buffy .= $this->get_block_title();
 		$buffy .= '</div>';
 
-		$td_block_layout = new td_block_layout();
 
 		switch(count($items)) {
 			case 1:
@@ -118,7 +117,7 @@ class td_block_image_box extends td_block {
 
 						$buffy .= '<div class="td-custom">';
 							$buffy .= '<div class="td-custom-image">';
-							$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+							$buffy .= '<a style="background-image: url(\'' . wp_get_attachment_url($item[ 'image' ]) . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 							$buffy .= '</div>';
 							$buffy .= '<div class="td-custom-title">';
 							$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
@@ -142,7 +141,7 @@ class td_block_image_box extends td_block {
 
 							$buffy .= '<div class="td-custom">';
 								$buffy .= '<div class="td-custom-image">';
-								$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+								$buffy .= '<a style="background-image: url(\'' . wp_get_attachment_url($item[ 'image' ]) . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 								$buffy .= '</div>';
 								$buffy .= '<div class="td-custom-title">';
 								$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
@@ -166,7 +165,7 @@ class td_block_image_box extends td_block {
 
 							$buffy .= '<div class="td-custom">';
 								$buffy .= '<div class="td-custom-image">';
-								$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+								$buffy .= '<a style="background-image: url(\'' . wp_get_attachment_url($item[ 'image' ]) . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 								$buffy .= '</div>';
 								$buffy .= '<div class="td-custom-title">';
 								$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
@@ -190,7 +189,7 @@ class td_block_image_box extends td_block {
 
 							$buffy .= '<div class="td-custom">';
 								$buffy .= '<div class="td-custom-image">';
-								$buffy .= '<a style="background-image: url(\'' . $item[ 'image' ] . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
+								$buffy .= '<a style="background-image: url(\'' . wp_get_attachment_url($item[ 'image' ]) . '\');' . $box_height . '" href="' . $item[ 'custom_url' ] . '" ' . $target . ' rel="bookmark" title="' . $item[ 'image_title' ] . '"></a>';
 								$buffy .= '</div>';
 								$buffy .= '<div class="td-custom-title">';
 								$buffy .= '<h3 class="entry-title"><a href="' . $item[ 'custom_url' ] . '">' . $item[ 'image_title' ] . '</a></h3>';
