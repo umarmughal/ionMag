@@ -64,7 +64,6 @@ var tdCustomEvents = {};
          * @private
          */
         _lazy_callback_resize_100: function() {
-            tdPullDown.td_events_resize();
             tdBackstr.td_events_resize();
             tdAnimationScroll.td_events_resize();
         },
