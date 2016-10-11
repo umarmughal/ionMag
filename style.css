@@ -10009,13 +10009,16 @@ tagdiv animations
 }
 .td-a-rec,
 .td-g-rec {
-  margin-bottom: 0;
+  margin-bottom: 40px;
 }
 .td-a-rec img,
-.td-g-rec img,
+.td-g-rec img {
+  display: block;
+}
 .td-a-rec .adsbygoogle,
 .td-g-rec .adsbygoogle {
-  display: block;
+  display: block !important;
+  margin: 0 auto;
 }
 .td-adspot-title {
   display: block;
@@ -10132,6 +10135,10 @@ tagdiv animations
     margin-right: auto;
     display: table;
   }
+}
+.td-header-rec-wrap .td-a-rec,
+.td-header-rec-wrap .td-g-rec {
+  margin-bottom: 0;
 }
 .td-header-rec-wrap .td-rec-wrap {
   margin-bottom: 0;
