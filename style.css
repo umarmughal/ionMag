@@ -1193,6 +1193,7 @@ img {
 .td-header-style-2 .td-header-sp-recs img,
 .td-header-style-2 .td-header-sp-recs .adsbygoogle {
   position: relative;
+  margin: 0 auto;
 }
 .td-header-style-2 .td-header-sp-logo,
 .td-header-style-2 .td-header-sp-recs {
