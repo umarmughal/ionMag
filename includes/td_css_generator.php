@@ -231,8 +231,11 @@ function td_css_generator() {
     
     /* MENU BACKGROUND COLOR */
     /* @menu_color */
-    .td-theme-wrap .td-header-menu-wrap-full {
+    .td-theme-wrap .td-header-menu-wrap {
       background-color: @menu_color;
+    }
+    .td-theme-wrap .td-header-menu-wrap-full {
+      background-color: transparent;
     }
     .td-header-menu-wrap:before,
     .td-header-menu-wrap:after {

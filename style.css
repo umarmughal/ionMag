@@ -789,13 +789,11 @@ img {
     padding-left: 0;
   }
 }
-.td-boxed-layout .td-container-wrap,
-.td-boxed-layout .td-header-menu-wrap.td-affix {
+.td-boxed-layout .td-container-wrap {
   width: 1060px;
 }
 @media (max-width: 1080px) {
-  .td-boxed-layout .td-container-wrap,
-  .td-boxed-layout .td-header-menu-wrap.td-affix {
+  .td-boxed-layout .td-container-wrap {
     width: 100%;
   }
 }
@@ -1093,6 +1091,7 @@ img {
   background-color: #fff;
   background-color: rgba(255, 255, 255, 0.95);
   top: 0;
+  left: 0;
   /* responsive portrait phone */
 }
 @media (max-width: 767px) {
