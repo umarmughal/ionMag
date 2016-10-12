@@ -215,14 +215,27 @@ function td_css_generator() {
       color: @top_social_icons_hover_color;
     }
 
+    /* TOP BORDER COLOR */
+    /* @top_border_color */
+    .td-header-top-menu:before,
+    .td-header-sp-top-widget .td-search-btns-wrap:before,
+    .td-header-sp-top-widget .td-social-icon-wrap:first-of-type:before,
+    .td-header-sp-top-widget .td-social-icon-wrap:after {
+      background-color: @top_border_color;
+      opacity: 1;
+    }
+
 
     /* ------------------------------------------------------ */
     /* Main Menu Colors */
     
     /* MENU BACKGROUND COLOR */
     /* @menu_color */
-    .td-theme-wrap .td-header-menu-wrap-full {
+    .td-theme-wrap .td-header-menu-wrap {
       background-color: @menu_color;
+    }
+    .td-theme-wrap .td-header-menu-wrap-full {
+      background-color: transparent;
     }
     .td-header-menu-wrap:before,
     .td-header-menu-wrap:after {
@@ -236,7 +249,7 @@ function td_css_generator() {
     /* MENU TEXT COLOR */
     /* @menu_text_color */
     .sf-menu > li > a,
-    .td-header-main-menu .td-search-btns-wrap .td-icon-search {
+    .td-header-menu-search #td-header-search-button .td-icon-search {
       color: @menu_text_color;
     }
     
@@ -262,6 +275,16 @@ function td_css_generator() {
     }
     .td-header-main-menu .td-post-category:hover {
       background-color: @submenu_hover_color;
+    }
+
+    /* MENU BORDER COLOR */
+    /* @menu_border_color */
+    @media (min-width: 768px) {
+        .td-header-menu-wrap:before,
+        .td-header-menu-wrap:after {
+          background-color: @menu_border_color;
+          opacity: 1;
+        }
     }
 
 
@@ -896,7 +919,7 @@ function td_css_generator() {
         @post_next_prev_text
     }
     /* @post_next_prev */
-    .td_block_related_posts .entry-title {
+    .post .td-post-next-prev-content a {
         @post_next_prev
     }
     /* @box_author_name */
@@ -1058,11 +1081,13 @@ function td_css_generator() {
     $td_css_compiler->load_setting('top_menu_text_hover_color');
     $td_css_compiler->load_setting('top_social_icons_color');
     $td_css_compiler->load_setting('top_social_icons_hover_color');
+    $td_css_compiler->load_setting('top_border_color');
 
     // main menu
     $td_css_compiler->load_setting('menu_color');
     $td_css_compiler->load_setting('submenu_hover_color');
     $td_css_compiler->load_setting('menu_text_color');
+    $td_css_compiler->load_setting('menu_border_color');
 
     // mobile menu
     $td_css_compiler->load_setting('mobile_menu_color');
@@ -1149,13 +1174,6 @@ function td_css_generator() {
     $td_css_compiler->load_setting('login_background_size');
     $td_css_compiler->load_setting('login_background_position');
     $td_css_compiler->load_setting('login_background_opacity');
-
-    // if top bar background color is white
-    if (td_util::get_option('tds_top_menu_color') == '#ffffff' or
-        td_util::get_option('tds_top_menu_color') == 'ffffff' or
-        td_util::get_option('tds_top_menu_color') == '#fff') {
-        $td_css_compiler->load_setting_raw('white-top-bar', '#fff');
-    }
 
     /**
      * add td_fonts_css_buffer from database into the source of the page
