@@ -189,8 +189,8 @@ class td_config {
 			    'show_featured_image_on_all_pages' => false,
 			    'bg_disable_background' => false,          // disable the featured image
 			    'bg_box_layout_config' => 'auto',                // auto | td-boxed-layout | td-full-layout
-			    'bg_use_featured_image_as_background' => false   // uses the featured image as a background
-
+			    'bg_use_featured_image_as_background' => false,   // uses the featured image as a background
+			    'exclude_ad_content_top' => false,
 		    )
 	    );
 
@@ -202,8 +202,8 @@ class td_config {
                 'show_featured_image_on_all_pages' => false,
                 'bg_disable_background' => false,          // disable the featured image
                 'bg_box_layout_config' => 'auto',                // auto | td-boxed-layout | td-full-layout
-                'bg_use_featured_image_as_background' => false   // uses the featured image as a background
-
+                'bg_use_featured_image_as_background' => false,   // uses the featured image as a background
+                'exclude_ad_content_top' => false,
             )
         );
 
