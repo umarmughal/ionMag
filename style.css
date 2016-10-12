@@ -11437,8 +11437,10 @@ input.search-submit:hover {
   padding: 8px 14px 9px;
   border: 1px solid #ededed;
   line-height: 1;
-  font-size: 13px;
-  color: #444;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #000;
   -webkit-transition: all 0.2s ease 0s;
   -moz-transition: all 0.2s ease 0s;
   -o-transition: all 0.2s ease 0s;
