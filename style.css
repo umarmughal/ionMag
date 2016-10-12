@@ -7623,6 +7623,14 @@ body .dropcap3 {
     margin: 0 -10px;
   }
 }
+.td-post-template-default .td-post-featured-image .wp-caption-text {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-post-template-default .td-post-featured-image .wp-caption-text {
+    padding-left: 10px;
+  }
+}
 /*  ----------------------------------------------------------------------------
     wordpress default galleries
 */
