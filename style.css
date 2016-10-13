@@ -6322,6 +6322,8 @@ body .dropcap3 {
 @media (max-width: 767px) {
   .td-big-grids-scroll .td-big-grid-post-0 {
     width: 100% !important;
+    height: auto;
+    max-height: 420px;
     float: none !important;
   }
 }
