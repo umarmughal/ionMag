@@ -498,7 +498,8 @@ class td_config {
                 'post_format_icon_size' => 'small',
                 'used_on' => array(
                     'Live search'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -511,7 +512,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Module 3', 'Block 3 &middot; 5 &middot; 7 &middot; 8'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -524,7 +526,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Related posts'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -537,7 +540,8 @@ class td_config {
                 'post_format_icon_size' => 'small',
                 'used_on' => array(
                     'Mega menu'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -550,7 +554,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Mega menu', 'Module 5', 'Block 5 &middot; 8'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -563,7 +568,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Module 1 &middot; 2', 'Block 1 &middot; 2 &middot; 4 &middot; 7 &middot; 8'
-                )
+                ),
+	            'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -576,7 +582,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Big grid 1 &middot; 2 &middot; 3'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -589,7 +596,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Post template default', 'Smart list 1', 'Module 4', 'Block 4 &middot; 7 &middot; 8'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -602,7 +610,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Big grid 1'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
@@ -615,7 +624,8 @@ class td_config {
                 'post_format_icon_size' => 'normal',
                 'used_on' => array(
                     'Post template default', 'Smart list 1'
-                )
+                ),
+                'no_image_path' => td_global::$get_template_directory_uri,
             )
         );
 
