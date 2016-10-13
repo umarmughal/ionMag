@@ -111,7 +111,8 @@ function td_css_generator() {
     .td-rating-bar-wrap div,
     .widget_calendar #today,
     .td_social_type:hover .td-sp:before,
-    .td-smart-list-button:hover {
+    .td-smart-list-button:hover,
+    .td-category-header .entry-category a:hover {
       background-color: @theme_color;
     }
     
