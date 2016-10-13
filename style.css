@@ -448,7 +448,7 @@ img {
 .tdc-row {
   margin-right: auto;
   margin-left: auto;
-  max-width: 980px;
+  width: 980px;
   /* responsive portrait tablet */
   /* responsive portrait phone */
 }
