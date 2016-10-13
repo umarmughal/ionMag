@@ -719,6 +719,22 @@
     padding-bottom: 10px;
   }
 
+  .td-next-prev-wrap {
+    margin-top: 0;
+
+    /* tablet + desktop */
+    @media (min-width: @responsive_p_phone_max) {
+      position: absolute;
+      top: 26px;
+      right: 0;
+    }
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin-bottom: 20px;
+    }
+  }
+
   .td-module-image {
     margin-bottom: 8px;
 

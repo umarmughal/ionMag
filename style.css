@@ -7523,6 +7523,23 @@ body .dropcap3 {
     padding-bottom: 10px;
   }
 }
+.td_block_related_posts .td-next-prev-wrap {
+  margin-top: 0;
+  /* tablet + desktop */
+  /* responsive portrait phone */
+}
+@media (min-width: 767px) {
+  .td_block_related_posts .td-next-prev-wrap {
+    position: absolute;
+    top: 26px;
+    right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .td_block_related_posts .td-next-prev-wrap {
+    margin-bottom: 20px;
+  }
+}
 .td_block_related_posts .td-module-image {
   margin-bottom: 8px;
   /* responsive portrait phone */
