@@ -4771,7 +4771,6 @@ body .dropcap3 {
 .td_module_5 .td-post-category {
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 7px;
   top: 0;
 }
 .td_module_5 .td-module-title {
@@ -4833,9 +4832,6 @@ body .dropcap3 {
 }
 .td_module_6 .td-module-title:after {
   display: none;
-}
-.td_module_6 .td-post-category {
-  margin-right: 4px;
 }
 .td_module_6 .entry-review-stars {
   vertical-align: middle;
