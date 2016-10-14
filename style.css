@@ -448,7 +448,7 @@ img {
 .tdc-row {
   margin-right: auto;
   margin-left: auto;
-  max-width: 980px;
+  width: 980px;
   /* responsive portrait tablet */
   /* responsive portrait phone */
 }
@@ -4390,6 +4390,7 @@ body .dropcap3 {
 }
 .td-category-small .td-post-category {
   margin-right: 4px;
+  margin-bottom: 4px;
   padding: 3px 6px;
   position: relative;
   top: -1px;
@@ -4606,14 +4607,6 @@ body .dropcap3 {
     margin: 0 15px 0 0;
   }
 }
-.td_module_3 .td-post-category {
-  /* responsive portrait tablet */
-}
-@media (min-width: 768px) and (max-width: 1018px) {
-  .td_module_3 .td-post-category {
-    margin-bottom: 5px;
-  }
-}
 .td_module_3 .td-module-title {
   padding-bottom: 0;
   font-size: 13px;
@@ -4778,7 +4771,6 @@ body .dropcap3 {
 .td_module_5 .td-post-category {
   display: inline-block;
   vertical-align: top;
-  margin-bottom: 7px;
   top: 0;
 }
 .td_module_5 .td-module-title {
@@ -4840,9 +4832,6 @@ body .dropcap3 {
 }
 .td_module_6 .td-module-title:after {
   display: none;
-}
-.td_module_6 .td-post-category {
-  margin-right: 4px;
 }
 .td_module_6 .entry-review-stars {
   vertical-align: middle;
@@ -5334,6 +5323,14 @@ body .dropcap3 {
 .td_block_5.td-column-2 .td_module_wrap:last-child:before {
   display: none;
 }
+.td_block_5 .td-video-play-ico > img {
+  /* responsive portrait tablet */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td_block_5 .td-video-play-ico > img {
+    width: 28px;
+  }
+}
 .td_block_5.td-column-3 .td_module_5 .td-module-image {
   /* desktop */
   /* responsive portrait tablet */
@@ -5361,6 +5358,9 @@ body .dropcap3 {
 }
 .td_block_5.td-column-3 .td_module_5 .td-excerpt {
   display: none;
+}
+.td_block_5.td-column-3 .td-video-play-ico > img {
+  width: 28px;
 }
 .td_block_5.td-column-2 .td-next-prev-wrap,
 .td_block_5.td-column-3 .td-next-prev-wrap,
@@ -5465,6 +5465,77 @@ body .dropcap3 {
 }
 .td_block_7.td-column-1 .td_module_1 {
   padding-bottom: 27px;
+}
+.td_block_7.td-column-2,
+.td_block_7.td-column-3 {
+  /* responsive portrait phone */
+}
+.td_block_7.td-column-2 .td_module_1,
+.td_block_7.td-column-3 .td_module_1,
+.td_block_7.td-column-2 .td_module_2,
+.td_block_7.td-column-3 .td_module_2 {
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td_block_7.td-column-2 .td_module_1,
+  .td_block_7.td-column-3 .td_module_1,
+  .td_block_7.td-column-2 .td_module_2,
+  .td_block_7.td-column-3 .td_module_2 {
+    padding-bottom: 28px;
+  }
+  .td_block_7.td-column-2 .td_module_1 .td-module-image,
+  .td_block_7.td-column-3 .td_module_1 .td-module-image,
+  .td_block_7.td-column-2 .td_module_2 .td-module-image,
+  .td_block_7.td-column-3 .td_module_2 .td-module-image {
+    position: relative;
+    display: inline-block;
+    float: left;
+    width: 100px;
+    margin: 0 15px 30px 0;
+  }
+  .td_block_7.td-column-2 .td_module_1 .td-module-title,
+  .td_block_7.td-column-3 .td_module_1 .td-module-title,
+  .td_block_7.td-column-2 .td_module_2 .td-module-title,
+  .td_block_7.td-column-3 .td_module_2 .td-module-title {
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 600;
+    padding-bottom: 0;
+    margin-bottom: 7px;
+  }
+  .td_block_7.td-column-2 .td_module_1 .td-video-play-ico > img,
+  .td_block_7.td-column-3 .td_module_1 .td-video-play-ico > img,
+  .td_block_7.td-column-2 .td_module_2 .td-video-play-ico > img,
+  .td_block_7.td-column-3 .td_module_2 .td-video-play-ico > img {
+    width: 28px;
+  }
+  .td_block_7.td-column-2 .td_module_1 .td-excerpt,
+  .td_block_7.td-column-3 .td_module_1 .td-excerpt,
+  .td_block_7.td-column-2 .td_module_2 .td-excerpt,
+  .td_block_7.td-column-3 .td_module_2 .td-excerpt {
+    display: none;
+  }
+  .td_block_7.td-column-2 .td_module_1 .td-post-category-wrap,
+  .td_block_7.td-column-3 .td_module_1 .td-post-category-wrap,
+  .td_block_7.td-column-2 .td_module_2 .td-post-category-wrap,
+  .td_block_7.td-column-3 .td_module_2 .td-post-category-wrap {
+    bottom: 0;
+    text-align: left;
+  }
+  .td_block_7.td-column-2 .td_module_1 .entry-title:after,
+  .td_block_7.td-column-3 .td_module_1 .entry-title:after,
+  .td_block_7.td-column-2 .td_module_2 .entry-title:after,
+  .td_block_7.td-column-3 .td_module_2 .entry-title:after {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .td_block_7.td-column-2 .td-next-prev-wrap,
+  .td_block_7.td-column-3 .td-next-prev-wrap,
+  .td_block_7.td-column-2 .td-load-more-wrap,
+  .td_block_7.td-column-3 .td-load-more-wrap {
+    margin-top: 0;
+  }
 }
 .td_block_7 .td_module_4 {
   padding-bottom: 37px;
@@ -6021,7 +6092,13 @@ body .dropcap3 {
 }
 .td-mx-23 .td-meta-info-container {
   padding: 0 8% 20px;
+  /* responsive portrait tablet */
   /* responsive portrait phone */
+}
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-mx-23 .td-meta-info-container {
+    padding: 0 4% 20px;
+  }
 }
 @media (max-width: 767px) {
   .td-mx-23 .td-meta-info-container {
@@ -6286,9 +6363,9 @@ body .dropcap3 {
   }
 }
 .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-meta-info-container {
-  /* responsive portrait tablet + phone */
+  /* responsive portrait phone */
 }
-@media (max-width: 1018px) {
+@media (max-width: 767px) {
   .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-meta-info-container {
     padding: 0 10px 11px !important;
   }
@@ -6316,6 +6393,8 @@ body .dropcap3 {
 @media (max-width: 767px) {
   .td-big-grids-scroll .td-big-grid-post-0 {
     width: 100% !important;
+    height: auto;
+    max-height: 420px;
     float: none !important;
   }
 }
@@ -7523,6 +7602,23 @@ body .dropcap3 {
     padding-bottom: 10px;
   }
 }
+.td_block_related_posts .td-next-prev-wrap {
+  margin-top: 0;
+  /* tablet + desktop */
+  /* responsive portrait phone */
+}
+@media (min-width: 767px) {
+  .td_block_related_posts .td-next-prev-wrap {
+    position: absolute;
+    top: 26px;
+    right: 0;
+  }
+}
+@media (max-width: 767px) {
+  .td_block_related_posts .td-next-prev-wrap {
+    margin-bottom: 20px;
+  }
+}
 .td_block_related_posts .td-module-image {
   margin-bottom: 8px;
   /* responsive portrait phone */
@@ -8135,7 +8231,7 @@ body .dropcap3 {
   border: none;
 }
 .page-nav i {
-  font-size: 8px;
+  font-size: 0.615em;
   line-height: 1;
   top: -1px;
   position: relative;

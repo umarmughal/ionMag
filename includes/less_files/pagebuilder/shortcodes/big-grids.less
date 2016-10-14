@@ -200,8 +200,8 @@
 
     // meta container
     .td-meta-info-container {
-      /* responsive portrait tablet + phone */
-      @media (max-width: @responsive_p_tablet_max) {
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
         padding: 0 10px 11px !important;
       }
     }
@@ -227,6 +227,8 @@
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100% !important;
+      height: auto;
+      max-height: 420px;
       float: none !important;
     }
 
