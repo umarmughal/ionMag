@@ -675,6 +675,7 @@ class td_config {
                 "class" => 'td_block_1',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_1',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_1.php',
                 "params" => array_merge(
@@ -694,6 +695,7 @@ class td_config {
                 "class" => 'td_block_2',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_2',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_2.php',
                 "params" => array_merge(
@@ -713,6 +715,7 @@ class td_config {
                 "class" => 'td_block_3',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_3',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_3.php',
                 "params" => array_merge(
@@ -732,6 +735,7 @@ class td_config {
                 "class" => 'td_block_4',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_4',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_4.php',
                 "params" => array_merge(
@@ -751,6 +755,7 @@ class td_config {
                 "class" => 'td_block_5',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_5',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_5.php',
                 "params" => array_merge(
@@ -770,6 +775,7 @@ class td_config {
                 "class" => 'td_block_6',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_6',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_6.php',
                 "params" => array_merge(
@@ -789,6 +795,7 @@ class td_config {
                 "class" => 'td_block_7',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_7',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_7.php',
                 "params" => array_merge(
@@ -808,6 +815,7 @@ class td_config {
                 "class" => 'td_block_8',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Blocks',
                 'icon' => 'icon-pagebuilder-td_block_8',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_8.php',
                 "params" => array_merge(
@@ -827,6 +835,7 @@ class td_config {
                 "class" => 'td_block_big_grid_1',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Big Grids',
                 'icon' => 'icon-pagebuilder-td_block_big_grid_1',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_big_grid_1.php',
                 "params" => self::td_block_big_grid_params(),
@@ -841,6 +850,7 @@ class td_config {
                 "class" => 'td_block_big_grid_2',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Big Grids',
                 'icon' => 'icon-pagebuilder-td_block_big_grid_2',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_big_grid_2.php',
                 "params" => self::td_block_big_grid_params(),
@@ -855,6 +865,7 @@ class td_config {
                 "class" => 'td_block_big_grid_3',
                 "controls" => "full",
                 "category" => 'Blocks',
+                'tdc_category' => 'Big Grids',
                 'icon' => 'icon-pagebuilder-td_block_big_grid_3',
                 'file' => td_global::$get_template_directory . '/includes/shortcodes/td_block_big_grid_3.php',
                 "params" => self::td_block_big_grid_params(),
