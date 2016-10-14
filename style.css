@@ -5522,6 +5522,12 @@ body .dropcap3 {
     bottom: 0;
     text-align: left;
   }
+  .td_block_7.td-column-2 .td_module_1 .entry-title:after,
+  .td_block_7.td-column-3 .td_module_1 .entry-title:after,
+  .td_block_7.td-column-2 .td_module_2 .entry-title:after,
+  .td_block_7.td-column-3 .td_module_2 .entry-title:after {
+    display: none;
+  }
 }
 @media (max-width: 767px) {
   .td_block_7.td-column-2 .td-next-prev-wrap,
