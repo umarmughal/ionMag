@@ -715,9 +715,13 @@ function td_css_generator() {
     	@top_sub_menu
     }
     /* @main_menu */
-    .sf-menu > li > a,
-    .td-header-menu-search #td-header-search-button .td-icon-search {
+    .td-theme-wrap .sf-menu > li > a,
+    .td-theme-wrap .td-header-menu-search #td-header-search-button .td-icon-search {
         @main_menu
+    }
+    /* @top-menu-height */
+    .td-header-menu-wrap .td-main-logo img {
+        max-height: @top-menu-height;
     }
     /* @main_sub_menu */
     .sf-menu ul .td-menu-item a {
@@ -1065,6 +1069,12 @@ function td_css_generator() {
         foreach ($td_typography_array as $section_id => $section_css_array) {
             $td_css_compiler->load_setting_array(array($section_id => $section_css_array));
         }
+    }
+
+    // read line-height for the main-menu to align the logo in menu // nu e folosit
+    $td_menu_height = td_util::get_option('td_fonts');
+    if (!empty($td_menu_height['main_menu']['line_height'])) {
+        $td_css_compiler->load_setting_raw('main-menu-height', $td_menu_height['main_menu']['line_height']);
     }
 
 
