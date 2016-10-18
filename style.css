@@ -10734,10 +10734,19 @@ input.search-submit:hover {
   vertical-align: middle;
 }
 .widget_rss li {
+  position: relative;
   margin-bottom: 6px;
   padding-bottom: 11px;
-  border-bottom: 1px solid #f5f5f5;
   line-height: 21px;
+}
+.widget_rss li:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #f5f5f5;
 }
 .widget_rss li .rsswidget {
   margin-right: 10px;
@@ -11670,6 +11679,10 @@ input.search-submit:hover {
 .td-footer-outer-wrapper .block-title label {
   color: #fff;
 }
+.td-footer-outer-wrapper .wp-caption-text,
+.td-footer-outer-wrapper .wp-caption-dd {
+  color: #969696;
+}
 .td-footer-outer-wrapper .widget_categories li span:before {
   border-color: #fff;
 }
@@ -11677,12 +11690,20 @@ input.search-submit:hover {
 .td-footer-outer-wrapper .rssSummary {
   color: #ccc !important;
 }
+.td-footer-outer-wrapper .widget_rss li:after {
+  opacity: 0.1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity='10')";
+  filter: alpha(opacity=10);
+}
 .td-footer-outer-wrapper .rss-date,
 .td-footer-outer-wrapper cite {
   color: #fff;
 }
 .td-footer-outer-wrapper .td-admin-edit:hover {
   color: #fff;
+}
+.td-footer-outer-wrapper select {
+  color: #000;
 }
 .td-footer-outer-wrapper .search-field {
   background-color: transparent;
@@ -11695,6 +11716,13 @@ input.search-submit:hover {
 }
 .td-footer-outer-wrapper input.search-submit:hover {
   color: #42bdcd;
+}
+.td-footer-outer-wrapper .widget_recent_comments {
+  color: #a9a9a9;
+}
+.td-footer-outer-wrapper table th,
+.td-footer-outer-wrapper table td {
+  border-color: #4a4a4a;
 }
 .td-footer-wrapper {
   padding: 22px 0;

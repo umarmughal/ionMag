@@ -46,6 +46,11 @@
     color: #fff;
   }
 
+  .wp-caption-text,
+  .wp-caption-dd {
+    color: #969696;
+  }
+
   .widget_categories li span:before {
     border-color: #fff;
   }
@@ -55,6 +60,10 @@
     color: #ccc !important;
   }
 
+  .widget_rss li:after {
+    .opacity(0.1);
+  }
+
   .rss-date,
   cite {
     color: #fff;
@@ -62,6 +71,10 @@
 
   .td-admin-edit:hover {
     color: #fff;
+  }
+
+  select {
+    color: #000;
   }
 
   .search-field {
@@ -76,6 +89,17 @@
 
     &:hover {
       color: @td_theme_color;
+    }
+  }
+
+  .widget_recent_comments {
+    color: #a9a9a9;
+  }
+
+  table {
+    th,
+    td {
+      border-color: #4a4a4a;
     }
   }
 }
