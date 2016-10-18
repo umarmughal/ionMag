@@ -60,8 +60,11 @@
     color: #ccc !important;
   }
 
-  .widget_rss li:after {
-    .opacity(0.1);
+  .widget_recent_comments li,
+  .widget_rss li {
+    &:after {
+      .opacity(0.1);
+    }
   }
 
   .rss-date,
@@ -74,6 +77,11 @@
   }
 
   select {
+    background-color: transparent;
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  option {
     color: #000;
   }
 
