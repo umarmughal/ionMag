@@ -5013,6 +5013,7 @@ body .dropcap3 {
   box-shadow: inset 1px 1px 0 0 rgba(0, 0, 0, 0.09);
 }
 .td_ajax_load_more.ajax-page-disabled {
+  visibility: hidden !important;
   display: none;
 }
 .td_block_inner_overflow {
