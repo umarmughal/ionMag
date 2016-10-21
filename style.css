@@ -5014,7 +5014,6 @@ body .dropcap3 {
 }
 .td_ajax_load_more.ajax-page-disabled {
   visibility: hidden !important;
-  display: none;
 }
 .td_block_inner_overflow {
   overflow: hidden;
@@ -10633,10 +10632,10 @@ input.search-submit:hover {
   line-height: 1;
   padding-right: 40px;
 }
-.widget_categories li:hover a span:before {
+.widget_categories li:hover > a span:before {
   border-color: #42bdcd;
 }
-.widget_categories li:hover a {
+.widget_categories li:hover > a {
   color: #42bdcd;
 }
 .widget_categories li li {

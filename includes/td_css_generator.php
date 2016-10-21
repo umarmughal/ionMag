@@ -78,7 +78,7 @@ function td_css_generator() {
     .td_block_authors .td-authors-url a:hover,
     .widget .current-menu-item a,
     .td-tags span,
-    .widget_categories li:hover a,
+    .widget_categories li:hover > a,
     .widget_search input[type=submit]:hover {
       color: @theme_color;
     }
@@ -125,7 +125,7 @@ function td_css_generator() {
     .td-theme-wrap .td_quote_box,
     .widget_calendar #today,
     .td-tags span,
-    .widget_categories li:hover a span:before {
+    .widget_categories li:hover > a span:before {
       border-color: @theme_color;
     }
     
