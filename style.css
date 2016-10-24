@@ -1197,6 +1197,13 @@ img {
 .td-header-style-2 .td-header-sp-recs .adsbygoogle {
   position: relative;
   margin: 0 auto;
+  /* responsive portrait phone */
+}
+@media (max-width: 767px) {
+  .td-header-style-2 .td-header-sp-recs img,
+  .td-header-style-2 .td-header-sp-recs .adsbygoogle {
+    margin: 10px auto;
+  }
 }
 .td-header-style-2 .td-header-sp-logo,
 .td-header-style-2 .td-header-sp-recs {
