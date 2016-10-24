@@ -1219,19 +1219,13 @@ img {
     text-align: center;
   }
 }
-.td-header-style-2 .sf-menu > li:last-child > a {
-  padding-right: 10px;
+.td-header-style-2 #td-header-search-button i {
+  margin-left: 10px;
+  /* responsive portrait tablet */
 }
-.td-header-style-2 .td-affix .td-header-menu-search {
-  right: 0;
-}
-.td-header-style-2 .td-header-menu-search {
-  /* desktop only */
-}
-@media (min-width: 768px) {
-  .td-header-style-2 .td-header-menu-search {
-    right: auto;
-    display: inline-block;
+@media (min-width: 768px) and (max-width: 1018px) {
+  .td-header-style-2 #td-header-search-button i {
+    margin-left: 0;
   }
 }
 /* the search button */
@@ -1562,6 +1556,9 @@ img {
 .td-header-sp-top-widget .td-social-icon-wrap > a {
   display: inline-block;
 }
+.td-header-sp-top-widget #td-header-search-button i {
+  margin-left: 0;
+}
 .td-header-sp-top-widget .td-drop-down-search:after {
   display: none;
 }
@@ -1713,6 +1710,9 @@ ul.sf-menu li li.sfHover li ul {
 .sf-menu > .current-category-ancestor,
 .sf-menu > .current-menu-item {
   z-index: 0;
+}
+.sf-menu > li:last-child > a {
+  padding-right: 0;
 }
 /*  ----------------------------------------------------------------------------
     All the links
