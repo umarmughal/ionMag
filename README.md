@@ -4,7 +4,7 @@ License: GPL V3
 
 **Support forum:** http://forum.wpion.com/
 
-**Official site:** http://forum.wpion.com/
+**Official site:** https://www.wpion.com/ionmag-theme/
 
 #### What's this?
 A GPL WordPress theme for blogs, magazines and more. The theme is based on our wp_booster framework and uses tagDiv Composer for live frontend editing.
