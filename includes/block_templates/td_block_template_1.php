@@ -71,7 +71,6 @@ class td_block_template_1 {
                 background-color: @header_color;
                 margin: 0;
                 padding: 8px 10px;
-                color: #fff;
             }
             .$unique_block_class .block-title:after {
                 display: none;
