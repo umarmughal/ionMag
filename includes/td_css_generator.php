@@ -720,7 +720,8 @@ function td_css_generator() {
         @main_menu
     }
     /* @top-menu-height */
-    .td-header-menu-wrap .td-main-logo img {
+    .td-header-menu-wrap .td-main-logo img,
+    .td-header-menu-wrap .td-main-logo a {
         max-height: @top-menu-height;
     }
     /* @main_sub_menu */
