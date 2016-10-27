@@ -220,6 +220,16 @@
       }
     }
   }
+
+  // make full scroll when only 2 posts
+  &.td-scroll-full {
+    .td-big-grid-post {
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        width: 100%;
+      }
+    }
+  }
 }
 .td-big-grids-scroll {
   // used for mobile scroll
