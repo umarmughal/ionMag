@@ -46,8 +46,8 @@ class td_block_template_1 {
         	.$unique_block_class .td-wrapper-pulldown-filter .td-pulldown-filter-display-option:hover,
         	.$unique_block_class .td-wrapper-pulldown-filter a.td-pulldown-filter-link:hover,
         	.$unique_block_class .td-wrapper-pulldown-filter a.td-cur-simple-item,
-            .$unique_block_class .block-title span,
-            .$unique_block_class .block-title a,
+            .$unique_block_class div .block-title span,
+            .$unique_block_class div .block-title a,
             .$unique_block_class .td-module-comments a:hover,
             .$unique_block_class .td-next-prev-wrap a:hover,
             .$unique_block_class .td-authors-url a:hover,
@@ -71,6 +71,7 @@ class td_block_template_1 {
                 background-color: @header_color;
                 margin: 0;
                 padding: 8px 10px;
+                color: #fff;
             }
             .$unique_block_class .block-title:after {
                 display: none;
