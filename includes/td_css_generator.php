@@ -705,6 +705,7 @@ function td_css_generator() {
     
     /* @top_menu */
     .top-header-menu > li > a,
+    .top-header-menu .td-icon-logout,
     .td-header-sp-top-menu .td_data_time,
     .td-header-sp-top-widget .td-search-btns-wrap i,
     .td-header-sp-top-widget .td-social-icon-wrap i {
@@ -722,8 +723,22 @@ function td_css_generator() {
     /* @top-menu-height */
     .td-header-menu-wrap .td-main-logo img,
     .td-header-menu-wrap .td-main-logo a {
-        max-height: @top-menu-height;
+        max-height: @top-menu-height
     }
+    .top-header-menu .td-header-sp-top-menu .td_ul_logout,
+    .td-header-sp-top-menu,
+    #td-outer-wrap .td-header-sp-top-widget {
+        line-height: 1;
+    }
+
+    /* @main-menu-height */
+    .td-header-logo-inmenu .td-main-logo img {
+        max-height: @main-menu-height
+    }
+    .td-header-logo-inmenu .td-header-sp-logo a {
+        line-height: @main-menu-height
+    }
+
     /* @main_sub_menu */
     .sf-menu ul .td-menu-item a {
         @main_sub_menu
@@ -1072,10 +1087,17 @@ function td_css_generator() {
         }
     }
 
-    // read line-height for the main-menu to align the logo in menu // nu e folosit
+    // read line-height for the main-menu to align the logo in menu
     $td_menu_height = td_util::get_option('td_fonts');
     if (!empty($td_menu_height['main_menu']['line_height'])) {
         $td_css_compiler->load_setting_raw('main-menu-height', $td_menu_height['main_menu']['line_height']);
+    }
+
+
+    // read line-height for the top-menu to align the social icons in top menu
+    $td_top_menu_height = td_util::get_option('td_fonts');
+    if (!empty($td_top_menu_height['top_menu']['line_height'])) {
+        $td_css_compiler->load_setting_raw('top-menu-height', $td_top_menu_height['top_menu']['line_height']);
     }
 
 
