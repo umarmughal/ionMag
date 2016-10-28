@@ -6368,7 +6368,7 @@ body .dropcap3 {
     float: none;
     vertical-align: top;
     width: 80%;
-    height: 170px;
+    height: 165px;
   }
 }
 @media (max-width: 320px) {
@@ -11671,6 +11671,7 @@ input.search-submit:hover {
   background-color: #000;
   text-align: center;
   color: #fff;
+  overflow: hidden;
 }
 .td-footer-outer-wrapper:before {
   content: '';
