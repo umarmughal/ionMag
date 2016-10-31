@@ -1,5 +1,6 @@
 .td-header-menu-wrap {
   position: relative;
+  line-height: 1;
 
   &:before,
   &:after {
@@ -157,7 +158,8 @@ ul.sf-menu li li.sfHover li ul {
 
   @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
     padding-right: 17px;
-    font-size: 11px;
+    font-size: 13px !important;
+    letter-spacing: -0.06em;
   }
 }
 
@@ -660,6 +662,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 
   .td-search-btns-wrap {
     text-align: center;
+    line-height: 1;
 
     &:hover .td-icon-search {
       color: @td_theme_color;
