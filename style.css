@@ -922,7 +922,7 @@ img {
     right: 0;
     left: 0;
     margin: auto;
-    padding: 0;
+    padding: 2px 0;
   }
 }
 @media (max-width: 1140px) {
@@ -1281,7 +1281,7 @@ img {
   width: 100%;
   height: 28px;
   margin: 0;
-  padding: 0 11px;
+  padding: 0 5px;
   font-size: 13px;
   color: #666;
   border: 0;
@@ -1445,12 +1445,14 @@ img {
   font-size: 6px;
   position: relative;
   top: -1px;
+  vertical-align: middle;
 }
 .top-header-menu .td-icon-logout {
   font-size: 10px;
+  line-height: 1 !important;
   position: relative;
-  top: 1px;
   margin-right: 2px;
+  vertical-align: middle;
 }
 .top-header-menu .sub-menu {
   display: none;
@@ -1594,6 +1596,7 @@ img {
 }
 .td-header-menu-wrap {
   position: relative;
+  line-height: 1;
   /* responsive portrait phone */
 }
 .td-header-menu-wrap:before,
@@ -2165,6 +2168,7 @@ ul.sf-js-enabled > li > a > i.td-icon-menu-down:before {
 }
 .td-header-menu-search .td-search-btns-wrap {
   text-align: center;
+  line-height: 1;
 }
 .td-header-menu-search .td-search-btns-wrap:hover .td-icon-search {
   color: #42bdcd;

@@ -725,14 +725,15 @@ function td_css_generator() {
     .td-header-menu-wrap .td-main-logo a {
         max-height: @top-menu-height
     }
-    .top-header-menu .td-header-sp-top-menu .td_ul_logout,
     .td-header-sp-top-menu,
-    #td-outer-wrap .td-header-sp-top-widget {
-        line-height: 1;
+    #td-outer-wrap .td-header-sp-top-widget,
+    .top-header-menu > li {
+        line-height: @top-menu-height
     }
 
     /* @main-menu-height */
-    .td-header-logo-inmenu .td-main-logo img {
+    .td-header-logo-inmenu .td-main-logo img,
+    .td-header-logo-inmenu .td-header-sp-logo {
         max-height: @main-menu-height
     }
     .td-header-logo-inmenu .td-header-sp-logo a {
