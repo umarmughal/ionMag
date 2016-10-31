@@ -193,9 +193,11 @@
       height: 165px;
     }
 
-    /* responsive smaller portrait phone */
-    @media (max-width: 320px) {
-      height: 130px;
+    .td-module-thumb {
+      /* responsive smaller portrait phone */
+      @media (max-width: 320px) {
+        height: 130px;
+      }
     }
 
     // meta container
@@ -237,9 +239,12 @@
     /* responsive portrait phone */
     @media (max-width: @responsive_p_phone_max) {
       width: 100% !important;
-      height: auto;
-      max-height: 420px;
       float: none !important;
+
+      .td-module-thumb {
+        height: auto;
+        max-height: 420px;
+      }
     }
 
     .td-post-category {
