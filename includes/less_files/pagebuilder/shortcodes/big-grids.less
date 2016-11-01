@@ -190,10 +190,13 @@
       float: none;
       vertical-align: top;
       width: 80%;
-      height: 165px;
     }
 
     .td-module-thumb {
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        height: 165px;
+      }
       /* responsive smaller portrait phone */
       @media (max-width: 320px) {
         height: 130px;

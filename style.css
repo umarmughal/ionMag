@@ -6373,11 +6373,16 @@ body .dropcap3 {
     float: none;
     vertical-align: top;
     width: 80%;
-    height: 165px;
   }
 }
 .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-module-thumb {
+  /* responsive portrait phone */
   /* responsive smaller portrait phone */
+}
+@media (max-width: 767px) {
+  .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-module-thumb {
+    height: 165px;
+  }
 }
 @media (max-width: 320px) {
   .td_block_wrap .td-big-grid-wrapper .td-big-grid-scroll .td-big-grid-post .td-module-thumb {
