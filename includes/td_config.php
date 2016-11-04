@@ -953,7 +953,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+	                array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
                 )
             )
         );
@@ -1053,7 +1060,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+	                array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
                 )
             )
         );
@@ -1153,7 +1167,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+	                array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
                 )
             )
         );
@@ -1458,7 +1479,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+	                array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
                 )
             )
         );
@@ -1540,7 +1568,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+	                array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
                 )
             )
         );
@@ -1679,7 +1714,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+	                array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
                 )
             )
         );
@@ -1782,7 +1824,14 @@ class td_config {
                         'type' => 'css_editor',
                         'heading' => 'Css',
                         'group' => 'Design options',
-                    )
+                    ),
+				    array (
+		                'param_name' => 'tdc_css',
+		                'value' => '',
+		                'type' => 'tdc_css_editor',
+		                'heading' => '',
+		                'group' => 'Design options',
+		            ),
 			    )
 		    )
 	    );
@@ -3196,7 +3245,14 @@ class td_config {
                 'type' => 'css_editor',
                 'heading' => 'Css',
                 'group' => 'Design options',
-            )
+            ),
+	        array (
+                'param_name' => 'tdc_css',
+                'value' => '',
+                'type' => 'tdc_css_editor',
+                'heading' => '',
+                'group' => 'Design options',
+            ),
         );
     }
 
@@ -3366,7 +3422,14 @@ class td_config {
                     'type' => 'css_editor',
                     'heading' => 'Css',
                     'group' => 'Design options',
-                )
+                ),
+	            array (
+	                'param_name' => 'tdc_css',
+	                'value' => '',
+	                'type' => 'tdc_css_editor',
+	                'heading' => '',
+	                'group' => 'Design options',
+	            ),
             )
         );
 
