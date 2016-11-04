@@ -4,7 +4,7 @@
 
 get_header();
 
-td_global::$current_template = 'page-title-sidebar';
+td_global::$current_template = 'page-title';
 //set the template id, used to get the template specific settings
 $template_id = 'page';
 
