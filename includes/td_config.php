@@ -2783,7 +2783,7 @@ class td_config {
                 array(
                     'name' => 'ionMag - Header Styles', // The plugin name
                     'slug' => 'td-header-styles-pack', // The plugin slug (typically the folder name)
-                    'source' => td_global::$get_template_directory_uri . '/includes/plugins/td-header-styles-red-pack.zip', // The plugin source
+                    'source' => td_global::$get_template_directory_uri . '/includes/plugins/td-header-styles-pack.zip', // The plugin source
                     'required' => false, // If false, the plugin is only 'recommended' instead of required
                     'version' => '', // E.g. 1.0.0. If set, the active plugin must be this version or higher, otherwise a notice is presented
                     'force_activation' => false, // If true, plugin is activated upon theme activation and cannot be deactivated until theme switch
