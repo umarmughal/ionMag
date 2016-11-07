@@ -11844,13 +11844,13 @@ input.search-submit:hover {
     width: 100%;
   }
 }
-.footer-text-wrap .footer-email-wrap {
+.footer-email-wrap {
   margin-top: 12px;
 }
-.footer-text-wrap .footer-email-wrap a {
+.footer-email-wrap a {
   color: #42bdcd;
 }
-.footer-text-wrap .footer-email-wrap a:hover {
+.footer-email-wrap a:hover {
   text-decoration: underline;
 }
 /*  ----------------------------------------------------------------------------
