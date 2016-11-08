@@ -721,10 +721,6 @@ function td_css_generator() {
         @main_menu
     }
     /* @top-menu-height */
-    .td-header-menu-wrap .td-main-logo img,
-    .td-header-menu-wrap .td-main-logo a {
-        max-height: @top-menu-height
-    }
     .td-header-sp-top-menu,
     #td-outer-wrap .td-header-sp-top-widget,
     .top-header-menu > li {
