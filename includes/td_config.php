@@ -2502,7 +2502,15 @@ class td_config {
 			    'demo_url' => 'http://demo.wpion.com/ionmag/',
 			    'td_css_generator_demo' => false,
 			    'uses_custom_style_css' => false
-		    )
+		    ),
+            'viral' => array(
+                'text' => 'Say What?',
+                'folder' => td_global::$get_template_directory . '/includes/demos/viral/',
+                'img' => td_global::$get_template_directory_uri . '/includes/demos/viral/screenshot.png',
+                'demo_url' => 'http://demo.tagdiv.com/ionmag_viral/',
+                'td_css_generator_demo' => true,                // must have a td_css_generator_demo.php in demo's folder
+                'uses_custom_style_css' => true                // load a custom demo_style.less - must also be added to td_less_style.css.php
+            ),
 	    );
 
 
