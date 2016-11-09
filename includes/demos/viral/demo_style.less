@@ -9,6 +9,33 @@ Say what demo
 
 .td-viral {
 
+  .td-header-style-pr-8 {
+    .td-header-main-menu {
+      width: 100%;
+    }
+
+    .td-header-sp-logo,
+    .td-header-menu-wrap.td-affix .td-main-menu-logo {
+      margin-left: 32px;
+    }
+
+    .td-header-menu-search {
+      /* desktop only */
+      @media (min-width: @responsive_p_tablet_max) {
+        margin-right: 22px;
+      }
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        margin-right: 4px;
+      }
+    }
+
+    .td_mega_menu_sub_cats a {
+      padding-left: 0;
+    }
+  }
+
   .td-main-content {
     .block-title {
       &:after {
@@ -24,13 +51,21 @@ Say what demo
     }
   }
 
+  .td-post-category-wrap {
+    bottom: 0;
+  }
+
+  .td-post-category {
+    padding: 5px 10px;
+  }
+
   .td_ajax_load_more {
     padding: 15px 28px;
     .box-shadow(inset 0px 0px 0px 3px rgba(0,0,0,0.08));
     .border-radius(50px);
 
     &:hover {
-      .box-shadow(inset 0px 0px 0px 3px rgba(0,0,0,0.12));
+      .box-shadow(inset 0px 0px 0px 3px #ff036e);
     }
 
     i {
@@ -49,6 +84,11 @@ Say what demo
         margin: 0 auto;
       }
     }
+  }
+
+  .widget_categories li span {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .td-post-template-rd-2 {
@@ -70,21 +110,32 @@ Say what demo
     }
   }
 
-  .td-category-header {
-    .entry-title {
-      font-size: 30px;
-      line-height: 38px;
+  .td_block_related_posts .entry-title {
+    font-size: 13px;
+    line-height: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
 
-      /* responsive portrait tablet */
-      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
-        font-size: 26px;
-        line-height: 34px;
-      }
+  .post .author-box-wrap .td-author-name a {
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+
+  &.td_category_template_rd_8 .td-category-header {
+    .entry-category a {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+
+  .td_module_1 {
+    .entry-title {
+      padding-bottom: 14px;
 
       /* responsive portrait phone */
       @media (max-width: @responsive_p_phone_max) {
-        font-size: 24px;
-        line-height: 32px;
+        padding-bottom: 11px;
       }
     }
   }
@@ -99,18 +150,35 @@ Say what demo
   }
 
   .td_module_5 {
+    .td-post-category {
+      margin-bottom: 13px;
+
+      /* responsive portrait tablet */
+      @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        margin-bottom: 14px;
+      }
+
+      /* responsive portrait phone */
+      @media (max-width: @responsive_p_phone_max) {
+        margin-bottom: 12px;
+      }
+    }
+
     .entry-title {
+      padding-bottom: 13px;
       font-size: 30px;
       line-height: 30px;
 
       /* responsive portrait tablet */
       @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
+        padding-bottom: 14px;
         font-size: 26px !important;
         line-height: 1 !important;
       }
 
       /* responsive portrait phone */
       @media (max-width: @responsive_p_phone_max) {
+        padding-bottom: 12px;
         font-size: 22px !important;
         line-height: 1 !important;
       }
@@ -128,14 +196,14 @@ Say what demo
   .td_module_rd_6 {
     .entry-title {
       margin-bottom: 18px;
-      padding-bottom: 17px;
+      padding-bottom: 11px;
       font-size: 50px;
       line-height: 50px;
 
       /* responsive portrait tablet */
       @media (min-width: @responsive_p_tablet_min) and (max-width: @responsive_p_tablet_max) {
         margin-bottom: 12px;
-        padding-bottom: 11px;
+        padding-bottom: 12px;
         font-size: 38px;
         line-height: 1;
       }
@@ -143,7 +211,7 @@ Say what demo
       /* responsive portrait phone */
       @media (max-width: @responsive_p_phone_max) {
         margin-bottom: 10px;
-        padding-bottom: 9px;
+        padding-bottom: 8px;
         font-size: 30px;
         line-height: 1;
       }
@@ -164,6 +232,7 @@ Say what demo
 
   .td_module_rd_12 {
     .entry-title {
+      padding-bottom: 14px;
       font-size: 26px;
       line-height: 26px;
     }

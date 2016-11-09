@@ -1,0 +1,1 @@
+[vc_row][vc_column][rev_slider alias="td-voyage"][td_block_image_box custom_url_item0="#" image_title_item0="Travel" custom_url_item1="#" custom_url_item2="#" image_title_item1="Explore" image_title_item2="Enjoy" image_item0="161" image_item1="162" image_item2="163" tdc_css="eyJhbGwiOnsiYmFja2dyb3VuZC1zaXplIjoiY292ZXIifX0=" style=""][/vc_column][/vc_row]
