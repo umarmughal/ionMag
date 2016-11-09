@@ -537,7 +537,7 @@ class td_config {
                 'width' => 245,
                 'height' => 184,
                 'crop' => array('center', 'top'),
-                'post_format_icon_size' => 'small',
+                'post_format_icon_size' => 'large',
                 'used_on' => array(
                     'Mega menu'
                 ),
