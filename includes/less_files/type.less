@@ -351,16 +351,14 @@ input[type=password] {
 
   .alignnone {
     display: inline-block;
-    margin: 0 10px 0 0;
+    margin: 0 5px;
+
+    /* responsive portrait phone */
+    @media (max-width: @responsive_p_phone_max) {
+      margin: 0 10px 0 0;
+    }
   }
 }
-
-// featured image caption
-// @todo - trebuie mutat din fisieru' asta ??
-.td-post-featured-image figure img {
-  margin-bottom: 0;
-}
-
 
 
 img.wp-smiley {
