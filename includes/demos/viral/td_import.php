@@ -12,19 +12,6 @@ $td_demo_header_menu_id = td_demo_menus::create_menu('td-demo-header-menu', 'hea
 //top menu
 
 //footer menu
-$td_demo_footer_menu = td_demo_menus::create_menu('td-demo-footer-menu', 'footer-menu');
-td_demo_menus::add_link(array(
-    'title' => 'About',
-    'add_to_menu_id' => $td_demo_footer_menu,
-    'url' => '#',
-    'parent_id' => ''
-));
-td_demo_menus::add_link(array(
-    'title' => 'Contact',
-    'add_to_menu_id' => $td_demo_footer_menu,
-    'url' => '#',
-    'parent_id' => ''
-));
 
 
 /*  ----------------------------------------------------------------------------
@@ -104,7 +91,7 @@ td_demo_widgets::add_widget_to_sidebar('default', 'td_block_ad_box_widget',
     categories
 */
 $demo_cat_1_id =td_demo_category::add_category(array(
-    'category_name' => 'Celebs',
+    'category_name' => 'Funny',
     'parent_id' => 0,
     'category_template' => '',
     'top_posts_style' => '',
@@ -115,7 +102,7 @@ $demo_cat_1_id =td_demo_category::add_category(array(
     'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
 ));
     $demo_cat_2_id =td_demo_category::add_category(array(
-        'category_name' => 'Culture',
+        'category_name' => 'Animals',
         'parent_id' => $demo_cat_1_id,
         'category_template' => '',
         'top_posts_style' => '',
@@ -126,7 +113,7 @@ $demo_cat_1_id =td_demo_category::add_category(array(
         'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
     ));
     $demo_cat_3_id =td_demo_category::add_category(array(
-        'category_name' => 'Hollywood',
+        'category_name' => 'Moments',
         'parent_id' => $demo_cat_1_id,
         'category_template' => '',
         'top_posts_style' => '',
@@ -137,7 +124,7 @@ $demo_cat_1_id =td_demo_category::add_category(array(
         'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
     ));
     $demo_cat_4_id =td_demo_category::add_category(array(
-        'category_name' => 'Music',
+        'category_name' => 'Accidents',
         'parent_id' => $demo_cat_1_id,
         'category_template' => '',
         'top_posts_style' => '',
@@ -148,7 +135,7 @@ $demo_cat_1_id =td_demo_category::add_category(array(
         'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
     ));
     $demo_cat_5_id =td_demo_category::add_category(array(
-        'category_name' => 'Sports',
+        'category_name' => 'GIFs',
         'parent_id' => $demo_cat_1_id,
         'category_template' => '',
         'top_posts_style' => '',
@@ -159,7 +146,7 @@ $demo_cat_1_id =td_demo_category::add_category(array(
         'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
     ));
     $demo_cat_6_id =td_demo_category::add_category(array(
-        'category_name' => 'Television',
+        'category_name' => 'People',
         'parent_id' => $demo_cat_1_id,
         'category_template' => '',
         'top_posts_style' => '',
@@ -171,7 +158,7 @@ $demo_cat_1_id =td_demo_category::add_category(array(
     ));
 
 $demo_cat_7_id =td_demo_category::add_category(array(
-    'category_name' => 'Relationships',
+    'category_name' => 'Entertainment',
     'parent_id' => 0,
     'category_template' => '',
     'top_posts_style' => '',
@@ -182,7 +169,7 @@ $demo_cat_7_id =td_demo_category::add_category(array(
     'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
 ));
 $demo_cat_8_id =td_demo_category::add_category(array(
-    'category_name' => 'Scandal',
+    'category_name' => 'Fails',
     'parent_id' => 0,
     'category_template' => '',
     'top_posts_style' => '',
@@ -194,7 +181,7 @@ $demo_cat_8_id =td_demo_category::add_category(array(
     'tdc_category_td_grid_style' => '2'
 ));
 $demo_cat_9_id =td_demo_category::add_category(array(
-    'category_name' => 'Style',
+    'category_name' => 'Hot',
     'parent_id' => 0,
     'category_template' => '',
     'top_posts_style' => '',
@@ -206,7 +193,7 @@ $demo_cat_9_id =td_demo_category::add_category(array(
     'tdc_category_td_grid_style' => ''
 ));
 $demo_cat_10_id =td_demo_category::add_category(array(
-    'category_name' => 'Life',
+    'category_name' => 'Geeky',
     'parent_id' => 0,
     'category_template' => '',
     'top_posts_style' => '',
@@ -217,7 +204,7 @@ $demo_cat_10_id =td_demo_category::add_category(array(
     'tdc_sidebar_pos' => '', //sidebar_left, sidebar_right, no_sidebar
 ));
 $demo_cat_11_id =td_demo_category::add_category(array(
-    'category_name' => 'Weird',
+    'category_name' => 'Buzz',
     'parent_id' => 0,
     'category_template' => '',
     'top_posts_style' => '',
@@ -257,20 +244,20 @@ td_demo_menus::add_page(array(
 
 // mega menu multiple subcateg
 td_demo_menus::add_mega_menu(array(
-    'title' => 'Celebs',
+    'title' => 'Funny',
     'add_to_menu_id' => $td_demo_header_menu_id,
     'category_id' => $demo_cat_1_id
 ));
 
 // mega menu one subcateg
 td_demo_menus::add_mega_menu(array(
-	'title' => 'Relationships',
+	'title' => 'Entertainment',
 	'add_to_menu_id' => $td_demo_header_menu_id,
 	'category_id' => $demo_cat_7_id
 ));
 
 td_demo_menus::add_mega_menu(array(
-    'title' => 'Scandal',
+    'title' => 'Fails',
     'add_to_menu_id' => $td_demo_header_menu_id,
     'category_id' => $demo_cat_8_id
 ));
@@ -284,21 +271,21 @@ $parent_submenu_id = td_demo_menus::add_link(array(
 ));
 
 td_demo_menus::add_category(array(
-    'title' => 'Style',
+    'title' => 'Hot',
     'add_to_menu_id' => $td_demo_header_menu_id,
     'category_id' => $demo_cat_9_id,
     'parent_id' => $parent_submenu_id
 ));
 
 td_demo_menus::add_category(array(
-    'title' => 'Life',
+    'title' => 'Geeky',
     'add_to_menu_id' => $td_demo_header_menu_id,
     'category_id' => $demo_cat_10_id,
     'parent_id' => $parent_submenu_id
 ));
 
 td_demo_menus::add_category(array(
-    'title' => 'Weird',
+    'title' => 'Buzz',
     'add_to_menu_id' => $td_demo_header_menu_id,
     'category_id' => $demo_cat_11_id,
     'parent_id' => $parent_submenu_id
@@ -310,21 +297,21 @@ td_demo_menus::add_category(array(
 // posts in featured category
 
 td_demo_content::add_post(array(
-    'title' => 'Dreaming About Mandarin Oriental’s Moroccan Magic',
+    'title' => '7 Reasons Why A Cat Is The Perfect Best Friend',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array(get_cat_ID(TD_FEATURED_CAT)),
     'featured_image_td_id' => 'td_pic_1'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Hulk Hogan’s Secret Exposed In Court Battles',
+    'title' => 'Things You Think About Your Friends But Never Say',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array(get_cat_ID(TD_FEATURED_CAT)),
     'featured_image_td_id' => 'td_pic_2'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'The Nanny Who Tried to Sleep With Eva’s Husband',
+    'title' => 'People Whose Selfie Addiction Knows No Bounds',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array(get_cat_ID(TD_FEATURED_CAT)),
     'featured_image_td_id' => 'td_pic_3'
@@ -334,63 +321,63 @@ td_demo_content::add_post(array(
 // posts in multiple categories
 
 td_demo_content::add_post(array(
-    'title' => 'The Car Insurance Catch Doubles your Cover',
+    'title' => 'Obama\'s Presidential To-Do List Still Has a Lot Left',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_1'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Homeless Man’s Act of Kindness Towards Woman',
+    'title' => 'When the Dishes Finally Get Done',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_2'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Sarah Jessica Parker is the Queen of West Village',
+    'title' => 'If 6 Disney Movies Were 50% More Realistic',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_3'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Did Pink Just Throw Shade at Kim Kardashian?',
+    'title' => 'The 5 Stages of Someone Holding Your Phone',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_4'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Celebrating Adorable Daughter 6th Birthday',
+    'title' => 'When You Have to Smile for the Customer',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_5'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Inside New York City’s Holiday Windows',
+    'title' => 'The Secret Truth Every Dog Knows',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_6'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Blake Shelton Goes Up Against Christina Aguilera',
+    'title' => 'Insanely Stupid Movie Ideas That Somehow Still Got Made',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_7'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'New Zealand Sports Legend Dies to Cancer at Age 43',
+    'title' => 'Acts of Petty Rebellion We All Commit On the Internet',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_8'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Kelly Brings J.Lo and Keith Urban to Tears',
+    'title' => 'If Disney Couples Met Online',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id,$demo_cat_3_id,$demo_cat_4_id,$demo_cat_5_id,$demo_cat_6_id,$demo_cat_7_id,$demo_cat_8_id,$demo_cat_9_id,$demo_cat_10_id,$demo_cat_11_id),
     'featured_image_td_id' => 'td_pic_9'
@@ -438,28 +425,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Prince Harry Sets His Next Overseas Trip',
+    'title' => 'Samsung thinks foldable phones are the new flip phones',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_10_id),
     'featured_image_td_id' => 'td_pic_8'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Watch Jennifer Show Off Her Contrabass Skills',
+    'title' => 'Facebook buys black market passwords to keep your account safe',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_10_id),
     'featured_image_td_id' => 'td_pic_9'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'The Latest Casualty of Shaky Markets',
+    'title' => 'How AI could help save the humble sea cow',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_10_id),
     'featured_image_td_id' => 'td_pic_10'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Former First Lady Nancy Reagan Dead at 94',
+    'title' => '#Calexit secession movement trends on Twitter',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_10_id),
     'featured_image_td_id' => 'td_pic_1'
@@ -498,28 +485,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Hulk Hogan’s Secret Exposed In Court Battles',
+    'title' => 'Merry-go-round. Heavy on the ROUND',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_8_id),
     'featured_image_td_id' => 'td_pic_6'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'The Most Ridiculous Ads for Fall Television',
+    'title' => 'Somebody actually made a Butter Bot',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_8_id),
     'featured_image_td_id' => 'td_pic_7'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Woman Awarded $55 M in Peeping Tom Lawsuit',
+    'title' => 'Alternate Side Parking in Effect',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_8_id),
     'featured_image_td_id' => 'td_pic_8'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Clooney Calls Trump a Xenophobic Fascist',
+    'title' => 'There’s No Escape Now',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_8_id),
     'featured_image_td_id' => 'td_pic_9'
@@ -528,28 +515,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Amy Schumer and Chris Harrison Make Nice',
+    'title' => 'What If DC Let Marvel Help Develop Their Movies',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_7_id),
     'featured_image_td_id' => 'td_pic_10'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'The Nanny Who Tried to Sleep With Eva’s Husband',
+    'title' => 'Westworld Has Gone From Mostly Intriguing To Mostly Frustrating',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_7_id),
     'featured_image_td_id' => 'td_pic_1'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Caitlyn Jenner Talks Dating Men & Her Suicide',
+    'title' => 'Four Doctor Who Stories You Should Watch During The Break',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_7_id),
     'featured_image_td_id' => 'td_pic_2'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Secrets About Hollywood’s Celebrity Weddings',
+    'title' => 'Fantastic Beasts and Where to Find Them',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_7_id),
     'featured_image_td_id' => 'td_pic_3'
@@ -558,28 +545,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Mitt Romney Reads Donald Trump’s Mean Tweets on Kimmel',
+    'title' => 'Aged To Perfection',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_6_id),
     'featured_image_td_id' => 'td_pic_4'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Kourtney Kardashian Going For Full Custody',
+    'title' => 'A Place Where Grandkids Belong',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_6_id),
     'featured_image_td_id' => 'td_pic_5'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Rupert Murdoch and Jerry Hall Tie the Knot',
+    'title' => 'Three Dumb ER Stories You’re Allowed To Laugh At',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_6_id),
     'featured_image_td_id' => 'td_pic_6'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Formula 1 Legend Murray Walker to Make TV Comeback',
+    'title' => 'Military Lesson: Never Volunteer',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_6_id),
     'featured_image_td_id' => 'td_pic_7'
@@ -588,28 +575,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Will Lewis Hamilton’s Partying Catch up with Him?',
+    'title' => 'FOD\'s Guide to GIFs: The Clapping GIFS',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_5_id),
     'featured_image_td_id' => 'td_pic_8'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Serena Williams Praises Her Fierce Rival',
+    'title' => '21 Best GIFs Of The Week',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_5_id),
     'featured_image_td_id' => 'td_pic_9'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Conor McGregor Has Suffered a First UFC Defeat',
+    'title' => 'Adding Unnecessary Explosions to GIFs is the Only Meme Ever Worth Caring About',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_5_id),
     'featured_image_td_id' => 'td_pic_10'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Maria Sharapova Speaks After Failed Drug Test',
+    'title' => '15 Viral GIFs Right Now',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_5_id),
     'featured_image_td_id' => 'td_pic_1'
@@ -618,28 +605,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'What Rihanna Had Planned for Her Grammy',
+    'title' => 'Car Crashed On Church Roof',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_4_id),
     'featured_image_td_id' => 'td_pic_2'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Justin Bieber Wants to Get Another Monkey',
+    'title' => '4 Weird Car Crash Stories You Would Wonder If It Really Happened',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_4_id),
     'featured_image_td_id' => 'td_pic_3'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Taylor Swift Wins 2016 Grammys Album of the Year',
+    'title' => 'Texting While Walking Isn\'t Funny Anymore',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_4_id),
     'featured_image_td_id' => 'td_pic_4'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Lady Gaga Goes for Chicago’s Icy Polar Plunge',
+    'title' => 'Top 100 Funny Insurance Claims',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_4_id),
     'featured_image_td_id' => 'td_pic_5'
@@ -648,28 +635,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Oscar’s Anne Hathaway Had a Baby Shower',
+    'title' => '28 Hilarious Real-Life Teacher Stories',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_3_id),
     'featured_image_td_id' => 'td_pic_6'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Matrix Filmmaker Comes Out as Transgender',
+    'title' => '9 Weird, But Funny Moments Every Couple Has In A Relationship',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_3_id),
     'featured_image_td_id' => 'td_pic_7'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Robert Pattinson Has Been Designing Clothes',
+    'title' => 'The Five Funniest Moments in Australian History',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_3_id),
     'featured_image_td_id' => 'td_pic_8'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'DiCaprio’s Win Commemorated with Street Mural',
+    'title' => '15 Legit Funny Moments From An Otherwise Boring Super Bowl',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_3_id),
     'featured_image_td_id' => 'td_pic_9'
@@ -678,28 +665,28 @@ td_demo_content::add_post(array(
 /* ------------------------------------------------------------------ */
 
 td_demo_content::add_post(array(
-    'title' => 'Romanowsky Brings a Masterpiece to Life',
+    'title' => 'Top Ten Funniest Animal Stories Of The Year',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id),
     'featured_image_td_id' => 'td_pic_10'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'The Scream Arrives in New York',
+    'title' => 'Cat Or Dog? This Wild-eyed Cutie Has Us All Confused',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id),
     'featured_image_td_id' => 'td_pic_1'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'How Artist J. Nares Makes his Portraits',
+    'title' => 'Meet Willie The Yorkie, The Dog With The Best Hair On The Internet',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id),
     'featured_image_td_id' => 'td_pic_2'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'The Battle for Picasso’s Billion Empire',
+    'title' => '12 Baby Animal Pictures That Will Make You Go ‘Aww’',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_2_id),
     'featured_image_td_id' => 'td_pic_3'

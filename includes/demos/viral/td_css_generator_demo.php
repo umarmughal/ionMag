@@ -14,6 +14,11 @@ function td_css_demo_gen() {
 		.td-viral .td-main-content .block-title span {
 			background-color: @theme_color;
 		}
+		.td-viral .td_ajax_load_more:hover {
+		    -webkit-box-shadow: inset 0 0 0 3px @theme_color;
+            -moz-box-shadow: inset 0 0 0 3px @theme_color;
+            box-shadow: inset 0 0 0 3px @theme_color;
+		}
 		
 	</style>
 	";

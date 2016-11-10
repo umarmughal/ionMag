@@ -85,9 +85,9 @@ Say what demo
   border-radius: 50px;
 }
 .td-viral .td_ajax_load_more:hover {
-  -webkit-box-shadow: inset 0px 0px 0px 3px #ff036e;
-  -moz-box-shadow: inset 0px 0px 0px 3px #ff036e;
-  box-shadow: inset 0px 0px 0px 3px #ff036e;
+  -webkit-box-shadow: inset 0px 0px 0px 3px #42bdcd;
+  -moz-box-shadow: inset 0px 0px 0px 3px #42bdcd;
+  box-shadow: inset 0px 0px 0px 3px #42bdcd;
 }
 .td-viral .td_ajax_load_more i {
   display: none;

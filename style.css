@@ -3310,10 +3310,17 @@ input[type=password] {
 .woocommerce #tab-description .alignnone,
 .mce-content-body .alignnone {
   display: inline-block;
-  margin: 0 10px 0 0;
+  margin: 0 5px;
+  /* responsive portrait phone */
 }
-.td-post-featured-image figure img {
-  margin-bottom: 0;
+@media (max-width: 767px) {
+  .td-post-content .alignnone,
+  .wpb_text_column .alignnone,
+  .td_block_text_with_title .alignnone,
+  .woocommerce #tab-description .alignnone,
+  .mce-content-body .alignnone {
+    margin: 0 10px 0 0;
+  }
 }
 img.wp-smiley {
   width: auto;
