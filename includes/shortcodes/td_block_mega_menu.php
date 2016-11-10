@@ -71,7 +71,7 @@ class td_block_mega_menu extends td_block {
         //get the js for this block
         $buffy .= $this->get_block_js();
 
-        $buffy .= '<div class="' . $this->get_block_classes($additional_classes ) . '" ' . $this->get_block_html_atts() . '>';
+        $buffy .= '<div class="td-container ' . $this->get_block_classes($additional_classes ) . '" ' . $this->get_block_html_atts() . '>';
 
         //add the categories IF we have some
         $buffy .= $buffy_categories;

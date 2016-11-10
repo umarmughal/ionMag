@@ -285,6 +285,7 @@ function td_css_generator() {
         .td-header-menu-wrap:after {
           background-color: @menu_border_color;
           opacity: 1;
+          display: block;
         }
     }
 
