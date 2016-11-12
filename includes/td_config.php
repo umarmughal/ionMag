@@ -2504,7 +2504,7 @@ class td_config {
 			    'uses_custom_style_css' => false
 		    ),
             'viral' => array(
-                'text' => 'Say What?',
+                'text' => 'Viral',
                 'folder' => td_global::$get_template_directory . '/includes/demos/viral/',
                 'img' => td_global::$get_template_directory_uri . '/includes/demos/viral/screenshot.png',
                 'demo_url' => 'http://demo.tagdiv.com/ionmag_viral/',

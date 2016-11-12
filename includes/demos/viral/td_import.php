@@ -23,14 +23,14 @@ $td_demo_header_menu_id = td_demo_menus::create_menu('td-demo-header-menu', 'hea
 */
 td_demo_misc::update_logo(array(
     'normal' => 'td_logo_header',
-    'retina' => 'td_logo_header',
-    'mobile' => 'td_logo_mobile'
+    'retina' => 'td_logo_header_retina',
+    'mobile' => 'td_logo_header'
 ));
 
 //footer
 td_demo_misc::update_footer_logo(array(
-    'normal' => 'td_logo_footer',
-    'retina' => 'td_logo_footer'
+    'normal' => 'td_logo_header',
+    'retina' => 'td_logo_header_retina'
 ));
 
 /*  ----------------------------------------------------------------------------
@@ -297,7 +297,7 @@ td_demo_menus::add_category(array(
 // posts in featured category
 
 td_demo_content::add_post(array(
-    'title' => '7 Reasons Why A Cat Is The Perfect Best Friend',
+    'title' => '7 More Reasons Why A Cat Is The Perfect Best Friend',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array(get_cat_ID(TD_FEATURED_CAT)),
     'featured_image_td_id' => 'td_pic_1'
@@ -469,14 +469,14 @@ td_demo_content::add_post(array(
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'Find Out What Makes a Style Disrupter',
+    'title' => 'How Nancy Reagan Gave Glamour to the White House',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_9_id),
     'featured_image_td_id' => 'td_pic_4'
 ));
 
 td_demo_content::add_post(array(
-    'title' => 'How Nancy Reagan Gave Glamour to the White House',
+    'title' => 'Find Out What Makes a Style Disrupter',
     'file' => td_global::$get_template_directory . '/includes/demos/viral/pages/post_default.txt',
     'categories_id_array' => array($demo_cat_9_id),
     'featured_image_td_id' => 'td_pic_5'
